@@ -51,7 +51,7 @@
         }
 
         /* =======================================================
-           ■ Hero Section (Slot Animation)
+           ■ Hero Section
            ======================================================= */
         .mild-fade-in { opacity: 0; animation: mildFadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         @keyframes mildFadeIn {
@@ -62,38 +62,6 @@
         .bg-noise {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             opacity: 0.04; mix-blend-mode: multiply;
-        }
-
-        .slot-shadow { text-shadow: 3px 3px 0 var(--brand); }
-        @media (min-width: 768px) { .slot-shadow { text-shadow: 4px 4px 0 var(--brand); } }
-        
-        .spinning { filter: blur(2px); }
-
-        .shake-impact { animation: shakeImpact 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
-        @keyframes shakeImpact {
-            0% { transform: translate(0, 0); }
-            20% { transform: translate(-5px, 5px) scale(1.02) rotate(-1deg); }
-            40% { transform: translate(5px, -3px) scale(0.98) rotate(1deg); }
-            60% { transform: translate(-3px, -3px) scale(1.01); }
-            80% { transform: translate(3px, 3px) scale(0.99); }
-            100% { transform: translate(0, 0); }
-        }
-
-        .slot-flash .slot-shadow { animation: slotFlashText 0.6s ease-out forwards; }
-        @keyframes slotFlashText {
-            0% { text-shadow: 4px 4px 0 var(--brand); color: #111111; }
-            15% { text-shadow: 0px 0px 30px var(--brand); color: var(--brand); }
-            100% { text-shadow: 4px 4px 0 var(--brand); color: #111111; }
-        }
-
-        /* 期限強調バッジのアニメーション */
-        .pulse-badge {
-            animation: pulseBadge 2s infinite;
-        }
-        @keyframes pulseBadge {
-            0% { transform: scale(1) rotate(-2deg); }
-            50% { transform: scale(1.05) rotate(-2deg); box-shadow: 0 0 15px rgba(194, 22, 50, 0.6); }
-            100% { transform: scale(1) rotate(-2deg); }
         }
 
         /* =======================================================
@@ -327,13 +295,14 @@
 </div>
 
 <!-- ==========================================
-     ヒーローセクション (Slot Animation 統合版)
+     ヒーローセクション
      ========================================== -->
-<section class="relative w-full flex flex-col items-center justify-center overflow-hidden pt-16 pb-1 bg-[var(--bg-body)]">
+<!-- 上部の見切れを防止するため pt-28 (スマホ) / md:pt-24 (PC) を設定 -->
+<section class="relative w-full flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-24 pb-4 bg-[var(--bg-body)]">
     <!-- 背景ノイズ -->
     <div class="absolute inset-0 bg-noise z-10 pointer-events-none"></div>
 
-    <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center">
+    <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center mt-2 md:mt-4">
         
         <!-- 全体を囲むメインフレーム -->
         <div class="bg-white border-4 border-[#111] p-6 md:p-10 shadow-[10px_10px_0_var(--gold-main)] md:shadow-[15px_15px_0_var(--gold-main)] relative mild-fade-in w-full">
@@ -343,41 +312,23 @@
                 今日から4/12(日)まで！新生活応援CP
             </div>
 
-            <!-- 初期費用無料 強調バッジ -->
-            <div class="bg-[var(--brand)] text-white font-black py-2 px-6 mt-8 mb-2 border-2 border-[#111] rounded-lg shadow-md transform -rotate-2 pulse-badge flex flex-col items-center mx-auto text-sm md:text-base w-fit">
-                <span>＼ 先着20名様限定！新生活応援キャンペーン ／</span>
-                <span class="text-[var(--gold-light)] text-lg md:text-xl mt-1 drop-shadow-md">
-                    【現在 残り<span class="dynamic-remaining-count font-impact text-2xl md:text-3xl mx-1">--</span>名】
-                </span>
-            </div>
-
-            <!-- タイトル -->
-            <h1 class="text-3xl md:text-4xl font-black tracking-tighter mt-3 mb-5 text-[#111] leading-tight">
-                <span class="text-[var(--brand)]">3月分月会費</span>が<span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">無料!!</span><br>
-                さらに4月〜9月は<br class="block md:hidden" />ずーっと <span class="text-[var(--brand)] drop-shadow-[3px_3px_0_#111] md:drop-shadow-[4px_4px_0_#111] mt-2 inline-block text-5xl md:text-6xl">3,400<span class="text-2xl md:text-3xl font-bold">円/月</span></span>
+            <!-- タイトルと価格表示を1つに統合してスッキリ表示 -->
+            <h1 class="text-3xl md:text-4xl font-black tracking-tighter mt-6 mb-4 text-[#111] leading-tight">
+                <span class="text-[var(--brand)]">3月会費</span>が<span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">無料!!</span><br>
+                さらに4月〜9月はずーっと
             </h1>
-
-            <!-- 価格エリアをまとめるインナーボックス -->
-            <div class="bg-gray-100 border-4 border-[#111] p-4 md:p-6 mt-6 relative">
-                
-                <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-gray-500 font-bold text-sm md:text-xl mb-2">
-                    <span class="bg-[#111] text-white px-2 py-1 text-xs md:text-sm">通常</span>
-                    <div class="relative inline-block">
-                        <span class="font-impact text-2xl md:text-3xl">8,500<span class="text-sm md:text-lg ml-1">円</span></span>
-                        <div id="strike-line" class="absolute top-1/2 -left-2 w-[110%] h-1 bg-[var(--brand)] transform rotate-1 scale-x-0 origin-left transition-transform duration-300"></div>
-                    </div>
-                    <span class="text-xs md:text-sm">(税込9,350円)</span>
+            
+            <div class="mb-4 flex flex-col items-center">
+                <div class="text-gray-500 font-bold text-sm md:text-base mb-1">
+                    通常 <span class="line-through">8,500円(税込9,350円)</span> のところ
                 </div>
-
-                <!-- 矢印 -->
-                <div class="text-[#111] text-2xl md:text-3xl font-black my-2 opacity-0 transition-opacity duration-300" id="arrow-down">⬇</div>
-
-                <!-- スロットラッパー (高さを厳密に制御) -->
-                <div id="slot-wrapper" class="relative overflow-hidden w-full h-[120px] md:h-[160px]">
-                    <!-- 実際に回転するフィルム（リボン） -->
-                    <div id="slot-ribbon" class="absolute top-0 left-0 w-full flex flex-col will-change-transform"></div>
+                <!-- 3,400円の数字を特大にしてインパクトを出す -->
+                <div class="text-[var(--brand)] flex items-baseline justify-center my-2 leading-none">
+                    <span class="font-impact text-[5.5rem] md:text-[6.5rem] drop-shadow-[3px_3px_0_#111] md:drop-shadow-[5px_5px_0_#111]">3,400</span>
+                    <span class="text-2xl md:text-3xl font-bold tracking-normal ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -648,75 +599,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ====================================================
-    // スロットアニメーション
-    // ====================================================
-    const ribbon = document.getElementById('slot-ribbon');
-    const wrapper = document.getElementById('slot-wrapper');
-    const strikeLine = document.getElementById('strike-line');
-    const arrowDown = document.getElementById('arrow-down');
-    
-    if (ribbon && wrapper && strikeLine && arrowDown) {
-        const framesData = [];
-        framesData.push({ main: "8,500", sub: "9,350" }); // 最初のコマ
-        
-        const numDummies = 24; 
-        let currentVal = 8500;
-        const targetVal = 3400;
-        const step = (8500 - 3400) / (numDummies + 1);
-        
-        for (let i = 0; i < numDummies; i++) {
-            currentVal -= step;
-            let randVal = currentVal + (Math.random() * 300 - 150);
-            let mainNum = Math.floor(randVal / 10) * 10;
-            let subNum = Math.floor(mainNum * 1.1);
-            framesData.push({ main: mainNum.toLocaleString(), sub: subNum.toLocaleString() });
-        }
-        
-        framesData.push({ main: "3,400", sub: "3,400" }); // 最後のターゲットコマ
-
-        const wrapperHeight = wrapper.offsetHeight;
-
-        let html = '';
-        framesData.forEach((f, idx) => {
-            const isTarget = (idx === framesData.length - 1);
-            const opacityClass = (idx === 0 || isTarget) ? "opacity-100" : "opacity-60";
-            
-            html += `
-                <div class="slot-frame flex flex-col items-center justify-center w-full ${opacityClass}" style="height: ${wrapperHeight}px;">
-                    <div class="flex items-baseline justify-center text-[#111]">
-                        <span class="font-impact text-6xl md:text-[8rem] tracking-tighter slot-shadow leading-none">${f.main}</span>
-                        <span class="text-2xl md:text-4xl font-black ml-1 md:ml-2 mb-1 leading-none">円</span>
-                    </div>
-                    <div class="text-[#111] font-bold text-sm md:text-xl tracking-widest leading-none" style="margin-top: 4px;">
-                        (税込${f.sub}円)
-                    </div>
-                </div>
-            `;
-        });
-        ribbon.innerHTML = html;
-
-        setTimeout(() => {
-            strikeLine.style.transform = "rotate(1deg) scaleX(1)";
-            arrowDown.style.opacity = "1";
-        }, 1000);
-
-        setTimeout(() => {
-            const lastFrame = ribbon.lastElementChild;
-            const targetY = -(lastFrame.offsetTop);
-
-            ribbon.classList.add('spinning');
-            ribbon.style.transition = "transform 2.2s cubic-bezier(0.15, 0.9, 0.3, 1.02)";
-            ribbon.style.transform = `translateY(${targetY}px)`;
-            
-            setTimeout(() => {
-                ribbon.classList.remove('spinning');
-                wrapper.classList.add('shake-impact', 'slot-flash');
-            }, 2200);
-            
-        }, 1400);
-    }
-
     // ====================================================
     // スクロール連動Reveal
     // ====================================================
