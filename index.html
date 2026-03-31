@@ -314,8 +314,7 @@
 
             <!-- タイトルと価格表示を1つに統合してスッキリ表示 -->
             <h1 class="text-3xl md:text-4xl font-black tracking-tighter mt-6 mb-4 text-[#111] leading-tight">
-                <span class="text-[var(--brand)]">3月会費</span>が<span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">無料!!</span><br>
-                さらに4月〜9月はずーっと
+                <span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">4月〜9月</span>はずーっと
             </h1>
             
             <div class="mb-4 flex flex-col items-center">
@@ -361,23 +360,11 @@
                         </div>
                     </div>
 
-                    <!-- 2. 3月会費 -->
+                    <!-- 2. 4月〜9月会費 -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">2</span>
-                            <div class="label">3月分 会費<span class="note">(今日から月末まで無料!)</span></div>
-                        </div>
-                        <div class="divider-dot"></div>
-                        <div class="price-display-center">
-                            <span class="price-value font-impact text-4xl" style="color: var(--brand);">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
-                        </div>
-                    </div>
-
-                    <!-- 3. 4月〜9月会費 -->
-                    <div class="price-item">
-                        <div class="label-group">
-                            <span class="number-circle">3</span>
-                            <div class="label">4月〜9月 会費<span class="note">(6ヶ月間 特別価格!)</span></div>
+                            <div class="label">4月〜9月 会費<span class="note">(6ヶ月間 特別価格!)</span><span class="note" style="color:#111; font-size:0.7rem; margin-top:2px;">※4月分は日割り</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -386,11 +373,11 @@
                         </div>
                     </div>
 
-                    <!-- 4. オプション -->
+                    <!-- 3. オプション -->
                     <div class="price-item">
                         <div class="label-group">
-                            <span class="number-circle" style="background-color: var(--gold-dark);">4</span>
-                            <div class="label">オプション<span class="note">3月・4月分</span></div>
+                            <span class="number-circle" style="background-color: var(--gold-dark);">3</span>
+                            <div class="label">オプション<span class="note">4月分</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -401,9 +388,9 @@
 
                     <!-- 入会時お支払い目安 -->
                     <div class="mid-list-total-block">
-                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時お支払い合計</span><span style="font-size: 0.8rem;">(目安)</span></div>
+                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
                         <div><span id="dynamic-total-price" class="price-large font-impact text-4xl">--</span><span class="unit-large font-bold">円(税込)</span></div>
-                        <div id="dynamic-price-desc" style="font-size: 0.8rem; color: #666; margin-top: 4px;">(初期費用5,500円 ＋ 3月分会費無料の場合)</div>
+                        <div id="dynamic-price-desc" style="font-size: 0.8rem; color: #666; margin-top: 4px;">--</div>
                     </div>
                 </div>
 
@@ -474,7 +461,7 @@
                     <span class="highlight font-impact">8</span>つの無料オプション
                 </h2>
                 <p>
-                    キャンペーン期間中<br><span class="highlight-text">3月・4月分が0円</span>で使い放題！<br>
+                    キャンペーン期間中<br><span class="highlight-text">4月分が0円</span>で使い放題！<br>
                     <span style="font-size: 0.85rem; opacity: 0.9; display: inline-block; margin-top: 8px;">※8つのオプションは入会時自動契約されます。</span>
                 </p>
             </div>
@@ -627,42 +614,45 @@ document.addEventListener('DOMContentLoaded', function() {
         const priceDescEl = document.getElementById('dynamic-price-desc');
         
         if (dateLabelEl && totalPriceEl && priceDescEl) {
-            // 「本日ご入会の場合」という表現に変更し、リアルタイム感を出す
-            dateLabelEl.innerHTML = `<span style="color: var(--brand);">本日(${month}/${date})</span>ご入会のお支払い`;
+            // シンプルな日付＋入会時金額の表記に変更
+            dateLabelEl.innerHTML = `(<span style="color: var(--brand);">${month}/${date}</span>)ご入会時金額`;
             
-            if (month === 3) {
-                // 3月中の入会なら、初期費用5,500円 + 3月会費0円 = 5,500円
-                totalPriceEl.textContent = "5,500";
-                priceDescEl.textContent = `(初期費用5,500円 ＋ 3月分会費無料)`;
-            } else {
-                // 4月以降の場合、初期費用5,500円 + 4月分会費3,400円 = 8,900円
-                totalPriceEl.textContent = "8,900";
-                priceDescEl.textContent = `(初期費用5,500円 ＋ 4月分特別会費)`;
-            }
+            // 4月入会を想定した日割り計算 (3,400円 / 30日)
+            let daysInMonth = 30; // 4月は30日
+            let calcDate = (month === 4) ? date : 1; // 4月以外なら1日想定
+            if(month < 4) calcDate = 1;
+            
+            let remainingDays = daysInMonth - calcDate + 1;
+            // 日割り計算
+            let proratedFee = Math.floor((3400 / daysInMonth) * remainingDays);
+            let total = 5500 + proratedFee;
+
+            totalPriceEl.textContent = total.toLocaleString();
+            priceDescEl.textContent = `(初期費用5,500円 ＋ 4月分日割り会費 ${proratedFee.toLocaleString()}円)`;
         }
     }
     // ロジックを実行
     updateProratedFee();
 
     // ====================================================
-    // 残り人数の自動カウントダウン (1日2名ずつ減少)
+    // 残り人数の自動カウントダウン (1日1名ずつ減少)
     // ====================================================
     function updateRemainingCount() {
-        // キャンペーン開始日（基準日）を設定
-        const startDate = new Date('2026-03-27T00:00:00+09:00');
+        // キャンペーン開始日（4/1）を設定
+        const startDate = new Date('2026-04-01T00:00:00+09:00');
         const now = new Date();
         
         // 経過日数を計算
         const diffTime = now.getTime() - startDate.getTime();
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays < 0) diffDays = 0;
         
-        // 1日経過するごとに2人減らす（初期値20）
-        let remaining = 20 - (diffDays * 2);
+        // 1日経過するごとに1人減らす（初期値12）
+        let remaining = 12 - diffDays;
         
-        // 最低人数を3名でストップさせる（マイナス防止＆駆け込み需要の煽り）
-        if (remaining < 3) remaining = 3;
-        // 未来の日付の場合（開始日前）は20名に固定
-        if (remaining > 20) remaining = 20;
+        // 4/12で残り1名になる
+        if (remaining < 1) remaining = 1;
+        if (remaining > 12) remaining = 12;
 
         // クラスを持つすべての要素を更新
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
