@@ -162,16 +162,111 @@
         .campaign-header-enhanced h2 { margin: 0; font-size: 1.5rem; font-weight: 900; color: #111; letter-spacing: 0.05em; text-shadow: 0 1px 0 rgba(255,255,255,0.4); }
         .campaign-header-enhanced .sub-text { display: block; font-size: 0.9rem; color: #333; margin-top: 5px; font-weight: 700; opacity: 0.9; }
         .campaign-header-enhanced .deadline-text { display: inline-block; background-color: var(--brand); color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 900; margin-bottom: 8px; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+        .campaign-price-chip { display: inline-block; margin-top: 8px; background: #fff; color: var(--brand); border: 2px solid var(--brand); border-radius: 999px; padding: 3px 12px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.01em; }
 
         .plan-container-wrapper { overflow: hidden; border-radius: 0 0 var(--radius-lg) var(--radius-lg); background-color: #fff; box-shadow: var(--shadow-soft); padding-top: 15px; padding-bottom: 30px; border: 4px solid var(--gold-main); border-top: none; }
         .price-showcase { border-radius: var(--radius-md); max-width: 95%; margin: 0 auto; text-align: left; border: 1px solid #eee; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
         .price-list { padding: 0 1rem; }
-        .price-item { display: flex; align-items: flex-start; padding: 1rem 0; border-bottom: 1px dashed #ccc; gap: 0.5rem; }
-        .price-item .label-group { display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 120px; }
+        .price-item { display: flex; align-items: center; padding: 1rem 0; border-bottom: 1px dashed #ccc; gap: 0.5rem; }
+        .price-item .label-group { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex: 1; min-width: 120px; align-self: center; text-align: center; }
         .price-item .number-circle { width: 28px; height: 28px; background-color: #555; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 900; flex-shrink: 0; }
-        .price-item .label { font-size: 0.85rem; font-weight: 700; color: #333; }
+        .price-item .label { font-size: 0.85rem; font-weight: 700; color: #333; text-align: center; }
         .price-item .label .note { font-size: 0.7rem; color: #C21632; display: block; }
-        .divider-dot { width: 1px; height: 50px; background-image: linear-gradient(to bottom, #ccc 60%, transparent 40%); background-size: 1px 8px; background-repeat: repeat-y; align-self: center; }
+        .price-normal-note { font-size: 0.7rem; font-weight: 800; color: #a8b2c4; text-decoration: line-through; display: block; margin-bottom: 2px; text-align: center; }
+        .divider-dot { width: 1px; height: 78px; background-image: linear-gradient(to bottom, #ccc 60%, transparent 40%); background-size: 1px 8px; background-repeat: repeat-y; align-self: center; }
+        .price-item .price-display-center .price-value {
+            font-size: 2.15rem !important;
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+        .price-item .price-display-center .unit {
+            font-size: 0.95rem;
+        }
+        .price-item .price-display-center .price-normal-note {
+            font-size: 0.74rem;
+        }
+        .price-right-inline {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center !important;
+            min-height: 78px;
+            text-align: center;
+        }
+        .price-item .label .note .period-inline {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.64rem;
+            font-weight: 700;
+            color: #666;
+            letter-spacing: 0.01em;
+        }
+        .price-item-monthly .divider-dot {
+            display: none;
+        }
+        .monthly-fee-breakdown {
+            align-items: stretch !important;
+            text-align: left !important;
+            justify-content: center !important;
+            gap: 0.7rem;
+            padding: 0.35rem 0;
+        }
+        .fee-row {
+            display: grid;
+            grid-template-columns: minmax(125px, 1fr) 1.25fr;
+            align-items: center;
+            gap: 10px 14px;
+            padding: 0.55rem 0;
+        }
+        .fee-row + .fee-row {
+            border-top: 1px dashed #d7d7d7;
+            margin-top: 0.2rem;
+            padding-top: 0.55rem;
+        }
+        .fee-label {
+            font-size: 0.97rem;
+            font-weight: 900;
+            color: #2d2d2d;
+            letter-spacing: 0.01em;
+            line-height: 1.25;
+        }
+        .fee-value {
+            text-align: right;
+            min-width: 230px;
+        }
+        .fee-normal {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #a8b2c4;
+            text-decoration: line-through;
+            display: block;
+            line-height: 1.1;
+            margin-bottom: 0.1rem;
+        }
+        .fee-highlight {
+            color: var(--brand);
+            line-height: 1;
+            white-space: nowrap;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+        }
+        .fee-highlight.zero-emphasis {
+            font-size: 2.4rem !important;
+        }
+        .fee-highlight.campaign-emphasis {
+            font-size: 2.5rem !important;
+        }
+        @media (max-width: 520px) {
+            .fee-row {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+            .fee-value {
+                text-align: left;
+                padding-left: 0.05rem;
+                min-width: 0;
+            }
+        }
+        
         .price-display-center { flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .price-display-center .price-value { font-size: 1.25rem; font-weight: 900; }
         .price-display-center .unit { font-size: 0.8rem; font-weight: 700; color: #333; }
@@ -186,19 +281,19 @@
         /* 追加特典まわりの注釈（STEP・ボーナスで統一） */
         .lp-note-pill {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
             max-width: 100%;
-            padding: 0.55rem 0.9rem;
-            font-size: 0.75rem;
-            font-weight: 900;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
-            color: var(--brand);
+            padding: 0.25rem 0.1rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            color: #666;
             text-align: center;
-            background: linear-gradient(180deg, #fff8f9 0%, #ffeef1 100%);
-            border: 1px solid rgba(194, 22, 50, 0.22);
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(194, 22, 50, 0.07);
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .digital-step-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: var(--radius-md); padding: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.03); width: 95%; margin: 0 auto 20px auto; transition: 0.3s; }
@@ -513,6 +608,7 @@
             <span class="deadline-text btn-bounce" style="display: inline-block;">5/6(水)まで限定！</span>
             <h2 class="shine-text-gold">GW スペシャルキャンペーン</h2>
             <span class="sub-text">APP入会限定の特別プラン！</span>
+            <span class="campaign-price-chip">GW期間限定価格</span>
         </div>
 
         <div class="plan-container-wrapper">
@@ -530,35 +626,36 @@
                         </div>
                     </div>
 
-                    <!-- 2. 月会費 -->
+                    <!-- 2. 4月分月会費 -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">2</span>
-                            <div class="label">月会費<span class="note">GW期間限定価格</span></div>
+                            <div class="label">4月分月会費</div>
                         </div>
                         <div class="divider-dot"></div>
-                        <div class="price-display-center" style="align-items: stretch; text-align: left; justify-content: space-around;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 8px; margin-bottom: 8px;">
-                                <span style="font-size: 0.85rem; font-weight: 700; color: #333;">4月分:</span>
-                                <div style="text-align: right;">
-                                    <span class="text-gray-400 text-[0.65rem] line-through font-bold block">通常 9,350円/月</span>
-                                    <span class="price-value font-impact text-2xl" style="color: var(--brand);">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
-                                </div>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="font-size: 0.85rem; font-weight: 700; color: #333;">5月〜10月分:</span>
-                                <div style="text-align: right;">
-                                    <span class="text-gray-400 text-[0.65rem] line-through font-bold block">通常 9,350円/月</span>
-                                    <span class="price-value font-impact text-xl" style="color: var(--brand);">3,300<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
-                                </div>
-                            </div>
+                        <div class="price-display-center" style="align-items: flex-end;">
+                            <span class="price-normal-note">通常 9,350円/月</span>
+                            <span class="price-value font-impact text-2xl" style="color: var(--brand);">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
                         </div>
                     </div>
 
-                    <!-- 3. オプション -->
+                    <!-- 3. 5月〜10月分月会費 -->
                     <div class="price-item">
                         <div class="label-group">
-                            <span class="number-circle" style="background-color: var(--gold-dark);">3</span>
+                            <span class="number-circle">3</span>
+                            <div class="label">5月〜10月分月会費</div>
+                        </div>
+                        <div class="divider-dot"></div>
+                        <div class="price-display-center" style="align-items: flex-end;">
+                            <span class="price-normal-note">通常 9,350円/月</span>
+                            <span class="price-value font-impact text-xl" style="color: var(--brand);">3,300<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
+                        </div>
+                    </div>
+
+                    <!-- 4. オプション -->
+                    <div class="price-item">
+                        <div class="label-group">
+                            <span class="number-circle" style="background-color: var(--gold-dark);">4</span>
                             <div class="label">オプション<span class="note">4月・5月分</span></div>
                         </div>
                         <div class="divider-dot"></div>
@@ -611,7 +708,7 @@
                         <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
                         <div class="step-info">
                             <div class="step-title" style="font-size: 0.95rem;">紹介・学割・他クラブ移籍等</div>
-                            <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※割引適用は11月からとなります</span></p>
+                            <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は11月から適用となります</span></p>
                         </div>
                         <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat btn-bounce">申請する</a>
                     </div>
@@ -700,7 +797,7 @@
          <p style="font-size: 0.85rem; color: #555; font-weight: 700; margin-bottom: 25px; line-height: 1.6;">
             追加特典はこちらからご確認下さい！<br>
             紹介・移籍・学割など、該当者はさらにお得<br>
-            <span class="lp-note-pill">※移籍・学割などの追加特典は11月から適用となります</span>
+            <span class="lp-note-pill">※学割は11月から適用となります</span>
          </p>
          <span class="bonus-btn-large btn-bounce" style="display: inline-flex;">詳細を見る</span>
     </a>
