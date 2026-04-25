@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 4/30(木)迄！新生活応援キャンペーン</title>
+    <title>JOYFIT24経堂 5/6(水)迄！GW スペシャルキャンペーン</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 視認性の高い Noto Sans JP に完全統一 -->
@@ -25,7 +25,7 @@
             
             --color-dark: #1a1a2e;
             --color-text: #2C2C2C;
-            --bg-body: #FAF9F6; 
+            --bg-body: #fffdf0; /* 全体の背景色を統一して明るく */
             
             --container-max-width: 600px;
         }
@@ -59,9 +59,65 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* =======================================================
+           ■ GWスペシャル用 追加アニメーション＆装飾
+           ======================================================= */
+        /* 紙吹雪コンテナ（画面全体に固定） */
+        .confetti-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            overflow: hidden; pointer-events: none; z-index: 0; /* コンテンツの後ろになるように z-index を 8000 から 0 に変更 */
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 12px; height: 12px;
+            opacity: 0.8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-5vh) rotate(0deg); opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* テキストのシャインエフェクト */
+        .shine-text-gold {
+            background: linear-gradient(120deg, #111 0%, #D4AF37 30%, #F8E71C 50%, #D4AF37 70%, #111 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shineText 3s linear infinite;
+        }
+        .shine-text-red {
+            background: linear-gradient(120deg, var(--brand) 0%, #ff8a80 30%, #ff5252 50%, #ff8a80 70%, var(--brand) 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shineText 2.5s linear infinite;
+        }
+        @keyframes shineText {
+            to { background-position: 200% center; }
+        }
+
+        /* ボタンのバウンス（ワクワク感） */
+        .btn-bounce {
+            animation: bounceSoft 2s infinite;
+        }
+        @keyframes bounceSoft {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* 背景ノイズ（画面全体に固定） */
         .bg-noise {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             opacity: 0.04; mix-blend-mode: multiply;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: -1;
         }
 
         /* =======================================================
@@ -74,7 +130,7 @@
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 0 15px; display: flex; flex-direction: column; align-items: center; }
+        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 0 15px; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; /* コンテンツ全体を前に出す */ }
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
@@ -288,9 +344,15 @@
 
 <body>
 
+<!-- 全体背景ノイズ -->
+<div class="bg-noise"></div>
+
+<!-- 全体紙吹雪コンテナ -->
+<div id="confetti-container" class="confetti-container"></div>
+
 <!-- トップ固定メタリックバナー -->
 <div class="gold-metallic-banner">
-    <div>＼ 先着30名様 限定 ／</div>
+    <div>＼ 先着15名様 限定 ／</div>
     <div class="remaining-box">現在 残り<span class="highlight-num dynamic-remaining-count">--</span>名</div>
 </div>
 
@@ -298,9 +360,7 @@
      ヒーローセクション
      ========================================== -->
 <!-- 上部の見切れを防止するため pt-28 (スマホ) / md:pt-24 (PC) を設定 -->
-<section class="relative w-full flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-24 pb-4 bg-[var(--bg-body)]">
-    <!-- 背景ノイズ -->
-    <div class="absolute inset-0 bg-noise z-10 pointer-events-none"></div>
+<section class="relative w-full flex flex-col items-center justify-center pt-28 md:pt-24 pb-4">
 
     <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center mt-2 md:mt-4">
         
@@ -309,21 +369,21 @@
             
             <!-- ラベル -->
             <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 inline-block bg-gradient-to-r from-[var(--gold-dark)] via-[var(--gold-light)] to-[var(--gold-main)] text-[#111] font-black px-4 py-2 text-xs md:text-sm tracking-widest whitespace-nowrap border-4 border-[#111] shadow-[4px_4px_0_var(--brand)] md:shadow-[6px_6px_0_var(--brand)]">
-                4/30(木)まで！新生活応援CP
+                5/6(水)まで！GW スペシャルCP
             </div>
 
             <!-- タイトルと価格表示を1つに統合してスッキリ表示 -->
             <h1 class="text-2xl md:text-3xl font-black tracking-tighter mt-6 mb-4 text-[#111] leading-tight">
-                <span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">4月〜9月</span>はずーっと
+                <span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">5月〜10月</span>はずーっと
             </h1>
             
             <div class="mb-4 flex flex-col items-center">
                 <div class="text-gray-500 font-bold text-xs md:text-sm mb-1">
                     通常 <span class="line-through">8,500円(税込9,350円)</span> のところ
                 </div>
-                <!-- 3,400円の数字を特大にしてインパクトを出す -->
+                <!-- 3,300円の数字を特大にしてインパクトを出す -->
                 <div class="text-[var(--brand)] flex items-baseline justify-center my-2 leading-none">
-                    <span class="font-impact text-[4.5rem] md:text-[5.5rem] drop-shadow-[3px_3px_0_#111] md:drop-shadow-[5px_5px_0_#111]">3,400</span>
+                    <span class="font-impact text-[4.5rem] md:text-[5.5rem] drop-shadow-[3px_3px_0_#111] md:drop-shadow-[5px_5px_0_#111]">3,300</span>
                     <span class="text-xl md:text-2xl font-bold tracking-normal ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span>
                 </div>
             </div>
@@ -340,8 +400,8 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
-            <span class="deadline-text">4/30(木)まで限定！</span>
-            <h2>新生活応援キャンペーン</h2>
+            <span class="deadline-text btn-bounce" style="display: inline-block;">5/6(水)まで限定！</span>
+            <h2 class="shine-text-gold">GW スペシャルキャンペーン</h2>
             <span class="sub-text">APP入会限定の特別プラン！</span>
         </div>
 
@@ -360,16 +420,25 @@
                         </div>
                     </div>
 
-                    <!-- 2. 4月〜9月会費 -->
+                    <!-- 2. 月会費 -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">2</span>
-                            <div class="label">4月〜9月 会費<span class="note">(6ヶ月間 特別価格!)</span><span class="note" style="color:#111; font-size:0.65rem; margin-top:2px;">※4月分は日割り</span></div>
+                            <div class="label">月会費<span class="note">(キャンペーン適用!)</span></div>
                         </div>
                         <div class="divider-dot"></div>
-                        <div class="price-display-center">
-                            <span class="text-gray-400 text-xs line-through font-bold">通常 9,350円/月</span>
-                            <span class="price-value font-impact text-2xl" style="color: var(--brand);">3,400<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
+                        <div class="price-display-center" style="align-items: stretch; text-align: left; justify-content: space-around;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 8px; margin-bottom: 8px;">
+                                <span style="font-size: 0.85rem; font-weight: 700; color: #333;">4月分:</span>
+                                <span class="price-value font-impact text-2xl" style="color: var(--brand);">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.85rem; font-weight: 700; color: #333;">5月〜10月分:</span>
+                                <div style="text-align: right;">
+                                    <span class="text-gray-400 text-[0.65rem] line-through font-bold block">通常 9,350円/月</span>
+                                    <span class="price-value font-impact text-xl" style="color: var(--brand);">3,300<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -377,7 +446,7 @@
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle" style="background-color: var(--gold-dark);">3</span>
-                            <div class="label">オプション<span class="note">4月分</span></div>
+                            <div class="label">オプション<span class="note">4月・5月分</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -394,9 +463,9 @@
                     </div>
                 </div>
 
-                 <!-- 10月以降 -->
+                 <!-- 11月以降 -->
                 <div class="monthly-fee">
-                    <div style="font-size: 0.8rem; font-weight: 700; color: #666; margin-bottom: 0.5rem;">**10月以降の通常月額**</div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #666; margin-bottom: 0.5rem;">**11月以降の通常月額**</div>
                     <div><span class="price-large font-impact text-2xl" style="font-weight: 900;">9,350<span class="unit-large" style="font-family: 'Noto Sans JP', sans-serif; font-size: 1rem;">円(税込)</span></span><span class="font-impact text-xl" style="margin: 0 10px;">+</span><span style="font-weight: 700; font-size: 0.9rem;">オプション料金</span></div>
                 </div>
             </div>
@@ -431,7 +500,7 @@
                             <div class="step-title" style="font-size: 0.95rem;">紹介・学割・他クラブ移籍等</div>
                             <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span style="color: var(--brand); font-weight: 900;">※割引適用は10月以降となります</span></p>
                         </div>
-                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" class="step-action-btn btn-gold-flat">申請する</a>
+                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" class="step-action-btn btn-gold-flat btn-bounce">申請する</a>
                     </div>
                 </div>
                 
@@ -444,7 +513,7 @@
                             <div class="step-title">APPでカンタン入会</div>
                             <p class="step-desc" style="font-size: 0.75rem; color: #666;">JOYFIT APPをDLして入会【最短5分】</p>
                         </div>
-                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" class="step-action-btn btn-red-flat">アプリDL</a>
+                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" class="step-action-btn btn-red-flat btn-bounce">アプリDL</a>
                     </div>
                 </div>
             </div>
@@ -461,7 +530,7 @@
                     <span class="highlight font-impact">8</span>つの無料オプション
                 </h2>
                 <p>
-                    キャンペーン期間中<br><span class="highlight-text">4月分が0円</span>で使い放題！<br>
+                    キャンペーン期間中<br><span class="highlight-text">4月・5月分が0円</span>で使い放題！<br>
                     <span style="font-size: 0.75rem; opacity: 0.9; display: inline-block; margin-top: 8px;">※8つのオプションは入会時自動契約されます。</span>
                 </p>
             </div>
@@ -501,7 +570,7 @@
         </div>
         <div style="font-size: 0.85rem; line-height: 1.8; font-weight: 700; color: #333; margin-bottom: 25px;">
             オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
-            不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">4月末迄</strong>に解約をお願いいたします<br /><br />
+            不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">5月末迄</strong>に解約をお願いいたします<br /><br />
             入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
             解約後も月末迄サービスをご利用頂けます
         </div>
@@ -520,7 +589,7 @@
             紹介・移籍・学割など、該当者はさらにお得<br>
             <span style="display: inline-block; margin-top: 8px; color: var(--brand); font-size: 0.75rem; padding: 4px 8px; background: #fff0f0; border-radius: 4px;">※移籍・学割などの追加特典は10月以降から適用となります</span>
          </p>
-         <span class="bonus-btn-large">詳細を見る</span>
+         <span class="bonus-btn-large btn-bounce" style="display: inline-flex;">詳細を見る</span>
     </a>
 
     <!-- アクセスマップセクション -->
@@ -618,29 +687,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // シンプルな日付＋入会時金額の表記に変更
             dateLabelEl.innerHTML = `(<span style="color: var(--brand);">${month}/${date}</span>)ご入会時金額`;
             
-            // 4月入会を想定した日割り計算 (3,400円 / 30日)
-            let daysInMonth = 30; // 4月は30日
-            let calcDate = (month === 4) ? date : 1; // 4月以外なら1日想定
-            if(month < 4) calcDate = 1;
-            
-            let remainingDays = daysInMonth - calcDate + 1;
-            // 日割り計算
-            let proratedFee = Math.floor((3400 / daysInMonth) * remainingDays);
-            let total = 5500 + proratedFee;
+            // 4月は月会費0円。入会時は初期費用の5,500円のみ
+            let total = 5500;
 
             totalPriceEl.textContent = total.toLocaleString();
-            priceDescEl.textContent = `(初期費用5,500円 ＋ 4月分日割り会費 ${proratedFee.toLocaleString()}円)`;
+            priceDescEl.textContent = `(初期費用5,500円 ＋ 4月分会費 0円)`;
         }
     }
     // ロジックを実行
     updateProratedFee();
 
     // ====================================================
-    // 残り人数の自動カウントダウン (1日1名ずつ減少)
+    // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // キャンペーン開始日（4/1）を設定
-        const startDate = new Date('2026-04-01T00:00:00+09:00');
+        // キャンペーン開始日（4/25）を設定して15名にリセット
+        const startDate = new Date('2026-04-25T00:00:00+09:00');
         const now = new Date();
         
         // 経過日数を計算
@@ -648,12 +710,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         if (diffDays < 0) diffDays = 0;
         
-        // 1日経過するごとに1人減らす（初期値30）
-        let remaining = 30 - diffDays;
+        // 1日経過するごとに少しずつ減らす（初期値15）
+        let remaining = 15 - diffDays;
         
-        // 4/30で残り1名になる (4/1が0日目、4/30が29日目)
+        // 最低1名でストップ
         if (remaining < 1) remaining = 1;
-        if (remaining > 30) remaining = 30;
+        if (remaining > 15) remaining = 15;
 
         // クラスを持つすべての要素を更新
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
@@ -663,6 +725,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // ロジックを実行
     updateRemainingCount();
+
+    // ====================================================
+    // GW 紙吹雪アニメーション
+    // ====================================================
+    function createConfetti() {
+        const container = document.getElementById('confetti-container');
+        if (!container) return;
+        // GWらしい明るい初夏カラーパレット（赤、金、スカイブルー、ライムグリーン、オレンジ）
+        const colors = ['#C21632', '#D4AF37', '#00BCD4', '#8BC34A', '#FF9800']; 
+        
+        // スマホは少なめ、PCは多めに表示して重さを軽減
+        const pieceCount = window.innerWidth < 768 ? 35 : 70;
+
+        for (let i = 0; i < pieceCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti-piece');
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // アニメーションの速度と遅延をランダムにして自然に降らせる（等速で降り続けるようにlinearに変更）
+            const duration = Math.random() * 3 + 4; // 4〜7秒（少しゆっくりに）
+            const delay = Math.random() * 5; // 0〜5秒遅れ
+            confetti.style.animation = `confettiFall ${duration}s linear ${delay}s infinite`;
+            
+            // 形状をランダムに（四角、丸、少し細長い長方形）
+            const shapeType = Math.random();
+            if (shapeType > 0.6) {
+                confetti.style.borderRadius = '50%'; // 丸
+            } else if (shapeType > 0.3) {
+                confetti.style.width = '8px';
+                confetti.style.height = '16px'; // 長方形
+            }
+            
+            container.appendChild(confetti);
+        }
+    }
+    createConfetti();
 
     // ====================================================
     // オプションカルーセル
