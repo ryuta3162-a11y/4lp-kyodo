@@ -176,21 +176,21 @@
             column-gap: 0.65rem;
             padding: 1rem 0;
             border-bottom: 1px dashed #ccc;
+            min-height: 96px;
         }
         .price-item .label-group {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 32px minmax(0, 1fr);
             align-items: center;
-            justify-content: center;
+            justify-content: start;
             justify-self: center;
-            width: 100%;
+            width: 260px;
             max-width: 260px;
-            text-align: center;
-            gap: 0.45rem;
+            text-align: left;
+            column-gap: 10px;
         }
         .price-item .number-circle { width: 28px; height: 28px; background-color: #555; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 900; flex-shrink: 0; }
-        .price-item .label { font-size: 0.85rem; font-weight: 700; color: #333; text-align: center; }
+        .price-item .label { font-size: 0.85rem; font-weight: 700; color: #333; text-align: left; }
         .price-item .label .note { font-size: 0.7rem; color: #C21632; display: block; }
         .price-normal-note { font-size: 0.7rem; font-weight: 800; color: #a8b2c4; text-decoration: line-through; display: block; margin-bottom: 2px; text-align: center; }
         .price-item .divider-dot {
@@ -228,9 +228,10 @@
             .price-item {
                 grid-template-columns: 1fr;
                 row-gap: 0.5rem;
+                min-height: 0;
             }
             .price-item .divider-dot { display: none; }
-            .price-item .label-group { order: 1; max-width: 100%; }
+            .price-item .label-group { order: 1; width: 100%; max-width: 280px; }
             .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; }
         }
         .price-item .label .note .period-inline {
