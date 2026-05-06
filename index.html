@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 5/6(水)迄！GW スペシャルキャンペーン</title>
+    <title>JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 GWスペシャルキャンペーン。APP入会・5/6(水)まで。" />
+    <meta name="description" content="JOYFIT24経堂 GWスペシャルキャンペーン。APP入会・5/17(日)まで。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 5/6(水)迄！GW スペシャルキャンペーン" />
-    <meta property="og:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/6(水)まで。" />
+    <meta property="og:title" content="JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン" />
+    <meta property="og:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/17(日)まで。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 GWスペシャルキャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 5/6(水)迄！GW スペシャルキャンペーン" />
-    <meta name="twitter:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/6(水)まで。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン" />
+    <meta name="twitter:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/17(日)まで。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -597,7 +597,7 @@
 
 <!-- トップ固定メタリックバナー -->
 <div class="gold-metallic-banner">
-    <div>＼ 先着15名様 限定 ／</div>
+    <div>＼ 先着10名様 限定 ／</div>
     <div class="remaining-box">現在 残り<span class="highlight-num dynamic-remaining-count">--</span>名</div>
 </div>
 
@@ -614,7 +614,7 @@
             
             <!-- ラベル -->
             <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 inline-block bg-gradient-to-r from-[var(--gold-dark)] via-[var(--gold-light)] to-[var(--gold-main)] text-[#111] font-black px-4 py-2 text-xs md:text-sm tracking-widest whitespace-nowrap border-4 border-[#111] shadow-[4px_4px_0_var(--brand)] md:shadow-[6px_6px_0_var(--brand)]">
-                5/6(水)まで！GW スペシャルCP
+                5/17(日)まで！GW スペシャルCP
             </div>
 
             <!-- タイトルと価格表示を1つに統合してスッキリ表示 -->
@@ -645,7 +645,7 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
-            <span class="deadline-text btn-bounce" style="display: inline-block;">5/6(水)まで限定！</span>
+            <span class="deadline-text btn-bounce" style="display: inline-block;">5/17(日)まで限定！</span>
             <h2 class="shine-text-gold">GW スペシャルキャンペーン</h2>
             <span class="sub-text">APP入会限定の特別プラン！</span>
             <span class="campaign-price-chip">GW期間限定価格</span>
@@ -956,8 +956,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // キャンペーン開始日（4/25）を設定して15名にリセット
-        const startDate = new Date('2026-04-25T00:00:00+09:00');
+        // 5/6を起点に残り10名から1日ごとに1名ずつ減らす
+        const startDate = new Date('2026-05-06T00:00:00+09:00');
         const now = new Date();
         
         // 経過日数を計算
@@ -965,12 +965,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         if (diffDays < 0) diffDays = 0;
         
-        // 1日経過するごとに少しずつ減らす（初期値15）
-        let remaining = 15 - diffDays;
+        // 1日経過するごとに1名ずつ減らす（初期値10）
+        let remaining = 10 - diffDays;
         
         // 最低1名でストップ
         if (remaining < 1) remaining = 1;
-        if (remaining > 15) remaining = 15;
+        if (remaining > 10) remaining = 10;
 
         // クラスを持つすべての要素を更新
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
