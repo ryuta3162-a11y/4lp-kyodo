@@ -696,7 +696,6 @@
                     <div class="mid-list-total-block">
                         <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
                         <div><span id="dynamic-total-price" class="price-large font-impact text-3xl">--</span><span class="unit-large font-bold" style="font-size: 0.9rem;">円(税込)</span></div>
-                        <div id="dynamic-price-desc" style="font-size: 0.75rem; color: #666; margin-top: 4px;">--</div>
                     </div>
                 </div>
 
@@ -920,33 +919,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const dateLabelEl = document.getElementById('dynamic-date-label');
         const totalPriceEl = document.getElementById('dynamic-total-price');
-        const priceDescEl = document.getElementById('dynamic-price-desc');
 
-        if (dateLabelEl && totalPriceEl && priceDescEl) {
+        if (dateLabelEl && totalPriceEl) {
             dateLabelEl.innerHTML = `(<span style="color: var(--brand);">${month}/${date}</span>)ご入会時金額`;
 
             const initial = 5500;
             const campaignMonthly = 3300;
             const regularMonthly = 9350;
             let monthFee = 0;
-            let desc = '';
 
             if (year === 2026 && month === 5) {
                 const daysInMonth = new Date(year, month, 0).getDate();
                 const remainingDays = daysInMonth - date + 1;
                 monthFee = Math.round((campaignMonthly / daysInMonth) * remainingDays);
-                desc = `（初期費用5,500円＋5月分会費 ${monthFee.toLocaleString()}円税込・日割り／キャンペーン月額3,300円ベース・${remainingDays}日分）※詳細はAPP表示に従ってください`;
             } else if (year === 2026 && month >= 6 && month <= 10) {
                 monthFee = campaignMonthly;
-                desc = `（初期費用5,500円＋${month}月分会費3,300円税込）※詳細はAPP表示に従ってください`;
             } else {
                 monthFee = regularMonthly;
-                desc = `（初期費用5,500円＋通常月会費9,350円税込の例）※条件・時期により異なります`;
             }
 
             const total = initial + monthFee;
             totalPriceEl.textContent = total.toLocaleString();
-            priceDescEl.textContent = desc;
         }
     }
     // ロジックを実行
