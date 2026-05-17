@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン</title>
+    <title>JOYFIT24経堂 5/31(日)迄！5月限定キャンペーン</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 GWスペシャルキャンペーン。APP入会・5/17(日)まで。" />
+    <meta name="description" content="JOYFIT24経堂 5月限定キャンペーン。APP入会・5/31(日)まで。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン" />
-    <meta property="og:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/17(日)まで。" />
+    <meta property="og:title" content="JOYFIT24経堂 5/31(日)迄！5月限定キャンペーン" />
+    <meta property="og:description" content="JOYFIT24経堂の5月限定キャンペーンのご案内。APP入会・5/31(日)まで。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
-    <meta property="og:image:alt" content="JOYFIT24経堂 GWスペシャルキャンペーン" />
+    <meta property="og:image:alt" content="JOYFIT24経堂 5月限定キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 5/17(日)迄！GW スペシャルキャンペーン" />
-    <meta name="twitter:description" content="JOYFIT24経堂のGWスペシャルキャンペーンのご案内。APP入会・5/17(日)まで。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 5/31(日)迄！5月限定キャンペーン" />
+    <meta name="twitter:description" content="JOYFIT24経堂の5月限定キャンペーンのご案内。APP入会・5/31(日)まで。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,79 +69,79 @@
         /* =======================================================
            ■ Hero Section
            ======================================================= */
-        .mild-fade-in { opacity: 0; animation: mildFadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .mild-fade-in { opacity: 0; animation: mildFadeIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; }
         @keyframes mildFadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(12px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         /* =======================================================
-           ■ GWスペシャル用 追加アニメーション＆装飾
+           ■ 背景・訴求テキスト（洗練・視認性）
            ======================================================= */
-        /* 紙吹雪コンテナ（画面全体に固定） */
-        .confetti-container {
+        .ambient-bg {
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            overflow: hidden; pointer-events: none; z-index: 0; /* コンテンツの後ろになるように z-index を 8000 から 0 に変更 */
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212, 175, 55, 0.07), transparent 55%),
+                radial-gradient(ellipse 50% 35% at 100% 90%, rgba(194, 22, 50, 0.04), transparent 50%);
         }
-        .confetti-piece {
-            position: absolute;
-            width: 12px; height: 12px;
-            opacity: 0.8;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        @keyframes confettiFall {
-            0% { transform: translateY(-5vh) rotate(0deg); opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
-
-        /* テキストのシャインエフェクト */
-        .shine-text-gold {
-            background: linear-gradient(120deg, #111 0%, #D4AF37 30%, #F8E71C 50%, #D4AF37 70%, #111 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: shineText 3s linear infinite;
-        }
-        .shine-text-red {
-            background: linear-gradient(120deg, var(--brand) 0%, #ff8a80 30%, #ff5252 50%, #ff8a80 70%, var(--brand) 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: shineText 2.5s linear infinite;
-        }
-        @keyframes shineText {
-            to { background-position: 200% center; }
-        }
-
-        /* ボタンのバウンス（ワクワク感） */
-        .btn-bounce {
-            animation: bounceSoft 2s infinite;
-        }
-        @keyframes bounceSoft {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-6px); }
-            60% { transform: translateY(-3px); }
-        }
-
-        /* 背景ノイズ（画面全体に固定） */
         .bg-noise {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.04; mix-blend-mode: multiply;
+            opacity: 0.025; mix-blend-mode: multiply;
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: -1;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ヒーロー価格・重要数字：縁取りでお得感を明確に */
+        .text-value-hero {
+            color: var(--brand);
+            -webkit-text-stroke: 2px #1a1a1a;
+            paint-order: stroke fill;
+            text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85);
+        }
+        .text-value-accent {
+            color: var(--brand);
+            font-weight: 900;
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 6px rgba(194, 22, 50, 0.12);
+        }
+        .text-value-inline {
+            color: var(--brand);
+            text-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .campaign-title {
+            color: #1a1a1a;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+        .featured-price {
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 8px rgba(194, 22, 50, 0.1);
+        }
+        .cta-emphasis {
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .cta-emphasis:hover,
+        .cta-emphasis:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         /* =======================================================
            ■ スクロール連動Reveal効果 & デザインコンポーネント
            ======================================================= */
         .reveal-up {
-            opacity: 0; transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
             will-change: opacity, transform;
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
@@ -150,18 +150,45 @@
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
-        .campaign-header-enhanced { 
-            background: var(--gold-gradient); 
-            padding: 25px 20px; 
-            border-radius: 20px 20px 0 0; 
-            box-shadow: 0 -5px 20px rgba(180, 136, 17, 0.2); 
-            text-align: center; 
-            border-bottom: 3px solid rgba(0,0,0,0.1);
-            margin-top: 10px; 
+        .campaign-header-enhanced {
+            background: var(--gold-gradient);
+            padding: 28px 20px 24px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+            margin-top: 10px;
+            border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 -4px 16px rgba(180, 136, 17, 0.15);
         }
-        .campaign-header-enhanced h2 { margin: 0; font-size: 1.5rem; font-weight: 900; color: #111; letter-spacing: 0.05em; text-shadow: 0 1px 0 rgba(255,255,255,0.4); }
-        .campaign-header-enhanced .sub-text { display: block; font-size: 0.9rem; color: #333; margin-top: 5px; font-weight: 700; opacity: 0.9; }
-        .campaign-header-enhanced .deadline-text { display: inline-block; background-color: var(--brand); color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 900; margin-bottom: 8px; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+        .campaign-header-enhanced h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #111;
+            letter-spacing: 0.1em;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        .campaign-header-enhanced .sub-text {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--brand);
+            margin-top: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+        }
+        .campaign-header-enhanced .deadline-text {
+            display: inline-block;
+            background-color: var(--brand);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(194, 22, 50, 0.25);
+            letter-spacing: 0.03em;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+        }
         .campaign-price-chip { display: inline-block; margin-top: 8px; background: #fff; color: var(--brand); border: 2px solid var(--brand); border-radius: 999px; padding: 3px 12px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.01em; }
 
         .plan-container-wrapper { overflow: hidden; border-radius: 0 0 var(--radius-lg) var(--radius-lg); background-color: #fff; box-shadow: var(--shadow-soft); padding-top: 15px; padding-bottom: 30px; border: 4px solid var(--gold-main); border-top: none; }
@@ -288,7 +315,10 @@
             color: var(--brand);
             line-height: 1;
             white-space: nowrap;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 6px rgba(194, 22, 50, 0.1);
         }
         .fee-highlight.zero-emphasis {
             font-size: 2.4rem !important;
@@ -399,10 +429,12 @@
             margin: 0;
         }
         .options-carousel-section .text-box .highlight-text {
-            color: var(--gold-light);
+            color: #fff;
             font-size: 1.15rem;
             font-weight: 900;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow:
+                0 0 0 2px rgba(212, 175, 55, 0.85),
+                0 2px 8px rgba(0, 0, 0, 0.35);
         }
 
         .scene { width: 100%; height: 450px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
@@ -519,7 +551,7 @@
         #banner-toggle-btn { width: 45px; height: 45px; background: #1a1a2e; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
         /* =======================================================
-           ■ トップ固定メタリックバナー
+           ■ トップ固定バナー（既定カラー：赤・ゴールド・白）
            ======================================================= */
         .gold-metallic-banner {
             position: fixed;
@@ -527,61 +559,67 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            /* リッチなゴールドメタリックグラデーション */
-            background: linear-gradient(to bottom, #fefce0 0%, #d4af37 25%, #b48811 50%, #f8e71c 75%, #aa771c 100%);
-            color: #1a1100;
-            font-weight: 900;
-            font-size: 0.8rem;
-            padding: 8px 5px;
+            background: var(--brand);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 10px 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border-bottom: 2px solid #fff;
-            letter-spacing: 0.05em;
+            box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
+            border-bottom: 2px solid var(--gold-main);
+            letter-spacing: 0.08em;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            line-height: 1.2;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            line-height: 1.3;
         }
-        @media (min-width: 768px) {
-            .gold-metallic-banner { 
-                flex-direction: row; 
-                gap: 15px;
-                font-size: 0.9rem; 
-                padding: 10px; 
-            }
+        .gold-metallic-banner .banner-tagline {
+            margin: 0;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 0.08em;
+        }
+        .gold-metallic-banner .banner-tagline em {
+            font-style: normal;
+            font-weight: 700;
+            color: #fff;
         }
         .gold-metallic-banner .highlight-num {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 900;
-            color: var(--brand);
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-            margin: 0 4px;
-        }
-        @media (min-width: 768px) {
-            .gold-metallic-banner .highlight-num { font-size: 1.4rem; }
+            color: #fff;
+            margin: 0 2px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
         }
         .remaining-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
             background: #fff;
-            color: var(--brand);
-            padding: 2px 12px;
-            border-radius: 20px;
-            border: 1px solid var(--brand);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-            margin-top: 4px;
-            display: inline-block;
+            color: var(--color-text);
+            padding: 4px 14px;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        @media (min-width: 768px) {
-            .remaining-box { margin-top: 0; }
+        .remaining-box .highlight-num {
+            font-size: 1.15rem;
+            color: var(--brand);
         }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .mild-fade-in,
-            .shine-text-gold,
-            .shine-text-red,
-            .btn-bounce { animation: none !important; opacity: 1 !important; transform: none !important; }
+            .mild-fade-in { animation: none !important; opacity: 1 !important; transform: none !important; }
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
         }
     </style>
@@ -589,16 +627,13 @@
 
 <body>
 
-<!-- 全体背景ノイズ -->
-<div class="bg-noise"></div>
-
-<!-- 全体紙吹雪コンテナ -->
-<div id="confetti-container" class="confetti-container"></div>
+<div class="ambient-bg" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
 
 <!-- トップ固定メタリックバナー -->
 <div class="gold-metallic-banner">
-    <div>＼ 先着10名様 限定 ／</div>
-    <div class="remaining-box">現在 残り<span class="highlight-num dynamic-remaining-count">--</span>名</div>
+    <p class="banner-tagline"><em>5/31(日)まで</em> · 先着20名様</p>
+    <div class="remaining-box">残り<span class="highlight-num dynamic-remaining-count">--</span>名</div>
 </div>
 
 <!-- ==========================================
@@ -610,26 +645,19 @@
     <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center mt-2 md:mt-4">
         
         <!-- 全体を囲むメインフレーム -->
-        <div class="bg-white border-4 border-[#111] p-5 md:p-8 shadow-[10px_10px_0_var(--gold-main)] md:shadow-[15px_15px_0_var(--gold-main)] relative mild-fade-in w-full">
+        <div class="bg-white border-2 border-[#e8e4dc] p-5 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] relative mild-fade-in w-full rounded-xl">
             
-            <!-- ラベル -->
-            <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 inline-block bg-gradient-to-r from-[var(--gold-dark)] via-[var(--gold-light)] to-[var(--gold-main)] text-[#111] font-black px-4 py-2 text-xs md:text-sm tracking-widest whitespace-nowrap border-4 border-[#111] shadow-[4px_4px_0_var(--brand)] md:shadow-[6px_6px_0_var(--brand)]">
-                5/17(日)まで！GW スペシャルCP
-            </div>
-
-            <!-- タイトルと価格表示を1つに統合してスッキリ表示 -->
-            <h1 class="text-2xl md:text-3xl font-black tracking-tighter mt-6 mb-4 text-[#111] leading-tight">
-                <span class="text-[var(--brand)] drop-shadow-[2px_2px_0_#111] inline-block">5月〜10月</span>はずーっと
+            <h1 class="text-2xl md:text-3xl font-black tracking-tight mt-2 mb-4 text-[#111] leading-tight">
+                <span class="text-value-inline font-impact">5月〜10月</span>はずーっと
             </h1>
             
             <div class="mb-4 flex flex-col items-center">
-                <div class="text-gray-500 font-bold text-xs md:text-sm mb-1">
+                <div class="text-gray-600 font-bold text-xs md:text-sm mb-1">
                     通常 <span class="line-through">8,500円(税込9,350円)</span> のところ
                 </div>
-                <!-- 3,300円の数字を特大にしてインパクトを出す -->
                 <div class="text-[var(--brand)] flex items-baseline justify-center my-2 leading-none">
-                    <span class="font-impact text-[4.5rem] md:text-[5.5rem] drop-shadow-[3px_3px_0_#111] md:drop-shadow-[5px_5px_0_#111]">3,300</span>
-                    <span class="text-xl md:text-2xl font-bold tracking-normal ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span>
+                    <span class="font-impact text-value-hero text-[4.5rem] md:text-[5.5rem]">3,300</span>
+                    <span class="text-xl md:text-2xl font-bold tracking-normal ml-1 text-[#333]" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span>
                 </div>
             </div>
 
@@ -645,10 +673,8 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
-            <span class="deadline-text btn-bounce" style="display: inline-block;">5/17(日)まで限定！</span>
-            <h2 class="shine-text-gold">GW スペシャルキャンペーン</h2>
-            <span class="sub-text">APP入会限定の特別プラン！</span>
-            <span class="campaign-price-chip">GW期間限定価格</span>
+            <h2 class="campaign-title">5月限定キャンペーン</h2>
+            <span class="sub-text">APP入会限定</span>
         </div>
 
         <div class="plan-container-wrapper">
@@ -675,7 +701,7 @@
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
                             <span class="price-normal-note">通常 9,350円/月</span>
-                            <span class="price-value font-impact text-xl" style="color: var(--brand);">3,300<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
+                            <span class="price-value font-impact text-xl featured-price text-value-accent">3,300<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
                         </div>
                     </div>
 
@@ -687,7 +713,7 @@
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-value zero-yen font-impact text-2xl" style="color: var(--brand);">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
+                            <span class="price-value zero-yen font-impact text-2xl featured-price text-value-accent">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
                             <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand); background: #fff0f0; padding: 2px 6px; border-radius: 4px; margin-top: 2px;">(対象のオプションが無料)</span>
                         </div>
                     </div>
@@ -695,7 +721,7 @@
                     <!-- 入会時お支払い目安 -->
                     <div class="mid-list-total-block">
                         <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
-                        <div><span id="dynamic-total-price" class="price-large font-impact text-3xl">--</span><span class="unit-large font-bold" style="font-size: 0.9rem;">円(税込)</span></div>
+                        <div><span id="dynamic-total-price" class="price-large font-impact text-3xl featured-price text-value-accent">--</span><span class="unit-large font-bold" style="font-size: 0.9rem;">円(税込)</span></div>
                     </div>
                 </div>
 
@@ -736,7 +762,7 @@
                             <div class="step-title" style="font-size: 0.95rem;">紹介・学割・他クラブ移籍等</div>
                             <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は11月から適用となります</span></p>
                         </div>
-                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat btn-bounce">申請する</a>
+                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat cta-emphasis">申請する</a>
                     </div>
                 </div>
                 
@@ -749,7 +775,7 @@
                             <div class="step-title">APPでカンタン入会</div>
                             <p class="step-desc" style="font-size: 0.75rem; color: #666;">JOYFIT APPをDLして入会【最短5分】</p>
                         </div>
-                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat btn-bounce">アプリDL</a>
+                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis">アプリDL</a>
                     </div>
                 </div>
             </div>
@@ -825,7 +851,7 @@
             紹介・移籍・学割など、該当者はさらにお得<br>
             <span class="lp-note-pill">※学割は11月から適用となります</span>
          </p>
-         <span class="bonus-btn-large btn-bounce" style="display: inline-flex;">詳細を見る</span>
+         <span class="bonus-btn-large cta-emphasis" style="display: inline-flex;">詳細を見る</span>
     </a>
 
     <!-- アクセスマップセクション -->
@@ -949,23 +975,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 5/6を起点に残り10名から1日ごとに1名ずつ減らす
-        const startDate = new Date('2026-05-06T00:00:00+09:00');
+        // 5/17〜5/31：20名→最終日1名（期間に応じて段階的に減少）
+        const startDate = new Date('2026-05-17T00:00:00+09:00');
+        const endDate = new Date('2026-05-31T00:00:00+09:00');
         const now = new Date();
-        
-        // 経過日数を計算
-        const diffTime = now.getTime() - startDate.getTime();
-        let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        if (diffDays < 0) diffDays = 0;
-        
-        // 1日経過するごとに1名ずつ減らす（初期値10）
-        let remaining = 10 - diffDays;
-        
-        // 最低1名でストップ
-        if (remaining < 1) remaining = 1;
-        if (remaining > 10) remaining = 10;
+        const maxRemaining = 20;
+        const minRemaining = 1;
+        const msPerDay = 1000 * 60 * 60 * 24;
+        const totalSpanDays = Math.round((endDate.getTime() - startDate.getTime()) / msPerDay);
 
-        // クラスを持つすべての要素を更新
+        let diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
+        let remaining;
+
+        if (diffDays < 0) {
+            remaining = maxRemaining;
+        } else if (diffDays >= totalSpanDays) {
+            remaining = minRemaining;
+        } else {
+            remaining = Math.round(maxRemaining - (diffDays / totalSpanDays) * (maxRemaining - minRemaining));
+        }
+
+        if (remaining < minRemaining) remaining = minRemaining;
+        if (remaining > maxRemaining) remaining = maxRemaining;
+
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
         countEls.forEach(el => {
             el.textContent = remaining;
@@ -973,43 +1005,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // ロジックを実行
     updateRemainingCount();
-
-    // ====================================================
-    // GW 紙吹雪アニメーション
-    // ====================================================
-    function createConfetti() {
-        const container = document.getElementById('confetti-container');
-        if (!container) return;
-        // GWらしい明るい初夏カラーパレット（赤、金、スカイブルー、ライムグリーン、オレンジ）
-        const colors = ['#C21632', '#D4AF37', '#00BCD4', '#8BC34A', '#FF9800']; 
-        
-        // スマホは少なめ、PCは多めに表示して重さを軽減
-        const pieceCount = window.innerWidth < 768 ? 35 : 70;
-
-        for (let i = 0; i < pieceCount; i++) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti-piece');
-            confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            // アニメーションの速度と遅延をランダムにして自然に降らせる（等速で降り続けるようにlinearに変更）
-            const duration = Math.random() * 3 + 4; // 4〜7秒（少しゆっくりに）
-            const delay = Math.random() * 5; // 0〜5秒遅れ
-            confetti.style.animation = `confettiFall ${duration}s linear ${delay}s infinite`;
-            
-            // 形状をランダムに（四角、丸、少し細長い長方形）
-            const shapeType = Math.random();
-            if (shapeType > 0.6) {
-                confetti.style.borderRadius = '50%'; // 丸
-            } else if (shapeType > 0.3) {
-                confetti.style.width = '8px';
-                confetti.style.height = '16px'; // 長方形
-            }
-            
-            container.appendChild(confetti);
-        }
-    }
-    createConfetti();
 
     // ====================================================
     // オプションカルーセル
