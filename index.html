@@ -150,29 +150,71 @@
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
-        /* 見出し（赤背景・シンプル） */
+        /* 見出し（赤背景・ゴールドライン） */
         .campaign-header-enhanced {
+            position: relative;
             margin-top: 10px;
-            padding: 26px 20px 24px;
-            border-radius: 16px 16px 0 0;
+            padding: 28px 20px 26px;
+            border-radius: 14px 14px 0 0;
             text-align: center;
+            overflow: hidden;
             background: var(--brand);
+            border-bottom: 2px solid var(--gold-main);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        .campaign-header-enhanced::before,
+        .campaign-header-enhanced::after {
+            content: '';
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-main) 15%, var(--gold-light) 50%, var(--gold-main) 85%, transparent);
+            pointer-events: none;
+        }
+        .campaign-header-enhanced::before { top: 10px; }
+        .campaign-header-enhanced::after { bottom: 10px; opacity: 0.85; }
+        .campaign-header-inner {
+            position: relative;
+            z-index: 1;
+            padding: 6px 0;
         }
         .campaign-header-enhanced h2 {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1.22rem;
             font-weight: 900;
             color: #fff;
-            letter-spacing: 0.12em;
-            line-height: 1.35;
+            letter-spacing: 0.2em;
+            line-height: 1.4;
         }
-        .campaign-app-line {
+        .campaign-header-enhanced h2::after {
+            content: '';
             display: block;
-            margin-top: 10px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.92);
-            letter-spacing: 0.16em;
+            width: 40px;
+            height: 2px;
+            margin: 10px auto 0;
+            background: var(--gold-gradient);
+            border-radius: 1px;
+        }
+        .campaign-app-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 8px 18px;
+            border-radius: 4px;
+            background: #fffcf5;
+            color: var(--brand);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            border: 1px solid var(--gold-main);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+        .campaign-app-badge i {
+            font-size: 0.95rem;
+            color: var(--gold-dark);
         }
 
         .plan-container-wrapper {
@@ -792,8 +834,13 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
-            <h2 class="campaign-title">6月限定キャンペーン</h2>
-            <span class="campaign-app-line">JOYFIT APP入会</span>
+            <div class="campaign-header-inner">
+                <h2 class="campaign-title">6月限定キャンペーン</h2>
+                <div class="campaign-app-badge">
+                    <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
+                    <span>JOYFIT APP入会限定</span>
+                </div>
+            </div>
         </div>
 
         <div class="plan-container-wrapper">
