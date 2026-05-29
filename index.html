@@ -574,24 +574,12 @@
             margin: 0 auto;
             flex-wrap: wrap;
         }
-        .banner-period-block {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2px;
-            text-align: left;
-        }
-        .banner-period-label {
-            font-size: 0.58rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            color: rgba(255, 255, 255, 0.75);
-        }
         .banner-period-dates {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 900;
             letter-spacing: 0.04em;
             line-height: 1.2;
+            margin: 0;
         }
         .banner-capacity-pill {
             font-size: 0.62rem;
@@ -651,22 +639,22 @@
         }
         .early-start-sash {
             position: absolute;
-            top: 14px;
-            left: -38px;
+            top: 12px;
+            left: -44px;
             z-index: 3;
             transform: rotate(-38deg);
             transform-origin: center center;
             background: linear-gradient(180deg, #fef9c7 0%, #e8c547 35%, #c9a227 70%, #a88418 100%);
             color: #1a1100;
-            font-size: 0.65rem;
+            font-size: 0.82rem;
             font-weight: 900;
-            letter-spacing: 0.2em;
-            padding: 7px 56px;
+            letter-spacing: 0.16em;
+            padding: 9px 62px;
             white-space: nowrap;
             border-top: 2px solid rgba(255, 255, 255, 0.75);
             border-bottom: 2px solid rgba(90, 60, 10, 0.35);
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
-            line-height: 1.2;
+            line-height: 1.25;
             pointer-events: none;
         }
         .hero-price-body {
@@ -676,16 +664,17 @@
         }
         @media (min-width: 768px) {
             .early-start-sash {
-                top: 12px;
-                left: -32px;
-                font-size: 0.72rem;
-                padding: 8px 64px;
+                top: 10px;
+                left: -36px;
+                font-size: 0.92rem;
+                padding: 10px 72px;
+                letter-spacing: 0.18em;
             }
             .gold-metallic-banner .banner-inner {
                 gap: 14px;
             }
             .banner-period-dates {
-                font-size: 0.82rem;
+                font-size: 0.88rem;
             }
             .banner-remaining-block .highlight-num {
                 font-size: 1.65rem;
@@ -710,10 +699,7 @@
 <!-- トップ固定バナー -->
 <div class="gold-metallic-banner">
     <div class="banner-inner">
-        <div class="banner-period-block">
-            <span class="banner-period-label">先行受付</span>
-            <span class="banner-period-dates">5/30(土)〜6/14(日)</span>
-        </div>
+        <p class="banner-period-dates">5/30(土)〜6/14(日)</p>
         <span class="banner-capacity-pill">先着20名様</span>
         <span class="banner-vdivider" aria-hidden="true"></span>
         <div class="banner-remaining-block">
@@ -734,17 +720,17 @@
         
         <!-- 全体を囲むメインフレーム -->
         <div class="hero-price-card bg-white border-2 border-[#e8e4dc] p-5 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] relative mild-fade-in w-full rounded-xl">
-            <div class="early-start-sash" aria-hidden="true">先行開始!!</div>
+            <div class="early-start-sash" aria-hidden="true">先行受付</div>
             <div class="hero-price-body mb-2 flex flex-col items-center">
                 <div class="text-gray-600 font-bold text-xs md:text-sm mb-4">
                     通常 <span class="line-through">8,500円(税込9,350円)</span> のところ半年間
                 </div>
                 <div class="text-[var(--brand)] flex flex-col items-center leading-none">
                     <div class="flex items-baseline justify-center">
-                        <span class="font-impact text-value-hero text-[4.5rem] md:text-[5.5rem]">3,960</span>
-                        <span class="text-xl md:text-2xl font-bold text-[#333] ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span>
+                        <span class="font-impact text-value-hero text-[4.5rem] md:text-[5.5rem]">3,600</span>
+                        <span class="text-2xl md:text-3xl font-bold text-[#333] ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税抜)/月</span>
                     </div>
-                    <span class="text-sm md:text-base font-bold text-[#666] mt-3 tracking-wide">3,600円(税抜)/月</span>
+                    <span class="text-base md:text-lg font-bold text-[#666] mt-3 tracking-wide">3,960円(税込)/月</span>
                 </div>
             </div>
 
@@ -761,7 +747,7 @@
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
             <h2 class="campaign-title">6月限定キャンペーン</h2>
-            <span class="sub-text">APP入会限定 · 先行受付 5/30〜6/14</span>
+            <span class="sub-text">APP入会限定</span>
         </div>
 
         <div class="plan-container-wrapper">
