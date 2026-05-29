@@ -151,29 +151,82 @@
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
         .campaign-header-enhanced {
-            background: var(--gold-gradient);
-            padding: 28px 20px 24px;
+            position: relative;
+            margin-top: 10px;
+            padding: 34px 20px 30px;
             border-radius: 16px 16px 0 0;
             text-align: center;
-            margin-top: 10px;
-            border-bottom: 3px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 -4px 16px rgba(180, 136, 17, 0.15);
+            overflow: hidden;
+            background: linear-gradient(155deg, #141420 0%, #2a1820 45%, var(--brand-dark) 100%);
+            border-bottom: 3px solid var(--gold-main);
+            box-shadow: 0 -6px 24px rgba(194, 22, 50, 0.12);
+        }
+        .campaign-header-enhanced::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                110deg,
+                transparent 0%,
+                rgba(212, 175, 55, 0.08) 45%,
+                rgba(255, 255, 255, 0.06) 50%,
+                rgba(212, 175, 55, 0.08) 55%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: headerShine 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .campaign-header-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 2px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+            opacity: 0.9;
+        }
+        @keyframes headerShine {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: -200% 0; }
+        }
+        .campaign-header-inner {
+            position: relative;
+            z-index: 1;
         }
         .campaign-header-enhanced h2 {
-            margin: 0;
-            font-size: 1.25rem;
+            margin: 12px 0 0;
+            font-size: 1.3rem;
             font-weight: 900;
-            color: #111;
-            letter-spacing: 0.1em;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+            color: #fff;
+            letter-spacing: 0.16em;
+            line-height: 1.35;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
         }
-        .campaign-header-enhanced .sub-text {
-            display: block;
-            font-size: 0.72rem;
+        .campaign-app-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 9px 20px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #fff 0%, #f8f4eb 100%);
             color: var(--brand);
-            margin-top: 10px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            border: 1px solid rgba(212, 175, 55, 0.55);
+            box-shadow:
+                0 4px 14px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        .campaign-app-badge i {
+            font-size: 1rem;
+            color: var(--gold-dark);
         }
         .campaign-header-enhanced .deadline-text {
             display: inline-block;
@@ -686,6 +739,7 @@
             .mild-fade-in { animation: none !important; opacity: 1 !important; transform: none !important; }
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
+            .campaign-header-enhanced::before { animation: none !important; }
             .facilities-grid img { filter: none; }
         }
     </style>
@@ -746,8 +800,13 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
-            <h2 class="campaign-title">6月限定キャンペーン</h2>
-            <span class="sub-text">APP入会限定</span>
+            <div class="campaign-header-inner">
+                <h2 class="campaign-title">6月限定キャンペーン</h2>
+                <div class="campaign-app-badge">
+                    <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
+                    <span>JOYFIT APP入会限定</span>
+                </div>
+            </div>
         </div>
 
         <div class="plan-container-wrapper">
@@ -847,7 +906,7 @@
                         <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
                         <div class="step-info">
                             <div class="step-title" style="font-size: 0.95rem;">紹介・学割・他クラブ移籍等</div>
-                            <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は11月から適用となります</span></p>
+                            <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は12月から適用となります</span></p>
                         </div>
                         <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat cta-emphasis">申請する</a>
                     </div>
@@ -936,7 +995,7 @@
          <p style="font-size: 0.85rem; color: #555; font-weight: 700; margin-bottom: 25px; line-height: 1.6;">
             追加特典はこちらからご確認下さい！<br>
             紹介・移籍・学割など、該当者はさらにお得<br>
-            <span class="lp-note-pill">※学割は11月から適用となります</span>
+            <span class="lp-note-pill">※学割は12月から適用となります</span>
          </p>
          <span class="bonus-btn-large cta-emphasis" style="display: inline-flex;">詳細を見る</span>
     </a>
