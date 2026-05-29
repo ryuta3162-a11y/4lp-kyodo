@@ -154,7 +154,7 @@
         .campaign-header-enhanced {
             position: relative;
             margin-top: 10px;
-            padding: 28px 20px 26px;
+            padding: 32px 20px 30px;
             border-radius: 14px 14px 0 0;
             text-align: center;
             overflow: hidden;
@@ -181,18 +181,18 @@
         }
         .campaign-header-enhanced h2 {
             margin: 0;
-            font-size: 1.22rem;
+            font-size: 1.55rem;
             font-weight: 900;
             color: #fff;
-            letter-spacing: 0.2em;
-            line-height: 1.4;
+            letter-spacing: 0.18em;
+            line-height: 1.35;
         }
         .campaign-header-enhanced h2::after {
             content: '';
             display: block;
-            width: 40px;
+            width: 52px;
             height: 2px;
-            margin: 10px auto 0;
+            margin: 12px auto 0;
             background: var(--gold-gradient);
             border-radius: 1px;
         }
@@ -200,21 +200,25 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-top: 14px;
-            padding: 8px 18px;
-            border-radius: 4px;
+            gap: 10px;
+            margin-top: 16px;
+            padding: 11px 22px;
+            border-radius: 6px;
             background: #fffcf5;
             color: var(--brand);
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            border: 1px solid var(--gold-main);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-size: 0.88rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            border: 1.5px solid var(--gold-main);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
         }
         .campaign-app-badge i {
-            font-size: 0.95rem;
+            font-size: 1.2rem;
             color: var(--gold-dark);
+        }
+        @media (min-width: 400px) {
+            .campaign-header-enhanced h2 { font-size: 1.65rem; }
+            .campaign-app-badge { font-size: 0.95rem; padding: 12px 26px; }
         }
 
         .plan-container-wrapper {
@@ -235,7 +239,7 @@
             border: 1px solid #eee;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
-        .price-list { padding: 0 1rem; }
+        .price-list { padding: 0 1.15rem; }
         .campaign-header-enhanced .deadline-text {
             display: inline-block;
             background-color: var(--brand);
@@ -259,45 +263,53 @@
             align-items: center;
             justify-items: center;
             column-gap: 0.65rem;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             border-bottom: 1px dashed #ccc;
-            min-height: 96px;
+            min-height: 108px;
         }
         .price-item .label-group {
             display: grid;
-            grid-template-columns: 32px minmax(0, 1fr);
+            grid-template-columns: 36px minmax(0, 1fr);
             align-items: center;
             justify-content: start;
             justify-self: center;
-            width: 260px;
-            max-width: 260px;
+            width: 280px;
+            max-width: 280px;
             text-align: left;
             column-gap: 10px;
         }
         .price-item .number-circle {
-            width: 28px;
-            height: 28px;
+            width: 34px;
+            height: 34px;
             background-color: #555;
             color: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             font-weight: 900;
             flex-shrink: 0;
         }
         .price-item .label {
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 1.02rem;
+            font-weight: 800;
             color: #333;
             text-align: left;
+            line-height: 1.35;
         }
-        .price-item .label .note { font-size: 0.7rem; color: #C21632; display: block; }
-        .price-normal-note { font-size: 0.7rem; font-weight: 800; color: #a8b2c4; text-decoration: line-through; display: block; margin-bottom: 2px; text-align: center; }
+        .price-item .label-sub {
+            font-size: 0.82rem;
+            color: #555;
+            font-weight: 700;
+            margin-top: 4px;
+            display: block;
+        }
+        .price-item .label .note { font-size: 0.82rem; color: #C21632; display: block; font-weight: 800; margin-top: 2px; }
+        .price-normal-note { font-size: 0.8rem; font-weight: 800; color: #a8b2c4; text-decoration: line-through; display: block; margin-bottom: 4px; text-align: center; }
         .price-item .divider-dot {
             width: 1px;
-            height: 78px;
+            height: 88px;
             background-image: linear-gradient(to bottom, #ccc 60%, transparent 40%);
             background-size: 1px 8px;
             background-repeat: repeat-y;
@@ -305,21 +317,42 @@
             align-self: center;
         }
         .price-item .price-display-center .price-value {
-            font-size: 2.15rem !important;
+            font-size: 2.55rem !important;
             line-height: 1;
             letter-spacing: -0.01em;
         }
+        .price-item .price-display-center .price-value.zero-yen {
+            font-size: 2.85rem !important;
+        }
         .price-item .price-display-center .unit {
-            font-size: 0.95rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.08rem;
+            font-weight: 800;
+        }
+        .price-item .price-display-center .price-sub-note {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #555;
+            display: block;
+            margin-top: 5px;
+        }
+        .price-item .price-display-center .price-tag {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--brand);
+            background: #fff0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
         }
         .price-item .price-display-center .price-normal-note {
-            font-size: 0.74rem;
+            font-size: 0.82rem;
         }
         .price-item .price-display-center {
             width: 100%;
-            max-width: 240px;
+            max-width: 260px;
             justify-self: center;
-            min-height: 78px;
+            min-height: 88px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -850,11 +883,11 @@
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">1</span>
-                            <div class="label">初期費用<br><span class="text-[0.7rem] text-[#555] font-bold mt-1 block">入会金・登録料</span></div>
+                            <div class="label">初期費用<br><span class="label-sub">入会金・登録料</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-value font-impact text-3xl" style="color: #333;">5,500<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)</span></span>
+                            <span class="price-value font-impact" style="color: #333;">5,500<span class="unit">円(税込)</span></span>
                         </div>
                     </div>
 
@@ -867,7 +900,7 @@
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
                             <span class="price-normal-note">通常 9,350円/月</span>
-                            <span class="price-value zero-yen font-impact text-2xl featured-price text-value-accent">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
+                            <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit">円</span></span>
                         </div>
                     </div>
 
@@ -880,8 +913,8 @@
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
                             <span class="price-normal-note">通常 9,350円/月</span>
-                            <span class="price-value font-impact text-xl featured-price text-value-accent">3,960<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円(税込)/月</span></span>
-                            <span style="font-size: 0.68rem; font-weight: 700; color: #555; display: block; margin-top: 4px;">3,600円(税抜)/月 · 6ヶ月割</span>
+                            <span class="price-value font-impact featured-price text-value-accent">3,960<span class="unit">円(税込)/月</span></span>
+                            <span class="price-sub-note">3,600円(税抜)/月 · 6ヶ月割</span>
                         </div>
                     </div>
 
@@ -893,8 +926,8 @@
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-value zero-yen font-impact text-2xl featured-price text-value-accent">0<span class="unit" style="font-family: 'Noto Sans JP', sans-serif;">円</span></span>
-                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand); background: #fff0f0; padding: 2px 6px; border-radius: 4px; margin-top: 2px;">(5月・6月分が無料)</span>
+                            <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit">円</span></span>
+                            <span class="price-tag">(5月・6月分が無料)</span>
                         </div>
                     </div>
 
