@@ -150,7 +150,7 @@
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
-        /* 見出し（赤背景・ゴールドライン） */
+        /* 見出し（赤背景・白ライン） */
         .campaign-header-enhanced {
             position: relative;
             margin-top: 10px;
@@ -158,8 +158,8 @@
             border-radius: 14px 14px 0 0;
             text-align: center;
             overflow: hidden;
-            background: var(--brand);
-            border-bottom: 2px solid var(--gold-main);
+            background: linear-gradient(180deg, #d41835 0%, var(--brand) 55%, var(--brand-dark) 100%);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.35);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
         .campaign-header-enhanced::before,
@@ -169,11 +169,11 @@
             left: 16px;
             right: 16px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold-main) 15%, var(--gold-light) 50%, var(--gold-main) 85%, transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 12%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.35) 88%, transparent);
             pointer-events: none;
         }
         .campaign-header-enhanced::before { top: 10px; }
-        .campaign-header-enhanced::after { bottom: 10px; opacity: 0.85; }
+        .campaign-header-enhanced::after { bottom: 10px; opacity: 0.9; }
         .campaign-header-inner {
             position: relative;
             z-index: 1;
@@ -190,11 +190,12 @@
         .campaign-header-enhanced h2::after {
             content: '';
             display: block;
-            width: 52px;
+            width: min(11.2em, 92%);
             height: 2px;
             margin: 12px auto 0;
-            background: var(--gold-gradient);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 1px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
         }
         .campaign-app-badge {
             display: inline-flex;
@@ -204,17 +205,17 @@
             margin-top: 16px;
             padding: 11px 22px;
             border-radius: 6px;
-            background: #fffcf5;
+            background: #fff;
             color: var(--brand);
             font-size: 0.88rem;
             font-weight: 900;
             letter-spacing: 0.12em;
-            border: 1.5px solid var(--gold-main);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
+            border: 2px solid #fff;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
         }
         .campaign-app-badge i {
             font-size: 1.2rem;
-            color: var(--gold-dark);
+            color: var(--brand);
         }
         @media (min-width: 400px) {
             .campaign-header-enhanced h2 { font-size: 1.65rem; }
@@ -277,6 +278,9 @@
             max-width: 280px;
             text-align: left;
             column-gap: 10px;
+        }
+        .price-item .number-circle.number-circle-accent {
+            background-color: var(--brand);
         }
         .price-item .number-circle {
             width: 34px;
@@ -449,16 +453,45 @@
         /* 料金表以外で .price-display-center を使う場合の既定 */
         .price-display-center { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .mid-list-total-block {
-            padding: 1.5rem 1rem;
+            padding: 1.75rem 1.25rem;
             text-align: center;
-            background: linear-gradient(180deg, #fffef8 0%, #fff4e0 100%);
-            border: 2px solid var(--gold-main);
+            background: linear-gradient(180deg, #fff 0%, #fff0f3 55%, #ffe4ea 100%);
+            border: 3px solid var(--brand);
             border-radius: var(--radius-md);
             margin: 1.5rem 0;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 16px rgba(194, 22, 50, 0.12);
         }
-        .mid-list-total-block .label { font-size: 0.9rem; font-weight: 900; margin-bottom: 0.5rem; }
-        .mid-list-total-block .price-large { font-size: 1.75rem; font-weight: 900; color: var(--brand); }
+        .mid-list-total-block .label {
+            font-size: 1.12rem;
+            font-weight: 900;
+            margin-bottom: 0.65rem;
+            color: var(--brand);
+            letter-spacing: 0.06em;
+        }
+        .mid-list-total-block .label i {
+            font-size: 1.25rem;
+            vertical-align: -0.12em;
+            margin-right: 2px;
+        }
+        .mid-list-total-block .total-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.35rem;
+        }
+        .mid-list-total-block .price-large {
+            font-size: 2.9rem !important;
+            font-weight: 900;
+            color: var(--brand);
+            line-height: 1;
+        }
+        .mid-list-total-block .unit-large {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--brand);
+        }
         .monthly-fee {
             padding: 1.5rem;
             text-align: center;
@@ -684,7 +717,7 @@
             color: #fff;
             padding: 10px 14px;
             box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
-            border-bottom: 2px solid var(--gold-main);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
         }
         .gold-metallic-banner .banner-inner {
             display: flex;
@@ -921,7 +954,7 @@
                     <!-- 4. オプション -->
                     <div class="price-item">
                         <div class="label-group">
-                            <span class="number-circle" style="background-color: var(--gold-dark);">4</span>
+                            <span class="number-circle number-circle-accent">4</span>
                             <div class="label">オプション<span class="note">5月・6月分</span></div>
                         </div>
                         <div class="divider-dot"></div>
@@ -934,14 +967,21 @@
                     <!-- 入会時お支払い目安 -->
                     <div class="mid-list-total-block">
                         <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
-                        <div><span id="dynamic-total-price" class="price-large font-impact text-3xl featured-price text-value-accent">--</span><span class="unit-large font-bold" style="font-size: 0.9rem;">円(税込)</span></div>
+                        <div class="total-price-row">
+                            <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
+                            <span class="unit-large">円(税込)</span>
+                        </div>
                     </div>
                 </div>
 
                  <!-- 11月以降 -->
                 <div class="monthly-fee">
-                    <div style="font-size: 0.8rem; font-weight: 700; color: #666; margin-bottom: 0.5rem;">**11月以降の通常月額**</div>
-                    <div><span class="price-large font-impact text-2xl" style="font-weight: 900;">9,350<span class="unit-large" style="font-family: 'Noto Sans JP', sans-serif; font-size: 1rem;">円(税込)</span></span><span class="font-impact text-xl" style="margin: 0 10px;">+</span><span style="font-weight: 700; font-size: 0.9rem;">オプション料金</span></div>
+                    <div class="monthly-fee-label">11月以降の通常月額</div>
+                    <div class="monthly-fee-row">
+                        <span class="price-large font-impact">9,350<span class="unit-large">円(税込)</span></span>
+                        <span class="monthly-fee-plus">+</span>
+                        <span class="monthly-fee-option">オプション料金</span>
+                    </div>
                 </div>
             </div>
 
