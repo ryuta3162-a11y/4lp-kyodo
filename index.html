@@ -544,7 +544,7 @@
             color: #444;
         }
         
-        .condition-list-content { padding: 15px 10px; }
+        .condition-list-content { padding: 8px 6px 4px; }
         .condition-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; text-align: left; font-size: 0.8rem; font-weight: 700; }
         
         /* 追加特典まわりの注釈（STEP・ボーナスで統一） */
@@ -565,11 +565,63 @@
             box-shadow: none;
         }
 
-        .digital-step-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: var(--radius-md); padding: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.03); width: 95%; margin: 0 auto 20px auto; transition: 0.3s; }
-        .digital-step-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-color: var(--brand); }
-        .step-badge { display: inline-block; background-color: #333; color: #fff; font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
-        .step-badge.gold { background: var(--gold-gradient); color: #3e2723; }
-        .step-badge.red { background: var(--brand); color: #fff; }
+        .digital-step-card,
+        .condition-card {
+            background: #fff;
+            border: 2px solid #1a1a1a;
+            border-radius: 14px;
+            padding: 26px 18px 22px;
+            text-align: left;
+            box-shadow: 0 5px 0 #1a1a1a;
+            width: 95%;
+            margin: 0 auto 24px auto;
+            position: relative;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .digital-step-card:hover,
+        .condition-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #1a1a1a, 0 14px 28px rgba(0, 0, 0, 0.1);
+        }
+        .condition-card {
+            margin-top: 28px;
+        }
+        .how-to-join-container {
+            margin-top: 4px;
+        }
+        .step-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            padding: 7px 18px;
+            border-radius: 999px;
+            border: 2px solid #1a1a1a;
+            margin: 0;
+            white-space: nowrap;
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+            z-index: 1;
+        }
+        .step-badge.gold {
+            background: var(--gold-gradient);
+            color: #3e2723;
+        }
+        .step-badge.red {
+            background: var(--brand);
+            color: #fff;
+        }
+        .step-card-lead {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--brand);
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
         .step-main-content { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
         .step-info { flex: 1; }
         .step-title { font-size: 0.95rem; font-weight: 900; margin-bottom: 4px; }
@@ -589,8 +641,8 @@
         .options-unified-inner {
             background: #fff;
             border-radius: var(--radius-lg);
-            border: 2px solid rgba(194, 22, 50, 0.12);
-            box-shadow: 0 14px 40px rgba(26, 26, 46, 0.08);
+            border: 2px solid #1a1a1a;
+            box-shadow: 0 6px 0 #1a1a1a, 0 14px 36px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
         .options-carousel-section {
@@ -605,11 +657,11 @@
             margin: 0 auto 1.35rem auto;
             max-width: 92%;
             text-align: center;
-            background: #5a5a5a;
-            border: none;
+            background: #d32f2f;
+            border: 2px solid #1a1a1a;
             border-radius: 12px;
             padding: 20px 16px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
             color: #fff;
         }
         .options-carousel-section .section-title {
@@ -660,7 +712,7 @@
         .options-notice-block {
             padding: 28px 20px 32px;
             border-top: none;
-            background: #fafafa;
+            background: #fff;
             text-align: center;
         }
         .options-notice-block .notice-title-v22 {
@@ -682,7 +734,7 @@
         .card-price { font-size: 1.4rem; font-weight: 700; color: var(--brand); }
         .card-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.8rem; font-weight: 900; font-size: 0.75rem; border-radius: 6px; }
         .card-badge.free { background: var(--brand); color: #fff; }
-        .card-badge.paid { background: var(--gold-main); color: #fff; }
+        .card-badge.paid { background: var(--brand); color: #fff; }
         
         .carousel-nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 20px; }
         .carousel-nav button {
@@ -1248,7 +1300,7 @@
             </div>
 
             <!-- 条件リスト -->
-            <div class="digital-step-card condition-card reveal-up" style="margin: 30px auto;">
+            <div class="digital-step-card condition-card reveal-up">
                 <div class="step-badge red">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
@@ -1274,6 +1326,7 @@
                     <div class="step-main-content">
                         <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
                         <div class="step-info">
+                            <span class="step-card-lead">お得な追加特典はこちら</span>
                             <div class="step-title" style="font-size: 0.95rem;">紹介・学割・他クラブ移籍等</div>
                             <p class="step-desc" style="font-size: 0.75rem; color: #666;">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は12月から適用となります</span></p>
                         </div>
@@ -1355,17 +1408,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 追加特典セクション -->
-    <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="bonus-section-red reveal-up">
-         <h3 style="font-size: 1.75rem; font-weight: 900; color: #333; margin-bottom: 15px;">お得な<span style="color: var(--brand);">追加特典</span></h3>
-         <p style="font-size: 0.85rem; color: #555; font-weight: 700; margin-bottom: 25px; line-height: 1.6;">
-            追加特典はこちらからご確認下さい！<br>
-            紹介・移籍・学割など、該当者はさらにお得<br>
-            <span class="lp-note-pill">※学割は12月から適用となります</span>
-         </p>
-         <span class="bonus-btn-large cta-emphasis" style="display: inline-flex;">詳細を見る</span>
-    </a>
 
     <!-- アクセスマップセクション -->
     <section class="access-section reveal-up" style="margin-bottom: 50px;">
