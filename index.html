@@ -29,8 +29,11 @@
            ■ Root Variables & Base
            ======================================================= */
         :root { 
-            --brand: #C21632; 
+            --brand: #C21632;
+            --brand-red: #C21632;
             --brand-dark: #8a0e20;
+            --lp-frame: #1a1a1a;
+            --lp-frame-shadow: 0 5px 0 #1a1a1a;
             --gold-main: #D4AF37; 
             --gold-light: #F8E71C; 
             --gold-dark: #B48811; 
@@ -158,7 +161,7 @@
             border-radius: 14px 14px 0 0;
             text-align: center;
             overflow: hidden;
-            background: linear-gradient(180deg, #d41835 0%, var(--brand) 55%, var(--brand-dark) 100%);
+            background: var(--brand-red);
             border-bottom: 2px solid rgba(255, 255, 255, 0.35);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
@@ -229,8 +232,9 @@
             box-shadow: var(--shadow-soft);
             padding-top: 15px;
             padding-bottom: 30px;
-            border: 4px solid var(--brand);
+            border: 2px solid var(--lp-frame);
             border-top: none;
+            box-shadow: var(--lp-frame-shadow);
         }
         .price-showcase {
             border-radius: var(--radius-md);
@@ -455,7 +459,7 @@
         .mid-list-total-block {
             padding: 1.75rem 1.25rem;
             text-align: center;
-            background: #C21632;
+            background: var(--brand-red);
             border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: var(--radius-md);
             margin: 1.5rem 0;
@@ -565,30 +569,22 @@
             box-shadow: none;
         }
 
-        .digital-step-card,
-        .condition-card {
+        /* 黒枠カード（STEP・注意事項・オプション・アクセスで共通） */
+        .lp-framed {
             background: #fff;
-            border: 2px solid #1a1a1a;
+            border: 2px solid var(--lp-frame);
             border-radius: 14px;
-            padding: 26px 18px 22px;
-            text-align: left;
-            box-shadow: 0 5px 0 #1a1a1a;
-            width: 95%;
-            margin: 0 auto 24px auto;
+            box-shadow: var(--lp-frame-shadow);
             position: relative;
+        }
+        .lp-framed--hover {
             transition: transform 0.22s ease, box-shadow 0.22s ease;
         }
-        .digital-step-card:hover,
-        .condition-card:hover {
+        .lp-framed--hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 7px 0 #1a1a1a, 0 14px 28px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 7px 0 var(--lp-frame), 0 14px 28px rgba(0, 0, 0, 0.1);
         }
-        .condition-card {
-            margin-top: 28px;
-        }
-        .how-to-join-container {
-            margin-top: 4px;
-        }
+        .lp-frame-badge,
         .step-badge {
             position: absolute;
             top: -14px;
@@ -600,19 +596,34 @@
             letter-spacing: 0.1em;
             padding: 7px 18px;
             border-radius: 999px;
-            border: 2px solid #1a1a1a;
+            border: 2px solid var(--lp-frame);
             margin: 0;
             white-space: nowrap;
             box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
-            z-index: 1;
+            z-index: 2;
         }
+        .lp-frame-badge--brand,
+        .step-badge.red {
+            background: var(--brand-red);
+            color: #fff;
+        }
+        .lp-frame-badge--gold,
         .step-badge.gold {
             background: var(--gold-gradient);
             color: #3e2723;
         }
-        .step-badge.red {
-            background: var(--brand);
-            color: #fff;
+        .digital-step-card,
+        .condition-card {
+            padding: 26px 18px 22px;
+            text-align: left;
+            width: 95%;
+            margin: 0 auto 24px auto;
+        }
+        .condition-card {
+            margin-top: 28px;
+        }
+        .how-to-join-container {
+            margin-top: 4px;
         }
         .step-card-lead {
             display: block;
@@ -627,23 +638,25 @@
         .step-title { font-size: 0.95rem; font-weight: 900; margin-bottom: 4px; }
         .step-action-btn { display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; padding: 10px 15px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-gold-flat { background: var(--gold-gradient); color: #3e2723; border: 1px solid #d4af37; }
-        .btn-red-flat { background: var(--brand); color: #fff; border: 1px solid #a01229; }
+        .btn-red-flat { background: var(--brand-red); color: #fff; border: 1px solid var(--lp-frame); }
 
         /* =======================================================
            ■ オプションセクション (デザイン改善)
            ======================================================= */
         .options-unified-section {
-            width: 95%;
+            width: 100%;
             max-width: var(--container-max-width);
-            margin: 36px auto 48px;
+            margin: 40px auto 48px;
+            padding-top: 18px;
         }
-        /* 注意事項と同系の5色（白・#fafafa・ブランド赤・ゴールド・警告赤） */
         .options-unified-inner {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            border: 2px solid #1a1a1a;
-            box-shadow: 0 6px 0 #1a1a1a, 0 14px 36px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
             overflow: hidden;
+            padding-top: 30px;
+        }
+        .options-unified-inner > .lp-frame-badge {
+            font-size: 0.78rem;
+            padding: 8px 22px;
         }
         .options-carousel-section {
             padding: 24px 0 20px;
@@ -657,8 +670,8 @@
             margin: 0 auto 1.35rem auto;
             max-width: 92%;
             text-align: center;
-            background: #d32f2f;
-            border: 2px solid #1a1a1a;
+            background: var(--brand-red);
+            border: 2px solid var(--lp-frame);
             border-radius: 12px;
             padding: 20px 16px;
             box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
@@ -741,7 +754,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: #C21632;
+            background: var(--brand-red);
             border: 2px solid rgba(255, 255, 255, 0.35);
             box-shadow: 0 4px 14px rgba(194, 22, 50, 0.35);
             color: #fff;
@@ -771,14 +784,59 @@
         .notice-container-v22 { background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 60px auto 0; width: 95%; text-align: center; } /* legacy – 統合後は .options-notice-block を使用 */
         .notice-title-v22 { font-size: 1.75rem; font-weight: 900; color: var(--brand); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
         .notice-title-v22::before, .notice-title-v22::after { content: ''; flex: 1; height: 2px; background: var(--brand); opacity: 0.3; margin: 0 15px; }
-        .notice-warning-v22 { display: block; font-size: 0.8rem; font-weight: 900; color: #fff; background: #d32f2f; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .notice-warning-v22 { display: block; font-size: 0.8rem; font-weight: 900; color: #fff; background: var(--brand-red); padding: 15px; border-radius: 8px; margin-top: 20px; }
         .cta-button-video { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(45deg, #ffea00, #ffd600); color: #333; font-weight: 900; padding: 12px 25px; border-radius: 50px; text-decoration: none; margin-top: 25px; transition: 0.3s; font-size: 0.9rem; }
 
         .bonus-section-red { display: block; text-decoration: none; background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 40px auto 0; width: 95%; text-align: center; transition: 0.3s; }
         .bonus-section-red:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
         .bonus-btn-large { display: inline-flex; justify-content: center; width: 85%; background: var(--gold-gradient); color: #3e2723; font-size: 1.15rem; font-weight: 900; padding: 16px; border-radius: 50px; border: 2px solid #fff; }
 
-        .access-section { background: #fff; margin: 50px auto 30px; border-radius: var(--radius-lg); overflow: hidden; border: 4px solid #eee; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .access-section-wrap {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 44px auto 40px;
+            padding-top: 18px;
+        }
+        .access-section {
+            margin: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            padding-top: 30px;
+        }
+        .access-section > .lp-frame-badge {
+            font-size: 0.78rem;
+            padding: 8px 24px;
+        }
+        .access-section header img {
+            display: block;
+            width: 100%;
+        }
+        .access-map-cta {
+            padding: 25px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            text-align: center;
+        }
+        .access-map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--brand-red);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 2px solid var(--lp-frame);
+            box-shadow: 0 4px 0 var(--lp-frame);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .access-map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--lp-frame);
+        }
         .map-embed-container iframe { width: 100%; height: 350px; border: 0; }
         .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #eee; text-align: center; }
         /* 施設アイコン: 軽くトーンを寄せて一覧の一体感を出す（元画像はそのまま） */
@@ -839,7 +897,7 @@
             border-color: rgba(255, 255, 255, 0.65);
         }
         .fixed-banner .app {
-            background: linear-gradient(155deg, #ef5350 0%, #C21632 42%, #9a0f28 100%);
+            background: var(--brand-red);
             color: #fff;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             border-color: rgba(255, 255, 255, 0.22);
@@ -857,7 +915,7 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            background: linear-gradient(180deg, #c91430 0%, var(--brand) 55%, #a81228 100%);
+            background: var(--brand-red);
             color: #fff;
             padding: 10px 14px;
             box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
@@ -952,23 +1010,17 @@
             color: #fff;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            border-radius: 18px;
-            background: #C21632;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.25) inset,
-                0 5px 0 #8a0e20,
-                0 14px 32px rgba(138, 14, 32, 0.32);
+            border-radius: 14px;
+            background: var(--brand-red);
+            border: 2px solid var(--lp-frame);
+            box-shadow: var(--lp-frame-shadow);
         }
         .hero-panel-intro {
-            background: #9a0f28;
-            box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.22) inset,
-                0 5px 0 #6e0b1a,
-                0 14px 32px rgba(110, 11, 26, 0.35);
+            opacity: 0;
+            animation: heroSlideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.15s;
         }
         .hero-panel-offer {
-            background: #C21632;
             padding: 1.35rem 1.25rem 1.45rem;
             opacity: 0;
             animation: heroSlideInRight 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1004,15 +1056,6 @@
         @keyframes heroStrikeDraw {
             from { transform: translateY(-50%) rotate(-5deg) scaleX(0); opacity: 0.5; }
             to { transform: translateY(-50%) rotate(-5deg) scaleX(1); opacity: 1; }
-        }
-        @keyframes heroBadgePulse {
-            0%, 100% { box-shadow: 0 10px 32px rgba(194, 22, 50, 0.38); }
-            50% { box-shadow: 0 14px 40px rgba(194, 22, 50, 0.5); }
-        }
-        .hero-panel-intro {
-            opacity: 0;
-            animation: heroSlideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.15s;
         }
         .hero-deal-exclusive {
             margin: 0 0 0.75rem;
@@ -1300,8 +1343,8 @@
             </div>
 
             <!-- 条件リスト -->
-            <div class="digital-step-card condition-card reveal-up">
-                <div class="step-badge red">キャンペーン注意事項</div>
+            <div class="digital-step-card condition-card lp-framed lp-framed--hover reveal-up">
+                <div class="step-badge red lp-frame-badge lp-frame-badge--brand">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i>
@@ -1321,8 +1364,8 @@
 
             <div class="how-to-join-container reveal-up">
                 <!-- ステップ1: 追加特典 -->
-                <div class="digital-step-card">
-                    <div class="step-badge gold">STEP 1 追加特典</div>
+                <div class="digital-step-card lp-framed lp-framed--hover">
+                    <div class="step-badge gold lp-frame-badge lp-frame-badge--gold">STEP 1 追加特典</div>
                     <div class="step-main-content">
                         <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
                         <div class="step-info">
@@ -1335,8 +1378,8 @@
                 </div>
                 
                 <!-- ステップ2: アプリ入会 -->
-                <div class="digital-step-card">
-                    <div class="step-badge red">STEP 2 アプリ入会</div>
+                <div class="digital-step-card lp-framed lp-framed--hover">
+                    <div class="step-badge red lp-frame-badge lp-frame-badge--brand">STEP 2 アプリ入会</div>
                     <div class="step-main-content">
                         <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
                         <div class="step-info">
@@ -1352,7 +1395,8 @@
 
     <!-- オプション＋注意事項（一体化・白背景） -->
     <section class="options-unified-section reveal-up" id="options-group-section">
-        <div class="options-unified-inner">
+        <div class="options-unified-inner lp-framed">
+            <span class="lp-frame-badge lp-frame-badge--brand">オプション</span>
             <section class="options-carousel-section">
                 <div class="text-box">
                     <h2 class="section-title">
@@ -1410,7 +1454,9 @@
     </section>
 
     <!-- アクセスマップセクション -->
-    <section class="access-section reveal-up" style="margin-bottom: 50px;">
+    <div class="access-section-wrap reveal-up">
+    <section class="access-section lp-framed">
+        <span class="lp-frame-badge lp-frame-badge--brand">店舗情報・アクセス</span>
         <header>
             <img src="joylogo.jpg" alt="JOYFIT24経堂" style="width: 100%; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/600x200/C21632/ffffff?text=JOYFIT24+KYODO';">
         </header>
@@ -1446,13 +1492,14 @@
                 <div><img src="f.jpg" alt="サウナ" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Sauna';"><strong style="font-size: 0.8rem; font-weight: 900;">男性ドライサウナ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;">約80℃設定</p></div>
             </div>
         </div>
-        <div style="padding: 25px; border-top: 1px solid #eee; background: #f8f9fa;">
-            <a href="https://www.google.com/maps/search/?api=1&query=JOYFIT24経堂,東京都世田谷区経堂5-23-13" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--brand); color: #fff; font-size: 1rem; font-weight: 900; text-decoration: none; padding: 12px 25px; border-radius: 50px; box-shadow: 0 8px 20px rgba(194, 22, 50, 0.4); transition: 0.2s;">
+        <div class="access-map-cta">
+            <a href="https://www.google.com/maps/search/?api=1&query=JOYFIT24経堂,東京都世田谷区経堂5-23-13" target="_blank" rel="noopener noreferrer" class="access-map-btn">
                 <i class="ph-bold ph-navigation-arrow" style="font-size: 1.2rem;"></i>
                 <span>Googleマップでルートを確認</span>
             </a>
         </div>
     </section>
+    </div>
 
 </div>
 
