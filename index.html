@@ -497,6 +497,10 @@
             color: #fff;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
+        .mid-list-total-block .join-date {
+            color: #fff !important;
+            font-weight: 900;
+        }
         .monthly-fee {
             padding: 1.5rem 1.25rem;
             text-align: center;
@@ -836,48 +840,48 @@
             box-shadow: none !important;
             padding: 0 !important;
         }
-        /* APP入会ボタンと同系の赤グラデ */
-        .hero-deal-badge {
-            position: relative;
+        /* ヒーロー：3パネル（背景色の差で区切り・ボーダーなし） */
+        .hero-deal-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
             width: 100%;
-            padding: 1.5rem 1.2rem 1.35rem;
             border-radius: 20px;
-            background: linear-gradient(155deg, #ef5350 0%, #C21632 42%, #9a0f28 100%);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.2) inset,
-                0 8px 24px rgba(194, 22, 50, 0.4);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            box-shadow: 0 10px 32px rgba(194, 22, 50, 0.38);
             animation: heroBadgePulse 2.2s ease-in-out 4.2s infinite;
         }
-        .hero-deal-badge::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                -58deg,
-                transparent,
-                transparent 14px,
-                rgba(255, 255, 255, 0.04) 14px,
-                rgba(255, 255, 255, 0.04) 28px
-            );
-            animation: heroStripeDrift 6s linear 2.5s infinite;
-            pointer-events: none;
+        .hero-deal-panel {
+            position: relative;
+            padding: 1.35rem 1.15rem;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
-        .hero-deal-badge::after {
+        .hero-panel-intro {
+            background: linear-gradient(155deg, #7a0c20 0%, #9a0f28 45%, #b8122c 100%);
+        }
+        .hero-panel-compare {
+            background: linear-gradient(155deg, #9a0f28 0%, #C21632 50%, #d4324a 100%);
+            padding-top: 1.15rem;
+            padding-bottom: 1rem;
+        }
+        .hero-panel-price {
+            background: linear-gradient(155deg, #ef5350 0%, #C21632 48%, #9a0f28 100%);
+            padding: 1.45rem 1.15rem 1.5rem;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: heroPricePower 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2.65s;
+        }
+        .hero-panel-price::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.14) 50%, transparent 62%);
+            background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.12) 50%, transparent 62%);
             transform: translateX(-130%);
             animation: heroShine 5s ease-in-out 3.2s infinite;
             pointer-events: none;
-        }
-        @keyframes heroStripeDrift {
-            from { transform: translateX(0); }
-            to { transform: translateX(28px); }
         }
         @keyframes heroShine {
             0%, 52% { transform: translateX(-130%); }
@@ -911,46 +915,47 @@
             to { transform: translateY(-50%) rotate(-5deg) scaleX(1); opacity: 1; }
         }
         @keyframes heroBadgePulse {
-            0%, 100% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 8px 24px rgba(194, 22, 50, 0.4); }
-            50% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 32px rgba(194, 22, 50, 0.52); }
+            0%, 100% { box-shadow: 0 10px 32px rgba(194, 22, 50, 0.38); }
+            50% { box-shadow: 0 14px 40px rgba(194, 22, 50, 0.5); }
         }
-        .hero-deal-exclusive {
-            margin: 0 0 0.85rem;
-            font-size: 1.1rem;
-            font-weight: 900;
-            letter-spacing: 0.14em;
-            color: #fff;
+        .hero-panel-intro {
             opacity: 0;
             animation: heroSlideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.15s;
         }
-        .hero-deal-story {
-            margin: 0;
-            line-height: 1.55;
+        .hero-panel-compare {
             opacity: 0;
             animation: heroSlideInRight 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.75s;
         }
+        .hero-deal-exclusive {
+            margin: 0 0 0.75rem;
+            font-size: 1.22rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            color: #fff;
+        }
         .hero-deal-period {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1.35rem;
             font-weight: 900;
             letter-spacing: 0.05em;
+            line-height: 1.45;
         }
         .hero-deal-months {
             display: block;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 800;
             letter-spacing: 0.06em;
             opacity: 0.95;
-            margin-top: 4px;
+            margin-top: 6px;
         }
         .hero-deal-usual {
-            margin: 0.45rem 0 0;
-            font-size: 1.1rem;
+            margin: 0;
+            font-size: 1.22rem;
             font-weight: 700;
             letter-spacing: 0.04em;
-            color: rgba(255, 255, 255, 0.94);
+            color: rgba(255, 255, 255, 0.96);
         }
         .hero-deal-struck {
             position: relative;
@@ -982,69 +987,59 @@
         .hero-deal-arrow {
             display: flex;
             justify-content: center;
-            margin: 0.65rem 0 0.45rem;
-            font-size: 2.25rem;
+            margin: 0.7rem 0 0;
+            font-size: 2.5rem;
             line-height: 1;
             color: #fff;
-            opacity: 0;
-            animation-name: heroSlideInUp, heroArrowFlow;
-            animation-duration: 0.95s, 1.6s;
-            animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
-            animation-fill-mode: forwards, none;
-            animation-delay: 2.05s, 3.4s;
-            animation-iteration-count: 1, infinite;
+            animation: heroArrowFlow 1.6s ease-in-out 3.4s infinite;
         }
         .hero-deal-price-row {
+            position: relative;
+            z-index: 1;
             display: flex;
             align-items: baseline;
             justify-content: center;
             gap: 0;
             line-height: 1;
             margin: 0;
-            opacity: 0;
-            animation: heroPricePower 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.65s;
         }
         .hero-deal-num {
-            font-size: clamp(3.6rem, 17vw, 5rem);
+            font-size: clamp(4rem, 19vw, 5.5rem);
             color: #fff;
             letter-spacing: -0.02em;
-            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
         }
         .hero-deal-yen {
-            font-size: clamp(1.65rem, 7vw, 2.25rem);
+            font-size: clamp(1.9rem, 8vw, 2.65rem);
             font-weight: 900;
             color: #fff;
-            margin-left: 4px;
-        }
-        .hero-anim-item {
-            opacity: 1;
-            animation: none;
+            margin-left: 5px;
         }
         @media (min-width: 768px) {
-            .hero-deal-badge {
-                padding: 1.85rem 1.85rem 1.55rem;
+            .hero-deal-panel {
+                padding-left: 1.65rem;
+                padding-right: 1.65rem;
             }
             .hero-deal-exclusive {
-                font-size: 1.22rem;
-            }
-            .hero-deal-period {
                 font-size: 1.38rem;
             }
+            .hero-deal-period {
+                font-size: 1.52rem;
+            }
             .hero-deal-months {
-                font-size: 1.18rem;
+                font-size: 1.28rem;
             }
             .hero-deal-usual {
-                font-size: 1.22rem;
+                font-size: 1.35rem;
             }
             .hero-deal-num {
-                font-size: 5rem;
+                font-size: 5.5rem;
             }
             .hero-deal-yen {
-                font-size: 2.25rem;
+                font-size: 2.65rem;
             }
             .hero-deal-arrow {
-                font-size: 2.5rem;
+                font-size: 2.75rem;
             }
             .gold-metallic-banner .banner-inner {
                 gap: 14px;
@@ -1063,15 +1058,15 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
-            .hero-deal-badge::before,
-            .hero-deal-badge::after { animation: none; display: none; }
-            .hero-deal-badge,
-            .hero-deal-exclusive,
-            .hero-deal-story,
-            .hero-deal-arrow,
-            .hero-deal-price-row {
+            .hero-deal-stack,
+            .hero-panel-intro,
+            .hero-panel-compare,
+            .hero-panel-price { animation: none !important; }
+            .hero-panel-price::after { animation: none; display: none; }
+            .hero-deal-stack,
+            .hero-deal-panel,
+            .hero-deal-arrow {
                 opacity: 1 !important;
-                animation: none !important;
                 transform: none !important;
                 filter: none !important;
             }
@@ -1113,17 +1108,21 @@
         
         <!-- 全体を囲むメインフレーム -->
         <div class="hero-price-card relative mild-fade-in w-full">
-            <div class="hero-deal-badge">
-                <p class="hero-deal-exclusive">JOYFIT24経堂限定</p>
-                <div class="hero-deal-story">
+            <div class="hero-deal-stack">
+                <div class="hero-deal-panel hero-panel-intro">
+                    <p class="hero-deal-exclusive">JOYFIT24経堂限定</p>
                     <p class="hero-deal-period">半年間ずっと月会費<span class="hero-deal-months">(6月〜11月)</span></p>
+                </div>
+                <div class="hero-deal-panel hero-panel-compare">
                     <p class="hero-deal-usual">通常月額 <span class="hero-deal-struck">9,350円</span><span class="hero-deal-tax">(税込)</span></p>
+                    <div class="hero-deal-arrow" aria-hidden="true">
+                        <i class="ph-bold ph-caret-double-down"></i>
+                    </div>
                 </div>
-                <div class="hero-deal-arrow" aria-hidden="true">
-                    <i class="ph-bold ph-caret-double-down"></i>
-                </div>
-                <div class="hero-deal-price-row">
-                    <span class="hero-deal-num font-impact">3,600</span><span class="hero-deal-yen">円</span>
+                <div class="hero-deal-panel hero-panel-price">
+                    <div class="hero-deal-price-row">
+                        <span class="hero-deal-num font-impact">3,600</span><span class="hero-deal-yen">円</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1444,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const juneProrateEl = document.getElementById('june-prorate-display');
 
         if (dateLabelEl && totalPriceEl) {
-            dateLabelEl.innerHTML = `(<span style="color: var(--brand);">${month}/${date}</span>)ご入会時金額`;
+            dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時金額`;
 
             const initial = 5500;
             const campaignMonthly = 3960;
