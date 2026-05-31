@@ -825,40 +825,107 @@
         }
 
         .hero-price-card {
-            overflow: hidden;
+            overflow: visible;
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
         }
-        .early-start-sash {
+        .hero-deal-badge {
+            position: relative;
+            width: 100%;
+            padding: 2.25rem 1.25rem 1.75rem;
+            border-radius: 22px;
+            background: linear-gradient(165deg, #fffef8 0%, #fff6d6 38%, #ffe9a8 100%);
+            border: 2px solid rgba(212, 175, 55, 0.55);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 6px 0 #c9a227,
+                0 10px 28px rgba(180, 136, 17, 0.35),
+                0 18px 48px rgba(194, 22, 50, 0.1);
+            transform: perspective(520px) rotateX(2deg);
+        }
+        .hero-deal-badge::before {
+            content: '';
             position: absolute;
-            top: 12px;
-            left: -44px;
-            z-index: 3;
-            transform: rotate(-38deg);
-            transform-origin: center center;
-            background: linear-gradient(180deg, #fef9c7 0%, #e8c547 35%, #c9a227 70%, #a88418 100%);
-            color: #1a1100;
-            font-size: 0.82rem;
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            padding: 9px 62px;
-            white-space: nowrap;
-            border-top: 2px solid rgba(255, 255, 255, 0.75);
-            border-bottom: 2px solid rgba(90, 60, 10, 0.35);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
-            line-height: 1.25;
+            inset: 8px;
+            border-radius: 16px;
+            border: 1px dashed rgba(194, 22, 50, 0.12);
             pointer-events: none;
         }
-        .hero-price-body {
-            position: relative;
-            z-index: 1;
-            padding-top: 6px;
+        .hero-deal-ribbon {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            padding: 7px 20px;
+            border-radius: 999px;
+            white-space: nowrap;
+            box-shadow:
+                0 3px 0 rgba(0, 0, 0, 0.2),
+                0 6px 16px rgba(194, 22, 50, 0.45);
+        }
+        .hero-deal-lead {
+            margin: 0 0 0.35rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #666;
+            letter-spacing: 0.04em;
+        }
+        .hero-deal-lead .strike-usual {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .hero-deal-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
+            line-height: 1;
+        }
+        .hero-deal-num {
+            font-size: clamp(4.2rem, 18vw, 5.75rem);
+            color: var(--brand);
+            -webkit-text-stroke: 2px #1a1a1a;
+            paint-order: stroke fill;
+            text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9);
+        }
+        .hero-deal-unit {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #1a1a1a;
+        }
+        .hero-deal-unit .tax-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #666;
+            margin-left: 2px;
+        }
+        .hero-deal-hook {
+            margin: 0.85rem 0 0;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: 0.06em;
+        }
+        .hero-deal-hook em {
+            font-style: normal;
+            color: var(--brand);
+            background: linear-gradient(transparent 55%, rgba(248, 231, 28, 0.55) 55%);
+            padding: 0 4px;
         }
         @media (min-width: 768px) {
-            .early-start-sash {
-                top: 10px;
-                left: -36px;
-                font-size: 0.92rem;
-                padding: 10px 72px;
-                letter-spacing: 0.18em;
+            .hero-deal-badge {
+                padding: 2.5rem 1.75rem 2rem;
+            }
+            .hero-deal-num {
+                font-size: 5.75rem;
             }
             .gold-metallic-banner .banner-inner {
                 gap: 14px;
@@ -910,20 +977,16 @@
     <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center mt-2 md:mt-4">
         
         <!-- 全体を囲むメインフレーム -->
-        <div class="hero-price-card bg-white border-2 border-[#e8e4dc] p-5 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] relative mild-fade-in w-full rounded-xl">
-            <div class="hero-price-body mb-2 flex flex-col items-center">
-                <div class="text-gray-600 font-bold text-xs md:text-sm mb-4">
-                    通常 <span class="line-through">8,500円(税込9,350円)</span> のところ半年間
+        <div class="hero-price-card relative mild-fade-in w-full">
+            <div class="hero-deal-badge">
+                <span class="hero-deal-ribbon">半年間この価格</span>
+                <p class="hero-deal-lead">通常 <span class="strike-usual">税込9,350円/月</span></p>
+                <div class="hero-deal-price-row">
+                    <span class="hero-deal-num font-impact">3,600</span>
+                    <span class="hero-deal-unit">円<span class="tax-tag">税抜</span>/月</span>
                 </div>
-                <div class="text-[var(--brand)] flex flex-col items-center leading-none">
-                    <div class="flex items-baseline justify-center">
-                        <span class="font-impact text-value-hero text-[4.5rem] md:text-[5.5rem]">3,600</span>
-                        <span class="text-2xl md:text-3xl font-bold text-[#333] ml-1" style="font-family: 'Noto Sans JP', sans-serif;">円(税抜)/月</span>
-                    </div>
-                    <span class="text-base md:text-lg font-bold text-[#666] mt-3 tracking-wide">3,960円(税込)/月</span>
-                </div>
+                <p class="hero-deal-hook"><em>半年間</em>まるっと使える</p>
             </div>
-
         </div>
     </div>
 </section>
@@ -960,31 +1023,27 @@
                         </div>
                     </div>
 
-                    <!-- 2. 6月月会費（日割り） -->
+                    <!-- 2. 6月会費（日割） -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">2</span>
-                            <div class="label">6月月会費<span class="note">※日割り</span></div>
+                            <div class="label">6月会費<span class="note">日割</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-normal-note">通常 9,350円/月 · 税込3,960円/月が基準</span>
-                            <span class="price-value font-impact featured-price text-value-accent" id="june-prorate-display">日割り</span>
-                            <span class="price-sub-note">ご入会日から月末まで按分</span>
+                            <span class="price-value font-impact featured-price text-value-accent" id="june-prorate-display">3,960<span class="unit">円(税込)</span></span>
                         </div>
                     </div>
 
-                    <!-- 3. 7月〜11月月会費 -->
+                    <!-- 3. 7月〜11月会費 -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">3</span>
-                            <div class="label">7月〜11月月会費<span class="note">※6ヶ月割</span></div>
+                            <div class="label">7月〜11月会費</div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-normal-note">通常 9,350円/月</span>
                             <span class="price-value font-impact featured-price text-value-accent">3,960<span class="unit">円(税込)/月</span></span>
-                            <span class="price-sub-note">3,600円(税抜)/月 · 6ヶ月割</span>
                         </div>
                     </div>
 
@@ -997,7 +1056,6 @@
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
                             <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit">円</span></span>
-                            <span class="price-tag">(6月分が無料)</span>
                         </div>
                     </div>
 
@@ -1224,8 +1282,17 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ====================================================
-    // リアルタイム日割り計算ロジック
+    // 6月日割（税込3,960円/月・カレンダー日数で按分）
     // ====================================================
+    function calcJuneProrateFee(joinDay) {
+        const year = 2026;
+        const month = 6;
+        const campaignMonthly = 3960;
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const remainingDays = daysInMonth - joinDay + 1;
+        return Math.round((campaignMonthly / daysInMonth) * remainingDays);
+    }
+
     function updateProratedFee() {
         const today = new Date();
         const jst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
@@ -1235,35 +1302,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const dateLabelEl = document.getElementById('dynamic-date-label');
         const totalPriceEl = document.getElementById('dynamic-total-price');
+        const juneProrateEl = document.getElementById('june-prorate-display');
 
         if (dateLabelEl && totalPriceEl) {
             dateLabelEl.innerHTML = `(<span style="color: var(--brand);">${month}/${date}</span>)ご入会時金額`;
 
             const initial = 5500;
-            const campaignMonthly = 3960; /* 税込3,960円/月（7〜11月・6月日割の基準） */
+            const campaignMonthly = 3960;
             const regularMonthly = 9350;
             let monthFee = 0;
+            let juneFee = calcJuneProrateFee(1);
 
             if (year === 2026 && month === 6) {
-                const daysInMonth = new Date(year, month, 0).getDate();
-                const remainingDays = daysInMonth - date + 1;
-                monthFee = Math.round((campaignMonthly / daysInMonth) * remainingDays);
+                juneFee = calcJuneProrateFee(date);
+                monthFee = juneFee;
+            } else if (year === 2026 && month < 6) {
+                juneFee = calcJuneProrateFee(1);
+                monthFee = juneFee;
             } else if (year === 2026 && month >= 7 && month <= 11) {
                 monthFee = campaignMonthly;
+                juneFee = calcJuneProrateFee(1);
             } else {
                 monthFee = regularMonthly;
+                juneFee = calcJuneProrateFee(1);
             }
 
             const total = initial + monthFee;
             totalPriceEl.textContent = total.toLocaleString();
 
-            const juneProrateEl = document.getElementById('june-prorate-display');
             if (juneProrateEl) {
-                if (year === 2026 && month === 6) {
-                    juneProrateEl.innerHTML = `${monthFee.toLocaleString()}<span class="unit">円(税込)</span>`;
-                } else {
-                    juneProrateEl.textContent = '日割り';
-                }
+                juneProrateEl.innerHTML = `${juneFee.toLocaleString()}<span class="unit">円(税込)</span>`;
             }
         }
     }
