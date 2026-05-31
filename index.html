@@ -580,29 +580,45 @@
         /* =======================================================
            ■ オプションセクション (デザイン改善)
            ======================================================= */
-        .options-group-section { background: linear-gradient(145deg, #C21632 0%, #8a0e20 100%); color: #fff; border-radius: var(--radius-lg); padding: 50px 0; margin: 50px auto; width: 100%; }
-        .options-carousel-section { padding-bottom: 20px; }
-        
-        /* 見出し用の高級感プレートデザイン */
+        .options-unified-section {
+            width: 95%;
+            max-width: var(--container-max-width);
+            margin: 36px auto 48px;
+        }
+        .options-unified-inner {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            border: 2px solid rgba(194, 22, 50, 0.1);
+            box-shadow: 0 14px 40px rgba(26, 26, 46, 0.08);
+            overflow: hidden;
+        }
+        .options-carousel-section {
+            padding: 28px 0 24px;
+        }
+        .options-carousel-section + .options-carousel-section {
+            margin-top: 0;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
         .options-carousel-section .text-box {
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 1.5rem auto;
             max-width: 90%;
             text-align: center;
-            background: rgba(0, 0, 0, 0.25); /* 文字が埋もれないように暗めの半透明背景 */
-            border: 1px solid rgba(212, 175, 55, 0.5); /* ゴールドの枠線 */
+            background: #fff8f9;
+            border: 1px solid rgba(194, 22, 50, 0.12);
             border-radius: 12px;
-            padding: 20px 15px;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2), 0 4px 15px rgba(0,0,0,0.1);
+            padding: 18px 14px;
+            box-shadow: 0 2px 8px rgba(194, 22, 50, 0.06);
         }
-        .options-carousel-section .section-title { 
-            font-size: 1.5rem; 
-            font-weight: 900; 
-            margin-bottom: 1rem; 
+        .options-carousel-section .section-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
             position: relative;
             display: inline-block;
             padding-bottom: 0.5rem;
+            color: var(--brand);
         }
-        /* ゴールドの下線 */
         .options-carousel-section .section-title::after {
             content: '';
             position: absolute;
@@ -614,26 +630,45 @@
             background: var(--gold-gradient);
             border-radius: 2px;
         }
-        .options-carousel-section .section-title .highlight { 
-            color: var(--gold-light); 
-            font-size: 2.5rem; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 立体感 */
+        .options-carousel-section .section-title .highlight {
+            color: var(--brand);
+            font-size: 2.5rem;
             margin-right: 4px;
         }
         .options-carousel-section .text-box p {
-            font-size: 0.85rem; 
-            line-height: 1.6; 
+            font-size: 0.85rem;
+            line-height: 1.65;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            color: #444;
             margin: 0;
         }
         .options-carousel-section .text-box .highlight-text {
-            color: #fff;
+            color: var(--brand);
             font-size: 1.15rem;
             font-weight: 900;
-            text-shadow:
-                0 0 0 2px rgba(212, 175, 55, 0.85),
-                0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+        .options-carousel-section .text-box .text-box-note {
+            font-size: 0.75rem;
+            color: #666;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+        .options-notice-block {
+            padding: 28px 20px 32px;
+            border-top: 2px solid rgba(194, 22, 50, 0.12);
+            background: #fafafa;
+            text-align: center;
+        }
+        .options-notice-block .notice-title-v22 {
+            margin-bottom: 20px;
+        }
+        .options-notice-block .notice-body {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
         }
 
         .scene { width: 100%; height: 450px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
@@ -647,17 +682,26 @@
         .card-badge.paid { background: var(--gold-main); color: #fff; }
         
         .carousel-nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 20px; }
-        .carousel-nav button { 
-            width: 50px; height: 50px; border-radius: 50%; 
-            background: var(--gold-gradient); 
-            border: 2px solid #fff; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
-            color: #1a1a2e;
-            font-size: 1.3rem; 
-            display: flex; justify-content: center; align-items: center;
-            cursor: pointer; transition: 0.2s; 
+        .carousel-nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #C21632;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 14px rgba(194, 22, 50, 0.35);
+            color: #fff;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
         }
-        .carousel-nav button:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.6); }
+        .carousel-nav button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(194, 22, 50, 0.45);
+            filter: brightness(1.05);
+        }
         .carousel-nav button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 
         a:focus-visible,
@@ -669,7 +713,7 @@
             outline-offset: 3px;
         }
 
-        .notice-container-v22 { background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 60px auto 0; width: 95%; text-align: center; }
+        .notice-container-v22 { background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 60px auto 0; width: 95%; text-align: center; } /* legacy – 統合後は .options-notice-block を使用 */
         .notice-title-v22 { font-size: 1.75rem; font-weight: 900; color: var(--brand); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
         .notice-title-v22::before, .notice-title-v22::after { content: ''; flex: 1; height: 2px; background: var(--brand); opacity: 0.3; margin: 0 15px; }
         .notice-warning-v22 { display: block; font-size: 0.8rem; font-weight: 900; color: #fff; background: #d32f2f; padding: 15px; border-radius: 8px; margin-top: 20px; }
@@ -840,39 +884,45 @@
             box-shadow: none !important;
             padding: 0 !important;
         }
-        /* ヒーロー：3パネル（背景色の差で区切り・ボーダーなし） */
+        /* ヒーロー：3枚の独立カード（外枠＋影で立体感） */
         .hero-deal-stack {
             display: flex;
             flex-direction: column;
-            gap: 7px;
+            gap: 14px;
             width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 32px rgba(194, 22, 50, 0.38);
-            animation: heroBadgePulse 2.2s ease-in-out 4.2s infinite;
         }
         .hero-deal-panel {
             position: relative;
-            padding: 1.35rem 1.15rem;
+            padding: 1.5rem 1.25rem;
             color: #fff;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            border-radius: 18px;
+            background: #C21632;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.25) inset,
+                0 5px 0 #8a0e20,
+                0 14px 32px rgba(138, 14, 32, 0.32);
         }
         .hero-panel-intro {
-            background: linear-gradient(155deg, #7a0c20 0%, #9a0f28 45%, #b8122c 100%);
+            background: #9a0f28;
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.22) inset,
+                0 5px 0 #6e0b1a,
+                0 14px 32px rgba(110, 11, 26, 0.35);
         }
         .hero-panel-compare {
-            background: linear-gradient(155deg, #9a0f28 0%, #C21632 50%, #d4324a 100%);
-            padding-top: 1.15rem;
-            padding-bottom: 1rem;
+            background: #C21632;
+            padding-top: 1.25rem;
+            padding-bottom: 1.15rem;
         }
         .hero-panel-price {
-            background: linear-gradient(155deg, #ef5350 0%, #C21632 48%, #9a0f28 100%);
-            padding: 1.45rem 1.15rem 1.5rem;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            background: #C21632;
+            padding: 1.5rem 1.25rem 1.55rem;
             opacity: 0;
-            animation: heroPricePower 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.65s;
+            animation: heroPricePower 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards, heroBadgePulse 2.2s ease-in-out 4.2s infinite;
+            animation-delay: 2.65s, 4.2s;
         }
         .hero-panel-price::after {
             content: '';
@@ -930,21 +980,21 @@
         }
         .hero-deal-exclusive {
             margin: 0 0 0.75rem;
-            font-size: 1.22rem;
+            font-size: 1.64rem;
             font-weight: 900;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             color: #fff;
         }
         .hero-deal-period {
             margin: 0;
-            font-size: 1.35rem;
+            font-size: 1.81rem;
             font-weight: 900;
             letter-spacing: 0.05em;
             line-height: 1.45;
         }
         .hero-deal-months {
             display: block;
-            font-size: 1.15rem;
+            font-size: 1.54rem;
             font-weight: 800;
             letter-spacing: 0.06em;
             opacity: 0.95;
@@ -952,7 +1002,7 @@
         }
         .hero-deal-usual {
             margin: 0;
-            font-size: 1.22rem;
+            font-size: 1.64rem;
             font-weight: 700;
             letter-spacing: 0.04em;
             color: rgba(255, 255, 255, 0.96);
@@ -988,7 +1038,7 @@
             display: flex;
             justify-content: center;
             margin: 0.7rem 0 0;
-            font-size: 2.5rem;
+            font-size: 2.85rem;
             line-height: 1;
             color: #fff;
             animation: heroArrowFlow 1.6s ease-in-out 3.4s infinite;
@@ -1004,42 +1054,41 @@
             margin: 0;
         }
         .hero-deal-num {
-            font-size: clamp(4rem, 19vw, 5.5rem);
+            font-size: clamp(4.2rem, 20vw, 6.2rem);
             color: #fff;
             letter-spacing: -0.02em;
             text-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
         }
         .hero-deal-yen {
-            font-size: clamp(1.9rem, 8vw, 2.65rem);
+            font-size: clamp(2.1rem, 9vw, 3rem);
             font-weight: 900;
             color: #fff;
             margin-left: 5px;
         }
         @media (min-width: 768px) {
             .hero-deal-panel {
-                padding-left: 1.65rem;
-                padding-right: 1.65rem;
+                padding: 1.65rem 1.75rem;
             }
             .hero-deal-exclusive {
-                font-size: 1.38rem;
+                font-size: 1.85rem;
             }
             .hero-deal-period {
-                font-size: 1.52rem;
+                font-size: 2.04rem;
             }
             .hero-deal-months {
-                font-size: 1.28rem;
+                font-size: 1.72rem;
             }
             .hero-deal-usual {
-                font-size: 1.35rem;
+                font-size: 1.81rem;
             }
             .hero-deal-num {
-                font-size: 5.5rem;
+                font-size: 6.2rem;
             }
             .hero-deal-yen {
-                font-size: 2.65rem;
+                font-size: 3rem;
             }
             .hero-deal-arrow {
-                font-size: 2.75rem;
+                font-size: 3.2rem;
             }
             .gold-metallic-banner .banner-inner {
                 gap: 14px;
@@ -1058,7 +1107,6 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
-            .hero-deal-stack,
             .hero-panel-intro,
             .hero-panel-compare,
             .hero-panel-price { animation: none !important; }
@@ -1268,66 +1316,64 @@
         </div>
     </section>
 
-    <!-- オプションカルーセルセクション -->
-    <section class="options-group-section reveal-up" id="options-group-section">
-        
-        <!-- 無料オプション -->
-        <section class="options-carousel-section">
-            <div class="text-box">
-                <h2 class="section-title">
-                    <span class="highlight font-impact">8</span>つの無料オプション
-                </h2>
-                <p>
-                    キャンペーン期間中<br><span class="highlight-text">6月分が0円</span>で使い放題！<br>
-                    <span style="font-size: 0.75rem; opacity: 0.9; display: inline-block; margin-top: 8px;">※8つのオプションは入会時自動契約されます。<br>不要な場合は6月末までに解約をお願いいたします。</span>
-                </p>
-            </div>
-            <div class="scene">
-                <div id="card-carousel-free" class="card-carousel"></div>
-            </div>
-            <div class="carousel-nav">
-                <button type="button" id="carousel-prev-free" aria-label="前の無料オプション"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
-                <button type="button" id="carousel-next-free" aria-label="次の無料オプション"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
-            </div>
-        </section>
+    <!-- オプション＋注意事項（一体化・白背景） -->
+    <section class="options-unified-section reveal-up" id="options-group-section">
+        <div class="options-unified-inner">
+            <section class="options-carousel-section">
+                <div class="text-box">
+                    <h2 class="section-title">
+                        <span class="highlight font-impact">8</span>つの無料オプション
+                    </h2>
+                    <p>
+                        キャンペーン期間中<br><span class="highlight-text">6月分が0円</span>で使い放題！<br>
+                        <span class="text-box-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は6月末までに解約をお願いいたします。</span>
+                    </p>
+                </div>
+                <div class="scene">
+                    <div id="card-carousel-free" class="card-carousel"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" id="carousel-prev-free" aria-label="前の無料オプション"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
+                    <button type="button" id="carousel-next-free" aria-label="次の無料オプション"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
+                </div>
+            </section>
 
-        <!-- 有料オプション -->
-        <section class="options-carousel-section" style="margin-top: 70px;">
-            <div class="text-box">
-                <h2 class="section-title">
-                    <span class="highlight font-impact">3</span>つの有料オプション
-                </h2>
-                <p style="margin-top: 10px;">
-                    ※こちらはご希望の方のみ契約いただけます
-                </p>
+            <section class="options-carousel-section">
+                <div class="text-box">
+                    <h2 class="section-title">
+                        <span class="highlight font-impact">3</span>つの有料オプション
+                    </h2>
+                    <p style="margin-top: 10px;">
+                        ※こちらはご希望の方のみ契約いただけます
+                    </p>
+                </div>
+                <div class="scene">
+                    <div id="card-carousel-paid" class="card-carousel"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" id="carousel-prev-paid" aria-label="前の有料オプション"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
+                    <button type="button" id="carousel-next-paid" aria-label="次の有料オプション"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
+                </div>
+            </section>
+
+            <div class="options-notice-block" id="notice-section">
+                <div class="notice-title-v22">
+                    <span>注意事項</span>
+                </div>
+                <div class="notice-body">
+                    オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
+                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">6月末迄</strong>に解約をお願いいたします<br /><br />
+                    入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
+                    解約後も月末迄サービスをご利用頂けます
+                </div>
+                <span class="notice-warning-v22">※解約忘れによる返金は出来ません</span>
+                <a href="https://www.youtube.com/shorts/qpvkmWi-vTM" class="cta-button-video" target="_blank" rel="noopener noreferrer">
+                    <i class="ph-fill ph-youtube-logo" style="font-size: 1.5rem;"></i>
+                    <span>解約方法はコチラをタップ</span>
+                </a>
             </div>
-            <div class="scene">
-                <div id="card-carousel-paid" class="card-carousel"></div>
-            </div>
-            <div class="carousel-nav">
-                <button type="button" id="carousel-prev-paid" aria-label="前の有料オプション"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
-                <button type="button" id="carousel-next-paid" aria-label="次の有料オプション"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
-            </div>
-        </section>
+        </div>
     </section>
-
-    <!-- 注意事項セクション -->
-    <div class="notice-container-v22 reveal-up" id="notice-section">
-        <div class="notice-title-v22">
-            <span>注意事項</span>
-        </div>
-        <div style="font-size: 0.85rem; line-height: 1.8; font-weight: 700; color: #333; margin-bottom: 25px;">
-            オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
-            不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">6月末迄</strong>に解約をお願いいたします<br /><br />
-            入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
-            解約後も月末迄サービスをご利用頂けます
-        </div>
-        <span class="notice-warning-v22">※解約忘れによる返金は出来ません</span>
-        <a href="https://www.youtube.com/shorts/qpvkmWi-vTM" class="cta-button-video" target="_blank" rel="noopener noreferrer">
-            <i class="ph-fill ph-youtube-logo" style="font-size: 1.5rem;"></i>
-            <span>解約方法はコチラをタップ</span>
-        </a>
-    </div>
 
     <!-- 追加特典セクション -->
     <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="bonus-section-red reveal-up">
