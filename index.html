@@ -835,7 +835,7 @@
         .hero-deal-badge {
             position: relative;
             width: 100%;
-            padding: 1.65rem 1.25rem 1.45rem;
+            padding: 1.5rem 1.2rem 1.35rem;
             border-radius: 20px;
             background: linear-gradient(155deg, #ef5350 0%, #C21632 42%, #9a0f28 100%);
             color: #fff;
@@ -844,43 +844,118 @@
                 0 1px 0 rgba(255, 255, 255, 0.2) inset,
                 0 8px 24px rgba(194, 22, 50, 0.4);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .hero-deal-badge::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%);
+            transform: translateX(-120%);
+            animation: heroShine 4.5s ease-in-out 1.2s infinite;
+            pointer-events: none;
+        }
+        @keyframes heroShine {
+            0%, 55% { transform: translateX(-120%); }
+            100% { transform: translateX(120%); }
+        }
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes heroArrowFlow {
+            0%, 100% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(10px); opacity: 1; }
+        }
+        @keyframes heroPriceReveal {
+            0% { opacity: 0; transform: scale(0.92) translateY(8px); }
+            65% { transform: scale(1.02) translateY(0); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes heroStrikeDraw {
+            from { transform: scaleX(0); opacity: 0.6; }
+            to { transform: scaleX(1); opacity: 1; }
+        }
+        .hero-anim-item {
+            opacity: 0;
+            animation: heroFadeUp 0.65s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+            animation-delay: calc(0.1s + 0.14s * var(--i, 0));
         }
         .hero-deal-exclusive {
-            margin: 0 0 0.65rem;
-            font-size: 0.8rem;
-            font-weight: 900;
-            letter-spacing: 0.14em;
-            color: #fff;
-            opacity: 0.95;
-        }
-        .hero-deal-compare {
-            margin: 0 0 0.85rem;
+            margin: 0 0 0.75rem;
             font-size: 0.92rem;
-            font-weight: 700;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            color: #fff;
+            --i: 0;
+        }
+        .hero-deal-story {
+            margin: 0;
+            line-height: 1.55;
+            --i: 1;
+        }
+        .hero-deal-period {
+            margin: 0;
+            font-size: 1.02rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+        }
+        .hero-deal-months {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 800;
             letter-spacing: 0.06em;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.92);
+            opacity: 0.92;
+            margin-top: 2px;
+        }
+        .hero-deal-usual {
+            margin: 0.35rem 0 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.9);
         }
         .hero-deal-struck {
             position: relative;
             display: inline-block;
             font-weight: 900;
-            font-size: 1.05em;
-            letter-spacing: 0.02em;
-            padding: 0 2px;
-            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.08em;
+            padding: 0 3px;
+            color: rgba(255, 255, 255, 0.8);
         }
         .hero-deal-struck::before {
             content: '';
             position: absolute;
-            left: -4%;
-            right: -4%;
+            left: -3%;
+            right: -3%;
             top: 50%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #fff 12%, #fff 88%, transparent);
-            transform: translateY(-50%) rotate(-6deg);
+            background: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+            transform: translateY(-50%) rotate(-5deg) scaleX(0);
+            transform-origin: center center;
             border-radius: 2px;
-            box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+            animation: heroStrikeDraw 0.45s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+            animation-delay: 0.55s;
+        }
+        .hero-deal-tax {
+            font-size: 0.88em;
+            font-weight: 700;
+            opacity: 0.88;
+        }
+        .hero-deal-arrow {
+            display: flex;
+            justify-content: center;
+            margin: 0.5rem 0 0.35rem;
+            font-size: 1.75rem;
+            line-height: 1;
+            color: #fff;
+            --i: 2;
+            animation-name: heroFadeUp, heroArrowFlow;
+            animation-duration: 0.65s, 1.4s;
+            animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1), ease-in-out;
+            animation-fill-mode: forwards, none;
+            animation-delay: calc(0.1s + 0.14s * 2), calc(0.7s + 0.14s * 2);
+            animation-iteration-count: 1, infinite;
         }
         .hero-deal-price-row {
             display: flex;
@@ -889,31 +964,44 @@
             gap: 0;
             line-height: 1;
             margin: 0;
+            --i: 3;
+            opacity: 0;
+            animation: heroPriceReveal 0.7s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+            animation-delay: calc(0.1s + 0.14s * 3 + 0.05s);
         }
         .hero-deal-num {
-            font-size: clamp(4.5rem, 20vw, 6.25rem);
+            font-size: clamp(3rem, 14vw, 4.25rem);
             color: #fff;
-            letter-spacing: -0.03em;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+            letter-spacing: -0.02em;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
         }
         .hero-deal-yen {
-            font-size: clamp(2rem, 9vw, 2.75rem);
+            font-size: clamp(1.35rem, 5.5vw, 1.85rem);
             font-weight: 900;
             color: #fff;
-            margin-left: 2px;
+            margin-left: 3px;
         }
         @media (min-width: 768px) {
             .hero-deal-badge {
-                padding: 1.85rem 1.75rem 1.55rem;
+                padding: 1.65rem 1.75rem 1.45rem;
             }
-            .hero-deal-compare {
+            .hero-deal-exclusive {
                 font-size: 1rem;
             }
+            .hero-deal-period {
+                font-size: 1.12rem;
+            }
+            .hero-deal-months {
+                font-size: 0.95rem;
+            }
+            .hero-deal-usual {
+                font-size: 1.05rem;
+            }
             .hero-deal-num {
-                font-size: 6.25rem;
+                font-size: 4.25rem;
             }
             .hero-deal-yen {
-                font-size: 2.75rem;
+                font-size: 1.85rem;
             }
             .gold-metallic-banner .banner-inner {
                 gap: 14px;
@@ -932,6 +1020,18 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
+            .hero-deal-badge::after { animation: none; display: none; }
+            .hero-anim-item,
+            .hero-deal-price-row,
+            .hero-deal-arrow {
+                opacity: 1 !important;
+                animation: none !important;
+                transform: none !important;
+            }
+            .hero-deal-struck::before {
+                transform: translateY(-50%) rotate(-5deg) scaleX(1);
+                animation: none;
+            }
         }
     </style>
 </head>
@@ -967,10 +1067,16 @@
         <!-- 全体を囲むメインフレーム -->
         <div class="hero-price-card relative mild-fade-in w-full">
             <div class="hero-deal-badge">
-                <p class="hero-deal-exclusive">JOYFIT24経堂限定</p>
-                <p class="hero-deal-compare">半年間ずっと月会費 <span class="hero-deal-struck">9,350円</span></p>
+                <p class="hero-deal-exclusive hero-anim-item" style="--i: 0">JOYFIT24経堂限定</p>
+                <div class="hero-deal-story hero-anim-item" style="--i: 1">
+                    <p class="hero-deal-period">半年間ずっと月会費<span class="hero-deal-months">(6月〜11月)</span></p>
+                    <p class="hero-deal-usual">通常月額 <span class="hero-deal-struck">9,350円</span><span class="hero-deal-tax">(税込)</span></p>
+                </div>
+                <div class="hero-deal-arrow" aria-hidden="true">
+                    <i class="ph-bold ph-caret-double-down"></i>
+                </div>
                 <div class="hero-deal-price-row">
-                    <span class="hero-deal-num font-impact">3,600</span><span class="hero-deal-yen">円!!</span>
+                    <span class="hero-deal-num font-impact">3,600</span><span class="hero-deal-yen">円</span>
                 </div>
             </div>
         </div>
