@@ -62,6 +62,7 @@
             background-color: var(--bg-body);
         }
         body.banner-hidden { padding-bottom: 40px; }
+        body.top-banner-hidden { --lp-top-banner-offset: 0px; }
 
         /* 数字強調用クラス (Noto Sans JPの極太を指定) */
         .font-impact { 
@@ -647,16 +648,10 @@
             width: 100%;
             max-width: var(--container-max-width);
             margin: 40px auto 48px;
-            padding-top: 18px;
         }
         .options-unified-inner {
             border-radius: 16px;
             overflow: hidden;
-            padding-top: 30px;
-        }
-        .options-unified-inner > .lp-frame-badge {
-            font-size: 0.78rem;
-            padding: 8px 22px;
         }
         .options-carousel-section {
             padding: 24px 0 20px;
@@ -795,17 +790,11 @@
             width: 100%;
             max-width: var(--container-max-width);
             margin: 44px auto 40px;
-            padding-top: 18px;
         }
         .access-section {
             margin: 0;
             border-radius: 16px;
             overflow: hidden;
-            padding-top: 30px;
-        }
-        .access-section > .lp-frame-badge {
-            font-size: 0.78rem;
-            padding: 8px 24px;
         }
         .access-section header img {
             display: block;
@@ -903,8 +892,16 @@
             border-color: rgba(255, 255, 255, 0.22);
         }
         body.banner-hidden .fixed-banner { transform: translateY(100%); }
-        #banner-toggle-container { position: fixed; bottom: 96px; right: 15px; z-index: 10000; }
-        #banner-toggle-btn { width: 45px; height: 45px; background: #1a1a2e; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        body.top-banner-hidden .gold-metallic-banner { transform: translateY(-100%); }
+        #banner-toggle-container {
+            position: fixed;
+            bottom: 96px;
+            right: 15px;
+            z-index: 10000;
+            transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body.banner-hidden #banner-toggle-container { bottom: 16px; }
+        #banner-toggle-btn { width: 45px; height: 45px; background: #1a1a1a; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #fff; }
 
         /* =======================================================
            ■ トップ固定バナー（既定カラー：赤・ゴールド・白）
@@ -920,6 +917,18 @@
             padding: 10px 14px;
             box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
             border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-first-view {
+            padding-top: 7.25rem;
+            transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body.top-banner-hidden .hero-first-view {
+            padding-top: 1.25rem;
+        }
+        @media (min-width: 768px) {
+            .hero-first-view { padding-top: 6.5rem; }
+            body.top-banner-hidden .hero-first-view { padding-top: 1rem; }
         }
         .gold-metallic-banner .banner-inner {
             display: flex;
@@ -1227,8 +1236,7 @@
 <!-- ==========================================
      ヒーローセクション
      ========================================== -->
-<!-- 上部の見切れを防止するため pt-28 (スマホ) / md:pt-24 (PC) を設定 -->
-<section class="relative w-full flex flex-col items-center justify-center pt-28 md:pt-24 pb-4">
+<section class="hero-first-view relative w-full flex flex-col items-center justify-center pb-4">
 
     <div class="relative z-20 text-center px-4 w-full max-w-[600px] flex flex-col items-center mt-2 md:mt-4">
         
@@ -1396,7 +1404,6 @@
     <!-- オプション＋注意事項（一体化・白背景） -->
     <section class="options-unified-section reveal-up" id="options-group-section">
         <div class="options-unified-inner lp-framed">
-            <span class="lp-frame-badge lp-frame-badge--brand">オプション</span>
             <section class="options-carousel-section">
                 <div class="text-box">
                     <h2 class="section-title">
@@ -1456,7 +1463,6 @@
     <!-- アクセスマップセクション -->
     <div class="access-section-wrap reveal-up">
     <section class="access-section lp-framed">
-        <span class="lp-frame-badge lp-frame-badge--brand">店舗情報・アクセス</span>
         <header>
             <img src="joylogo.jpg" alt="JOYFIT24経堂" style="width: 100%; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/600x200/C21632/ffffff?text=JOYFIT24+KYODO';">
         </header>
@@ -1708,12 +1714,42 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCarousel(allOptions, 'card-carousel-free', 'carousel-prev-free', 'carousel-next-free');
     initializeCarousel(paidOptions, 'card-carousel-paid', 'carousel-prev-paid', 'carousel-next-paid', true);
 
+    // ====================================================
+    // スクロールで上下固定バナーを自動非表示（下は×で固定オフも可）
+    // ====================================================
+    let bottomBannerLockedHidden = false;
+    const SCROLL_HIDE_Y = 56;
+    const SCROLL_SHOW_Y = 24;
+
+    function setBottomBannerHidden(hidden) {
+        document.body.classList.toggle('banner-hidden', hidden);
+    }
+
+    function updateScrollBanners() {
+        const y = window.scrollY;
+
+        if (y > SCROLL_HIDE_Y) {
+            document.body.classList.add('top-banner-hidden');
+            if (!bottomBannerLockedHidden) {
+                setBottomBannerHidden(true);
+            }
+        } else if (y <= SCROLL_SHOW_Y) {
+            document.body.classList.remove('top-banner-hidden');
+            if (!bottomBannerLockedHidden) {
+                setBottomBannerHidden(false);
+            }
+        }
+    }
+
+    window.addEventListener('scroll', updateScrollBanners, { passive: true });
+
     const toggleBtn = document.getElementById('banner-toggle-btn');
     const toggleIcon = document.getElementById('toggle-icon');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', function() {
-            document.body.classList.toggle('banner-hidden');
-            const isHidden = document.body.classList.contains('banner-hidden');
+            bottomBannerLockedHidden = !bottomBannerLockedHidden;
+            const isHidden = bottomBannerLockedHidden;
+            setBottomBannerHidden(isHidden);
             if (isHidden) {
                 toggleIcon.classList.replace('ph-x', 'ph-caret-up');
             } else {
