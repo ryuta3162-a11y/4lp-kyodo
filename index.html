@@ -937,23 +937,74 @@
         /* =======================================================
            ■ オープニング v4（月次シーケンス・JS演出）
            ======================================================= */
-        html.lp-opening-seen #lp-opening { display: none !important; }
-        body.lp-opening-active { overflow: hidden; }
-        .lp-opening {
-            position: fixed;
-            inset: 0;
+        html.lp-opening-seen #lp-opening-scroll { display: none !important; }
+        body.lp-opening-active { overflow-x: hidden; }
+        body.lp-opening-active .gold-metallic-banner,
+        body.lp-opening-active .fixed-banner,
+        body.lp-opening-active #banner-toggle-container {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .lp-opening-scroll {
+            position: relative;
             z-index: 100001;
+            height: 750vh;
+            height: 750dvh;
+        }
+        .lp-opening {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            height: 100dvh;
+            z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
             background: #080808;
             color: #fff;
+            overflow: hidden;
+            will-change: opacity;
         }
-        .lp-opening.is-exiting {
-            animation: openingOverlayExit 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        .lp-opening-curtain {
+            position: absolute;
+            inset: 0;
+            z-index: 30;
+            background: var(--brand-red);
+            pointer-events: none;
+            transition: opacity 0.2s ease;
         }
-        .lp-opening.is-done { display: none !important; }
+        .lp-opening-scroll-hint {
+            position: absolute;
+            bottom: max(28px, calc(env(safe-area-inset-bottom) + 12px));
+            left: 50%;
+            z-index: 31;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .lp-opening-scroll-hint-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .lp-opening-scroll-hint i {
+            font-size: 1.65rem;
+            color: #fff;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+            animation: openingHintBounce 1.5s ease-in-out infinite;
+        }
+        @keyframes openingHintBounce {
+            0%, 100% { transform: translateY(0); opacity: 0.75; }
+            50% { transform: translateY(10px); opacity: 1; }
+        }
         .lp-opening-bg {
             position: absolute;
             inset: 0;
@@ -987,7 +1038,7 @@
         }
         .lp-opening-meta--tl { top: max(16px, env(safe-area-inset-top)); left: max(16px, 3vw); }
         .lp-opening-meta--tr { top: max(16px, env(safe-area-inset-top)); right: max(16px, 3vw); letter-spacing: 0.18em; text-indent: 0; font-weight: 400; }
-        .lp-opening-meta--bl { bottom: max(32px, env(safe-area-inset-bottom)); left: max(16px, 3vw); }
+        .lp-opening-meta--bl { bottom: max(72px, calc(env(safe-area-inset-bottom) + 52px)); left: max(16px, 3vw); }
         .lp-opening-meta--br { bottom: max(32px, env(safe-area-inset-bottom)); right: max(16px, 3vw); letter-spacing: 0.28em; }
         .lp-opening-progress {
             position: absolute;
@@ -1004,13 +1055,13 @@
             height: 100%;
             width: 0;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), #fff);
-            transition: width linear;
+            transition: width 0.12s ease-out;
         }
         .lp-opening-skip {
             position: absolute;
             top: max(12px, env(safe-area-inset-top));
             right: max(12px, 3vw);
-            z-index: 6;
+            z-index: 35;
             padding: 8px 14px;
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 0.78rem;
@@ -1031,7 +1082,6 @@
             border: 2px solid var(--lp-frame);
             box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 36px 80px rgba(0, 0, 0, 0.55);
             overflow: hidden;
-            animation: openingFrameIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @media (min-width: 768px) {
             .lp-opening-frame {
@@ -1245,8 +1295,12 @@
             letter-spacing: -0.02em;
             line-height: 0.95;
             opacity: 0;
-            transform: scale(0.9);
-            animation: openingFinalePop 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: scale(0.88);
+            transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-finale-price.is-visible {
+            opacity: 1;
+            transform: scale(1);
         }
         .lp-o-finale-price span {
             font-family: 'Noto Sans JP', sans-serif;
@@ -1558,6 +1612,7 @@
                 transform: translateY(-50%) rotate(-5deg) scaleX(1);
                 animation: none;
             }
+            #lp-opening-scroll,
             #lp-opening,
             .lp-opening,
             .lp-opening-frame,
@@ -1573,18 +1628,24 @@
                 filter: none !important;
                 clip-path: none !important;
             }
-            #lp-opening { display: none !important; }
+            #lp-opening-scroll { display: none !important; }
         }
     </style>
 </head>
 
 <body>
 
-<!-- オープニング（毎回表示・確認用） -->
+<!-- オープニング（スクロール連動・毎回表示） -->
+<div id="lp-opening-scroll" class="lp-opening-scroll">
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介">
     <div class="lp-opening-bg" aria-hidden="true">
         <div class="lp-opening-grain"></div>
         <div class="lp-opening-vignette"></div>
+    </div>
+    <div class="lp-opening-curtain" id="lp-o-curtain"></div>
+    <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
+        <span class="lp-opening-scroll-hint-text">スクロール</span>
+        <i class="ph-bold ph-caret-double-down" aria-hidden="true"></i>
     </div>
     <span class="lp-opening-meta lp-opening-meta--tl">Exclusive</span>
     <span class="lp-opening-meta lp-opening-meta--tr" id="lp-o-scene-num">01</span>
@@ -1624,6 +1685,7 @@
         </div>
     </div>
     <div class="lp-opening-progress" aria-hidden="true"><span id="lp-o-progress"></span></div>
+</div>
 </div>
 
 <div class="ambient-bg" aria-hidden="true"></div>
@@ -1906,12 +1968,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ====================================================
-    // オープニング（毎回表示・確認用）
+    // オープニング（スクロール連動・止めたら止まる）
     // ====================================================
     (function initOpening() {
+        const scrollRoot = document.getElementById('lp-opening-scroll');
         const opening = document.getElementById('lp-opening');
         const skipBtn = document.getElementById('lp-opening-skip');
         const progressBar = document.getElementById('lp-o-progress');
+        const curtain = document.getElementById('lp-o-curtain');
+        const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
         const phaseFinale = document.getElementById('lp-o-phase-finale');
@@ -1919,106 +1984,129 @@ document.addEventListener('DOMContentLoaded', function() {
         const monthDisplay = document.getElementById('lp-o-month-display');
         const monthStack = document.getElementById('lp-o-month-stack');
         const sceneNum = document.getElementById('lp-o-scene-num');
-        if (!opening) return;
+        const finalePrice = phaseFinale?.querySelector('.lp-o-finale-price');
+        if (!scrollRoot || !opening) return;
 
         const MONTHS = ['6月', '7月', '8月', '9月', '10月', '11月'];
-        const MONTH_STEP = 950;
-        const TOTAL_MS = 9800;
-        const timers = [];
+        const P = {
+            curtainEnd: 0.09,
+            hintHide: 0.11,
+            introStart: 0.07,
+            introFull: 0.16,
+            strike: 0.14,
+            monthsStart: 0.16,
+            monthsEnd: 0.52,
+            finaleStart: 0.52,
+            finaleEnd: 0.86,
+            exitStart: 0.86,
+            complete: 0.97
+        };
         let finished = false;
+        let lastMonthIndex = -1;
 
-        function schedule(fn, delay) {
-            timers.push(setTimeout(fn, delay));
-        }
-
-        function clearAllTimers() {
-            timers.forEach(clearTimeout);
-            timers.length = 0;
+        function getProgress() {
+            const max = scrollRoot.offsetHeight - window.innerHeight;
+            if (max <= 0) return 1;
+            return Math.min(1, Math.max(0, window.scrollY / max));
         }
 
         function setSceneNum(text) {
             if (sceneNum) sceneNum.textContent = text;
         }
 
-        function switchPhase(from, to) {
-            if (from) {
-                from.classList.remove('is-active');
-                from.classList.add('is-out');
-            }
-            if (to) {
-                to.classList.remove('is-out');
-                to.classList.add('is-active');
-            }
+        function setPhaseActive(active) {
+            [phaseIntro, phaseMonths, phaseFinale].forEach(function(el) {
+                if (!el) return;
+                el.classList.remove('is-active', 'is-out');
+            });
+            if (active) active.classList.add('is-active');
         }
 
-        function pushStackItem(month) {
+        function rebuildMonthStack(upToExclusive) {
             if (!monthStack) return;
-            const li = document.createElement('li');
-            li.className = 'lp-o-stack-item';
-            li.innerHTML = '<span>' + month + '</span><span>3,400円</span>';
-            monthStack.appendChild(li);
-        }
-
-        function showMonth(index) {
-            if (!monthDisplay) return;
-            if (index > 0) pushStackItem(MONTHS[index - 1]);
-            monthDisplay.textContent = MONTHS[index];
-            monthDisplay.classList.remove('is-pop');
-            void monthDisplay.offsetWidth;
-            monthDisplay.classList.add('is-pop');
+            monthStack.innerHTML = '';
+            for (let i = 0; i < upToExclusive; i++) {
+                const li = document.createElement('li');
+                li.className = 'lp-o-stack-item';
+                li.style.animation = 'none';
+                li.style.opacity = '1';
+                li.style.transform = 'none';
+                li.innerHTML = '<span>' + MONTHS[i] + '</span><span>3,400円</span>';
+                monthStack.appendChild(li);
+            }
         }
 
         function finishOpening() {
             if (finished) return;
             finished = true;
-            clearAllTimers();
+            window.removeEventListener('scroll', onScroll);
             document.body.classList.remove('lp-opening-active');
-            opening.classList.add('is-done');
-            opening.remove();
+            scrollRoot.remove();
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, 0);
+            document.documentElement.style.scrollBehavior = '';
         }
 
-        function startExit() {
-            opening.classList.add('is-exiting');
-            schedule(finishOpening, 750);
-        }
+        function renderOpening(p) {
+            if (progressBar) progressBar.style.width = (p * 100) + '%';
 
-        function runTimeline() {
-            if (progressBar) {
-                progressBar.style.transition = 'width ' + TOTAL_MS + 'ms linear';
-                requestAnimationFrame(function() {
-                    progressBar.style.width = '100%';
-                });
+            if (curtain) {
+                const co = p <= 0.02 ? 1 : p >= P.curtainEnd ? 0 : 1 - (p - 0.02) / (P.curtainEnd - 0.02);
+                curtain.style.opacity = String(Math.max(0, Math.min(1, co)));
+            }
+            if (scrollHint) {
+                scrollHint.style.opacity = p < P.hintHide ? '1' : '0';
             }
 
-            schedule(function() {
-                usualBlock?.classList.add('is-struck');
-            }, 1200);
-
-            schedule(function() {
+            if (p < P.monthsStart) {
+                setSceneNum('01');
+                setPhaseActive(phaseIntro);
+                if (phaseIntro) {
+                    const introOp = p < P.introStart ? 0 : Math.min(1, (p - P.introStart) / (P.introFull - P.introStart));
+                    phaseIntro.style.opacity = String(introOp);
+                }
+                usualBlock?.classList.toggle('is-struck', p >= P.strike);
+                if (monthDisplay) monthDisplay.classList.remove('is-pop');
+                lastMonthIndex = -1;
+            } else if (p < P.finaleStart) {
                 setSceneNum('02');
-                switchPhase(phaseIntro, phaseMonths);
-                showMonth(0);
-            }, 2200);
+                setPhaseActive(phaseMonths);
+                if (phaseIntro) phaseIntro.style.opacity = '1';
 
-            MONTHS.forEach(function(_, i) {
-                if (i === 0) return;
-                schedule(function() {
-                    showMonth(i);
-                }, 2200 + i * MONTH_STEP);
-            });
+                const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
+                const idx = Math.min(MONTHS.length - 1, Math.floor(mp * MONTHS.length));
 
-            schedule(function() {
-                pushStackItem(MONTHS[MONTHS.length - 1]);
-                if (monthDisplay) monthDisplay.style.opacity = '0';
-            }, 2200 + MONTHS.length * MONTH_STEP);
-
-            schedule(function() {
+                if (idx !== lastMonthIndex) {
+                    lastMonthIndex = idx;
+                    rebuildMonthStack(idx);
+                    if (monthDisplay) {
+                        monthDisplay.textContent = MONTHS[idx];
+                        monthDisplay.classList.remove('is-pop');
+                        void monthDisplay.offsetWidth;
+                        monthDisplay.classList.add('is-pop');
+                        monthDisplay.style.opacity = '1';
+                    }
+                }
+                finalePrice?.classList.remove('is-visible');
+            } else if (p < P.exitStart) {
                 setSceneNum('03');
-                switchPhase(phaseMonths, phaseFinale);
-            }, 2200 + MONTHS.length * MONTH_STEP + 500);
+                setPhaseActive(phaseFinale);
+                rebuildMonthStack(MONTHS.length);
+                if (monthDisplay) monthDisplay.style.opacity = '0';
+                finalePrice?.classList.add('is-visible');
+                opening.style.opacity = '1';
+            } else {
+                setSceneNum('03');
+                const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
+                opening.style.opacity = String(Math.max(0, 1 - exitP));
+            }
 
-            schedule(startExit, TOTAL_MS - 750);
-            schedule(finishOpening, TOTAL_MS + 200);
+            if (p >= P.complete) finishOpening();
+        }
+
+        function onScroll() {
+            if (finished) return;
+            renderOpening(getProgress());
         }
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2028,11 +2116,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         document.body.classList.add('lp-opening-active');
-        skipBtn?.addEventListener('click', function() {
-            clearAllTimers();
-            startExit();
-        });
-        runTimeline();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        skipBtn?.addEventListener('click', finishOpening);
+        renderOpening(getProgress());
     })();
 
     
