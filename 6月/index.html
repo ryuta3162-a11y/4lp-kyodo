@@ -1159,10 +1159,10 @@
             justify-content: center;
             padding: clamp(1.5rem, 5vw, 3rem);
             font-family: 'Noto Sans JP', sans-serif !important;
-            --lp-o-intro: clamp(1.85rem, 6.5vw, 2.75rem);
-            --lp-o-price-lg: clamp(3.75rem, 17vw, 7rem);
-            --lp-o-price-md: clamp(3rem, 13vw, 5.5rem);
-            --lp-o-row: clamp(1.5rem, 5.5vw, 2rem);
+            --lp-o-intro: clamp(1.5rem, 5.2vw, 2.1rem);
+            --lp-o-header: clamp(1.65rem, 5.8vw, 2.35rem);
+            --lp-o-row-month: clamp(1.05rem, 3.8vw, 1.35rem);
+            --lp-o-row-price: clamp(0.95rem, 3.4vw, 1.22rem);
         }
         .lp-opening-frame,
         .lp-opening-corner { display: none !important; }
@@ -1203,7 +1203,6 @@
             visibility: visible;
             pointer-events: auto;
         }
-        .lp-o-label,
         .lp-o-lead,
         .lp-o-caption {
             font-size: var(--lp-o-intro);
@@ -1215,106 +1214,49 @@
             transform: translateY(10px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
-        .lp-o-label {
-            margin: 0 0 0.5rem;
-            color: rgba(255, 255, 255, 0.95);
+        .lp-o-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.65rem, 2.5vw, 1rem);
+            width: min(100%, 420px);
+            margin: 0 0 0.85rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
         }
-        .lp-o-label.is-visible {
+        .lp-o-header.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
+        .lp-o-header-line {
+            flex: 1;
+            height: 1px;
+            max-width: 52px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.85));
+        }
+        .lp-o-header-line:last-child {
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.85), transparent);
+        }
+        .lp-o-label {
+            margin: 0;
+            padding: 0.45rem 0.85rem;
+            font-size: var(--lp-o-header);
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            text-indent: 0.14em;
+            line-height: 1.35;
+            color: #fff;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.22) 100%);
+            box-shadow: 0 0 28px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
         .lp-o-lead {
-            margin: 0 0 1.1rem;
+            margin: 0 0 1rem;
         }
         .lp-o-lead.is-visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        .lp-o-price-compare {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: clamp(0.65rem, 2.5vw, 1rem);
-            margin: 0 0 0.5rem;
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
-        }
-        .lp-o-price-compare.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-price-usual-wrap {
-            position: relative;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 0.2rem;
-            padding: 0 0.25rem;
-        }
-        .lp-o-price-usual {
-            font-size: var(--lp-o-price-md);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1;
-            transition: color 0.35s ease, opacity 0.35s ease;
-        }
-        .lp-o-price-usual-wrap.is-struck .lp-o-price-usual {
-            color: rgba(255, 255, 255, 0.38);
-        }
-        .lp-o-strike-line {
-            position: absolute;
-            left: -4%;
-            right: -4%;
-            top: 50%;
-            height: 3px;
-            margin-top: -1px;
-            background: linear-gradient(90deg, transparent, #fff 8%, #fff 92%, transparent);
-            transform: scaleX(0);
-            transform-origin: left center;
-            pointer-events: none;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
-        }
-        .lp-o-price-tax {
-            font-size: clamp(0.95rem, 3.2vw, 1.2rem);
-            font-weight: 800;
-            letter-spacing: 0.04em;
-        }
-        .lp-o-price-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(1.75rem, 6vw, 2.5rem);
-            color: var(--gold-light);
-            opacity: 0;
-            transform: translateY(-6px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        .lp-o-price-arrow.is-visible {
-            opacity: 0.9;
-            transform: translateY(0);
-        }
-        .lp-o-price-deal-wrap {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 0.2rem;
-            opacity: 0;
-            transform: translateY(8px) scale(0.96);
-            transition: opacity 0.45s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-price-deal-wrap.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .lp-o-price-deal {
-            font-size: var(--lp-o-price-lg);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            line-height: 1;
-            color: #fff;
-            text-shadow: 0 0 48px rgba(212, 175, 55, 0.28);
         }
         .lp-o-caption {
             margin: 1.1rem 0 0;
@@ -1329,75 +1271,192 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .lp-o-months-lead {
+            margin: 0 0 0.75rem;
+            font-size: var(--lp-o-intro);
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-indent: 0.12em;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .lp-o-months-lead.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .lp-o-month-list {
             list-style: none;
             margin: 0;
             padding: 0;
-            width: min(100%, 400px);
+            width: min(100%, 440px);
             display: flex;
             flex-direction: column;
             gap: 0;
         }
         .lp-o-month-row {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: space-between;
-            padding: clamp(14px, 3.5vw, 18px) clamp(12px, 4vw, 20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-            opacity: 0;
-            transform: translateX(-12px);
-            transition: opacity 0.4s ease, transform 0.4s ease, background 0.35s ease;
+            gap: 0.5rem;
+            padding: clamp(9px, 2.5vw, 12px) clamp(10px, 3vw, 14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
-        .lp-o-month-row:first-child { border-top: 1px solid rgba(255, 255, 255, 0.14); }
-        .lp-o-month-row.is-visible {
+        .lp-o-month-row:first-child { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+        .lp-o-month-row.is-current {
+            background: rgba(212, 175, 55, 0.08);
+            border-bottom-color: rgba(212, 175, 55, 0.28);
+        }
+        .lp-o-month-row.is-done {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .lp-o-row-month {
+            flex-shrink: 0;
+            min-width: 2.5em;
+            font-size: var(--lp-o-row-month);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-align: left;
+        }
+        .lp-o-row-price-col {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 0.25rem 0.4rem;
+        }
+        .lp-o-row-usual-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+        }
+        .lp-o-row-usual {
+            font-size: var(--lp-o-row-price);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: rgba(255, 255, 255, 0.88);
+            transition: color 0.3s ease;
+        }
+        .lp-o-row-usual-wrap.is-struck .lp-o-row-usual {
+            color: rgba(255, 255, 255, 0.38);
+        }
+        .lp-o-row-strike {
+            position: absolute;
+            left: -3%;
+            right: -3%;
+            top: 50%;
+            height: 2px;
+            margin-top: -1px;
+            background: linear-gradient(90deg, transparent, #fff 6%, #fff 94%, transparent);
+            transform: scaleX(0);
+            transform-origin: left center;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+        }
+        .lp-o-row-tax {
+            font-size: 0.62em;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+        .lp-o-row-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.35em;
+            height: 1.35em;
+            font-size: var(--lp-o-row-price);
+            color: var(--gold-light);
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-row-arrow.is-visible {
+            opacity: 0.95;
+            transform: scale(1);
+        }
+        .lp-o-row-deal-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+            opacity: 0;
+            transform: translateX(6px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-row-deal-wrap.is-visible {
             opacity: 1;
             transform: translateX(0);
         }
-        .lp-o-month-row.is-current {
-            background: rgba(212, 175, 55, 0.1);
-            border-bottom-color: rgba(212, 175, 55, 0.35);
-        }
-        .lp-o-row-month {
-            font-size: var(--lp-o-row);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-        }
-        .lp-o-row-price {
-            font-size: var(--lp-o-row);
+        .lp-o-row-deal {
+            font-size: var(--lp-o-row-price);
             font-weight: 900;
             letter-spacing: -0.02em;
-            line-height: 1;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
         }
-        .lp-o-row-tax {
-            font-size: 0.58em;
-            font-weight: 800;
-            margin-left: 1px;
-            letter-spacing: 0.02em;
-        }
-        .lp-o-savings {
-            margin: clamp(1.25rem, 4vw, 1.75rem) 0 0;
-            padding-top: clamp(1rem, 3vw, 1.35rem);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            width: min(100%, 400px);
-            font-size: var(--lp-o-intro);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-            line-height: 1.55;
-            color: rgba(255, 255, 255, 0.95);
+        .lp-o-savings-card {
+            margin: clamp(1rem, 3.5vw, 1.35rem) 0 0;
+            width: min(100%, 440px);
+            padding: clamp(1rem, 3.5vw, 1.35rem) clamp(1rem, 4vw, 1.5rem);
+            text-align: center;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            background:
+                linear-gradient(165deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.28) 100%) padding-box,
+                var(--gold-gradient) border-box;
+            box-shadow:
+                0 0 40px rgba(212, 175, 55, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
             opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(14px) scale(0.97);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lp-o-savings.is-visible {
+        .lp-o-savings-card.is-visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-savings-label {
+            display: block;
+            margin: 0 0 0.35rem;
+            font-size: clamp(0.88rem, 3vw, 1.05rem);
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-indent: 0.18em;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .lp-o-savings-main {
+            margin: 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.35rem;
+            line-height: 1.1;
         }
         .lp-o-savings-num {
-            font-size: clamp(2.25rem, 10vw, 3.5rem);
+            font-size: clamp(2.35rem, 11vw, 3.75rem);
             font-weight: 900;
             letter-spacing: -0.02em;
             color: var(--gold-light);
-            text-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+            text-shadow: 0 0 32px rgba(248, 231, 28, 0.45), 0 2px 0 rgba(0, 0, 0, 0.2);
+        }
+        .lp-o-savings-unit {
+            font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+        .lp-o-savings-badge {
+            display: inline-block;
+            margin-top: 0.65rem;
+            padding: 0.35rem 1.1rem;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 999px;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
         }
         @keyframes openingFrameIn {
             from { opacity: 0; transform: scale(0.94); }
@@ -1709,7 +1768,7 @@
             .lp-opening-frame,
             .lp-opening-phase,
             .lp-o-month-display,
-            .lp-o-savings,
+            .lp-o-savings-card,
             .lp-o-month-row,
             .lp-opening-skip {
                 animation: none !important;
@@ -1752,26 +1811,26 @@
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
-            <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
-            <p class="lp-o-lead" id="lp-o-lead">半年間</p>
-            <div class="lp-o-price-compare" id="lp-o-price-compare">
-                <div class="lp-o-price-usual-wrap" id="lp-o-usual-wrap">
-                    <span class="lp-o-price-usual">9,350</span>
-                    <span class="lp-o-price-tax">円（税込）</span>
-                    <span class="lp-o-strike-line" id="lp-o-strike-line" aria-hidden="true"></span>
-                </div>
-                <span class="lp-o-price-arrow" id="lp-o-price-arrow"><i class="ph-bold ph-caret-down" aria-hidden="true"></i></span>
-                <div class="lp-o-price-deal-wrap" id="lp-o-deal-wrap">
-                    <span class="lp-o-price-deal">3,960</span>
-                    <span class="lp-o-price-tax">円（税込）</span>
-                </div>
+            <div class="lp-o-header" id="lp-o-header">
+                <span class="lp-o-header-line" aria-hidden="true"></span>
+                <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
+                <span class="lp-o-header-line" aria-hidden="true"></span>
             </div>
+            <p class="lp-o-lead" id="lp-o-lead">半年間</p>
             <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
+            <p class="lp-o-months-lead" id="lp-o-months-lead">月会費</p>
             <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
-            <p class="lp-o-savings" id="lp-o-savings">6ヶ月で合計 <span class="lp-o-savings-num">32,340</span>円（税込）お得</p>
+            <div class="lp-o-savings-card" id="lp-o-savings">
+                <span class="lp-o-savings-label">6ヶ月で合計</span>
+                <p class="lp-o-savings-main">
+                    <span class="lp-o-savings-num">32,340</span>
+                    <span class="lp-o-savings-unit">円（税込）</span>
+                </p>
+                <span class="lp-o-savings-badge">お得</span>
+            </div>
         </div>
     </div>
     <div class="lp-opening-progress" aria-hidden="true"><span id="lp-o-progress"></span></div>
@@ -2069,36 +2128,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
-        const introLabel = document.getElementById('lp-o-label');
+        const introHeader = document.getElementById('lp-o-header');
         const introLead = document.getElementById('lp-o-lead');
-        const priceCompare = document.getElementById('lp-o-price-compare');
-        const usualWrap = document.getElementById('lp-o-usual-wrap');
-        const strikeLine = document.getElementById('lp-o-strike-line');
-        const priceArrow = document.getElementById('lp-o-price-arrow');
-        const dealWrap = document.getElementById('lp-o-deal-wrap');
         const introCaption = document.getElementById('lp-o-caption');
+        const monthsLead = document.getElementById('lp-o-months-lead');
         const monthList = document.getElementById('lp-o-month-list');
-        const savingsLine = document.getElementById('lp-o-savings');
+        const savingsCard = document.getElementById('lp-o-savings');
         if (!scrollRoot || !opening) return;
 
         const MONTHS = ['6月', '7月', '8月', '9月', '10月', '11月'];
+        const USUAL_PRICE = '9,350';
         const CAMPAIGN_PRICE = '3,960';
         const P = {
             curtainEnd: 0.12,
             hintHide: 0.20,
             introStart: 0.12,
-            introEnd: 0.36,
-            monthsStart: 0.36,
+            introEnd: 0.28,
+            monthsStart: 0.28,
             monthsEnd: 0.88,
             exitStart: 0.92,
             complete: 0.97
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.0005 : 0.00016;
-        const TOUCH_FACTOR = prefersReduced ? 0.001 : 0.0005;
-        const KEY_STEP = prefersReduced ? 0.025 : 0.008;
+        const WHEEL_FACTOR = prefersReduced ? 0.0004 : 0.000128;
+        const TOUCH_FACTOR = prefersReduced ? 0.0008 : 0.0004;
+        const KEY_STEP = prefersReduced ? 0.02 : 0.0064;
         let finished = false;
-        let lastMonthIndex = -1;
         let virtualProgress = 0;
         let touchLastY = 0;
         let listBuilt = false;
@@ -2118,39 +2173,52 @@ document.addEventListener('DOMContentLoaded', function() {
             MONTHS.forEach(function(m) {
                 const li = document.createElement('li');
                 li.className = 'lp-o-month-row';
-                li.innerHTML = '<span class="lp-o-row-month">' + m + '</span><span class="lp-o-row-price">' + CAMPAIGN_PRICE + '<span class="lp-o-row-tax">円（税込）</span></span>';
+                li.innerHTML =
+                    '<span class="lp-o-row-month">' + m + '</span>' +
+                    '<div class="lp-o-row-price-col">' +
+                        '<div class="lp-o-row-usual-wrap">' +
+                            '<span class="lp-o-row-usual">' + USUAL_PRICE + '</span>' +
+                            '<span class="lp-o-row-tax">円（税込）</span>' +
+                            '<span class="lp-o-row-strike" aria-hidden="true"></span>' +
+                        '</div>' +
+                        '<span class="lp-o-row-arrow" aria-hidden="true"><i class="ph-bold ph-arrow-down"></i></span>' +
+                        '<span class="lp-o-row-deal-wrap">' +
+                            '<span class="lp-o-row-deal">' + CAMPAIGN_PRICE + '</span>' +
+                            '<span class="lp-o-row-tax">円（税込）</span>' +
+                        '</span>' +
+                    '</div>';
                 monthList.appendChild(li);
             });
         }
 
-        function updateMonthList(currentIdx) {
+        function updateMonthRows(monthProgress) {
             buildMonthList();
             if (!monthList) return;
             Array.from(monthList.children).forEach(function(row, i) {
-                row.classList.toggle('is-visible', i <= currentIdx);
-                row.classList.toggle('is-current', i === currentIdx);
+                const strikeP = Math.max(0, Math.min(1, monthProgress - i));
+                const usualWrap = row.querySelector('.lp-o-row-usual-wrap');
+                const strikeEl = row.querySelector('.lp-o-row-strike');
+                const arrowEl = row.querySelector('.lp-o-row-arrow');
+                const dealWrap = row.querySelector('.lp-o-row-deal-wrap');
+                if (strikeEl) strikeEl.style.transform = 'scaleX(' + strikeP + ')';
+                usualWrap?.classList.toggle('is-struck', strikeP > 0.08);
+                arrowEl?.classList.toggle('is-visible', strikeP >= 0.42);
+                dealWrap?.classList.toggle('is-visible', strikeP >= 0.78);
+                row.classList.toggle('is-current', strikeP > 0.05 && strikeP < 0.92);
+                row.classList.toggle('is-done', strikeP >= 0.92);
             });
         }
 
         function resetIntroState() {
-            introLabel?.classList.remove('is-visible');
+            introHeader?.classList.remove('is-visible');
             introLead?.classList.remove('is-visible');
-            priceCompare?.classList.remove('is-visible');
-            usualWrap?.classList.remove('is-struck');
-            if (strikeLine) strikeLine.style.transform = 'scaleX(0)';
-            priceArrow?.classList.remove('is-visible');
-            dealWrap?.classList.remove('is-visible');
             introCaption?.classList.remove('is-visible');
         }
 
         function resetMonthsState() {
-            lastMonthIndex = -1;
-            savingsLine?.classList.remove('is-visible');
-            if (monthList) {
-                Array.from(monthList.children).forEach(function(row) {
-                    row.classList.remove('is-visible', 'is-current');
-                });
-            }
+            monthsLead?.classList.remove('is-visible');
+            savingsCard?.classList.remove('is-visible');
+            updateMonthRows(0);
         }
 
         function unbindOpening() {
@@ -2199,45 +2267,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetMonthsState();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
-                introLabel?.classList.toggle('is-visible', ip >= 0.06);
-                introLead?.classList.toggle('is-visible', ip >= 0.16);
-                priceCompare?.classList.toggle('is-visible', ip >= 0.28);
-
-                const strikeP = ip < 0.32 ? 0 : Math.min(1, (ip - 0.32) / 0.28);
-                if (strikeLine) strikeLine.style.transform = 'scaleX(' + strikeP + ')';
-                usualWrap?.classList.toggle('is-struck', strikeP > 0.15);
-                priceArrow?.classList.toggle('is-visible', strikeP >= 0.55);
-                dealWrap?.classList.toggle('is-visible', strikeP >= 0.72);
-                introCaption?.classList.toggle('is-visible', ip >= 0.78);
+                introHeader?.classList.toggle('is-visible', ip >= 0.08);
+                introLead?.classList.toggle('is-visible', ip >= 0.35);
+                introCaption?.classList.toggle('is-visible', ip >= 0.62);
             } else if (p < P.exitStart) {
                 setPhaseActive(phaseMonths);
-                introLabel?.classList.add('is-visible');
+                introHeader?.classList.add('is-visible');
                 introLead?.classList.add('is-visible');
-                priceCompare?.classList.add('is-visible');
-                usualWrap?.classList.add('is-struck');
-                if (strikeLine) strikeLine.style.transform = 'scaleX(1)';
-                priceArrow?.classList.add('is-visible');
-                dealWrap?.classList.add('is-visible');
                 introCaption?.classList.add('is-visible');
+                monthsLead?.classList.add('is-visible');
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
-                if (mp < 0.82) {
-                    const idx = Math.min(MONTHS.length - 1, Math.floor((mp / 0.82) * MONTHS.length));
-                    if (idx !== lastMonthIndex) {
-                        lastMonthIndex = idx;
-                        updateMonthList(idx);
-                    }
-                    savingsLine?.classList.remove('is-visible');
+                if (mp < 0.78) {
+                    const monthProgress = (mp / 0.78) * MONTHS.length;
+                    updateMonthRows(monthProgress);
+                    savingsCard?.classList.remove('is-visible');
                 } else {
-                    updateMonthList(MONTHS.length - 1);
-                    if (monthList) {
-                        Array.from(monthList.children).forEach(function(row) {
-                            row.classList.add('is-visible');
-                            row.classList.remove('is-current');
-                        });
-                    }
-                    const sp = (mp - 0.82) / 0.18;
-                    savingsLine?.classList.toggle('is-visible', sp >= 0.2);
+                    updateMonthRows(MONTHS.length);
+                    const sp = (mp - 0.78) / 0.22;
+                    savingsCard?.classList.toggle('is-visible', sp >= 0.25);
                 }
                 opening.style.opacity = '1';
             } else {
