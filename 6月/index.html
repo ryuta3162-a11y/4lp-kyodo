@@ -1159,13 +1159,11 @@
             justify-content: center;
             padding: clamp(1.5rem, 5vw, 3rem);
             font-family: 'Noto Sans JP', sans-serif !important;
-            --lp-o-label: clamp(1rem, 3.6vw, 1.3rem);
-            --lp-o-lead: clamp(1.65rem, 6vw, 2.5rem);
-            --lp-o-price-lg: clamp(3.5rem, 16vw, 6.5rem);
-            --lp-o-price-md: clamp(2.75rem, 12vw, 5rem);
-            --lp-o-row: clamp(1.35rem, 5vw, 1.85rem);
-            --lp-o-cell: clamp(1.05rem, 3.8vw, 1.35rem);
-            --lp-o-finale: clamp(1.75rem, 6.5vw, 2.75rem);
+            --lp-o-intro: clamp(1.85rem, 6.5vw, 2.75rem);
+            --lp-o-price-lg: clamp(3.75rem, 17vw, 7rem);
+            --lp-o-price-md: clamp(3rem, 13vw, 5.5rem);
+            --lp-o-row: clamp(1.5rem, 5.5vw, 2rem);
+            --lp-o-finale: clamp(1.85rem, 6.5vw, 2.75rem);
         }
         .lp-opening-frame,
         .lp-opening-corner { display: none !important; }
@@ -1206,31 +1204,28 @@
             visibility: visible;
             pointer-events: auto;
         }
-        .lp-o-label {
-            margin: 0 0 0.85rem;
-            font-size: var(--lp-o-label);
+        .lp-o-label,
+        .lp-o-lead,
+        .lp-o-caption {
+            font-size: var(--lp-o-intro);
             font-weight: 900;
-            letter-spacing: 0.12em;
-            text-indent: 0.12em;
-            color: rgba(255, 255, 255, 0.92);
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.45;
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .lp-o-label {
+            margin: 0 0 0.5rem;
+            color: rgba(255, 255, 255, 0.95);
         }
         .lp-o-label.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
         .lp-o-lead {
-            margin: 0 0 1.25rem;
-            font-size: var(--lp-o-lead);
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            text-indent: 0.1em;
-            line-height: 1.4;
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
+            margin: 0 0 1.1rem;
         }
         .lp-o-lead.is-visible {
             opacity: 1;
@@ -1291,62 +1286,12 @@
             margin-bottom: 0.35em;
         }
         .lp-o-caption {
-            margin: 0 0 1.35rem;
-            font-size: var(--lp-o-label);
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.62);
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            margin: 1rem 0 0;
+            color: var(--gold-light);
         }
         .lp-o-caption.is-visible {
             opacity: 1;
-        }
-        .lp-o-month-preview {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: min(100%, 480px);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-        @media (min-width: 480px) {
-            .lp-o-month-preview { gap: 14px; width: min(100%, 540px); }
-        }
-        .lp-o-preview-cell {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: clamp(14px, 3.5vw, 18px) 8px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.35s ease;
-        }
-        .lp-o-preview-cell.is-visible {
-            opacity: 1;
             transform: translateY(0);
-        }
-        .lp-o-preview-cell .lp-o-cell-month {
-            font-size: var(--lp-o-cell);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-        }
-        .lp-o-preview-cell .lp-o-cell-price {
-            font-size: clamp(1.35rem, 4.5vw, 1.75rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            line-height: 1;
-        }
-        .lp-o-preview-cell .lp-o-cell-yen {
-            font-size: 0.72em;
-            font-weight: 800;
-            margin-left: 1px;
         }
         .lp-o-month-list {
             list-style: none;
@@ -1394,7 +1339,7 @@
         }
         .lp-o-benefit {
             margin: 0 0 0.65rem;
-            font-size: var(--lp-o-lead);
+            font-size: var(--lp-o-intro);
             font-weight: 900;
             letter-spacing: 0.1em;
             text-indent: 0.1em;
@@ -1409,7 +1354,7 @@
         }
         .lp-o-savings {
             margin: 0 0 1.35rem;
-            font-size: var(--lp-o-label);
+            font-size: var(--lp-o-intro);
             font-weight: 800;
             letter-spacing: 0.06em;
             line-height: 1.5;
@@ -1446,7 +1391,7 @@
         }
         .lp-o-finale-brand {
             margin: 1.25rem 0 0;
-            font-size: var(--lp-o-label);
+            font-size: var(--lp-o-intro);
             font-weight: 800;
             letter-spacing: 0.12em;
             text-indent: 0.12em;
@@ -1768,7 +1713,6 @@
             .lp-opening-phase,
             .lp-o-month-display,
             .lp-o-finale-tag,
-            .lp-o-preview-cell,
             .lp-o-month-row,
             .lp-opening-skip {
                 animation: none !important;
@@ -1819,8 +1763,7 @@
                 <span class="lp-o-price-deal">3,960</span>
                 <span class="lp-o-price-unit">円（税込）</span>
             </div>
-            <p class="lp-o-caption" id="lp-o-caption">通常月額から、特別価格へ</p>
-            <ul class="lp-o-month-preview" id="lp-o-month-preview" aria-hidden="true"></ul>
+            <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
@@ -2134,7 +2077,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const introLead = document.getElementById('lp-o-lead');
         const priceCompare = document.getElementById('lp-o-price-compare');
         const introCaption = document.getElementById('lp-o-caption');
-        const monthPreview = document.getElementById('lp-o-month-preview');
         const monthList = document.getElementById('lp-o-month-list');
         const benefitLine = document.getElementById('lp-o-benefit');
         const savingsLine = document.getElementById('lp-o-savings');
@@ -2148,22 +2090,21 @@ document.addEventListener('DOMContentLoaded', function() {
             curtainEnd: 0.12,
             hintHide: 0.20,
             introStart: 0.12,
-            introEnd: 0.42,
-            monthsStart: 0.42,
-            monthsEnd: 0.82,
-            finaleStart: 0.82,
+            introEnd: 0.34,
+            monthsStart: 0.34,
+            monthsEnd: 0.80,
+            finaleStart: 0.80,
             exitStart: 0.92,
             complete: 0.97
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.0009 : 0.00032;
-        const TOUCH_FACTOR = prefersReduced ? 0.0018 : 0.001;
-        const KEY_STEP = prefersReduced ? 0.04 : 0.016;
+        const WHEEL_FACTOR = prefersReduced ? 0.00035 : 0.00009;
+        const TOUCH_FACTOR = prefersReduced ? 0.0007 : 0.00028;
+        const KEY_STEP = prefersReduced ? 0.015 : 0.004;
         let finished = false;
         let lastMonthIndex = -1;
         let virtualProgress = 0;
         let touchLastY = 0;
-        let previewBuilt = false;
         let listBuilt = false;
 
         function setPhaseActive(active) {
@@ -2172,26 +2113,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 el.classList.remove('is-active');
             });
             if (active) active.classList.add('is-active');
-        }
-
-        function buildPreviewGrid() {
-            if (!monthPreview || previewBuilt) return;
-            previewBuilt = true;
-            monthPreview.innerHTML = '';
-            MONTHS.forEach(function(m) {
-                const li = document.createElement('li');
-                li.className = 'lp-o-preview-cell';
-                li.innerHTML = '<span class="lp-o-cell-month">' + m + '</span><span class="lp-o-cell-price">' + CAMPAIGN_PRICE + '<span class="lp-o-cell-yen">円</span></span>';
-                monthPreview.appendChild(li);
-            });
-        }
-
-        function updatePreviewGrid(visibleCount) {
-            buildPreviewGrid();
-            if (!monthPreview) return;
-            Array.from(monthPreview.children).forEach(function(cell, i) {
-                cell.classList.toggle('is-visible', i < visibleCount);
-            });
         }
 
         function buildMonthList() {
@@ -2220,7 +2141,6 @@ document.addEventListener('DOMContentLoaded', function() {
             introLead?.classList.remove('is-visible');
             priceCompare?.classList.remove('is-visible');
             introCaption?.classList.remove('is-visible');
-            updatePreviewGrid(0);
         }
 
         function resetMonthsState() {
@@ -2287,14 +2207,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetFinaleState();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
-                introLabel?.classList.toggle('is-visible', ip >= 0.05);
-                introLead?.classList.toggle('is-visible', ip >= 0.12);
-                priceCompare?.classList.toggle('is-visible', ip >= 0.28);
-                introCaption?.classList.toggle('is-visible', ip >= 0.38);
-
-                const previewCount = ip < 0.48 ? 0 : Math.min(MONTHS.length, Math.floor((ip - 0.48) / 0.09) + 1);
-                updatePreviewGrid(previewCount);
-                if (monthPreview) monthPreview.setAttribute('aria-hidden', previewCount === 0 ? 'true' : 'false');
+                introLabel?.classList.toggle('is-visible', ip >= 0.06);
+                introLead?.classList.toggle('is-visible', ip >= 0.18);
+                priceCompare?.classList.toggle('is-visible', ip >= 0.42);
+                introCaption?.classList.toggle('is-visible', ip >= 0.62);
             } else if (p < P.monthsEnd) {
                 setPhaseActive(phaseMonths);
                 resetFinaleState();
@@ -2302,7 +2218,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 introLead?.classList.add('is-visible');
                 priceCompare?.classList.add('is-visible');
                 introCaption?.classList.add('is-visible');
-                updatePreviewGrid(MONTHS.length);
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
                 const idx = Math.min(MONTHS.length - 1, Math.floor(mp * MONTHS.length));
