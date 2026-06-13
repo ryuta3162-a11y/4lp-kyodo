@@ -975,53 +975,8 @@
             will-change: opacity;
             font-family: 'Noto Sans JP', sans-serif !important;
         }
-        .lp-opening-gym-lines {
-            position: absolute;
-            inset: -20%;
-            z-index: 0;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                -62deg,
-                transparent 0,
-                transparent 28px,
-                rgba(255, 255, 255, 0.028) 28px,
-                rgba(255, 255, 255, 0.028) 30px
-            );
-            animation: openingGymLinesDrift 18s linear infinite;
-        }
-        @keyframes openingGymLinesDrift {
-            from { transform: translateY(0); }
-            to { transform: translateY(60px); }
-        }
-        .lp-opening-pulse-line {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 18%;
-            z-index: 1;
-            height: 48px;
-            pointer-events: none;
-            opacity: 0.22;
-        }
-        .lp-opening-pulse-line svg {
-            width: 100%;
-            height: 100%;
-        }
-        .lp-opening-pulse-line path {
-            fill: none;
-            stroke: var(--gold-main);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-dasharray: 1200;
-            stroke-dashoffset: 1200;
-            animation: openingPulseDraw 2.8s ease-in-out infinite;
-        }
-        @keyframes openingPulseDraw {
-            0% { stroke-dashoffset: 1200; opacity: 0.2; }
-            35% { stroke-dashoffset: 0; opacity: 0.85; }
-            70% { stroke-dashoffset: -1200; opacity: 0.2; }
-            100% { stroke-dashoffset: -1200; opacity: 0.2; }
-        }
+        .lp-opening-gym-lines,
+        .lp-opening-pulse-line { display: none !important; }
         .lp-opening-badge {
             display: none !important;
         }
@@ -1035,19 +990,7 @@
             pointer-events: none;
             transition: opacity 0.2s ease;
         }
-        .lp-opening-curtain::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                -55deg,
-                transparent 0,
-                transparent 18px,
-                rgba(0, 0, 0, 0.07) 18px,
-                rgba(0, 0, 0, 0.07) 20px
-            );
-            opacity: 0.65;
-        }
+        .lp-opening-curtain::after { display: none; }
         .lp-opening-scroll-hint {
             position: absolute;
             bottom: max(36px, calc(env(safe-area-inset-bottom) + 20px));
@@ -1159,10 +1102,56 @@
             justify-content: center;
             padding: clamp(1.5rem, 5vw, 3rem);
             font-family: 'Noto Sans JP', sans-serif !important;
-            --lp-o-intro: clamp(1.5rem, 5.2vw, 2.1rem);
-            --lp-o-header: clamp(1.65rem, 5.8vw, 2.35rem);
-            --lp-o-row-month: clamp(1.05rem, 3.8vw, 1.35rem);
-            --lp-o-row-price: clamp(0.95rem, 3.4vw, 1.22rem);
+            --lp-o-intro: clamp(1.55rem, 5.5vw, 2.15rem);
+            --lp-o-header-main: clamp(1.75rem, 6.2vw, 2.5rem);
+            --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
+            --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
+        }
+        .lp-o-grille-frame {
+            position: relative;
+            border: 2px solid #1a1a1a;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.22),
+                inset 0 -4px 0 rgba(0, 0, 0, 0.5),
+                inset 4px 0 0 rgba(0, 0, 0, 0.2),
+                inset -4px 0 0 rgba(255, 255, 255, 0.06),
+                0 8px 28px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(168deg, rgba(255, 255, 255, 0.07) 0%, rgba(0, 0, 0, 0.32) 100%);
+        }
+        .lp-o-grille-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 7px;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                90deg,
+                #1a1a1a 0,
+                #1a1a1a 2px,
+                rgba(255, 255, 255, 0.38) 2px,
+                rgba(255, 255, 255, 0.38) 3px,
+                transparent 3px,
+                transparent 9px
+            );
+        }
+        .lp-o-grille-frame::after {
+            content: '';
+            position: absolute;
+            top: 7px;
+            bottom: 0;
+            left: 0;
+            width: 10px;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.22) 0,
+                rgba(255, 255, 255, 0.22) 1px,
+                transparent 1px,
+                transparent 6px
+            );
+            opacity: 0.55;
         }
         .lp-opening-frame,
         .lp-opening-corner { display: none !important; }
@@ -1215,12 +1204,8 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .lp-o-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: clamp(0.65rem, 2.5vw, 1rem);
-            width: min(100%, 420px);
-            margin: 0 0 0.85rem;
+            width: min(100%, 460px);
+            margin: 0 0 0.75rem;
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.55s ease, transform 0.55s ease;
@@ -1229,27 +1214,29 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .lp-o-header-line {
-            flex: 1;
-            height: 1px;
-            max-width: 52px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.85));
+        .lp-o-header-grille {
+            padding: clamp(1rem, 3.5vw, 1.35rem) clamp(1rem, 4vw, 1.5rem) clamp(0.85rem, 3vw, 1.1rem);
+            text-align: center;
         }
-        .lp-o-header-line:last-child {
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.85), transparent);
+        .lp-o-header-tag {
+            display: block;
+            margin: 0 0 0.35rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(0.72rem, 2.4vw, 0.88rem);
+            font-weight: 600;
+            letter-spacing: 0.42em;
+            text-indent: 0.42em;
+            color: var(--gold-light);
         }
         .lp-o-label {
             margin: 0;
-            padding: 0.45rem 0.85rem;
-            font-size: var(--lp-o-header);
+            font-size: var(--lp-o-header-main);
             font-weight: 900;
-            letter-spacing: 0.14em;
-            text-indent: 0.14em;
-            line-height: 1.35;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.3;
             color: #fff;
-            border: 1px solid rgba(212, 175, 55, 0.45);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.22) 100%);
-            box-shadow: 0 0 28px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
         }
         .lp-o-lead {
             margin: 0 0 1rem;
@@ -1271,60 +1258,48 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .lp-o-months-lead {
-            margin: 0 0 0.75rem;
-            font-size: var(--lp-o-intro);
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            text-indent: 0.12em;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 0.45s ease, transform 0.45s ease;
-        }
-        .lp-o-months-lead.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .lp-o-month-panel {
+            width: min(100%, 460px);
+            padding: 10px 12px 10px 14px;
         }
         .lp-o-month-list {
             list-style: none;
             margin: 0;
             padding: 0;
-            width: min(100%, 440px);
             display: flex;
             flex-direction: column;
             gap: 0;
         }
         .lp-o-month-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: 2.15em 1fr;
             align-items: center;
-            justify-content: space-between;
-            gap: 0.5rem;
-            padding: clamp(9px, 2.5vw, 12px) clamp(10px, 3vw, 14px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            transition: background 0.35s ease, border-color 0.35s ease;
+            column-gap: 0.35rem;
+            padding: 6px 4px 6px 2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.35s ease;
         }
-        .lp-o-month-row:first-child { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+        .lp-o-month-row:first-child { border-top: 1px solid rgba(255, 255, 255, 0.1); }
         .lp-o-month-row.is-current {
-            background: rgba(212, 175, 55, 0.08);
-            border-bottom-color: rgba(212, 175, 55, 0.28);
+            background: rgba(212, 175, 55, 0.1);
         }
         .lp-o-month-row.is-done {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
         }
         .lp-o-row-month {
-            flex-shrink: 0;
-            min-width: 2.5em;
             font-size: var(--lp-o-row-month);
             font-weight: 900;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.04em;
             text-align: left;
+            line-height: 1.15;
         }
         .lp-o-row-price-col {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 0.25rem 0.4rem;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 0.2rem;
+            min-width: 0;
         }
         .lp-o-row-usual-wrap {
             position: relative;
@@ -1355,30 +1330,31 @@
             box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
         }
         .lp-o-row-tax {
-            font-size: 0.62em;
+            font-size: 0.55em;
             font-weight: 800;
-            letter-spacing: 0.02em;
+            letter-spacing: 0;
+            white-space: nowrap;
         }
         .lp-o-row-arrow {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 1.35em;
-            height: 1.35em;
-            font-size: var(--lp-o-row-price);
+            flex-shrink: 0;
+            font-size: clamp(1.1rem, 4vw, 1.45rem);
             color: var(--gold-light);
             opacity: 0;
-            transform: scale(0.7);
+            transform: translateX(-4px);
             transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .lp-o-row-arrow.is-visible {
             opacity: 0.95;
-            transform: scale(1);
+            transform: translateX(0);
         }
         .lp-o-row-deal-wrap {
             display: inline-flex;
             align-items: baseline;
             gap: 1px;
+            flex-shrink: 0;
             opacity: 0;
             transform: translateX(6px);
             transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1392,24 +1368,28 @@
             font-weight: 900;
             letter-spacing: -0.02em;
             color: #fff;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+            text-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
         }
         .lp-o-savings-card {
-            margin: clamp(1rem, 3.5vw, 1.35rem) 0 0;
-            width: min(100%, 440px);
-            padding: clamp(1rem, 3.5vw, 1.35rem) clamp(1rem, 4vw, 1.5rem);
+            margin: clamp(0.85rem, 3vw, 1.15rem) 0 0;
+            width: min(100%, 460px);
+            padding: clamp(1.1rem, 3.5vw, 1.4rem) clamp(1rem, 4vw, 1.5rem) clamp(1rem, 3.5vw, 1.25rem);
             text-align: center;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            background:
-                linear-gradient(165deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.28) 100%) padding-box,
-                var(--gold-gradient) border-box;
-            box-shadow:
-                0 0 40px rgba(212, 175, 55, 0.22),
-                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            border-radius: 0;
             opacity: 0;
             transform: translateY(14px) scale(0.97);
             transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-savings-card::before {
+            background: repeating-linear-gradient(
+                90deg,
+                #1a1a1a 0,
+                #1a1a1a 2px,
+                rgba(248, 231, 28, 0.55) 2px,
+                rgba(248, 231, 28, 0.55) 3px,
+                transparent 3px,
+                transparent 9px
+            );
         }
         .lp-o-savings-card.is-visible {
             opacity: 1;
@@ -1776,9 +1756,6 @@
                 filter: none !important;
                 clip-path: none !important;
             }
-            .lp-opening-gym-lines,
-            .lp-opening-pulse-line path,
-            .lp-opening-scroll-hint i,
             .lp-opening-scroll-track::after {
                 animation: none !important;
             }
@@ -1791,15 +1768,9 @@
 <!-- オープニング（スクロール連動・毎回表示） -->
 <div id="lp-opening-scroll" class="lp-opening-scroll">
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介">
-    <div class="lp-opening-gym-lines" aria-hidden="true"></div>
     <div class="lp-opening-bg" aria-hidden="true">
         <div class="lp-opening-grain"></div>
         <div class="lp-opening-vignette"></div>
-    </div>
-    <div class="lp-opening-pulse-line" aria-hidden="true">
-        <svg viewBox="0 0 400 48" preserveAspectRatio="none">
-            <path d="M0,24 L40,24 L52,8 L64,40 L76,24 L120,24 L132,14 L144,34 L156,24 L200,24 L212,10 L224,38 L236,24 L280,24 L292,16 L304,32 L316,24 L360,24 L372,12 L384,36 L400,24"/>
-        </svg>
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
     <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
@@ -1812,18 +1783,20 @@
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
             <div class="lp-o-header" id="lp-o-header">
-                <span class="lp-o-header-line" aria-hidden="true"></span>
-                <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
-                <span class="lp-o-header-line" aria-hidden="true"></span>
+                <div class="lp-o-header-grille lp-o-grille-frame">
+                    <span class="lp-o-header-tag">JOYFIT24 KYODO</span>
+                    <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
+                </div>
             </div>
             <p class="lp-o-lead" id="lp-o-lead">半年間</p>
             <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <p class="lp-o-months-lead" id="lp-o-months-lead">月会費</p>
-            <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
-            <div class="lp-o-savings-card" id="lp-o-savings">
+            <div class="lp-o-month-panel lp-o-grille-frame">
+                <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
+            </div>
+            <div class="lp-o-savings-card lp-o-grille-frame" id="lp-o-savings">
                 <span class="lp-o-savings-label">6ヶ月で合計</span>
                 <p class="lp-o-savings-main">
                     <span class="lp-o-savings-num">32,340</span>
@@ -2131,7 +2104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const introHeader = document.getElementById('lp-o-header');
         const introLead = document.getElementById('lp-o-lead');
         const introCaption = document.getElementById('lp-o-caption');
-        const monthsLead = document.getElementById('lp-o-months-lead');
         const monthList = document.getElementById('lp-o-month-list');
         const savingsCard = document.getElementById('lp-o-savings');
         if (!scrollRoot || !opening) return;
@@ -2181,7 +2153,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             '<span class="lp-o-row-tax">円（税込）</span>' +
                             '<span class="lp-o-row-strike" aria-hidden="true"></span>' +
                         '</div>' +
-                        '<span class="lp-o-row-arrow" aria-hidden="true"><i class="ph-bold ph-arrow-down"></i></span>' +
+                        '<span class="lp-o-row-arrow" aria-hidden="true"><i class="ph-bold ph-arrow-right"></i></span>' +
                         '<span class="lp-o-row-deal-wrap">' +
                             '<span class="lp-o-row-deal">' + CAMPAIGN_PRICE + '</span>' +
                             '<span class="lp-o-row-tax">円（税込）</span>' +
@@ -2216,7 +2188,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function resetMonthsState() {
-            monthsLead?.classList.remove('is-visible');
             savingsCard?.classList.remove('is-visible');
             updateMonthRows(0);
         }
@@ -2275,7 +2246,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 introHeader?.classList.add('is-visible');
                 introLead?.classList.add('is-visible');
                 introCaption?.classList.add('is-visible');
-                monthsLead?.classList.add('is-visible');
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
                 if (mp < 0.78) {
