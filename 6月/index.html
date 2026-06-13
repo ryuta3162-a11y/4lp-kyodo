@@ -957,7 +957,7 @@
             background: #0a0a0a;
             color: #fff;
             animation: openingOverlayExit 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 5.05s;
+            animation-delay: 5.35s;
         }
         .lp-opening.is-done { display: none !important; }
         .lp-opening-bg {
@@ -995,7 +995,7 @@
             opacity: 0;
             pointer-events: none;
             animation: openingFlashCut 0.14s ease-out forwards;
-            animation-delay: 1.82s;
+            animation-delay: 1.98s;
         }
         .lp-opening-meta {
             position: absolute;
@@ -1032,7 +1032,7 @@
             height: 100%;
             width: 0;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.85));
-            animation: openingProgressFill 5s linear forwards;
+            animation: openingProgressFill 5.4s linear forwards;
             animation-delay: 0.55s;
         }
         .lp-opening-skip {
@@ -1120,13 +1120,13 @@
         }
         .lp-opening-scene--1 {
             animation: openingScene1Out 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 1.88s;
+            animation-delay: 2.05s;
         }
         .lp-opening-scene--2 {
             opacity: 0;
             filter: blur(8px);
             animation: openingScene2In 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.02s;
+            animation-delay: 2.18s;
         }
         .lp-opening-en {
             margin: 0;
@@ -1143,11 +1143,11 @@
         }
         .lp-opening-scene--1 .lp-opening-en { animation-delay: 0.42s; }
         .lp-opening-en--period {
-            margin-top: 0.75rem;
+            margin-top: 0.7rem;
             font-size: 0.52rem;
-            letter-spacing: 0.32em;
-            text-indent: 0.32em;
-            animation-delay: 1.22s;
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            animation-delay: 1.62s;
         }
         .lp-opening-eyebrow {
             margin: 0.55rem 0 0;
@@ -1184,17 +1184,39 @@
         }
         .lp-opening-period {
             margin: 0.55rem 0 0;
-            font-size: clamp(0.8rem, 3.2vw, 0.92rem);
-            font-weight: 700;
-            letter-spacing: 0.24em;
-            text-indent: 0.24em;
+            font-size: clamp(0.72rem, 3vw, 0.82rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
             opacity: 0;
             animation: openingFadeIn 0.5s ease forwards;
-            animation-delay: 1.15s;
+            animation-delay: 1.05s;
         }
-        .lp-opening-scene--2 .lp-opening-en--usual {
-            animation-delay: 2.28s;
+        .lp-opening-months {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px 6px;
+            margin: 0.65rem auto 0;
+            max-width: 290px;
         }
+        .lp-opening-month {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 5px 9px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            background: rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translateY(8px);
+            animation: openingLineIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-opening-month:nth-child(1) { animation-delay: 1.12s; }
+        .lp-opening-month:nth-child(2) { animation-delay: 1.2s; }
+        .lp-opening-month:nth-child(3) { animation-delay: 1.28s; }
+        .lp-opening-month:nth-child(4) { animation-delay: 1.36s; }
+        .lp-opening-month:nth-child(5) { animation-delay: 1.44s; }
+        .lp-opening-month:nth-child(6) { animation-delay: 1.52s; }
+        .lp-opening-scene--2 .lp-opening-en--usual { animation-delay: 2.45s; }
         .lp-opening-usual-label {
             margin: 0.35rem 0 0;
             font-size: clamp(0.88rem, 3.8vw, 1rem);
@@ -1203,7 +1225,7 @@
             opacity: 0;
             clip-path: inset(0 0 100% 0);
             animation: openingDropReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.42s;
+            animation-delay: 2.58s;
         }
         .lp-opening-usual-row {
             display: flex;
@@ -1215,7 +1237,7 @@
             opacity: 0;
             transform: translateX(12px);
             animation: openingSlideFromRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.58s;
+            animation-delay: 2.74s;
         }
         .lp-opening-usual-num {
             font-family: 'Barlow Condensed', sans-serif;
@@ -1231,7 +1253,7 @@
         }
         .lp-opening-usual-row.is-struck {
             animation: openingUsualOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 3.12s;
+            animation-delay: 3.28s;
         }
         .lp-opening-strike {
             position: absolute;
@@ -1243,7 +1265,7 @@
             transform: translateY(-50%) rotate(-3deg) scaleX(0);
             transform-origin: left center;
             animation: openingStrikeDraw 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.92s;
+            animation-delay: 3.08s;
         }
         .lp-opening-usual-wrap {
             position: relative;
@@ -1255,10 +1277,10 @@
             margin: 0.65rem auto;
             background: rgba(255, 255, 255, 0.45);
             animation: openingDividerGrowW 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 3.28s;
+            animation-delay: 3.44s;
         }
         .lp-opening-scene--2 .lp-opening-en--hero {
-            animation-delay: 3.38s;
+            animation-delay: 3.54s;
         }
         .lp-opening-hero {
             margin-top: 0.15rem;
@@ -1266,13 +1288,22 @@
         }
         .lp-opening-hero-prefix {
             display: block;
-            font-size: clamp(0.88rem, 3.8vw, 1rem);
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
             opacity: 0;
             animation: openingFadeIn 0.45s ease forwards;
-            animation-delay: 3.52s;
+            animation-delay: 3.68s;
+        }
+        .lp-opening-hero-prefix-line {
+            display: block;
+            font-size: clamp(0.82rem, 3.5vw, 0.95rem);
+            font-weight: 900;
+            letter-spacing: 0.14em;
+        }
+        .lp-opening-hero-prefix-line--sub {
+            margin-top: 0.25rem;
+            font-size: clamp(0.95rem, 4vw, 1.08rem);
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
         }
         .lp-opening-hero-row {
             display: flex;
@@ -1281,7 +1312,7 @@
             line-height: 1;
             clip-path: inset(0 100% 0 0);
             animation: openingHeroWipe 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-            animation-delay: 3.62s;
+            animation-delay: 3.78s;
         }
         .lp-opening-hero-num {
             font-family: 'Barlow Condensed', sans-serif;
@@ -1291,17 +1322,9 @@
             line-height: 0.95;
         }
         .lp-opening-hero-unit {
-            font-size: clamp(1.25rem, 5vw, 1.6rem);
+            font-size: clamp(1.35rem, 5vw, 1.65rem);
             font-weight: 900;
-            margin-left: 2px;
-        }
-        .lp-opening-hero-unit small {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.48em;
-            font-weight: 400;
-            letter-spacing: 0.12em;
-            margin-left: 1px;
-            opacity: 0.85;
+            margin-left: 3px;
         }
         @keyframes openingShineSweep {
             0% { transform: translateX(-20%); opacity: 0; }
@@ -1706,8 +1729,16 @@
             <p class="lp-opening-eyebrow">JOYFIT24 KYODO</p>
             <div class="lp-opening-rule" aria-hidden="true"></div>
             <h2 class="lp-opening-headline">半年間ずっと<br>月会費</h2>
-            <p class="lp-opening-period">6月 — 11月</p>
-            <p class="lp-opening-en lp-opening-en--period">6 Months · Half Year</p>
+            <p class="lp-opening-period">6ヶ月、毎月この価格</p>
+            <div class="lp-opening-months" aria-label="対象月">
+                <span class="lp-opening-month">6月</span>
+                <span class="lp-opening-month">7月</span>
+                <span class="lp-opening-month">8月</span>
+                <span class="lp-opening-month">9月</span>
+                <span class="lp-opening-month">10月</span>
+                <span class="lp-opening-month">11月</span>
+            </div>
+            <p class="lp-opening-en lp-opening-en--period">Jun · Jul · Aug · Sep · Oct · Nov</p>
         </div>
         <div class="lp-opening-scene lp-opening-scene--2">
             <p class="lp-opening-en lp-opening-en--usual">Regular · Monthly</p>
@@ -1719,12 +1750,15 @@
                 <span class="lp-opening-strike" aria-hidden="true"></span>
             </div>
             <div class="lp-opening-divider" aria-hidden="true"></div>
-            <p class="lp-opening-en lp-opening-en--hero">Special Offer</p>
+            <p class="lp-opening-en lp-opening-en--hero">Every Month · ¥3,400</p>
             <div class="lp-opening-hero">
-                <span class="lp-opening-hero-prefix">半年間</span>
+                <span class="lp-opening-hero-prefix">
+                    <span class="lp-opening-hero-prefix-line">半年間ずっと</span>
+                    <span class="lp-opening-hero-prefix-line lp-opening-hero-prefix-line--sub">毎月</span>
+                </span>
                 <div class="lp-opening-hero-row">
                     <span class="lp-opening-hero-num">3,400</span>
-                    <span class="lp-opening-hero-unit">円<small>/月</small></span>
+                    <span class="lp-opening-hero-unit">円</span>
                 </div>
             </div>
         </div>
@@ -2045,7 +2079,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('lp-opening-active');
         setTimeout(function() {
             usualRow?.classList.add('is-struck');
-        }, 3120);
+        }, 3280);
 
         skipBtn?.addEventListener('click', finishOpening);
 
@@ -2055,7 +2089,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        setTimeout(finishOpening, 6000);
+        setTimeout(finishOpening, 6200);
     })();
 
     
