@@ -948,10 +948,54 @@
         body.lp-opening-active { overflow-x: hidden; }
         body.lp-opening-active .gold-metallic-banner,
         body.lp-opening-active .fixed-banner,
-        body.lp-opening-active #banner-toggle-container {
+        body.lp-opening-active #banner-toggle-container,
+        body.lp-opening-active .lp-wrapper {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.25s ease;
+        }
+        body.lp-opening-reveal .gold-metallic-banner,
+        body.lp-opening-reveal .fixed-banner,
+        body.lp-opening-reveal #banner-toggle-container {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.45s ease 0.28s;
+        }
+        body.lp-opening-reveal .lp-wrapper {
+            opacity: 1;
+            pointer-events: auto;
+            animation: lpORevealContent 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+        }
+        @keyframes lpORevealContent {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lp-opening-exit-wipe {
+            position: absolute;
+            inset: 0;
+            z-index: 40;
+            background: #fff;
+            transform: scaleY(0);
+            transform-origin: bottom center;
+            pointer-events: none;
+        }
+        .lp-opening-exit-play .lp-o-urgency-box.is-visible {
+            animation: lpOExitCard 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-opening-exit-play .lp-opening-exit-wipe {
+            animation: lpOExitWipe 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+        .lp-opening-exit-play .lp-opening {
+            animation: lpOExitOverlay 0.38s ease 0.58s forwards;
+        }
+        @keyframes lpOExitCard {
+            to { opacity: 0; transform: translateY(-28px) scale(0.94); }
+        }
+        @keyframes lpOExitWipe {
+            to { transform: scaleY(1); }
+        }
+        @keyframes lpOExitOverlay {
+            to { opacity: 0; }
         }
         .lp-opening-scroll {
             position: fixed;
@@ -1249,7 +1293,7 @@
             position: relative;
             z-index: 1;
             flex: 1;
-            padding: clamp(12px, 2vh, 18px) clamp(12px, 3.5vw, 16px);
+            padding: clamp(8px, 1.4vh, 12px) clamp(12px, 3.5vw, 16px);
         }
         .lp-o-deal-sheet .lp-o-row-month {
             color: #1a1a1a;
@@ -1357,8 +1401,8 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            gap: clamp(3px, 0.9vh, 8px);
+            justify-content: center;
+            gap: clamp(2px, 0.55vh, 6px);
         }
         .lp-o-month-row {
             display: flex;
@@ -1366,7 +1410,7 @@
             align-items: center;
             justify-content: space-between;
             gap: clamp(0.35rem, 2vw, 0.65rem);
-            padding: clamp(6px, 1.2vh, 10px) 8px;
+            padding: clamp(3px, 0.7vh, 6px) 8px;
             border: none;
             border-radius: 10px;
             transition: background 0.35s ease, box-shadow 0.35s ease;
@@ -1978,6 +2022,16 @@
             .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal {
                 animation: none !important;
             }
+            body.lp-opening-reveal .lp-wrapper {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .lp-opening-exit-play .lp-o-urgency-box.is-visible,
+            .lp-opening-exit-play .lp-opening-exit-wipe,
+            .lp-opening-exit-play .lp-opening {
+                animation: none !important;
+            }
             .hero-panel-intro,
             .hero-panel-offer { animation: none !important; }
             .hero-deal-stack,
@@ -2022,6 +2076,7 @@
         <div class="lp-opening-vignette"></div>
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
+    <div class="lp-opening-exit-wipe" id="lp-o-exit-wipe" aria-hidden="true"></div>
     <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
         <div class="lp-opening-scroll-track" aria-hidden="true"></div>
         <span class="lp-opening-scroll-hint-text lp-o-hint-mobile">スクロール</span>
@@ -2378,6 +2433,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const skipBtn = document.getElementById('lp-opening-skip');
         const progressBar = document.getElementById('lp-o-progress');
         const curtain = document.getElementById('lp-o-curtain');
+        const exitWipe = document.getElementById('lp-o-exit-wipe');
         const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
@@ -2399,15 +2455,16 @@ document.addEventListener('DOMContentLoaded', function() {
             monthsStart: 0.22,
             monthsEnd: 0.54,
             urgencyStart: 0.56,
-            urgencyEnd: 0.86,
-            exitStart: 0.88,
-            complete: 0.96
+            urgencyEnd: 0.84,
+            exitStart: 0.86,
+            complete: 1.0
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const WHEEL_FACTOR = prefersReduced ? 0.0004 : 0.000128;
         const TOUCH_FACTOR = prefersReduced ? 0.0008 : 0.0004;
         const KEY_STEP = prefersReduced ? 0.02 : 0.0064;
         let finished = false;
+        let exiting = false;
         let virtualProgress = 0;
         let touchLastY = 0;
         let listBuilt = false;
@@ -2527,24 +2584,56 @@ document.addEventListener('DOMContentLoaded', function() {
             window.removeEventListener('keydown', onKeyDown);
         }
 
-        function finishOpening() {
+        function resetExitVisuals() {
+            if (exitWipe) exitWipe.style.transform = 'scaleY(0)';
+            opening?.classList.remove('is-wiping');
+            document.body.classList.remove('lp-opening-reveal');
+            if (urgencyBox) {
+                urgencyBox.style.transform = '';
+                urgencyBox.style.opacity = '';
+            }
+            opening.style.opacity = '1';
+        }
+
+        function doFinishOpeningNow() {
             if (finished) return;
             finished = true;
             stopCountdown();
             unbindOpening();
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
+            document.body.classList.remove('lp-opening-reveal');
             scrollRoot.remove();
             document.documentElement.style.scrollBehavior = 'auto';
             window.scrollTo(0, 0);
             document.documentElement.style.scrollBehavior = '';
         }
 
+        function finishOpening() {
+            if (finished || exiting) return;
+            if (prefersReduced) {
+                document.body.classList.add('lp-opening-reveal');
+                doFinishOpeningNow();
+                return;
+            }
+            exiting = true;
+            stopCountdown();
+            unbindOpening();
+            setPhaseActive(phaseUrgency);
+            urgencyBox?.classList.add('is-visible');
+            scrollRoot.classList.add('lp-opening-exit-play');
+            document.body.classList.add('lp-opening-reveal');
+            setTimeout(doFinishOpeningNow, 780);
+        }
+
         function setProgress(next) {
-            if (finished) return;
+            if (finished || exiting) return;
             virtualProgress = Math.min(1, Math.max(0, next));
             renderOpening(virtualProgress);
-            if (virtualProgress >= P.complete) finishOpening();
+            if (virtualProgress >= P.complete) {
+                document.body.classList.add('lp-opening-reveal');
+                setTimeout(doFinishOpeningNow, prefersReduced ? 0 : 200);
+            }
         }
 
         function renderOpening(p) {
@@ -2563,11 +2652,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetIntroState();
                 resetMonthsState();
                 resetUrgencyState();
+                resetExitVisuals();
                 stopCountdown();
             } else if (p < P.introEnd) {
                 setPhaseActive(phaseIntro);
                 resetMonthsState();
                 resetUrgencyState();
+                resetExitVisuals();
                 stopCountdown();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
@@ -2576,6 +2667,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setPhaseActive(phaseMonths);
                 introBox?.classList.add('is-visible');
                 resetUrgencyState();
+                resetExitVisuals();
                 stopCountdown();
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
@@ -2592,6 +2684,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (p < P.exitStart) {
                 setPhaseActive(phaseUrgency);
                 resetMonthsState();
+                resetExitVisuals();
                 startCountdown();
 
                 const up = (p - P.urgencyStart) / (P.urgencyEnd - P.urgencyStart);
@@ -2599,8 +2692,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 opening.style.opacity = '1';
             } else {
                 stopCountdown();
+                setPhaseActive(phaseUrgency);
+                urgencyBox?.classList.add('is-visible');
+
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
-                opening.style.opacity = String(Math.max(0, 1 - exitP));
+                if (exitP < 0.4) {
+                    const t = exitP / 0.4;
+                    if (urgencyBox) {
+                        urgencyBox.style.transform = 'translateY(' + (-22 * t) + 'px) scale(' + (1 - 0.05 * t) + ')';
+                        urgencyBox.style.opacity = String(Math.max(0, 1 - t * 0.88));
+                    }
+                    if (exitWipe) exitWipe.style.transform = 'scaleY(0)';
+                    opening.classList.remove('is-wiping');
+                    document.body.classList.remove('lp-opening-reveal');
+                    opening.style.opacity = '1';
+                } else {
+                    const wipeP = Math.min(1, (exitP - 0.4) / 0.6);
+                    if (urgencyBox) {
+                        urgencyBox.style.opacity = '0';
+                        urgencyBox.style.transform = 'translateY(-22px) scale(0.95)';
+                    }
+                    opening.classList.add('is-wiping');
+                    if (exitWipe) exitWipe.style.transform = 'scaleY(' + wipeP + ')';
+                    opening.style.opacity = String(Math.max(0, 1 - Math.max(0, (wipeP - 0.3) / 0.7)));
+                    if (wipeP > 0.22) document.body.classList.add('lp-opening-reveal');
+                }
             }
         }
 
