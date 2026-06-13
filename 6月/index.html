@@ -964,67 +964,23 @@
         body.lp-opening-reveal .lp-wrapper {
             opacity: 1;
             pointer-events: auto;
-            animation: lpOGameWorldIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+            animation: lpORevealSoft 0.62s cubic-bezier(0.25, 0.1, 0.25, 1) 0.12s both;
         }
-        @keyframes lpOGameWorldIn {
-            from { opacity: 0; transform: scale(1.16); filter: blur(3px); }
-            70% { opacity: 1; filter: blur(0); }
-            to { opacity: 1; transform: scale(1); filter: blur(0); }
-        }
-        .lp-opening-exit-portal {
-            position: absolute;
-            inset: 0;
-            z-index: 45;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-            opacity: 0;
-        }
-        .lp-opening-exit-portal.is-active {
-            opacity: 1;
-        }
-        .lp-opening-exit-ring {
-            width: min(42vw, 220px);
-            height: min(42vw, 220px);
-            border-radius: 50%;
-            border: 3px solid var(--gold-light);
-            box-shadow:
-                0 0 0 6px rgba(194, 22, 50, 0.35),
-                0 0 48px rgba(248, 231, 28, 0.55),
-                inset 0 0 24px rgba(248, 231, 28, 0.15);
-        }
-        .lp-opening-exit-portal.is-active .lp-opening-exit-ring {
-            animation: lpOPortalRing 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        @keyframes lpOPortalRing {
-            0% { transform: scale(0.15); opacity: 0.95; }
-            45% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(2.8); opacity: 0; }
-        }
-        .lp-opening.is-portal-exit {
-            will-change: clip-path;
+        @keyframes lpORevealSoft {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .lp-opening-exit-play .lp-o-urgency-box.is-visible {
-            animation: lpOGameCardWarp 0.36s cubic-bezier(0.34, 1.15, 0.64, 1) forwards;
-        }
-        .lp-opening-exit-play .lp-opening-exit-portal {
-            opacity: 1;
-        }
-        .lp-opening-exit-play .lp-opening-exit-ring {
-            animation: lpOPortalRing 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+            animation: lpOExitSoft 0.42s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         .lp-opening-exit-play .lp-opening {
-            animation: lpOGamePortalClose 0.68s cubic-bezier(0.55, 0.06, 0.2, 1) 0.3s forwards;
+            animation: lpOExitFade 0.52s ease 0.22s forwards;
         }
-        @keyframes lpOGameCardWarp {
-            0% { transform: scale(1); opacity: 1; filter: blur(0); }
-            35% { transform: scale(1.07); opacity: 1; }
-            100% { transform: scale(0.72); opacity: 0; filter: blur(5px); }
+        @keyframes lpOExitSoft {
+            to { opacity: 0; transform: translateY(-14px) scale(0.98); }
         }
-        @keyframes lpOGamePortalClose {
-            0% { clip-path: circle(150vmax at 50% 50%); }
-            100% { clip-path: circle(0% at 50% 50%); }
+        @keyframes lpOExitFade {
+            to { opacity: 0; }
         }
         .lp-opening-scroll {
             position: fixed;
@@ -2092,15 +2048,10 @@
                 animation: none !important;
                 opacity: 1 !important;
                 transform: none !important;
-                filter: none !important;
             }
             .lp-opening-exit-play .lp-o-urgency-box.is-visible,
-            .lp-opening-exit-play .lp-opening-exit-ring,
             .lp-opening-exit-play .lp-opening {
                 animation: none !important;
-            }
-            .lp-opening.is-portal-exit {
-                clip-path: none !important;
             }
             .hero-panel-intro,
             .hero-panel-offer { animation: none !important; }
@@ -2146,9 +2097,6 @@
         <div class="lp-opening-vignette"></div>
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
-    <div class="lp-opening-exit-portal" id="lp-o-exit-portal" aria-hidden="true">
-        <span class="lp-opening-exit-ring"></span>
-    </div>
     <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
         <div class="lp-opening-scroll-track" aria-hidden="true"></div>
         <span class="lp-opening-scroll-hint-text lp-o-hint-mobile">スクロール</span>
@@ -2506,7 +2454,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const skipBtn = document.getElementById('lp-opening-skip');
         const progressBar = document.getElementById('lp-o-progress');
         const curtain = document.getElementById('lp-o-curtain');
-        const exitPortal = document.getElementById('lp-o-exit-portal');
         const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
@@ -2521,15 +2468,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const USUAL_PRICE = '9,350';
         const CAMPAIGN_PRICE = '3,960';
         const P = {
-            curtainEnd: 0.08,
-            hintHide: 0.16,
-            introStart: 0.08,
-            introEnd: 0.16,
-            monthsStart: 0.16,
-            monthsEnd: 0.70,
-            urgencyStart: 0.72,
-            urgencyEnd: 0.84,
-            exitStart: 0.86,
+            curtainEnd: 0.06,
+            hintHide: 0.22,
+            introStart: 0.04,
+            introEnd: 0.24,
+            monthsStart: 0.24,
+            monthsEnd: 0.68,
+            urgencyStart: 0.70,
+            urgencyEnd: 0.82,
+            exitStart: 0.84,
             complete: 1.0
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2671,17 +2618,11 @@ document.addEventListener('DOMContentLoaded', function() {
             window.removeEventListener('keydown', onKeyDown);
         }
 
-        function portalEase(t) {
-            return 1 - Math.pow(1 - t, 2.4);
-        }
-
         function resetExitVisuals() {
             if (opening) {
                 opening.style.clipPath = '';
                 opening.style.opacity = '1';
-                opening.classList.remove('is-portal-exit', 'is-wiping');
             }
-            exitPortal?.classList.remove('is-active');
             document.body.classList.remove('lp-opening-reveal');
             if (urgencyBox) {
                 urgencyBox.style.transform = '';
@@ -2717,7 +2658,7 @@ document.addEventListener('DOMContentLoaded', function() {
             urgencyBox?.classList.add('is-visible');
             scrollRoot.classList.add('lp-opening-exit-play');
             document.body.classList.add('lp-opening-reveal');
-            setTimeout(doFinishOpeningNow, 980);
+            setTimeout(doFinishOpeningNow, 720);
         }
 
         function setProgress(next) {
@@ -2726,7 +2667,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderOpening(virtualProgress);
             if (virtualProgress >= P.complete) {
                 document.body.classList.add('lp-opening-reveal');
-                setTimeout(doFinishOpeningNow, prefersReduced ? 0 : 280);
+                setTimeout(doFinishOpeningNow, prefersReduced ? 0 : 180);
             }
         }
 
@@ -2756,7 +2697,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 stopCountdown();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
-                introBox?.classList.toggle('is-visible', ip >= 0.1);
+                introBox?.classList.toggle('is-visible', ip >= 0.02);
             } else if (p < P.urgencyStart) {
                 setPhaseActive(phaseMonths);
                 introBox?.classList.add('is-visible');
@@ -2790,32 +2731,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 urgencyBox?.classList.add('is-visible');
 
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
-                if (exitP < 0.32) {
-                    const t = exitP / 0.32;
+                if (exitP < 0.42) {
+                    const t = exitP / 0.42;
                     if (urgencyBox) {
-                        const scale = 1 + 0.06 * Math.sin(t * Math.PI);
-                        urgencyBox.style.transform = 'scale(' + (1 + (scale - 1) * (1 - t)) + ')';
-                        urgencyBox.style.opacity = String(Math.max(0, 1 - t * 0.85));
+                        urgencyBox.style.transform = 'translateY(' + (-14 * t) + 'px) scale(' + (1 - 0.03 * t) + ')';
+                        urgencyBox.style.opacity = String(Math.max(0, 1 - t * 0.92));
                     }
-                    opening.style.clipPath = 'circle(150vmax at 50% 50%)';
-                    opening.classList.remove('is-portal-exit');
-                    exitPortal?.classList.remove('is-active');
-                    document.body.classList.remove('lp-opening-reveal');
                     opening.style.opacity = '1';
+                    document.body.classList.remove('lp-opening-reveal');
                 } else {
-                    const portalP = Math.min(1, (exitP - 0.32) / 0.68);
+                    const fadeP = (exitP - 0.42) / 0.58;
                     if (urgencyBox) {
                         urgencyBox.style.opacity = '0';
-                        urgencyBox.style.transform = 'scale(0.75)';
+                        urgencyBox.style.transform = 'translateY(-14px) scale(0.98)';
                     }
-                    opening.classList.add('is-portal-exit');
-                    const r = (1 - portalEase(portalP)) * 150;
-                    opening.style.clipPath = 'circle(' + r + 'vmax at 50% 50%)';
-                    if (portalP > 0.04 && portalP < 0.2) {
-                        exitPortal?.classList.add('is-active');
-                    }
-                    if (portalP > 0.06) document.body.classList.add('lp-opening-reveal');
-                    opening.style.opacity = '1';
+                    opening.style.opacity = String(Math.max(0, 1 - fadeP));
+                    if (fadeP > 0.1) document.body.classList.add('lp-opening-reveal');
                 }
             }
         }
