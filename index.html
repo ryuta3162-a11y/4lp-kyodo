@@ -1102,51 +1102,14 @@
             --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
             --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
         }
-        .lp-o-grille-frame {
+        .lp-o-card-frame {
             position: relative;
-            border: 2px solid #1a1a1a;
+            border: 2px solid rgba(255, 255, 255, 0.42);
+            border-radius: 14px;
             box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.22),
-                inset 0 -4px 0 rgba(0, 0, 0, 0.5),
-                inset 4px 0 0 rgba(0, 0, 0, 0.2),
-                inset -4px 0 0 rgba(255, 255, 255, 0.06),
-                0 8px 28px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(168deg, rgba(255, 255, 255, 0.07) 0%, rgba(0, 0, 0, 0.32) 100%);
-        }
-        .lp-o-grille-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 7px;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                90deg,
-                #1a1a1a 0,
-                #1a1a1a 2px,
-                rgba(255, 255, 255, 0.38) 2px,
-                rgba(255, 255, 255, 0.38) 3px,
-                transparent 3px,
-                transparent 9px
-            );
-        }
-        .lp-o-grille-frame::after {
-            content: '';
-            position: absolute;
-            top: 7px;
-            bottom: 0;
-            left: 0;
-            width: 10px;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0.22) 0,
-                rgba(255, 255, 255, 0.22) 1px,
-                transparent 1px,
-                transparent 6px
-            );
-            opacity: 0.55;
+                0 5px 0 rgba(0, 0, 0, 0.32),
+                inset 0 1px 0 rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.18);
         }
         .lp-opening-frame,
         .lp-opening-corner { display: none !important; }
@@ -1340,20 +1303,36 @@
             letter-spacing: 0;
             white-space: nowrap;
         }
-        .lp-o-row-arrow {
+        .lp-o-row-bridge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             flex-shrink: 0;
-            font-size: clamp(1.1rem, 4vw, 1.45rem);
-            color: var(--gold-light);
+            width: 0;
             opacity: 0;
-            transform: translateX(-4px);
-            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            transition: width 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
         }
-        .lp-o-row-arrow.is-visible {
-            opacity: 0.95;
-            transform: translateX(0);
+        .lp-o-row-bridge.is-visible {
+            width: clamp(18px, 5vw, 28px);
+            opacity: 1;
+        }
+        .lp-o-row-bridge-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.25), var(--gold-light) 55%, #fff);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(248, 231, 28, 0.45);
+        }
+        .lp-o-row-bridge-dot {
+            display: block;
+            flex-shrink: 0;
+            width: 5px;
+            height: 5px;
+            margin-left: -1px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(248, 231, 28, 0.7);
         }
         .lp-o-row-deal-wrap {
             display: inline-flex;
@@ -1379,23 +1358,12 @@
             margin: 0;
             width: min(100%, 540px);
             flex-shrink: 0;
-            padding: clamp(1rem, 2.5vh, 1.3rem) clamp(1rem, 4vw, 1.4rem);
+            padding: clamp(0.85rem, 2vh, 1.1rem) clamp(0.85rem, 3.5vw, 1.15rem);
             text-align: center;
-            border-radius: 0;
+            border-radius: 14px;
             opacity: 0;
             transform: translateY(14px) scale(0.97);
             transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-savings-card::before {
-            background: repeating-linear-gradient(
-                90deg,
-                #1a1a1a 0,
-                #1a1a1a 2px,
-                rgba(248, 231, 28, 0.55) 2px,
-                rgba(248, 231, 28, 0.55) 3px,
-                transparent 3px,
-                transparent 9px
-            );
         }
         .lp-o-savings-card.is-visible {
             opacity: 1;
@@ -1403,47 +1371,162 @@
         }
         .lp-o-savings-label {
             display: block;
-            margin: 0 0 0.35rem;
-            font-size: clamp(0.88rem, 3vw, 1.05rem);
+            margin: 0 0 0.5rem;
+            font-size: clamp(0.82rem, 2.8vw, 0.98rem);
             font-weight: 800;
-            letter-spacing: 0.18em;
-            text-indent: 0.18em;
-            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
+            color: rgba(255, 255, 255, 0.72);
+        }
+        .lp-o-savings-price-block {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.35rem;
+            margin: 0 auto;
+            padding: clamp(0.55rem, 2vh, 0.75rem) clamp(1rem, 4vw, 1.35rem);
+            background: #fff;
+            color: var(--brand-red);
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+            line-height: 1;
         }
         .lp-o-savings-main {
             margin: 0;
             display: flex;
-            align-items: center;
+            align-items: baseline;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.2rem 0.45rem;
-            line-height: 1.1;
+            gap: 0.1rem 0.25rem;
+            line-height: 1;
         }
         .lp-o-savings-num {
-            font-size: clamp(2.5rem, 11vw, 3.85rem);
+            font-size: clamp(2.35rem, 10.5vw, 3.5rem);
             font-weight: 900;
-            letter-spacing: -0.02em;
-            color: var(--gold-light);
-            text-shadow: 0 0 32px rgba(248, 231, 28, 0.45), 0 2px 0 rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            text-shadow: none;
         }
         .lp-o-savings-yen {
-            font-size: clamp(1.15rem, 4vw, 1.45rem);
+            font-size: clamp(1rem, 3.8vw, 1.3rem);
             font-weight: 900;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
+            color: var(--brand-red);
         }
         .lp-o-savings-badge {
             display: inline-block;
-            margin: 0;
-            padding: 0.3rem 0.85rem;
-            font-size: clamp(0.88rem, 3vw, 1.05rem);
+            margin: 0 0 0 0.15rem;
+            padding: 0.28rem 0.75rem;
+            font-size: clamp(0.78rem, 2.8vw, 0.92rem);
             font-weight: 900;
-            letter-spacing: 0.18em;
-            text-indent: 0.18em;
+            letter-spacing: 0.16em;
+            text-indent: 0.16em;
             color: #1a1a1a;
             background: var(--gold-gradient);
             border-radius: 999px;
-            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+            transform: rotate(-4deg);
             vertical-align: middle;
+        }
+        .lp-opening-phase--urgency {
+            justify-content: center;
+            padding: max(14px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
+        }
+        .lp-o-urgency-box {
+            width: min(100%, 420px);
+            padding: clamp(1.35rem, 4.5vw, 1.85rem) clamp(1.1rem, 4vw, 1.5rem);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-urgency-box.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-urgency-period {
+            margin: 0 0 0.65rem;
+            font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--gold-light);
+        }
+        .lp-o-urgency-pills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 0.85rem;
+        }
+        .lp-o-urgency-pills span {
+            font-size: clamp(0.62rem, 2.2vw, 0.72rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .lp-o-urgency-lead {
+            margin: 0 0 1rem;
+            font-size: clamp(1.35rem, 5vw, 1.75rem);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-indent: 0.08em;
+            line-height: 1.35;
+        }
+        .lp-o-urgency-remaining {
+            display: inline-flex;
+            align-items: center;
+            gap: clamp(6px, 2vw, 10px);
+            margin: 0 auto 0.85rem;
+            padding: clamp(8px, 2vh, 12px) clamp(16px, 5vw, 24px) clamp(8px, 2vh, 12px) clamp(12px, 4vw, 18px);
+            background: #fff;
+            color: var(--color-text);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            min-width: min(100%, 220px);
+        }
+        .lp-o-urgency-remaining .remaining-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.05;
+            font-size: clamp(0.62rem, 2.2vw, 0.72rem);
+            font-weight: 800;
+            color: #666;
+            letter-spacing: 0.08em;
+        }
+        .lp-o-urgency-remaining .highlight-num {
+            font-size: clamp(2.5rem, 12vw, 3.75rem);
+            font-weight: 900;
+            color: var(--brand);
+            line-height: 1;
+            min-width: 1.1em;
+            text-align: center;
+        }
+        .lp-o-urgency-remaining .remaining-unit {
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            font-weight: 900;
+            color: var(--brand);
+            align-self: flex-end;
+            padding-bottom: 4px;
+        }
+        .lp-o-urgency-note {
+            margin: 0;
+            font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-indent: 0.12em;
+            color: var(--gold-light);
+            animation: lpOUrgencyPulse 2s ease-in-out infinite;
+        }
+        @keyframes lpOUrgencyPulse {
+            0%, 100% { opacity: 0.85; }
+            50% { opacity: 1; }
         }
         @keyframes openingFrameIn {
             from { opacity: 0; transform: scale(0.94); }
@@ -1736,6 +1819,7 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
+            .lp-o-urgency-note { animation: none !important; opacity: 1 !important; }
             .hero-panel-intro,
             .hero-panel-offer { animation: none !important; }
             .hero-deal-stack,
@@ -1789,7 +1873,7 @@
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
-            <div class="lp-o-intro-box lp-o-grille-frame" id="lp-o-intro-box">
+            <div class="lp-o-intro-box lp-o-card-frame" id="lp-o-intro-box">
                 <span class="lp-o-header-tag">JOYFIT24 KYODO</span>
                 <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
                 <p class="lp-o-lead" id="lp-o-lead">半年間</p>
@@ -1798,14 +1882,33 @@
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <div class="lp-o-month-panel lp-o-grille-frame">
+            <div class="lp-o-month-panel lp-o-card-frame">
                 <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
             </div>
-            <div class="lp-o-savings-card lp-o-grille-frame" id="lp-o-savings">
+            <div class="lp-o-savings-card lp-o-card-frame" id="lp-o-savings">
                 <span class="lp-o-savings-label">6ヶ月で合計</span>
-                <p class="lp-o-savings-main">
-                    <span class="lp-o-savings-num">32,340</span><span class="lp-o-savings-yen">円</span><span class="lp-o-savings-badge">お得</span>
-                </p>
+                <div class="lp-o-savings-price-block">
+                    <p class="lp-o-savings-main">
+                        <span class="lp-o-savings-num">32,340</span><span class="lp-o-savings-yen">円</span><span class="lp-o-savings-badge">お得</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
+            <div class="lp-o-urgency-box lp-o-card-frame" id="lp-o-urgency-box">
+                <p class="lp-o-urgency-period">6/24(水)まで</p>
+                <div class="lp-o-urgency-pills">
+                    <span>期間限定</span>
+                    <span>先着15名様</span>
+                </div>
+                <p class="lp-o-urgency-lead">先着15名様限定<br>キャンペーン</p>
+                <div class="lp-o-urgency-remaining banner-remaining-block">
+                    <span class="remaining-label">残<br>り</span>
+                    <span class="highlight-num dynamic-remaining-count">--</span>
+                    <span class="remaining-unit">名</span>
+                </div>
+                <p class="lp-o-urgency-note">人数がなくなり次第終了</p>
             </div>
         </div>
     </div>
@@ -2104,7 +2207,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
+        const phaseUrgency = document.getElementById('lp-o-phase-urgency');
         const introBox = document.getElementById('lp-o-intro-box');
+        const urgencyBox = document.getElementById('lp-o-urgency-box');
         const monthList = document.getElementById('lp-o-month-list');
         const savingsCard = document.getElementById('lp-o-savings');
         if (!scrollRoot || !opening) return;
@@ -2113,14 +2218,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const USUAL_PRICE = '9,350';
         const CAMPAIGN_PRICE = '3,960';
         const P = {
-            curtainEnd: 0.12,
-            hintHide: 0.20,
-            introStart: 0.12,
-            introEnd: 0.28,
-            monthsStart: 0.28,
-            monthsEnd: 0.88,
-            exitStart: 0.92,
-            complete: 0.97
+            curtainEnd: 0.08,
+            hintHide: 0.16,
+            introStart: 0.08,
+            introEnd: 0.22,
+            monthsStart: 0.22,
+            monthsEnd: 0.54,
+            urgencyStart: 0.56,
+            urgencyEnd: 0.86,
+            exitStart: 0.88,
+            complete: 0.96
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const WHEEL_FACTOR = prefersReduced ? 0.0004 : 0.000128;
@@ -2132,7 +2239,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let listBuilt = false;
 
         function setPhaseActive(active) {
-            [phaseIntro, phaseMonths].forEach(function(el) {
+            [phaseIntro, phaseMonths, phaseUrgency].forEach(function(el) {
                 if (!el) return;
                 el.classList.remove('is-active');
             });
@@ -2156,7 +2263,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             '</span>' +
                             '<span class="lp-o-row-tax">円（税込）</span>' +
                         '</div>' +
-                        '<span class="lp-o-row-arrow" aria-hidden="true"><i class="ph-bold ph-arrow-right"></i></span>' +
+                        '<span class="lp-o-row-bridge" aria-hidden="true">' +
+                            '<span class="lp-o-row-bridge-line"></span>' +
+                            '<span class="lp-o-row-bridge-dot"></span>' +
+                        '</span>' +
                         '<span class="lp-o-row-deal-wrap">' +
                             '<span class="lp-o-row-deal">' + CAMPAIGN_PRICE + '</span>' +
                             '<span class="lp-o-row-tax">円（税込）</span>' +
@@ -2173,11 +2283,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const strikeP = Math.max(0, Math.min(1, monthProgress - i));
                 const usualWrap = row.querySelector('.lp-o-row-usual-wrap');
                 const strikeEl = row.querySelector('.lp-o-row-strike');
-                const arrowEl = row.querySelector('.lp-o-row-arrow');
+                const bridgeEl = row.querySelector('.lp-o-row-bridge');
                 const dealWrap = row.querySelector('.lp-o-row-deal-wrap');
                 if (strikeEl) strikeEl.style.transform = 'scaleX(' + strikeP + ') rotate(-10deg)';
                 usualWrap?.classList.toggle('is-struck', strikeP > 0.08);
-                arrowEl?.classList.toggle('is-visible', strikeP >= 0.42);
+                bridgeEl?.classList.toggle('is-visible', strikeP >= 0.42);
                 dealWrap?.classList.toggle('is-visible', strikeP >= 0.78);
                 row.classList.toggle('is-current', strikeP > 0.05 && strikeP < 0.92);
                 row.classList.toggle('is-done', strikeP >= 0.92);
@@ -2186,6 +2296,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function resetIntroState() {
             introBox?.classList.remove('is-visible');
+        }
+
+        function resetUrgencyState() {
+            urgencyBox?.classList.remove('is-visible');
         }
 
         function resetMonthsState() {
@@ -2234,26 +2348,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 setPhaseActive(null);
                 resetIntroState();
                 resetMonthsState();
+                resetUrgencyState();
             } else if (p < P.introEnd) {
                 setPhaseActive(phaseIntro);
                 resetMonthsState();
+                resetUrgencyState();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
                 introBox?.classList.toggle('is-visible', ip >= 0.1);
-            } else if (p < P.exitStart) {
+            } else if (p < P.urgencyStart) {
                 setPhaseActive(phaseMonths);
                 introBox?.classList.add('is-visible');
+                resetUrgencyState();
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
-                if (mp < 0.78) {
-                    const monthProgress = (mp / 0.78) * MONTHS.length;
+                if (mp < 0.72) {
+                    const monthProgress = (mp / 0.72) * MONTHS.length;
                     updateMonthRows(monthProgress);
                     savingsCard?.classList.remove('is-visible');
                 } else {
                     updateMonthRows(MONTHS.length);
-                    const sp = (mp - 0.78) / 0.22;
-                    savingsCard?.classList.toggle('is-visible', sp >= 0.25);
+                    const sp = (mp - 0.72) / 0.28;
+                    savingsCard?.classList.toggle('is-visible', sp >= 0.2);
                 }
+                opening.style.opacity = '1';
+            } else if (p < P.exitStart) {
+                setPhaseActive(phaseUrgency);
+                resetMonthsState();
+
+                const up = (p - P.urgencyStart) / (P.urgencyEnd - P.urgencyStart);
+                urgencyBox?.classList.toggle('is-visible', up >= 0.12);
                 opening.style.opacity = '1';
             } else {
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
