@@ -1251,7 +1251,9 @@
             margin: 0.85rem 0 0;
             padding-top: 0.75rem;
             border-top: 1px solid rgba(194, 22, 50, 0.12);
-            font-size: clamp(1.85rem, 6.8vw, 2.55rem);
+            font-size: clamp(1.45rem, 5.4vw, 2rem);
+            letter-spacing: 0.06em;
+            text-indent: 0.06em;
             color: var(--brand-red);
         }
         .lp-o-intro-box .lp-o-caption {
@@ -1278,14 +1280,45 @@
         .lp-o-deal-head {
             flex-shrink: 0;
             margin: 0;
-            padding: clamp(10px, 1.4vh, 13px) clamp(14px, 3.5vw, 18px) clamp(8px, 1vh, 10px);
-            font-size: clamp(0.78rem, 2.6vw, 0.92rem);
-            font-weight: 800;
-            letter-spacing: 0.24em;
-            text-indent: 0.24em;
+            padding: clamp(12px, 1.6vh, 16px) clamp(14px, 3.5vw, 18px) clamp(10px, 1.2vh, 14px);
             text-align: center;
-            color: rgba(194, 22, 50, 0.6);
-            border-bottom: 1px solid rgba(194, 22, 50, 0.1);
+            background: linear-gradient(180deg, rgba(194, 22, 50, 0.05) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(194, 22, 50, 0.08);
+        }
+        .lp-o-deal-head-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        .lp-o-deal-head-sub {
+            font-size: clamp(0.68rem, 2.3vw, 0.8rem);
+            font-weight: 800;
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
+            color: rgba(194, 22, 50, 0.5);
+        }
+        .lp-o-deal-head-main {
+            margin: 0;
+            font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            color: var(--brand-red);
+        }
+        .lp-o-deal-head-accent {
+            display: inline-block;
+            margin-left: 0.15em;
+            padding: 0.1em 0.5em 0.12em;
+            font-style: normal;
+            font-size: 0.92em;
+            letter-spacing: 0.1em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 5px;
+            transform: rotate(-3deg);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.32);
+            vertical-align: middle;
         }
         .lp-o-deal-sheet .lp-o-month-list {
             position: relative;
@@ -2109,14 +2142,19 @@
             <div class="lp-o-intro-box lp-o-panel" id="lp-o-intro-box">
                 <span class="lp-o-header-tag">JOYFIT24経堂</span>
                 <p class="lp-o-label" id="lp-o-label">6月限定<br>キャンペーン</p>
-                <p class="lp-o-lead" id="lp-o-lead">半年間</p>
+                <p class="lp-o-lead" id="lp-o-lead">6/24(水)まで限定</p>
                 <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
             </div>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
             <div class="lp-o-deal-sheet lp-o-panel" id="lp-o-deal-sheet">
-                <p class="lp-o-deal-head">6月〜11月</p>
+                <div class="lp-o-deal-head">
+                    <div class="lp-o-deal-head-inner">
+                        <span class="lp-o-deal-head-sub">半年間</span>
+                        <p class="lp-o-deal-head-main">ずーっと<em class="lp-o-deal-head-accent">お得</em></p>
+                    </div>
+                </div>
                 <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
                 <div class="lp-o-savings-footer" id="lp-o-savings">
                     <span class="lp-o-savings-label">6ヶ月で合計</span>
