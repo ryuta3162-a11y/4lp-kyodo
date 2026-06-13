@@ -1191,12 +1191,12 @@
         }
         .lp-o-header-tag {
             display: block;
-            margin: 0 0 0.55rem;
+            margin: 0 0 0.65rem;
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: clamp(1rem, 3.6vw, 1.25rem);
+            font-size: clamp(1.1rem, 4vw, 1.35rem);
             font-weight: 900;
-            letter-spacing: 0.22em;
-            text-indent: 0.22em;
+            letter-spacing: 0.14em;
+            text-indent: 0.14em;
             color: var(--gold-light);
         }
         .lp-o-label {
@@ -1205,7 +1205,7 @@
             font-weight: 900;
             letter-spacing: 0.1em;
             text-indent: 0.1em;
-            line-height: 1.25;
+            line-height: 1.3;
             color: #fff;
         }
         .lp-o-intro-box .lp-o-lead {
@@ -1250,18 +1250,6 @@
         .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-deal {
             text-shadow: none;
         }
-        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row {
-            border-bottom-color: rgba(194, 22, 50, 0.1);
-        }
-        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row:first-child {
-            border-top-color: rgba(194, 22, 50, 0.1);
-        }
-        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-current {
-            background: rgba(212, 175, 55, 0.14);
-        }
-        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-done {
-            background: rgba(194, 22, 50, 0.04);
-        }
         .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-bridge-line {
             background: linear-gradient(90deg, rgba(194, 22, 50, 0.15), var(--gold-light) 55%, #d4af37);
             box-shadow: 0 0 8px rgba(212, 175, 55, 0.35);
@@ -1278,7 +1266,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            gap: 0;
+            gap: clamp(3px, 0.9vh, 8px);
         }
         .lp-o-month-row {
             display: flex;
@@ -1286,11 +1274,18 @@
             align-items: center;
             justify-content: space-between;
             gap: clamp(0.35rem, 2vw, 0.65rem);
-            padding: clamp(4px, 1vh, 8px) 2px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.35s ease;
+            padding: clamp(6px, 1.2vh, 10px) 8px;
+            border: none;
+            border-radius: 10px;
+            transition: background 0.35s ease, box-shadow 0.35s ease;
         }
-        .lp-o-month-row:first-child { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-current {
+            background: rgba(212, 175, 55, 0.14);
+            box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.28);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-done {
+            background: rgba(194, 22, 50, 0.035);
+        }
         .lp-o-row-month {
             flex: 0 0 2.35em;
             font-size: var(--lp-o-row-month);
@@ -1340,12 +1335,6 @@
             transform-origin: left center;
             box-shadow: 0 0 4px rgba(255, 255, 255, 0.35);
             pointer-events: none;
-        }
-        .lp-o-month-row.is-current {
-            background: rgba(212, 175, 55, 0.1);
-        }
-        .lp-o-month-row.is-done {
-            background: rgba(255, 255, 255, 0.04);
         }
         .lp-o-row-tax {
             font-size: 0.55em;
@@ -1499,20 +1488,25 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
-        .lp-o-urgency-period {
+        .lp-o-urgency-head {
             margin: 0 0 0.85rem;
-            font-size: clamp(1rem, 3.8vw, 1.2rem);
+            font-size: clamp(1.05rem, 3.8vw, 1.25rem);
             font-weight: 900;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             color: var(--brand-red);
+        }
+        .lp-o-urgency-head .dynamic-remaining-count {
+            font-size: 1.15em;
+            letter-spacing: 0;
         }
         .lp-o-countdown {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: clamp(0.2rem, 1.5vw, 0.45rem);
+            flex-wrap: nowrap;
+            gap: clamp(0.1rem, 1vw, 0.3rem);
             margin: 0 0 1.15rem;
-            padding: clamp(0.75rem, 2vh, 1rem) clamp(0.85rem, 3vw, 1.15rem);
+            padding: clamp(0.7rem, 2vh, 0.95rem) clamp(0.5rem, 2.5vw, 0.85rem);
             background: #111;
             border-radius: 10px;
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -1521,33 +1515,33 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.2rem;
-            min-width: clamp(3.5rem, 16vw, 5rem);
+            gap: 0.15rem;
+            min-width: clamp(2.5rem, 11vw, 3.5rem);
         }
         .lp-o-countdown-num {
             font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
-            font-size: clamp(2.6rem, 12vw, 3.75rem);
+            font-size: clamp(1.75rem, 7.5vw, 2.65rem);
             font-weight: 700;
             font-variant-numeric: tabular-nums;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
             line-height: 1;
             color: #fff;
         }
         .lp-o-countdown-label {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(0.52rem, 2vw, 0.62rem);
-            font-weight: 600;
-            letter-spacing: 0.22em;
-            text-indent: 0.22em;
-            color: rgba(255, 255, 255, 0.45);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(0.58rem, 2.2vw, 0.7rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.5);
         }
         .lp-o-countdown-sep {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2rem, 9vw, 2.85rem);
+            font-size: clamp(1.35rem, 5.5vw, 1.85rem);
             font-weight: 700;
             line-height: 1;
             color: var(--brand-red);
-            margin: 0 0.1rem;
+            margin: 0 0.02rem;
+            padding-bottom: 0.85rem;
             animation: lpOCountdownBlink 1s step-end infinite;
         }
         @keyframes lpOCountdownBlink {
@@ -1941,8 +1935,8 @@
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-card-frame" id="lp-o-intro-box">
-                <span class="lp-o-header-tag">JF24経堂</span>
-                <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
+                <span class="lp-o-header-tag">JOYFIT24経堂</span>
+                <p class="lp-o-label" id="lp-o-label">6月限定<br>キャンペーン</p>
                 <p class="lp-o-lead" id="lp-o-lead">半年間</p>
                 <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
             </div>
@@ -1964,16 +1958,26 @@
 
         <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
             <div class="lp-o-urgency-box lp-o-card-frame lp-o-card-frame--white" id="lp-o-urgency-box">
-                <p class="lp-o-urgency-period">6/24(水)まで</p>
+                <p class="lp-o-urgency-head">残り<span class="dynamic-remaining-count">--</span>名です</p>
                 <div class="lp-o-countdown" aria-live="polite">
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
-                        <span class="lp-o-countdown-label">DAYS</span>
+                        <span class="lp-o-countdown-label">日</span>
                     </div>
                     <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-hours">00</span>
-                        <span class="lp-o-countdown-label">HOURS</span>
+                        <span class="lp-o-countdown-label">時間</span>
+                    </div>
+                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
+                    <div class="lp-o-countdown-unit">
+                        <span class="lp-o-countdown-num" id="lp-o-cd-mins">00</span>
+                        <span class="lp-o-countdown-label">分</span>
+                    </div>
+                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
+                    <div class="lp-o-countdown-unit">
+                        <span class="lp-o-countdown-num" id="lp-o-cd-secs">00</span>
+                        <span class="lp-o-countdown-label">秒</span>
                     </div>
                 </div>
                 <div class="lp-o-urgency-hero">
@@ -2317,16 +2321,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const URGENCY_END = new Date('2026-06-24T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
         const cdHoursEl = document.getElementById('lp-o-cd-hours');
+        const cdMinsEl = document.getElementById('lp-o-cd-mins');
+        const cdSecsEl = document.getElementById('lp-o-cd-secs');
 
         function updateOpeningCountdown() {
-            if (!cdDaysEl || !cdHoursEl) return;
+            if (!cdDaysEl || !cdHoursEl || !cdMinsEl || !cdSecsEl) return;
             const now = new Date();
             let diff = URGENCY_END.getTime() - now.getTime();
             if (diff < 0) diff = 0;
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
             cdDaysEl.textContent = String(days).padStart(2, '0');
             cdHoursEl.textContent = String(hours).padStart(2, '0');
+            cdMinsEl.textContent = String(mins).padStart(2, '0');
+            cdSecsEl.textContent = String(secs).padStart(2, '0');
         }
 
         function startCountdown() {
