@@ -1131,6 +1131,7 @@
             --lp-o-header-main: clamp(1.75rem, 6.2vw, 2.5rem);
             --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
             --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
+            --lp-o-deal-head: clamp(1rem, 3.4vw, 1.28rem);
         }
         .lp-o-panel {
             width: min(100%, 540px);
@@ -1280,30 +1281,29 @@
         .lp-o-deal-head {
             flex-shrink: 0;
             margin: 0;
-            padding: clamp(0.55rem, 1.6vh, 0.75rem) clamp(0.85rem, 3.5vw, 1.1rem) clamp(0.5rem, 1.2vh, 0.65rem);
+            padding: clamp(10px, 1.4vh, 13px) clamp(12px, 3vw, 16px) clamp(8px, 1vh, 10px);
             text-align: center;
-            line-height: 1;
-            font-size: clamp(2rem, 9vw, 3rem);
+            line-height: 1.25;
+            font-size: var(--lp-o-deal-head);
             font-weight: 900;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.04em;
             color: var(--brand-red);
             background: linear-gradient(180deg, rgba(194, 22, 50, 0.05) 0%, transparent 100%);
             border-bottom: 1px solid rgba(194, 22, 50, 0.08);
         }
-        .lp-o-deal-head .lp-o-deal-o,
-        .lp-o-savings-footer .lp-o-savings-badge {
+        .lp-o-deal-head .lp-o-deal-o {
             font-style: normal;
             display: inline-block;
-            margin-left: 0.08em;
-            padding: 0.04em 0.28em 0.06em;
-            font-size: clamp(2rem, 9vw, 3rem);
+            margin-left: 0.06em;
+            padding: 0.08em 0.38em 0.1em;
+            font-size: 1em;
             font-weight: 900;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.06em;
             line-height: 1;
             color: #1a1a1a;
             background: var(--gold-gradient);
-            border-radius: 0.12em;
-            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.28);
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
             vertical-align: baseline;
         }
         .lp-o-deal-sheet .lp-o-month-list {
@@ -1392,6 +1392,15 @@
             color: #fff;
         }
         .lp-o-savings-footer .lp-o-savings-badge {
+            margin: 0 0 0 0.15rem;
+            padding: 0.08em 0.38em 0.1em;
+            font-size: var(--lp-o-deal-head);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
             transform: none;
         }
         .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal {
