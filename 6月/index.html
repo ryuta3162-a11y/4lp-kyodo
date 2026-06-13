@@ -1150,14 +1150,26 @@
             visibility: visible;
             pointer-events: auto;
         }
+        .lp-o-card-frame--white {
+            background: #fff;
+            border-color: rgba(194, 22, 50, 0.22);
+            box-shadow:
+                0 5px 0 rgba(0, 0, 0, 0.1),
+                0 10px 28px rgba(0, 0, 0, 0.14);
+            color: var(--brand-red);
+        }
+        .lp-opening-phase--intro {
+            justify-content: center;
+            padding: max(8px, env(safe-area-inset-top)) 14px max(8px, env(safe-area-inset-bottom));
+        }
         .lp-opening-phase--months {
             justify-content: stretch;
             padding: max(10px, env(safe-area-inset-top)) 12px max(10px, env(safe-area-inset-bottom));
             gap: clamp(8px, 1.5vh, 12px);
         }
         .lp-o-intro-box {
-            width: min(100%, 480px);
-            padding: clamp(1.15rem, 4vw, 1.55rem) clamp(1rem, 4vw, 1.35rem);
+            width: min(100%, 520px);
+            padding: clamp(1.85rem, 7vh, 2.75rem) clamp(1.25rem, 4.5vw, 1.85rem);
             text-align: center;
             opacity: 0;
             transform: translateY(12px);
@@ -1179,38 +1191,40 @@
         }
         .lp-o-header-tag {
             display: block;
-            margin: 0 0 0.4rem;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(0.72rem, 2.4vw, 0.88rem);
-            font-weight: 600;
-            letter-spacing: 0.42em;
-            text-indent: 0.42em;
+            margin: 0 0 0.55rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(1rem, 3.6vw, 1.25rem);
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
             color: var(--gold-light);
         }
         .lp-o-label {
             margin: 0;
-            font-size: var(--lp-o-header-main);
+            font-size: clamp(2rem, 7.2vw, 2.85rem);
             font-weight: 900;
             letter-spacing: 0.1em;
             text-indent: 0.1em;
-            line-height: 1.3;
+            line-height: 1.25;
             color: #fff;
         }
         .lp-o-intro-box .lp-o-lead {
-            margin: 0.7rem 0 0;
-            padding-top: 0.65rem;
+            margin: 0.85rem 0 0;
+            padding-top: 0.75rem;
             border-top: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: clamp(1.85rem, 6.8vw, 2.55rem);
         }
         .lp-o-intro-box .lp-o-caption {
-            margin: 0.75rem 0 0;
+            margin: 0.85rem 0 0;
             display: block;
             width: 100%;
-            padding: 0.6rem 0.5rem;
+            padding: 0.7rem 0.5rem;
             border: none;
             border-top: 1px solid rgba(248, 231, 28, 0.35);
             background: rgba(0, 0, 0, 0.18);
             box-shadow: none;
             color: var(--gold-light);
+            font-size: clamp(1.45rem, 5.5vw, 2rem);
         }
         .lp-o-month-panel {
             width: min(100%, 540px);
@@ -1219,6 +1233,42 @@
             padding: clamp(16px, 2.5vh, 24px) clamp(14px, 4vw, 20px);
             display: flex;
             flex-direction: column;
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-month,
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-usual,
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-deal,
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-tax {
+            color: var(--brand-red);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-usual-wrap.is-struck .lp-o-row-usual {
+            color: rgba(194, 22, 50, 0.32);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-strike {
+            background: rgba(194, 22, 50, 0.55);
+            box-shadow: none;
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-deal {
+            text-shadow: none;
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row {
+            border-bottom-color: rgba(194, 22, 50, 0.1);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row:first-child {
+            border-top-color: rgba(194, 22, 50, 0.1);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-current {
+            background: rgba(212, 175, 55, 0.14);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-month-row.is-done {
+            background: rgba(194, 22, 50, 0.04);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-bridge-line {
+            background: linear-gradient(90deg, rgba(194, 22, 50, 0.15), var(--gold-light) 55%, #d4af37);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.35);
+        }
+        .lp-o-month-panel.lp-o-card-frame--white .lp-o-row-bridge-dot {
+            background: var(--gold-light);
+            box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
         }
         .lp-o-month-list {
             list-style: none;
@@ -1369,6 +1419,9 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+        .lp-o-savings-card.lp-o-card-frame--white .lp-o-savings-label {
+            color: rgba(194, 22, 50, 0.65);
+        }
         .lp-o-savings-label {
             display: block;
             margin: 0 0 0.5rem;
@@ -1432,11 +1485,11 @@
         }
         .lp-opening-phase--urgency {
             justify-content: center;
-            padding: max(14px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
+            padding: max(10px, env(safe-area-inset-top)) 14px max(10px, env(safe-area-inset-bottom));
         }
         .lp-o-urgency-box {
-            width: min(100%, 420px);
-            padding: clamp(1.35rem, 4.5vw, 1.85rem) clamp(1.1rem, 4vw, 1.5rem);
+            width: min(100%, 480px);
+            padding: clamp(1.5rem, 5vh, 2rem) clamp(1.15rem, 4vw, 1.5rem);
             text-align: center;
             opacity: 0;
             transform: translateY(16px) scale(0.96);
@@ -1447,86 +1500,100 @@
             transform: translateY(0) scale(1);
         }
         .lp-o-urgency-period {
-            margin: 0 0 0.65rem;
-            font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+            margin: 0 0 0.85rem;
+            font-size: clamp(1rem, 3.8vw, 1.2rem);
             font-weight: 900;
-            letter-spacing: 0.06em;
-            color: var(--gold-light);
+            letter-spacing: 0.08em;
+            color: var(--brand-red);
         }
-        .lp-o-urgency-pills {
+        .lp-o-countdown {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 0.85rem;
+            gap: clamp(0.2rem, 1.5vw, 0.45rem);
+            margin: 0 0 1.15rem;
+            padding: clamp(0.75rem, 2vh, 1rem) clamp(0.85rem, 3vw, 1.15rem);
+            background: #111;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
         }
-        .lp-o-urgency-pills span {
-            font-size: clamp(0.62rem, 2.2vw, 0.72rem);
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            padding: 4px 10px;
-            border-radius: 4px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.28);
-        }
-        .lp-o-urgency-lead {
-            margin: 0 0 1rem;
-            font-size: clamp(1.35rem, 5vw, 1.75rem);
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            text-indent: 0.08em;
-            line-height: 1.35;
-        }
-        .lp-o-urgency-remaining {
-            display: inline-flex;
-            align-items: center;
-            gap: clamp(6px, 2vw, 10px);
-            margin: 0 auto 0.85rem;
-            padding: clamp(8px, 2vh, 12px) clamp(16px, 5vw, 24px) clamp(8px, 2vh, 12px) clamp(12px, 4vw, 18px);
-            background: #fff;
-            color: var(--color-text);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            min-width: min(100%, 220px);
-        }
-        .lp-o-urgency-remaining .remaining-label {
+        .lp-o-countdown-unit {
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 1.05;
-            font-size: clamp(0.62rem, 2.2vw, 0.72rem);
-            font-weight: 800;
-            color: #666;
-            letter-spacing: 0.08em;
+            gap: 0.2rem;
+            min-width: clamp(3.5rem, 16vw, 5rem);
         }
-        .lp-o-urgency-remaining .highlight-num {
-            font-size: clamp(2.5rem, 12vw, 3.75rem);
-            font-weight: 900;
-            color: var(--brand);
+        .lp-o-countdown-num {
+            font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
+            font-size: clamp(2.6rem, 12vw, 3.75rem);
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.04em;
             line-height: 1;
-            min-width: 1.1em;
+            color: #fff;
+        }
+        .lp-o-countdown-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(0.52rem, 2vw, 0.62rem);
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
+            color: rgba(255, 255, 255, 0.45);
+        }
+        .lp-o-countdown-sep {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 9vw, 2.85rem);
+            font-weight: 700;
+            line-height: 1;
+            color: var(--brand-red);
+            margin: 0 0.1rem;
+            animation: lpOCountdownBlink 1s step-end infinite;
+        }
+        @keyframes lpOCountdownBlink {
+            50% { opacity: 0.15; }
+        }
+        .lp-o-urgency-hero {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: clamp(0.15rem, 1vw, 0.35rem);
+            width: 100%;
+            margin: 0 0 1rem;
+            line-height: 1;
+        }
+        .lp-o-urgency-hero-label {
+            font-size: clamp(1.15rem, 4.2vw, 1.45rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+        }
+        .lp-o-urgency-hero-num {
+            font-size: clamp(4.25rem, 20vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            min-width: 1.05em;
             text-align: center;
         }
-        .lp-o-urgency-remaining .remaining-unit {
-            font-size: clamp(0.85rem, 3vw, 1rem);
+        .lp-o-urgency-hero-unit {
+            font-size: clamp(1.25rem, 4.8vw, 1.65rem);
             font-weight: 900;
-            color: var(--brand);
-            align-self: flex-end;
-            padding-bottom: 4px;
+            color: var(--brand-red);
         }
-        .lp-o-urgency-note {
+        .lp-o-urgency-disclaimer {
             margin: 0;
-            font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+            padding-top: 0.85rem;
+            border-top: 1px solid rgba(194, 22, 50, 0.15);
+            font-size: clamp(0.82rem, 3vw, 0.95rem);
             font-weight: 800;
-            letter-spacing: 0.12em;
-            text-indent: 0.12em;
-            color: var(--gold-light);
-            animation: lpOUrgencyPulse 2s ease-in-out infinite;
+            line-height: 1.7;
+            letter-spacing: 0.04em;
+            color: #444;
         }
-        @keyframes lpOUrgencyPulse {
-            0%, 100% { opacity: 0.85; }
-            50% { opacity: 1; }
+        .lp-o-urgency-disclaimer .dynamic-remaining-count {
+            font-weight: 900;
+            color: var(--brand-red);
         }
         @keyframes openingFrameIn {
             from { opacity: 0; transform: scale(0.94); }
@@ -1819,7 +1886,7 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
-            .lp-o-urgency-note { animation: none !important; opacity: 1 !important; }
+            .lp-o-countdown-sep { animation: none !important; opacity: 1 !important; }
             .hero-panel-intro,
             .hero-panel-offer { animation: none !important; }
             .hero-deal-stack,
@@ -1874,7 +1941,7 @@
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-card-frame" id="lp-o-intro-box">
-                <span class="lp-o-header-tag">JOYFIT24 KYODO</span>
+                <span class="lp-o-header-tag">JF24経堂</span>
                 <p class="lp-o-label" id="lp-o-label">6月限定キャンペーン</p>
                 <p class="lp-o-lead" id="lp-o-lead">半年間</p>
                 <p class="lp-o-caption" id="lp-o-caption">先着15名様限定</p>
@@ -1882,10 +1949,10 @@
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <div class="lp-o-month-panel lp-o-card-frame">
+            <div class="lp-o-month-panel lp-o-card-frame lp-o-card-frame--white">
                 <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
             </div>
-            <div class="lp-o-savings-card lp-o-card-frame" id="lp-o-savings">
+            <div class="lp-o-savings-card lp-o-card-frame lp-o-card-frame--white" id="lp-o-savings">
                 <span class="lp-o-savings-label">6ヶ月で合計</span>
                 <div class="lp-o-savings-price-block">
                     <p class="lp-o-savings-main">
@@ -1896,19 +1963,28 @@
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
-            <div class="lp-o-urgency-box lp-o-card-frame" id="lp-o-urgency-box">
+            <div class="lp-o-urgency-box lp-o-card-frame lp-o-card-frame--white" id="lp-o-urgency-box">
                 <p class="lp-o-urgency-period">6/24(水)まで</p>
-                <div class="lp-o-urgency-pills">
-                    <span>期間限定</span>
-                    <span>先着15名様</span>
+                <div class="lp-o-countdown" aria-live="polite">
+                    <div class="lp-o-countdown-unit">
+                        <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
+                        <span class="lp-o-countdown-label">DAYS</span>
+                    </div>
+                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
+                    <div class="lp-o-countdown-unit">
+                        <span class="lp-o-countdown-num" id="lp-o-cd-hours">00</span>
+                        <span class="lp-o-countdown-label">HOURS</span>
+                    </div>
                 </div>
-                <p class="lp-o-urgency-lead">先着15名様限定<br>キャンペーン</p>
-                <div class="lp-o-urgency-remaining banner-remaining-block">
-                    <span class="remaining-label">残<br>り</span>
-                    <span class="highlight-num dynamic-remaining-count">--</span>
-                    <span class="remaining-unit">名</span>
+                <div class="lp-o-urgency-hero">
+                    <span class="lp-o-urgency-hero-label">残り</span>
+                    <span class="lp-o-urgency-hero-num dynamic-remaining-count">--</span>
+                    <span class="lp-o-urgency-hero-unit">名</span>
                 </div>
-                <p class="lp-o-urgency-note">人数がなくなり次第終了</p>
+                <p class="lp-o-urgency-disclaimer">
+                    ※残り<span class="dynamic-remaining-count">--</span>名入会次第<br>
+                    限定キャンペーンは終了します
+                </p>
             </div>
         </div>
     </div>
@@ -2237,6 +2313,33 @@ document.addEventListener('DOMContentLoaded', function() {
         let virtualProgress = 0;
         let touchLastY = 0;
         let listBuilt = false;
+        let countdownTimer = null;
+        const URGENCY_END = new Date('2026-06-24T23:59:59+09:00');
+        const cdDaysEl = document.getElementById('lp-o-cd-days');
+        const cdHoursEl = document.getElementById('lp-o-cd-hours');
+
+        function updateOpeningCountdown() {
+            if (!cdDaysEl || !cdHoursEl) return;
+            const now = new Date();
+            let diff = URGENCY_END.getTime() - now.getTime();
+            if (diff < 0) diff = 0;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            cdDaysEl.textContent = String(days).padStart(2, '0');
+            cdHoursEl.textContent = String(hours).padStart(2, '0');
+        }
+
+        function startCountdown() {
+            if (countdownTimer) return;
+            updateOpeningCountdown();
+            countdownTimer = setInterval(updateOpeningCountdown, 1000);
+        }
+
+        function stopCountdown() {
+            if (!countdownTimer) return;
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+        }
 
         function setPhaseActive(active) {
             [phaseIntro, phaseMonths, phaseUrgency].forEach(function(el) {
@@ -2317,6 +2420,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function finishOpening() {
             if (finished) return;
             finished = true;
+            stopCountdown();
             unbindOpening();
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
@@ -2349,10 +2453,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetIntroState();
                 resetMonthsState();
                 resetUrgencyState();
+                stopCountdown();
             } else if (p < P.introEnd) {
                 setPhaseActive(phaseIntro);
                 resetMonthsState();
                 resetUrgencyState();
+                stopCountdown();
 
                 const ip = (p - P.introStart) / (P.introEnd - P.introStart);
                 introBox?.classList.toggle('is-visible', ip >= 0.1);
@@ -2360,6 +2466,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setPhaseActive(phaseMonths);
                 introBox?.classList.add('is-visible');
                 resetUrgencyState();
+                stopCountdown();
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
                 if (mp < 0.72) {
@@ -2375,11 +2482,13 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (p < P.exitStart) {
                 setPhaseActive(phaseUrgency);
                 resetMonthsState();
+                startCountdown();
 
                 const up = (p - P.urgencyStart) / (P.urgencyEnd - P.urgencyStart);
                 urgencyBox?.classList.toggle('is-visible', up >= 0.12);
                 opening.style.opacity = '1';
             } else {
+                stopCountdown();
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
                 opening.style.opacity = String(Math.max(0, 1 - exitP));
             }
