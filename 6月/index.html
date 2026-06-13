@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 6月限定キャンペーン｜6/1〜6/24 期間限定</title>
+    <title>JOYFIT24経堂 6月限定キャンペーン｜6/24(水)まで 期間限定</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/1(月)〜6/24(水)まで。" />
+    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 6月限定キャンペーン｜期間限定" />
-    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/1〜6/24。" />
+    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 6月限定キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JOYFIT24経堂 6月限定キャンペーン｜期間限定" />
-    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/1〜6/24。" />
+    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1229,7 +1229,7 @@
 <!-- トップ固定バナー -->
 <div class="gold-metallic-banner">
     <div class="banner-inner">
-        <p class="banner-period-dates">6/1(月)〜6/24(水)</p>
+        <p class="banner-period-dates">6/24(水)まで</p>
         <span class="banner-capacity-pill">期間限定</span>
         <span class="banner-capacity-pill">先着15名様</span>
         <span class="banner-vdivider" aria-hidden="true"></span>
@@ -1362,10 +1362,6 @@
             <div class="digital-step-card condition-card lp-framed lp-framed--hover reveal-up">
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand">キャンペーン注意事項</div>
                 <div class="condition-list-content">
-                    <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i>
-                        <span>JOYFIT APPからのご入会<br><span style="font-size:0.75rem; font-weight:normal; color:#666;">(クレジットカード決済のみ対応)</span></span>
-                    </div>
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span>満6カ月の在籍が条件となります（2026年12月末日まで）</span>
                     </div>
@@ -1610,24 +1606,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 6/1〜6/24：15名から1日につき1名減（最小1名）
+        // 6/24まで：15名→最終日1名（期間に応じて段階的に減少・1〜2日に1名ペース）
         const startDate = new Date('2026-06-01T00:00:00+09:00');
         const endDate = new Date('2026-06-24T00:00:00+09:00');
         const now = new Date();
         const maxRemaining = 15;
         const minRemaining = 1;
         const msPerDay = 1000 * 60 * 60 * 24;
+        const totalSpanDays = Math.round((endDate.getTime() - startDate.getTime()) / msPerDay);
 
         let diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
         let remaining;
 
         if (diffDays < 0) {
             remaining = maxRemaining;
-        } else if (now.getTime() > endDate.getTime() + msPerDay) {
+        } else if (diffDays >= totalSpanDays) {
             remaining = minRemaining;
         } else {
-            remaining = Math.max(maxRemaining - diffDays, minRemaining);
+            remaining = Math.round(maxRemaining - (diffDays / totalSpanDays) * (maxRemaining - minRemaining));
         }
+
+        if (remaining < minRemaining) remaining = minRemaining;
+        if (remaining > maxRemaining) remaining = maxRemaining;
 
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
         countEls.forEach(el => {
