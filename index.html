@@ -1216,11 +1216,11 @@
             padding: max(8px, env(safe-area-inset-top)) 14px max(8px, env(safe-area-inset-bottom));
         }
         .lp-opening-phase--months {
-            justify-content: stretch;
+            justify-content: center;
             padding: max(10px, env(safe-area-inset-top)) 12px max(10px, env(safe-area-inset-bottom));
             gap: 0;
-            --lp-o-row-month: clamp(1.55rem, 5.8vw, 2.05rem);
-            --lp-o-row-price: clamp(1.95rem, 7.5vw, 2.85rem);
+            --lp-o-row-month: clamp(1.65rem, 6.2vw, 2.2rem);
+            --lp-o-row-price: clamp(2.05rem, 8vw, 3rem);
         }
         .lp-o-intro-box {
             padding: clamp(1.85rem, 7vh, 2.75rem) clamp(1.25rem, 4.5vw, 1.85rem);
@@ -1284,16 +1284,29 @@
             text-indent: 0.12em;
         }
         .lp-o-deal-sheet {
-            flex: 1 1 auto;
-            min-height: 0;
+            flex: 0 0 auto;
+            width: min(100%, 540px);
+            max-height: min(92vh, 680px);
             display: flex;
             flex-direction: column;
+        }
+        .lp-o-deal-head {
+            flex-shrink: 0;
+            margin: 0;
+            padding: clamp(10px, 1.4vh, 13px) clamp(14px, 3.5vw, 18px) clamp(8px, 1vh, 10px);
+            font-size: clamp(0.78rem, 2.6vw, 0.92rem);
+            font-weight: 800;
+            letter-spacing: 0.24em;
+            text-indent: 0.24em;
+            text-align: center;
+            color: rgba(194, 22, 50, 0.6);
+            border-bottom: 1px solid rgba(194, 22, 50, 0.1);
         }
         .lp-o-deal-sheet .lp-o-month-list {
             position: relative;
             z-index: 1;
-            flex: 1;
-            padding: clamp(8px, 1.4vh, 12px) clamp(12px, 3.5vw, 16px);
+            flex: 0 0 auto;
+            padding: clamp(6px, 1vh, 10px) clamp(14px, 3.5vw, 18px);
         }
         .lp-o-deal-sheet .lp-o-row-month {
             color: #1a1a1a;
@@ -1398,11 +1411,10 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: clamp(2px, 0.55vh, 6px);
+            justify-content: flex-start;
+            gap: clamp(3px, 0.65vh, 7px);
         }
         .lp-o-month-row {
             display: flex;
@@ -1410,10 +1422,34 @@
             align-items: center;
             justify-content: space-between;
             gap: clamp(0.35rem, 2vw, 0.65rem);
-            padding: clamp(3px, 0.7vh, 6px) 8px;
+            padding: clamp(5px, 0.85vh, 9px) 8px;
             border: none;
             border-radius: 10px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
             transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+        .lp-o-month-row.is-revealed {
+            max-height: 4.5em;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            animation: lpORowReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-o-month-row.is-hidden {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            transform: translateY(8px);
+            pointer-events: none;
+        }
+        @keyframes lpORowReveal {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .lp-o-row-month {
             flex: 0 0 2.35em;
@@ -2019,7 +2055,8 @@
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
             .lp-o-countdown-sep { animation: none !important; opacity: 1 !important; }
-            .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal {
+            .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal,
+            .lp-o-month-row.is-revealed {
                 animation: none !important;
             }
             body.lp-opening-reveal .lp-wrapper {
@@ -2096,6 +2133,7 @@
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
             <div class="lp-o-deal-sheet lp-o-panel" id="lp-o-deal-sheet">
+                <p class="lp-o-deal-head">6月〜11月</p>
                 <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
                 <div class="lp-o-savings-footer" id="lp-o-savings">
                     <span class="lp-o-savings-label">6ヶ月で合計</span>
@@ -2451,10 +2489,10 @@ document.addEventListener('DOMContentLoaded', function() {
             curtainEnd: 0.08,
             hintHide: 0.16,
             introStart: 0.08,
-            introEnd: 0.22,
-            monthsStart: 0.22,
-            monthsEnd: 0.54,
-            urgencyStart: 0.56,
+            introEnd: 0.16,
+            monthsStart: 0.16,
+            monthsEnd: 0.70,
+            urgencyStart: 0.72,
             urgencyEnd: 0.84,
             exitStart: 0.86,
             complete: 1.0
@@ -2516,7 +2554,7 @@ document.addEventListener('DOMContentLoaded', function() {
             monthList.innerHTML = '';
             MONTHS.forEach(function(m) {
                 const li = document.createElement('li');
-                li.className = 'lp-o-month-row';
+                li.className = 'lp-o-month-row is-hidden';
                 li.innerHTML =
                     '<span class="lp-o-row-month">' + m + '</span>' +
                     '<div class="lp-o-row-price-col">' +
@@ -2542,16 +2580,30 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateMonthRows(monthProgress) {
             buildMonthList();
             if (!monthList) return;
-            const STRIKE_AT = 0.14;
-            const SHIFT_AT = 0.40;
-            const DEAL_AT = 0.62;
-            const DONE_AT = 0.92;
+            const STRIKE_AT = 0.22;
+            const SHIFT_AT = 0.50;
+            const DEAL_AT = 0.74;
+            const DONE_AT = 0.94;
             Array.from(monthList.children).forEach(function(row, i) {
-                const localP = monthProgress - i;
                 const usualWrap = row.querySelector('.lp-o-row-usual-wrap');
                 const strikeEl = row.querySelector('.lp-o-row-strike');
                 const shiftEl = row.querySelector('.lp-o-row-shift');
                 const dealWrap = row.querySelector('.lp-o-row-deal-wrap');
+
+                if (monthProgress < i) {
+                    row.classList.add('is-hidden');
+                    row.classList.remove('is-revealed', 'is-current', 'is-done');
+                    strikeEl?.classList.remove('is-on');
+                    usualWrap?.classList.remove('is-struck');
+                    shiftEl?.classList.remove('is-visible');
+                    dealWrap?.classList.remove('is-visible');
+                    return;
+                }
+
+                row.classList.remove('is-hidden');
+                row.classList.add('is-revealed');
+
+                const localP = monthProgress - i;
                 const strikeOn = localP >= STRIKE_AT;
                 const shiftOn = localP >= SHIFT_AT;
                 const dealOn = localP >= DEAL_AT;
@@ -2559,7 +2611,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 usualWrap?.classList.toggle('is-struck', strikeOn);
                 shiftEl?.classList.toggle('is-visible', shiftOn);
                 dealWrap?.classList.toggle('is-visible', dealOn);
-                row.classList.toggle('is-current', localP >= 0.06 && localP < DONE_AT);
+                row.classList.toggle('is-current', localP >= 0.08 && localP < DONE_AT);
                 row.classList.toggle('is-done', localP >= DONE_AT);
             });
         }
@@ -2671,14 +2723,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 stopCountdown();
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
-                if (mp < 0.72) {
-                    const monthProgress = (mp / 0.72) * MONTHS.length;
+                if (mp < 0.82) {
+                    const monthProgress = (mp / 0.82) * MONTHS.length;
                     updateMonthRows(monthProgress);
                     savingsCard?.classList.remove('is-visible');
                 } else {
                     updateMonthRows(MONTHS.length);
-                    const sp = (mp - 0.72) / 0.28;
-                    savingsCard?.classList.toggle('is-visible', sp >= 0.2);
+                    const sp = (mp - 0.82) / 0.18;
+                    savingsCard?.classList.toggle('is-visible', sp >= 0.18);
                 }
                 opening.style.opacity = '1';
             } else if (p < P.exitStart) {
