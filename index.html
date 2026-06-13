@@ -969,7 +969,7 @@
             align-items: center;
             justify-content: center;
             padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
-            background: #050505;
+            background: linear-gradient(175deg, #8a0e20 0%, var(--brand-red) 38%, #120608 100%);
             color: #fff;
             overflow: hidden;
             will-change: opacity;
@@ -1022,35 +1022,7 @@
             100% { stroke-dashoffset: -1200; opacity: 0.2; }
         }
         .lp-opening-badge {
-            position: absolute;
-            top: max(52px, calc(env(safe-area-inset-top) + 36px));
-            left: max(16px, 3vw);
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px 6px 10px;
-            border: 1px solid rgba(212, 175, 55, 0.45);
-            background: rgba(0, 0, 0, 0.42);
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--gold-light);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
-        }
-        .lp-opening-badge i {
-            font-size: 1.1rem;
-            color: var(--gold-main);
-        }
-        .lp-opening-badge-num {
-            font-size: 1.35rem;
-            line-height: 1;
-        }
-        .lp-opening-badge-h {
-            font-size: 0.82rem;
-            font-weight: 400;
-            letter-spacing: 0.2em;
-            opacity: 0.9;
+            display: none !important;
         }
         .lp-opening-curtain {
             position: absolute;
@@ -1077,38 +1049,67 @@
         }
         .lp-opening-scroll-hint {
             position: absolute;
-            bottom: max(28px, calc(env(safe-area-inset-bottom) + 12px));
+            bottom: max(36px, calc(env(safe-area-inset-bottom) + 20px));
             left: 50%;
+            transform: translateX(-50%);
             z-index: 31;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 14px;
+            width: max-content;
+            max-width: 90vw;
             pointer-events: none;
-            transition: opacity 0.35s ease;
+            transition: opacity 0.45s ease;
+        }
+        .lp-opening-scroll-track {
+            position: relative;
+            width: 2px;
+            height: 56px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.22);
+            overflow: hidden;
+        }
+        .lp-opening-scroll-track::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #fff 40%, transparent);
+            animation: openingScrollTrack 1.8s ease-in-out infinite;
+        }
+        @keyframes openingScrollTrack {
+            0% { top: -100%; opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0.3; }
         }
         .lp-opening-scroll-hint-text {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 400;
-            letter-spacing: 0.32em;
-            text-indent: 0.32em;
-            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+            font-weight: 800;
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            white-space: nowrap;
         }
         .lp-o-hint-desktop { display: none; }
         @media (min-width: 768px) {
             .lp-o-hint-mobile { display: none; }
-            .lp-o-hint-desktop { display: block; letter-spacing: 0.22em; text-indent: 0.22em; }
+            .lp-o-hint-desktop { display: block; }
         }
         .lp-opening-scroll-hint i {
-            font-size: 1.65rem;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
             color: #fff;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
             animation: openingHintBounce 1.5s ease-in-out infinite;
         }
         @keyframes openingHintBounce {
-            0%, 100% { transform: translateY(0); opacity: 0.75; }
-            50% { transform: translateY(10px); opacity: 1; }
+            0%, 100% { transform: translateY(0); opacity: 0.8; }
+            50% { transform: translateY(14px); opacity: 1; }
         }
         .lp-opening-bg {
             position: absolute;
@@ -1131,109 +1132,56 @@
             inset: 0;
             box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
         }
-        .lp-opening-meta {
-            position: absolute;
-            z-index: 3;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 300;
-            font-size: clamp(0.62rem, 1.6vw, 0.78rem);
-            letter-spacing: 0.38em;
-            text-indent: 0.38em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.35);
-        }
-        .lp-opening-meta--tl { top: max(16px, env(safe-area-inset-top)); left: max(16px, 3vw); }
-        .lp-opening-meta--tr { top: max(16px, env(safe-area-inset-top)); right: max(16px, 3vw); letter-spacing: 0.18em; text-indent: 0; font-weight: 400; }
-        .lp-opening-meta--bl { bottom: max(72px, calc(env(safe-area-inset-bottom) + 52px)); left: max(16px, 3vw); }
-        .lp-opening-meta--br { bottom: max(32px, env(safe-area-inset-bottom)); right: max(16px, 3vw); letter-spacing: 0.28em; }
-        .lp-opening-progress {
-            position: absolute;
-            bottom: max(12px, env(safe-area-inset-bottom));
-            left: max(16px, 3vw);
-            right: max(16px, 3vw);
-            z-index: 4;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-        }
-        .lp-opening-progress span {
-            display: block;
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), #fff);
-            transition: width 0.12s ease-out;
-        }
+        .lp-opening-meta { display: none; }
         .lp-opening-skip {
             position: absolute;
             top: max(12px, env(safe-area-inset-top));
             right: max(12px, 3vw);
             z-index: 35;
             padding: 8px 14px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.78rem;
-            font-weight: 400;
-            letter-spacing: 0.26em;
-            text-indent: 0.26em;
-            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.85);
             background: rgba(0, 0, 0, 0.35);
             border: 1px solid rgba(255, 255, 255, 0.25);
             cursor: pointer;
         }
-        .lp-opening-frame {
+        .lp-opening-stage {
             position: relative;
             z-index: 2;
-            width: min(100%, 520px);
-            min-height: clamp(380px, 72vh, 520px);
-            background: linear-gradient(165deg, #c91835 0%, var(--brand-red) 42%, #9a1028 100%);
-            border: 2px solid var(--lp-frame);
-            box-shadow:
-                0 0 0 1px rgba(255, 255, 255, 0.12),
-                0 0 60px rgba(194, 22, 50, 0.35),
-                0 36px 80px rgba(0, 0, 0, 0.55);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            --lp-o-text: clamp(1.15rem, 4.2vw, 1.5rem);
+            --lp-o-price: clamp(4.5rem, 22vw, 8.5rem);
+            --lp-o-month: clamp(5.5rem, 28vw, 11rem);
+            --lp-o-finale: clamp(2rem, 7.5vw, 3.25rem);
+        }
+        .lp-opening-frame,
+        .lp-opening-corner { display: none !important; }
+        .lp-opening-progress {
+            position: absolute;
+            bottom: max(12px, env(safe-area-inset-bottom));
+            left: max(16px, 3vw);
+            right: max(16px, 3vw);
+            z-index: 4;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.12);
             overflow: hidden;
+            border-radius: 2px;
         }
-        .lp-opening-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            z-index: 6;
-            background: var(--gold-gradient);
+        .lp-opening-progress span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #fff);
+            transition: width 0.12s ease-out;
         }
-        .lp-opening-frame::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 3px,
-                rgba(0, 0, 0, 0.04) 3px,
-                rgba(0, 0, 0, 0.04) 4px
-            );
-            opacity: 0.35;
-        }
-        @media (min-width: 768px) {
-            .lp-opening-frame {
-                width: min(92vw, 640px);
-                min-height: clamp(440px, 68vh, 560px);
-            }
-        }
-        .lp-opening-corner {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            z-index: 5;
-            border-color: rgba(255, 255, 255, 0.45);
-            border-style: solid;
-        }
-        .lp-opening-corner--tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-        .lp-opening-corner--tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
-        .lp-opening-corner--bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
-        .lp-opening-corner--br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
         .lp-opening-phase {
             position: absolute;
             inset: 0;
@@ -1241,210 +1189,118 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: clamp(1.5rem, 4vw, 2.5rem);
+            padding: clamp(1.5rem, 5vw, 3rem);
             text-align: center;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity 0.55s ease, transform 0.55s ease, filter 0.55s ease;
+            transition: opacity 0.45s ease;
         }
         .lp-opening-phase.is-active {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
         }
-        .lp-opening-phase.is-out {
-            opacity: 0;
-            transform: scale(0.97);
-            filter: blur(6px);
-        }
-        .lp-o-en {
-            margin: 0 0 0.65rem;
+        .lp-o-hero-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin: 0 0 0.35rem;
             font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 300;
-            font-size: clamp(0.62rem, 1.8vw, 0.82rem);
-            letter-spacing: 0.36em;
-            text-indent: 0.36em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .lp-o-brand {
-            margin: 0;
-            font-size: clamp(0.72rem, 2vw, 0.88rem);
-            font-weight: 800;
-            letter-spacing: 0.28em;
-            text-indent: 0.28em;
-            color: var(--gold-light);
-            text-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
-        }
-        .lp-o-rule {
-            width: min(140px, 40%);
-            height: 1px;
-            margin: 1rem auto 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
-        }
-        .lp-o-title {
-            margin: 1.1rem 0 0;
-            font-size: clamp(1.75rem, 5.5vw, 2.65rem);
-            font-weight: 900;
-            letter-spacing: 0.07em;
-            line-height: 1.45;
-        }
-        .lp-o-usual {
-            margin-top: 1.35rem;
-            opacity: 0.85;
-        }
-        .lp-o-usual.is-struck .lp-o-usual-price {
-            opacity: 0.45;
-            transform: scale(0.92);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        .lp-o-usual.is-struck .lp-o-usual-price::after {
-            transform: scaleX(1);
-        }
-        .lp-o-usual-label {
-            display: block;
-            font-size: clamp(0.78rem, 2.2vw, 0.95rem);
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            margin-bottom: 0.35rem;
-            color: rgba(255, 255, 255, 0.82);
-        }
-        .lp-o-usual-price {
-            position: relative;
-            display: inline-block;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2rem, 7vw, 3rem);
+            font-size: var(--lp-o-price);
             font-weight: 600;
-            letter-spacing: 0.02em;
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            text-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
         }
-        .lp-o-usual-price::after {
-            content: '';
-            position: absolute;
-            left: -4%;
-            right: -4%;
-            top: 50%;
-            height: 2px;
-            background: #fff;
-            transform: translateY(-50%) rotate(-3deg) scaleX(0);
-            transform-origin: left center;
-            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-usual-price small {
+        .lp-o-hero-price span {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.45em;
+            font-size: 0.36em;
             font-weight: 900;
-            margin-left: 2px;
-        }
-        .lp-o-months-lead {
-            margin: 0 0 0.5rem;
-            font-size: clamp(0.95rem, 3vw, 1.2rem);
-            font-weight: 900;
-            letter-spacing: 0.1em;
         }
         .lp-o-month-display {
-            margin: 0.25rem 0;
-            font-size: clamp(3.25rem, 14vw, 5.5rem);
+            margin: 0.15rem 0 0.75rem;
+            font-size: var(--lp-o-month);
             font-weight: 900;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             line-height: 1;
-            text-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
-            transform: scale(0.88);
+            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+            transform: scale(0.92);
             opacity: 0;
-            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
         }
         .lp-o-month-display.is-pop {
             transform: scale(1);
             opacity: 1;
         }
-        .lp-o-month-price {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 2px;
-            margin: 0.15rem 0 1rem;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2.5rem, 10vw, 4rem);
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            line-height: 1;
-        }
-        .lp-o-month-price span {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.42em;
-            font-weight: 900;
-        }
         .lp-o-month-stack {
             list-style: none;
-            margin: 0;
+            margin: 0.5rem 0 0;
             padding: 0;
-            width: 100%;
-            max-width: 340px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+            width: min(100%, 420px);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
-        @media (min-width: 768px) {
-            .lp-o-month-stack { max-width: 420px; gap: 8px; }
+        @media (min-width: 480px) {
+            .lp-o-month-stack {
+                width: min(100%, 520px);
+                gap: 12px;
+            }
         }
         .lp-o-stack-item {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 8px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            background: rgba(0, 0, 0, 0.18);
-            font-size: clamp(0.82rem, 2.4vw, 1rem);
-            font-weight: 800;
+            justify-content: center;
+            padding: clamp(12px, 3vw, 16px) 10px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(0, 0, 0, 0.22);
+            font-size: clamp(1.25rem, 4.8vw, 1.75rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            border-radius: 6px;
             opacity: 0;
-            transform: translateX(-16px);
-            animation: openingStackIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(8px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
         }
-        .lp-o-stack-item span:last-child {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.15em;
-            font-weight: 600;
-            letter-spacing: 0.02em;
+        .lp-o-stack-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            border-color: rgba(255, 255, 255, 0.35);
         }
-        .lp-o-finale-lead {
+        .lp-o-stack-item.is-current {
+            border-color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.18);
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.2);
+            transform: scale(1.04);
+        }
+        .lp-o-finale-tag {
             margin: 0;
-            font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+            font-size: var(--lp-o-finale);
             font-weight: 900;
             letter-spacing: 0.14em;
-        }
-        .lp-o-finale-sub {
-            margin: 0.45rem 0 0.65rem;
-            font-size: clamp(1.35rem, 4.5vw, 2rem);
-            font-weight: 900;
-            letter-spacing: 0.18em;
-            text-indent: 0.18em;
-        }
-        .lp-o-finale-price {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(4.5rem, 18vw, 7.5rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 0.95;
+            line-height: 1.55;
             opacity: 0;
-            transform: scale(0.88);
-            transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(12px);
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lp-o-finale-price.is-visible {
+        .lp-o-finale-tag.is-visible {
             opacity: 1;
-            transform: scale(1);
-            text-shadow:
-                0 0 40px rgba(212, 175, 55, 0.35),
-                0 4px 0 rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
         }
-        .lp-o-finale-price span {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.38em;
-            font-weight: 900;
-            margin-left: 4px;
+        .lp-o-finale-brand {
+            margin: 1.25rem 0 0;
+            font-size: var(--lp-o-text);
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-indent: 0.2em;
+            color: rgba(255, 255, 255, 0.75);
+            opacity: 0;
+            transition: opacity 0.5s ease 0.15s;
+        }
+        .lp-o-finale-brand.is-visible {
+            opacity: 1;
         }
         @keyframes openingFrameIn {
             from { opacity: 0; transform: scale(0.94); }
@@ -1756,7 +1612,7 @@
             .lp-opening-frame,
             .lp-opening-phase,
             .lp-o-month-display,
-            .lp-o-finale-price,
+            .lp-o-finale-tag,
             .lp-o-stack-item,
             .lp-opening-skip {
                 animation: none !important;
@@ -1766,7 +1622,8 @@
             }
             .lp-opening-gym-lines,
             .lp-opening-pulse-line path,
-            .lp-opening-scroll-hint i {
+            .lp-opening-scroll-hint i,
+            .lp-opening-scroll-track::after {
                 animation: none !important;
             }
         }
@@ -1790,48 +1647,22 @@
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
     <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
+        <div class="lp-opening-scroll-track" aria-hidden="true"></div>
         <span class="lp-opening-scroll-hint-text lp-o-hint-mobile">スクロール</span>
-        <span class="lp-opening-scroll-hint-text lp-o-hint-desktop">ホイール / ↓キー</span>
+        <span class="lp-opening-scroll-hint-text lp-o-hint-desktop">スクロール / ホイール</span>
         <i class="ph-bold ph-caret-double-down" aria-hidden="true"></i>
     </div>
-    <div class="lp-opening-badge" aria-hidden="true">
-        <i class="ph-bold ph-barbell"></i>
-        <span class="lp-opening-badge-num">24</span><span class="lp-opening-badge-h">H GYM</span>
-    </div>
-    <span class="lp-opening-meta lp-opening-meta--tr" id="lp-o-scene-num">01</span>
-    <span class="lp-opening-meta lp-opening-meta--bl">Training</span>
-    <span class="lp-opening-meta lp-opening-meta--br">Kyodo</span>
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
-    <div class="lp-opening-frame">
-        <span class="lp-opening-corner lp-opening-corner--tl" aria-hidden="true"></span>
-        <span class="lp-opening-corner lp-opening-corner--tr" aria-hidden="true"></span>
-        <span class="lp-opening-corner lp-opening-corner--bl" aria-hidden="true"></span>
-        <span class="lp-opening-corner lp-opening-corner--br" aria-hidden="true"></span>
-
-        <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
-            <p class="lp-o-en">6 Months · Special Price</p>
-            <p class="lp-o-brand">JOYFIT24 KYODO</p>
-            <div class="lp-o-rule" aria-hidden="true"></div>
-            <h2 class="lp-o-title">半年間ずっと<br>月会費</h2>
-            <div class="lp-o-usual" id="lp-o-usual">
-                <span class="lp-o-usual-label">通常月額</span>
-                <span class="lp-o-usual-price">9,350<small>円</small></span>
-            </div>
-        </div>
-
+    <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <p class="lp-o-en">Every Month · ¥3,400</p>
-            <p class="lp-o-months-lead">毎月、この価格で</p>
-            <div class="lp-o-month-display is-pop" id="lp-o-month-display">6月</div>
-            <div class="lp-o-month-price">3,400<span>円</span></div>
+            <div class="lp-o-hero-price">3,400<span>円</span></div>
+            <div class="lp-o-month-display" id="lp-o-month-display">6月</div>
             <ul class="lp-o-month-stack" id="lp-o-month-stack" aria-live="polite"></ul>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--finale" id="lp-o-phase-finale">
-            <p class="lp-o-en">6 Months Special</p>
-            <p class="lp-o-finale-lead">半年間ずっと</p>
-            <p class="lp-o-finale-sub">毎月</p>
-            <div class="lp-o-finale-price">3,400<span>円</span></div>
+            <p class="lp-o-finale-tag" id="lp-o-finale-tag">6月限定キャンペーン</p>
+            <p class="lp-o-finale-brand" id="lp-o-finale-brand">JOYFIT24 経堂</p>
         </div>
     </div>
     <div class="lp-opening-progress" aria-hidden="true"><span id="lp-o-progress"></span></div>
@@ -2127,63 +1958,59 @@ document.addEventListener('DOMContentLoaded', function() {
         const progressBar = document.getElementById('lp-o-progress');
         const curtain = document.getElementById('lp-o-curtain');
         const scrollHint = document.getElementById('lp-o-scroll-hint');
-        const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
         const phaseFinale = document.getElementById('lp-o-phase-finale');
-        const usualBlock = document.getElementById('lp-o-usual');
         const monthDisplay = document.getElementById('lp-o-month-display');
         const monthStack = document.getElementById('lp-o-month-stack');
-        const sceneNum = document.getElementById('lp-o-scene-num');
-        const finalePrice = phaseFinale?.querySelector('.lp-o-finale-price');
+        const finaleTag = document.getElementById('lp-o-finale-tag');
+        const finaleBrand = document.getElementById('lp-o-finale-brand');
         if (!scrollRoot || !opening) return;
 
         const MONTHS = ['6月', '7月', '8月', '9月', '10月', '11月'];
         const P = {
-            curtainEnd: 0.09,
-            hintHide: 0.11,
-            introStart: 0.07,
-            introFull: 0.16,
-            strike: 0.14,
-            monthsStart: 0.16,
-            monthsEnd: 0.52,
-            finaleStart: 0.52,
-            finaleEnd: 0.86,
-            exitStart: 0.86,
+            curtainEnd: 0.14,
+            hintHide: 0.22,
+            monthsStart: 0.14,
+            monthsEnd: 0.78,
+            finaleStart: 0.78,
+            exitStart: 0.90,
             complete: 0.97
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.0012 : 0.00055;
-        const TOUCH_FACTOR = prefersReduced ? 0.0025 : 0.0015;
-        const KEY_STEP = prefersReduced ? 0.06 : 0.028;
+        const WHEEL_FACTOR = prefersReduced ? 0.0009 : 0.00032;
+        const TOUCH_FACTOR = prefersReduced ? 0.0018 : 0.001;
+        const KEY_STEP = prefersReduced ? 0.04 : 0.016;
         let finished = false;
         let lastMonthIndex = -1;
         let virtualProgress = 0;
         let touchLastY = 0;
 
-        function setSceneNum(text) {
-            if (sceneNum) sceneNum.textContent = text;
-        }
-
         function setPhaseActive(active) {
-            [phaseIntro, phaseMonths, phaseFinale].forEach(function(el) {
+            [phaseMonths, phaseFinale].forEach(function(el) {
                 if (!el) return;
-                el.classList.remove('is-active', 'is-out');
+                el.classList.remove('is-active');
             });
             if (active) active.classList.add('is-active');
         }
 
-        function rebuildMonthStack(upToExclusive) {
-            if (!monthStack) return;
+        function ensureMonthGrid() {
+            if (!monthStack || monthStack.children.length === MONTHS.length) return;
             monthStack.innerHTML = '';
-            for (let i = 0; i < upToExclusive; i++) {
+            MONTHS.forEach(function(m) {
                 const li = document.createElement('li');
                 li.className = 'lp-o-stack-item';
-                li.style.animation = 'none';
-                li.style.opacity = '1';
-                li.style.transform = 'none';
-                li.innerHTML = '<span>' + MONTHS[i] + '</span><span>3,400円</span>';
+                li.textContent = m;
                 monthStack.appendChild(li);
-            }
+            });
+        }
+
+        function updateMonthGrid(currentIdx) {
+            ensureMonthGrid();
+            if (!monthStack) return;
+            Array.from(monthStack.children).forEach(function(li, i) {
+                li.classList.toggle('is-visible', i <= currentIdx);
+                li.classList.toggle('is-current', i === currentIdx);
+            });
         }
 
         function unbindOpening() {
@@ -2224,26 +2051,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (p < P.monthsStart) {
-                setSceneNum('01');
-                setPhaseActive(phaseIntro);
-                if (phaseIntro) {
-                    const introOp = p < P.introStart ? 0 : Math.min(1, (p - P.introStart) / (P.introFull - P.introStart));
-                    phaseIntro.style.opacity = String(introOp);
-                }
-                usualBlock?.classList.toggle('is-struck', p >= P.strike);
+                setPhaseActive(null);
                 if (monthDisplay) monthDisplay.classList.remove('is-pop');
                 lastMonthIndex = -1;
+                if (monthStack) monthStack.innerHTML = '';
+                finaleTag?.classList.remove('is-visible');
+                finaleBrand?.classList.remove('is-visible');
             } else if (p < P.finaleStart) {
-                setSceneNum('02');
                 setPhaseActive(phaseMonths);
-                if (phaseIntro) phaseIntro.style.opacity = '1';
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
                 const idx = Math.min(MONTHS.length - 1, Math.floor(mp * MONTHS.length));
 
                 if (idx !== lastMonthIndex) {
                     lastMonthIndex = idx;
-                    rebuildMonthStack(idx);
+                    updateMonthGrid(idx);
                     if (monthDisplay) {
                         monthDisplay.textContent = MONTHS[idx];
                         monthDisplay.classList.remove('is-pop');
@@ -2252,16 +2074,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         monthDisplay.style.opacity = '1';
                     }
                 }
-                finalePrice?.classList.remove('is-visible');
+                finaleTag?.classList.remove('is-visible');
+                finaleBrand?.classList.remove('is-visible');
             } else if (p < P.exitStart) {
-                setSceneNum('03');
                 setPhaseActive(phaseFinale);
-                rebuildMonthStack(MONTHS.length);
+                updateMonthGrid(MONTHS.length - 1);
+                if (monthStack) {
+                    Array.from(monthStack.children).forEach(function(li) {
+                        li.classList.add('is-visible');
+                        li.classList.remove('is-current');
+                    });
+                }
                 if (monthDisplay) monthDisplay.style.opacity = '0';
-                finalePrice?.classList.add('is-visible');
+                finaleTag?.classList.add('is-visible');
+                finaleBrand?.classList.add('is-visible');
                 opening.style.opacity = '1';
             } else {
-                setSceneNum('03');
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
                 opening.style.opacity = String(Math.max(0, 1 - exitP));
             }
