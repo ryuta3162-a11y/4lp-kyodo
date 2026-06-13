@@ -19,7 +19,7 @@
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <script>
         try {
-            if (sessionStorage.getItem('kyodo-lp-opening-v2')) {
+            if (sessionStorage.getItem('kyodo-lp-opening-v3')) {
                 document.documentElement.classList.add('lp-opening-seen');
             }
         } catch (e) {}
@@ -28,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 視認性の高い Noto Sans JP に完全統一 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
@@ -941,7 +942,7 @@
         }
 
         /* =======================================================
-           ■ オープニング v2（初回のみ・クリエイティブ演出）
+           ■ オープニング v3（Liar Game風・初回のみ）
            ======================================================= */
         html.lp-opening-seen #lp-opening { display: none !important; }
         body.lp-opening-active { overflow: hidden; }
@@ -952,11 +953,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
-            background: radial-gradient(ellipse 130% 90% at 50% 18%, #e01838 0%, var(--brand-red) 42%, #7a0c1c 100%);
+            padding: max(28px, env(safe-area-inset-top)) 22px max(28px, env(safe-area-inset-bottom));
+            background: #0a0a0a;
             color: #fff;
-            animation: openingOverlayExit 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 4.85s;
+            animation: openingOverlayExit 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 5.05s;
         }
         .lp-opening.is-done { display: none !important; }
         .lp-opening-bg {
@@ -964,66 +965,148 @@
             inset: 0;
             overflow: hidden;
             pointer-events: none;
+            background:
+                radial-gradient(ellipse 80% 55% at 50% 42%, rgba(194, 22, 50, 0.38) 0%, transparent 62%),
+                radial-gradient(ellipse 100% 80% at 50% 100%, rgba(194, 22, 50, 0.12) 0%, transparent 50%);
+        }
+        .lp-opening-grain {
+            position: absolute;
+            inset: 0;
+            opacity: 0.055;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
         }
         .lp-opening-shine {
             position: absolute;
-            inset: -40% -60%;
-            background: linear-gradient(108deg, transparent 42%, rgba(255, 255, 255, 0.11) 50%, transparent 58%);
-            animation: openingShineSweep 3.8s ease-in-out 0.2s;
+            inset: -50% -70%;
+            background: linear-gradient(108deg, transparent 44%, rgba(255, 255, 255, 0.07) 50%, transparent 56%);
+            animation: openingShineSweep 4.2s ease-in-out 0.15s;
         }
         .lp-opening-vignette {
             position: absolute;
             inset: 0;
-            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.28);
+            box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.65);
+        }
+        .lp-opening-flash {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            background: #fff;
+            opacity: 0;
+            pointer-events: none;
+            animation: openingFlashCut 0.14s ease-out forwards;
+            animation-delay: 1.82s;
+        }
+        .lp-opening-meta {
+            position: absolute;
+            z-index: 3;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 300;
+            font-size: 0.62rem;
+            letter-spacing: 0.42em;
+            text-indent: 0.42em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.38);
+            opacity: 0;
+            animation: openingMetaIn 0.6s ease forwards;
+        }
+        .lp-opening-meta--tl { top: max(18px, env(safe-area-inset-top)); left: 18px; animation-delay: 0.35s; }
+        .lp-opening-meta--tr { top: max(18px, env(safe-area-inset-top)); right: 18px; animation-delay: 0.45s; letter-spacing: 0.2em; text-indent: 0; font-weight: 400; font-size: 0.7rem; }
+        .lp-opening-meta--bl { bottom: max(36px, env(safe-area-inset-bottom)); left: 18px; animation-delay: 0.55s; }
+        .lp-opening-meta--br { bottom: max(36px, env(safe-area-inset-bottom)); right: 18px; animation-delay: 0.65s; letter-spacing: 0.32em; }
+        .lp-opening-progress {
+            position: absolute;
+            bottom: max(14px, env(safe-area-inset-bottom));
+            left: 18px;
+            right: 18px;
+            z-index: 4;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            opacity: 0;
+            animation: openingFadeIn 0.4s ease forwards;
+            animation-delay: 0.5s;
+        }
+        .lp-opening-progress span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.85));
+            animation: openingProgressFill 5s linear forwards;
+            animation-delay: 0.55s;
         }
         .lp-opening-skip {
             position: absolute;
             top: max(14px, env(safe-area-inset-top));
             right: 14px;
-            z-index: 4;
-            padding: 8px 14px;
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.74rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.92);
-            background: rgba(26, 26, 26, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            border-radius: 999px;
+            z-index: 6;
+            padding: 7px 12px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            color: rgba(255, 255, 255, 0.75);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 0;
             cursor: pointer;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
             opacity: 0;
             animation: openingFadeIn 0.5s ease forwards;
-            animation-delay: 0.8s;
+            animation-delay: 0.9s;
         }
         .lp-opening-skip:focus-visible {
-            outline: 2px solid #fff;
-            outline-offset: 2px;
+            outline: 1px solid #fff;
+            outline-offset: 3px;
         }
         .lp-opening-frame {
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 420px;
-            min-height: 340px;
+            max-width: 400px;
+            min-height: 352px;
             background: var(--brand-red);
-            border: 2.5px solid var(--lp-frame);
-            border-radius: 16px;
-            box-shadow: var(--lp-frame-shadow), 0 28px 64px rgba(0, 0, 0, 0.28);
+            border: 1.5px solid rgba(255, 255, 255, 0.22);
+            box-shadow:
+                0 0 0 2px var(--lp-frame),
+                0 32px 72px rgba(0, 0, 0, 0.55);
             overflow: hidden;
             opacity: 0;
-            transform: scale(0.93) translateY(16px);
-            animation: openingFrameIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: scale(0.96);
+            animation: openingFrameIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .lp-opening-frame::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, transparent 42%, rgba(0, 0, 0, 0.08) 100%);
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.07) 0%, transparent 48%, rgba(0, 0, 0, 0.14) 100%);
             pointer-events: none;
             z-index: 1;
         }
+        .lp-opening-wipe {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.55);
+            transform: scaleX(0);
+            z-index: 4;
+            animation: openingWipeH 0.55s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation-delay: 0.2s;
+        }
+        .lp-opening-corner {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            z-index: 3;
+            opacity: 0;
+            animation: openingFadeIn 0.4s ease forwards;
+        }
+        .lp-opening-corner--tl { top: 10px; left: 10px; border-top: 1px solid rgba(255,255,255,0.5); border-left: 1px solid rgba(255,255,255,0.5); animation-delay: 0.55s; }
+        .lp-opening-corner--tr { top: 10px; right: 10px; border-top: 1px solid rgba(255,255,255,0.5); border-right: 1px solid rgba(255,255,255,0.5); animation-delay: 0.62s; }
+        .lp-opening-corner--bl { bottom: 10px; left: 10px; border-bottom: 1px solid rgba(255,255,255,0.5); border-left: 1px solid rgba(255,255,255,0.5); animation-delay: 0.69s; }
+        .lp-opening-corner--br { bottom: 10px; right: 10px; border-bottom: 1px solid rgba(255,255,255,0.5); border-right: 1px solid rgba(255,255,255,0.5); animation-delay: 0.76s; }
         .lp-opening-scene {
             position: absolute;
             inset: 0;
@@ -1032,173 +1115,215 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2.1rem 1.6rem;
+            padding: 2rem 1.75rem;
             text-align: center;
         }
         .lp-opening-scene--1 {
-            animation: openingScene1Out 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 1.85s;
+            animation: openingScene1Out 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 1.88s;
         }
         .lp-opening-scene--2 {
             opacity: 0;
-            filter: blur(6px);
-            animation: openingScene2In 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.05s;
+            filter: blur(8px);
+            animation: openingScene2In 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2.02s;
+        }
+        .lp-opening-en {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 300;
+            font-size: 0.58rem;
+            letter-spacing: 0.38em;
+            text-indent: 0.38em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.52);
+            opacity: 0;
+            transform: translateY(6px);
+            animation: openingLineIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-opening-scene--1 .lp-opening-en { animation-delay: 0.42s; }
+        .lp-opening-en--period {
+            margin-top: 0.75rem;
+            font-size: 0.52rem;
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
+            animation-delay: 1.22s;
         }
         .lp-opening-eyebrow {
-            margin: 0;
-            font-size: 0.68rem;
+            margin: 0.55rem 0 0;
+            font-size: 0.62rem;
             font-weight: 800;
-            letter-spacing: 0.28em;
-            text-indent: 0.28em;
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
             opacity: 0;
-            transform: translateY(10px);
-            animation: openingLineIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.45s;
+            transform: translateY(8px);
+            animation: openingLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.58s;
         }
         .lp-opening-rule {
-            width: 48px;
+            width: 100%;
+            max-width: 120px;
             height: 1px;
-            margin: 0.85rem auto 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+            margin: 0.9rem auto 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
             transform: scaleX(0);
-            animation: openingRuleExpand 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.65s;
+            animation: openingRuleExpand 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.72s;
         }
         .lp-opening-headline {
-            margin: 1.15rem 0 0;
-            font-size: clamp(1.55rem, 6.8vw, 2rem);
+            margin: 1.05rem 0 0;
+            font-size: clamp(1.5rem, 6.5vw, 1.95rem);
             font-weight: 900;
-            letter-spacing: 0.06em;
-            line-height: 1.42;
+            letter-spacing: 0.08em;
+            line-height: 1.48;
             opacity: 0;
-            transform: translateY(14px);
-            animation: openingLineIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.85s;
+            clip-path: inset(0 100% 0 0);
+            transform: translateX(-8px);
+            animation: openingSlideReveal 0.85s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation-delay: 0.88s;
         }
         .lp-opening-period {
-            margin: 0.65rem 0 0;
-            font-size: clamp(0.82rem, 3.4vw, 0.95rem);
+            margin: 0.55rem 0 0;
+            font-size: clamp(0.8rem, 3.2vw, 0.92rem);
             font-weight: 700;
-            letter-spacing: 0.22em;
-            text-indent: 0.22em;
-            opacity: 0;
-            animation: openingFadeIn 0.55s ease forwards;
-            animation-delay: 1.25s;
-        }
-        .lp-opening-usual-label {
-            margin: 0;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.2em;
-            text-indent: 0.2em;
-            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.24em;
+            text-indent: 0.24em;
             opacity: 0;
             animation: openingFadeIn 0.5s ease forwards;
-            animation-delay: 2.35s;
+            animation-delay: 1.15s;
+        }
+        .lp-opening-scene--2 .lp-opening-en--usual {
+            animation-delay: 2.28s;
+        }
+        .lp-opening-usual-label {
+            margin: 0.35rem 0 0;
+            font-size: clamp(0.88rem, 3.8vw, 1rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            clip-path: inset(0 0 100% 0);
+            animation: openingDropReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2.42s;
         }
         .lp-opening-usual-row {
             display: flex;
             align-items: baseline;
             justify-content: center;
             gap: 2px;
-            margin-top: 0.45rem;
+            margin-top: 0.35rem;
             line-height: 1;
             opacity: 0;
-            transform: translateY(8px);
-            animation: openingLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.5s;
+            transform: translateX(12px);
+            animation: openingSlideFromRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2.58s;
         }
         .lp-opening-usual-num {
-            font-size: clamp(1.65rem, 7vw, 2rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: rgba(255, 255, 255, 0.72);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(1.75rem, 7.5vw, 2.15rem);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.68);
         }
         .lp-opening-usual-yen {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.62);
+            color: rgba(255, 255, 255, 0.55);
         }
         .lp-opening-usual-row.is-struck {
-            animation: openingUsualOut 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 3.05s;
+            animation: openingUsualOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 3.12s;
         }
         .lp-opening-strike {
             position: absolute;
-            left: -5%;
-            right: -5%;
+            left: -6%;
+            right: -6%;
             top: 52%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #fff 15%, #fff 85%, transparent);
-            transform: translateY(-50%) rotate(-4deg) scaleX(0);
-            transform-origin: center;
-            animation: openingStrikeDraw 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 2.85s;
+            height: 1.5px;
+            background: rgba(255, 255, 255, 0.88);
+            transform: translateY(-50%) rotate(-3deg) scaleX(0);
+            transform-origin: left center;
+            animation: openingStrikeDraw 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2.92s;
         }
         .lp-opening-usual-wrap {
             position: relative;
             display: inline-block;
         }
         .lp-opening-divider {
-            width: 1px;
-            height: 0;
-            margin: 0.55rem auto;
-            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.65), transparent);
-            animation: openingDividerGrow 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 3.25s;
+            width: 0;
+            height: 1px;
+            margin: 0.65rem auto;
+            background: rgba(255, 255, 255, 0.45);
+            animation: openingDividerGrowW 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 3.28s;
+        }
+        .lp-opening-scene--2 .lp-opening-en--hero {
+            animation-delay: 3.38s;
         }
         .lp-opening-hero {
-            margin-top: 0.35rem;
+            margin-top: 0.15rem;
             overflow: hidden;
         }
         .lp-opening-hero-prefix {
             display: block;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.24em;
-            text-indent: 0.24em;
-            margin-bottom: 0.45rem;
+            font-size: clamp(0.88rem, 3.8vw, 1rem);
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.35rem;
             opacity: 0;
             animation: openingFadeIn 0.45s ease forwards;
-            animation-delay: 3.45s;
+            animation-delay: 3.52s;
         }
         .lp-opening-hero-row {
             display: flex;
             align-items: baseline;
             justify-content: center;
             line-height: 1;
-            clip-path: inset(100% 0 0 0);
-            transform: translateY(8px);
-            animation: openingHeroReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 3.55s;
+            clip-path: inset(0 100% 0 0);
+            animation: openingHeroWipe 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation-delay: 3.62s;
         }
         .lp-opening-hero-num {
-            font-size: clamp(3.75rem, 20vw, 5.25rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(4rem, 21vw, 5.5rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 0.95;
         }
         .lp-opening-hero-unit {
-            font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+            font-size: clamp(1.25rem, 5vw, 1.6rem);
             font-weight: 900;
-            margin-left: 3px;
+            margin-left: 2px;
         }
         .lp-opening-hero-unit small {
-            font-size: 0.52em;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            margin-left: 2px;
-            opacity: 0.88;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.48em;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            margin-left: 1px;
+            opacity: 0.85;
         }
         @keyframes openingShineSweep {
-            0% { transform: translateX(-18%) rotate(0deg); opacity: 0; }
-            18% { opacity: 1; }
-            45% { transform: translateX(18%) rotate(0deg); opacity: 0.85; }
-            100% { transform: translateX(28%) rotate(0deg); opacity: 0; }
+            0% { transform: translateX(-20%); opacity: 0; }
+            20% { opacity: 1; }
+            50% { transform: translateX(20%); opacity: 0.7; }
+            100% { transform: translateX(30%); opacity: 0; }
+        }
+        @keyframes openingFlashCut {
+            0%, 100% { opacity: 0; }
+            45% { opacity: 0.92; }
+        }
+        @keyframes openingMetaIn {
+            to { opacity: 1; }
+        }
+        @keyframes openingProgressFill {
+            to { width: 100%; }
         }
         @keyframes openingFrameIn {
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes openingWipeH {
+            to { transform: scaleX(1); }
         }
         @keyframes openingLineIn {
             to { opacity: 1; transform: translateY(0); }
@@ -1209,24 +1334,32 @@
         @keyframes openingRuleExpand {
             to { transform: scaleX(1); }
         }
+        @keyframes openingSlideReveal {
+            to { opacity: 1; clip-path: inset(0 0 0 0); transform: translateX(0); }
+        }
+        @keyframes openingDropReveal {
+            to { opacity: 1; clip-path: inset(0 0 0 0); }
+        }
+        @keyframes openingSlideFromRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
         @keyframes openingScene1Out {
-            to { opacity: 0; transform: scale(0.97); filter: blur(4px); }
+            to { opacity: 0; transform: scale(0.98); filter: blur(5px); }
         }
         @keyframes openingScene2In {
             to { opacity: 1; filter: blur(0); }
         }
         @keyframes openingStrikeDraw {
-            to { transform: translateY(-50%) rotate(-4deg) scaleX(1); }
+            to { transform: translateY(-50%) rotate(-3deg) scaleX(1); }
         }
         @keyframes openingUsualOut {
-            to { opacity: 0.35; transform: translateY(-4px) scale(0.94); filter: blur(1px); }
+            to { opacity: 0.28; transform: translateX(6px) scale(0.93); filter: blur(1px); }
         }
-        @keyframes openingDividerGrow {
-            to { height: 36px; }
+        @keyframes openingDividerGrowW {
+            to { width: 64px; }
         }
-        @keyframes openingHeroReveal {
-            0% { clip-path: inset(100% 0 0 0); transform: translateY(12px); opacity: 0.6; }
-            100% { clip-path: inset(0 0 0 0); transform: translateY(0); opacity: 1; }
+        @keyframes openingHeroWipe {
+            to { clip-path: inset(0 0 0 0); }
         }
         @keyframes openingOverlayExit {
             to { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -1526,11 +1659,15 @@
             .lp-opening,
             .lp-opening-frame,
             .lp-opening-scene,
+            .lp-opening-en,
             .lp-opening-eyebrow,
             .lp-opening-headline,
             .lp-opening-usual-row,
             .lp-opening-hero-row,
             .lp-opening-strike,
+            .lp-opening-meta,
+            .lp-opening-flash,
+            .lp-opening-progress span,
             .lp-opening-skip {
                 animation: none !important;
                 opacity: 1 !important;
@@ -1548,18 +1685,32 @@
 <!-- オープニング（初回セッションのみ） -->
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介">
     <div class="lp-opening-bg" aria-hidden="true">
+        <div class="lp-opening-grain"></div>
         <div class="lp-opening-shine"></div>
         <div class="lp-opening-vignette"></div>
     </div>
+    <div class="lp-opening-flash" aria-hidden="true"></div>
+    <span class="lp-opening-meta lp-opening-meta--tl">Exclusive</span>
+    <span class="lp-opening-meta lp-opening-meta--tr">01</span>
+    <span class="lp-opening-meta lp-opening-meta--bl">Campaign</span>
+    <span class="lp-opening-meta lp-opening-meta--br">2026</span>
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
     <div class="lp-opening-frame">
+        <span class="lp-opening-corner lp-opening-corner--tl" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--tr" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--bl" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--br" aria-hidden="true"></span>
+        <div class="lp-opening-wipe" aria-hidden="true"></div>
         <div class="lp-opening-scene lp-opening-scene--1">
+            <p class="lp-opening-en">Limited Campaign</p>
             <p class="lp-opening-eyebrow">JOYFIT24 KYODO</p>
             <div class="lp-opening-rule" aria-hidden="true"></div>
             <h2 class="lp-opening-headline">半年間ずっと<br>月会費</h2>
             <p class="lp-opening-period">6月 — 11月</p>
+            <p class="lp-opening-en lp-opening-en--period">6 Months · Half Year</p>
         </div>
         <div class="lp-opening-scene lp-opening-scene--2">
+            <p class="lp-opening-en lp-opening-en--usual">Regular · Monthly</p>
             <p class="lp-opening-usual-label">通常月額</p>
             <div class="lp-opening-usual-wrap">
                 <div class="lp-opening-usual-row" id="lp-opening-usual-row">
@@ -1568,6 +1719,7 @@
                 <span class="lp-opening-strike" aria-hidden="true"></span>
             </div>
             <div class="lp-opening-divider" aria-hidden="true"></div>
+            <p class="lp-opening-en lp-opening-en--hero">Special Offer</p>
             <div class="lp-opening-hero">
                 <span class="lp-opening-hero-prefix">半年間</span>
                 <div class="lp-opening-hero-row">
@@ -1577,6 +1729,7 @@
             </div>
         </div>
     </div>
+    <div class="lp-opening-progress" aria-hidden="true"><span></span></div>
 </div>
 
 <div class="ambient-bg" aria-hidden="true"></div>
@@ -1862,7 +2015,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // オープニング（初回セッションのみ）
     // ====================================================
     (function initOpening() {
-        const OPENING_KEY = 'kyodo-lp-opening-v2';
+        const OPENING_KEY = 'kyodo-lp-opening-v3';
         const opening = document.getElementById('lp-opening');
         const skipBtn = document.getElementById('lp-opening-skip');
         const usualRow = document.getElementById('lp-opening-usual-row');
@@ -1892,7 +2045,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('lp-opening-active');
         setTimeout(function() {
             usualRow?.classList.add('is-struck');
-        }, 3050);
+        }, 3120);
 
         skipBtn?.addEventListener('click', finishOpening);
 
@@ -1902,7 +2055,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        setTimeout(finishOpening, 5800);
+        setTimeout(finishOpening, 6000);
     })();
 
     
