@@ -2888,19 +2888,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 5/28〜：15名スタート → 1日1名ずつ減少（下限1名）
-        const startDate = new Date('2026-05-28T00:00:00+09:00');
+        // 6/14以前：11名固定 → 6/14〜6/24：1日1名ずつ減（6/14=11 → 6/24=1）
+        const decreaseStart = new Date('2026-06-14T00:00:00+09:00');
         const now = new Date();
-        const maxRemaining = 15;
+        const startRemaining = 11;
         const minRemaining = 1;
         const msPerDay = 1000 * 60 * 60 * 24;
-        const diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
+        const diffDays = Math.floor((now.getTime() - decreaseStart.getTime()) / msPerDay);
 
         let remaining;
         if (diffDays < 0) {
-            remaining = maxRemaining;
+            remaining = startRemaining;
         } else {
-            remaining = maxRemaining - diffDays;
+            remaining = startRemaining - diffDays;
             if (remaining < minRemaining) remaining = minRemaining;
         }
 
