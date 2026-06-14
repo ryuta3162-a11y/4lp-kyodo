@@ -2135,7 +2135,7 @@
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
             <div class="lp-o-deal-sheet lp-o-panel" id="lp-o-deal-sheet">
-                <p class="lp-o-deal-head">半年間 ずーっと<em class="lp-o-deal-o">お得</em></p>
+                <p class="lp-o-deal-head">半年間 ずっと<em class="lp-o-deal-o">お得</em></p>
                 <ul class="lp-o-month-list" id="lp-o-month-list" aria-live="polite"></ul>
                 <div class="lp-o-savings-footer" id="lp-o-savings">
                     <span class="lp-o-savings-label">6ヶ月で合計</span>
@@ -2888,28 +2888,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 6/14〜6/24：15名→最終日1名（この期間のみ段階的に減少）
-        const startDate = new Date('2026-06-14T00:00:00+09:00');
-        const endDate = new Date('2026-06-24T00:00:00+09:00');
+        // 5/28〜：15名スタート → 1日1名ずつ減少（下限1名）
+        const startDate = new Date('2026-05-28T00:00:00+09:00');
         const now = new Date();
         const maxRemaining = 15;
         const minRemaining = 1;
         const msPerDay = 1000 * 60 * 60 * 24;
-        const totalSpanDays = Math.round((endDate.getTime() - startDate.getTime()) / msPerDay);
+        const diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
 
-        let diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
         let remaining;
-
         if (diffDays < 0) {
             remaining = maxRemaining;
-        } else if (diffDays >= totalSpanDays) {
-            remaining = minRemaining;
         } else {
-            remaining = Math.round(maxRemaining - (diffDays / totalSpanDays) * (maxRemaining - minRemaining));
+            remaining = maxRemaining - diffDays;
+            if (remaining < minRemaining) remaining = minRemaining;
         }
-
-        if (remaining < minRemaining) remaining = minRemaining;
-        if (remaining > maxRemaining) remaining = maxRemaining;
 
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
         countEls.forEach(el => {
