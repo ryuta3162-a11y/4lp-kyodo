@@ -1132,9 +1132,16 @@
             --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
             --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
             --lp-o-deal-head: clamp(1rem, 3.4vw, 1.28rem);
+            --lp-o-panel-w: min(100%, 540px);
+            --lp-o-panel-h: min(72vh, 480px);
         }
         .lp-o-panel {
-            width: min(100%, 540px);
+            width: var(--lp-o-panel-w);
+            min-height: var(--lp-o-panel-h);
+            height: var(--lp-o-panel-h);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
             background: #fff;
             border-radius: 14px;
             box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
@@ -1197,19 +1204,20 @@
                 0 10px 28px rgba(0, 0, 0, 0.14);
             color: var(--brand-red);
         }
-        .lp-opening-phase--intro {
+        .lp-opening-phase--intro,
+        .lp-opening-phase--months,
+        .lp-opening-phase--urgency {
             justify-content: center;
-            padding: max(8px, env(safe-area-inset-top)) 14px max(8px, env(safe-area-inset-bottom));
+            padding: max(10px, env(safe-area-inset-top)) 14px max(10px, env(safe-area-inset-bottom));
         }
         .lp-opening-phase--months {
-            justify-content: center;
-            padding: max(10px, env(safe-area-inset-top)) 12px max(10px, env(safe-area-inset-bottom));
             gap: 0;
             --lp-o-row-month: clamp(1.65rem, 6.2vw, 2.2rem);
             --lp-o-row-price: clamp(2.05rem, 8vw, 3rem);
         }
         .lp-o-intro-box {
-            padding: clamp(1.85rem, 7vh, 2.75rem) clamp(1.25rem, 4.5vw, 1.85rem);
+            padding: clamp(1.5rem, 5vh, 2rem) clamp(1.25rem, 4.5vw, 1.85rem);
+            justify-content: center;
             text-align: center;
             opacity: 0;
             transform: translateY(12px);
@@ -1273,10 +1281,7 @@
         }
         .lp-o-deal-sheet {
             flex: 0 0 auto;
-            width: min(100%, 540px);
-            max-height: min(92vh, 680px);
-            display: flex;
-            flex-direction: column;
+            justify-content: flex-start;
         }
         .lp-o-deal-top {
             flex-shrink: 0;
@@ -1340,8 +1345,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: clamp(10px, 2.5vh, 22px) clamp(14px, 3.5vw, 18px);
-            min-height: clamp(72px, 14vh, 110px);
+            padding: clamp(8px, 1.8vh, 16px) clamp(14px, 3.5vw, 18px);
+            min-height: 0;
             opacity: 0;
             transform: translateY(8px);
             transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1699,12 +1704,9 @@
             transform: rotate(-4deg);
             vertical-align: middle;
         }
-        .lp-opening-phase--urgency {
-            justify-content: center;
-            padding: max(10px, env(safe-area-inset-top)) 14px max(10px, env(safe-area-inset-bottom));
-        }
         .lp-o-urgency-box {
-            padding: clamp(1.5rem, 5vh, 2rem) clamp(1.15rem, 4vw, 1.5rem);
+            padding: clamp(1.25rem, 4vh, 1.75rem) clamp(1.15rem, 4vw, 1.5rem);
+            justify-content: center;
             text-align: center;
             opacity: 0;
             transform: translateY(16px) scale(0.96);
@@ -2569,9 +2571,9 @@ document.addEventListener('DOMContentLoaded', function() {
             complete: 1.0
         };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.0004 : 0.000128;
-        const TOUCH_FACTOR = prefersReduced ? 0.0008 : 0.0004;
-        const KEY_STEP = prefersReduced ? 0.02 : 0.0064;
+        const WHEEL_FACTOR = prefersReduced ? 0.00055 : 0.00019;
+        const TOUCH_FACTOR = prefersReduced ? 0.0011 : 0.00058;
+        const KEY_STEP = prefersReduced ? 0.028 : 0.0095;
         let finished = false;
         let exiting = false;
         let virtualProgress = 0;
