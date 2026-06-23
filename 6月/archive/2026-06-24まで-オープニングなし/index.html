@@ -1,21 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
+    <base href="../../../">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで 期間限定</title>
+    <title>JOYFIT24経堂 6月限定キャンペーン｜6/24(水)まで 期間限定</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/30(火)まで。" />
+    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 6月限定キャンペーン｜期間限定" />
-    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/30(火)まで。" />
+    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 6月限定キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JOYFIT24経堂 6月限定キャンペーン｜期間限定" />
-    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/30(火)まで。" />
+    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/24(水)まで。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,26 +212,25 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-top: 12px;
-            padding: 6px 12px;
-            border-radius: 4px;
+            gap: 10px;
+            margin-top: 16px;
+            padding: 11px 22px;
+            border-radius: 6px;
             background: #fff;
             color: var(--brand);
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            border: 1px solid rgba(255, 255, 255, 0.85);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
-            max-width: calc(100% - 24px);
+            font-size: 0.88rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            border: 2px solid #fff;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
         }
-        .campaign-app-badge span {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .campaign-app-badge i {
+            font-size: 1.2rem;
+            color: var(--brand);
         }
         @media (min-width: 400px) {
             .campaign-header-enhanced h2 { font-size: 1.65rem; }
-            .campaign-app-badge { font-size: 0.72rem; padding: 7px 14px; }
+            .campaign-app-badge { font-size: 0.95rem; padding: 12px 26px; }
         }
 
         .plan-container-wrapper {
@@ -938,77 +938,35 @@
         /* =======================================================
            ■ オープニング v4（月次シーケンス・JS演出）
            ======================================================= */
-        html.lp-opening-lock,
-        html.lp-opening-lock body {
-            overflow: hidden !important;
-            height: 100%;
-            overscroll-behavior: none;
-        }
         html.lp-opening-seen #lp-opening-scroll { display: none !important; }
         body.lp-opening-active { overflow-x: hidden; }
         body.lp-opening-active .gold-metallic-banner,
         body.lp-opening-active .fixed-banner,
-        body.lp-opening-active #banner-toggle-container,
-        body.lp-opening-active .lp-wrapper {
+        body.lp-opening-active #banner-toggle-container {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.25s ease;
         }
-        body.lp-opening-reveal .gold-metallic-banner,
-        body.lp-opening-reveal .fixed-banner,
-        body.lp-opening-reveal #banner-toggle-container {
-            opacity: 1;
-            pointer-events: auto;
-            transition: opacity 0.45s ease 0.28s;
-        }
-        body.lp-opening-reveal .lp-wrapper {
-            opacity: 1;
-            pointer-events: auto;
-            animation: lpORevealSoft 0.62s cubic-bezier(0.25, 0.1, 0.25, 1) 0.12s both;
-        }
-        @keyframes lpORevealSoft {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .lp-opening-exit-play .lp-o-urgency-box.is-visible {
-            animation: lpOExitSoft 0.42s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-        }
-        .lp-opening-exit-play .lp-opening {
-            animation: lpOExitFade 0.52s ease 0.22s forwards;
-        }
-        @keyframes lpOExitSoft {
-            to { opacity: 0; transform: translateY(-14px) scale(0.98); }
-        }
-        @keyframes lpOExitFade {
-            to { opacity: 0; }
-        }
         .lp-opening-scroll {
-            position: fixed;
-            inset: 0;
+            position: relative;
             z-index: 100001;
-            height: 100vh;
-            height: 100dvh;
-            touch-action: none;
+            height: 750vh;
+            height: 750dvh;
         }
         .lp-opening {
-            position: relative;
-            width: 100%;
-            height: 100%;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            height: 100dvh;
             z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
-            background: var(--brand-red);
+            background: #080808;
             color: #fff;
             overflow: hidden;
             will-change: opacity;
-            font-family: 'Noto Sans JP', sans-serif !important;
-        }
-        .lp-opening-gym-lines,
-        .lp-opening-pulse-line { display: none !important; }
-        .lp-opening-badge {
-            display: none !important;
         }
         .lp-opening-curtain {
             position: absolute;
@@ -1018,76 +976,43 @@
             pointer-events: none;
             transition: opacity 0.2s ease;
         }
-        .lp-opening-curtain::after { display: none; }
         .lp-opening-scroll-hint {
             position: absolute;
-            bottom: max(36px, calc(env(safe-area-inset-bottom) + 20px));
+            bottom: max(28px, calc(env(safe-area-inset-bottom) + 12px));
             left: 50%;
-            transform: translateX(-50%);
             z-index: 31;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 14px;
-            width: max-content;
-            max-width: 90vw;
+            gap: 8px;
             pointer-events: none;
-            transition: opacity 0.45s ease;
-        }
-        .lp-opening-scroll-track {
-            position: relative;
-            width: 2px;
-            height: 56px;
-            border-radius: 2px;
-            background: rgba(255, 255, 255, 0.22);
-            overflow: hidden;
-        }
-        .lp-opening-scroll-track::after {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, transparent, #fff 40%, transparent);
-            animation: openingScrollTrack 1.8s ease-in-out infinite;
-        }
-        @keyframes openingScrollTrack {
-            0% { top: -100%; opacity: 0.3; }
-            50% { opacity: 1; }
-            100% { top: 100%; opacity: 0.3; }
+            transition: opacity 0.35s ease;
         }
         .lp-opening-scroll-hint-text {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: clamp(0.95rem, 3.2vw, 1.15rem);
-            font-weight: 800;
-            letter-spacing: 0.28em;
-            text-indent: 0.28em;
-            color: #fff;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-            white-space: nowrap;
-        }
-        .lp-o-hint-desktop { display: none; }
-        @media (min-width: 768px) {
-            .lp-o-hint-mobile { display: none; }
-            .lp-o-hint-desktop { display: block; }
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
+            color: rgba(255, 255, 255, 0.85);
         }
         .lp-opening-scroll-hint i {
-            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            font-size: 1.65rem;
             color: #fff;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
             animation: openingHintBounce 1.5s ease-in-out infinite;
         }
         @keyframes openingHintBounce {
-            0%, 100% { transform: translateY(0); opacity: 0.8; }
-            50% { transform: translateY(14px); opacity: 1; }
+            0%, 100% { transform: translateY(0); opacity: 0.75; }
+            50% { transform: translateY(10px); opacity: 1; }
         }
         .lp-opening-bg {
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: transparent;
+            background:
+                radial-gradient(ellipse 85% 60% at 50% 40%, rgba(194, 22, 50, 0.42) 0%, transparent 65%),
+                radial-gradient(ellipse 100% 80% at 50% 100%, rgba(194, 22, 50, 0.15) 0%, transparent 55%);
         }
         .lp-opening-grain {
             position: absolute;
@@ -1101,82 +1026,82 @@
             inset: 0;
             box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
         }
-        .lp-opening-meta { display: none; }
-        .lp-opening-skip {
+        .lp-opening-meta {
             position: absolute;
-            top: max(12px, env(safe-area-inset-top));
-            right: max(12px, 3vw);
-            z-index: 35;
-            padding: 8px 14px;
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: rgba(255, 255, 255, 0.85);
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            cursor: pointer;
+            z-index: 3;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+            letter-spacing: 0.38em;
+            text-indent: 0.38em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
         }
-        .lp-opening-stage {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: clamp(1.5rem, 5vw, 3rem);
-            font-family: 'Noto Sans JP', sans-serif !important;
-            --lp-o-intro: clamp(1.55rem, 5.5vw, 2.15rem);
-            --lp-o-header-main: clamp(1.75rem, 6.2vw, 2.5rem);
-            --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
-            --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
-            --lp-o-deal-head: clamp(1rem, 3.4vw, 1.28rem);
-            --lp-o-panel-w: min(100%, 540px);
-            --lp-o-panel-h: min(72vh, 480px);
-        }
-        .lp-o-panel {
-            width: var(--lp-o-panel-w);
-            min-height: var(--lp-o-panel-h);
-            height: var(--lp-o-panel-h);
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            background: #fff;
-            border-radius: 14px;
-            box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
-            color: var(--brand-red);
-            overflow: hidden;
-        }
-        .lp-o-card-frame {
-            position: relative;
-            border: 2px solid rgba(255, 255, 255, 0.42);
-            border-radius: 14px;
-            box-shadow:
-                0 5px 0 rgba(0, 0, 0, 0.32),
-                inset 0 1px 0 rgba(255, 255, 255, 0.14);
-            background: rgba(0, 0, 0, 0.18);
-        }
-        .lp-opening-frame,
-        .lp-opening-corner { display: none !important; }
+        .lp-opening-meta--tl { top: max(16px, env(safe-area-inset-top)); left: max(16px, 3vw); }
+        .lp-opening-meta--tr { top: max(16px, env(safe-area-inset-top)); right: max(16px, 3vw); letter-spacing: 0.18em; text-indent: 0; font-weight: 400; }
+        .lp-opening-meta--bl { bottom: max(72px, calc(env(safe-area-inset-bottom) + 52px)); left: max(16px, 3vw); }
+        .lp-opening-meta--br { bottom: max(32px, env(safe-area-inset-bottom)); right: max(16px, 3vw); letter-spacing: 0.28em; }
         .lp-opening-progress {
             position: absolute;
             bottom: max(12px, env(safe-area-inset-bottom));
             left: max(16px, 3vw);
             right: max(16px, 3vw);
             z-index: 4;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.12);
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
             overflow: hidden;
-            border-radius: 2px;
         }
         .lp-opening-progress span {
             display: block;
             height: 100%;
             width: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #fff);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), #fff);
             transition: width 0.12s ease-out;
         }
+        .lp-opening-skip {
+            position: absolute;
+            top: max(12px, env(safe-area-inset-top));
+            right: max(12px, 3vw);
+            z-index: 35;
+            padding: 8px 14px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.26em;
+            text-indent: 0.26em;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+        }
+        .lp-opening-frame {
+            position: relative;
+            z-index: 2;
+            width: min(100%, 520px);
+            min-height: clamp(380px, 72vh, 520px);
+            background: var(--brand-red);
+            border: 2px solid var(--lp-frame);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 36px 80px rgba(0, 0, 0, 0.55);
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .lp-opening-frame {
+                width: min(92vw, 640px);
+                min-height: clamp(440px, 68vh, 560px);
+            }
+        }
+        .lp-opening-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            z-index: 5;
+            border-color: rgba(255, 255, 255, 0.45);
+            border-style: solid;
+        }
+        .lp-opening-corner--tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
+        .lp-opening-corner--tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
+        .lp-opening-corner--bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
+        .lp-opening-corner--br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
         .lp-opening-phase {
             position: absolute;
             inset: 0;
@@ -1184,783 +1109,205 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: clamp(1.5rem, 5vw, 3rem);
+            padding: clamp(1.5rem, 4vw, 2.5rem);
             text-align: center;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity 0.45s ease;
+            transition: opacity 0.55s ease, transform 0.55s ease, filter 0.55s ease;
         }
         .lp-opening-phase.is-active {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
         }
-        .lp-o-card-frame--white {
-            background: #fff;
-            border-color: rgba(194, 22, 50, 0.22);
-            box-shadow:
-                0 5px 0 rgba(0, 0, 0, 0.1),
-                0 10px 28px rgba(0, 0, 0, 0.14);
-            color: var(--brand-red);
-        }
-        .lp-opening-phase--intro,
-        .lp-opening-phase--months,
-        .lp-opening-phase--urgency {
-            justify-content: center;
-            padding: max(10px, env(safe-area-inset-top)) 14px max(10px, env(safe-area-inset-bottom));
-        }
-        .lp-opening-phase--months {
-            gap: 0;
-            --lp-o-row-month: clamp(1.65rem, 6.2vw, 2.2rem);
-            --lp-o-row-price: clamp(2.05rem, 8vw, 3rem);
-        }
-        .lp-o-intro-box {
-            padding: clamp(1.5rem, 5vh, 2rem) clamp(1.25rem, 4.5vw, 1.85rem);
-            justify-content: center;
-            text-align: center;
+        .lp-opening-phase.is-out {
             opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
+            transform: scale(0.97);
+            filter: blur(6px);
         }
-        .lp-o-intro-box.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-intro-box .lp-o-lead,
-        .lp-o-intro-box .lp-o-caption {
-            font-size: var(--lp-o-intro);
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            text-indent: 0.1em;
-            line-height: 1.45;
-            opacity: 1;
-            transform: none;
-        }
-        .lp-o-start-badge {
-            display: none;
-            margin: 0 0 0.55rem;
-            padding: 0.35em 0.85em;
-            font-size: clamp(0.78rem, 2.8vw, 0.92rem);
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            color: #1a1a1a;
-            background: var(--gold-gradient);
-            border-radius: 999px;
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35);
-        }
-        .lp-o-start-badge.is-visible {
-            display: inline-block;
-        }
-        .lp-o-header-tag {
-            display: block;
+        .lp-o-en {
             margin: 0 0 0.65rem;
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.62rem, 1.8vw, 0.82rem);
+            letter-spacing: 0.36em;
+            text-indent: 0.36em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .lp-o-brand {
+            margin: 0;
+            font-size: clamp(0.72rem, 2vw, 0.88rem);
             font-weight: 800;
-            letter-spacing: 0.18em;
-            text-indent: 0.18em;
-            color: rgba(194, 22, 50, 0.65);
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
         }
-        .lp-o-label {
-            margin: 0;
-            font-size: clamp(2rem, 7.2vw, 2.85rem);
+        .lp-o-rule {
+            width: min(140px, 40%);
+            height: 1px;
+            margin: 1rem auto 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
+        }
+        .lp-o-title {
+            margin: 1.1rem 0 0;
+            font-size: clamp(1.75rem, 5.5vw, 2.65rem);
             font-weight: 900;
-            letter-spacing: 0.1em;
-            text-indent: 0.1em;
-            line-height: 1.3;
-            color: var(--brand-red);
+            letter-spacing: 0.07em;
+            line-height: 1.45;
         }
-        .lp-o-intro-box .lp-o-lead {
-            margin: 0.85rem 0 0;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(194, 22, 50, 0.12);
-            font-size: clamp(1.45rem, 5.4vw, 2rem);
-            letter-spacing: 0.06em;
-            text-indent: 0.06em;
-            color: var(--brand-red);
+        .lp-o-usual {
+            margin-top: 1.35rem;
+            opacity: 0.85;
         }
-        .lp-o-intro-box .lp-o-caption {
-            margin: 0.85rem 0 0;
+        .lp-o-usual.is-struck .lp-o-usual-price {
+            opacity: 0.45;
+            transform: scale(0.92);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .lp-o-usual.is-struck .lp-o-usual-price::after {
+            transform: scaleX(1);
+        }
+        .lp-o-usual-label {
             display: block;
-            width: 100%;
-            padding: 0.65rem 0.5rem;
-            border: none;
-            border-radius: 8px;
-            background: #111;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-            color: var(--gold-light);
-            font-size: clamp(1.25rem, 4.8vw, 1.65rem);
-            letter-spacing: 0.12em;
-            text-indent: 0.12em;
+            font-size: clamp(0.78rem, 2.2vw, 0.95rem);
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.35rem;
+            color: rgba(255, 255, 255, 0.82);
         }
-        .lp-o-deal-sheet {
-            flex: 0 0 auto;
-            justify-content: flex-start;
-        }
-        .lp-o-deal-top {
-            flex-shrink: 0;
-            padding: clamp(14px, 2.4vh, 20px) clamp(16px, 4vw, 22px) clamp(10px, 1.6vh, 14px);
-            text-align: center;
-            background: linear-gradient(180deg, rgba(194, 22, 50, 0.06) 0%, rgba(194, 22, 50, 0.01) 100%);
-            border-bottom: 1px solid rgba(194, 22, 50, 0.07);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-deal-top.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-months-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: clamp(5px, 1.1vw, 8px);
-            width: min(100%, 300px);
-            margin: 0 auto clamp(12px, 2vh, 16px);
-        }
-        .lp-o-month-chip {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: clamp(30px, 5.5vh, 38px);
-            padding: 0 4px;
-            font-size: clamp(0.82rem, 3.1vw, 0.98rem);
-            font-weight: 900;
-            letter-spacing: 0.04em;
-            line-height: 1.2;
-            color: var(--brand-red);
-            background: #fff;
-            border: 1.5px solid rgba(194, 22, 50, 0.14);
-            border-radius: 8px;
-            box-shadow: 0 1px 0 rgba(194, 22, 50, 0.06);
-            opacity: 0;
-            transform: translateY(6px) scale(0.94);
-            transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-        }
-        .lp-o-deal-top.is-visible .lp-o-month-chip {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(1) { transition-delay: 0.03s; }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(2) { transition-delay: 0.06s; }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(3) { transition-delay: 0.09s; }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(4) { transition-delay: 0.12s; }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(5) { transition-delay: 0.15s; }
-        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(6) { transition-delay: 0.18s; }
-        .lp-o-deal-head {
-            flex-shrink: 0;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            line-height: 1.3;
-            font-size: clamp(1.12rem, 4.4vw, 1.42rem);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-            color: var(--brand-red);
-            background: none;
-            border-bottom: none;
-        }
-        .lp-o-deal-head .lp-o-deal-o {
-            font-style: normal;
-            display: inline-block;
-            margin-left: 0.06em;
-            padding: 0.08em 0.38em 0.1em;
-            font-size: 1em;
-            font-weight: 900;
-            letter-spacing: 0.06em;
-            line-height: 1;
-            color: #1a1a1a;
-            background: var(--gold-gradient);
-            border-radius: 4px;
-            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
-            vertical-align: baseline;
-        }
-        .lp-o-price-once {
-            position: relative;
-            z-index: 1;
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: clamp(6px, 1.5vh, 14px) clamp(18px, 4vw, 24px);
-            min-height: 0;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-price-once.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-price-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: clamp(0.3rem, 1.1vh, 0.55rem);
-            width: 100%;
-        }
-        .lp-o-price-tier {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.15rem;
-        }
-        .lp-o-price-tier--usual .lp-o-row-usual-wrap {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 1px;
-        }
-        .lp-o-price-tier--usual .lp-o-row-usual-num {
+        .lp-o-usual-price {
             position: relative;
             display: inline-block;
-            line-height: 1;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 7vw, 3rem);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
-        .lp-o-price-tier--usual .lp-o-row-usual-wrap.is-struck .lp-o-row-usual,
-        .lp-o-price-tier--usual .lp-o-row-usual-wrap.is-struck .lp-o-row-yen {
-            color: rgba(26, 26, 26, 0.28);
-        }
-        .lp-o-price-tier--usual .lp-o-row-strike {
-            position: absolute;
-            left: -2%;
-            right: -2%;
-            top: 46%;
-            height: 3px;
-            background: #1a1a1a;
-            opacity: 0;
-            transform: rotate(-8deg);
-            pointer-events: none;
-        }
-        .lp-o-price-tier--usual .lp-o-row-strike.is-on {
-            opacity: 1;
-        }
-        .lp-o-price-tier--usual .lp-o-row-usual {
-            font-size: clamp(1.35rem, 5.8vw, 1.85rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: #1a1a1a;
-            transition: color 0.3s ease;
-        }
-        .lp-o-price-tier--usual .lp-o-row-yen {
-            font-size: 0.42em;
-            font-weight: 900;
-            color: #1a1a1a;
-            transition: color 0.3s ease;
-        }
-        .lp-o-price-tier--deal .lp-o-row-deal {
-            font-size: clamp(2.35rem, 11vw, 3.35rem);
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            color: var(--brand-red);
-        }
-        .lp-o-price-tier--deal .lp-o-row-yen {
-            font-size: 0.36em;
-            font-weight: 900;
-            color: var(--brand-red);
-        }
-        .lp-o-price-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: clamp(14px, 2vh, 20px);
-            margin: clamp(0.1rem, 0.4vh, 0.25rem) 0;
-            opacity: 0;
-            transform: translateY(-5px);
-            transition: opacity 0.34s ease, transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-price-arrow.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-price-arrow-icon {
-            position: relative;
-            width: 14px;
-            height: 12px;
-        }
-        .lp-o-price-arrow-icon::before,
-        .lp-o-price-arrow-icon::after {
+        .lp-o-usual-price::after {
             content: '';
             position: absolute;
-            left: 50%;
-            width: 8px;
-            height: 8px;
-            margin-left: -4px;
-            border-bottom: 2.5px solid var(--brand-red);
-            border-right: 2.5px solid var(--brand-red);
-            transform: rotate(45deg);
+            left: -4%;
+            right: -4%;
+            top: 50%;
+            height: 2px;
+            background: #fff;
+            transform: translateY(-50%) rotate(-3deg) scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lp-o-price-arrow-icon::before {
-            top: -1px;
-            opacity: 0.45;
+        .lp-o-usual-price small {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.45em;
+            font-weight: 900;
+            margin-left: 2px;
         }
-        .lp-o-price-arrow-icon::after {
-            top: 5px;
+        .lp-o-months-lead {
+            margin: 0 0 0.5rem;
+            font-size: clamp(0.95rem, 3vw, 1.2rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
         }
-        .lp-o-price-tier--deal .lp-o-row-deal-wrap {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 1px;
+        .lp-o-month-display {
+            margin: 0.25rem 0;
+            font-size: clamp(3.25rem, 14vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1;
+            text-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+            transform: scale(0.88);
             opacity: 0;
-            transform: translateY(8px) scale(0.96);
-            transition: opacity 0.42s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
         }
-        .lp-o-price-tier--deal .lp-o-row-deal-wrap.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .lp-o-deal-sheet .lp-o-row-month {
-            color: #1a1a1a;
-        }
-        .lp-o-deal-sheet .lp-o-row-usual,
-        .lp-o-deal-sheet .lp-o-row-yen {
-            color: #1a1a1a;
-        }
-        .lp-o-deal-sheet .lp-o-row-usual-wrap.is-struck .lp-o-row-usual,
-        .lp-o-deal-sheet .lp-o-row-usual-wrap.is-struck .lp-o-row-yen {
-            color: rgba(26, 26, 26, 0.28);
-        }
-        .lp-o-deal-sheet .lp-o-row-strike {
-            height: 3.5px;
-            background: #1a1a1a;
-            box-shadow: none;
-            opacity: 0;
-            transform: scaleX(1) rotate(-10deg);
-            transition: none;
-        }
-        .lp-o-deal-sheet .lp-o-row-strike.is-on {
+        .lp-o-month-display.is-pop {
+            transform: scale(1);
             opacity: 1;
         }
-        .lp-o-deal-sheet .lp-o-row-deal {
-            color: var(--brand-red);
-            text-shadow: none;
-        }
-        .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-yen {
-            color: var(--brand-red);
-        }
-        .lp-o-deal-sheet .lp-o-month-row.is-current {
-            background: rgba(194, 22, 50, 0.04);
-        }
-        .lp-o-deal-sheet .lp-o-month-row.is-done {
-            background: rgba(0, 0, 0, 0.02);
-        }
-        .lp-o-savings-footer {
-            flex-shrink: 0;
-            padding: clamp(0.65rem, 1.8vh, 0.85rem) clamp(0.85rem, 3.5vw, 1.1rem);
-            background: #111;
-            text-align: center;
-            border-top: none;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-            opacity: 0;
-            transform: translateY(6px);
-            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-savings-footer.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .lp-o-savings-footer .lp-o-savings-label {
-            display: block;
-            margin: 0 0 0.3rem;
-            font-size: clamp(0.68rem, 2.4vw, 0.82rem);
-            font-weight: 800;
-            letter-spacing: 0.2em;
-            text-indent: 0.2em;
-            color: rgba(255, 255, 255, 0.55);
-        }
-        .lp-o-savings-footer .lp-o-savings-main {
-            margin: 0;
+        .lp-o-month-price {
             display: flex;
             align-items: baseline;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.1rem 0.28rem;
+            gap: 2px;
+            margin: 0.15rem 0 1rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.01em;
             line-height: 1;
         }
-        .lp-o-savings-footer .lp-o-savings-num {
-            font-size: clamp(2rem, 9vw, 3rem);
+        .lp-o-month-price span {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.42em;
             font-weight: 900;
-            letter-spacing: -0.03em;
-            color: #fff;
         }
-        .lp-o-savings-footer .lp-o-savings-yen {
-            font-size: clamp(0.9rem, 3.2vw, 1.15rem);
-            font-weight: 900;
-            color: #fff;
-        }
-        .lp-o-savings-footer .lp-o-savings-badge {
-            margin: 0 0 0 0.15rem;
-            padding: 0.08em 0.38em 0.1em;
-            font-size: var(--lp-o-deal-head);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-            color: #1a1a1a;
-            background: var(--gold-gradient);
-            border-radius: 4px;
-            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
-            transform: none;
-        }
-        .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal {
-            animation: lpODealPop 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes lpODealPop {
-            0% { transform: scale(0.86); opacity: 0.4; }
-            55% { transform: scale(1.07); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .lp-o-month-list {
+        .lp-o-month-stack {
             list-style: none;
             margin: 0;
             padding: 0;
+            width: 100%;
+            max-width: 340px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            gap: clamp(3px, 0.65vh, 7px);
+            gap: 6px;
         }
-        .lp-o-month-row {
+        @media (min-width: 768px) {
+            .lp-o-month-stack { max-width: 420px; gap: 8px; }
+        }
+        .lp-o-stack-item {
             display: flex;
-            flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            gap: clamp(0.35rem, 2vw, 0.65rem);
-            padding: clamp(5px, 0.85vh, 9px) 8px;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            max-height: 0;
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(0, 0, 0, 0.18);
+            font-size: clamp(0.82rem, 2.4vw, 1rem);
+            font-weight: 800;
             opacity: 0;
-            transform: translateY(10px);
-            pointer-events: none;
-            transition: background 0.35s ease, box-shadow 0.35s ease;
+            transform: translateX(-16px);
+            animation: openingStackIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        .lp-o-month-row.is-revealed {
-            max-height: 4.5em;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-            animation: lpORowReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .lp-o-stack-item span:last-child {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.15em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
-        .lp-o-month-row.is-hidden {
-            max-height: 0;
-            opacity: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            transform: translateY(8px);
-            pointer-events: none;
-        }
-        @keyframes lpORowReveal {
-            from { opacity: 0; transform: translateY(14px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .lp-o-row-month {
-            flex: 0 0 2.35em;
-            font-size: var(--lp-o-row-month);
+        .lp-o-finale-lead {
+            margin: 0;
+            font-size: clamp(1.1rem, 3.5vw, 1.5rem);
             font-weight: 900;
-            letter-spacing: 0.04em;
-            text-align: left;
-            line-height: 1.15;
+            letter-spacing: 0.14em;
         }
-        .lp-o-row-price-col {
-            flex: 1;
+        .lp-o-finale-sub {
+            margin: 0.45rem 0 0.65rem;
+            font-size: clamp(1.35rem, 4.5vw, 2rem);
+            font-weight: 900;
+            letter-spacing: 0.18em;
+            text-indent: 0.18em;
+        }
+        .lp-o-finale-price {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             justify-content: center;
-            flex-wrap: nowrap;
-            gap: clamp(0.3rem, 2.5vw, 0.55rem);
-            min-width: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(4.5rem, 18vw, 7.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 0.95;
+            opacity: 0;
+            transform: scale(0.88);
+            transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lp-o-row-yen {
+        .lp-o-finale-price.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .lp-o-finale-price span {
+            font-family: 'Noto Sans JP', sans-serif;
             font-size: 0.38em;
             font-weight: 900;
-            letter-spacing: 0;
-            white-space: nowrap;
-            line-height: 1;
-        }
-        .lp-o-row-usual-wrap {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 1px;
-            flex-shrink: 0;
-        }
-        .lp-o-row-usual-num {
-            position: relative;
-            display: inline-block;
-            line-height: 1;
-        }
-        .lp-o-row-usual {
-            font-size: var(--lp-o-row-price);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: rgba(255, 255, 255, 0.9);
-            transition: color 0.3s ease;
-        }
-        .lp-o-row-usual-wrap.is-struck .lp-o-row-usual {
-            color: rgba(255, 255, 255, 0.38);
-        }
-        .lp-o-row-strike {
-            position: absolute;
-            left: -2%;
-            right: -2%;
-            top: 46%;
-            height: 3.5px;
-            background: #1a1a1a;
-            opacity: 0;
-            transform: rotate(-10deg);
-            pointer-events: none;
-        }
-        .lp-o-row-strike.is-on {
-            opacity: 1;
-        }
-        .lp-o-row-shift {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: 0;
-            opacity: 0;
-            overflow: hidden;
-            transform: translateX(-4px);
-            transition: width 0.34s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease, transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-row-shift.is-visible {
-            width: clamp(22px, 6vw, 30px);
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .lp-o-row-shift-mark {
-            position: relative;
-            width: 16px;
-            height: 12px;
-            flex-shrink: 0;
-        }
-        .lp-o-row-shift-mark::before,
-        .lp-o-row-shift-mark::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            margin-top: -4px;
-            border-top: 2.5px solid var(--brand-red);
-            border-right: 2.5px solid var(--brand-red);
-            transform: rotate(45deg);
-        }
-        .lp-o-row-shift-mark::before {
-            left: 0;
-        }
-        .lp-o-row-shift-mark::after {
-            left: 7px;
-            opacity: 0.45;
-        }
-        .lp-o-row-deal-wrap {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 1px;
-            flex-shrink: 0;
-            opacity: 0;
-            transform: translateX(6px);
-            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-row-deal-wrap.is-visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .lp-o-row-deal {
-            font-size: var(--lp-o-row-price);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: #fff;
-            text-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
-        }
-        .lp-o-savings-card {
-            margin: 0;
-            width: min(100%, 540px);
-            flex-shrink: 0;
-            padding: clamp(0.85rem, 2vh, 1.1rem) clamp(0.85rem, 3.5vw, 1.15rem);
-            text-align: center;
-            border-radius: 14px;
-            opacity: 0;
-            transform: translateY(14px) scale(0.97);
-            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-savings-card.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .lp-o-savings-card.lp-o-card-frame--white .lp-o-savings-label {
-            color: rgba(194, 22, 50, 0.65);
-        }
-        .lp-o-savings-label {
-            display: block;
-            margin: 0 0 0.5rem;
-            font-size: clamp(0.82rem, 2.8vw, 0.98rem);
-            font-weight: 800;
-            letter-spacing: 0.22em;
-            text-indent: 0.22em;
-            color: rgba(255, 255, 255, 0.72);
-        }
-        .lp-o-savings-price-block {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.15rem 0.35rem;
-            margin: 0 auto;
-            padding: clamp(0.55rem, 2vh, 0.75rem) clamp(1rem, 4vw, 1.35rem);
-            background: #fff;
-            color: var(--brand-red);
-            border-radius: 10px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
-            line-height: 1;
-        }
-        .lp-o-savings-main {
-            margin: 0;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.1rem 0.25rem;
-            line-height: 1;
-        }
-        .lp-o-savings-num {
-            font-size: clamp(2.35rem, 10.5vw, 3.5rem);
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            color: var(--brand-red);
-            text-shadow: none;
-        }
-        .lp-o-savings-yen {
-            font-size: clamp(1rem, 3.8vw, 1.3rem);
-            font-weight: 900;
-            letter-spacing: 0.02em;
-            color: var(--brand-red);
-        }
-        .lp-o-savings-badge {
-            display: inline-block;
-            margin: 0 0 0 0.15rem;
-            padding: 0.28rem 0.75rem;
-            font-size: clamp(0.78rem, 2.8vw, 0.92rem);
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            text-indent: 0.16em;
-            color: #1a1a1a;
-            background: var(--gold-gradient);
-            border-radius: 999px;
-            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
-            transform: rotate(-4deg);
-            vertical-align: middle;
-        }
-        .lp-o-urgency-box {
-            padding: clamp(1.25rem, 4vh, 1.75rem) clamp(1.15rem, 4vw, 1.5rem);
-            justify-content: center;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(16px) scale(0.96);
-            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lp-o-urgency-box.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .lp-o-urgency-head {
-            margin: 0 0 0.85rem;
-            font-size: clamp(0.98rem, 3.6vw, 1.18rem);
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            text-indent: 0.1em;
-            color: var(--brand-red);
-        }
-        .lp-o-countdown {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: nowrap;
-            gap: clamp(0.1rem, 1vw, 0.3rem);
-            margin: 0 0 1.15rem;
-            padding: clamp(0.7rem, 2vh, 0.95rem) clamp(0.5rem, 2.5vw, 0.85rem);
-            background: #111;
-            border-radius: 10px;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-        }
-        .lp-o-countdown-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.15rem;
-            min-width: clamp(2.5rem, 11vw, 3.5rem);
-        }
-        .lp-o-countdown-num {
-            font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
-            font-size: clamp(1.75rem, 7.5vw, 2.65rem);
-            font-weight: 700;
-            font-variant-numeric: tabular-nums;
-            letter-spacing: 0.02em;
-            line-height: 1;
-            color: #fff;
-        }
-        .lp-o-countdown-label {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: clamp(0.58rem, 2.2vw, 0.7rem);
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .lp-o-countdown-sep {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(1.35rem, 5.5vw, 1.85rem);
-            font-weight: 700;
-            line-height: 1;
-            color: var(--brand-red);
-            margin: 0 0.02rem;
-            padding-bottom: 0.85rem;
-            animation: lpOCountdownBlink 1s step-end infinite;
-        }
-        @keyframes lpOCountdownBlink {
-            50% { opacity: 0.15; }
-        }
-        .lp-o-urgency-hero {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: clamp(0.15rem, 1vw, 0.35rem);
-            width: 100%;
-            margin: 0 0 1rem;
-            line-height: 1;
-        }
-        .lp-o-urgency-hero-label {
-            font-size: clamp(1.15rem, 4.2vw, 1.45rem);
-            font-weight: 900;
-            letter-spacing: 0.06em;
-            color: var(--brand-red);
-        }
-        .lp-o-urgency-hero-num {
-            font-size: clamp(4.25rem, 20vw, 6rem);
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            color: var(--brand-red);
-            min-width: 1.05em;
-            text-align: center;
-        }
-        .lp-o-urgency-hero-unit {
-            font-size: clamp(1.25rem, 4.8vw, 1.65rem);
-            font-weight: 900;
-            color: var(--brand-red);
-        }
-        .lp-o-urgency-disclaimer {
-            margin: 0;
-            padding-top: 0.85rem;
-            border-top: 1px solid rgba(194, 22, 50, 0.15);
-            font-size: clamp(0.82rem, 3vw, 0.95rem);
-            font-weight: 800;
-            line-height: 1.7;
-            letter-spacing: 0.04em;
-            color: #444;
-        }
-        .lp-o-urgency-disclaimer .dynamic-remaining-count {
-            font-weight: 900;
-            color: var(--brand-red);
+            margin-left: 4px;
         }
         @keyframes openingFrameIn {
             from { opacity: 0; transform: scale(0.94); }
@@ -2253,27 +1600,6 @@
             .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
-            .lp-o-countdown-sep { animation: none !important; opacity: 1 !important; }
-            .lp-o-deal-top.is-visible .lp-o-month-chip,
-            .lp-o-price-tier--deal .lp-o-row-deal-wrap.is-visible {
-                transition: none !important;
-                animation: none !important;
-                opacity: 1 !important;
-                transform: none !important;
-            }
-            .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal,
-            .lp-o-month-row.is-revealed {
-                animation: none !important;
-            }
-            body.lp-opening-reveal .lp-wrapper {
-                animation: none !important;
-                opacity: 1 !important;
-                transform: none !important;
-            }
-            .lp-opening-exit-play .lp-o-urgency-box.is-visible,
-            .lp-opening-exit-play .lp-opening {
-                animation: none !important;
-            }
             .hero-panel-intro,
             .hero-panel-offer { animation: none !important; }
             .hero-deal-stack,
@@ -2293,17 +1619,17 @@
             .lp-opening-frame,
             .lp-opening-phase,
             .lp-o-month-display,
-            .lp-o-savings-card,
-            .lp-o-month-row,
+            .lp-o-finale-price,
+            .lp-o-stack-item,
             .lp-opening-skip {
                 animation: none !important;
                 transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
                 filter: none !important;
                 clip-path: none !important;
             }
-            .lp-opening-scroll-track::after {
-                animation: none !important;
-            }
+            #lp-opening-scroll { display: none !important; }
         }
     </style>
 </head>
@@ -2319,101 +1645,44 @@
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
     <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
-        <div class="lp-opening-scroll-track" aria-hidden="true"></div>
-        <span class="lp-opening-scroll-hint-text lp-o-hint-mobile">スクロール</span>
-        <span class="lp-opening-scroll-hint-text lp-o-hint-desktop">スクロール / ホイール</span>
+        <span class="lp-opening-scroll-hint-text">スクロール</span>
         <i class="ph-bold ph-caret-double-down" aria-hidden="true"></i>
     </div>
+    <span class="lp-opening-meta lp-opening-meta--tl">Exclusive</span>
+    <span class="lp-opening-meta lp-opening-meta--tr" id="lp-o-scene-num">01</span>
+    <span class="lp-opening-meta lp-opening-meta--bl">Campaign</span>
+    <span class="lp-opening-meta lp-opening-meta--br">2026</span>
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
-    <div class="lp-opening-stage">
-        <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
-            <div class="lp-o-intro-box lp-o-panel" id="lp-o-intro-box">
-                <span class="lp-o-header-tag">JOYFIT24経堂</span>
-                <p class="lp-o-start-badge" id="lp-o-start-badge" hidden>6/25(水)スタート</p>
-                <p class="lp-o-label" id="lp-o-label">6月限定<br>キャンペーン</p>
-                <p class="lp-o-lead" id="lp-o-lead">6/30(火)まで限定</p>
-                <p class="lp-o-caption" id="lp-o-caption">先着10名様限定</p>
+    <div class="lp-opening-frame">
+        <span class="lp-opening-corner lp-opening-corner--tl" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--tr" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--bl" aria-hidden="true"></span>
+        <span class="lp-opening-corner lp-opening-corner--br" aria-hidden="true"></span>
+
+        <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
+            <p class="lp-o-en">Limited Campaign</p>
+            <p class="lp-o-brand">JOYFIT24 KYODO</p>
+            <div class="lp-o-rule" aria-hidden="true"></div>
+            <h2 class="lp-o-title">半年間ずっと<br>月会費</h2>
+            <div class="lp-o-usual" id="lp-o-usual">
+                <span class="lp-o-usual-label">通常月額</span>
+                <span class="lp-o-usual-price">9,350<small>円</small></span>
             </div>
         </div>
 
         <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <div class="lp-o-deal-sheet lp-o-panel" id="lp-o-deal-sheet">
-                <div class="lp-o-deal-top" id="lp-o-deal-top">
-                    <div class="lp-o-months-grid" aria-label="6月から11月">
-                        <span class="lp-o-month-chip">6月</span>
-                        <span class="lp-o-month-chip">7月</span>
-                        <span class="lp-o-month-chip">8月</span>
-                        <span class="lp-o-month-chip">9月</span>
-                        <span class="lp-o-month-chip">10月</span>
-                        <span class="lp-o-month-chip">11月</span>
-                    </div>
-                    <p class="lp-o-deal-head">半年間 ずっと<em class="lp-o-deal-o">お得</em></p>
-                </div>
-                <div class="lp-o-price-once" id="lp-o-price-once" aria-live="polite">
-                    <div class="lp-o-price-stack">
-                        <div class="lp-o-price-tier lp-o-price-tier--usual">
-                            <div class="lp-o-row-usual-wrap">
-                                <span class="lp-o-row-usual-num">
-                                    <span class="lp-o-row-usual">9,350</span>
-                                    <span class="lp-o-row-strike" aria-hidden="true"></span>
-                                </span>
-                                <span class="lp-o-row-yen">円</span>
-                            </div>
-                        </div>
-                        <div class="lp-o-price-arrow" aria-hidden="true">
-                            <span class="lp-o-price-arrow-icon"></span>
-                        </div>
-                        <div class="lp-o-price-tier lp-o-price-tier--deal">
-                            <span class="lp-o-row-deal-wrap">
-                                <span class="lp-o-row-deal">3,960</span>
-                                <span class="lp-o-row-yen">円</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lp-o-savings-footer" id="lp-o-savings">
-                    <span class="lp-o-savings-label">6ヶ月で合計</span>
-                    <p class="lp-o-savings-main">
-                        <span class="lp-o-savings-num">32,340</span><span class="lp-o-savings-yen">円</span><span class="lp-o-savings-badge">お得</span>
-                    </p>
-                </div>
-            </div>
+            <p class="lp-o-en">Every Month · ¥3,400</p>
+            <p class="lp-o-months-lead">毎月、この価格で</p>
+            <div class="lp-o-month-display is-pop" id="lp-o-month-display">6月</div>
+            <div class="lp-o-month-price">3,400<span>円</span></div>
+            <ul class="lp-o-month-stack" id="lp-o-month-stack" aria-live="polite"></ul>
         </div>
 
-        <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
-            <div class="lp-o-urgency-box lp-o-panel" id="lp-o-urgency-box">
-                <p class="lp-o-urgency-head">6月限定キャンペーン終了まで</p>
-                <div class="lp-o-countdown" aria-live="polite">
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
-                        <span class="lp-o-countdown-label">日</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-hours">00</span>
-                        <span class="lp-o-countdown-label">時間</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-mins">00</span>
-                        <span class="lp-o-countdown-label">分</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-secs">00</span>
-                        <span class="lp-o-countdown-label">秒</span>
-                    </div>
-                </div>
-                <div class="lp-o-urgency-hero">
-                    <span class="lp-o-urgency-hero-label">残り</span>
-                    <span class="lp-o-urgency-hero-num dynamic-remaining-count">--</span>
-                    <span class="lp-o-urgency-hero-unit">名</span>
-                </div>
-                <p class="lp-o-urgency-disclaimer">
-                    ※残り<span class="dynamic-remaining-count">--</span>名入会次第<br>
-                    限定キャンペーンは終了します
-                </p>
-            </div>
+        <div class="lp-opening-phase lp-opening-phase--finale" id="lp-o-phase-finale">
+            <p class="lp-o-en">6 Months Special</p>
+            <p class="lp-o-finale-lead">半年間ずっと</p>
+            <p class="lp-o-finale-sub">毎月</p>
+            <div class="lp-o-finale-price">3,400<span>円</span></div>
         </div>
     </div>
     <div class="lp-opening-progress" aria-hidden="true"><span id="lp-o-progress"></span></div>
@@ -2426,9 +1695,9 @@
 <!-- トップ固定バナー -->
 <div class="gold-metallic-banner">
     <div class="banner-inner">
-        <p class="banner-period-dates">6/30(火)まで</p>
+        <p class="banner-period-dates">6/24(水)まで</p>
         <span class="banner-capacity-pill">期間限定</span>
-        <span class="banner-capacity-pill">先着10名様</span>
+        <span class="banner-capacity-pill">先着15名様</span>
         <span class="banner-vdivider" aria-hidden="true"></span>
         <div class="banner-remaining-block">
             <span class="remaining-label">残<br>り</span>
@@ -2449,7 +1718,8 @@
             <div class="campaign-header-inner">
                 <h2 class="campaign-title">6月限定キャンペーン</h2>
                 <div class="campaign-app-badge">
-                    <span>APP入会最短5分　当日すぐ使える!</span>
+                    <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
+                    <span>JOYFIT APP入会限定</span>
                 </div>
             </div>
         </div>
@@ -2497,7 +1767,7 @@
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle number-circle-accent">4</span>
-                            <div class="label"><span id="campaign-option-label">6月オプション</span><span class="label-sub" id="campaign-option-label-sub">無料オプション8つが自動契約</span></div>
+                            <div class="label">6月オプション<span class="label-sub">無料オプション8つが自動契約</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -2582,8 +1852,8 @@
                         <span class="highlight font-impact">8</span>つの無料オプション
                     </h2>
                     <p>
-                        キャンペーン期間中<br><span class="highlight-text" id="campaign-option-highlight">6月分が0円</span>で使い放題！<br>
-                        <span class="text-box-note" id="campaign-option-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">6月末</span>までに解約をお願いいたします。</span>
+                        キャンペーン期間中<br><span class="highlight-text">6月分が0円</span>で使い放題！<br>
+                        <span class="text-box-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は6月末までに解約をお願いいたします。</span>
                     </p>
                 </div>
                 <div class="scene">
@@ -2619,7 +1889,7 @@
                 </div>
                 <div class="notice-body">
                     オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
-                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;" id="campaign-notice-deadline">6月末迄</strong>に解約をお願いいたします<br /><br />
+                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">6月末迄</strong>に解約をお願いいたします<br /><br />
                     入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
                     解約後も月末迄サービスをご利用頂けます
                 </div>
@@ -2699,109 +1969,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ====================================================
-    // キャンペーン自動切替（6/25 0:00 JST で phaseB に切替）
-    // ====================================================
-    (function initCampaignPhase() {
-        const SWITCH_AT = new Date('2026-06-25T00:00:00+09:00');
-        const CAMPAIGN_END = new Date('2026-06-30T23:59:59+09:00');
-        const PHASE = {
-            A: {
-                title: 'JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで 期間限定',
-                description: 'JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/30(火)まで。',
-                ogTitle: 'JOYFIT24経堂 6月限定キャンペーン｜期間限定',
-                ogDescription: 'JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/30(火)まで。',
-                optionLabel: '6月オプション',
-                optionLabelSub: '無料オプション8つが自動契約',
-                optionHighlight: '6月分が0円',
-                optionCancelDeadline: '6月末',
-                noticeDeadline: '6月末迄',
-                showStartBadge: false
-            },
-            B: {
-                title: 'JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで オプション2ヶ月無料',
-                description: 'JOYFIT24経堂 6月限定キャンペーン。6月日割・7〜11月6ヶ月割（税込3,960円）。6・7月オプション0円。6/30(火)まで。',
-                ogTitle: 'JOYFIT24経堂 6月限定キャンペーン｜オプション2ヶ月無料',
-                ogDescription: 'JOYFIT24経堂の6月限定キャンペーン。6・7月のオプションが0円。6月日割・7〜11月6ヶ月割。6/30(火)まで。',
-                optionLabel: '6・7月オプション',
-                optionLabelSub: '6・7月分無料・無料オプション8つが自動契約',
-                optionHighlight: '6月・7月分が0円',
-                optionCancelDeadline: '7月末',
-                noticeDeadline: '7月末迄',
-                showStartBadge: true
-            }
-        };
-        let appliedKey = null;
-
-        function getPreviewPhase() {
-            const params = new URLSearchParams(window.location.search);
-            const q = (params.get('phase') || params.get('campaign') || '').toUpperCase();
-            if (q === 'B' || q === '2' || params.get('preview') === '6-25') return 'B';
-            if (q === 'A' || q === '1') return 'A';
-            return null;
-        }
-
-        function getPhaseKey() {
-            const preview = getPreviewPhase();
-            if (preview) return preview;
-            return Date.now() >= SWITCH_AT.getTime() ? 'B' : 'A';
-        }
-
-        function showPreviewNotice(key) {
-            if (!getPreviewPhase()) return;
-            let el = document.getElementById('campaign-preview-notice');
-            if (!el) {
-                el = document.createElement('div');
-                el.id = 'campaign-preview-notice';
-                el.setAttribute('role', 'status');
-                el.style.cssText = 'position:fixed;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:99999;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#1a1a1a;background:var(--gold-gradient,#e8c547);border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,0.2);pointer-events:none;font-family:"Noto Sans JP",sans-serif;';
-                document.body.appendChild(el);
-            }
-            el.textContent = key === 'B'
-                ? 'プレビュー: 6/25〜版（オプション2ヶ月無料）'
-                : 'プレビュー: 〜6/24版（オプション6月無料）';
-        }
-
-        function applyCampaignPhase(key) {
-            if (appliedKey === key) return;
-            appliedKey = key;
-            const p = PHASE[key];
-            document.title = p.title;
-            document.querySelector('meta[name="description"]')?.setAttribute('content', p.description);
-            document.querySelector('meta[property="og:title"]')?.setAttribute('content', p.ogTitle);
-            document.querySelector('meta[property="og:description"]')?.setAttribute('content', p.ogDescription);
-            document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', p.ogTitle);
-            document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', p.ogDescription);
-            document.getElementById('campaign-option-label') && (document.getElementById('campaign-option-label').textContent = p.optionLabel);
-            document.getElementById('campaign-option-label-sub') && (document.getElementById('campaign-option-label-sub').textContent = p.optionLabelSub);
-            document.getElementById('campaign-option-highlight') && (document.getElementById('campaign-option-highlight').textContent = p.optionHighlight);
-            document.getElementById('campaign-option-cancel-deadline') && (document.getElementById('campaign-option-cancel-deadline').textContent = p.optionCancelDeadline);
-            document.getElementById('campaign-notice-deadline') && (document.getElementById('campaign-notice-deadline').textContent = p.noticeDeadline);
-            const startBadge = document.getElementById('lp-o-start-badge');
-            if (startBadge) {
-                startBadge.hidden = !p.showStartBadge;
-                startBadge.classList.toggle('is-visible', p.showStartBadge);
-            }
-            document.documentElement.dataset.campaignPhase = key;
-            showPreviewNotice(key);
-        }
-
-        function tickPhase() {
-            applyCampaignPhase(getPhaseKey());
-        }
-
-        window.CAMPAIGN_CONFIG = {
-            switchAt: SWITCH_AT,
-            endAt: CAMPAIGN_END,
-            getPhaseKey: getPhaseKey,
-            apply: applyCampaignPhase
-        };
-
-        tickPhase();
-        setInterval(tickPhase, 30000);
-    })();
-
-    // ====================================================
-    // オープニング（ホイール/スワイプ連動・PC・スマホ共通）
+    // オープニング（スクロール連動・止めたら止まる）
     // ====================================================
     (function initOpening() {
         const scrollRoot = document.getElementById('lp-opening-scroll');
@@ -2812,169 +1980,72 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollHint = document.getElementById('lp-o-scroll-hint');
         const phaseIntro = document.getElementById('lp-o-phase-intro');
         const phaseMonths = document.getElementById('lp-o-phase-months');
-        const phaseUrgency = document.getElementById('lp-o-phase-urgency');
-        const introBox = document.getElementById('lp-o-intro-box');
-        const urgencyBox = document.getElementById('lp-o-urgency-box');
-        const dealTop = document.getElementById('lp-o-deal-top');
-        const priceOnce = document.getElementById('lp-o-price-once');
-        const savingsCard = document.getElementById('lp-o-savings');
+        const phaseFinale = document.getElementById('lp-o-phase-finale');
+        const usualBlock = document.getElementById('lp-o-usual');
+        const monthDisplay = document.getElementById('lp-o-month-display');
+        const monthStack = document.getElementById('lp-o-month-stack');
+        const sceneNum = document.getElementById('lp-o-scene-num');
+        const finalePrice = phaseFinale?.querySelector('.lp-o-finale-price');
         if (!scrollRoot || !opening) return;
 
+        const MONTHS = ['6月', '7月', '8月', '9月', '10月', '11月'];
         const P = {
-            curtainEnd: 0.06,
-            hintHide: 0.22,
-            introStart: 0.04,
-            introEnd: 0.24,
-            monthsStart: 0.24,
-            monthsEnd: 0.68,
-            urgencyStart: 0.70,
-            urgencyEnd: 0.82,
-            exitStart: 0.84,
-            complete: 1.0
+            curtainEnd: 0.09,
+            hintHide: 0.11,
+            introStart: 0.07,
+            introFull: 0.16,
+            strike: 0.14,
+            monthsStart: 0.16,
+            monthsEnd: 0.52,
+            finaleStart: 0.52,
+            finaleEnd: 0.86,
+            exitStart: 0.86,
+            complete: 0.97
         };
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.00055 : 0.00019;
-        const TOUCH_FACTOR = prefersReduced ? 0.0011 : 0.00058;
-        const KEY_STEP = prefersReduced ? 0.028 : 0.0095;
         let finished = false;
-        let exiting = false;
-        let virtualProgress = 0;
-        let touchLastY = 0;
-        let countdownTimer = null;
-        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-06-30T23:59:59+09:00');
-        const cdDaysEl = document.getElementById('lp-o-cd-days');
-        const cdHoursEl = document.getElementById('lp-o-cd-hours');
-        const cdMinsEl = document.getElementById('lp-o-cd-mins');
-        const cdSecsEl = document.getElementById('lp-o-cd-secs');
+        let lastMonthIndex = -1;
 
-        function updateOpeningCountdown() {
-            if (!cdDaysEl || !cdHoursEl || !cdMinsEl || !cdSecsEl) return;
-            const now = new Date();
-            let diff = URGENCY_END.getTime() - now.getTime();
-            if (diff < 0) diff = 0;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((diff % (1000 * 60)) / 1000);
-            cdDaysEl.textContent = String(days).padStart(2, '0');
-            cdHoursEl.textContent = String(hours).padStart(2, '0');
-            cdMinsEl.textContent = String(mins).padStart(2, '0');
-            cdSecsEl.textContent = String(secs).padStart(2, '0');
+        function getProgress() {
+            const max = scrollRoot.offsetHeight - window.innerHeight;
+            if (max <= 0) return 1;
+            return Math.min(1, Math.max(0, window.scrollY / max));
         }
 
-        function startCountdown() {
-            if (countdownTimer) return;
-            updateOpeningCountdown();
-            countdownTimer = setInterval(updateOpeningCountdown, 1000);
-        }
-
-        function stopCountdown() {
-            if (!countdownTimer) return;
-            clearInterval(countdownTimer);
-            countdownTimer = null;
+        function setSceneNum(text) {
+            if (sceneNum) sceneNum.textContent = text;
         }
 
         function setPhaseActive(active) {
-            [phaseIntro, phaseMonths, phaseUrgency].forEach(function(el) {
+            [phaseIntro, phaseMonths, phaseFinale].forEach(function(el) {
                 if (!el) return;
-                el.classList.remove('is-active');
+                el.classList.remove('is-active', 'is-out');
             });
             if (active) active.classList.add('is-active');
         }
 
-        function updateDealPhase(topProgress, priceProgress) {
-            dealTop?.classList.toggle('is-visible', topProgress >= 0.08);
-            priceOnce?.classList.toggle('is-visible', priceProgress >= 0.06);
-
-            if (!priceOnce) return;
-            const usualWrap = priceOnce.querySelector('.lp-o-row-usual-wrap');
-            const strikeEl = priceOnce.querySelector('.lp-o-row-strike');
-            const arrowEl = priceOnce.querySelector('.lp-o-price-arrow');
-            const dealWrap = priceOnce.querySelector('.lp-o-row-deal-wrap');
-            const STRIKE_AT = 0.22;
-            const SHIFT_AT = 0.50;
-            const DEAL_AT = 0.74;
-
-            const strikeOn = priceProgress >= STRIKE_AT;
-            const shiftOn = priceProgress >= SHIFT_AT;
-            const dealOn = priceProgress >= DEAL_AT;
-            strikeEl?.classList.toggle('is-on', strikeOn);
-            usualWrap?.classList.toggle('is-struck', strikeOn);
-            arrowEl?.classList.toggle('is-visible', shiftOn);
-            dealWrap?.classList.toggle('is-visible', dealOn);
-        }
-
-        function resetIntroState() {
-            introBox?.classList.remove('is-visible');
-        }
-
-        function resetUrgencyState() {
-            urgencyBox?.classList.remove('is-visible');
-        }
-
-        function resetMonthsState() {
-            savingsCard?.classList.remove('is-visible');
-            updateDealPhase(0, 0);
-        }
-
-        function unbindOpening() {
-            scrollRoot.removeEventListener('wheel', onWheel);
-            scrollRoot.removeEventListener('touchstart', onTouchStart);
-            scrollRoot.removeEventListener('touchmove', onTouchMove);
-            window.removeEventListener('keydown', onKeyDown);
-        }
-
-        function resetExitVisuals() {
-            if (opening) {
-                opening.style.clipPath = '';
-                opening.style.opacity = '1';
-            }
-            document.body.classList.remove('lp-opening-reveal');
-            if (urgencyBox) {
-                urgencyBox.style.transform = '';
-                urgencyBox.style.opacity = '';
+        function rebuildMonthStack(upToExclusive) {
+            if (!monthStack) return;
+            monthStack.innerHTML = '';
+            for (let i = 0; i < upToExclusive; i++) {
+                const li = document.createElement('li');
+                li.className = 'lp-o-stack-item';
+                li.style.animation = 'none';
+                li.style.opacity = '1';
+                li.style.transform = 'none';
+                li.innerHTML = '<span>' + MONTHS[i] + '</span><span>3,400円</span>';
+                monthStack.appendChild(li);
             }
         }
 
-        function doFinishOpeningNow() {
+        function finishOpening() {
             if (finished) return;
             finished = true;
-            stopCountdown();
-            unbindOpening();
-            document.documentElement.classList.remove('lp-opening-lock');
+            window.removeEventListener('scroll', onScroll);
             document.body.classList.remove('lp-opening-active');
-            document.body.classList.remove('lp-opening-reveal');
             scrollRoot.remove();
             document.documentElement.style.scrollBehavior = 'auto';
             window.scrollTo(0, 0);
             document.documentElement.style.scrollBehavior = '';
-        }
-
-        function finishOpening() {
-            if (finished || exiting) return;
-            if (prefersReduced) {
-                document.body.classList.add('lp-opening-reveal');
-                doFinishOpeningNow();
-                return;
-            }
-            exiting = true;
-            stopCountdown();
-            unbindOpening();
-            setPhaseActive(phaseUrgency);
-            urgencyBox?.classList.add('is-visible');
-            scrollRoot.classList.add('lp-opening-exit-play');
-            document.body.classList.add('lp-opening-reveal');
-            setTimeout(doFinishOpeningNow, 720);
-        }
-
-        function setProgress(next) {
-            if (finished || exiting) return;
-            virtualProgress = Math.min(1, Math.max(0, next));
-            renderOpening(virtualProgress);
-            if (virtualProgress >= P.complete) {
-                document.body.classList.add('lp-opening-reveal');
-                setTimeout(doFinishOpeningNow, prefersReduced ? 0 : 180);
-            }
         }
 
         function renderOpening(p) {
@@ -2988,117 +2059,67 @@ document.addEventListener('DOMContentLoaded', function() {
                 scrollHint.style.opacity = p < P.hintHide ? '1' : '0';
             }
 
-            if (p < P.introStart) {
-                setPhaseActive(null);
-                resetIntroState();
-                resetMonthsState();
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
-            } else if (p < P.introEnd) {
+            if (p < P.monthsStart) {
+                setSceneNum('01');
                 setPhaseActive(phaseIntro);
-                resetMonthsState();
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
-
-                const ip = (p - P.introStart) / (P.introEnd - P.introStart);
-                introBox?.classList.toggle('is-visible', ip >= 0.02);
-            } else if (p < P.urgencyStart) {
+                if (phaseIntro) {
+                    const introOp = p < P.introStart ? 0 : Math.min(1, (p - P.introStart) / (P.introFull - P.introStart));
+                    phaseIntro.style.opacity = String(introOp);
+                }
+                usualBlock?.classList.toggle('is-struck', p >= P.strike);
+                if (monthDisplay) monthDisplay.classList.remove('is-pop');
+                lastMonthIndex = -1;
+            } else if (p < P.finaleStart) {
+                setSceneNum('02');
                 setPhaseActive(phaseMonths);
-                introBox?.classList.add('is-visible');
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
+                if (phaseIntro) phaseIntro.style.opacity = '1';
 
                 const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
-                const TOP_END = 0.16;
-                const PRICE_END = 0.70;
-                if (mp < 0.78) {
-                    const topP = Math.min(1, mp / TOP_END);
-                    const priceP = mp <= TOP_END ? 0 : Math.min(1, (mp - TOP_END) / (PRICE_END - TOP_END));
-                    updateDealPhase(topP, priceP);
-                    savingsCard?.classList.remove('is-visible');
-                } else {
-                    updateDealPhase(1, 1);
-                    const sp = (mp - 0.78) / 0.22;
-                    savingsCard?.classList.toggle('is-visible', sp >= 0.18);
-                }
-                opening.style.opacity = '1';
-            } else if (p < P.exitStart) {
-                setPhaseActive(phaseUrgency);
-                resetMonthsState();
-                resetExitVisuals();
-                startCountdown();
+                const idx = Math.min(MONTHS.length - 1, Math.floor(mp * MONTHS.length));
 
-                const up = (p - P.urgencyStart) / (P.urgencyEnd - P.urgencyStart);
-                urgencyBox?.classList.toggle('is-visible', up >= 0.12);
+                if (idx !== lastMonthIndex) {
+                    lastMonthIndex = idx;
+                    rebuildMonthStack(idx);
+                    if (monthDisplay) {
+                        monthDisplay.textContent = MONTHS[idx];
+                        monthDisplay.classList.remove('is-pop');
+                        void monthDisplay.offsetWidth;
+                        monthDisplay.classList.add('is-pop');
+                        monthDisplay.style.opacity = '1';
+                    }
+                }
+                finalePrice?.classList.remove('is-visible');
+            } else if (p < P.exitStart) {
+                setSceneNum('03');
+                setPhaseActive(phaseFinale);
+                rebuildMonthStack(MONTHS.length);
+                if (monthDisplay) monthDisplay.style.opacity = '0';
+                finalePrice?.classList.add('is-visible');
                 opening.style.opacity = '1';
             } else {
-                stopCountdown();
-                setPhaseActive(phaseUrgency);
-                urgencyBox?.classList.add('is-visible');
-
+                setSceneNum('03');
                 const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
-                if (exitP < 0.42) {
-                    const t = exitP / 0.42;
-                    if (urgencyBox) {
-                        urgencyBox.style.transform = 'translateY(' + (-14 * t) + 'px) scale(' + (1 - 0.03 * t) + ')';
-                        urgencyBox.style.opacity = String(Math.max(0, 1 - t * 0.92));
-                    }
-                    opening.style.opacity = '1';
-                    document.body.classList.remove('lp-opening-reveal');
-                } else {
-                    const fadeP = (exitP - 0.42) / 0.58;
-                    if (urgencyBox) {
-                        urgencyBox.style.opacity = '0';
-                        urgencyBox.style.transform = 'translateY(-14px) scale(0.98)';
-                    }
-                    opening.style.opacity = String(Math.max(0, 1 - fadeP));
-                    if (fadeP > 0.1) document.body.classList.add('lp-opening-reveal');
-                }
+                opening.style.opacity = String(Math.max(0, 1 - exitP));
             }
+
+            if (p >= P.complete) finishOpening();
         }
 
-        function onWheel(e) {
+        function onScroll() {
             if (finished) return;
-            e.preventDefault();
-            setProgress(virtualProgress + e.deltaY * WHEEL_FACTOR);
+            renderOpening(getProgress());
         }
 
-        function onTouchStart(e) {
-            touchLastY = e.touches[0].clientY;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) {
+            finishOpening();
+            return;
         }
 
-        function onTouchMove(e) {
-            if (finished) return;
-            const y = e.touches[0].clientY;
-            const dy = touchLastY - y;
-            touchLastY = y;
-            if (Math.abs(dy) < 1) return;
-            e.preventDefault();
-            setProgress(virtualProgress + dy * TOUCH_FACTOR);
-        }
-
-        function onKeyDown(e) {
-            if (finished) return;
-            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
-                e.preventDefault();
-                setProgress(virtualProgress + KEY_STEP);
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
-                setProgress(virtualProgress - KEY_STEP);
-            }
-        }
-
-        document.documentElement.classList.add('lp-opening-lock');
         document.body.classList.add('lp-opening-active');
-        scrollRoot.addEventListener('wheel', onWheel, { passive: false });
-        scrollRoot.addEventListener('touchstart', onTouchStart, { passive: true });
-        scrollRoot.addEventListener('touchmove', onTouchMove, { passive: false });
-        window.addEventListener('keydown', onKeyDown);
+        window.addEventListener('scroll', onScroll, { passive: true });
         skipBtn?.addEventListener('click', finishOpening);
-        renderOpening(0);
+        renderOpening(getProgress());
     })();
 
     
@@ -3178,22 +2199,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 6/14以前：10名固定 → 6/14〜6/30：1日2名ずつ減（6/14=10 → 下限1名・6/30も1名）
-        const decreaseStart = new Date('2026-06-14T00:00:00+09:00');
+        // 6/14〜6/24：15名→最終日1名（この期間のみ段階的に減少）
+        const startDate = new Date('2026-06-14T00:00:00+09:00');
+        const endDate = new Date('2026-06-24T00:00:00+09:00');
         const now = new Date();
-        const startRemaining = 10;
+        const maxRemaining = 15;
         const minRemaining = 1;
-        const decreasePerDay = 2;
         const msPerDay = 1000 * 60 * 60 * 24;
-        const diffDays = Math.floor((now.getTime() - decreaseStart.getTime()) / msPerDay);
+        const totalSpanDays = Math.round((endDate.getTime() - startDate.getTime()) / msPerDay);
 
+        let diffDays = Math.floor((now.getTime() - startDate.getTime()) / msPerDay);
         let remaining;
+
         if (diffDays < 0) {
-            remaining = startRemaining;
+            remaining = maxRemaining;
+        } else if (diffDays >= totalSpanDays) {
+            remaining = minRemaining;
         } else {
-            remaining = startRemaining - decreasePerDay * diffDays;
-            if (remaining < minRemaining) remaining = minRemaining;
+            remaining = Math.round(maxRemaining - (diffDays / totalSpanDays) * (maxRemaining - minRemaining));
         }
+
+        if (remaining < minRemaining) remaining = minRemaining;
+        if (remaining > maxRemaining) remaining = maxRemaining;
 
         const countEls = document.querySelectorAll('.dynamic-remaining-count');
         countEls.forEach(el => {

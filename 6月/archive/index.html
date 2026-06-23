@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6月LP アーカイブ一覧</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 24px 16px 48px;
+            font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+        .wrap { max-width: 720px; margin: 0 auto; }
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.35rem;
+            color: #c21632;
+        }
+        .lead { margin: 0 0 24px; font-size: 0.9rem; color: #555; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid rgba(194,22,50,0.1);
+        }
+        .card h2 { margin: 0 0 6px; font-size: 1.05rem; }
+        .card p { margin: 0 0 12px; font-size: 0.85rem; color: #666; }
+        .links { display: flex; flex-wrap: wrap; gap: 8px; }
+        a.btn {
+            display: inline-block;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            background: #c21632;
+            color: #fff;
+        }
+        a.btn--sub {
+            background: #fff;
+            color: #c21632;
+            border: 1.5px solid rgba(194,22,50,0.35);
+        }
+        .note {
+            margin-top: 20px;
+            padding: 12px 14px;
+            font-size: 0.8rem;
+            color: #555;
+            background: #fff8e6;
+            border-radius: 8px;
+            border: 1px solid rgba(212,175,55,0.35);
+        }
+        .current { border-left: 4px solid #c21632; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>6月キャンペーン LP — アーカイブ</h1>
+    <p class="lead">過去の掲載内容（証跡用）。各リンクから<strong>当時のLP本体</strong>をブラウザで開けます。</p>
+
+    <div class="card current">
+        <h2>現行版（リポジトリルート）</h2>
+        <p>先着10名・6/30締切・6/25からオプション2ヶ月無料（自動切替）</p>
+        <div class="links">
+            <a class="btn" href="../../../index.html" target="_blank" rel="noopener">LPを開く</a>
+            <a class="btn btn--sub" href="../../../index.html?phase=B" target="_blank" rel="noopener">6/25〜版プレビュー</a>
+            <a class="btn btn--sub" href="../../hp-banner/index.html" target="_blank" rel="noopener">HPバナー</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>v3.1 — 6/30まで・先着15名（10名変更前）</h2>
+        <p>6/25自動切替・オプション2ヶ月無料を実装した直前の版</p>
+        <div class="links">
+            <a class="btn" href="2026-06-30まで-v3.1/index.html" target="_blank" rel="noopener">LPを開く</a>
+            <a class="btn btn--sub" href="2026-06-30まで-v3.1/hp-banner/index.html" target="_blank" rel="noopener">HPバナー</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>v2.2 — 6/24(水)まで（オープニング改修版）</h2>
+        <p>月チップUI・パネル統一サイズ・6/24締切</p>
+        <div class="links">
+            <a class="btn" href="2026-06-24まで/index.html" target="_blank" rel="noopener">LPを開く</a>
+            <a class="btn btn--sub" href="2026-06-24まで/hp-banner/index.html" target="_blank" rel="noopener">HPバナー</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>v2.0 — 6/24まで・オープニングなし</h2>
+        <p>キャンペーン刷新直後（Git: d3484a8）</p>
+        <div class="links">
+            <a class="btn" href="2026-06-24まで-オープニングなし/index.html" target="_blank" rel="noopener">LPを開く</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>v1.0 — 5/30〜6/14 先行受付版</h2>
+        <p>6月LP初版・先着20名（Git: bf0aed1）</p>
+        <div class="links">
+            <a class="btn" href="2026-06-14まで-先行受付版/index.html" target="_blank" rel="noopener">LPを開く</a>
+        </div>
+    </div>
+
+    <p class="note">
+        ※ 各アーカイブLPは画像をリポジトリ直下から読み込む設定（&lt;base&gt;）にしてあります。
+        この一覧ページからリンクを開けば、写真・オプションアイコンも含めて表示されます。
+        詳細ログは <a href="../CHANGELOG.md">CHANGELOG.md</a> を参照。
+    </p>
+</div>
+</body>
+</html>

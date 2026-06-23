@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <base href="../../../../">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HPバナー｜JOYFIT24経堂 6月限定</title>
@@ -279,11 +280,10 @@
                     </div>
                 </div>
 
-                <p class="deadline">6/30(火)まで限定</p>
+                <p class="deadline">6/24(水)まで限定</p>
 
                 <footer class="zone-foot">
-                    <span class="foot-pill" id="banner-option-pill" hidden>6・7月オプション0円</span>
-                    <span class="foot-pill">先着10名様限定</span>
+                    <span class="foot-pill">先着15名様限定</span>
                     <span class="foot-pill">APP入会最短5分</span>
                 </footer>
             </div>
@@ -336,25 +336,6 @@
     document.getElementById('btn-dl-2x').addEventListener('click', function () { downloadPNG(2); });
     document.getElementById('btn-dl-3x').addEventListener('click', function () { downloadPNG(3); });
     waitForFonts();
-
-    (function initBannerPhase() {
-        const SWITCH_AT = new Date('2026-06-25T00:00:00+09:00');
-        const pill = document.getElementById('banner-option-pill');
-        function getPreviewB() {
-            const params = new URLSearchParams(window.location.search);
-            const q = (params.get('phase') || params.get('campaign') || '').toUpperCase();
-            if (q === 'B' || q === '2' || params.get('preview') === '6-25') return true;
-            if (q === 'A' || q === '1') return false;
-            return null;
-        }
-        function apply() {
-            const preview = getPreviewB();
-            const isB = preview !== null ? preview : Date.now() >= SWITCH_AT.getTime();
-            if (pill) pill.hidden = !isB;
-        }
-        apply();
-        setInterval(apply, 30000);
-    })();
 })();
 </script>
 
