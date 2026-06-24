@@ -3181,20 +3181,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 6/14以前：10名固定 → 6/14〜6/30：1日2名ずつ減（6/14=10 → 下限1名・6/30も1名）
-        const decreaseStart = new Date('2026-06-14T00:00:00+09:00');
+        // 6/24以前：10名固定 → 6/24〜6/30：10名から1名へ（6/30が1名）
+        const decreaseStart = new Date('2026-06-24T00:00:00+09:00');
+        const decreaseEnd = new Date('2026-06-30T00:00:00+09:00');
         const now = new Date();
         const startRemaining = 10;
         const minRemaining = 1;
-        const decreasePerDay = 2;
-        const msPerDay = 1000 * 60 * 60 * 24;
-        const diffDays = Math.floor((now.getTime() - decreaseStart.getTime()) / msPerDay);
 
         let remaining;
-        if (diffDays < 0) {
+        if (now.getTime() < decreaseStart.getTime()) {
             remaining = startRemaining;
         } else {
-            remaining = startRemaining - decreasePerDay * diffDays;
+            const totalMs = decreaseEnd.getTime() - decreaseStart.getTime();
+            const elapsedMs = Math.min(Math.max(0, now.getTime() - decreaseStart.getTime()), totalMs);
+            const progress = totalMs > 0 ? elapsedMs / totalMs : 1;
+            remaining = Math.round(startRemaining - progress * (startRemaining - minRemaining));
             if (remaining < minRemaining) remaining = minRemaining;
         }
 
