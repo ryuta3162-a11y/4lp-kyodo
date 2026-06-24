@@ -282,7 +282,7 @@
                 <p class="deadline">6/30(火)まで限定</p>
 
                 <footer class="zone-foot">
-                    <span class="foot-pill" id="banner-option-pill" hidden>6・7月オプション0円</span>
+                    <span class="foot-pill" id="banner-option-pill">6・7月オプション0円</span>
                     <span class="foot-pill">先着10名様限定</span>
                     <span class="foot-pill">APP入会最短5分</span>
                 </footer>
@@ -339,7 +339,7 @@
 
     (function initBannerPhase() {
         const SWITCH_AT = new Date('2026-06-25T00:00:00+09:00');
-        const FORCE_PHASE_B = false;
+        const FORCE_PHASE_B = true;
         const pill = document.getElementById('banner-option-pill');
         function getPreviewB() {
             const params = new URLSearchParams(window.location.search);
