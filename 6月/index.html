@@ -155,11 +155,9 @@
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 7.25rem 15px 0; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        body.top-banner-hidden .lp-wrapper { padding-top: 1.25rem; }
+        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 1.25rem 15px 0; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }
         @media (min-width: 768px) {
-            .lp-wrapper { padding-top: 6.5rem; }
-            body.top-banner-hidden .lp-wrapper { padding-top: 1rem; }
+            .lp-wrapper { padding-top: 1rem; }
         }
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
@@ -960,7 +958,6 @@
         }
         html.lp-opening-seen #lp-opening-scroll { display: none !important; }
         body.lp-opening-active { overflow-x: hidden; }
-        body.lp-opening-active .gold-metallic-banner,
         body.lp-opening-active .fixed-banner,
         body.lp-opening-active #banner-toggle-container,
         body.lp-opening-active .lp-wrapper {
@@ -968,7 +965,6 @@
             pointer-events: none;
             transition: opacity 0.25s ease;
         }
-        body.lp-opening-reveal .gold-metallic-banner,
         body.lp-opening-reveal .fixed-banner,
         body.lp-opening-reveal #banner-toggle-container {
             opacity: 1;
@@ -1316,8 +1312,8 @@
         }
         .lp-o-intro-box.lp-o-panel {
             height: auto;
-            min-height: var(--lp-o-panel-h);
-            max-height: min(86vh, 560px);
+            min-height: auto;
+            max-height: min(86vh, 520px);
             padding: clamp(1.15rem, 3.5vh, 1.65rem) clamp(1.1rem, 4vw, 1.45rem);
             justify-content: flex-start;
             overflow-y: auto;
@@ -2389,9 +2385,6 @@
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
-                <span class="lp-o-header-tag">JOYFIT24経堂</span>
-                <p class="lp-o-start-badge is-visible" id="lp-o-start-badge">6/27(土)〜</p>
-                <div class="lp-o-summer-mark" aria-hidden="true"><i class="ph-fill ph-sun"></i></div>
                 <p class="lp-o-label" id="lp-o-label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
                 <p class="lp-o-lead" id="lp-o-lead">7/12(日)まで限定</p>
                 <div class="lp-o-countdown" aria-live="polite">
@@ -2430,15 +2423,6 @@
 
 <div class="ambient-bg" aria-hidden="true"></div>
 <div class="bg-noise" aria-hidden="true"></div>
-
-<!-- トップ固定バナー -->
-<div class="gold-metallic-banner">
-    <div class="banner-inner">
-        <p class="banner-period-dates">7/12(日)まで</p>
-        <span class="banner-capacity-pill">期間限定</span>
-        <span class="banner-capacity-pill">先着20名様</span>
-    </div>
-</div>
 
 <!-- ==========================================
      メインコンテンツ
@@ -2533,7 +2517,7 @@
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span>満6カ月の在籍が条件となります（2026年12月末日まで）</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span>満6カ月の在籍が条件となります（2027年1月末日まで）</span>
                     </div>
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span>期間内に退会された場合、解約金として32,340円(税込)が発生いたします</span>
@@ -3004,14 +2988,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateScrollBanners() {
         const y = window.scrollY;
-
         if (y > SCROLL_HIDE_Y) {
-            document.body.classList.add('top-banner-hidden');
             if (!bottomBannerLockedHidden) {
                 setBottomBannerHidden(true);
             }
         } else if (y <= SCROLL_SHOW_Y) {
-            document.body.classList.remove('top-banner-hidden');
             if (!bottomBannerLockedHidden) {
                 setBottomBannerHidden(false);
             }
