@@ -39,6 +39,8 @@
             --gold-light: #F8E71C; 
             --gold-dark: #B48811; 
             --gold-gradient: linear-gradient(135deg, #B48811 0%, #F8E71C 25%, #D4AF37 50%, #F8E71C 75%, #B48811 100%);
+            --summer-sun: rgba(255, 196, 87, 0.22);
+            --summer-sky: rgba(126, 200, 227, 0.07);
             
             --color-dark: #1a1a2e;
             --color-text: #2C2C2C;
@@ -89,7 +91,9 @@
             pointer-events: none;
             z-index: 0;
             background:
+                radial-gradient(ellipse 72% 42% at 50% 0%, var(--summer-sky), transparent 52%),
                 radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212, 175, 55, 0.07), transparent 55%),
+                radial-gradient(ellipse 55% 38% at 100% 92%, var(--summer-sun), transparent 50%),
                 radial-gradient(ellipse 50% 35% at 100% 90%, rgba(194, 22, 50, 0.04), transparent 50%);
         }
         .bg-noise {
@@ -168,7 +172,9 @@
             border-radius: 14px 14px 0 0;
             text-align: center;
             overflow: hidden;
-            background: var(--brand-red);
+            background:
+                radial-gradient(ellipse 95% 65% at 50% -18%, var(--summer-sun), transparent 58%),
+                var(--brand-red);
             border-bottom: 2px solid rgba(255, 255, 255, 0.35);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
@@ -206,6 +212,14 @@
             background: rgba(255, 255, 255, 0.92);
             border-radius: 1px;
             box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+        }
+        .campaign-title-summer {
+            display: inline-block;
+            background: linear-gradient(135deg, #fff8dc 0%, #F8E71C 38%, #FFC857 72%, #F8E71C 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.12));
         }
         .campaign-app-badge {
             display: inline-flex;
@@ -999,7 +1013,10 @@
             align-items: center;
             justify-content: center;
             padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
-            background: var(--brand-red);
+            background:
+                radial-gradient(ellipse 100% 72% at 50% -12%, rgba(255, 210, 100, 0.24), transparent 58%),
+                radial-gradient(ellipse 80% 50% at 100% 100%, rgba(126, 200, 227, 0.06), transparent 55%),
+                var(--brand-red);
             color: #fff;
             overflow: hidden;
             will-change: opacity;
@@ -1014,7 +1031,9 @@
             position: absolute;
             inset: 0;
             z-index: 30;
-            background: var(--brand-red);
+            background:
+                radial-gradient(ellipse 100% 72% at 50% -12%, rgba(255, 210, 100, 0.24), transparent 58%),
+                var(--brand-red);
             pointer-events: none;
             transition: opacity 0.2s ease;
         }
@@ -1271,6 +1290,21 @@
             line-height: 1.3;
             color: var(--brand-red);
         }
+        .lp-o-summer-mark {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 0.4rem;
+            font-size: clamp(1.15rem, 4.2vw, 1.5rem);
+            color: #FFC857;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 8px rgba(255, 180, 60, 0.28));
+        }
+        .lp-o-label-summer {
+            background: linear-gradient(135deg, #c9920a 0%, #ff9f1a 42%, #F8E71C 68%, #e8a820 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .lp-o-intro-box .lp-o-lead {
             margin: 0.85rem 0 0;
             padding-top: 0.75rem;
@@ -1302,7 +1336,7 @@
             flex-shrink: 0;
             padding: clamp(14px, 2.4vh, 20px) clamp(16px, 4vw, 22px) clamp(10px, 1.6vh, 14px);
             text-align: center;
-            background: linear-gradient(180deg, rgba(194, 22, 50, 0.06) 0%, rgba(194, 22, 50, 0.01) 100%);
+            background: linear-gradient(180deg, rgba(255, 196, 87, 0.08) 0%, rgba(194, 22, 50, 0.06) 45%, rgba(194, 22, 50, 0.01) 100%);
             border-bottom: 1px solid rgba(194, 22, 50, 0.07);
             opacity: 0;
             transform: translateY(10px);
@@ -2330,7 +2364,8 @@
             <div class="lp-o-intro-box lp-o-panel" id="lp-o-intro-box">
                 <span class="lp-o-header-tag">JOYFIT24経堂</span>
                 <p class="lp-o-start-badge is-visible" id="lp-o-start-badge">6/27(土)〜</p>
-                <p class="lp-o-label" id="lp-o-label">まだ間に合う<br>夏得キャンペーン</p>
+                <div class="lp-o-summer-mark" aria-hidden="true"><i class="ph-fill ph-sun"></i></div>
+                <p class="lp-o-label" id="lp-o-label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
                 <p class="lp-o-lead" id="lp-o-lead">7/12(日)まで限定</p>
                 <p class="lp-o-caption" id="lp-o-caption">先着20名様限定</p>
             </div>
@@ -2382,7 +2417,7 @@
 
         <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
             <div class="lp-o-urgency-box lp-o-panel" id="lp-o-urgency-box">
-                <p class="lp-o-urgency-head">夏得キャンペーン終了まで</p>
+                <p class="lp-o-urgency-head">夏得キャンペーン！<br>終了まで</p>
                 <div class="lp-o-countdown" aria-live="polite">
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
@@ -2447,7 +2482,7 @@
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
             <div class="campaign-header-inner">
-                <h2 class="campaign-title">まだ間に合う 夏得キャンペーン</h2>
+                <h2 class="campaign-title">まだ間に合う！<br><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
                 <div class="campaign-app-badge">
                     <span>APP入会最短5分　当日すぐ使える!</span>
                 </div>
