@@ -403,34 +403,44 @@
         }
         .half-year-body {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
+            text-align: center;
+            gap: 0.55rem;
         }
         .half-year-months-col {
-            flex: 0 0 auto;
-            min-width: 5.5rem;
+            width: 100%;
         }
         .half-year-months {
             margin: 0;
-            font-size: clamp(0.88rem, 3.4vw, 1rem);
+            font-size: clamp(0.8rem, 3.1vw, 0.95rem);
             font-weight: 900;
-            line-height: 1.55;
-            letter-spacing: 0.04em;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
             color: #333;
+            word-break: keep-all;
         }
         .half-year-months-col .label-usual-ref {
-            margin-top: 0.45rem;
+            margin-top: 0.35rem;
             font-size: 0.72rem;
+            text-align: center;
         }
         .half-year-price-col {
-            flex: 1 1 auto;
+            width: 100%;
             text-align: center;
             line-height: 1.1;
+            padding: 0.15rem 0 0.1rem;
+        }
+        .half-year-price-row {
+            display: inline-flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.1rem 0.2rem;
         }
         .half-year-price {
-            display: block;
-            font-size: clamp(2.35rem, 11vw, 3.15rem);
+            display: inline;
+            font-size: clamp(2.1rem, 10vw, 2.85rem);
             font-weight: 900;
             letter-spacing: -0.03em;
             color: var(--brand-red);
@@ -440,31 +450,11 @@
                 0 3px 12px rgba(194, 22, 50, 0.15);
         }
         .half-year-unit {
-            display: block;
-            margin-top: 0.2rem;
+            display: inline;
             font-size: clamp(0.82rem, 3.2vw, 0.95rem);
             font-weight: 800;
             color: var(--brand-red);
             letter-spacing: 0.02em;
-        }
-        @media (max-width: 520px) {
-            .half-year-body {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .half-year-months-col {
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
-                gap: 0.85rem;
-                width: 100%;
-            }
-            .half-year-months {
-                text-align: left;
-            }
-            .half-year-price-col {
-                width: 100%;
-            }
         }
         .price-item .divider-dot {
             width: 1px;
@@ -2595,12 +2585,14 @@
                             </div>
                             <div class="half-year-body">
                                 <div class="half-year-months-col">
-                                    <p class="half-year-months">7月<br>8月<br>9月<br>10月<br>11月<br>12月</p>
+                                    <p class="half-year-months">7月、8月、9月、10月、11月、12月</p>
                                     <p class="label-usual-ref">通常月額<span class="price-usual-strike">9,350</span>円(税込)</p>
                                 </div>
                                 <div class="half-year-price-col">
-                                    <span class="half-year-price font-impact">3,630</span>
-                                    <span class="half-year-unit">円(税込)/月</span>
+                                    <div class="half-year-price-row">
+                                        <span class="half-year-price font-impact">3,630</span>
+                                        <span class="half-year-unit">円(税込)/月</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
