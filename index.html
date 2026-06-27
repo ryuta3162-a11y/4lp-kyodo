@@ -984,7 +984,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .lp-opening-exit-play .lp-o-urgency-box.is-visible {
+        .lp-opening-exit-play .lp-o-intro-box.is-visible {
             animation: lpOExitSoft 0.42s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         .lp-opening-exit-play .lp-opening {
@@ -1314,19 +1314,52 @@
             text-indent: 0.06em;
             color: var(--brand-red);
         }
-        .lp-o-intro-box .lp-o-caption {
-            margin: 0.85rem 0 0;
-            display: block;
+        .lp-o-intro-box.lp-o-panel {
+            height: auto;
+            min-height: var(--lp-o-panel-h);
+            max-height: min(86vh, 560px);
+            padding: clamp(1.15rem, 3.5vh, 1.65rem) clamp(1.1rem, 4vw, 1.45rem);
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+        .lp-o-intro-box .lp-o-countdown {
+            margin: 0.75rem 0 0.85rem;
             width: 100%;
-            padding: 0.65rem 0.5rem;
-            border: none;
-            border-radius: 8px;
-            background: #111;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-            color: var(--gold-light);
-            font-size: clamp(1.25rem, 4.8vw, 1.65rem);
-            letter-spacing: 0.12em;
-            text-indent: 0.12em;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: clamp(0.15rem, 1vw, 0.35rem);
+            margin: 0;
+            line-height: 1;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-label {
+            font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-num {
+            font-size: clamp(2.5rem, 10vw, 3.75rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            min-width: 1.1em;
+            text-align: center;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-unit {
+            font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+            font-weight: 900;
+            color: var(--brand-red);
+        }
+        .lp-o-intro-box .lp-o-intro-note {
+            margin: 0.65rem 0 0;
+            font-size: clamp(0.68rem, 2.4vw, 0.78rem);
+            font-weight: 700;
+            line-height: 1.55;
+            letter-spacing: 0.04em;
+            color: #666;
         }
         .lp-o-deal-sheet {
             flex: 0 0 auto;
@@ -2304,7 +2337,7 @@
                 opacity: 1 !important;
                 transform: none !important;
             }
-            .lp-opening-exit-play .lp-o-urgency-box.is-visible,
+            .lp-opening-exit-play .lp-o-intro-box.is-visible,
             .lp-opening-exit-play .lp-opening {
                 animation: none !important;
             }
@@ -2344,7 +2377,7 @@
 
 <body>
 
-<!-- オープニング（スクロール連動・毎回表示） -->
+<!-- オープニング（1枚・自動再生 約5.5秒） -->
 <div id="lp-opening-scroll" class="lp-opening-scroll">
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介">
     <div class="lp-opening-bg" aria-hidden="true">
@@ -2352,72 +2385,15 @@
         <div class="lp-opening-vignette"></div>
     </div>
     <div class="lp-opening-curtain" id="lp-o-curtain"></div>
-    <div class="lp-opening-scroll-hint" id="lp-o-scroll-hint">
-        <div class="lp-opening-scroll-track" aria-hidden="true"></div>
-        <span class="lp-opening-scroll-hint-text lp-o-hint-mobile">スクロール</span>
-        <span class="lp-opening-scroll-hint-text lp-o-hint-desktop">スクロール / ホイール</span>
-        <i class="ph-bold ph-caret-double-down" aria-hidden="true"></i>
-    </div>
     <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
     <div class="lp-opening-stage">
-        <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
-            <div class="lp-o-intro-box lp-o-panel" id="lp-o-intro-box">
+        <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
+            <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
                 <span class="lp-o-header-tag">JOYFIT24経堂</span>
                 <p class="lp-o-start-badge is-visible" id="lp-o-start-badge">6/27(土)〜</p>
                 <div class="lp-o-summer-mark" aria-hidden="true"><i class="ph-fill ph-sun"></i></div>
                 <p class="lp-o-label" id="lp-o-label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
                 <p class="lp-o-lead" id="lp-o-lead">7/12(日)まで限定</p>
-                <p class="lp-o-caption" id="lp-o-caption">先着20名様限定</p>
-            </div>
-        </div>
-
-        <div class="lp-opening-phase lp-opening-phase--months" id="lp-o-phase-months">
-            <div class="lp-o-deal-sheet lp-o-panel" id="lp-o-deal-sheet">
-                <div class="lp-o-deal-top" id="lp-o-deal-top">
-                    <div class="lp-o-months-grid" aria-label="6月から11月">
-                        <span class="lp-o-month-chip">6月</span>
-                        <span class="lp-o-month-chip">7月</span>
-                        <span class="lp-o-month-chip">8月</span>
-                        <span class="lp-o-month-chip">9月</span>
-                        <span class="lp-o-month-chip">10月</span>
-                        <span class="lp-o-month-chip">11月</span>
-                    </div>
-                    <p class="lp-o-deal-head">半年間 ずっと<em class="lp-o-deal-o">お得</em></p>
-                </div>
-                <div class="lp-o-price-once" id="lp-o-price-once" aria-live="polite">
-                    <div class="lp-o-price-stack">
-                        <div class="lp-o-price-tier lp-o-price-tier--usual">
-                            <div class="lp-o-row-usual-wrap">
-                                <span class="lp-o-row-usual-num">
-                                    <span class="lp-o-row-usual">9,350</span>
-                                    <span class="lp-o-row-strike" aria-hidden="true"></span>
-                                </span>
-                                <span class="lp-o-row-yen">円</span>
-                            </div>
-                        </div>
-                        <div class="lp-o-price-arrow" aria-hidden="true">
-                            <span class="lp-o-price-arrow-icon"></span>
-                        </div>
-                        <div class="lp-o-price-tier lp-o-price-tier--deal">
-                            <span class="lp-o-row-deal-wrap">
-                                <span class="lp-o-row-deal">3,960</span>
-                                <span class="lp-o-row-yen">円</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lp-o-savings-footer" id="lp-o-savings">
-                    <span class="lp-o-savings-label">6ヶ月で合計</span>
-                    <p class="lp-o-savings-main">
-                        <span class="lp-o-savings-num">32,340</span><span class="lp-o-savings-yen">円</span><span class="lp-o-savings-badge">お得</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="lp-opening-phase lp-opening-phase--urgency" id="lp-o-phase-urgency">
-            <div class="lp-o-urgency-box lp-o-panel" id="lp-o-urgency-box">
-                <p class="lp-o-urgency-head">夏得キャンペーン！<br>終了まで</p>
                 <div class="lp-o-countdown" aria-live="polite">
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
@@ -2439,15 +2415,12 @@
                         <span class="lp-o-countdown-label">秒</span>
                     </div>
                 </div>
-                <div class="lp-o-urgency-hero">
-                    <span class="lp-o-urgency-hero-label">残り</span>
-                    <span class="lp-o-urgency-hero-num dynamic-remaining-count">--</span>
-                    <span class="lp-o-urgency-hero-unit">名</span>
+                <div class="lp-o-intro-remaining">
+                    <span class="lp-o-intro-remaining-label">残り</span>
+                    <span class="lp-o-intro-remaining-num dynamic-remaining-count">--</span>
+                    <span class="lp-o-intro-remaining-unit">名</span>
                 </div>
-                <p class="lp-o-urgency-disclaimer">
-                    ※残り<span class="dynamic-remaining-count">--</span>名入会次第<br>
-                    限定キャンペーンは終了します
-                </p>
+                <p class="lp-o-intro-note">※残り<span class="dynamic-remaining-count">--</span>名入会次第、限定キャンペーンは終了します</p>
             </div>
         </div>
     </div>
@@ -2464,12 +2437,6 @@
         <p class="banner-period-dates">7/12(日)まで</p>
         <span class="banner-capacity-pill">期間限定</span>
         <span class="banner-capacity-pill">先着20名様</span>
-        <span class="banner-vdivider" aria-hidden="true"></span>
-        <div class="banner-remaining-block">
-            <span class="remaining-label">残<br>り</span>
-            <span class="highlight-num dynamic-remaining-count">--</span>
-            <span class="remaining-unit">名</span>
-        </div>
     </div>
 </div>
 
@@ -2739,45 +2706,26 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ====================================================
-    // オープニング（ホイール/スワイプ連動・PC・スマホ共通）
+    // オープニング（1枚・自動再生 約5.5秒）
     // ====================================================
     (function initOpening() {
+        const OPENING_MS = 5500;
+        const FADE_MS = 650;
+        const CURTAIN_MS = 450;
         const scrollRoot = document.getElementById('lp-opening-scroll');
         const opening = document.getElementById('lp-opening');
         const skipBtn = document.getElementById('lp-opening-skip');
         const progressBar = document.getElementById('lp-o-progress');
         const curtain = document.getElementById('lp-o-curtain');
-        const scrollHint = document.getElementById('lp-o-scroll-hint');
-        const phaseIntro = document.getElementById('lp-o-phase-intro');
-        const phaseMonths = document.getElementById('lp-o-phase-months');
-        const phaseUrgency = document.getElementById('lp-o-phase-urgency');
         const introBox = document.getElementById('lp-o-intro-box');
-        const urgencyBox = document.getElementById('lp-o-urgency-box');
-        const dealTop = document.getElementById('lp-o-deal-top');
-        const priceOnce = document.getElementById('lp-o-price-once');
-        const savingsCard = document.getElementById('lp-o-savings');
         if (!scrollRoot || !opening) return;
 
-        const P = {
-            curtainEnd: 0.06,
-            hintHide: 0.22,
-            introStart: 0.04,
-            introEnd: 0.24,
-            monthsStart: 0.24,
-            monthsEnd: 0.68,
-            urgencyStart: 0.70,
-            urgencyEnd: 0.82,
-            exitStart: 0.84,
-            complete: 1.0
-        };
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const WHEEL_FACTOR = prefersReduced ? 0.00055 : 0.00019;
-        const TOUCH_FACTOR = prefersReduced ? 0.0011 : 0.00058;
-        const KEY_STEP = prefersReduced ? 0.028 : 0.0095;
+        const displayMs = prefersReduced ? 3200 : OPENING_MS;
         let finished = false;
         let exiting = false;
-        let virtualProgress = 0;
-        let touchLastY = 0;
+        let startTime = null;
+        let rafId = null;
         let countdownTimer = null;
         const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-12T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
@@ -2812,73 +2760,11 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownTimer = null;
         }
 
-        function setPhaseActive(active) {
-            [phaseIntro, phaseMonths, phaseUrgency].forEach(function(el) {
-                if (!el) return;
-                el.classList.remove('is-active');
-            });
-            if (active) active.classList.add('is-active');
-        }
-
-        function updateDealPhase(topProgress, priceProgress) {
-            dealTop?.classList.toggle('is-visible', topProgress >= 0.08);
-            priceOnce?.classList.toggle('is-visible', priceProgress >= 0.06);
-
-            if (!priceOnce) return;
-            const usualWrap = priceOnce.querySelector('.lp-o-row-usual-wrap');
-            const strikeEl = priceOnce.querySelector('.lp-o-row-strike');
-            const arrowEl = priceOnce.querySelector('.lp-o-price-arrow');
-            const dealWrap = priceOnce.querySelector('.lp-o-row-deal-wrap');
-            const STRIKE_AT = 0.22;
-            const SHIFT_AT = 0.50;
-            const DEAL_AT = 0.74;
-
-            const strikeOn = priceProgress >= STRIKE_AT;
-            const shiftOn = priceProgress >= SHIFT_AT;
-            const dealOn = priceProgress >= DEAL_AT;
-            strikeEl?.classList.toggle('is-on', strikeOn);
-            usualWrap?.classList.toggle('is-struck', strikeOn);
-            arrowEl?.classList.toggle('is-visible', shiftOn);
-            dealWrap?.classList.toggle('is-visible', dealOn);
-        }
-
-        function resetIntroState() {
-            introBox?.classList.remove('is-visible');
-        }
-
-        function resetUrgencyState() {
-            urgencyBox?.classList.remove('is-visible');
-        }
-
-        function resetMonthsState() {
-            savingsCard?.classList.remove('is-visible');
-            updateDealPhase(0, 0);
-        }
-
-        function unbindOpening() {
-            scrollRoot.removeEventListener('wheel', onWheel);
-            scrollRoot.removeEventListener('touchstart', onTouchStart);
-            scrollRoot.removeEventListener('touchmove', onTouchMove);
-            window.removeEventListener('keydown', onKeyDown);
-        }
-
-        function resetExitVisuals() {
-            if (opening) {
-                opening.style.clipPath = '';
-                opening.style.opacity = '1';
-            }
-            document.body.classList.remove('lp-opening-reveal');
-            if (urgencyBox) {
-                urgencyBox.style.transform = '';
-                urgencyBox.style.opacity = '';
-            }
-        }
-
         function doFinishOpeningNow() {
             if (finished) return;
             finished = true;
             stopCountdown();
-            unbindOpening();
+            if (rafId) cancelAnimationFrame(rafId);
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
             document.body.classList.remove('lp-opening-reveal');
@@ -2890,153 +2776,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function finishOpening() {
             if (finished || exiting) return;
-            if (prefersReduced) {
-                document.body.classList.add('lp-opening-reveal');
-                doFinishOpeningNow();
-                return;
-            }
             exiting = true;
             stopCountdown();
-            unbindOpening();
-            setPhaseActive(phaseUrgency);
-            urgencyBox?.classList.add('is-visible');
+            if (rafId) cancelAnimationFrame(rafId);
             scrollRoot.classList.add('lp-opening-exit-play');
             document.body.classList.add('lp-opening-reveal');
-            setTimeout(doFinishOpeningNow, 720);
+            setTimeout(doFinishOpeningNow, prefersReduced ? 0 : FADE_MS);
         }
 
-        function setProgress(next) {
-            if (finished || exiting) return;
-            virtualProgress = Math.min(1, Math.max(0, next));
-            renderOpening(virtualProgress);
-            if (virtualProgress >= P.complete) {
-                document.body.classList.add('lp-opening-reveal');
-                setTimeout(doFinishOpeningNow, prefersReduced ? 0 : 180);
-            }
-        }
-
-        function renderOpening(p) {
-            if (progressBar) progressBar.style.width = (p * 100) + '%';
-
+        function tick(now) {
+            if (finished) return;
+            if (!startTime) startTime = now;
+            const elapsed = now - startTime;
+            const progress = Math.min(1, elapsed / displayMs);
+            if (progressBar) progressBar.style.width = (progress * 100) + '%';
             if (curtain) {
-                const co = p <= 0.02 ? 1 : p >= P.curtainEnd ? 0 : 1 - (p - 0.02) / (P.curtainEnd - 0.02);
-                curtain.style.opacity = String(Math.max(0, Math.min(1, co)));
+                const co = elapsed >= CURTAIN_MS ? 0 : 1 - elapsed / CURTAIN_MS;
+                curtain.style.opacity = String(Math.max(0, co));
             }
-            if (scrollHint) {
-                scrollHint.style.opacity = p < P.hintHide ? '1' : '0';
+            if (elapsed >= displayMs) {
+                finishOpening();
+                return;
             }
-
-            if (p < P.introStart) {
-                setPhaseActive(null);
-                resetIntroState();
-                resetMonthsState();
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
-            } else if (p < P.introEnd) {
-                setPhaseActive(phaseIntro);
-                resetMonthsState();
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
-
-                const ip = (p - P.introStart) / (P.introEnd - P.introStart);
-                introBox?.classList.toggle('is-visible', ip >= 0.02);
-            } else if (p < P.urgencyStart) {
-                setPhaseActive(phaseMonths);
-                introBox?.classList.add('is-visible');
-                resetUrgencyState();
-                resetExitVisuals();
-                stopCountdown();
-
-                const mp = (p - P.monthsStart) / (P.monthsEnd - P.monthsStart);
-                const TOP_END = 0.16;
-                const PRICE_END = 0.70;
-                if (mp < 0.78) {
-                    const topP = Math.min(1, mp / TOP_END);
-                    const priceP = mp <= TOP_END ? 0 : Math.min(1, (mp - TOP_END) / (PRICE_END - TOP_END));
-                    updateDealPhase(topP, priceP);
-                    savingsCard?.classList.remove('is-visible');
-                } else {
-                    updateDealPhase(1, 1);
-                    const sp = (mp - 0.78) / 0.22;
-                    savingsCard?.classList.toggle('is-visible', sp >= 0.18);
-                }
-                opening.style.opacity = '1';
-            } else if (p < P.exitStart) {
-                setPhaseActive(phaseUrgency);
-                resetMonthsState();
-                resetExitVisuals();
-                startCountdown();
-
-                const up = (p - P.urgencyStart) / (P.urgencyEnd - P.urgencyStart);
-                urgencyBox?.classList.toggle('is-visible', up >= 0.12);
-                opening.style.opacity = '1';
-            } else {
-                stopCountdown();
-                setPhaseActive(phaseUrgency);
-                urgencyBox?.classList.add('is-visible');
-
-                const exitP = (p - P.exitStart) / (P.complete - P.exitStart);
-                if (exitP < 0.42) {
-                    const t = exitP / 0.42;
-                    if (urgencyBox) {
-                        urgencyBox.style.transform = 'translateY(' + (-14 * t) + 'px) scale(' + (1 - 0.03 * t) + ')';
-                        urgencyBox.style.opacity = String(Math.max(0, 1 - t * 0.92));
-                    }
-                    opening.style.opacity = '1';
-                    document.body.classList.remove('lp-opening-reveal');
-                } else {
-                    const fadeP = (exitP - 0.42) / 0.58;
-                    if (urgencyBox) {
-                        urgencyBox.style.opacity = '0';
-                        urgencyBox.style.transform = 'translateY(-14px) scale(0.98)';
-                    }
-                    opening.style.opacity = String(Math.max(0, 1 - fadeP));
-                    if (fadeP > 0.1) document.body.classList.add('lp-opening-reveal');
-                }
-            }
-        }
-
-        function onWheel(e) {
-            if (finished) return;
-            e.preventDefault();
-            setProgress(virtualProgress + e.deltaY * WHEEL_FACTOR);
-        }
-
-        function onTouchStart(e) {
-            touchLastY = e.touches[0].clientY;
-        }
-
-        function onTouchMove(e) {
-            if (finished) return;
-            const y = e.touches[0].clientY;
-            const dy = touchLastY - y;
-            touchLastY = y;
-            if (Math.abs(dy) < 1) return;
-            e.preventDefault();
-            setProgress(virtualProgress + dy * TOUCH_FACTOR);
-        }
-
-        function onKeyDown(e) {
-            if (finished) return;
-            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
-                e.preventDefault();
-                setProgress(virtualProgress + KEY_STEP);
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
-                setProgress(virtualProgress - KEY_STEP);
-            }
+            rafId = requestAnimationFrame(tick);
         }
 
         document.documentElement.classList.add('lp-opening-lock');
         document.body.classList.add('lp-opening-active');
-        scrollRoot.addEventListener('wheel', onWheel, { passive: false });
-        scrollRoot.addEventListener('touchstart', onTouchStart, { passive: true });
-        scrollRoot.addEventListener('touchmove', onTouchMove, { passive: false });
-        window.addEventListener('keydown', onKeyDown);
         skipBtn?.addEventListener('click', finishOpening);
-        renderOpening(0);
+        startCountdown();
+        if (curtain) curtain.style.opacity = '1';
+        introBox?.classList.add('is-visible');
+        rafId = requestAnimationFrame(tick);
     })();
 
     
