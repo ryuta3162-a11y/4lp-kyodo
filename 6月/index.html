@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで 6月会費無料</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。6月会費0円・6ヶ月割（税込3,630円）。6・7月オプション0円。7/12(日)まで・先着20名。" />
+    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。6月会費0円・7〜12月3,630円(税込)/月。6・7月オプション0円。7/12(日)まで・先着20名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜6月会費無料" />
@@ -2472,11 +2472,11 @@
                         </div>
                     </div>
 
-                    <!-- 2. 7月〜11月会費 -->
+                    <!-- 2. 7月〜12月会費 -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle number-circle-accent">2</span>
-                            <div class="label">7月〜11月会費<span class="label-usual-ref">通常月額<span class="price-usual-strike">9,350</span>円(税込)</span></div>
+                            <div class="label">7月〜12月会費<span class="label-usual-ref">通常月額<span class="price-usual-strike">9,350</span>円(税込)</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -2518,9 +2518,9 @@
                     </div>
                 </div>
 
-                 <!-- 12月以降 -->
+                 <!-- 2027年1月以降 -->
                 <div class="monthly-fee">
-                    <div class="monthly-fee-label">12月以降の通常月額</div>
+                    <div class="monthly-fee-label">2027年1月以降の通常月額</div>
                     <div class="monthly-fee-row">
                         <span class="price-large font-impact">9,350<span class="unit-large">円(税込)</span></span>
                         <span class="monthly-fee-plus">+</span>
@@ -2856,9 +2856,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (year === 2026 && month === 6) {
                 monthFee = 0;
-            } else if (year === 2026 && month === 7 && date <= 12) {
-                monthFee = campaignMonthly;
-            } else if (year === 2026 && month >= 7 && month <= 11) {
+            } else if (year === 2026 && month >= 7 && month <= 12) {
                 monthFee = campaignMonthly;
             } else if (year === 2026 && month < 6) {
                 monthFee = 0;
