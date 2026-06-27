@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 6月限定キャンペーン｜7/12(日)まで 6月会費無料</title>
+    <title>JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで オプション2ヶ月無料</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン。6月会費0円・7〜11月6ヶ月割（税込3,960円）。6・7月オプション0円。7/12(日)まで。" />
+    <meta name="description" content="JOYFIT24経堂 6月限定キャンペーン。6月日割・7〜11月6ヶ月割（税込3,960円）。6・7月オプション0円。6/30(火)まで。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 6月限定キャンペーン｜6月会費無料" />
-    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6月会費0円・6・7月オプション0円。7/12(日)まで。" />
+    <meta property="og:title" content="JOYFIT24経堂 6月限定キャンペーン｜オプション2ヶ月無料" />
+    <meta property="og:description" content="JOYFIT24経堂の6月限定キャンペーン。6・7月のオプションが0円。6月日割・7〜11月6ヶ月割。6/30(火)まで。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 6月限定キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 6月限定キャンペーン｜6月会費無料" />
-    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6月会費0円・6・7月オプション0円。7/12(日)まで。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 6月限定キャンペーン｜オプション2ヶ月無料" />
+    <meta name="twitter:description" content="JOYFIT24経堂の6月限定キャンペーン。6・7月のオプションが0円。6月日割・7〜11月6ヶ月割。6/30(火)まで。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2329,9 +2329,9 @@
         <div class="lp-opening-phase lp-opening-phase--intro" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-panel" id="lp-o-intro-box">
                 <span class="lp-o-header-tag">JOYFIT24経堂</span>
-                <p class="lp-o-start-badge is-visible" id="lp-o-start-badge">6/27(土)〜</p>
+                <p class="lp-o-start-badge is-visible" id="lp-o-start-badge">6/25(水)スタート</p>
                 <p class="lp-o-label" id="lp-o-label">6月限定<br>キャンペーン</p>
-                <p class="lp-o-lead" id="lp-o-lead">7/12(日)まで限定</p>
+                <p class="lp-o-lead" id="lp-o-lead">6/30(火)まで限定</p>
                 <p class="lp-o-caption" id="lp-o-caption">先着10名様限定</p>
             </div>
         </div>
@@ -2426,7 +2426,7 @@
 <!-- トップ固定バナー -->
 <div class="gold-metallic-banner">
     <div class="banner-inner">
-        <p class="banner-period-dates">7/12(日)まで</p>
+        <p class="banner-period-dates">6/30(火)まで</p>
         <span class="banner-capacity-pill">期間限定</span>
         <span class="banner-capacity-pill">先着10名様</span>
         <span class="banner-vdivider" aria-hidden="true"></span>
@@ -2469,15 +2469,15 @@
                         </div>
                     </div>
 
-                    <!-- 2. 6月会費 -->
+                    <!-- 2. 6月会費（日割） -->
                     <div class="price-item">
                         <div class="label-group">
                             <span class="number-circle">2</span>
-                            <div class="label">6月会費<span class="label-sub">6月分無料</span></div>
+                            <div class="label">6月会費<span class="label-sub">日割り料金だから、無駄なく安心</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
-                            <span class="price-value zero-yen font-impact featured-price text-value-accent" id="june-prorate-display">0<span class="unit">円</span></span>
+                            <span class="price-value font-impact featured-price text-value-accent" id="june-prorate-display">3,960<span class="unit">円(税込)</span></span>
                         </div>
                     </div>
 
@@ -2698,10 +2698,110 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // キャンペーン設定（締切・カウントダウン用）
-    window.CAMPAIGN_CONFIG = {
-        endAt: new Date('2026-07-12T23:59:59+09:00')
-    };
+    // ====================================================
+    // キャンペーン自動切替（6/25 0:00 JST で phaseB に切替）
+    // ====================================================
+    (function initCampaignPhase() {
+        const SWITCH_AT = new Date('2026-06-25T00:00:00+09:00');
+        const CAMPAIGN_END = new Date('2026-06-30T23:59:59+09:00');
+        /** 6/25版を本番表示（許可済み・先着10名）。旧版確認は ?phase=A */
+        const FORCE_PHASE = 'B';
+        const PHASE = {
+            A: {
+                title: 'JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで 期間限定',
+                description: 'JOYFIT24経堂 6月限定キャンペーン期間限定。6月日割・7〜11月6ヶ月割（税込3,960円）。6/30(火)まで。',
+                ogTitle: 'JOYFIT24経堂 6月限定キャンペーン｜期間限定',
+                ogDescription: 'JOYFIT24経堂の6月限定キャンペーン。6月日割・7〜11月が6ヶ月割（税込3,960円）。6/30(火)まで。',
+                optionLabel: '6月オプション',
+                optionLabelSub: '無料オプション8つが自動契約',
+                optionHighlight: '6月分が0円',
+                optionCancelDeadline: '6月末',
+                noticeDeadline: '6月末迄',
+                showStartBadge: false
+            },
+            B: {
+                title: 'JOYFIT24経堂 6月限定キャンペーン｜6/30(火)まで オプション2ヶ月無料',
+                description: 'JOYFIT24経堂 6月限定キャンペーン。6月日割・7〜11月6ヶ月割（税込3,960円）。6・7月オプション0円。6/30(火)まで。',
+                ogTitle: 'JOYFIT24経堂 6月限定キャンペーン｜オプション2ヶ月無料',
+                ogDescription: 'JOYFIT24経堂の6月限定キャンペーン。6・7月のオプションが0円。6月日割・7〜11月6ヶ月割。6/30(火)まで。',
+                optionLabel: '6・7月オプション',
+                optionLabelSub: '6・7月分無料・無料オプション8つが自動契約',
+                optionHighlight: '6月・7月分が0円',
+                optionCancelDeadline: '7月末',
+                noticeDeadline: '7月末迄',
+                showStartBadge: true
+            }
+        };
+        let appliedKey = null;
+
+        function getPreviewPhase() {
+            const params = new URLSearchParams(window.location.search);
+            const q = (params.get('phase') || params.get('campaign') || '').toUpperCase();
+            if (q === 'B' || q === '2' || params.get('preview') === '6-25') return 'B';
+            if (q === 'A' || q === '1') return 'A';
+            return null;
+        }
+
+        function getPhaseKey() {
+            const preview = getPreviewPhase();
+            if (preview) return preview;
+            if (FORCE_PHASE) return FORCE_PHASE;
+            return Date.now() >= SWITCH_AT.getTime() ? 'B' : 'A';
+        }
+
+        function showPreviewNotice(key) {
+            if (!getPreviewPhase()) return;
+            let el = document.getElementById('campaign-preview-notice');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'campaign-preview-notice';
+                el.setAttribute('role', 'status');
+                el.style.cssText = 'position:fixed;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:99999;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#1a1a1a;background:var(--gold-gradient,#e8c547);border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,0.2);pointer-events:none;font-family:"Noto Sans JP",sans-serif;';
+                document.body.appendChild(el);
+            }
+            el.textContent = key === 'B'
+                ? 'プレビュー: 6/25〜版（オプション2ヶ月無料）'
+                : 'プレビュー: 〜6/24版（オプション6月無料）';
+        }
+
+        function applyCampaignPhase(key) {
+            if (appliedKey === key) return;
+            appliedKey = key;
+            const p = PHASE[key];
+            document.title = p.title;
+            document.querySelector('meta[name="description"]')?.setAttribute('content', p.description);
+            document.querySelector('meta[property="og:title"]')?.setAttribute('content', p.ogTitle);
+            document.querySelector('meta[property="og:description"]')?.setAttribute('content', p.ogDescription);
+            document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', p.ogTitle);
+            document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', p.ogDescription);
+            document.getElementById('campaign-option-label') && (document.getElementById('campaign-option-label').textContent = p.optionLabel);
+            document.getElementById('campaign-option-label-sub') && (document.getElementById('campaign-option-label-sub').textContent = p.optionLabelSub);
+            document.getElementById('campaign-option-highlight') && (document.getElementById('campaign-option-highlight').textContent = p.optionHighlight);
+            document.getElementById('campaign-option-cancel-deadline') && (document.getElementById('campaign-option-cancel-deadline').textContent = p.optionCancelDeadline);
+            document.getElementById('campaign-notice-deadline') && (document.getElementById('campaign-notice-deadline').textContent = p.noticeDeadline);
+            const startBadge = document.getElementById('lp-o-start-badge');
+            if (startBadge) {
+                startBadge.hidden = !p.showStartBadge;
+                startBadge.classList.toggle('is-visible', p.showStartBadge);
+            }
+            document.documentElement.dataset.campaignPhase = key;
+            showPreviewNotice(key);
+        }
+
+        function tickPhase() {
+            applyCampaignPhase(getPhaseKey());
+        }
+
+        window.CAMPAIGN_CONFIG = {
+            switchAt: SWITCH_AT,
+            endAt: CAMPAIGN_END,
+            getPhaseKey: getPhaseKey,
+            apply: applyCampaignPhase
+        };
+
+        tickPhase();
+        setInterval(tickPhase, 30000);
+    })();
 
     // ====================================================
     // オープニング（ホイール/スワイプ連動・PC・スマホ共通）
@@ -2744,7 +2844,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let virtualProgress = 0;
         let touchLastY = 0;
         let countdownTimer = null;
-        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-12T23:59:59+09:00');
+        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-06-30T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
         const cdHoursEl = document.getElementById('lp-o-cd-hours');
         const cdMinsEl = document.getElementById('lp-o-cd-mins');
@@ -3021,10 +3121,15 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ====================================================
-    // 6月会費無料・入会時金額の動的表示
+    // 6月日割（税込3,960円/月・カレンダー日数で按分）
     // ====================================================
-    function calcJuneProrateFee() {
-        return 0;
+    function calcJuneProrateFee(joinDay) {
+        const year = 2026;
+        const month = 6;
+        const campaignMonthly = 3960;
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const remainingDays = daysInMonth - joinDay + 1;
+        return Math.round((campaignMonthly / daysInMonth) * remainingDays);
     }
 
     function updateProratedFee() {
@@ -3044,26 +3149,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const initial = 5500;
             const campaignMonthly = 3960;
             const regularMonthly = 9350;
-            const juneFee = 0;
             let monthFee = 0;
+            let juneFee = calcJuneProrateFee(1);
 
             if (year === 2026 && month === 6) {
-                monthFee = 0;
-            } else if (year === 2026 && month === 7 && date <= 12) {
-                monthFee = campaignMonthly;
+                juneFee = calcJuneProrateFee(date);
+                monthFee = juneFee;
+            } else if (year === 2026 && month < 6) {
+                juneFee = calcJuneProrateFee(1);
+                monthFee = juneFee;
             } else if (year === 2026 && month >= 7 && month <= 11) {
                 monthFee = campaignMonthly;
-            } else if (year === 2026 && month < 6) {
-                monthFee = 0;
+                juneFee = calcJuneProrateFee(1);
             } else {
                 monthFee = regularMonthly;
+                juneFee = calcJuneProrateFee(1);
             }
 
             const total = initial + monthFee;
             totalPriceEl.textContent = total.toLocaleString();
 
             if (juneProrateEl) {
-                juneProrateEl.innerHTML = '0<span class="unit">円</span>';
+                juneProrateEl.innerHTML = `${juneFee.toLocaleString()}<span class="unit">円(税込)</span>`;
             }
         }
     }
@@ -3074,9 +3181,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 残り人数の自動カウントダウン
     // ====================================================
     function updateRemainingCount() {
-        // 6/27以前：10名固定 → 6/27〜7/12：10名から1名（7/12が1名）
-        const decreaseStart = new Date('2026-06-27T00:00:00+09:00');
-        const decreaseEnd = new Date('2026-07-12T00:00:00+09:00');
+        // 6/24以前：10名固定 → 6/24〜6/30：10名から1名へ（6/30が1名）
+        const decreaseStart = new Date('2026-06-24T00:00:00+09:00');
+        const decreaseEnd = new Date('2026-06-30T00:00:00+09:00');
         const now = new Date();
         const startRemaining = 10;
         const minRemaining = 1;
