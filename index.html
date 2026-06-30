@@ -647,6 +647,14 @@
             color: #fff !important;
             font-weight: 900;
         }
+        .mid-list-total-block .total-prorate-note {
+            margin: 0.55rem 0 0;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.88);
+            letter-spacing: 0.02em;
+            line-height: 1.45;
+        }
         .monthly-fee {
             padding: 1.5rem 1.25rem;
             text-align: center;
@@ -2617,6 +2625,7 @@
                             <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
                             <span class="unit-large">円(税込)</span>
                         </div>
+                        <p class="total-prorate-note">※7月会費は日割り料金です</p>
                     </div>
                 </div>
 
@@ -2931,8 +2940,17 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ====================================================
-    // 入会時金額の動的表示（7/1〜表示）
+    // 入会時金額の動的表示（7/1〜表示・7月は日割）
     // ====================================================
+    function calcJulyProrateFee(joinDay) {
+        const year = 2026;
+        const month = 7;
+        const campaignMonthly = 3630;
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const remainingDays = daysInMonth - joinDay + 1;
+        return Math.round((campaignMonthly / daysInMonth) * remainingDays);
+    }
+
     function updateProratedFee() {
         const today = new Date();
         const jst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
@@ -2951,7 +2969,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const regularMonthly = 9350;
             let monthFee = 0;
 
-            if (year === 2026 && month >= 7 && month <= 12) {
+            if (year === 2026 && month === 7) {
+                monthFee = calcJulyProrateFee(date);
+            } else if (year === 2026 && month >= 8 && month <= 12) {
                 monthFee = campaignMonthly;
             } else {
                 monthFee = regularMonthly;
