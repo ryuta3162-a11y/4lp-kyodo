@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>インスタストーリー 10秒｜夏得キャンペーン</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #C21632;
+            --brand-deep: #9a1028;
+            --gold: #F8E71C;
+            --w: 1080px;
+            --h: 1920px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #111;
+            min-height: 100vh;
+            padding: 24px 16px 48px;
+            color: #aaa;
+        }
+        .toolbar {
+            max-width: 520px;
+            margin: 0 auto 20px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            line-height: 1.65;
+        }
+        .toolbar h1 { color: #fff; font-size: 0.95rem; margin-bottom: 8px; }
+        .toolbar code { color: #e8c547; }
+        .toolbar button {
+            margin-top: 10px;
+            font-family: inherit;
+            font-weight: 800;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: var(--brand);
+            color: #fff;
+            cursor: pointer;
+        }
+        .preview-wrap {
+            display: flex;
+            justify-content: center;
+            transform-origin: top center;
+        }
+        @media (max-width: 1120px) {
+            .preview-wrap { transform: scale(0.45); margin-bottom: -1000px; }
+        }
+        .story {
+            width: var(--w);
+            height: var(--h);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #d41838 0%, var(--brand) 45%, var(--brand-deep) 100%);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .story::before,
+        .story::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(248,231,28,0.35) 0%, transparent 70%);
+            animation: orb 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .story::before { width: 500px; height: 500px; top: -80px; left: -120px; }
+        .story::after { width: 420px; height: 420px; bottom: 200px; right: -100px; animation-delay: -3s; }
+        @keyframes orb {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            50% { transform: translate(30px, 20px) scale(1.08); opacity: 0.85; }
+        }
+        .shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
+            animation: shine 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-120%); }
+            100% { transform: translateX(120%); }
+        }
+        .frame {
+            position: absolute;
+            inset: 48px;
+            border: 1px solid rgba(255,255,255,0.25);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .frame::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(212,175,55,0.35);
+        }
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 48px;
+            color: #fff;
+            opacity: 0;
+            z-index: 1;
+        }
+        .story.play .s1 { animation: s1 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .story.play .s2 { animation: s2 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .story.play .s3 { animation: s3 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .story.play .s4 { animation: s4 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .story.play .s5 { animation: s5 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+        @keyframes s1 {
+            0%, 2% { opacity: 0; transform: scale(0.88) translateY(40px); filter: blur(8px); }
+            8%, 20% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            24%, 100% { opacity: 0; transform: scale(1.04) translateY(-30px); filter: blur(6px); }
+        }
+        @keyframes s2 {
+            0%, 20% { opacity: 0; transform: scale(0.9) translateY(50px); filter: blur(8px); }
+            26%, 46% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            50%, 100% { opacity: 0; transform: scale(1.05) translateY(-30px); filter: blur(6px); }
+        }
+        @keyframes s3 {
+            0%, 44% { opacity: 0; transform: scale(0.9) translateY(50px); filter: blur(8px); }
+            50%, 66% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            70%, 100% { opacity: 0; transform: scale(1.05) translateY(-30px); filter: blur(6px); }
+        }
+        @keyframes s4 {
+            0%, 64% { opacity: 0; transform: scale(0.9) translateY(50px); filter: blur(8px); }
+            70%, 82% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            86%, 100% { opacity: 0; transform: scale(1.05) translateY(-30px); filter: blur(6px); }
+        }
+        @keyframes s5 {
+            0%, 82% { opacity: 0; transform: scale(0.88) translateY(40px); filter: blur(8px); }
+            88%, 100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+
+        .story.play .s2 .price { animation: pricePulse 10s ease-in-out infinite; }
+        @keyframes pricePulse {
+            0%, 24%, 50%, 100% { transform: scale(1); }
+            35% { transform: scale(1.04); }
+        }
+
+        .t1 { font-size: 108px; font-weight: 900; line-height: 1.2; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .t1-gold { font-size: 118px; color: var(--gold); margin-top: 12px; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .catch { font-size: 82px; font-weight: 900; color: var(--gold); margin-bottom: 32px; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .price { font-size: 300px; font-weight: 900; line-height: 1; text-shadow: 0 8px 24px rgba(0,0,0,0.35); display: inline-block; }
+        .price-sub { font-size: 68px; font-weight: 900; margin-top: 20px; text-shadow: 0 3px 10px rgba(0,0,0,0.35); }
+        .mid { font-size: 100px; font-weight: 900; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .zero { font-size: 280px; font-weight: 900; color: var(--gold); line-height: 1; text-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+        .small { font-size: 58px; font-weight: 900; margin-top: 24px; line-height: 1.35; text-shadow: 0 3px 10px rgba(0,0,0,0.35); }
+        .cta { font-size: 82px; font-weight: 900; line-height: 1.35; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .cta-sub { font-size: 72px; font-weight: 900; color: var(--gold); margin-top: 20px; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .store-badge {
+            margin-top: 48px;
+            padding: 22px 48px;
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--brand);
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <h1>インスタストーリー（10秒・1080×1920）</h1>
+    <p>
+        投稿用MP4は <code>python generate.py</code> → <code>joyfit-story-10s.mp4</code>
+    </p>
+    <button type="button" id="btn-replay">もう一度再生</button>
+</div>
+
+<div class="preview-wrap">
+    <div class="story play" id="story">
+        <div class="shine" aria-hidden="true"></div>
+        <div class="frame" aria-hidden="true"></div>
+        <div class="scene s1">
+            <p class="t1">まだ間に合う！</p>
+            <p class="t1-gold">夏得キャンペーン！</p>
+        </div>
+        <div class="scene s2">
+            <p class="catch">半年間ずーっとお得</p>
+            <p class="price">3,630</p>
+            <p class="price-sub">円(税込)/月</p>
+            <p class="price-sub">7〜12月</p>
+        </div>
+        <div class="scene s3">
+            <p class="mid">7月オプション</p>
+            <p class="zero">0円</p>
+            <p class="small">無料オプション8つ<br>自動契約</p>
+        </div>
+        <div class="scene s4">
+            <p class="mid">7/12(日)まで限定</p>
+            <p class="catch" style="margin-top:40px;margin-bottom:0">先着20名様</p>
+        </div>
+        <div class="scene s5">
+            <p class="cta">詳細はインスタ</p>
+            <p class="cta-sub">プロフィールリンクから</p>
+            <p class="store-badge">JOYFIT24 経堂</p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('btn-replay').addEventListener('click', function () {
+    const el = document.getElementById('story');
+    el.classList.remove('play');
+    void el.offsetWidth;
+    el.classList.add('play');
+});
+</script>
+</body>
+</html>

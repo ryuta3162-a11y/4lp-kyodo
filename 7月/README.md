@@ -22,6 +22,10 @@
 
 **ブラウザで開く:** [`archive/index.html`](./archive/index.html)
 
+## インスタストーリー動画（10秒）
+
+[`insta-story/joyfit-story-10s.mp4`](./insta-story/joyfit-story-10s.mp4) — 再生成は `insta-story/generate.py`
+
 ## キャンペーン変更時の手順
 
 1. **LP** ルート `index.html` を更新
