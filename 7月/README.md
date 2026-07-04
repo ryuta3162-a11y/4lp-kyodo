@@ -26,6 +26,10 @@
 
 [`insta-story/joyfit-story-10s.mp4`](./insta-story/joyfit-story-10s.mp4) — 再生成は `insta-story/generate.py`
 
+## 入口サイネージ動画（30秒）
+
+[`signage/joyfit-signage-30s.mp4`](./signage/joyfit-signage-30s.mp4) — 左傾け液晶用・再生成は `signage/generate.py`
+
 ## キャンペーン変更時の手順
 
 1. **LP** ルート `index.html` を更新
