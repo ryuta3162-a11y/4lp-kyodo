@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。7〜12月3,630円(税込)/月。7月オプション0円。7/12(日)まで・先着20名。" />
+    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。7〜12月3,630円(税込)/月。7月オプション0円。7/12(日)まで・先着30名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで" />
-    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着20名。" />
+    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着30名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで" />
-    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着20名。" />
+    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着30名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2838,37 +2838,36 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ====================================================
-    // 残り人数（7/1〜7/12で20→1名・オープニング中は早めに減算演出）
+    // 残り人数（先着30名枠・7/1〜7/12は毎日1名減：10→…→6→…→1）
     // ====================================================
-    function getCalendarRemaining() {
-        const decreaseStart = new Date('2026-07-01T00:00:00+09:00');
-        const decreaseEnd = new Date('2026-07-12T00:00:00+09:00');
-        const now = new Date();
-        const startRemaining = 20;
-        const minRemaining = 1;
-
-        if (now.getTime() < decreaseStart.getTime()) {
-            return startRemaining;
-        }
-        const totalMs = decreaseEnd.getTime() - decreaseStart.getTime();
-        const elapsedMs = Math.min(Math.max(0, now.getTime() - decreaseStart.getTime()), totalMs);
-        const progress = totalMs > 0 ? Math.min(1, (elapsedMs / totalMs) * 1.45) : 1;
-        let remaining = Math.round(startRemaining - progress * (startRemaining - minRemaining));
-        return Math.max(minRemaining, remaining);
+    function getJSTNow() {
+        return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
     }
 
-    function setRemainingCountDisplay(remaining, root) {
-        const scope = root || document;
-        scope.querySelectorAll('.dynamic-remaining-count').forEach(el => {
-            el.textContent = remaining;
-        });
+    function getCalendarRemaining() {
+        const TOTAL_SLOTS = 30;
+        const MIN_REMAINING = 1;
+        const jst = getJSTNow();
+        const year = jst.getFullYear();
+        const month = jst.getMonth() + 1;
+        const date = jst.getDate();
+
+        if (year < 2026 || (year === 2026 && month < 7)) {
+            return TOTAL_SLOTS;
+        }
+        if (year > 2026 || month > 7 || date > 12) {
+            return MIN_REMAINING;
+        }
+        // 先着30名枠 → 7/1=30 … 7/4=12 → 7/5=6 … 7/10=1（以降1名）
+        if (date <= 4) {
+            return 36 - date * 6;
+        }
+        return Math.max(MIN_REMAINING, 11 - date);
     }
 
     function updateRemainingCount() {
         const remaining = getCalendarRemaining();
-        const openingRoot = document.getElementById('lp-opening-scroll');
         document.querySelectorAll('.dynamic-remaining-count').forEach(el => {
-            if (openingRoot && openingRoot.contains(el)) return;
             el.textContent = remaining;
         });
     }
@@ -2880,7 +2879,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const OPENING_MS = 2750;
         const FADE_MS = 325;
         const CURTAIN_MS = 225;
-        const OPENING_REMAINING_DROP = 2;
         const scrollRoot = document.getElementById('lp-opening-scroll');
         const opening = document.getElementById('lp-opening');
         const skipBtn = document.getElementById('lp-opening-skip');
@@ -2896,8 +2894,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let startTime = null;
         let rafId = null;
         let countdownTimer = null;
-        let remainingTicker = null;
-        const trueRemaining = getCalendarRemaining();
         const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-12T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
         const cdHoursEl = document.getElementById('lp-o-cd-hours');
@@ -2931,39 +2927,10 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownTimer = null;
         }
 
-        function stopRemainingTicker() {
-            if (!remainingTicker) return;
-            clearInterval(remainingTicker);
-            remainingTicker = null;
-        }
-
-        function startOpeningRemainingTicker() {
-            if (prefersReduced) {
-                setRemainingCountDisplay(trueRemaining, scrollRoot);
-                return;
-            }
-            const openingStart = Math.min(20, trueRemaining + OPENING_REMAINING_DROP);
-            let current = openingStart;
-            setRemainingCountDisplay(current, scrollRoot);
-            const steps = openingStart - trueRemaining;
-            if (steps <= 0) return;
-            const interval = Math.max(320, Math.floor(displayMs / (steps + 1)));
-            remainingTicker = setInterval(() => {
-                current -= 1;
-                if (current <= trueRemaining) {
-                    current = trueRemaining;
-                    stopRemainingTicker();
-                }
-                setRemainingCountDisplay(current, scrollRoot);
-            }, interval);
-        }
-
         function doFinishOpeningNow() {
             if (finished) return;
             finished = true;
             stopCountdown();
-            stopRemainingTicker();
-            updateRemainingCount();
             if (rafId) cancelAnimationFrame(rafId);
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
@@ -2978,7 +2945,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (finished || exiting) return;
             exiting = true;
             stopCountdown();
-            stopRemainingTicker();
             if (rafId) cancelAnimationFrame(rafId);
             scrollRoot.classList.add('lp-opening-exit-play');
             document.body.classList.add('lp-opening-reveal');
@@ -3005,8 +2971,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.classList.add('lp-opening-lock');
         document.body.classList.add('lp-opening-active');
         skipBtn?.addEventListener('click', finishOpening);
+        updateRemainingCount();
         startCountdown();
-        startOpeningRemainingTicker();
         if (curtain) curtain.style.opacity = '1';
         introBox?.classList.add('is-visible');
         rafId = requestAnimationFrame(tick);
