@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!-- キャンペーンLP本体: kyodo-lp-deta の index.html をここに貼り付け可（貼り替え後は i18n 用の追記を再適用） -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
@@ -20,8 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 視認性の高い Noto Sans JP に完全統一 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="i18n.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
@@ -2502,6 +2504,23 @@
 
 <body>
 
+<div class="lang-switcher" id="lang-switcher">
+    <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox">
+        <span class="lang-switcher__icon" aria-hidden="true">🌐</span>
+        <span class="lang-switcher__label">Language</span>
+        <span class="lang-switcher__sep" aria-hidden="true">|</span>
+        <span class="lang-switcher__current" id="lang-current">日本語</span>
+        <span class="lang-switcher__caret" aria-hidden="true">▼</span>
+    </button>
+    <div class="lang-switcher__menu" id="lang-menu" role="listbox" aria-label="Language">
+        <button type="button" class="lang-switcher__item is-active" data-lang="ja" role="option">日本語</button>
+        <button type="button" class="lang-switcher__item" data-lang="en" role="option">English</button>
+        <button type="button" class="lang-switcher__item" data-lang="zh-CN" role="option">简体中文</button>
+        <button type="button" class="lang-switcher__item" data-lang="zh-TW" role="option">繁體中文</button>
+        <button type="button" class="lang-switcher__item" data-lang="ko" role="option">한국어</button>
+    </div>
+</div>
+
 <!-- オープニング（1枚・自動再生 約5.5秒） -->
 <div id="lp-opening-scroll" class="lp-opening-scroll">
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介">
@@ -2514,35 +2533,35 @@
     <div class="lp-opening-stage">
         <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
-                <p class="lp-o-label" id="lp-o-label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
-                <p class="lp-o-lead" id="lp-o-lead">7/12(日)まで限定</p>
+                <p class="lp-o-label" id="lp-o-label" data-i18n-html="opening.label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
+                <p class="lp-o-lead" id="lp-o-lead" data-i18n="opening.lead">7/12(日)まで限定</p>
                 <div class="lp-o-countdown" aria-live="polite">
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
-                        <span class="lp-o-countdown-label">日</span>
+                        <span class="lp-o-countdown-label" data-i18n="opening.cdDay">日</span>
                     </div>
                     <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-hours">00</span>
-                        <span class="lp-o-countdown-label">時間</span>
+                        <span class="lp-o-countdown-label" data-i18n="opening.cdHour">時間</span>
                     </div>
                     <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-mins">00</span>
-                        <span class="lp-o-countdown-label">分</span>
+                        <span class="lp-o-countdown-label" data-i18n="opening.cdMin">分</span>
                     </div>
                     <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-secs">00</span>
-                        <span class="lp-o-countdown-label">秒</span>
+                        <span class="lp-o-countdown-label" data-i18n="opening.cdSec">秒</span>
                     </div>
                 </div>
                 <div class="lp-o-intro-remaining">
-                    <span class="lp-o-intro-remaining-label">残り</span>
+                    <span class="lp-o-intro-remaining-label" data-i18n="opening.remaining">残り</span>
                     <span class="lp-o-intro-remaining-num dynamic-remaining-count">--</span>
-                    <span class="lp-o-intro-remaining-unit">名</span>
+                    <span class="lp-o-intro-remaining-unit" data-i18n="opening.remainingUnit">名</span>
                 </div>
-                <p class="lp-o-intro-note">※残り<span class="dynamic-remaining-count">--</span>名入会次第、限定キャンペーンは終了します</p>
+                <p class="lp-o-intro-note" data-i18n-html="opening.note">※残り<span class="dynamic-remaining-count">--</span>名入会次第、限定キャンペーンは終了します</p>
             </div>
         </div>
     </div>
@@ -2562,9 +2581,9 @@
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
             <div class="campaign-header-inner">
-                <h2 class="campaign-title">まだ間に合う！<br><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
+                <h2 class="campaign-title" data-i18n-html="hero.title">まだ間に合う！<br><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
                 <div class="campaign-app-badge">
-                    <span>APP入会最短5分　当日すぐ使える!</span>
+                    <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
                 </div>
             </div>
         </div>
@@ -2577,7 +2596,7 @@
                         <div class="half-year-block">
                             <div class="half-year-head">
                                 <span class="number-circle number-circle-accent">1</span>
-                                <p class="half-year-catch">半年間ずーっと<em>お得</em></p>
+                                <p class="half-year-catch" data-i18n-html="hero.halfYearCatch">半年間ずーっと<em>お得</em></p>
                             </div>
                             <div class="half-year-body">
                                 <div class="half-year-months-col">
@@ -2798,10 +2817,10 @@
 <!-- 固定バナー -->
 <div class="fixed-banner">
     <a href="https://24-kyodo-freetrial.vercel.app/" class="banner-btn trial" target="_blank" rel="noopener noreferrer">
-        <i class="ph-bold ph-calendar-plus" style="font-size: 1.2rem;"></i>無料見学・体験
+        <i class="ph-bold ph-calendar-plus" style="font-size: 1.2rem;"></i><span data-i18n="banner.trial">無料見学・体験</span>
     </a>
     <a href="https://joyfit.jp/kyodo/app_join/" class="banner-btn app" target="_blank" rel="noopener noreferrer">
-        <i class="ph-bold ph-device-mobile" style="font-size: 1.2rem;"></i>APP入会はこちら
+        <i class="ph-bold ph-device-mobile" style="font-size: 1.2rem;"></i><span data-i18n="banner.appJoin">APP入会はこちら</span>
     </a>
 </div>
 
@@ -2962,7 +2981,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalPriceEl = document.getElementById('dynamic-total-price');
 
         if (dateLabelEl && totalPriceEl) {
-            dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時金額`;
+            window.__lastJoinMonth = month;
+            window.__lastJoinDate = date;
+            if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
+                dateLabelEl.innerHTML = JoyfitI18n.t('pricing.joinAmountAt', '(<span class="join-date">{m}/{d}</span>)ご入会時金額')
+                    .replace('{m}', month).replace('{d}', date);
+            } else {
+                dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時金額`;
+            }
 
             const initial = 5500;
             const campaignMonthly = 3630;
@@ -3144,6 +3170,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<script src="locales.bundle.js"></script>
+<script src="i18n.js"></script>
+<script src="campaign-i18n.js"></script>
+<script>JoyfitI18n.init('campaign');</script>
 
 </body>
 </html>
