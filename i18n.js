@@ -22,11 +22,15 @@
   }
 
   function captureDefaults() {
-    document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title]').forEach((el) => {
+    document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt], [data-i18n-aria-label]').forEach((el) => {
       if (el.dataset.i18nPlaceholder != null || el.hasAttribute('data-i18n-placeholder')) {
         defaults.set(el, { type: 'placeholder', value: el.getAttribute('placeholder') || '' });
       } else if (el.dataset.i18nTitle != null || el.hasAttribute('data-i18n-title')) {
         defaults.set(el, { type: 'title', value: el.getAttribute('title') || '' });
+      } else if (el.hasAttribute('data-i18n-alt')) {
+        defaults.set(el, { type: 'alt', value: el.getAttribute('alt') || '' });
+      } else if (el.hasAttribute('data-i18n-aria-label')) {
+        defaults.set(el, { type: 'aria-label', value: el.getAttribute('aria-label') || '' });
       } else if (el.hasAttribute('data-i18n-html')) {
         defaults.set(el, { type: 'html', value: el.innerHTML });
       } else {
@@ -43,6 +47,8 @@
     defaults.forEach((item, el) => {
       if (item.type === 'placeholder') el.setAttribute('placeholder', item.value);
       else if (item.type === 'title') el.setAttribute('title', item.value);
+      else if (item.type === 'alt') el.setAttribute('alt', item.value);
+      else if (item.type === 'aria-label') el.setAttribute('aria-label', item.value);
       else if (item.type === 'html') el.innerHTML = item.value;
       else el.textContent = item.value;
     });
@@ -77,6 +83,16 @@
       if (value != null) el.setAttribute('title', value);
     });
 
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      const value = getPath(catalog, el.getAttribute('data-i18n-alt'));
+      if (value != null) el.setAttribute('alt', value);
+    });
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+      const value = getPath(catalog, el.getAttribute('data-i18n-aria-label'));
+      if (value != null) el.setAttribute('aria-label', value);
+    });
+
     document.querySelectorAll('option[data-i18n]').forEach((el) => {
       const value = getPath(catalog, el.getAttribute('data-i18n'));
       if (value != null) el.textContent = value;
@@ -84,6 +100,11 @@
 
     const title = getPath(catalog, 'meta.title');
     if (title) document.title = title;
+
+    const description = getPath(catalog, 'meta.description');
+    if (description) {
+      document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+    }
   }
 
   function applyDocumentLang() {

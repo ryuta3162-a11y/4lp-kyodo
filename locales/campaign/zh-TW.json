@@ -1,8 +1,10 @@
 {
   "meta": {
-    "title": "JOYFIT24經堂 夏日優惠 | 至7/12（日）"
+    "title": "JOYFIT24經堂 夏日優惠 | 至7/12（日）",
+    "description": "JOYFIT24經堂夏日優惠活動。7〜12月3,630元(含稅)/月。7月選項0元。至7/12(日)，先搶先贏20名。"
   },
   "opening": {
+    "ariaLabel": "活動介紹",
     "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
     "lead": "限至7/12（日）",
     "cdDay": "天",
@@ -19,16 +21,141 @@
     "halfYearCatch": "半年一直<em>超值</em>"
   },
   "pricing": {
+    "monthsList": "7月、8月、9月、10月、11月、12月",
+    "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
+    "perMonthUnit": "元(含稅)/月",
     "optionLabel": "7月選項",
     "optionLabelSub": "8項免費選項自動簽約",
+    "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
+    "yen": "元",
+    "yenTaxIncl": "元(含稅)",
+    "joinAmountLabel": "入會時金額",
+    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額",
+    "prorateNote": "※7月會費按日折算",
+    "afterJan2027": "2027年1月以後的通常月費",
+    "optionFees": "選項費用",
     "optionHighlight": "7月0元",
     "optionNote": "※入會時8項選項將全部自動簽約。<br>不需要的請在<span id=\"campaign-option-cancel-deadline\">7月底前</span>解約。",
     "optionCancelDeadline": "7月底",
-    "joinAmountLabel": "入會時金額",
-    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額"
+    "noticeDeadline": "7月底前"
+  },
+  "conditions": {
+    "badge": "活動注意事項",
+    "item1": "須滿6個月在籍（至2027年1月末）",
+    "item2": "活動期間退會需支付解約金34,320元(含稅)",
+    "item3": "免費選項在入會時將全部自動簽約"
+  },
+  "steps": {
+    "step1Badge": "STEP 1 追加優惠",
+    "step1Lead": "更多優惠請點此",
+    "step1Title": "介紹・學生・他館轉會等",
+    "step1Desc": "符合條件者請事先申請<br><span class=\"lp-note-pill\">※學生優惠自12月起適用</span>",
+    "step1Btn": "申請",
+    "step2Badge": "STEP 2 APP入會",
+    "step2Title": "APP輕鬆入會",
+    "step2Desc": "下載JOYFIT APP入會【最快5分鐘】",
+    "step2Btn": "下載APP"
+  },
+  "options": {
+    "freeTitle": "<span class=\"highlight font-impact\">8</span>項免費選項",
+    "freeIntroPrefix": "活動期間",
+    "freeIntroSuffix": "暢享使用！",
+    "paidTitle": "<span class=\"highlight font-impact\">3</span>項付費選項",
+    "paidNote": "※僅希望簽約者可選",
+    "freeBadge": "免費選項",
+    "paidBadge": "付費選項",
+    "prevFree": "上一項免費選項",
+    "nextFree": "下一項免費選項",
+    "prevPaid": "上一項付費選項",
+    "nextPaid": "下一項付費選項",
+    "noticeTitle": "注意事項",
+    "noticeBody": "選項在入會時<strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">自動簽約</strong><br />不需要的請在<strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">7月底前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後仍可使用至月末",
+    "noticeWarning": "※忘記解約不予退款",
+    "cancelVideo": "點此查看解約方法",
+    "monthlyPrefix": "月費",
+    "taxSuffix": "(含稅)",
+    "items": {
+      "hydrogen": {
+        "name": "氫水 & 蛋白粉",
+        "description": "氫水+蛋白粉<br>超值組合[每天最多6杯]"
+      },
+      "hotStudio": {
+        "name": "熱瑜伽工作室",
+        "description": "世田谷區最大級<br>課程讓你大汗淋漓！"
+      },
+      "supportVip": {
+        "name": "安心支援VIP",
+        "description": "萬一發生時也安心的<br>JOYFIT專屬支援方案"
+      },
+      "onlineLesson": {
+        "name": "線上課程",
+        "description": "在家也能上專業課程！<br>無法來館的日子也安心"
+      },
+      "tanning": {
+        "name": "美黑機",
+        "description": "打造理想膚色！<br>※每天最多20分鐘"
+      },
+      "selfEsthe": {
+        "name": "自助美容",
+        "description": "與美容院相同<br>商用機器無限使用"
+      },
+      "rentalMat": {
+        "name": "租賃瑜伽墊",
+        "description": "不用自帶墊！<br>參加熱瑜伽必備"
+      },
+      "rentalTowel": {
+        "name": "租賃毛巾",
+        "description": "出汗也安心租賃<br>面巾・浴巾"
+      },
+      "bodyScale": {
+        "name": "體成分儀",
+        "description": "測量體脂・肌肉量<br>優化訓練"
+      },
+      "locker": {
+        "name": "租賃置物櫃",
+        "description": "衣物鞋子可存放<br>您的專屬置物櫃"
+      },
+      "pilates": {
+        "name": "皮拉提斯核心床",
+        "description": "使用皮拉提斯器械<br>鍛鍊核心等部位"
+      },
+      "yogaLocker": {
+        "name": "瑜伽墊置物櫃",
+        "description": "存放您的瑜伽墊<br>減輕攜帶負擔"
+      }
+    }
+  },
+  "access": {
+    "logoAlt": "JOYFIT24經堂",
+    "exteriorLabel": "店舖外觀",
+    "exteriorAlt": "店舖外觀",
+    "storeName": "JOYFIT24經堂",
+    "address": "〒156-0052<br>東京都世田谷區經堂5-23-13 2F・3F",
+    "accessLabel": "交通",
+    "accessText": "小田急線「經堂站」步行9分鐘",
+    "hoursLabel": "接待時間",
+    "hoursWeekday": "平日 10:00～21:00",
+    "hoursWeekend": "週末假日 12:00～20:00",
+    "hoursNote": "※每週一・週四全天無工作人員",
+    "mapBtn": "在Google地圖查看路線",
+    "facilities": {
+      "gym": { "alt": "健身房", "title": "2F健身區", "desc": "寬敞空間×豐富器材" },
+      "studio": { "alt": "工作室", "title": "3F工作室", "desc": "熱瑜伽工作室" },
+      "hours24": { "alt": "24小時", "title": "24小時營業", "desc": "※2F健身區" },
+      "shoes": { "alt": "穿鞋", "title": "可穿鞋", "desc": "※不可穿涼鞋・赤腳" },
+      "parking": { "alt": "停車場", "title": "免費停車位6個", "desc": "※另有自行車停放處" },
+      "shower": { "alt": "淋浴", "title": "淋浴間", "desc": "男女分開共19間" },
+      "mist": { "alt": "霧桑拿", "title": "女性霧桑拿", "desc": "約40℃" },
+      "sauna": { "alt": "桑拿", "title": "男性乾桑拿", "desc": "約80℃" }
+    }
   },
   "banner": {
     "trial": "免費參觀・體驗",
     "appJoin": "APP入會點此"
+  },
+  "ui": {
+    "bannerToggle": "顯示或隱藏底部橫幅",
+    "bannerShow": "顯示底部橫幅",
+    "bannerHide": "隱藏底部橫幅"
   }
 }

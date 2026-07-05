@@ -1,8 +1,10 @@
 {
   "meta": {
-    "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 7/12"
+    "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 7/12",
+    "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/12 (Sun), first 20 members."
   },
   "opening": {
+    "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
     "lead": "Limited until Sun 7/12",
     "cdDay": "Days",
@@ -19,16 +21,141 @@
     "halfYearCatch": "Save all <em>half year</em> long"
   },
   "pricing": {
+    "monthsList": "Jul, Aug, Sep, Oct, Nov, Dec",
+    "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
+    "perMonthUnit": "yen (tax incl.)/mo",
     "optionLabel": "July options",
     "optionLabelSub": "8 free options auto-enrolled",
+    "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
+    "yen": "yen",
+    "yenTaxIncl": "yen (tax incl.)",
+    "joinAmountLabel": "Amount due at signup",
+    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
+    "prorateNote": "※July fee is prorated by join date",
+    "afterJan2027": "Regular monthly fee from Jan 2027",
+    "optionFees": "option fees",
     "optionHighlight": "July is ¥0",
     "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of July</span>.",
     "optionCancelDeadline": "end of July",
-    "joinAmountLabel": "Amount due at signup",
-    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup"
+    "noticeDeadline": "end of July"
+  },
+  "conditions": {
+    "badge": "Campaign terms",
+    "item1": "6-month minimum membership required (through end of Jan 2027)",
+    "item2": "Early cancellation fee: ¥34,320 (tax incl.) if you leave during the campaign period",
+    "item3": "All free options are auto-enrolled at signup"
+  },
+  "steps": {
+    "step1Badge": "STEP 1 Bonus perks",
+    "step1Lead": "Extra perks here",
+    "step1Title": "Referral, student, club transfer, etc.",
+    "step1Desc": "Apply in advance if eligible<br><span class=\"lp-note-pill\">※Student discount applies from December</span>",
+    "step1Btn": "Apply",
+    "step2Badge": "STEP 2 App signup",
+    "step2Title": "Easy signup via app",
+    "step2Desc": "Download JOYFIT app & join [as fast as 5 min]",
+    "step2Btn": "Get the app"
+  },
+  "options": {
+    "freeTitle": "<span class=\"highlight font-impact\">8</span> free options",
+    "freeIntroPrefix": "During the campaign",
+    "freeIntroSuffix": " — use them all!",
+    "paidTitle": "<span class=\"highlight font-impact\">3</span> paid options",
+    "paidNote": "※Optional — enroll only if you want them",
+    "freeBadge": "Free option",
+    "paidBadge": "Paid option",
+    "prevFree": "Previous free option",
+    "nextFree": "Next free option",
+    "prevPaid": "Previous paid option",
+    "nextPaid": "Next paid option",
+    "noticeTitle": "Important",
+    "noticeBody": "Options are <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">end of July</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
+    "noticeWarning": "※No refunds if you forget to cancel",
+    "cancelVideo": "Tap here for how to cancel",
+    "monthlyPrefix": "Monthly",
+    "taxSuffix": "(tax incl.)",
+    "items": {
+      "hydrogen": {
+        "name": "Hydrogen Water & Protein",
+        "description": "Hydrogen water + protein<br>Great value [up to 6 cups/day]"
+      },
+      "hotStudio": {
+        "name": "Hot Studio",
+        "description": "Setagaya area's largest studio<br>Sweat it out in our classes!"
+      },
+      "supportVip": {
+        "name": "Anshin Support VIP",
+        "description": "JOYFIT dedicated support plan<br>for peace of mind"
+      },
+      "onlineLesson": {
+        "name": "Online Lessons",
+        "description": "Pro-quality lessons at home!<br>Great when you can't visit the gym"
+      },
+      "tanning": {
+        "name": "Tanning Machine",
+        "description": "For your ideal tan!<br>※Up to 20 min/day"
+      },
+      "selfEsthe": {
+        "name": "Self Esthetics",
+        "description": "Salon-grade machines<br>unlimited use"
+      },
+      "rentalMat": {
+        "name": "Rental Mat",
+        "description": "No need to bring a mat!<br>Required for Hot Studio"
+      },
+      "rentalTowel": {
+        "name": "Rental Towels",
+        "description": "Face & bath towels for rent<br>after your workout"
+      },
+      "bodyScale": {
+        "name": "Body Composition Scale",
+        "description": "Track body fat & muscle<br>to optimize training"
+      },
+      "locker": {
+        "name": "Rental Locker",
+        "description": "Your own locker<br>for clothes & shoes"
+      },
+      "pilates": {
+        "name": "Pilates Reformer",
+        "description": "Core training on Pilates machines<br>in full studio lessons"
+      },
+      "yogaLocker": {
+        "name": "Yoga Mat Locker",
+        "description": "Store your yoga mat<br>travel light"
+      }
+    }
+  },
+  "access": {
+    "logoAlt": "JOYFIT24 Kyodo",
+    "exteriorLabel": "Store exterior",
+    "exteriorAlt": "Store exterior",
+    "storeName": "JOYFIT24 Kyodo",
+    "address": "〒156-0052<br>5-23-13 Kyodo, Setagaya-ku, Tokyo 2F・3F",
+    "accessLabel": "Access",
+    "accessText": "9-min walk from Kyodo Sta. (Odakyu Line)",
+    "hoursLabel": "Staff hours",
+    "hoursWeekday": "Weekdays 10:00–21:00",
+    "hoursWeekend": "Sat, Sun & holidays 12:00–20:00",
+    "hoursNote": "※No staff on Mon & Thu (all day)",
+    "mapBtn": "Get directions on Google Maps",
+    "facilities": {
+      "gym": { "alt": "Gym", "title": "2F Gym Area", "desc": "Spacious floor & machines" },
+      "studio": { "alt": "Studio", "title": "3F Studio", "desc": "Hot Studio" },
+      "hours24": { "alt": "24H", "title": "Open 24 hours", "desc": "※2F gym area" },
+      "shoes": { "alt": "Shoes", "title": "Shoes OK", "desc": "※No sandals or barefoot" },
+      "parking": { "alt": "Parking", "title": "6 free parking spots", "desc": "※Bike parking available" },
+      "shower": { "alt": "Shower", "title": "Shower rooms", "desc": "19 rooms (M/F)" },
+      "mist": { "alt": "Mist sauna", "title": "Women's mist sauna", "desc": "~40°C" },
+      "sauna": { "alt": "Sauna", "title": "Men's dry sauna", "desc": "~80°C" }
+    }
   },
   "banner": {
     "trial": "Free tour & trial",
     "appJoin": "Join via app"
+  },
+  "ui": {
+    "bannerToggle": "Show or hide bottom banner",
+    "bannerShow": "Show bottom banner",
+    "bannerHide": "Hide bottom banner"
   }
 }
