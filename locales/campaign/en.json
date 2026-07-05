@@ -13,6 +13,8 @@
     "cdSec": "Sec",
     "remaining": "Left",
     "remainingUnit": "spots",
+    "capacityTotal": "First <span class=\"lp-o-capacity-num\">30</span> spots only",
+    "remainingNow": "Now only",
     "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
   },
   "hero": {

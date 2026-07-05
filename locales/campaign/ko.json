@@ -13,6 +13,8 @@
     "cdSec": "초",
     "remaining": "남은",
     "remainingUnit": "명",
+    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명",
+    "remainingNow": "현재 남은",
     "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
   },
   "hero": {

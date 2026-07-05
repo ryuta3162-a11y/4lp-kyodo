@@ -13,6 +13,8 @@
     "cdSec": "秒",
     "remaining": "剩余",
     "remainingUnit": "名",
+    "capacityTotal": "先着<span class=\"lp-o-capacity-num\">30</span>名",
+    "remainingNow": "现有名额",
     "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
   },
   "hero": {
