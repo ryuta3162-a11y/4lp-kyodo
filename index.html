@@ -1105,17 +1105,17 @@
         body.lp-opening-reveal .lp-wrapper {
             opacity: 1;
             pointer-events: auto;
-            animation: lpORevealSoft 0.62s cubic-bezier(0.25, 0.1, 0.25, 1) 0.12s both;
+            animation: lpORevealSoft 0.31s cubic-bezier(0.25, 0.1, 0.25, 1) 0.06s both;
         }
         @keyframes lpORevealSoft {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .lp-opening-exit-play .lp-o-intro-box.is-visible {
-            animation: lpOExitSoft 0.42s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation: lpOExitSoft 0.21s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         .lp-opening-exit-play .lp-opening {
-            animation: lpOExitFade 0.52s ease 0.22s forwards;
+            animation: lpOExitFade 0.26s ease 0.11s forwards;
         }
         @keyframes lpOExitSoft {
             to { opacity: 0; transform: translateY(-14px) scale(0.98); }
@@ -1367,7 +1367,7 @@
             text-align: center;
             opacity: 0;
             transform: translateY(12px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
+            transition: opacity 0.28s ease, transform 0.28s ease;
         }
         .lp-o-intro-box.is-visible {
             opacity: 1;
@@ -2521,7 +2521,7 @@
     </div>
 </div>
 
-<!-- オープニング（1枚・自動再生 約5.5秒） -->
+<!-- オープニング（1枚・自動再生 約2.8秒） -->
 <div id="lp-opening-scroll" class="lp-opening-scroll">
 <div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介" data-i18n-aria-label="opening.ariaLabel">
     <div class="lp-opening-bg" aria-hidden="true">
@@ -2838,12 +2838,49 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ====================================================
-    // オープニング（1枚・自動再生 約5.5秒）
+    // 残り人数（7/1〜7/12で20→1名・オープニング中は早めに減算演出）
+    // ====================================================
+    function getCalendarRemaining() {
+        const decreaseStart = new Date('2026-07-01T00:00:00+09:00');
+        const decreaseEnd = new Date('2026-07-12T00:00:00+09:00');
+        const now = new Date();
+        const startRemaining = 20;
+        const minRemaining = 1;
+
+        if (now.getTime() < decreaseStart.getTime()) {
+            return startRemaining;
+        }
+        const totalMs = decreaseEnd.getTime() - decreaseStart.getTime();
+        const elapsedMs = Math.min(Math.max(0, now.getTime() - decreaseStart.getTime()), totalMs);
+        const progress = totalMs > 0 ? Math.min(1, (elapsedMs / totalMs) * 1.45) : 1;
+        let remaining = Math.round(startRemaining - progress * (startRemaining - minRemaining));
+        return Math.max(minRemaining, remaining);
+    }
+
+    function setRemainingCountDisplay(remaining, root) {
+        const scope = root || document;
+        scope.querySelectorAll('.dynamic-remaining-count').forEach(el => {
+            el.textContent = remaining;
+        });
+    }
+
+    function updateRemainingCount() {
+        const remaining = getCalendarRemaining();
+        const openingRoot = document.getElementById('lp-opening-scroll');
+        document.querySelectorAll('.dynamic-remaining-count').forEach(el => {
+            if (openingRoot && openingRoot.contains(el)) return;
+            el.textContent = remaining;
+        });
+    }
+
+    // ====================================================
+    // オープニング（1枚・自動再生 約2.8秒）
     // ====================================================
     (function initOpening() {
-        const OPENING_MS = 5500;
-        const FADE_MS = 650;
-        const CURTAIN_MS = 450;
+        const OPENING_MS = 2750;
+        const FADE_MS = 325;
+        const CURTAIN_MS = 225;
+        const OPENING_REMAINING_DROP = 2;
         const scrollRoot = document.getElementById('lp-opening-scroll');
         const opening = document.getElementById('lp-opening');
         const skipBtn = document.getElementById('lp-opening-skip');
@@ -2853,12 +2890,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!scrollRoot || !opening) return;
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const displayMs = prefersReduced ? 3200 : OPENING_MS;
+        const displayMs = prefersReduced ? 1600 : OPENING_MS;
         let finished = false;
         let exiting = false;
         let startTime = null;
         let rafId = null;
         let countdownTimer = null;
+        let remainingTicker = null;
+        const trueRemaining = getCalendarRemaining();
         const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-12T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
         const cdHoursEl = document.getElementById('lp-o-cd-hours');
@@ -2892,10 +2931,39 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownTimer = null;
         }
 
+        function stopRemainingTicker() {
+            if (!remainingTicker) return;
+            clearInterval(remainingTicker);
+            remainingTicker = null;
+        }
+
+        function startOpeningRemainingTicker() {
+            if (prefersReduced) {
+                setRemainingCountDisplay(trueRemaining, scrollRoot);
+                return;
+            }
+            const openingStart = Math.min(20, trueRemaining + OPENING_REMAINING_DROP);
+            let current = openingStart;
+            setRemainingCountDisplay(current, scrollRoot);
+            const steps = openingStart - trueRemaining;
+            if (steps <= 0) return;
+            const interval = Math.max(320, Math.floor(displayMs / (steps + 1)));
+            remainingTicker = setInterval(() => {
+                current -= 1;
+                if (current <= trueRemaining) {
+                    current = trueRemaining;
+                    stopRemainingTicker();
+                }
+                setRemainingCountDisplay(current, scrollRoot);
+            }, interval);
+        }
+
         function doFinishOpeningNow() {
             if (finished) return;
             finished = true;
             stopCountdown();
+            stopRemainingTicker();
+            updateRemainingCount();
             if (rafId) cancelAnimationFrame(rafId);
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
@@ -2910,6 +2978,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (finished || exiting) return;
             exiting = true;
             stopCountdown();
+            stopRemainingTicker();
             if (rafId) cancelAnimationFrame(rafId);
             scrollRoot.classList.add('lp-opening-exit-play');
             document.body.classList.add('lp-opening-reveal');
@@ -2937,6 +3006,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('lp-opening-active');
         skipBtn?.addEventListener('click', finishOpening);
         startCountdown();
+        startOpeningRemainingTicker();
         if (curtain) curtain.style.opacity = '1';
         introBox?.classList.add('is-visible');
         rafId = requestAnimationFrame(tick);
@@ -3011,34 +3081,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ロジックを実行
     updateProratedFee();
 
-    // ====================================================
-    // 残り人数の自動カウントダウン
-    // ====================================================
-    function updateRemainingCount() {
-        // 7/1以前：20名固定 → 7/1〜7/12：20名から1名（7/12が1名）
-        const decreaseStart = new Date('2026-07-01T00:00:00+09:00');
-        const decreaseEnd = new Date('2026-07-12T00:00:00+09:00');
-        const now = new Date();
-        const startRemaining = 20;
-        const minRemaining = 1;
-
-        let remaining;
-        if (now.getTime() < decreaseStart.getTime()) {
-            remaining = startRemaining;
-        } else {
-            const totalMs = decreaseEnd.getTime() - decreaseStart.getTime();
-            const elapsedMs = Math.min(Math.max(0, now.getTime() - decreaseStart.getTime()), totalMs);
-            const progress = totalMs > 0 ? elapsedMs / totalMs : 1;
-            remaining = Math.round(startRemaining - progress * (startRemaining - minRemaining));
-            if (remaining < minRemaining) remaining = minRemaining;
-        }
-
-        const countEls = document.querySelectorAll('.dynamic-remaining-count');
-        countEls.forEach(el => {
-            el.textContent = remaining;
-        });
-    }
-    // ロジックを実行
+    // 残り人数（オープニング終了後はカレンダー基準で表示）
     updateRemainingCount();
 
     // オプションカルーセルは campaign-i18n.js で初期化
