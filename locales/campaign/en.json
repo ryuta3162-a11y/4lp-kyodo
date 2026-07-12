@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 7/12",
-    "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/12 (Sun), first 20 members."
+    "title": "JOYFIT24 Kyodo Summer Deal | Until Fri 7/24",
+    "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/24 (Fri), first 15 members."
   },
   "opening": {
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-    "lead": "Limited until Sun 7/12",
+    "lead": "Limited until Fri 7/24",
     "cdDay": "Days",
     "cdHour": "Hrs",
     "cdMin": "Min",
     "cdSec": "Sec",
     "remaining": "Left",
     "remainingUnit": "spots",
-    "capacityTotal": "First <span class=\"lp-o-capacity-num\">30</span> spots only",
+    "capacityTotal": "First <span class=\"lp-o-capacity-num\">15</span> spots only",
     "remainingNow": "Now only",
     "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
   },

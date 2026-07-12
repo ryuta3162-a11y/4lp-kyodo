@@ -2,20 +2,20 @@ window.JOYFIT_LOCALES = {
   "campaign": {
     "en": {
       "meta": {
-        "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 7/12",
-        "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/12 (Sun), first 20 members."
+        "title": "JOYFIT24 Kyodo Summer Deal | Until Fri 7/24",
+        "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/24 (Fri), first 15 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-        "lead": "Limited until Sun 7/12",
+        "lead": "Limited until Fri 7/24",
         "cdDay": "Days",
         "cdHour": "Hrs",
         "cdMin": "Min",
         "cdSec": "Sec",
         "remaining": "Left",
         "remainingUnit": "spots",
-        "capacityTotal": "First <span class=\"lp-o-capacity-num\">30</span> spots only",
+        "capacityTotal": "First <span class=\"lp-o-capacity-num\">15</span> spots only",
         "remainingNow": "Now only",
         "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
       },
@@ -197,20 +197,20 @@ window.JOYFIT_LOCALES = {
     },
     "ko": {
       "meta": {
-        "title": "JOYFIT24 경당 여름 특가 | 7/12(일)까지",
-        "description": "JOYFIT24 경당 여름 특가 캠페인. 7~12월 3,630원(세금 포함)/월. 7월 옵션 0원. 7/12(일)까지 선착순 20명."
+        "title": "JOYFIT24 경당 여름 특가 | 7/24(금)까지",
+        "description": "JOYFIT24 경당 여름 특가 캠페인. 7~12월 3,630원(세금 포함)/월. 7월 옵션 0원. 7/24(금)까지 선착순 15명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-        "lead": "7/12(일)까지 한정",
+        "lead": "7/24(금)까지 한정",
         "cdDay": "일",
         "cdHour": "시간",
         "cdMin": "분",
         "cdSec": "초",
         "remaining": "남은",
         "remainingUnit": "명",
-        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명",
+        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">15</span>명",
         "remainingNow": "현재 남은",
         "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
       },
@@ -392,20 +392,20 @@ window.JOYFIT_LOCALES = {
     },
     "zh-CN": {
       "meta": {
-        "title": "JOYFIT24经堂 夏日优惠 | 至7/12（日）",
-        "description": "JOYFIT24经堂夏日优惠活动。7〜12月3,630元(含税)/月。7月选项0元。至7/12(日)，先到先得20名。"
+        "title": "JOYFIT24经堂 夏日优惠 | 至7/24（五）",
+        "description": "JOYFIT24经堂夏日优惠活动。7〜12月3,630元(含税)/月。7月选项0元。至7/24(五)，先到先得15名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">夏日优惠活动中！</span>",
-        "lead": "限至7/12（日）",
+        "lead": "限至7/24（五）",
         "cdDay": "天",
         "cdHour": "时",
         "cdMin": "分",
         "cdSec": "秒",
         "remaining": "剩余",
         "remainingUnit": "名",
-        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">30</span>名",
+        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">15</span>名",
         "remainingNow": "现有名额",
         "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
       },
@@ -587,20 +587,20 @@ window.JOYFIT_LOCALES = {
     },
     "zh-TW": {
       "meta": {
-        "title": "JOYFIT24經堂 夏日優惠 | 至7/12（日）",
-        "description": "JOYFIT24經堂夏日優惠活動。7〜12月3,630元(含稅)/月。7月選項0元。至7/12(日)，先搶先贏20名。"
+        "title": "JOYFIT24經堂 夏日優惠 | 至7/24（五）",
+        "description": "JOYFIT24經堂夏日優惠活動。7〜12月3,630元(含稅)/月。7月選項0元。至7/24(五)，先搶先贏15名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
-        "lead": "限至7/12（日）",
+        "lead": "限至7/24（五）",
         "cdDay": "天",
         "cdHour": "時",
         "cdMin": "分",
         "cdSec": "秒",
         "remaining": "剩餘",
         "remainingUnit": "名",
-        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">30</span>名",
+        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">15</span>名",
         "remainingNow": "現剩名額",
         "note": "※再入會<span class=\"dynamic-remaining-count\">--</span>名即結束限定活動"
       },

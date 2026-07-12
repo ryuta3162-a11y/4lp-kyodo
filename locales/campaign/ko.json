@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "JOYFIT24 경당 여름 특가 | 7/12(일)까지",
-    "description": "JOYFIT24 경당 여름 특가 캠페인. 7~12월 3,630원(세금 포함)/월. 7월 옵션 0원. 7/12(일)까지 선착순 20명."
+    "title": "JOYFIT24 경당 여름 특가 | 7/24(금)까지",
+    "description": "JOYFIT24 경당 여름 특가 캠페인. 7~12월 3,630원(세금 포함)/월. 7월 옵션 0원. 7/24(금)까지 선착순 15명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-    "lead": "7/12(일)까지 한정",
+    "lead": "7/24(금)까지 한정",
     "cdDay": "일",
     "cdHour": "시간",
     "cdMin": "분",
     "cdSec": "초",
     "remaining": "남은",
     "remainingUnit": "명",
-    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명",
+    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">15</span>명",
     "remainingNow": "현재 남은",
     "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
   },

@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで</title>
+    <title>JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。7〜12月3,630円(税込)/月。7月オプション0円。7/12(日)まで・先着30名。" />
+    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。7〜12月3,630円(税込)/月。7月オプション0円。7/24(金)まで・先着15名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで" />
-    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着30名。" />
+    <meta property="og:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで" />
+    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/24(金)まで・先着15名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/12(日)まで" />
-    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/12(日)まで・先着30名。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで" />
+    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/24(金)まで・先着15名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2646,7 +2646,7 @@
         <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
                 <p class="lp-o-label lp-o-stagger lp-o-stagger--1" id="lp-o-label" data-i18n-html="opening.label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
-                <p class="lp-o-lead lp-o-stagger lp-o-stagger--2" id="lp-o-lead" data-i18n="opening.lead">7/12(日)まで限定</p>
+                <p class="lp-o-lead lp-o-stagger lp-o-stagger--2" id="lp-o-lead" data-i18n="opening.lead">7/24(金)まで限定</p>
                 <div class="lp-o-countdown lp-o-stagger lp-o-stagger--3" aria-live="polite">
                     <div class="lp-o-countdown-unit">
                         <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
@@ -2669,7 +2669,7 @@
                     </div>
                 </div>
                 <div class="lp-o-capacity-block lp-o-stagger lp-o-stagger--4">
-                    <p class="lp-o-capacity-total" data-i18n-html="opening.capacityTotal">先着<span class="lp-o-capacity-num">30</span>名様</p>
+                    <p class="lp-o-capacity-total" data-i18n-html="opening.capacityTotal">先着<span class="lp-o-capacity-num">15</span>名様</p>
                     <div class="lp-o-capacity-connector" aria-hidden="true">
                         <span class="lp-o-capacity-arrow">↓</span>
                         <span class="lp-o-capacity-now" data-i18n="opening.remainingNow">いま残り</span>
@@ -2951,19 +2951,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // キャンペーン設定（締切・カウントダウン用）
     window.CAMPAIGN_CONFIG = {
-        endAt: new Date('2026-07-12T23:59:59+09:00'),
-        displayFrom: new Date('2026-07-01T00:00:00+09:00')
+        endAt: new Date('2026-07-24T23:59:59+09:00'),
+        displayFrom: new Date('2026-07-13T00:00:00+09:00')
     };
 
     // ====================================================
-    // 残り人数（先着30名枠・7/1〜7/12は毎日1名減：10→…→6→…→1）
+    // 残り人数（先着15名枠・7/13〜7/24：15→…→1）
     // ====================================================
     function getJSTNow() {
         return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
     }
 
     function getCalendarRemaining() {
-        const TOTAL_SLOTS = 30;
+        const TOTAL_SLOTS = 15;
         const MIN_REMAINING = 1;
         const jst = getJSTNow();
         const year = jst.getFullYear();
@@ -2973,14 +2973,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (year < 2026 || (year === 2026 && month < 7)) {
             return TOTAL_SLOTS;
         }
-        if (year > 2026 || month > 7 || date > 12) {
+        if (year > 2026 || month > 7 || date > 24) {
             return MIN_REMAINING;
         }
-        // 先着30名枠 → 7/1=30 … 7/4=12 → 7/5=6 … 7/10=1（以降1名）
-        if (date <= 4) {
-            return 36 - date * 6;
+        if (date < 13) {
+            return TOTAL_SLOTS;
         }
-        return Math.max(MIN_REMAINING, 11 - date);
+        // 先着15名枠 → 7/13=15 … 7/16=6 … 7/21=1（以降1名）
+        if (date <= 16) {
+            return 54 - date * 3;
+        }
+        return Math.max(MIN_REMAINING, 22 - date);
     }
 
     function updateRemainingCount() {
@@ -3013,7 +3016,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let startTime = null;
         let rafId = null;
         let countdownTimer = null;
-        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-12T23:59:59+09:00');
+        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-24T23:59:59+09:00');
         const cdDaysEl = document.getElementById('lp-o-cd-days');
         const cdHoursEl = document.getElementById('lp-o-cd-hours');
         const cdMinsEl = document.getElementById('lp-o-cd-mins');
