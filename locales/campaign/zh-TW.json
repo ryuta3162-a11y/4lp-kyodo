@@ -15,7 +15,7 @@
     "cdSec": "秒",
     "remaining": "剩餘",
     "remainingUnit": "名",
-    "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">15</span>名",
+    "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">15</span>名限定",
     "remainingNow": "現剩名額",
     "note": "※再入會<span class=\"dynamic-remaining-count\">--</span>名即結束限定活動"
   },

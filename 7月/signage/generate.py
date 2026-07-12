@@ -251,7 +251,7 @@ def scene_open(draw, t, a, sy):
     draw_store_badge(draw, y0, a, sy)
     draw_head(draw, y1, "夏得", 190, a, sy)
     draw_head(draw, y2, "キャンペーン", 105, a, sy, stroke=5)
-    draw_band(draw, y3, "7/12(日)まで · 先着20名", 54, a, sy)
+    draw_band(draw, y3, "7/24(金)まで · 先着15名", 54, a, sy)
 
 
 def draw_strike_price(draw: ImageDraw.ImageDraw, y: int, text: str, a: float, sy: int = 0, size: int = 52) -> None:
@@ -478,7 +478,7 @@ def scene_qr(overlay: Image.Image, draw, t, a, sy):
     draw_head(draw, y1, "詳細はこちらをチェック", 70, a, sy, stroke=5)
     draw_micro(draw, y2, "キャンペーン内容・入会方法", a, sy, size=50)
     draw_qr_panel(overlay, draw, a, sy, t, band_y=y3, center_y=y4, qr_size=qr_size)
-    draw_micro(draw, y5, "7/12(日)まで · 先着20名", a, sy, size=52)
+    draw_micro(draw, y5, "7/24(金)まで · 先着15名", a, sy, size=52)
 
 
 # 尺配分（おすすめ）:

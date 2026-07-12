@@ -117,7 +117,7 @@
     if (document.getElementById("signage-top-bar")) return;
     const bar = document.createElement("div");
     bar.id = "signage-top-bar";
-    bar.innerHTML = 'JOYFIT24 経堂　<span>7/12(日)まで</span>　先着20名';
+    bar.innerHTML = 'JOYFIT24 経堂　<span>7/24(金)まで</span>　先着15名';
     document.body.prepend(bar);
   }
 

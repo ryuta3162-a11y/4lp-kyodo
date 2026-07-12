@@ -17,7 +17,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "Sec",
         "remaining": "Left",
         "remainingUnit": "spots",
-        "capacityTotal": "First <span class=\"lp-o-capacity-num\">15</span> spots only",
+        "capacityTotal": "First <span class=\"lp-o-capacity-num\">15</span> spots · limited",
         "remainingNow": "Now only",
         "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
       },
@@ -214,7 +214,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "초",
         "remaining": "남은",
         "remainingUnit": "명",
-        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">15</span>명",
+        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">15</span>명 한정",
         "remainingNow": "현재 남은",
         "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
       },
@@ -411,7 +411,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "秒",
         "remaining": "剩余",
         "remainingUnit": "名",
-        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">15</span>名",
+        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">15</span>名様限定",
         "remainingNow": "现有名额",
         "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
       },
@@ -608,7 +608,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "秒",
         "remaining": "剩餘",
         "remainingUnit": "名",
-        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">15</span>名",
+        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">15</span>名限定",
         "remainingNow": "現剩名額",
         "note": "※再入會<span class=\"dynamic-remaining-count\">--</span>名即結束限定活動"
       },
