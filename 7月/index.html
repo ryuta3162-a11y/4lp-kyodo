@@ -1139,7 +1139,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+            padding: max(12px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
             background:
                 radial-gradient(ellipse 100% 72% at 50% -12%, rgba(255, 210, 100, 0.24), transparent 58%),
                 radial-gradient(ellipse 80% 50% at 100% 100%, rgba(126, 200, 227, 0.06), transparent 55%),
@@ -1398,10 +1398,8 @@
             animation: lpOStaggerIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .lp-o-intro-box.is-sequenced .lp-o-stagger--1 { animation-delay: 0.15s; }
-        .lp-o-intro-box.is-sequenced .lp-o-stagger--2 { animation-delay: 0.45s; }
-        .lp-o-intro-box.is-sequenced .lp-o-stagger--3 { animation-delay: 0.75s; }
-        .lp-o-intro-box.is-sequenced .lp-o-stagger--4 { animation-delay: 1.15s; }
-        .lp-o-intro-box.is-sequenced .lp-o-stagger--5 { animation-delay: 1.65s; }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--2 { animation-delay: 0.55s; }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--3 { animation-delay: 0.95s; }
         @keyframes lpOStaggerIn {
             0% { opacity: 0; transform: translateY(16px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -1509,11 +1507,11 @@
         }
         .lp-o-label {
             margin: 0;
-            font-size: clamp(2rem, 7.2vw, 2.85rem);
+            font-size: clamp(1.75rem, 6.5vw, 2.65rem);
             font-weight: 900;
             letter-spacing: 0.1em;
             text-indent: 0.1em;
-            line-height: 1.3;
+            line-height: 1.25;
             color: var(--brand-red);
         }
         .lp-o-summer-mark {
@@ -1543,10 +1541,41 @@
         .lp-o-intro-box.lp-o-panel {
             height: auto;
             min-height: auto;
-            max-height: min(86vh, 520px);
-            padding: clamp(1.15rem, 3.5vh, 1.65rem) clamp(1.1rem, 4vw, 1.45rem);
-            justify-content: flex-start;
-            overflow-y: auto;
+            max-height: none;
+            padding: clamp(1.1rem, 3.8vh, 1.55rem) clamp(1rem, 4vw, 1.35rem);
+            justify-content: center;
+            overflow: visible;
+        }
+        .lp-o-value-pitch {
+            margin: clamp(0.65rem, 2.2vh, 0.95rem) 0 0;
+            padding-top: clamp(0.6rem, 2vh, 0.8rem);
+            border-top: 1px solid rgba(194, 22, 50, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(0.25rem, 1vh, 0.45rem);
+            width: 100%;
+        }
+        .lp-o-value-line1 {
+            margin: 0;
+            font-size: clamp(1.2rem, 4.6vw, 1.55rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.35;
+            color: var(--brand-red);
+        }
+        .lp-o-value-line2 {
+            margin: 0;
+            font-size: clamp(1.55rem, 6.2vw, 2rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.25;
+            color: var(--brand-red);
+        }
+        .lp-o-value-line2 .lp-o-value-num {
+            font-size: 1.12em;
+            letter-spacing: -0.02em;
         }
         .lp-o-intro-box .lp-o-countdown {
             margin: 0.75rem 0 0.85rem;
@@ -2646,40 +2675,10 @@
         <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
             <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
                 <p class="lp-o-label lp-o-stagger lp-o-stagger--1" id="lp-o-label" data-i18n-html="opening.label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
-                <p class="lp-o-lead lp-o-stagger lp-o-stagger--2" id="lp-o-lead" data-i18n="opening.lead">7/24(金)まで限定</p>
-                <div class="lp-o-countdown lp-o-stagger lp-o-stagger--3" aria-live="polite">
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-days">00</span>
-                        <span class="lp-o-countdown-label" data-i18n="opening.cdDay">日</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-hours">00</span>
-                        <span class="lp-o-countdown-label" data-i18n="opening.cdHour">時間</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-mins">00</span>
-                        <span class="lp-o-countdown-label" data-i18n="opening.cdMin">分</span>
-                    </div>
-                    <span class="lp-o-countdown-sep" aria-hidden="true">:</span>
-                    <div class="lp-o-countdown-unit">
-                        <span class="lp-o-countdown-num" id="lp-o-cd-secs">00</span>
-                        <span class="lp-o-countdown-label" data-i18n="opening.cdSec">秒</span>
-                    </div>
+                <div class="lp-o-value-pitch">
+                    <p class="lp-o-value-line1 lp-o-stagger lp-o-stagger--2" data-i18n="opening.valueLine1">半年間ずっとお得</p>
+                    <p class="lp-o-value-line2 lp-o-stagger lp-o-stagger--3" data-i18n-html="opening.valueLine2"><span class="lp-o-value-num">3,630</span>円（税込）/月</p>
                 </div>
-                <div class="lp-o-capacity-block lp-o-stagger lp-o-stagger--4">
-                    <p class="lp-o-capacity-total" data-i18n-html="opening.capacityTotal">先着<span class="lp-o-capacity-num">15</span>名様</p>
-                    <div class="lp-o-capacity-connector" aria-hidden="true">
-                        <span class="lp-o-capacity-arrow">↓</span>
-                        <span class="lp-o-capacity-now" data-i18n="opening.remainingNow">いま残り</span>
-                    </div>
-                    <div class="lp-o-intro-remaining lp-o-intro-remaining--hero">
-                        <span class="lp-o-intro-remaining-num dynamic-remaining-count">--</span>
-                        <span class="lp-o-intro-remaining-unit" data-i18n="opening.remainingUnit">名</span>
-                    </div>
-                </div>
-                <p class="lp-o-intro-note lp-o-stagger lp-o-stagger--5" data-i18n-html="opening.note">※残り<span class="dynamic-remaining-count">--</span>名入会次第、限定キャンペーンは終了します</p>
             </div>
         </div>
     </div>
@@ -3015,44 +3014,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let exiting = false;
         let startTime = null;
         let rafId = null;
-        let countdownTimer = null;
-        const URGENCY_END = window.CAMPAIGN_CONFIG?.endAt || new Date('2026-07-24T23:59:59+09:00');
-        const cdDaysEl = document.getElementById('lp-o-cd-days');
-        const cdHoursEl = document.getElementById('lp-o-cd-hours');
-        const cdMinsEl = document.getElementById('lp-o-cd-mins');
-        const cdSecsEl = document.getElementById('lp-o-cd-secs');
-
-        function updateOpeningCountdown() {
-            if (!cdDaysEl || !cdHoursEl || !cdMinsEl || !cdSecsEl) return;
-            const now = new Date();
-            let diff = URGENCY_END.getTime() - now.getTime();
-            if (diff < 0) diff = 0;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((diff % (1000 * 60)) / 1000);
-            cdDaysEl.textContent = String(days).padStart(2, '0');
-            cdHoursEl.textContent = String(hours).padStart(2, '0');
-            cdMinsEl.textContent = String(mins).padStart(2, '0');
-            cdSecsEl.textContent = String(secs).padStart(2, '0');
-        }
-
-        function startCountdown() {
-            if (countdownTimer) return;
-            updateOpeningCountdown();
-            countdownTimer = setInterval(updateOpeningCountdown, 1000);
-        }
-
-        function stopCountdown() {
-            if (!countdownTimer) return;
-            clearInterval(countdownTimer);
-            countdownTimer = null;
-        }
 
         function doFinishOpeningNow() {
             if (finished) return;
             finished = true;
-            stopCountdown();
             if (rafId) cancelAnimationFrame(rafId);
             document.documentElement.classList.remove('lp-opening-lock');
             document.body.classList.remove('lp-opening-active');
@@ -3066,7 +3031,6 @@ document.addEventListener('DOMContentLoaded', function() {
         function finishOpening() {
             if (finished || exiting) return;
             exiting = true;
-            stopCountdown();
             if (rafId) cancelAnimationFrame(rafId);
             scrollRoot.classList.add('lp-opening-exit-play');
             document.body.classList.add('lp-opening-reveal');
@@ -3093,8 +3057,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.classList.add('lp-opening-lock');
         document.body.classList.add('lp-opening-active');
         skipBtn?.addEventListener('click', finishOpening);
-        updateRemainingCount();
-        startCountdown();
         if (curtain) curtain.style.opacity = '1';
         introBox?.classList.add('is-visible');
         window.setTimeout(() => introBox?.classList.add('is-sequenced'), SEQUENCE_DELAY_MS);

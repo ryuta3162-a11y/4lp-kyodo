@@ -7,6 +7,8 @@
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
     "lead": "7/24(금)까지 한정",
+    "valueLine1": "반년 내내 특가",
+    "valueLine2": "<span class=\"lp-o-value-num\">3,630</span>원(세금 포함)/월",
     "cdDay": "일",
     "cdHour": "시간",
     "cdMin": "분",

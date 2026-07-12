@@ -7,6 +7,8 @@
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
     "lead": "Limited until Fri 7/24",
+    "valueLine1": "Save all half year long",
+    "valueLine2": "<span class=\"lp-o-value-num\">3,630</span> yen (tax incl.)/mo",
     "cdDay": "Days",
     "cdHour": "Hrs",
     "cdMin": "Min",
