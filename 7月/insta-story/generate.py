@@ -218,8 +218,8 @@ def render_frame(frame_idx: int) -> Image.Image:
     if s4 > 0:
         a1, sc1, sl1 = line_enter(t, 6.65)
         a2, sc2, sl2 = line_enter(t, 7.0)
-        draw_text(draw, CY - 70, "7/12(日)まで限定", 100, WHITE, s4 * a1, sc1, sl1)
-        draw_text(draw, CY + 110, "先着20名様", 88, GOLD, s4 * a2, sc2, sl2)
+        draw_text(draw, CY - 70, "7/24(金)まで限定", 100, WHITE, s4 * a1, sc1, sl1)
+        draw_text(draw, CY + 110, "先着15名様", 88, GOLD, s4 * a2, sc2, sl2)
 
     # --- Scene 5: CTA (8.4〜10s) ---
     s5 = scene_window(t, 8.4, 10.0, fade=0.22)
