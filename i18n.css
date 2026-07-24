@@ -1,7 +1,7 @@
 /* Language switcher — 白背景・黒文字（サイズは初版準拠） */
 .lang-switcher {
     position: fixed;
-    top: max(0.75rem, env(safe-area-inset-top));
+    top: calc(3.6rem + env(safe-area-inset-top));
     right: max(0.75rem, env(safe-area-inset-right));
     z-index: 10050;
 }

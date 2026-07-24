@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで</title>
+    <title>JOYFIT24経堂 夏得キャンペーン｜8/16(日)まで</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン。7〜12月3,630円(税込)/月。7月オプション0円。7/24(金)まで・先着15名。" />
+    <meta name="description" content="JOYFIT24経堂 夏得キャンペーン。7月会費0円・8月〜2027年1月3,740円(税込)/月。7・8月オプション0円。8/16(日)まで・先着30名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで" />
-    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/24(金)まで・先着15名。" />
+    <meta property="og:title" content="JOYFIT24経堂 夏得キャンペーン｜8/16(日)まで" />
+    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。7月会費0円・8月〜2027年1月3,740円(税込)/月・7・8月オプション0円。8/16(日)まで・先着30名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
-    <meta property="og:image:alt" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン" />
+    <meta property="og:image:alt" content="JOYFIT24経堂 夏得キャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 まだ間に合う夏得キャンペーン｜7/24(金)まで" />
-    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7〜12月3,630円(税込)/月・7月オプション0円。7/24(金)まで・先着15名。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 夏得キャンペーン｜8/16(日)まで" />
+    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。7月会費0円・8月〜2027年1月3,740円(税込)/月・7・8月オプション0円。8/16(日)まで・先着30名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,94 +157,115 @@
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: 1.25rem 15px 0; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }
+        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: calc(4.25rem + env(safe-area-inset-top)) 15px 0; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }
         @media (min-width: 768px) {
-            .lp-wrapper { padding-top: 1rem; }
+            .lp-wrapper { padding-top: calc(4.5rem + env(safe-area-inset-top)); }
+        }
+        body.top-banner-hidden .lp-wrapper {
+            padding-top: 1.25rem;
         }
         
         .plan-selection-section { width: 100%; margin: 0 auto; }
         
-        /* 見出し（赤背景・白ライン） */
+        /* 見出し（赤背景・タイポ中心） */
         .campaign-header-enhanced {
             position: relative;
             margin-top: 10px;
-            padding: 32px 20px 30px;
+            padding: 2.1rem 1.25rem 1.85rem;
             border-radius: 14px 14px 0 0;
             text-align: center;
             overflow: hidden;
             background:
-                radial-gradient(ellipse 95% 65% at 50% -18%, var(--summer-sun), transparent 58%),
-                var(--brand-red);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+                radial-gradient(ellipse 90% 70% at 50% -20%, rgba(255, 220, 140, 0.28), transparent 55%),
+                linear-gradient(180deg, #d41f3c 0%, var(--brand-red) 48%, #a81228 100%);
+            border-bottom: none;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
         }
         .campaign-header-enhanced::before,
         .campaign-header-enhanced::after {
             content: '';
             position: absolute;
-            left: 16px;
-            right: 16px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 12%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.35) 88%, transparent);
             pointer-events: none;
         }
-        .campaign-header-enhanced::before { top: 10px; }
-        .campaign-header-enhanced::after { bottom: 10px; opacity: 0.9; }
+        .campaign-header-enhanced::before {
+            inset: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 10px;
+        }
+        .campaign-header-enhanced::after {
+            left: 50%;
+            bottom: 0;
+            width: 72%;
+            height: 1px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+        }
         .campaign-header-inner {
             position: relative;
             z-index: 1;
-            padding: 6px 0;
+            padding: 4px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
         }
         .campaign-header-enhanced h2 {
             margin: 0;
-            font-size: 1.55rem;
+            font-size: clamp(1.7rem, 7vw, 2.15rem);
             font-weight: 900;
             color: #fff;
-            letter-spacing: 0.18em;
-            line-height: 1.35;
+            letter-spacing: 0.14em;
+            text-indent: 0.14em;
+            line-height: 1.25;
         }
         .campaign-header-enhanced h2::after {
             content: '';
             display: block;
-            width: min(11.2em, 92%);
+            width: 2.6rem;
             height: 2px;
-            margin: 12px auto 0;
-            background: rgba(255, 255, 255, 0.92);
+            margin: 0.7rem auto 0;
+            background: linear-gradient(90deg, transparent, #F8E71C, transparent);
             border-radius: 1px;
-            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+            box-shadow: none;
         }
         .campaign-title-summer {
-            display: inline-block;
-            background: linear-gradient(135deg, #fff8dc 0%, #F8E71C 38%, #FFC857 72%, #F8E71C 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.12));
+            display: inline;
+            padding: 0;
+            background: none;
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+            border-radius: 0;
+            box-shadow: none;
+            filter: none;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
         }
         .campaign-app-badge {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-top: 12px;
-            padding: 6px 12px;
-            border-radius: 4px;
-            background: #fff;
-            color: var(--brand);
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            border: 1px solid rgba(255, 255, 255, 0.85);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+            margin-top: 0;
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            box-shadow: none;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             max-width: calc(100% - 24px);
         }
         .campaign-app-badge span {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #fff;
         }
         @media (min-width: 400px) {
-            .campaign-header-enhanced h2 { font-size: 1.65rem; }
-            .campaign-app-badge { font-size: 0.72rem; padding: 7px 14px; }
+            .campaign-header-enhanced h2 { font-size: 2rem; }
+            .campaign-app-badge { font-size: 0.74rem; padding: 0.5rem 1.1rem; }
         }
 
         .plan-container-wrapper {
@@ -260,13 +281,13 @@
         }
         .price-showcase {
             border-radius: var(--radius-md);
-            max-width: 95%;
+            max-width: 100%;
             margin: 0 auto;
             text-align: left;
             border: 1px solid #eee;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
-        .price-list { padding: 0 1.15rem; }
+        .price-list { padding: 0 0.85rem; }
         .campaign-header-enhanced .deadline-text {
             display: inline-block;
             background-color: var(--brand);
@@ -286,40 +307,45 @@
         /* 左右同幅で中央揃え（料金行） */
         .price-item {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1fr);
             align-items: center;
-            justify-items: center;
-            column-gap: 0.65rem;
-            padding: 1.2rem 0;
+            justify-items: stretch;
+            column-gap: 0.55rem;
+            padding: 1.15rem 0.15rem;
             border-bottom: 1px dashed #ccc;
             min-height: 108px;
         }
         .price-item .label-group {
             display: grid;
-            grid-template-columns: 36px minmax(0, 1fr);
+            grid-template-columns: auto minmax(0, 1fr);
             align-items: center;
             justify-content: start;
-            justify-self: center;
-            width: 280px;
-            max-width: 280px;
+            justify-self: stretch;
+            width: 100%;
+            max-width: none;
             text-align: left;
             column-gap: 10px;
         }
-        .price-item .number-circle.number-circle-accent {
-            background-color: var(--brand);
-        }
-        .price-item .number-circle {
-            width: 34px;
-            height: 34px;
-            background-color: #555;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
+        .price-item .perk-badge {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.05rem;
+            min-width: 0;
+            height: 1.7rem;
+            padding: 0 0.55rem;
+            border-radius: 6px;
+            background-color: #555;
+            color: #fff;
+            font-size: 0.72rem;
             font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1;
             flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .price-item .perk-badge.perk-badge-accent {
+            background-color: var(--brand);
+            color: #fff;
         }
         .price-item .label {
             font-size: 1.02rem;
@@ -355,108 +381,119 @@
             font-size: 1.45rem !important;
         }
         .price-item--half-year {
-            display: block;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.05rem;
             grid-template-columns: none;
             min-height: 0;
-            padding: 0;
+            margin: 0.55rem 0 0.9rem;
+            padding: 1.55rem 0.85rem 1.7rem;
+            border: none;
+            border-radius: 0;
             border-bottom: none;
-            margin: 0.35rem 0 0.85rem;
+            background: transparent;
+            box-shadow: none;
+            color: #fff;
         }
-        .half-year-block {
-            position: relative;
-            padding: 1rem 1rem 1.1rem;
-            border-radius: 14px;
+        .price-item--half-year::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             background:
-                linear-gradient(145deg, rgba(255, 196, 87, 0.14) 0%, rgba(255, 255, 255, 0.98) 38%, rgba(194, 22, 50, 0.05) 100%);
-            border: 2.5px solid var(--brand-red);
+                radial-gradient(ellipse 85% 70% at 50% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
+                linear-gradient(165deg, #e02542 0%, var(--brand-red) 42%, #9e1026 100%);
             box-shadow:
-                0 5px 0 rgba(26, 26, 26, 0.08),
-                0 10px 28px rgba(194, 22, 50, 0.12);
+                0 1px 0 rgba(255, 255, 255, 0.22) inset,
+                0 14px 36px rgba(194, 22, 50, 0.28);
         }
-        .half-year-head {
-            display: flex;
+        .price-item--half-year > * {
+            position: relative;
+            z-index: 1;
+        }
+        .price-item--half-year .label-group {
             align-items: center;
-            gap: 0.65rem;
-            margin-bottom: 0.85rem;
-            padding-bottom: 0.7rem;
-            border-bottom: 1px dashed rgba(194, 22, 50, 0.2);
+            width: 100%;
+            max-width: none;
         }
-        .half-year-head .number-circle {
-            flex-shrink: 0;
+        .price-item--half-year .perk-badge,
+        .price-item--half-year .perk-badge.perk-badge-accent {
+            margin-top: 0;
+            background-color: #fff !important;
+            color: var(--brand-red) !important;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
         }
-        .half-year-catch {
+        .price-item--half-year .half-year-catch {
             margin: 0;
-            font-size: clamp(1.05rem, 4.2vw, 1.28rem);
+            font-size: clamp(1.08rem, 4.3vw, 1.32rem);
             font-weight: 900;
             letter-spacing: 0.06em;
-            color: var(--brand-red);
-            line-height: 1.35;
+            color: #fff;
+            line-height: 1.3;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         }
-        .half-year-catch em {
-            font-style: normal;
-            display: inline-block;
-            margin-left: 0.08em;
-            padding: 0.12em 0.55em;
-            background: var(--gold-gradient);
-            color: #1a1a1a;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35);
-            transform: rotate(-2deg);
-        }
-        .half-year-body {
+        .half-year-main {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 0.55rem;
-        }
-        .half-year-months-col {
+            gap: 0.65rem;
             width: 100%;
+            padding: 0.15rem 0 0;
         }
-        .half-year-months {
-            margin: 0;
-            font-size: clamp(0.8rem, 3.1vw, 0.95rem);
-            font-weight: 900;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
-            color: #333;
-            word-break: keep-all;
-        }
-        .half-year-months-col .label-usual-ref {
-            margin-top: 0.35rem;
-            font-size: 0.72rem;
-            text-align: center;
-        }
-        .half-year-price-col {
-            width: 100%;
-            text-align: center;
-            line-height: 1.1;
-            padding: 0.15rem 0 0.1rem;
-        }
-        .half-year-price-row {
-            display: inline-flex;
+        .half-year-price-hero {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
             align-items: baseline;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.1rem 0.2rem;
+            gap: 0.12em;
+            white-space: nowrap;
+            padding: 0.15rem 0 0.05rem;
         }
-        .half-year-price {
+        .price-item--half-year .half-year-price {
             display: inline;
-            font-size: clamp(2.1rem, 10vw, 2.85rem);
+            font-size: clamp(2.55rem, 12.5vw, 3.35rem);
             font-weight: 900;
             letter-spacing: -0.03em;
-            color: var(--brand-red);
-            text-shadow:
-                1px 0 0 #fff, -1px 0 0 #fff,
-                0 1px 0 #fff, 0 -1px 0 #fff,
-                0 3px 12px rgba(194, 22, 50, 0.15);
+            line-height: 1;
+            color: #fff;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
         }
-        .half-year-unit {
+        .price-item--half-year .half-year-unit {
             display: inline;
-            font-size: clamp(0.82rem, 3.2vw, 0.95rem);
+            margin: 0;
+            font-size: clamp(0.92rem, 3.6vw, 1.12rem);
             font-weight: 800;
-            color: var(--brand-red);
+            color: #fff;
             letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .half-year-months {
+            margin: 0.15rem 0 0;
+            width: 100%;
+            font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+            font-weight: 900;
+            line-height: 1.5;
+            letter-spacing: 0.03em;
+            color: #fff;
+            word-break: keep-all;
+        }
+        .half-year-period-note {
+            margin: 0;
+            width: 100%;
+            max-width: none;
+            padding: 0 0.15rem;
+            font-size: clamp(0.7rem, 2.7vw, 0.82rem);
+            font-weight: 700;
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.82);
+            white-space: nowrap;
         }
         .price-item .divider-dot {
             width: 1px;
@@ -518,8 +555,17 @@
                 min-height: 0;
             }
             .price-item .divider-dot { display: none; }
-            .price-item .label-group { order: 1; width: 100%; max-width: 280px; }
-            .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; }
+            .price-item .label-group { order: 1; width: 100%; max-width: none; }
+            .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; justify-self: center; }
+            .price-item--half-year {
+                padding: 1.45rem 0.7rem 1.6rem;
+            }
+            .price-item--half-year .half-year-price {
+                font-size: clamp(2.2rem, 11vw, 2.9rem);
+            }
+            .half-year-period-note {
+                font-size: clamp(0.62rem, 2.8vw, 0.74rem);
+            }
         }
         .price-item .label .note .period-inline {
             display: block;
@@ -2304,30 +2350,39 @@
             .hero-first-view { padding-top: 6.5rem; }
             body.top-banner-hidden .hero-first-view { padding-top: 1rem; }
         }
+
+        .banner-capacity-pill .banner-capacity-num {
+            display: inline-block;
+            margin: 0 0.12em;
+            font-size: 1.05em;
+            font-weight: 900;
+            color: #F8E71C;
+        }
         .gold-metallic-banner .banner-inner {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            max-width: 520px;
+            gap: 12px;
+            max-width: 640px;
             margin: 0 auto;
             flex-wrap: wrap;
         }
         .banner-period-dates {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 900;
             letter-spacing: 0.04em;
             line-height: 1.2;
             margin: 0;
+            opacity: 0.95;
         }
         .banner-capacity-pill {
-            font-size: 0.62rem;
+            font-size: 0.72rem;
             font-weight: 800;
             letter-spacing: 0.06em;
-            padding: 3px 8px;
-            border-radius: 4px;
-            background: rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.28);
             white-space: nowrap;
         }
         .banner-vdivider {
@@ -2665,36 +2720,18 @@
     </div>
 </div>
 
-<!-- オープニング（1枚・自動再生 約4.5秒） -->
-<div id="lp-opening-scroll" class="lp-opening-scroll">
-<div id="lp-opening" class="lp-opening" role="dialog" aria-modal="true" aria-label="キャンペーン紹介" data-i18n-aria-label="opening.ariaLabel">
-    <div class="lp-opening-bg" aria-hidden="true">
-        <div class="lp-opening-grain"></div>
-        <div class="lp-opening-vignette"></div>
-    </div>
-    <div class="lp-opening-curtain" id="lp-o-curtain"></div>
-    <button type="button" class="lp-opening-skip" id="lp-opening-skip">SKIP</button>
-    <div class="lp-opening-stage">
-        <div class="lp-opening-phase lp-opening-phase--intro is-active" id="lp-o-phase-intro">
-            <div class="lp-o-intro-box lp-o-panel is-visible" id="lp-o-intro-box">
-                <p class="lp-o-label lp-o-stagger lp-o-stagger--1" id="lp-o-label" data-i18n-html="opening.label">まだ間に合う！<br><span class="lp-o-label-summer">夏得キャンペーン！</span></p>
-                <div class="lp-o-value-pitch">
-                    <p class="lp-o-value-line1 lp-o-stagger lp-o-stagger--2" data-i18n="opening.valueLine1">半年間ずっとお得</p>
-                    <p class="lp-o-value-line2 lp-o-stagger lp-o-stagger--3" data-i18n-html="opening.valueLine2"><span class="lp-o-value-num">3,630</span>円（税込）/月</p>
-                </div>
-                <div class="lp-o-capacity-block lp-o-stagger lp-o-stagger--4">
-                    <p class="lp-o-capacity-total" data-i18n-html="opening.capacityTotal">先着<span class="lp-o-capacity-num">15</span>名様限定</p>
-                    <div class="lp-o-intro-remaining lp-o-intro-remaining--hero" aria-live="polite">
-                        <span class="lp-o-intro-remaining-label" data-i18n="opening.remaining">残り</span>
-                        <span class="lp-o-intro-remaining-num dynamic-remaining-count">--</span>
-                        <span class="lp-o-intro-remaining-unit" data-i18n="opening.remainingUnit">名</span>
-                    </div>
-                </div>
-            </div>
+<!-- トップ固定バナー（先着・残り人数） -->
+<div class="gold-metallic-banner" id="top-capacity-banner">
+    <div class="banner-inner">
+        <span class="banner-capacity-pill" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
+        <span class="banner-vdivider" aria-hidden="true"></span>
+        <div class="banner-remaining-block" aria-live="polite">
+            <span class="remaining-label" data-i18n-html="banner.remainingLabel">残<br>り</span>
+            <span class="highlight-num dynamic-remaining-count">--</span>
+            <span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
         </div>
+        <span class="banner-period-dates" data-i18n="banner.period">8/16(日)まで</span>
     </div>
-    <div class="lp-opening-progress" aria-hidden="true"><span id="lp-o-progress"></span></div>
-</div>
 </div>
 
 <div class="ambient-bg" aria-hidden="true"></div>
@@ -2709,7 +2746,7 @@
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-header-enhanced">
             <div class="campaign-header-inner">
-                <h2 class="campaign-title" data-i18n-html="hero.title">まだ間に合う！<br><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
+                <h2 class="campaign-title" data-i18n-html="hero.title"><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
                 <div class="campaign-app-badge">
                     <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
                 </div>
@@ -2719,33 +2756,11 @@
         <div class="plan-container-wrapper">
             <div class="price-showcase">
                 <div class="price-list">
-                    <!-- 1. 7月〜12月会費（強調） -->
-                    <div class="price-item price-item--half-year">
-                        <div class="half-year-block">
-                            <div class="half-year-head">
-                                <span class="number-circle number-circle-accent">1</span>
-                                <p class="half-year-catch" data-i18n-html="hero.halfYearCatch">半年間ずーっと<em>お得</em></p>
-                            </div>
-                            <div class="half-year-body">
-                                <div class="half-year-months-col">
-                                    <p class="half-year-months" data-i18n="pricing.monthsList">7月、8月、9月、10月、11月、12月</p>
-                                    <p class="label-usual-ref" data-i18n-html="pricing.usualMonthly">通常月額<span class="price-usual-strike">9,350</span>円(税込)</p>
-                                </div>
-                                <div class="half-year-price-col">
-                                    <div class="half-year-price-row">
-                                        <span class="half-year-price font-impact">3,630</span>
-                                        <span class="half-year-unit" data-i18n="pricing.perMonthUnit">円(税込)/月</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2. オプション -->
+                    <!-- キャンペーン特典: 7月会費無料 -->
                     <div class="price-item">
                         <div class="label-group">
-                            <span class="number-circle number-circle-accent">2</span>
-                            <div class="label"><span id="campaign-option-label">7月オプション</span><span class="label-sub" id="campaign-option-label-sub">無料オプション8つ自動契約</span></div>
+                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
+                            <div class="label" data-i18n-html="pricing.julyFeeLabel">7月会費<br><span class="label-sub">7月分無料</span></div>
                         </div>
                         <div class="divider-dot"></div>
                         <div class="price-display-center">
@@ -2753,32 +2768,48 @@
                         </div>
                     </div>
 
-                    <!-- 3. 初期費用 -->
-                    <div class="price-item price-item--initial">
+                    <!-- キャンペーン特典: 8月〜1月会費（半年間） -->
+                    <div class="price-item price-item--half-year">
                         <div class="label-group">
-                            <span class="number-circle">3</span>
-                            <div class="label" data-i18n-html="pricing.initialLabel">初期費用<br><span class="label-sub">入会金・登録料</span></div>
+                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
+                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">6ヶ月間ずーっとお得</p>
                         </div>
-                        <div class="divider-dot"></div>
-                        <div class="price-display-center">
-                            <span class="price-value font-impact">5,500<span class="unit" data-i18n="pricing.yenTaxIncl">円(税込)</span></span>
+                        <div class="half-year-main">
+                            <div class="half-year-price-hero">
+                                <span class="half-year-price font-impact">3,740</span>
+                                <span class="half-year-unit" data-i18n="pricing.perMonthUnit">円(税込)/月</span>
+                            </div>
+                            <p class="half-year-months" data-i18n="pricing.monthsList">8月、9月、10月、11月、12月、1月</p>
+                            <p class="half-year-period-note" data-i18n="pricing.monthsNote">2026年8月から2027年1月までの半年間</p>
                         </div>
                     </div>
 
-                    <!-- 入会時お支払い目安 -->
+                    <!-- キャンペーン特典: オプション -->
+                    <div class="price-item">
+                        <div class="label-group">
+                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
+                            <div class="label"><span id="campaign-option-label">7・8月オプション</span><span class="label-sub" id="campaign-option-label-sub">無料オプション8つ自動契約</span></div>
+                        </div>
+                        <div class="divider-dot"></div>
+                        <div class="price-display-center">
+                            <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit" data-i18n="pricing.yen">円</span></span>
+                        </div>
+                    </div>
+
+                    <!-- ご入会時金額 -->
                     <div class="mid-list-total-block">
                         <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
                         <div class="total-price-row">
                             <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
                             <span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span>
                         </div>
-                        <p class="total-prorate-note" data-i18n="pricing.prorateNote">※7月会費は日割り料金です</p>
+                        <p class="total-prorate-note" data-i18n="pricing.prorateNote">※7月会費は無料です（8月以降は日割り）</p>
                     </div>
                 </div>
 
-                 <!-- 2027年1月以降 -->
+                 <!-- 2027年2月以降 -->
                 <div class="monthly-fee">
-                    <div class="monthly-fee-label" data-i18n="pricing.afterJan2027">2027年1月以降の通常月額</div>
+                    <div class="monthly-fee-label" data-i18n="pricing.afterFeb2027">2027年2月以降の通常月額</div>
                     <div class="monthly-fee-row">
                         <span class="price-large font-impact">9,350<span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span></span>
                         <span class="monthly-fee-plus">+</span>
@@ -2792,10 +2823,13 @@
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="conditions.badge">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.itemInitial">入会時、初期費用5,500円(税込)が別途発生いたします</span>
+                    </div>
+                    <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item1">満6カ月の在籍が条件となります（2027年1月末日まで）</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item2">期間内に退会された場合、解約金として34,320円(税込)が発生いたします</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item2">期間内に退会された場合、解約金として33,660円(税込)が発生いたします</span>
                     </div>
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item3">無料オプションは入会時、全て自動契約となります</span>
@@ -2843,8 +2877,8 @@
                         <span class="highlight font-impact">8</span>つの無料オプション
                     </h2>
                     <p>
-                        <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">7月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
-                        <span class="text-box-note" id="campaign-option-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">7月末</span>までに解約をお願いいたします。</span>
+                        <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">7・8月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
+                        <span class="text-box-note" id="campaign-option-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末</span>までに解約をお願いいたします。</span>
                     </p>
                 </div>
                 <div class="scene">
@@ -2880,7 +2914,7 @@
                 </div>
                 <div class="notice-body" data-i18n-html="options.noticeBody">
                     オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
-                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;" id="campaign-notice-deadline">7月末迄</strong>に解約をお願いいたします<br /><br />
+                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;" id="campaign-notice-deadline">8月末迄</strong>に解約をお願いいたします<br /><br />
                     入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
                     解約後も月末迄サービスをご利用頂けます
                 </div>
@@ -2961,39 +2995,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // キャンペーン設定（締切・カウントダウン用）
     window.CAMPAIGN_CONFIG = {
-        endAt: new Date('2026-07-24T23:59:59+09:00'),
-        displayFrom: new Date('2026-07-13T00:00:00+09:00')
+        endAt: new Date('2026-08-16T23:59:59+09:00'),
+        displayFrom: new Date('2026-07-25T00:00:00+09:00')
     };
 
     // ====================================================
-    // 残り人数（先着15名枠・7/13〜7/24：15→…→1）
+    // 残り人数（先着30名枠・7/25〜8/16：30→…→1）
     // ====================================================
     function getJSTNow() {
         return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
     }
 
     function getCalendarRemaining() {
-        const TOTAL_SLOTS = 15;
+        const TOTAL_SLOTS = 30;
         const MIN_REMAINING = 1;
         const jst = getJSTNow();
         const year = jst.getFullYear();
         const month = jst.getMonth() + 1;
         const date = jst.getDate();
 
-        if (year < 2026 || (year === 2026 && month < 7)) {
+        // 7/25より前 → 満枠
+        if (year < 2026 || (year === 2026 && (month < 7 || (month === 7 && date < 25)))) {
             return TOTAL_SLOTS;
         }
-        if (year > 2026 || month > 7 || date > 24) {
+        // 8/16より後 → 1名
+        if (year > 2026 || month > 8 || (month === 8 && date > 16)) {
             return MIN_REMAINING;
         }
-        if (date < 13) {
-            return TOTAL_SLOTS;
-        }
-        // 先着15名枠 → 7/13=15 … 7/16=6 … 7/21=1（以降1名）
-        if (date <= 16) {
-            return 54 - date * 3;
-        }
-        return Math.max(MIN_REMAINING, 22 - date);
+
+        // 7/25=0 … 8/16=22（23日間）で 30→1
+        const start = new Date(2026, 6, 25);
+        const cur = new Date(year, month - 1, date);
+        const dayIndex = Math.round((cur - start) / (1000 * 60 * 60 * 24));
+        const remaining = Math.round(TOTAL_SLOTS - dayIndex * (TOTAL_SLOTS - MIN_REMAINING) / 22);
+        return Math.max(MIN_REMAINING, Math.min(TOTAL_SLOTS, remaining));
     }
 
     function updateRemainingCount() {
@@ -3003,78 +3038,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ====================================================
-    // オープニング（1枚・自動再生 約4.5秒）
-    // ====================================================
-    (function initOpening() {
-        const OPENING_MS = 4500;
-        const FADE_MS = 500;
-        const CURTAIN_MS = 380;
-        const SEQUENCE_DELAY_MS = 180;
-        const scrollRoot = document.getElementById('lp-opening-scroll');
-        const opening = document.getElementById('lp-opening');
-        const skipBtn = document.getElementById('lp-opening-skip');
-        const progressBar = document.getElementById('lp-o-progress');
-        const curtain = document.getElementById('lp-o-curtain');
-        const introBox = document.getElementById('lp-o-intro-box');
-        if (!scrollRoot || !opening) return;
-
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const displayMs = prefersReduced ? 2800 : OPENING_MS;
-        let finished = false;
-        let exiting = false;
-        let startTime = null;
-        let rafId = null;
-
-        function doFinishOpeningNow() {
-            if (finished) return;
-            finished = true;
-            if (rafId) cancelAnimationFrame(rafId);
-            document.documentElement.classList.remove('lp-opening-lock');
-            document.body.classList.remove('lp-opening-active');
-            document.body.classList.remove('lp-opening-reveal');
-            scrollRoot.remove();
-            document.documentElement.style.scrollBehavior = 'auto';
-            window.scrollTo(0, 0);
-            document.documentElement.style.scrollBehavior = '';
-        }
-
-        function finishOpening() {
-            if (finished || exiting) return;
-            exiting = true;
-            if (rafId) cancelAnimationFrame(rafId);
-            scrollRoot.classList.add('lp-opening-exit-play');
-            document.body.classList.add('lp-opening-reveal');
-            setTimeout(doFinishOpeningNow, prefersReduced ? 0 : FADE_MS);
-        }
-
-        function tick(now) {
-            if (finished) return;
-            if (!startTime) startTime = now;
-            const elapsed = now - startTime;
-            const progress = Math.min(1, elapsed / displayMs);
-            if (progressBar) progressBar.style.width = (progress * 100) + '%';
-            if (curtain) {
-                const co = elapsed >= CURTAIN_MS ? 0 : 1 - elapsed / CURTAIN_MS;
-                curtain.style.opacity = String(Math.max(0, co));
-            }
-            if (elapsed >= displayMs) {
-                finishOpening();
-                return;
-            }
-            rafId = requestAnimationFrame(tick);
-        }
-
-        document.documentElement.classList.add('lp-opening-lock');
-        document.body.classList.add('lp-opening-active');
-        skipBtn?.addEventListener('click', finishOpening);
-        if (curtain) curtain.style.opacity = '1';
-        introBox?.classList.add('is-visible');
-        window.setTimeout(() => introBox?.classList.add('is-sequenced'), SEQUENCE_DELAY_MS);
-        rafId = requestAnimationFrame(tick);
-    })();
-
-    
     // ====================================================
     // スクロール連動Reveal
     // ====================================================
@@ -3091,15 +3054,12 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ====================================================
-    // 入会時金額の動的表示（7/1〜表示・7月は日割）
+    // 入会時金額の動的表示（入会月は日割・キャンペーン月額3,740円）
     // ====================================================
-    function calcJulyProrateFee(joinDay) {
-        const year = 2026;
-        const month = 7;
-        const campaignMonthly = 3630;
+    function calcProrateFee(year, month, joinDay, monthly) {
         const daysInMonth = new Date(year, month, 0).getDate();
         const remainingDays = daysInMonth - joinDay + 1;
-        return Math.round((campaignMonthly / daysInMonth) * remainingDays);
+        return Math.round((monthly / daysInMonth) * remainingDays);
     }
 
     function updateProratedFee() {
@@ -3123,13 +3083,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const initial = 5500;
-            const campaignMonthly = 3630;
+            const campaignMonthly = 3740;
             const regularMonthly = 9350;
             let monthFee = 0;
 
             if (year === 2026 && month === 7) {
-                monthFee = calcJulyProrateFee(date);
-            } else if (year === 2026 && month >= 8 && month <= 12) {
+                // 7月会費無料
+                monthFee = 0;
+            } else if (year === 2026 && month === 8) {
+                monthFee = calcProrateFee(year, month, date, campaignMonthly);
+            } else if ((year === 2026 && month >= 9 && month <= 12) || (year === 2027 && month === 1)) {
                 monthFee = campaignMonthly;
             } else {
                 monthFee = regularMonthly;

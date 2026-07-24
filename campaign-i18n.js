@@ -209,16 +209,16 @@
   }
 
   function applyCampaignDynamic() {
-    setText('campaign-option-label', 'pricing.optionLabel', '7月オプション');
+    setText('campaign-option-label', 'pricing.optionLabel', '7・8月オプション');
     setText('campaign-option-label-sub', 'pricing.optionLabelSub', '無料オプション8つ自動契約');
-    setText('campaign-option-highlight', 'pricing.optionHighlight', '7月分が0円');
+    setText('campaign-option-highlight', 'pricing.optionHighlight', '7・8月分が0円');
     setHtml(
       'campaign-option-note',
       'pricing.optionNote',
-      '※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">7月末</span>までに解約をお願いいたします。'
+      '※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末</span>までに解約をお願いいたします。'
     );
-    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '7月末');
-    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '7月末迄');
+    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '8月末');
+    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末迄');
 
     if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
       setText('dynamic-date-label', 'pricing.joinAmountLabel', 'ご入会時金額');

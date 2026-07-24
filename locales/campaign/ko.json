@@ -1,52 +1,56 @@
 {
   "meta": {
-    "title": "JOYFIT24 경당 여름 특가 | 7/24(금)까지",
-    "description": "JOYFIT24 경당 여름 특가 캠페인. 7~12월 3,630원(세금 포함)/월. 7월 옵션 0원. 7/24(금)까지 선착순 15명."
+    "title": "JOYFIT24 경당 여름 특가 | 8/16(일)까지",
+    "description": "JOYFIT24 경당 여름 특가. 7월 회비 0원 · 8월~2027년 1월 3,740원/월. 7·8월 옵션 0원. 8/16(일)까지 선착순 30명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-    "lead": "7/24(금)까지 한정",
-    "valueLine1": "반년 내내 특가",
-    "valueLine2": "<span class=\"lp-o-value-num\">3,630</span>원(세금 포함)/월",
+    "lead": "8/16(일)까지 한정",
+    "valueLine1": "7월 회비 무료",
+    "valueLine2": "8~1월 <span class=\"lp-o-value-num\">3,740</span>원(세금 포함)/월",
     "cdDay": "일",
     "cdHour": "시간",
     "cdMin": "분",
     "cdSec": "초",
     "remaining": "남은",
     "remainingUnit": "명",
-    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">15</span>명 한정",
+    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명 한정",
     "remainingNow": "현재 남은",
     "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
   },
   "hero": {
-    "title": "아직 늦지 않았어요!<br><span class=\"campaign-title-summer\">여름 특가 캠페인!</span>",
+    "title": "<span class=\"campaign-title-summer\">여름 특가 캠페인!</span>",
     "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
-    "halfYearCatch": "반년 내내 <em>특가</em>"
+    "halfYearCatch": "6개월 내내 특가"
   },
   "pricing": {
-    "monthsList": "7월, 8월, 9월, 10월, 11월, 12월",
+    "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
     "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
     "perMonthUnit": "원(세금 포함)/월",
-    "optionLabel": "7월 옵션",
+    "optionLabel": "7·8월 옵션",
     "optionLabelSub": "무료 옵션 8개 자동 가입",
+    "perkBadge": "캠페인 특전",
     "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
     "yen": "원",
     "yenTaxIncl": "원(세금 포함)",
     "joinAmountLabel": "입회 시 결제 금액",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-    "prorateNote": "※7월 회비는 일할 계산됩니다",
-    "afterJan2027": "2027년 1월 이후 통상 월액",
+    "prorateNote": "※7월 회비는 무료입니다(8월 이후 일할)",
     "optionFees": "옵션 요금",
-    "optionHighlight": "7월 0원",
-    "optionNote": "※8개 옵션은 입회 시 자동 가입됩니다.<br>불필요한 경우 <span id=\"campaign-option-cancel-deadline\">7월 말</span>까지 해지해 주세요.",
-    "optionCancelDeadline": "7월 말",
-    "noticeDeadline": "7월 말까지"
+    "optionHighlight": "7·8월 0원",
+    "optionNote": "※8개 옵션은 입회 시 자동 계약됩니다.<br>불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말</span>까지 해약해 주세요.",
+    "optionCancelDeadline": "8월 말",
+    "noticeDeadline": "8월 말까지",
+    "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
+    "afterFeb2027": "2027년 2월 이후 통상 월액",
+    "monthsNote": "2026년 8월부터 2027년 1월까지의 반년"
   },
   "conditions": {
     "badge": "캠페인 유의사항",
+    "itemInitial": "입회 시 초기 비용 5,500원(세금 포함)이 별도로 발생합니다",
     "item1": "6개월 이상 재적이 조건입니다(2027년 1월 말까지)",
-    "item2": "기간 내 탈퇴 시 해약금 34,320원(세금 포함)이 발생합니다",
+    "item2": "기간 내 탈퇴 시 해약금 33,660원(세금 포함)이 발생합니다",
     "item3": "무료 옵션은 입회 시 모두 자동 가입됩니다"
   },
   "steps": {
@@ -73,7 +77,7 @@
     "prevPaid": "이전 유료 옵션",
     "nextPaid": "다음 유료 옵션",
     "noticeTitle": "유의사항",
-    "noticeBody": "옵션은 입회 시 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">자동 계약</strong>됩니다<br />불필요한 경우 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">7월 말</strong>까지 해지해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해지 가능<br />해지 후에도 월말까지 이용 가능",
+    "noticeBody": "옵션은 입회 시 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">자동 계약</strong>됩니다<br />불필요한 경우 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">8월 말까지</strong> 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능<br />해약 후에도 월말까지 이용 가능합니다",
     "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
     "cancelVideo": "해지 방법은 여기를 탭",
     "monthlyPrefix": "월",
@@ -143,19 +147,55 @@
     "hoursNote": "※매주 월・목요일은 종일 스태프 부재",
     "mapBtn": "Google 지도에서 경로 확인",
     "facilities": {
-      "gym": { "alt": "짐", "title": "2F 짐 에리어", "desc": "넓은 공간×풍부한 머신" },
-      "studio": { "alt": "스튜디오", "title": "3F 스튜디오", "desc": "핫 스튜디오" },
-      "hours24": { "alt": "24시간", "title": "24시간 영업", "desc": "※2F 짐 에리어" },
-      "shoes": { "alt": "신발", "title": "신발 착용 OK", "desc": "※샌들・맨발 불가" },
-      "parking": { "alt": "주차", "title": "무료 주차 6대", "desc": "※자전거 주차장 있음" },
-      "shower": { "alt": "샤워", "title": "샤워룸", "desc": "남녀 구분 총 19실" },
-      "mist": { "alt": "미스트", "title": "여성 미스트 사우나", "desc": "약 40℃" },
-      "sauna": { "alt": "사우나", "title": "남성 드라이 사우나", "desc": "약 80℃" }
+      "gym": {
+        "alt": "짐",
+        "title": "2F 짐 에리어",
+        "desc": "넓은 공간×풍부한 머신"
+      },
+      "studio": {
+        "alt": "스튜디오",
+        "title": "3F 스튜디오",
+        "desc": "핫 스튜디오"
+      },
+      "hours24": {
+        "alt": "24시간",
+        "title": "24시간 영업",
+        "desc": "※2F 짐 에리어"
+      },
+      "shoes": {
+        "alt": "신발",
+        "title": "신발 착용 OK",
+        "desc": "※샌들・맨발 불가"
+      },
+      "parking": {
+        "alt": "주차",
+        "title": "무료 주차 6대",
+        "desc": "※자전거 주차장 있음"
+      },
+      "shower": {
+        "alt": "샤워",
+        "title": "샤워룸",
+        "desc": "남녀 구분 총 19실"
+      },
+      "mist": {
+        "alt": "미스트",
+        "title": "여성 미스트 사우나",
+        "desc": "약 40℃"
+      },
+      "sauna": {
+        "alt": "사우나",
+        "title": "남성 드라이 사우나",
+        "desc": "약 80℃"
+      }
     }
   },
   "banner": {
     "trial": "무료 견학・체험",
-    "appJoin": "앱 입회는 여기"
+    "appJoin": "앱 입회는 여기",
+    "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+    "remainingLabel": "남<br>은",
+    "remainingUnit": "명",
+    "period": "8/16(일)까지"
   },
   "ui": {
     "bannerToggle": "하단 배너 표시・숨기기",

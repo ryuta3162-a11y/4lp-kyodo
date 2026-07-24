@@ -1,52 +1,56 @@
 {
   "meta": {
-    "title": "JOYFIT24 Kyodo Summer Deal | Until Fri 7/24",
-    "description": "JOYFIT24 Kyodo summer campaign. ¥3,630/mo (tax incl.) Jul–Dec. July options ¥0. Until 7/24 (Fri), first 15 members."
+    "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 8/16",
+    "description": "JOYFIT24 Kyodo summer campaign. July fee ¥0 · Aug–Jan 2027 ¥3,740/mo. Jul–Aug options ¥0. Until 8/16 (Sun), first 30 members."
   },
   "opening": {
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-    "lead": "Limited until Fri 7/24",
-    "valueLine1": "Save all half year long",
-    "valueLine2": "<span class=\"lp-o-value-num\">3,630</span> yen (tax incl.)/mo",
+    "lead": "Limited until Sun 8/16",
+    "valueLine1": "July membership free",
+    "valueLine2": "Aug–Jan <span class=\"lp-o-value-num\">3,740</span> yen (tax incl.)/mo",
     "cdDay": "Days",
     "cdHour": "Hrs",
     "cdMin": "Min",
     "cdSec": "Sec",
     "remaining": "Left",
     "remainingUnit": "spots",
-    "capacityTotal": "First <span class=\"lp-o-capacity-num\">15</span> spots · limited",
+    "capacityTotal": "First <span class=\"lp-o-capacity-num\">30</span> spots · limited",
     "remainingNow": "Now only",
     "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
   },
   "hero": {
-    "title": "Still in time!<br><span class=\"campaign-title-summer\">Summer Deal Campaign!</span>",
+    "title": "<span class=\"campaign-title-summer\">Summer Deal Campaign!</span>",
     "appBadge": "Join via app in 5 min — use today!",
-    "halfYearCatch": "Save all <em>half year</em> long"
+    "halfYearCatch": "Save all 6 months long"
   },
   "pricing": {
-    "monthsList": "Jul, Aug, Sep, Oct, Nov, Dec",
+    "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
     "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
     "perMonthUnit": "yen (tax incl.)/mo",
-    "optionLabel": "July options",
+    "optionLabel": "Jul–Aug options",
     "optionLabelSub": "8 free options auto-enrolled",
+    "perkBadge": "Campaign perk",
     "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
     "yen": "yen",
     "yenTaxIncl": "yen (tax incl.)",
     "joinAmountLabel": "Amount due at signup",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-    "prorateNote": "※July fee is prorated by join date",
-    "afterJan2027": "Regular monthly fee from Jan 2027",
+    "prorateNote": "※July fee is free (Aug onward is prorated)",
     "optionFees": "option fees",
-    "optionHighlight": "July is ¥0",
-    "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of July</span>.",
-    "optionCancelDeadline": "end of July",
-    "noticeDeadline": "end of July"
+    "optionHighlight": "Jul & Aug are ¥0",
+    "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
+    "optionCancelDeadline": "end of August",
+    "noticeDeadline": "end of August",
+    "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
+    "afterFeb2027": "Regular monthly fee from Feb 2027",
+    "monthsNote": "Half year from Aug 2026 to Jan 2027"
   },
   "conditions": {
     "badge": "Campaign terms",
+    "itemInitial": "An initial fee of ¥5,500 (tax incl.) is charged separately at signup",
     "item1": "6-month minimum membership required (through end of Jan 2027)",
-    "item2": "Early cancellation fee: ¥34,320 (tax incl.) if you leave during the campaign period",
+    "item2": "Early cancellation fee: ¥33,660 (tax incl.) if you leave during the campaign period",
     "item3": "All free options are auto-enrolled at signup"
   },
   "steps": {
@@ -73,7 +77,7 @@
     "prevPaid": "Previous paid option",
     "nextPaid": "Next paid option",
     "noticeTitle": "Important",
-    "noticeBody": "Options are <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">end of July</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
+    "noticeBody": "Options are <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">end of August</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
     "noticeWarning": "※No refunds if you forget to cancel",
     "cancelVideo": "Tap here for how to cancel",
     "monthlyPrefix": "Monthly",
@@ -143,19 +147,55 @@
     "hoursNote": "※No staff on Mon & Thu (all day)",
     "mapBtn": "Get directions on Google Maps",
     "facilities": {
-      "gym": { "alt": "Gym", "title": "2F Gym Area", "desc": "Spacious floor & machines" },
-      "studio": { "alt": "Studio", "title": "3F Studio", "desc": "Hot Studio" },
-      "hours24": { "alt": "24H", "title": "Open 24 hours", "desc": "※2F gym area" },
-      "shoes": { "alt": "Shoes", "title": "Shoes OK", "desc": "※No sandals or barefoot" },
-      "parking": { "alt": "Parking", "title": "6 free parking spots", "desc": "※Bike parking available" },
-      "shower": { "alt": "Shower", "title": "Shower rooms", "desc": "19 rooms (M/F)" },
-      "mist": { "alt": "Mist sauna", "title": "Women's mist sauna", "desc": "~40°C" },
-      "sauna": { "alt": "Sauna", "title": "Men's dry sauna", "desc": "~80°C" }
+      "gym": {
+        "alt": "Gym",
+        "title": "2F Gym Area",
+        "desc": "Spacious floor & machines"
+      },
+      "studio": {
+        "alt": "Studio",
+        "title": "3F Studio",
+        "desc": "Hot Studio"
+      },
+      "hours24": {
+        "alt": "24H",
+        "title": "Open 24 hours",
+        "desc": "※2F gym area"
+      },
+      "shoes": {
+        "alt": "Shoes",
+        "title": "Shoes OK",
+        "desc": "※No sandals or barefoot"
+      },
+      "parking": {
+        "alt": "Parking",
+        "title": "6 free parking spots",
+        "desc": "※Bike parking available"
+      },
+      "shower": {
+        "alt": "Shower",
+        "title": "Shower rooms",
+        "desc": "19 rooms (M/F)"
+      },
+      "mist": {
+        "alt": "Mist sauna",
+        "title": "Women's mist sauna",
+        "desc": "~40°C"
+      },
+      "sauna": {
+        "alt": "Sauna",
+        "title": "Men's dry sauna",
+        "desc": "~80°C"
+      }
     }
   },
   "banner": {
     "trial": "Free tour & trial",
-    "appJoin": "Join via app"
+    "appJoin": "Join via app",
+    "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
+    "remainingLabel": "Left",
+    "remainingUnit": "spots",
+    "period": "Until Sun 8/16"
   },
   "ui": {
     "bannerToggle": "Show or hide bottom banner",
