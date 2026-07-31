@@ -51,7 +51,7 @@ window.JOYFIT_LOCALES = {
       "conditions": {
         "badge": "Campaign terms",
         "itemInitial": "An initial fee of ¥5,500 (tax incl.) is charged separately at signup",
-        "item1": "6-month minimum membership required (through end of Jan 2027)",
+        "item1": "6-month minimum membership required (through end of Feb 2027)",
         "item2": "Early cancellation fee: ¥33,660 (tax incl.) if you leave during the campaign period",
         "item3": "All free options are auto-enrolled at signup"
       },
@@ -256,7 +256,7 @@ window.JOYFIT_LOCALES = {
       "conditions": {
         "badge": "캠페인 유의사항",
         "itemInitial": "입회 시 초기 비용 5,500원(세금 포함)이 별도로 발생합니다",
-        "item1": "6개월 이상 재적이 조건입니다(2027년 1월 말까지)",
+        "item1": "6개월 이상 재적이 조건입니다(2027년 2월 말까지)",
         "item2": "기간 내 탈퇴 시 해약금 33,660원(세금 포함)이 발생합니다",
         "item3": "무료 옵션은 입회 시 모두 자동 가입됩니다"
       },
@@ -461,7 +461,7 @@ window.JOYFIT_LOCALES = {
       "conditions": {
         "badge": "活动注意事项",
         "itemInitial": "入会时需另行支付初始费用5,500元(含税)",
-        "item1": "须满6个月在籍（至2027年1月末）",
+        "item1": "须满6个月在籍（至2027年2月末）",
         "item2": "活动期间退会需支付解约金33,660元(含税)",
         "item3": "免费选项在入会时将全部自动签约"
       },
@@ -666,7 +666,7 @@ window.JOYFIT_LOCALES = {
       "conditions": {
         "badge": "活動注意事項",
         "itemInitial": "入會時需另行支付初始費用5,500元(含稅)",
-        "item1": "須滿6個月在籍（至2027年1月末）",
+        "item1": "須滿6個月在籍（至2027年2月末）",
         "item2": "活動期間退會需支付解約金33,660元(含稅)",
         "item3": "免費選項在入會時將全部自動簽約"
       },

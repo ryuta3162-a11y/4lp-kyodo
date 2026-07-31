@@ -1,8 +1,8 @@
 """
-Instagramストーリー用 10秒動画（1080x1920）
+Instagramストーリー用 10秒動画（1080x1920）・8月仕様
 実行: python generate.py → joyfit-story-10s.mp4
 
-最新: 8/16(日)まで・先着30名・3,740円版
+8月版: 6ヶ月間会費値引き3,740円（8月は日割り）・8月オプション0円・8/16まで先着30名
 """
 from __future__ import annotations
 
@@ -189,7 +189,7 @@ def render_frame(frame_idx: int) -> Image.Image:
         draw_text(draw, CY - 20, "夏得", 160, WHITE, s1 * a1, sc1, sl1, stroke=10)
         draw_text(draw, CY + 140, "キャンペーン！", 110, WHITE, s1 * a2, sc2, sl2, stroke=8)
 
-    # --- Scene 2: 価格 (1.9〜4.6s) ---
+    # --- Scene 2: 価格（会費値引きメイン） (1.9〜4.6s) ---
     s2 = scene_window(t, 1.9, 4.6)
     if s2 > 0:
         a_c, sc_c, sl_c = line_enter(t, 1.95)
@@ -197,12 +197,14 @@ def render_frame(frame_idx: int) -> Image.Image:
         a_u1, sc_u1, sl_u1 = line_enter(t, 2.55)
         a_u2, sc_u2, sl_u2 = line_enter(t, 2.75)
         zoom = 1.0 + 0.04 * math.sin((t - 2.25) * 8) if t > 2.25 else 1.0
-        draw_text(draw, CY - 240, "6ヶ月間ずーっとお得", 78, GOLD, s2 * a_c, sc_c, sl_c)
-        draw_text(draw, CY + 10, "3,740", 300, WHITE, s2 * a_p, sc_p * zoom, sl_p, stroke=10)
-        draw_text(draw, CY + 210, "円(税込)/月", 70, WHITE, s2 * a_u1, sc_u1, sl_u1, stroke=4)
-        draw_text(draw, CY + 300, "8月〜1月", 70, WHITE, s2 * a_u2, sc_u2, sl_u2, stroke=4)
+        draw_text(draw, CY - 340, "6ヶ月間", 108, GOLD, s2 * a_c, sc_c, sl_c, stroke=7)
+        draw_text(draw, CY - 220, "会費ずーっと値引き", 82, GOLD, s2 * a_c, sc_c, sl_c, stroke=6)
+        draw_text(draw, CY + 30, "3,740", 300, WHITE, s2 * a_p, sc_p * zoom, sl_p, stroke=10)
+        draw_text(draw, CY + 230, "円(税込)/月", 70, WHITE, s2 * a_u1, sc_u1, sl_u1, stroke=4)
+        draw_text(draw, CY + 330, "8月〜1月", 70, WHITE, s2 * a_u2, sc_u2, sl_u2, stroke=4)
+        draw_text(draw, CY + 420, "※8月会費は入会日からの日割り", 44, WHITE, s2 * a_u2, sc_u2, sl_u2, stroke=4)
 
-    # --- Scene 3: 0円特典 (4.4〜6.7s) ---
+    # --- Scene 3: 8月オプション0円 (4.4〜6.7s) ---
     s3 = scene_window(t, 4.4, 6.7)
     if s3 > 0:
         a0, sc0, sl0 = line_enter(t, 4.45)
@@ -210,10 +212,10 @@ def render_frame(frame_idx: int) -> Image.Image:
         a2, sc2, sl2 = line_enter(t, 5.0)
         a3, sc3, sl3 = line_enter(t, 5.3)
         pulse = 1.0 + 0.03 * math.sin((t - 5.0) * 10) if t > 5.0 else 1.0
-        draw_text(draw, CY - 260, "キャンペーン特典", 64, GOLD, s3 * a0, sc0, sl0, stroke=4)
-        draw_text(draw, CY - 120, "7月会費 0円", 92, WHITE, s3 * a1, sc1, sl1)
-        draw_text(draw, CY + 40, "7・8月オプション", 78, WHITE, s3 * a2, sc2, sl2)
-        draw_text(draw, CY + 200, "0円", 220, GOLD, s3 * a3, sc3 * pulse, sl3, stroke=10)
+        draw_text(draw, CY - 280, "キャンペーン特典", 64, GOLD, s3 * a0, sc0, sl0, stroke=4)
+        draw_text(draw, CY - 130, "8月オプション", 96, WHITE, s3 * a1, sc1, sl1)
+        draw_text(draw, CY + 80, "0円", 250, GOLD, s3 * a2, sc2 * pulse, sl2, stroke=10)
+        draw_text(draw, CY + 300, "無料オプション8つ自動契約", 54, WHITE, s3 * a3, sc3, sl3, stroke=4)
 
     # --- Scene 4: 締切 (6.5〜8.4s) ---
     s4 = scene_window(t, 6.5, 8.4)
