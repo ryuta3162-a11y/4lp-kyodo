@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 8/16",
-    "description": "JOYFIT24 Kyodo summer campaign. July fee ¥0 · Aug–Jan 2027 ¥3,740/mo. Jul–Aug options ¥0. Until 8/16 (Sun), first 30 members."
+    "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/16 (Sun), first 30 members."
   },
   "opening": {
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
     "lead": "Limited until Sun 8/16",
-    "valueLine1": "July membership free",
-    "valueLine2": "Aug–Jan <span class=\"lp-o-value-num\">3,740</span> yen (tax incl.)/mo",
+    "valueLine1": "Aug–Jan ¥3,740/mo",
+    "valueLine2": "August options <span class=\"lp-o-value-num\">0</span> yen",
     "cdDay": "Days",
     "cdHour": "Hrs",
     "cdMin": "Min",
@@ -28,7 +28,7 @@
     "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
     "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
     "perMonthUnit": "yen (tax incl.)/mo",
-    "optionLabel": "Jul–Aug options",
+    "optionLabel": "August options",
     "optionLabelSub": "8 free options auto-enrolled",
     "perkBadge": "Campaign perk",
     "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
@@ -36,9 +36,9 @@
     "yenTaxIncl": "yen (tax incl.)",
     "joinAmountLabel": "Amount due at signup",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-    "prorateNote": "※July fee is free (Aug onward is prorated)",
+    "prorateNote": "※August membership fee is prorated from the signup date",
     "optionFees": "option fees",
-    "optionHighlight": "Jul & Aug are ¥0",
+    "optionHighlight": "August is ¥0",
     "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
     "optionCancelDeadline": "end of August",
     "noticeDeadline": "end of August",

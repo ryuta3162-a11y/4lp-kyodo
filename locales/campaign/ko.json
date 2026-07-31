@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JOYFIT24 경당 여름 특가 | 8/16(일)까지",
-    "description": "JOYFIT24 경당 여름 특가. 7월 회비 0원 · 8월~2027년 1월 3,740원/월. 7·8월 옵션 0원. 8/16(일)까지 선착순 30명."
+    "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/16(일)까지 선착순 30명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
     "lead": "8/16(일)까지 한정",
-    "valueLine1": "7월 회비 무료",
-    "valueLine2": "8~1월 <span class=\"lp-o-value-num\">3,740</span>원(세금 포함)/월",
+    "valueLine1": "8~1월 3,740원/월",
+    "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
     "cdDay": "일",
     "cdHour": "시간",
     "cdMin": "분",
@@ -28,7 +28,7 @@
     "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
     "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
     "perMonthUnit": "원(세금 포함)/월",
-    "optionLabel": "7·8월 옵션",
+    "optionLabel": "8월 옵션",
     "optionLabelSub": "무료 옵션 8개 자동 가입",
     "perkBadge": "캠페인 특전",
     "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
@@ -36,9 +36,9 @@
     "yenTaxIncl": "원(세금 포함)",
     "joinAmountLabel": "입회 시 결제 금액",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-    "prorateNote": "※7월 회비는 무료입니다(8월 이후 일할)",
+    "prorateNote": "※8월 회비는 입회일부터 일할 계산됩니다",
     "optionFees": "옵션 요금",
-    "optionHighlight": "7·8월 0원",
+    "optionHighlight": "8월 0원",
     "optionNote": "※8개 옵션은 입회 시 자동 계약됩니다.<br>불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말</span>까지 해약해 주세요.",
     "optionCancelDeadline": "8월 말",
     "noticeDeadline": "8월 말까지",

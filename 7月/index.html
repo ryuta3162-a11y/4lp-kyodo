@@ -3171,7 +3171,40 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="locales.bundle.js"></script>
 <script src="i18n.js"></script>
 <script src="campaign-i18n.js"></script>
-<script>JoyfitI18n.init('campaign').then(function () { if (window.CampaignI18n) CampaignI18n.apply(); });</script>
+<script>
+(function () {
+  var JULY = {
+    ja: { option: '7・8月オプション', highlight: '7・8月分が0円', prorate: '※7月会費は無料です（8月以降は日割り）' },
+    en: { option: 'Jul–Aug options', highlight: 'Jul & Aug are ¥0', prorate: '※July fee is free (Aug onward is prorated)' },
+    'zh-CN': { option: '7・8月选项', highlight: '7・8月0元', prorate: '※7月会费免费（8月起按日折算）' },
+    'zh-TW': { option: '7・8月選項', highlight: '7・8月0元', prorate: '※7月會費免費（8月起按日折算）' },
+    ko: { option: '7·8월 옵션', highlight: '7·8월 0원', prorate: '※7월 회비는 무료입니다(8월 이후 일할)' }
+  };
+  function applyJuly() {
+    var lang = (window.JoyfitI18n && JoyfitI18n.getLanguage()) || 'ja';
+    var text = JULY[lang] || JULY.ja;
+    var option = document.getElementById('campaign-option-label');
+    var highlight = document.getElementById('campaign-option-highlight');
+    var prorate = document.querySelector('[data-i18n="pricing.prorateNote"]');
+    if (option) option.textContent = text.option;
+    if (highlight) highlight.textContent = text.highlight;
+    if (prorate) prorate.textContent = text.prorate;
+  }
+  function wrap() {
+    if (!window.CampaignI18n || !CampaignI18n.apply || CampaignI18n.__julyWrapped) return;
+    var orig = CampaignI18n.apply.bind(CampaignI18n);
+    CampaignI18n.apply = function () { orig(); applyJuly(); };
+    CampaignI18n.__julyWrapped = true;
+  }
+  wrap();
+  window.addEventListener('joyfit:langchange', function () { wrap(); applyJuly(); });
+  JoyfitI18n.init('campaign').then(function () {
+    wrap();
+    if (window.CampaignI18n) CampaignI18n.apply();
+    applyJuly();
+  });
+})();
+</script>
 
 </body>
 </html>

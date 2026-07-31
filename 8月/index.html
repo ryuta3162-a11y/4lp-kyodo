@@ -3053,10 +3053,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateProratedFee() {
         const today = new Date();
-        const actualJst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-        const augustStart = new Date(2026, 7, 1);
-        // 8月版を事前確認するときは、8/1時点の入会金額を表示
-        const jst = actualJst < augustStart ? augustStart : actualJst;
+        const jst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
         const year = jst.getFullYear();
         const month = jst.getMonth() + 1;
         const date = jst.getDate();
@@ -3161,52 +3158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="../locales.bundle.js"></script>
 <script src="../i18n.js"></script>
 <script src="../campaign-i18n.js"></script>
-<script>
-var AUGUST_CAMPAIGN_TEXT = {
-    ja: {
-        option: '8月オプション',
-        highlight: '8月分が0円',
-        prorate: '※8月会費は入会日からの日割りです'
-    },
-    en: {
-        option: 'August options',
-        highlight: 'August is ¥0',
-        prorate: '※August membership fee is prorated from the signup date'
-    },
-    'zh-CN': {
-        option: '8月选项',
-        highlight: '8月0元',
-        prorate: '※8月会费从入会日起按日折算'
-    },
-    'zh-TW': {
-        option: '8月選項',
-        highlight: '8月0元',
-        prorate: '※8月會費自入會日起按日計算'
-    },
-    ko: {
-        option: '8월 옵션',
-        highlight: '8월 0원',
-        prorate: '※8월 회비는 입회일부터 일할 계산됩니다'
-    }
-};
-
-function applyAugustCampaignText() {
-    var lang = (window.JoyfitI18n && JoyfitI18n.getLanguage()) || 'ja';
-    var text = AUGUST_CAMPAIGN_TEXT[lang] || AUGUST_CAMPAIGN_TEXT.ja;
-    var prorate = document.querySelector('[data-i18n="pricing.prorateNote"]');
-    var option = document.getElementById('campaign-option-label');
-    var highlight = document.getElementById('campaign-option-highlight');
-    if (prorate) prorate.textContent = text.prorate;
-    if (option) option.textContent = text.option;
-    if (highlight) highlight.textContent = text.highlight;
-}
-
-window.addEventListener('joyfit:langchange', applyAugustCampaignText);
-JoyfitI18n.init('campaign').then(function () {
-    if (window.CampaignI18n) CampaignI18n.apply();
-    applyAugustCampaignText();
-});
-</script>
+<script>JoyfitI18n.init('campaign').then(function () { if (window.CampaignI18n) CampaignI18n.apply(); });</script>
 
 </body>
 </html>

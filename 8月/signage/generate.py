@@ -1,8 +1,9 @@
 """
-入口サイネージ 30秒動画（グラフィック版）
+入口サイネージ 30秒動画（グラフィック版・8月仕様）
 
 ・縦 1080x1920 → 90°回転で 1920x1080（左傾け設置用）
-・最終画面（15.5〜30秒）: QRコード + 詳細はこちらをチェック
+・8月版: 8月オプション0円 / 8〜1月 3,740円（8月会費は日割り）
+・最終画面（21.5〜30秒）: QRコード + 詳細はこちらをチェック
 """
 from __future__ import annotations
 
@@ -302,76 +303,54 @@ def draw_month_chips(overlay: Image.Image, draw: ImageDraw.ImageDraw, y: int, a:
     overlay.alpha_composite(layer)
 
 
-def scene_perks(overlay: Image.Image, draw, t, a, sy):
-    """キャンペーン特典：7月会費0円・オプション0円。"""
+def scene_offer(overlay: Image.Image, draw, t, a, sy):
+    """メイン訴求：6ヶ月間の会費値引き 3,740円（LP準拠）。"""
     if a <= 0:
         return
     local = max(0.0, t - 3.5)
-    y0, y1, y2, y3, y4 = stack_ys([88, 280, 88, 280, 80])
-
-    a0 = stagger_a(a, local, 0.00)
-    a1 = stagger_a(a, local, 0.08)
-    a2 = stagger_a(a, local, 0.20)
-    a3 = stagger_a(a, local, 0.28)
-    a4 = stagger_a(a, local, 0.40)
-
-    draw_band(draw, y0, "キャンペーン特典", 44, a0, sy)
-    draw_head(draw, y1 - 50, "7月会費", 72, a1, sy, stroke=6)
-    draw_head(draw, y1 + 70, "0円", 160, a1, sy, stroke=10)
-
-    draw_band(draw, y2, "キャンペーン特典", 44, a2, sy)
-    draw_head(draw, y3 - 50, "7・8月オプション", 64, a3, sy, stroke=6)
-    draw_head(draw, y3 + 70, "0円", 160, a3, sy, stroke=10)
-    draw_micro(draw, y4, "無料オプション8つ自動契約", a4, sy, size=44, stroke=5)
-
-
-def scene_offer(overlay: Image.Image, draw, t, a, sy):
-    """キャンペーン特典：半年間 3,740円（LP準拠）。"""
-    if a <= 0:
-        return
-    local = max(0.0, t - 8.5)
     pulse = 1.0 + 0.006 * math.sin(local * 3.0)
 
-    y0, y1, y2, y3, y4, y5 = stack_ys([88, 100, 72, 100, 72, 380])
+    y0, y1, y2, y3, y4, y5 = stack_ys([88, 150, 100, 80, 500, 60])
 
     a0 = stagger_a(a, local, 0.00)
-    a1 = stagger_a(a, local, 0.08)
-    a2 = stagger_a(a, local, 0.16)
-    a3 = stagger_a(a, local, 0.24)
-    a4 = stagger_a(a, local, 0.32)
-    a5 = stagger_a(a, local, 0.40)
+    a1 = stagger_a(a, local, 0.10)
+    a2 = stagger_a(a, local, 0.20)
+    a3 = stagger_a(a, local, 0.30)
+    a4 = stagger_a(a, local, 0.40)
+    a5 = stagger_a(a, local, 0.52)
 
     draw_band(draw, y0, "キャンペーン特典", 44, a0, sy)
-    draw_head(draw, y1, "6ヶ月間ずーっとお得", 78, a1, sy, stroke=7)
-    draw_micro(draw, y2, "APP入会最短5分　当日すぐ使える!", a2, sy, size=42, stroke=5)
-    draw_month_chips(overlay, draw, y3, a3, sy)
-    draw_strike_price(draw, y4, "通常月額9,350円(税込)", a4, sy, size=48)
+    draw_head(draw, y1 - 34, "6ヶ月間", 108, a1, sy, stroke=8)
+    draw_head(draw, y1 + 76, "会費ずーっと値引き", 84, a1, sy, stroke=7)
+    draw_month_chips(overlay, draw, y2, a2, sy)
+    draw_strike_price(draw, y3, "通常月額9,350円(税込)", a3, sy, size=52)
 
-    price_h = 380
-    panel_w = PW - 96
+    price_h = 500
+    panel_w = PW - 80
     px0 = (PW - panel_w) // 2
-    py0 = y5 - price_h // 2 + sy
+    py0 = y4 - price_h // 2 + sy
     layer = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     ld.rectangle(
-        [px0 + 10, py0 + 10, px0 + panel_w + 10, py0 + price_h + 10],
-        fill=(255, 255, 255, int(90 * a5)),
+        [px0 + 12, py0 + 12, px0 + panel_w + 12, py0 + price_h + 12],
+        fill=(255, 255, 255, int(90 * a4)),
     )
     ld.rectangle(
         [px0, py0, px0 + panel_w, py0 + price_h],
-        fill=(0, 0, 0, int(255 * a5)),
-        outline=(255, 255, 255, int(255 * a5)),
-        width=4,
+        fill=(0, 0, 0, int(255 * a4)),
+        outline=(255, 255, 255, int(255 * a4)),
+        width=5,
     )
     ld.rectangle(
-        [px0 + 10, py0 + 10, px0 + panel_w - 10, py0 + price_h - 10],
-        outline=(255, 255, 255, int(180 * a5)),
+        [px0 + 12, py0 + 12, px0 + panel_w - 12, py0 + price_h - 12],
+        outline=(255, 255, 255, int(180 * a4)),
         width=2,
     )
     overlay.alpha_composite(layer)
 
-    draw_head(draw, y5 - 48, "3,740", int(210 * pulse), a5, sy, stroke=10)
-    draw_head(draw, y5 + 105, "円(税込)/月", 60, a5, sy, stroke=6)
+    draw_head(draw, y4 - 62, "3,740", int(280 * pulse), a4, sy, stroke=12)
+    draw_head(draw, y4 + 145, "円(税込)/月", 72, a4, sy, stroke=6)
+    draw_micro(draw, y5, "※8月会費は入会日からの日割り", a5, sy, size=40, stroke=5)
 
 
 def draw_area_card(
@@ -499,11 +478,10 @@ def scene_qr(overlay: Image.Image, draw, t, a, sy):
 
 
 # 尺配分:
-# オープニング 3.5秒 / 0円特典 5秒 / 半年間価格 6.5秒 / フロア 6.5秒 / QR 8.5秒
+# オープニング 3.5秒 / 半年間値引き 11.5秒 / フロア 6.5秒 / QR 8.5秒
 TIMELINE = [
     (0.0, 3.5, scene_open, False),
-    (3.5, 8.5, scene_perks, True),
-    (8.5, 15.0, scene_offer, True),
+    (3.5, 15.0, scene_offer, True),
     (15.0, 21.5, scene_facility, True),
     (21.5, 30.0, scene_qr, True),
 ]

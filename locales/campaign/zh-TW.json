@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JOYFIT24經堂 夏日優惠 | 至8/16（日）",
-    "description": "JOYFIT24經堂夏日優惠。7月會費0元・8月〜2027年1月3,740元/月。7・8月選項0元。至8/16(日)，先搶先贏30名。"
+    "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/16(日)，先搶先贏30名。"
   },
   "opening": {
     "ariaLabel": "活動介紹",
     "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
     "lead": "限至8/16（日）",
-    "valueLine1": "7月會費免費",
-    "valueLine2": "8〜1月 <span class=\"lp-o-value-num\">3,740</span>元（含稅）/月",
+    "valueLine1": "8〜1月3,740元/月",
+    "valueLine2": "8月選項<span class=\"lp-o-value-num\">0</span>元",
     "cdDay": "天",
     "cdHour": "時",
     "cdMin": "分",
@@ -28,7 +28,7 @@
     "monthsList": "8月、9月、10月、11月、12月、1月",
     "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
     "perMonthUnit": "元(含稅)/月",
-    "optionLabel": "7・8月選項",
+    "optionLabel": "8月選項",
     "optionLabelSub": "8項免費選項自動簽約",
     "perkBadge": "活動特典",
     "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
@@ -36,9 +36,9 @@
     "yenTaxIncl": "元(含稅)",
     "joinAmountLabel": "入會時金額",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額",
-    "prorateNote": "※7月會費免費（8月起按日折算）",
+    "prorateNote": "※8月會費自入會日起按日計算",
     "optionFees": "選項費用",
-    "optionHighlight": "7・8月0元",
+    "optionHighlight": "8月0元",
     "optionNote": "※入會時8項選項將全部自動簽約。<br>不需要的請在<span id=\"campaign-option-cancel-deadline\">8月底前</span>解約。",
     "optionCancelDeadline": "8月底",
     "noticeDeadline": "8月底前",

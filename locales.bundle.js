@@ -3,14 +3,14 @@ window.JOYFIT_LOCALES = {
     "en": {
       "meta": {
         "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 8/16",
-        "description": "JOYFIT24 Kyodo summer campaign. July fee ¥0 · Aug–Jan 2027 ¥3,740/mo. Jul–Aug options ¥0. Until 8/16 (Sun), first 30 members."
+        "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/16 (Sun), first 30 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
         "lead": "Limited until Sun 8/16",
-        "valueLine1": "July membership free",
-        "valueLine2": "Aug–Jan <span class=\"lp-o-value-num\">3,740</span> yen (tax incl.)/mo",
+        "valueLine1": "Aug–Jan ¥3,740/mo",
+        "valueLine2": "August options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
         "cdHour": "Hrs",
         "cdMin": "Min",
@@ -30,7 +30,7 @@ window.JOYFIT_LOCALES = {
         "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
         "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
         "perMonthUnit": "yen (tax incl.)/mo",
-        "optionLabel": "Jul–Aug options",
+        "optionLabel": "August options",
         "optionLabelSub": "8 free options auto-enrolled",
         "perkBadge": "Campaign perk",
         "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
@@ -38,9 +38,9 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "yen (tax incl.)",
         "joinAmountLabel": "Amount due at signup",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-        "prorateNote": "※July fee is free (Aug onward is prorated)",
+        "prorateNote": "※August membership fee is prorated from the signup date",
         "optionFees": "option fees",
-        "optionHighlight": "Jul & Aug are ¥0",
+        "optionHighlight": "August is ¥0",
         "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
         "optionCancelDeadline": "end of August",
         "noticeDeadline": "end of August",
@@ -208,14 +208,14 @@ window.JOYFIT_LOCALES = {
     "ko": {
       "meta": {
         "title": "JOYFIT24 경당 여름 특가 | 8/16(일)까지",
-        "description": "JOYFIT24 경당 여름 특가. 7월 회비 0원 · 8월~2027년 1월 3,740원/월. 7·8월 옵션 0원. 8/16(일)까지 선착순 30명."
+        "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/16(일)까지 선착순 30명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
         "lead": "8/16(일)까지 한정",
-        "valueLine1": "7월 회비 무료",
-        "valueLine2": "8~1월 <span class=\"lp-o-value-num\">3,740</span>원(세금 포함)/월",
+        "valueLine1": "8~1월 3,740원/월",
+        "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
         "cdDay": "일",
         "cdHour": "시간",
         "cdMin": "분",
@@ -235,7 +235,7 @@ window.JOYFIT_LOCALES = {
         "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
         "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
         "perMonthUnit": "원(세금 포함)/월",
-        "optionLabel": "7·8월 옵션",
+        "optionLabel": "8월 옵션",
         "optionLabelSub": "무료 옵션 8개 자동 가입",
         "perkBadge": "캠페인 특전",
         "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
@@ -243,9 +243,9 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "원(세금 포함)",
         "joinAmountLabel": "입회 시 결제 금액",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-        "prorateNote": "※7월 회비는 무료입니다(8월 이후 일할)",
+        "prorateNote": "※8월 회비는 입회일부터 일할 계산됩니다",
         "optionFees": "옵션 요금",
-        "optionHighlight": "7·8월 0원",
+        "optionHighlight": "8월 0원",
         "optionNote": "※8개 옵션은 입회 시 자동 계약됩니다.<br>불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말</span>까지 해약해 주세요.",
         "optionCancelDeadline": "8월 말",
         "noticeDeadline": "8월 말까지",
@@ -413,14 +413,14 @@ window.JOYFIT_LOCALES = {
     "zh-CN": {
       "meta": {
         "title": "JOYFIT24经堂 夏日优惠 | 至8/16（日）",
-        "description": "JOYFIT24经堂夏日优惠。7月会费0元・8月〜2027年1月3,740元/月。7・8月选项0元。至8/16(日)，先到先得30名。"
+        "description": "JOYFIT24经堂夏日优惠。8月〜2027年1月3,740元/月（8月按日折算）。8月选项0元。至8/16(日)，先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">夏日优惠活动中！</span>",
         "lead": "限至8/16（日）",
-        "valueLine1": "7月会费免费",
-        "valueLine2": "8〜1月 <span class=\"lp-o-value-num\">3,740</span>元（含税）/月",
+        "valueLine1": "8〜1月3,740元/月",
+        "valueLine2": "8月选项<span class=\"lp-o-value-num\">0</span>元",
         "cdDay": "天",
         "cdHour": "时",
         "cdMin": "分",
@@ -440,7 +440,7 @@ window.JOYFIT_LOCALES = {
         "monthsList": "8月、9月、10月、11月、12月、1月",
         "usualMonthly": "通常月费<span class=\"price-usual-strike\">9,350</span>元(含税)",
         "perMonthUnit": "元(含税)/月",
-        "optionLabel": "7・8月选项",
+        "optionLabel": "8月选项",
         "optionLabelSub": "8项免费选项自动签约",
         "perkBadge": "活动特典",
         "initialLabel": "初始费用<br><span class=\"label-sub\">入会金・注册费</span>",
@@ -448,9 +448,9 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含税)",
         "joinAmountLabel": "入会时金额",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时金额",
-        "prorateNote": "※7月会费免费（8月起按日折算）",
+        "prorateNote": "※8月会费从入会日起按日折算",
         "optionFees": "选项费用",
-        "optionHighlight": "7・8月0元",
+        "optionHighlight": "8月0元",
         "optionNote": "※入会时8项选项将全部自动签约。<br>不需要的请在<span id=\"campaign-option-cancel-deadline\">8月底前</span>解约。",
         "optionCancelDeadline": "8月底",
         "noticeDeadline": "8月底前",
@@ -618,14 +618,14 @@ window.JOYFIT_LOCALES = {
     "zh-TW": {
       "meta": {
         "title": "JOYFIT24經堂 夏日優惠 | 至8/16（日）",
-        "description": "JOYFIT24經堂夏日優惠。7月會費0元・8月〜2027年1月3,740元/月。7・8月選項0元。至8/16(日)，先搶先贏30名。"
+        "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/16(日)，先搶先贏30名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
         "lead": "限至8/16（日）",
-        "valueLine1": "7月會費免費",
-        "valueLine2": "8〜1月 <span class=\"lp-o-value-num\">3,740</span>元（含稅）/月",
+        "valueLine1": "8〜1月3,740元/月",
+        "valueLine2": "8月選項<span class=\"lp-o-value-num\">0</span>元",
         "cdDay": "天",
         "cdHour": "時",
         "cdMin": "分",
@@ -645,7 +645,7 @@ window.JOYFIT_LOCALES = {
         "monthsList": "8月、9月、10月、11月、12月、1月",
         "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
         "perMonthUnit": "元(含稅)/月",
-        "optionLabel": "7・8月選項",
+        "optionLabel": "8月選項",
         "optionLabelSub": "8項免費選項自動簽約",
         "perkBadge": "活動特典",
         "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
@@ -653,9 +653,9 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含稅)",
         "joinAmountLabel": "入會時金額",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額",
-        "prorateNote": "※7月會費免費（8月起按日折算）",
+        "prorateNote": "※8月會費自入會日起按日計算",
         "optionFees": "選項費用",
-        "optionHighlight": "7・8月0元",
+        "optionHighlight": "8月0元",
         "optionNote": "※入會時8項選項將全部自動簽約。<br>不需要的請在<span id=\"campaign-option-cancel-deadline\">8月底前</span>解約。",
         "optionCancelDeadline": "8月底",
         "noticeDeadline": "8月底前",
