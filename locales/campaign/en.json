@@ -49,8 +49,8 @@
   "conditions": {
     "badge": "Campaign terms",
     "itemInitial": "An initial fee of ¥5,500 (tax incl.) is charged separately at signup",
-    "item1": "6-month minimum membership required (through end of Feb 2027)",
-    "item2": "Early cancellation fee: ¥33,660 (tax incl.) if you leave during the campaign period",
+    "item1": "Membership through [end of February 2027] is required",
+    "item2": "If you cancel during the period, an [early cancellation fee of ¥33,660 (tax incl.)] will apply.",
     "item3": "All free options are auto-enrolled at signup"
   },
   "steps": {
