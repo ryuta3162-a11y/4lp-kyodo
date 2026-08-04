@@ -1,0 +1,3399 @@
+﻿<!DOCTYPE html>
+<!-- デザイン仮版クローン: 文面は本番と同じ。配色のみ白/黒/#C21632。本番反映前の確認用。 -->
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【デザイン仮版】JOYFIT24経堂 夏得キャンペーン｜白黒赤シンプル</title>
+    <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
+    <meta name="description" content="JOYFIT24経堂 夏得キャンペーン。8月〜2027年1月3,740円(税込)/月・8月会費は日割り。8月オプション0円。8/16(日)まで・先着30名。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="【デザイン仮版】JOYFIT24経堂 夏得キャンペーン｜白黒赤シンプル" />
+    <meta property="og:description" content="JOYFIT24経堂の夏得キャンペーン。8月〜2027年1月3,740円(税込)/月・8月会費は日割り・8月オプション0円。8/16(日)まで・先着30名。" />
+    <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
+    <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
+    <meta property="og:image:alt" content="JOYFIT24経堂 夏得キャンペーン" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="【デザイン仮版】JOYFIT24経堂 夏得キャンペーン｜白黒赤シンプル" />
+    <meta name="twitter:description" content="JOYFIT24経堂の夏得キャンペーン。8月〜2027年1月3,740円(税込)/月・8月会費は日割り・8月オプション0円。8/16(日)まで・先着30名。" />
+    <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 視認性の高い Noto Sans JP に完全統一 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../i18n.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        /* =======================================================
+           ■ Root Variables & Base
+           ======================================================= */
+        :root { 
+            --brand: #C21632;
+            --brand-red: #C21632;
+            --brand-dark: #C21632;
+            --lp-frame: #111111;
+            --lp-frame-shadow: 0 4px 0 #111111;
+            /* ゴールド廃止 → 黒・白・赤のみ */
+            --gold-main: #111111; 
+            --gold-light: #ffffff; 
+            --gold-dark: #111111; 
+            --gold-gradient: #111111;
+            --summer-sun: transparent;
+            --summer-sky: transparent;
+            
+            --color-dark: #111111;
+            --color-text: #111111;
+            --bg-body: #ffffff;
+            --radius-lg: 12px;
+            --radius-md: 8px;
+            --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
+            
+            --container-max-width: 600px;
+        }
+
+        html { box-sizing: border-box; scroll-behavior: smooth; }
+        *, *::before, *::after { box-sizing: inherit; }
+        
+        /* フォントの完全統一 (Noto Sans JPを強制) */
+        body {
+            font-family: 'Noto Sans JP', sans-serif !important;
+            text-align: center;
+            margin: 0; padding: 0; padding-bottom: 120px;
+            overflow-x: hidden; 
+            color: var(--color-text);
+            background-color: var(--bg-body);
+        }
+        body.banner-hidden { padding-bottom: 40px; }
+        body.top-banner-hidden { --lp-top-banner-offset: 0px; }
+
+        /* 数字強調用クラス (Noto Sans JPの極太を指定) */
+        .font-impact { 
+            font-weight: 900 !important;
+            letter-spacing: -0.02em;
+        }
+
+        /* =======================================================
+           ■ Hero Section
+           ======================================================= */
+        .mild-fade-in { opacity: 0; animation: mildFadeIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; }
+        @keyframes mildFadeIn {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =======================================================
+           ■ 背景・訴求テキスト（洗練・視認性）
+           ======================================================= */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 72% 42% at 50% 0%, var(--summer-sky), transparent 52%),
+                radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212, 175, 55, 0.07), transparent 55%),
+                radial-gradient(ellipse 55% 38% at 100% 92%, var(--summer-sun), transparent 50%),
+                radial-gradient(ellipse 50% 35% at 100% 90%, rgba(194, 22, 50, 0.04), transparent 50%);
+        }
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.025; mix-blend-mode: multiply;
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ヒーロー価格・重要数字：縁取りでお得感を明確に */
+        .text-value-hero {
+            color: var(--brand);
+            -webkit-text-stroke: 2px #1a1a1a;
+            paint-order: stroke fill;
+            text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85);
+        }
+        .text-value-accent {
+            color: var(--brand);
+            font-weight: 900;
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 6px rgba(194, 22, 50, 0.12);
+        }
+        .text-value-inline {
+            color: var(--brand);
+            text-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .campaign-title {
+            color: #1a1a1a;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+        .featured-price {
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 8px rgba(194, 22, 50, 0.1);
+        }
+        .cta-emphasis {
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .cta-emphasis:hover,
+        .cta-emphasis:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* =======================================================
+           ■ スクロール連動Reveal効果 & デザインコンポーネント
+           ======================================================= */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
+
+        .lp-wrapper { width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: calc(4.25rem + env(safe-area-inset-top)) 15px 0; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }
+        @media (min-width: 768px) {
+            .lp-wrapper { padding-top: calc(4.5rem + env(safe-area-inset-top)); }
+        }
+        body.top-banner-hidden .lp-wrapper {
+            padding-top: 1.25rem;
+        }
+        
+        .plan-selection-section { width: 100%; margin: 0 auto; }
+        
+        /* 見出し（赤背景・タイポ中心） */
+        .campaign-header-enhanced {
+            position: relative;
+            margin-top: 10px;
+            padding: 2.1rem 1.25rem 1.85rem;
+            border-radius: 14px 14px 0 0;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse 90% 70% at 50% -20%, rgba(255, 220, 140, 0.28), transparent 55%),
+                linear-gradient(180deg, #d41f3c 0%, var(--brand-red) 48%, #a81228 100%);
+            border-bottom: none;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+        .campaign-header-enhanced::before,
+        .campaign-header-enhanced::after {
+            content: '';
+            position: absolute;
+            pointer-events: none;
+        }
+        .campaign-header-enhanced::before {
+            inset: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 10px;
+        }
+        .campaign-header-enhanced::after {
+            left: 50%;
+            bottom: 0;
+            width: 72%;
+            height: 1px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+        }
+        .campaign-header-inner {
+            position: relative;
+            z-index: 1;
+            padding: 4px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        .campaign-header-enhanced h2 {
+            margin: 0;
+            font-size: clamp(1.7rem, 7vw, 2.15rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 0.14em;
+            text-indent: 0.14em;
+            line-height: 1.25;
+        }
+        .campaign-header-enhanced h2::after {
+            content: '';
+            display: block;
+            width: 2.6rem;
+            height: 2px;
+            margin: 0.7rem auto 0;
+            background: linear-gradient(90deg, transparent, #F8E71C, transparent);
+            border-radius: 1px;
+            box-shadow: none;
+        }
+        .campaign-title-summer {
+            display: inline;
+            padding: 0;
+            background: none;
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+            border-radius: 0;
+            box-shadow: none;
+            filter: none;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+        }
+        .campaign-app-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            box-shadow: none;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            max-width: calc(100% - 24px);
+        }
+        .campaign-app-badge span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #fff;
+        }
+        @media (min-width: 400px) {
+            .campaign-header-enhanced h2 { font-size: 2rem; }
+            .campaign-app-badge { font-size: 0.74rem; padding: 0.5rem 1.1rem; }
+        }
+
+        .plan-container-wrapper {
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            background-color: #fff;
+            box-shadow: var(--shadow-soft);
+            padding-top: 15px;
+            padding-bottom: 30px;
+            border: 2px solid var(--lp-frame);
+            border-top: none;
+            box-shadow: var(--lp-frame-shadow);
+        }
+        .price-showcase {
+            border-radius: var(--radius-md);
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: left;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .price-list { padding: 0 0.85rem; }
+        .campaign-header-enhanced .deadline-text {
+            display: inline-block;
+            background-color: var(--brand);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(194, 22, 50, 0.25);
+            letter-spacing: 0.03em;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+        }
+        .campaign-price-chip { display: inline-block; margin-top: 8px; background: #fff; color: var(--brand); border: 2px solid var(--brand); border-radius: 999px; padding: 3px 12px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.01em; }
+
+        /* 左右同幅で中央揃え（料金行） */
+        .price-item {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1fr);
+            align-items: center;
+            justify-items: stretch;
+            column-gap: 0.55rem;
+            padding: 1.15rem 0.15rem;
+            border-bottom: 1px dashed #ccc;
+            min-height: 108px;
+        }
+        .price-item .label-group {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: center;
+            justify-content: start;
+            justify-self: stretch;
+            width: 100%;
+            max-width: none;
+            text-align: left;
+            column-gap: 10px;
+        }
+        .price-item .perk-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            height: 1.7rem;
+            padding: 0 0.55rem;
+            border-radius: 6px;
+            background-color: #555;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .price-item .perk-badge.perk-badge-accent {
+            background-color: var(--brand);
+            color: #fff;
+        }
+        .price-item .label {
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: #333;
+            text-align: left;
+            line-height: 1.35;
+        }
+        .price-item .label-sub {
+            font-size: 0.82rem;
+            color: #555;
+            font-weight: 700;
+            margin-top: 4px;
+            display: block;
+        }
+        .price-item .label .note { font-size: 0.82rem; color: #C21632; display: block; font-weight: 800; margin-top: 2px; }
+        .price-normal-note { font-size: 0.8rem; font-weight: 800; color: #a8b2c4; text-decoration: line-through; display: block; margin-bottom: 4px; text-align: center; }
+        .price-item .label-usual-ref {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #888;
+            margin-top: 4px;
+            display: block;
+            line-height: 1.35;
+        }
+        .price-item .label-usual-ref .price-usual-strike {
+            text-decoration: line-through;
+            color: #aaa;
+            font-weight: 800;
+        }
+        .price-item--initial .price-value {
+            color: #555 !important;
+            font-size: 1.45rem !important;
+        }
+        .price-item--half-year {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.05rem;
+            grid-template-columns: none;
+            min-height: 0;
+            margin: 0.55rem 0 0.9rem;
+            padding: 1.55rem 0.85rem 1.7rem;
+            border: none;
+            border-radius: 0;
+            border-bottom: none;
+            background: transparent;
+            box-shadow: none;
+            color: #fff;
+        }
+        .price-item--half-year::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background:
+                radial-gradient(ellipse 85% 70% at 50% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
+                linear-gradient(165deg, #e02542 0%, var(--brand-red) 42%, #9e1026 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.22) inset,
+                0 14px 36px rgba(194, 22, 50, 0.28);
+        }
+        .price-item--half-year > * {
+            position: relative;
+            z-index: 1;
+        }
+        .price-item--half-year .label-group {
+            align-items: center;
+            width: 100%;
+            max-width: none;
+        }
+        .price-item--half-year .perk-badge,
+        .price-item--half-year .perk-badge.perk-badge-accent {
+            margin-top: 0;
+            background-color: #fff !important;
+            color: var(--brand-red) !important;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+        }
+        .price-item--half-year .half-year-catch {
+            margin: 0;
+            font-size: clamp(1.08rem, 4.3vw, 1.32rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: #fff;
+            line-height: 1.3;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+        .half-year-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.65rem;
+            width: 100%;
+            padding: 0.15rem 0 0;
+        }
+        .half-year-price-hero {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.12em;
+            white-space: nowrap;
+            padding: 0.15rem 0 0.05rem;
+        }
+        .price-item--half-year .half-year-price {
+            display: inline;
+            font-size: clamp(2.55rem, 12.5vw, 3.35rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: #fff;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+        }
+        .price-item--half-year .half-year-unit {
+            display: inline;
+            margin: 0;
+            font-size: clamp(0.92rem, 3.6vw, 1.12rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .half-year-months {
+            margin: 0.15rem 0 0;
+            width: 100%;
+            font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+            font-weight: 900;
+            line-height: 1.5;
+            letter-spacing: 0.03em;
+            color: #fff;
+            word-break: keep-all;
+        }
+        .half-year-period-note {
+            margin: 0;
+            width: 100%;
+            max-width: none;
+            padding: 0 0.15rem;
+            font-size: clamp(0.7rem, 2.7vw, 0.82rem);
+            font-weight: 700;
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.82);
+            white-space: nowrap;
+        }
+        .price-item .divider-dot {
+            width: 1px;
+            height: 88px;
+            background-image: linear-gradient(to bottom, #ccc 60%, transparent 40%);
+            background-size: 1px 8px;
+            background-repeat: repeat-y;
+            justify-self: center;
+            align-self: center;
+        }
+        .price-item .price-display-center .price-value {
+            font-size: 1.65rem !important;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+        .price-item .price-display-center .price-value.zero-yen {
+            font-size: 1.65rem !important;
+        }
+        .price-item .price-display-center .unit {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+        .price-item .price-display-center .price-sub-note {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #555;
+            display: block;
+            margin-top: 5px;
+        }
+        .price-item .price-display-center .price-tag {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--brand);
+            background: #fff0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        .price-item .price-display-center .price-normal-note {
+            font-size: 0.82rem;
+        }
+        .price-item .price-display-center {
+            width: 100%;
+            max-width: 260px;
+            justify-self: center;
+            min-height: 88px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 520px) {
+            .price-item {
+                grid-template-columns: 1fr;
+                row-gap: 0.5rem;
+                min-height: 0;
+            }
+            .price-item .divider-dot { display: none; }
+            .price-item .label-group { order: 1; width: 100%; max-width: none; }
+            .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; justify-self: center; }
+            .price-item--half-year {
+                padding: 1.45rem 0.7rem 1.6rem;
+            }
+            .price-item--half-year .half-year-price {
+                font-size: clamp(2.2rem, 11vw, 2.9rem);
+            }
+            .half-year-period-note {
+                font-size: clamp(0.62rem, 2.8vw, 0.74rem);
+            }
+        }
+        .price-item .label .note .period-inline {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.64rem;
+            font-weight: 700;
+            color: #666;
+            letter-spacing: 0.01em;
+        }
+        .price-item-monthly .divider-dot {
+            display: none;
+        }
+        .monthly-fee-breakdown {
+            align-items: stretch !important;
+            text-align: left !important;
+            justify-content: center !important;
+            gap: 0.7rem;
+            padding: 0.35rem 0;
+        }
+        .fee-row {
+            display: grid;
+            grid-template-columns: minmax(125px, 1fr) 1.25fr;
+            align-items: center;
+            gap: 10px 14px;
+            padding: 0.55rem 0;
+        }
+        .fee-row + .fee-row {
+            border-top: 1px dashed #d7d7d7;
+            margin-top: 0.2rem;
+            padding-top: 0.55rem;
+        }
+        .fee-label {
+            font-size: 0.97rem;
+            font-weight: 900;
+            color: #2d2d2d;
+            letter-spacing: 0.01em;
+            line-height: 1.25;
+        }
+        .fee-value {
+            text-align: right;
+            min-width: 230px;
+        }
+        .fee-normal {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #a8b2c4;
+            text-decoration: line-through;
+            display: block;
+            line-height: 1.1;
+            margin-bottom: 0.1rem;
+        }
+        .fee-highlight {
+            color: var(--brand);
+            line-height: 1;
+            white-space: nowrap;
+            text-shadow:
+                1px 0 0 #fff, -1px 0 0 #fff,
+                0 1px 0 #fff, 0 -1px 0 #fff,
+                0 2px 6px rgba(194, 22, 50, 0.1);
+        }
+        .fee-highlight.zero-emphasis {
+            font-size: 2.4rem !important;
+        }
+        .fee-highlight.campaign-emphasis {
+            font-size: 2.5rem !important;
+        }
+        @media (max-width: 520px) {
+            .fee-row {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+            .fee-value {
+                text-align: left;
+                padding-left: 0.05rem;
+                min-width: 0;
+            }
+        }
+        
+        /* 料金表以外で .price-display-center を使う場合の既定 */
+        .price-display-center { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .mid-list-total-block {
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+            background: var(--brand-red);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 16px rgba(194, 22, 50, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        .mid-list-total-block .label {
+            font-size: 1.12rem;
+            font-weight: 900;
+            margin-bottom: 0.65rem;
+            color: #fff;
+            letter-spacing: 0.06em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .mid-list-total-block .label i {
+            font-size: 1.25rem;
+            vertical-align: -0.12em;
+            margin-right: 2px;
+        }
+        .mid-list-total-block .total-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.35rem;
+        }
+        .mid-list-total-block .price-large,
+        .mid-list-total-block .text-value-accent,
+        .mid-list-total-block .featured-price {
+            font-size: 2.9rem !important;
+            font-weight: 900;
+            color: #fff !important;
+            line-height: 1;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+        }
+        .mid-list-total-block .unit-large {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .mid-list-total-block .join-date {
+            color: #fff !important;
+            font-weight: 900;
+        }
+        .mid-list-total-block .total-prorate-note {
+            margin: 0.55rem 0 0;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.88);
+            letter-spacing: 0.02em;
+            line-height: 1.45;
+        }
+        .monthly-fee {
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fafafa 0%, #fff5f6 100%);
+            border-top: 2px solid rgba(194, 22, 50, 0.12);
+        }
+        .monthly-fee-label {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--brand);
+            margin-bottom: 0.55rem;
+            letter-spacing: 0.04em;
+        }
+        .monthly-fee-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.25rem 0.5rem;
+        }
+        .monthly-fee .price-large {
+            font-size: 1.65rem;
+            font-weight: 900;
+            color: #333;
+        }
+        .monthly-fee .unit-large {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+        .monthly-fee-plus {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--brand);
+            margin: 0 0.15rem;
+        }
+        .monthly-fee-option {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        
+        .condition-list-content { padding: 8px 6px 4px; }
+        .condition-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; text-align: left; font-size: 0.8rem; font-weight: 700; }
+        
+        /* 追加特典まわりの注釈（STEP・ボーナスで統一） */
+        .lp-note-pill {
+            display: inline-block;
+            margin-top: 8px;
+            max-width: 100%;
+            padding: 0.25rem 0.1rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            color: #666;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* 黒枠カード（STEP・注意事項・オプション・アクセスで共通） */
+        .lp-framed {
+            background: #fff;
+            border: 2px solid var(--lp-frame);
+            border-radius: 14px;
+            box-shadow: var(--lp-frame-shadow);
+            position: relative;
+        }
+        .lp-framed--hover {
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .lp-framed--hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 var(--lp-frame), 0 14px 28px rgba(0, 0, 0, 0.1);
+        }
+        .lp-frame-badge,
+        .step-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            padding: 7px 18px;
+            border-radius: 999px;
+            border: 2px solid var(--lp-frame);
+            margin: 0;
+            white-space: nowrap;
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+            z-index: 2;
+        }
+        .lp-frame-badge--brand,
+        .step-badge.red {
+            background: var(--brand-red);
+            color: #fff;
+        }
+        .lp-frame-badge--gold,
+        .step-badge.gold {
+            background: var(--gold-gradient);
+            color: #3e2723;
+        }
+        .digital-step-card,
+        .condition-card {
+            padding: 26px 18px 22px;
+            text-align: left;
+            width: 95%;
+            margin: 0 auto 24px auto;
+        }
+        .condition-card {
+            margin-top: 28px;
+        }
+        .how-to-join-container {
+            margin-top: 4px;
+        }
+        .step-card-lead {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--brand);
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+        .step-main-content { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .step-info { flex: 1; }
+        .step-title { font-size: 0.95rem; font-weight: 900; margin-bottom: 4px; }
+        .step-action-btn { display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; padding: 10px 15px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-gold-flat { background: var(--gold-gradient); color: #3e2723; border: 1px solid #d4af37; }
+        .btn-red-flat { background: var(--brand-red); color: #fff; border: 1px solid var(--lp-frame); }
+
+        /* =======================================================
+           ■ オプションセクション (デザイン改善)
+           ======================================================= */
+        .options-unified-section {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 40px auto 48px;
+        }
+        .options-unified-inner {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .options-carousel-section {
+            padding: 24px 0 20px;
+        }
+        .options-carousel-section + .options-carousel-section {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .options-carousel-section .text-box {
+            margin: 0 auto 1.35rem auto;
+            max-width: 92%;
+            text-align: center;
+            background: var(--brand-red);
+            border: 2px solid var(--lp-frame);
+            border-radius: 12px;
+            padding: 20px 16px;
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+            color: #fff;
+        }
+        .options-carousel-section .section-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            color: #fff;
+        }
+        .options-carousel-section .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+        .options-carousel-section .section-title .highlight {
+            color: var(--gold-light);
+            font-size: 2.5rem;
+            margin-right: 4px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+        }
+        .options-carousel-section .text-box p {
+            font-size: 0.85rem;
+            line-height: 1.65;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+        .options-carousel-section .text-box .highlight-text {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 900;
+        }
+        .options-carousel-section .text-box .text-box-note {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.88);
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+        .options-notice-block {
+            padding: 28px 20px 32px;
+            border-top: none;
+            background: #fff;
+            text-align: center;
+        }
+        .options-notice-block .notice-title-v22 {
+            margin-bottom: 20px;
+        }
+        .options-notice-block .notice-body {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .scene { width: 100%; height: 450px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+        .card-carousel { width: 280px; height: 340px; position: relative; cursor: grab; }
+        .option-card-3d { position: absolute; width: 280px; height: 340px; border-radius: 20px; background-color: #fff; border: 4px solid var(--brand-red); display: flex; flex-direction: column; padding: 1.5rem 1rem; left: 50%; top: 0; transform: translateX(-50%); transition: 0.5s; }
+        .card-icon { max-width: 140px; max-height: 140px; margin: auto; }
+        .card-title { font-size: 1.1rem; font-weight: 900; color: #333; }
+        .card-price { font-size: 1.4rem; font-weight: 700; color: var(--brand); }
+        .card-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.8rem; font-weight: 900; font-size: 0.75rem; border-radius: 6px; }
+        .card-badge.free { background: var(--brand); color: #fff; }
+        .card-badge.paid { background: var(--brand); color: #fff; }
+        
+        .carousel-nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 20px; }
+        .carousel-nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 14px rgba(194, 22, 50, 0.35);
+            color: #fff;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .carousel-nav button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(194, 22, 50, 0.45);
+            filter: brightness(1.05);
+        }
+        .carousel-nav button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+
+        a:focus-visible,
+        .step-action-btn:focus-visible,
+        .banner-btn:focus-visible,
+        .cta-button-video:focus-visible,
+        #banner-toggle-btn:focus-visible {
+            outline: 3px solid var(--brand);
+            outline-offset: 3px;
+        }
+
+        .notice-container-v22 { background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 60px auto 0; width: 95%; text-align: center; } /* legacy – 統合後は .options-notice-block を使用 */
+        .notice-title-v22 { font-size: 1.75rem; font-weight: 900; color: var(--brand); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
+        .notice-title-v22::before, .notice-title-v22::after { content: ''; flex: 1; height: 2px; background: var(--brand); opacity: 0.3; margin: 0 15px; }
+        .notice-warning-v22 { display: block; font-size: 0.8rem; font-weight: 900; color: #fff; background: var(--brand-red); padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .cta-button-video { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(45deg, #ffea00, #ffd600); color: #333; font-weight: 900; padding: 12px 25px; border-radius: 50px; text-decoration: none; margin-top: 25px; transition: 0.3s; font-size: 0.9rem; }
+
+        .bonus-section-red { display: block; text-decoration: none; background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 40px auto 0; width: 95%; text-align: center; transition: 0.3s; }
+        .bonus-section-red:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .bonus-btn-large { display: inline-flex; justify-content: center; width: 85%; background: var(--gold-gradient); color: #3e2723; font-size: 1.15rem; font-weight: 900; padding: 16px; border-radius: 50px; border: 2px solid #fff; }
+
+        .access-section-wrap {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 44px auto 40px;
+        }
+        .access-section {
+            margin: 0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .access-section header img {
+            display: block;
+            width: 100%;
+        }
+        .access-map-cta {
+            padding: 25px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            text-align: center;
+        }
+        .access-map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--brand-red);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 2px solid var(--lp-frame);
+            box-shadow: 0 4px 0 var(--lp-frame);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .access-map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--lp-frame);
+        }
+        .map-embed-container iframe { width: 100%; height: 350px; border: 0; }
+        .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #eee; text-align: center; }
+        /* 施設アイコン: 軽くトーンを寄せて一覧の一体感を出す（元画像はそのまま） */
+        .facilities-grid img {
+            width: 45px;
+            margin: 0 auto 10px;
+            border-radius: 6px;
+            object-fit: cover;
+            filter: saturate(0.94) contrast(1.04) brightness(1.02);
+        }
+        @media (max-width: 640px) { .facilities-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .fixed-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            display: flex;
+            gap: 12px;
+            padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+            max-width: 100%;
+            margin: 0 auto;
+            background: linear-gradient(180deg, rgba(255, 253, 248, 0.96) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 250, 240, 0.94) 100%);
+            backdrop-filter: blur(16px) saturate(1.15);
+            -webkit-backdrop-filter: blur(16px) saturate(1.15);
+            border-top: 1px solid rgba(212, 175, 55, 0.55);
+            box-shadow: 0 -10px 36px rgba(26, 26, 46, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fixed-banner .banner-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 12px;
+            font-weight: 900;
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+            border-radius: 9999px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.2s ease;
+        }
+        .fixed-banner .banner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+            filter: brightness(1.04);
+        }
+        .fixed-banner .banner-btn i { font-size: 1.15rem; flex-shrink: 0; }
+        /* 見学：ゴールド系で「特別感」／APP：ブランド赤の深みグラデ */
+        .fixed-banner .trial {
+            background: linear-gradient(155deg, #fdf6d5 0%, #e8c547 38%, #c9a227 72%, #8a6b1a 100%);
+            color: #1a1100;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+            border-color: rgba(255, 255, 255, 0.65);
+        }
+        .fixed-banner .app {
+            background: var(--brand-red);
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+        body.banner-hidden .fixed-banner { transform: translateY(100%); }
+        body.top-banner-hidden .gold-metallic-banner { transform: translateY(-100%); }
+        #banner-toggle-container {
+            position: fixed;
+            bottom: 96px;
+            right: 15px;
+            z-index: 10000;
+            transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body.banner-hidden #banner-toggle-container { bottom: 16px; }
+        #banner-toggle-btn { width: 45px; height: 45px; background: #1a1a1a; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #fff; }
+
+        /* =======================================================
+           ■ トップ固定バナー（既定カラー：赤・ゴールド・白）
+           ======================================================= */
+        .gold-metallic-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: var(--brand-red);
+            color: #fff;
+            padding: 10px 14px;
+            box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-first-view {
+            padding-top: 7.25rem;
+            transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body.top-banner-hidden .hero-first-view {
+            padding-top: 1.25rem;
+        }
+
+        /* =======================================================
+           ■ オープニング v4（月次シーケンス・JS演出）
+           ======================================================= */
+        html.lp-opening-lock,
+        html.lp-opening-lock body {
+            overflow: hidden !important;
+            height: 100%;
+            overscroll-behavior: none;
+        }
+        html.lp-opening-seen #lp-opening-scroll { display: none !important; }
+        body.lp-opening-active { overflow-x: hidden; }
+        body.lp-opening-active .fixed-banner,
+        body.lp-opening-active #banner-toggle-container,
+        body.lp-opening-active .lp-wrapper {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        body.lp-opening-reveal .fixed-banner,
+        body.lp-opening-reveal #banner-toggle-container {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.45s ease 0.28s;
+        }
+        body.lp-opening-reveal .lp-wrapper {
+            opacity: 1;
+            pointer-events: auto;
+            animation: lpORevealSoft 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s both;
+        }
+        @keyframes lpORevealSoft {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lp-opening-exit-play .lp-o-intro-box.is-visible {
+            animation: lpOExitSoft 0.42s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+        .lp-opening-exit-play .lp-opening {
+            animation: lpOExitFade 0.48s ease 0.16s forwards;
+        }
+        @keyframes lpOExitSoft {
+            to { opacity: 0; transform: translateY(-14px) scale(0.98); }
+        }
+        @keyframes lpOExitFade {
+            to { opacity: 0; }
+        }
+        .lp-opening-scroll {
+            position: fixed;
+            inset: 0;
+            z-index: 100001;
+            height: 100vh;
+            height: 100dvh;
+            touch-action: none;
+        }
+        .lp-opening {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: max(12px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
+            background:
+                radial-gradient(ellipse 100% 72% at 50% -12%, rgba(255, 210, 100, 0.24), transparent 58%),
+                radial-gradient(ellipse 80% 50% at 100% 100%, rgba(126, 200, 227, 0.06), transparent 55%),
+                var(--brand-red);
+            color: #fff;
+            overflow: hidden;
+            will-change: opacity;
+            font-family: 'Noto Sans JP', sans-serif !important;
+        }
+        .lp-opening::before {
+            content: '';
+            position: absolute;
+            inset: -30%;
+            z-index: 0;
+            background: radial-gradient(circle at 50% 40%, rgba(255, 220, 120, 0.22), transparent 55%);
+            animation: lpOAmbientPulse 2.4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes lpOAmbientPulse {
+            0%, 100% { opacity: 0.45; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.06); }
+        }
+        .lp-opening-gym-lines,
+        .lp-opening-pulse-line { display: none !important; }
+        .lp-opening-badge {
+            display: none !important;
+        }
+        .lp-opening-curtain {
+            position: absolute;
+            inset: 0;
+            z-index: 30;
+            background:
+                radial-gradient(ellipse 100% 72% at 50% -12%, rgba(255, 210, 100, 0.24), transparent 58%),
+                var(--brand-red);
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .lp-opening-curtain::after { display: none; }
+        .lp-opening-scroll-hint {
+            position: absolute;
+            bottom: max(36px, calc(env(safe-area-inset-bottom) + 20px));
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 31;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: max-content;
+            max-width: 90vw;
+            pointer-events: none;
+            transition: opacity 0.45s ease;
+        }
+        .lp-opening-scroll-track {
+            position: relative;
+            width: 2px;
+            height: 56px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.22);
+            overflow: hidden;
+        }
+        .lp-opening-scroll-track::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #fff 40%, transparent);
+            animation: openingScrollTrack 1.8s ease-in-out infinite;
+        }
+        @keyframes openingScrollTrack {
+            0% { top: -100%; opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0.3; }
+        }
+        .lp-opening-scroll-hint-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+            font-weight: 800;
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            white-space: nowrap;
+        }
+        .lp-o-hint-desktop { display: none; }
+        @media (min-width: 768px) {
+            .lp-o-hint-mobile { display: none; }
+            .lp-o-hint-desktop { display: block; }
+        }
+        .lp-opening-scroll-hint i {
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            color: #fff;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+            animation: openingHintBounce 1.5s ease-in-out infinite;
+        }
+        @keyframes openingHintBounce {
+            0%, 100% { transform: translateY(0); opacity: 0.8; }
+            50% { transform: translateY(14px); opacity: 1; }
+        }
+        .lp-opening-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: transparent;
+        }
+        .lp-opening-grain {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+        .lp-opening-vignette {
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
+        }
+        .lp-opening-meta { display: none; }
+        .lp-opening-skip {
+            position: absolute;
+            top: max(12px, env(safe-area-inset-top));
+            right: max(12px, 3vw);
+            z-index: 35;
+            padding: 8px 14px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+        }
+        .lp-opening-stage {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            font-family: 'Noto Sans JP', sans-serif !important;
+            --lp-o-intro: clamp(1.55rem, 5.5vw, 2.15rem);
+            --lp-o-header-main: clamp(1.75rem, 6.2vw, 2.5rem);
+            --lp-o-row-month: clamp(1.35rem, 5vw, 1.75rem);
+            --lp-o-row-price: clamp(1.55rem, 5.8vw, 2.1rem);
+            --lp-o-deal-head: clamp(1rem, 3.4vw, 1.28rem);
+            --lp-o-panel-w: min(100%, 540px);
+            --lp-o-panel-h: min(72vh, 480px);
+        }
+        .lp-o-panel {
+            width: var(--lp-o-panel-w);
+            min-height: var(--lp-o-panel-h);
+            height: var(--lp-o-panel-h);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+            color: var(--brand-red);
+            overflow: hidden;
+        }
+        .lp-o-card-frame {
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.42);
+            border-radius: 14px;
+            box-shadow:
+                0 5px 0 rgba(0, 0, 0, 0.32),
+                inset 0 1px 0 rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.18);
+        }
+        .lp-opening-frame,
+        .lp-opening-corner { display: none !important; }
+        .lp-opening-progress {
+            position: absolute;
+            bottom: max(12px, env(safe-area-inset-bottom));
+            left: max(16px, 3vw);
+            right: max(16px, 3vw);
+            z-index: 4;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        .lp-opening-progress span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #fff);
+            transition: width 0.12s ease-out;
+        }
+        .lp-opening-phase {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.45s ease;
+        }
+        .lp-opening-phase.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lp-o-card-frame--white {
+            background: #fff;
+            border-color: rgba(194, 22, 50, 0.22);
+            box-shadow:
+                0 5px 0 rgba(0, 0, 0, 0.1),
+                0 10px 28px rgba(0, 0, 0, 0.14);
+            color: var(--brand-red);
+        }
+        .lp-opening-phase--intro,
+        .lp-opening-phase--months,
+        .lp-opening-phase--urgency {
+            justify-content: center;
+            padding: max(10px, env(safe-area-inset-top)) 14px max(10px, env(safe-area-inset-bottom));
+        }
+        .lp-opening-phase--months {
+            gap: 0;
+            --lp-o-row-month: clamp(1.65rem, 6.2vw, 2.2rem);
+            --lp-o-row-price: clamp(2.05rem, 8vw, 3rem);
+        }
+        .lp-o-intro-box {
+            position: relative;
+            z-index: 1;
+            padding: clamp(1.5rem, 5vh, 2rem) clamp(1.25rem, 4.5vw, 1.85rem);
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(28px) scale(0.9);
+        }
+        .lp-o-intro-box.is-visible {
+            animation: lpOBoxIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes lpOBoxIn {
+            0% { opacity: 0; transform: translateY(28px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .lp-o-intro-box .lp-o-stagger {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger {
+            animation: lpOStaggerIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--1 { animation-delay: 0.15s; }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--2 { animation-delay: 0.45s; }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--3 { animation-delay: 0.75s; }
+        .lp-o-intro-box.is-sequenced .lp-o-stagger--4 { animation-delay: 1.05s; }
+        @keyframes lpOStaggerIn {
+            0% { opacity: 0; transform: translateY(16px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .lp-o-capacity-block {
+            margin-top: clamp(0.5rem, 1.8vh, 0.7rem);
+            padding: clamp(0.5rem, 1.6vh, 0.65rem) 0.65rem 0.45rem;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 248, 220, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 4px 0 rgba(180, 136, 17, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        .lp-o-capacity-block .lp-o-capacity-total {
+            margin: 0 0 0.35rem;
+        }
+        .lp-o-capacity-total {
+            margin: 0;
+            font-size: clamp(0.95rem, 3.5vw, 1.12rem);
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            color: #5a4510;
+        }
+        .lp-o-capacity-total .lp-o-capacity-num {
+            display: inline-block;
+            margin: 0 0.12em;
+            font-size: clamp(1.35rem, 5vw, 1.65rem);
+            font-weight: 900;
+            color: var(--brand-red);
+            letter-spacing: 0;
+        }
+        .lp-o-capacity-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+            margin: 0.35rem 0 0.25rem;
+            color: var(--brand-red);
+            line-height: 1;
+        }
+        .lp-o-capacity-arrow {
+            font-size: 1.1rem;
+            font-weight: 900;
+            animation: lpOArrowBounce 0.9s ease-in-out infinite;
+        }
+        .lp-o-intro-box.is-sequenced .lp-o-capacity-arrow {
+            animation: lpOArrowBounce 0.9s ease-in-out 1.35s infinite;
+        }
+        @keyframes lpOArrowBounce {
+            0%, 100% { transform: translateY(0); opacity: 0.85; }
+            50% { transform: translateY(5px); opacity: 1; }
+        }
+        .lp-o-capacity-now {
+            font-size: clamp(0.78rem, 2.8vw, 0.9rem);
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            color: rgba(194, 22, 50, 0.75);
+        }
+        .lp-o-intro-remaining--hero {
+            margin-top: 0 !important;
+        }
+        .lp-o-intro-box.is-sequenced .lp-o-intro-remaining--hero .lp-o-intro-remaining-num {
+            animation: lpORemainingPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+        }
+        @keyframes lpORemainingPop {
+            0% { opacity: 0; transform: scale(0.55); }
+            65% { transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes lpORemainingGlow {
+            0%, 100% { text-shadow: 0 0 0 transparent; }
+            50% { text-shadow: 0 0 18px rgba(194, 22, 50, 0.35); }
+        }
+        .lp-o-intro-box .lp-o-lead,
+        .lp-o-intro-box .lp-o-caption {
+            font-size: var(--lp-o-intro);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.45;
+            opacity: 1;
+            transform: none;
+        }
+        .lp-o-start-badge {
+            display: none;
+            margin: 0 0 0.55rem;
+            padding: 0.35em 0.85em;
+            font-size: clamp(0.78rem, 2.8vw, 0.92rem);
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 999px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35);
+        }
+        .lp-o-start-badge.is-visible {
+            display: inline-block;
+        }
+        .lp-o-header-tag {
+            display: block;
+            margin: 0 0 0.65rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-indent: 0.18em;
+            color: rgba(194, 22, 50, 0.65);
+        }
+        .lp-o-label {
+            margin: 0;
+            font-size: clamp(1.75rem, 6.5vw, 2.65rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.25;
+            color: var(--brand-red);
+        }
+        .lp-o-summer-mark {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 0.4rem;
+            font-size: clamp(1.15rem, 4.2vw, 1.5rem);
+            color: #FFC857;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 8px rgba(255, 180, 60, 0.28));
+        }
+        .lp-o-label-summer {
+            background: linear-gradient(135deg, #c9920a 0%, #ff9f1a 42%, #F8E71C 68%, #e8a820 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .lp-o-intro-box .lp-o-lead {
+            margin: 0.85rem 0 0;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(194, 22, 50, 0.12);
+            font-size: clamp(1.45rem, 5.4vw, 2rem);
+            letter-spacing: 0.06em;
+            text-indent: 0.06em;
+            color: var(--brand-red);
+        }
+        .lp-o-intro-box.lp-o-panel {
+            height: auto;
+            min-height: auto;
+            max-height: none;
+            padding: clamp(1.1rem, 3.8vh, 1.55rem) clamp(1rem, 4vw, 1.35rem);
+            justify-content: center;
+            overflow: visible;
+        }
+        .lp-o-value-pitch {
+            margin: clamp(0.65rem, 2.2vh, 0.95rem) 0 0;
+            padding-top: clamp(0.6rem, 2vh, 0.8rem);
+            border-top: 1px solid rgba(194, 22, 50, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(0.25rem, 1vh, 0.45rem);
+            width: 100%;
+        }
+        .lp-o-value-line1 {
+            margin: 0;
+            font-size: clamp(1.2rem, 4.6vw, 1.55rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            line-height: 1.35;
+            color: var(--brand-red);
+        }
+        .lp-o-value-line2 {
+            margin: 0;
+            font-size: clamp(1.55rem, 6.2vw, 2rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.25;
+            color: var(--brand-red);
+        }
+        .lp-o-value-line2 .lp-o-value-num {
+            font-size: 1.12em;
+            letter-spacing: -0.02em;
+        }
+        .lp-o-intro-box .lp-o-countdown {
+            margin: 0.75rem 0 0.85rem;
+            width: 100%;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: clamp(0.15rem, 1vw, 0.35rem);
+            margin: 0;
+            line-height: 1;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-label {
+            font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-num {
+            font-size: clamp(2rem, 8vw, 2.85rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            min-width: 1.1em;
+            text-align: center;
+        }
+        .lp-o-intro-box .lp-o-intro-remaining-unit {
+            font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+            font-weight: 900;
+            color: var(--brand-red);
+        }
+        .lp-o-intro-box .lp-o-intro-note {
+            margin: 0.65rem 0 0;
+            font-size: clamp(0.68rem, 2.4vw, 0.78rem);
+            font-weight: 700;
+            line-height: 1.55;
+            letter-spacing: 0.04em;
+            color: #666;
+        }
+        .lp-o-deal-sheet {
+            flex: 0 0 auto;
+            justify-content: flex-start;
+        }
+        .lp-o-deal-top {
+            flex-shrink: 0;
+            padding: clamp(14px, 2.4vh, 20px) clamp(16px, 4vw, 22px) clamp(10px, 1.6vh, 14px);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255, 196, 87, 0.08) 0%, rgba(194, 22, 50, 0.06) 45%, rgba(194, 22, 50, 0.01) 100%);
+            border-bottom: 1px solid rgba(194, 22, 50, 0.07);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-deal-top.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .lp-o-months-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(5px, 1.1vw, 8px);
+            width: min(100%, 300px);
+            margin: 0 auto clamp(12px, 2vh, 16px);
+        }
+        .lp-o-month-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: clamp(30px, 5.5vh, 38px);
+            padding: 0 4px;
+            font-size: clamp(0.82rem, 3.1vw, 0.98rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            color: var(--brand-red);
+            background: #fff;
+            border: 1.5px solid rgba(194, 22, 50, 0.14);
+            border-radius: 8px;
+            box-shadow: 0 1px 0 rgba(194, 22, 50, 0.06);
+            opacity: 0;
+            transform: translateY(6px) scale(0.94);
+            transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+        .lp-o-deal-top.is-visible .lp-o-month-chip {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(1) { transition-delay: 0.03s; }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(2) { transition-delay: 0.06s; }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(3) { transition-delay: 0.09s; }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(4) { transition-delay: 0.12s; }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(5) { transition-delay: 0.15s; }
+        .lp-o-deal-top.is-visible .lp-o-month-chip:nth-child(6) { transition-delay: 0.18s; }
+        .lp-o-deal-head {
+            flex-shrink: 0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 1.3;
+            font-size: clamp(1.12rem, 4.4vw, 1.42rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+            background: none;
+            border-bottom: none;
+        }
+        .lp-o-deal-head .lp-o-deal-o {
+            font-style: normal;
+            display: inline-block;
+            margin-left: 0.06em;
+            padding: 0.08em 0.38em 0.1em;
+            font-size: 1em;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            line-height: 1;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
+            vertical-align: baseline;
+        }
+        .lp-o-price-once {
+            position: relative;
+            z-index: 1;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(6px, 1.5vh, 14px) clamp(18px, 4vw, 24px);
+            min-height: 0;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-price-once.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .lp-o-price-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.3rem, 1.1vh, 0.55rem);
+            width: 100%;
+        }
+        .lp-o-price-tier {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+        }
+        .lp-o-price-tier--usual .lp-o-row-usual-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+        }
+        .lp-o-price-tier--usual .lp-o-row-usual-num {
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lp-o-price-tier--usual .lp-o-row-usual-wrap.is-struck .lp-o-row-usual,
+        .lp-o-price-tier--usual .lp-o-row-usual-wrap.is-struck .lp-o-row-yen {
+            color: rgba(26, 26, 26, 0.28);
+        }
+        .lp-o-price-tier--usual .lp-o-row-strike {
+            position: absolute;
+            left: -2%;
+            right: -2%;
+            top: 46%;
+            height: 3px;
+            background: #1a1a1a;
+            opacity: 0;
+            transform: rotate(-8deg);
+            pointer-events: none;
+        }
+        .lp-o-price-tier--usual .lp-o-row-strike.is-on {
+            opacity: 1;
+        }
+        .lp-o-price-tier--usual .lp-o-row-usual {
+            font-size: clamp(1.35rem, 5.8vw, 1.85rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+        .lp-o-price-tier--usual .lp-o-row-yen {
+            font-size: 0.42em;
+            font-weight: 900;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+        .lp-o-price-tier--deal .lp-o-row-deal {
+            font-size: clamp(2.35rem, 11vw, 3.35rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--brand-red);
+        }
+        .lp-o-price-tier--deal .lp-o-row-yen {
+            font-size: 0.36em;
+            font-weight: 900;
+            color: var(--brand-red);
+        }
+        .lp-o-price-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: clamp(14px, 2vh, 20px);
+            margin: clamp(0.1rem, 0.4vh, 0.25rem) 0;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: opacity 0.34s ease, transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-price-arrow.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .lp-o-price-arrow-icon {
+            position: relative;
+            width: 14px;
+            height: 12px;
+        }
+        .lp-o-price-arrow-icon::before,
+        .lp-o-price-arrow-icon::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            border-bottom: 2.5px solid var(--brand-red);
+            border-right: 2.5px solid var(--brand-red);
+            transform: rotate(45deg);
+        }
+        .lp-o-price-arrow-icon::before {
+            top: -1px;
+            opacity: 0.45;
+        }
+        .lp-o-price-arrow-icon::after {
+            top: 5px;
+        }
+        .lp-o-price-tier--deal .lp-o-row-deal-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+            opacity: 0;
+            transform: translateY(8px) scale(0.96);
+            transition: opacity 0.42s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-price-tier--deal .lp-o-row-deal-wrap.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-deal-sheet .lp-o-row-month {
+            color: #1a1a1a;
+        }
+        .lp-o-deal-sheet .lp-o-row-usual,
+        .lp-o-deal-sheet .lp-o-row-yen {
+            color: #1a1a1a;
+        }
+        .lp-o-deal-sheet .lp-o-row-usual-wrap.is-struck .lp-o-row-usual,
+        .lp-o-deal-sheet .lp-o-row-usual-wrap.is-struck .lp-o-row-yen {
+            color: rgba(26, 26, 26, 0.28);
+        }
+        .lp-o-deal-sheet .lp-o-row-strike {
+            height: 3.5px;
+            background: #1a1a1a;
+            box-shadow: none;
+            opacity: 0;
+            transform: scaleX(1) rotate(-10deg);
+            transition: none;
+        }
+        .lp-o-deal-sheet .lp-o-row-strike.is-on {
+            opacity: 1;
+        }
+        .lp-o-deal-sheet .lp-o-row-deal {
+            color: var(--brand-red);
+            text-shadow: none;
+        }
+        .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-yen {
+            color: var(--brand-red);
+        }
+        .lp-o-deal-sheet .lp-o-month-row.is-current {
+            background: rgba(194, 22, 50, 0.04);
+        }
+        .lp-o-deal-sheet .lp-o-month-row.is-done {
+            background: rgba(0, 0, 0, 0.02);
+        }
+        .lp-o-savings-footer {
+            flex-shrink: 0;
+            padding: clamp(0.65rem, 1.8vh, 0.85rem) clamp(0.85rem, 3.5vw, 1.1rem);
+            background: #111;
+            text-align: center;
+            border-top: none;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-savings-footer.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .lp-o-savings-footer .lp-o-savings-label {
+            display: block;
+            margin: 0 0 0.3rem;
+            font-size: clamp(0.68rem, 2.4vw, 0.82rem);
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-indent: 0.2em;
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .lp-o-savings-footer .lp-o-savings-main {
+            margin: 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.1rem 0.28rem;
+            line-height: 1;
+        }
+        .lp-o-savings-footer .lp-o-savings-num {
+            font-size: clamp(2rem, 9vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+        .lp-o-savings-footer .lp-o-savings-yen {
+            font-size: clamp(0.9rem, 3.2vw, 1.15rem);
+            font-weight: 900;
+            color: #fff;
+        }
+        .lp-o-savings-footer .lp-o-savings-badge {
+            margin: 0 0 0 0.15rem;
+            padding: 0.08em 0.38em 0.1em;
+            font-size: var(--lp-o-deal-head);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(212, 175, 55, 0.25);
+            transform: none;
+        }
+        .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal {
+            animation: lpODealPop 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes lpODealPop {
+            0% { transform: scale(0.86); opacity: 0.4; }
+            55% { transform: scale(1.07); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .lp-o-month-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: clamp(3px, 0.65vh, 7px);
+        }
+        .lp-o-month-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(0.35rem, 2vw, 0.65rem);
+            padding: clamp(5px, 0.85vh, 9px) 8px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+        .lp-o-month-row.is-revealed {
+            max-height: 4.5em;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            animation: lpORowReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .lp-o-month-row.is-hidden {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            transform: translateY(8px);
+            pointer-events: none;
+        }
+        @keyframes lpORowReveal {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lp-o-row-month {
+            flex: 0 0 2.35em;
+            font-size: var(--lp-o-row-month);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            text-align: left;
+            line-height: 1.15;
+        }
+        .lp-o-row-price-col {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: clamp(0.3rem, 2.5vw, 0.55rem);
+            min-width: 0;
+        }
+        .lp-o-row-yen {
+            font-size: 0.38em;
+            font-weight: 900;
+            letter-spacing: 0;
+            white-space: nowrap;
+            line-height: 1;
+        }
+        .lp-o-row-usual-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+            flex-shrink: 0;
+        }
+        .lp-o-row-usual-num {
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lp-o-row-usual {
+            font-size: var(--lp-o-row-price);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: rgba(255, 255, 255, 0.9);
+            transition: color 0.3s ease;
+        }
+        .lp-o-row-usual-wrap.is-struck .lp-o-row-usual {
+            color: rgba(255, 255, 255, 0.38);
+        }
+        .lp-o-row-strike {
+            position: absolute;
+            left: -2%;
+            right: -2%;
+            top: 46%;
+            height: 3.5px;
+            background: #1a1a1a;
+            opacity: 0;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+        .lp-o-row-strike.is-on {
+            opacity: 1;
+        }
+        .lp-o-row-shift {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateX(-4px);
+            transition: width 0.34s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease, transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-row-shift.is-visible {
+            width: clamp(22px, 6vw, 30px);
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .lp-o-row-shift-mark {
+            position: relative;
+            width: 16px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+        .lp-o-row-shift-mark::before,
+        .lp-o-row-shift-mark::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            margin-top: -4px;
+            border-top: 2.5px solid var(--brand-red);
+            border-right: 2.5px solid var(--brand-red);
+            transform: rotate(45deg);
+        }
+        .lp-o-row-shift-mark::before {
+            left: 0;
+        }
+        .lp-o-row-shift-mark::after {
+            left: 7px;
+            opacity: 0.45;
+        }
+        .lp-o-row-deal-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 1px;
+            flex-shrink: 0;
+            opacity: 0;
+            transform: translateX(6px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-row-deal-wrap.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .lp-o-row-deal {
+            font-size: var(--lp-o-row-price);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
+        }
+        .lp-o-savings-card {
+            margin: 0;
+            width: min(100%, 540px);
+            flex-shrink: 0;
+            padding: clamp(0.85rem, 2vh, 1.1rem) clamp(0.85rem, 3.5vw, 1.15rem);
+            text-align: center;
+            border-radius: 14px;
+            opacity: 0;
+            transform: translateY(14px) scale(0.97);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-savings-card.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-savings-card.lp-o-card-frame--white .lp-o-savings-label {
+            color: rgba(194, 22, 50, 0.65);
+        }
+        .lp-o-savings-label {
+            display: block;
+            margin: 0 0 0.5rem;
+            font-size: clamp(0.82rem, 2.8vw, 0.98rem);
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
+            color: rgba(255, 255, 255, 0.72);
+        }
+        .lp-o-savings-price-block {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.15rem 0.35rem;
+            margin: 0 auto;
+            padding: clamp(0.55rem, 2vh, 0.75rem) clamp(1rem, 4vw, 1.35rem);
+            background: #fff;
+            color: var(--brand-red);
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+            line-height: 1;
+        }
+        .lp-o-savings-main {
+            margin: 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.1rem 0.25rem;
+            line-height: 1;
+        }
+        .lp-o-savings-num {
+            font-size: clamp(2.35rem, 10.5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            text-shadow: none;
+        }
+        .lp-o-savings-yen {
+            font-size: clamp(1rem, 3.8vw, 1.3rem);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            color: var(--brand-red);
+        }
+        .lp-o-savings-badge {
+            display: inline-block;
+            margin: 0 0 0 0.15rem;
+            padding: 0.28rem 0.75rem;
+            font-size: clamp(0.78rem, 2.8vw, 0.92rem);
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-indent: 0.16em;
+            color: #1a1a1a;
+            background: var(--gold-gradient);
+            border-radius: 999px;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+            transform: rotate(-4deg);
+            vertical-align: middle;
+        }
+        .lp-o-urgency-box {
+            padding: clamp(1.25rem, 4vh, 1.75rem) clamp(1.15rem, 4vw, 1.5rem);
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lp-o-urgency-box.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .lp-o-urgency-head {
+            margin: 0 0 0.85rem;
+            font-size: clamp(0.98rem, 3.6vw, 1.18rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-indent: 0.1em;
+            color: var(--brand-red);
+        }
+        .lp-o-countdown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: clamp(0.1rem, 1vw, 0.3rem);
+            margin: 0 0 1.15rem;
+            padding: clamp(0.7rem, 2vh, 0.95rem) clamp(0.5rem, 2.5vw, 0.85rem);
+            background: #111;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+        .lp-o-countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+            min-width: clamp(2.5rem, 11vw, 3.5rem);
+        }
+        .lp-o-countdown-num {
+            font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
+            font-size: clamp(1.75rem, 7.5vw, 2.65rem);
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.02em;
+            line-height: 1;
+            color: #fff;
+        }
+        .lp-o-countdown-label {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: clamp(0.58rem, 2.2vw, 0.7rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .lp-o-countdown-sep {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+            font-weight: 700;
+            line-height: 1;
+            color: var(--brand-red);
+            margin: 0 0.02rem;
+            padding-bottom: 0.85rem;
+            animation: lpOCountdownBlink 1s step-end infinite;
+        }
+        @keyframes lpOCountdownBlink {
+            50% { opacity: 0.15; }
+        }
+        .lp-o-urgency-hero {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: clamp(0.15rem, 1vw, 0.35rem);
+            width: 100%;
+            margin: 0 0 1rem;
+            line-height: 1;
+        }
+        .lp-o-urgency-hero-label {
+            font-size: clamp(1.15rem, 4.2vw, 1.45rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+        }
+        .lp-o-urgency-hero-num {
+            font-size: clamp(4.25rem, 20vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--brand-red);
+            min-width: 1.05em;
+            text-align: center;
+        }
+        .lp-o-urgency-hero-unit {
+            font-size: clamp(1.25rem, 4.8vw, 1.65rem);
+            font-weight: 900;
+            color: var(--brand-red);
+        }
+        .lp-o-urgency-disclaimer {
+            margin: 0;
+            padding-top: 0.85rem;
+            border-top: 1px solid rgba(194, 22, 50, 0.15);
+            font-size: clamp(0.82rem, 3vw, 0.95rem);
+            font-weight: 800;
+            line-height: 1.7;
+            letter-spacing: 0.04em;
+            color: #444;
+        }
+        .lp-o-urgency-disclaimer .dynamic-remaining-count {
+            font-weight: 900;
+            color: var(--brand-red);
+        }
+        @keyframes openingFrameIn {
+            from { opacity: 0; transform: scale(0.94); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes openingStackIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes openingFinalePop {
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes openingOverlayExit {
+            to { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+        @media (min-width: 768px) {
+            .hero-first-view { padding-top: 6.5rem; }
+            body.top-banner-hidden .hero-first-view { padding-top: 1rem; }
+        }
+
+        .banner-capacity-pill .banner-capacity-num {
+            display: inline-block;
+            margin: 0 0.12em;
+            font-size: 1.05em;
+            font-weight: 900;
+            color: #F8E71C;
+        }
+        .gold-metallic-banner .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            max-width: 640px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .banner-period-dates {
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            margin: 0;
+            opacity: 0.95;
+        }
+        .banner-capacity-pill {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            white-space: nowrap;
+        }
+        .banner-vdivider {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            flex-shrink: 0;
+        }
+        .banner-remaining-block {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            color: var(--color-text);
+            padding: 5px 12px 5px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            min-width: 88px;
+        }
+        .banner-remaining-block .remaining-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.05;
+            font-size: 0.58rem;
+            font-weight: 800;
+            color: #666;
+            letter-spacing: 0.08em;
+        }
+        .banner-remaining-block .highlight-num {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--brand);
+            line-height: 1;
+            min-width: 1.2em;
+            text-align: center;
+        }
+        .banner-remaining-block .remaining-unit {
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--brand);
+            align-self: flex-end;
+            padding-bottom: 2px;
+        }
+
+        .hero-price-card {
+            overflow: visible;
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        /* ヒーロー：3枚の独立カード（外枠＋影で立体感） */
+        .hero-deal-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+        }
+        .hero-deal-panel {
+            position: relative;
+            padding: 1.5rem 1.25rem;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border-radius: 14px;
+            background: var(--brand-red);
+            border: 2px solid var(--lp-frame);
+            box-shadow: var(--lp-frame-shadow);
+        }
+        .hero-panel-intro {
+            opacity: 0;
+            animation: heroSlideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.15s;
+        }
+        .hero-panel-offer {
+            padding: 1.35rem 1.25rem 1.45rem;
+            opacity: 0;
+            animation: heroSlideInRight 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.75s;
+        }
+        @keyframes heroShine {
+            0%, 52% { transform: translateX(-130%); }
+            100% { transform: translateX(130%); }
+        }
+        @keyframes heroSlideInLeft {
+            0% { opacity: 0; transform: translateX(-56px) skewX(-5deg); filter: blur(6px); }
+            100% { opacity: 1; transform: translateX(0) skewX(0); filter: blur(0); }
+        }
+        @keyframes heroSlideInRight {
+            0% { opacity: 0; transform: translateX(56px) skewX(5deg); filter: blur(6px); }
+            100% { opacity: 1; transform: translateX(0) skewX(0); filter: blur(0); }
+        }
+        @keyframes heroSlideInUp {
+            0% { opacity: 0; transform: translateY(32px); filter: blur(4px); }
+            70% { transform: translateY(-5px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes heroPricePower {
+            0% { opacity: 0; transform: translateX(72px) scale(0.88); filter: blur(5px); }
+            55% { transform: translateX(-8px) scale(1.05); filter: blur(0); }
+            75% { transform: translateX(3px) scale(0.99); }
+            100% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+        }
+        @keyframes heroArrowFlow {
+            0%, 100% { transform: translateY(0); opacity: 0.75; }
+            50% { transform: translateY(12px); opacity: 1; }
+        }
+        @keyframes heroStrikeDraw {
+            from { transform: translateY(-50%) rotate(-5deg) scaleX(0); opacity: 0.5; }
+            to { transform: translateY(-50%) rotate(-5deg) scaleX(1); opacity: 1; }
+        }
+        .hero-deal-exclusive {
+            margin: 0 0 0.75rem;
+            font-size: 1.64rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            color: #fff;
+        }
+        .hero-deal-period {
+            margin: 0;
+            font-size: 1.81rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            line-height: 1.45;
+        }
+        .hero-deal-months {
+            display: block;
+            font-size: 1.54rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            opacity: 0.95;
+            margin-top: 6px;
+        }
+        .hero-deal-usual {
+            margin: 0;
+            font-size: 1.64rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.96);
+        }
+        .hero-deal-struck {
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 1.12em;
+            padding: 0 4px;
+            color: rgba(255, 255, 255, 0.82);
+        }
+        .hero-deal-struck::before {
+            content: '';
+            position: absolute;
+            left: -3%;
+            right: -3%;
+            top: 50%;
+            height: 2.5px;
+            background: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+            transform: translateY(-50%) rotate(-5deg) scaleX(0);
+            transform-origin: center center;
+            border-radius: 2px;
+            animation: heroStrikeDraw 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 1.35s;
+        }
+        .hero-deal-tax {
+            font-size: 0.92em;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+        .hero-deal-arrow {
+            display: flex;
+            justify-content: center;
+            margin: 0.7rem 0 0;
+            font-size: 2.85rem;
+            line-height: 1;
+            color: #fff;
+            animation: heroArrowFlow 1.6s ease-in-out 1.5s infinite;
+        }
+        .hero-deal-price-row {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0;
+            line-height: 1;
+            margin: 0;
+        }
+        .hero-deal-num {
+            font-size: clamp(3rem, 14vw, 4.25rem);
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero-deal-yen {
+            font-size: clamp(1.5rem, 6.5vw, 2rem);
+            font-weight: 500;
+            color: #fff;
+            margin-left: 4px;
+        }
+        .hero-deal-price-row .hero-deal-tax--offer {
+            font-size: clamp(0.95rem, 4.2vw, 1.28rem);
+            margin-left: 4px;
+            opacity: 0.92;
+        }
+        @media (min-width: 768px) {
+            .hero-deal-panel {
+                padding: 1.65rem 1.75rem;
+            }
+            .hero-deal-exclusive {
+                font-size: 1.85rem;
+            }
+            .hero-deal-period {
+                font-size: 2.04rem;
+            }
+            .hero-deal-months {
+                font-size: 1.72rem;
+            }
+            .hero-deal-usual {
+                font-size: 1.81rem;
+            }
+            .hero-deal-num {
+                font-size: 4.25rem;
+            }
+            .hero-deal-yen {
+                font-size: 2rem;
+            }
+            .hero-deal-price-row .hero-deal-tax--offer {
+                font-size: 1.28rem;
+            }
+            .hero-deal-arrow {
+                font-size: 3.2rem;
+            }
+            .gold-metallic-banner .banner-inner {
+                gap: 14px;
+            }
+            .banner-period-dates {
+                font-size: 0.88rem;
+            }
+            .banner-remaining-block .highlight-num {
+                font-size: 1.65rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .mild-fade-in { animation: none !important; opacity: 1 !important; transform: none !important; }
+            .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
+            .facilities-grid img { filter: none; }
+            .lp-o-countdown-sep { animation: none !important; opacity: 1 !important; }
+            .lp-o-deal-top.is-visible .lp-o-month-chip,
+            .lp-o-price-tier--deal .lp-o-row-deal-wrap.is-visible {
+                transition: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .lp-o-deal-sheet .lp-o-row-deal-wrap.is-visible .lp-o-row-deal,
+            .lp-o-month-row.is-revealed {
+                animation: none !important;
+            }
+            body.lp-opening-reveal .lp-wrapper {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .lp-opening-exit-play .lp-o-intro-box.is-visible,
+            .lp-opening-exit-play .lp-opening {
+                animation: none !important;
+            }
+            .hero-panel-intro,
+            .hero-panel-offer { animation: none !important; }
+            .hero-deal-stack,
+            .hero-deal-panel,
+            .hero-deal-arrow {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+            .hero-deal-struck::before {
+                transform: translateY(-50%) rotate(-5deg) scaleX(1);
+                animation: none;
+            }
+            #lp-opening-scroll,
+            #lp-opening,
+            .lp-opening,
+            .lp-opening-frame,
+            .lp-opening-phase,
+            .lp-o-month-display,
+            .lp-o-savings-card,
+            .lp-o-month-row,
+            .lp-opening-skip {
+                animation: none !important;
+                transition: none !important;
+                filter: none !important;
+                clip-path: none !important;
+            }
+            .lp-opening-scroll-track::after {
+                animation: none !important;
+            }
+            .lp-o-intro-box .lp-o-stagger,
+            .lp-o-intro-box.is-sequenced .lp-o-stagger {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+            .lp-o-intro-box.is-sequenced .lp-o-intro-remaining--hero .lp-o-intro-remaining-num,
+            .lp-o-capacity-arrow {
+                animation: none !important;
+            }
+            .lp-opening::before {
+                animation: none !important;
+            }
+        }
+
+        /* =======================================================
+           ■ デザイン仮版: 白 / 黒 / 濃い赤(#C21632) のみ
+           本番 index.html には未反映。確認用クローン。
+           ======================================================= */
+        .ambient-bg,
+        .bg-noise {
+            display: none !important;
+        }
+        body {
+            background-color: #ffffff !important;
+            color: #111111 !important;
+        }
+
+        /* ヘッダー: 単色赤フラット */
+        .campaign-header-enhanced {
+            background: #C21632 !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+        .campaign-header-enhanced::before,
+        .campaign-header-enhanced::after {
+            display: none !important;
+        }
+        .campaign-header-enhanced h2::after {
+            background: #ffffff !important;
+            box-shadow: none !important;
+        }
+        .campaign-title-summer {
+            text-shadow: none !important;
+        }
+        .campaign-app-badge {
+            background: #ffffff !important;
+            color: #C21632 !important;
+            border: 2px solid #ffffff !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-radius: 4px !important;
+        }
+        .campaign-app-badge span {
+            color: #C21632 !important;
+        }
+
+        /* 価格訴求ブロック: 白地に赤価格（イメージ準拠） */
+        .price-item--half-year {
+            color: #111111 !important;
+            padding: 1.8rem 0.85rem 2rem !important;
+            margin: 0.4rem 0 1rem !important;
+        }
+        .price-item--half-year::before {
+            border: 2px solid #111111 !important;
+            border-radius: 0 !important;
+            background: #ffffff !important;
+            box-shadow: none !important;
+        }
+        .price-item--half-year .perk-badge,
+        .price-item--half-year .perk-badge.perk-badge-accent {
+            background-color: #C21632 !important;
+            color: #ffffff !important;
+            border-radius: 4px !important;
+            box-shadow: none !important;
+        }
+        .price-item--half-year .half-year-catch {
+            color: #111111 !important;
+            text-shadow: none !important;
+            letter-spacing: 0.04em !important;
+        }
+        .price-item--half-year .half-year-price {
+            color: #C21632 !important;
+            font-size: clamp(3.2rem, 16vw, 4.4rem) !important;
+            text-shadow: none !important;
+            -webkit-text-stroke: 0 !important;
+        }
+        .price-item--half-year .half-year-unit {
+            color: #C21632 !important;
+            font-size: clamp(1.1rem, 4.5vw, 1.45rem) !important;
+        }
+        .half-year-months {
+            color: #111111 !important;
+            font-size: clamp(1rem, 4vw, 1.2rem) !important;
+        }
+        .half-year-period-note {
+            color: #111111 !important;
+            opacity: 0.75;
+            white-space: normal !important;
+        }
+
+        .text-value-hero,
+        .text-value-accent {
+            color: #C21632 !important;
+            -webkit-text-stroke: 0 !important;
+            text-shadow: none !important;
+        }
+
+        /* ご入会時金額: 白背景・黒文字・金額だけ赤 */
+        .mid-list-total-block {
+            background: #ffffff !important;
+            border: 2px solid #111111 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 1.1rem 1rem !important;
+            margin: 1.1rem 0 !important;
+        }
+        .mid-list-total-block .label,
+        .mid-list-total-block .label i,
+        .mid-list-total-block .join-date,
+        .mid-list-total-block .unit-large,
+        .mid-list-total-block .total-prorate-note {
+            color: #111111 !important;
+            text-shadow: none !important;
+        }
+        .mid-list-total-block .total-prorate-note {
+            opacity: 0.75;
+            font-size: 0.68rem !important;
+            font-weight: 600 !important;
+        }
+        .mid-list-total-block .label {
+            font-size: 0.95rem !important;
+            letter-spacing: 0.02em !important;
+            margin-bottom: 0.4rem !important;
+        }
+        .mid-list-total-block .price-large,
+        .mid-list-total-block .text-value-accent,
+        .mid-list-total-block .featured-price {
+            color: #C21632 !important;
+            font-size: 2.35rem !important;
+            text-shadow: none !important;
+        }
+        .mid-list-total-block .unit-large {
+            font-size: 0.95rem !important;
+            font-weight: 800 !important;
+        }
+
+        /* 通常月額: 小さく・オプション料金なし */
+        .monthly-fee {
+            padding: 0.85rem 1rem 1.1rem !important;
+            background: #ffffff !important;
+            border-top: 1px solid #111111 !important;
+        }
+        .monthly-fee-simple {
+            margin: 0;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #111111;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .monthly-fee-amount {
+            margin-left: 0.35em;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #C21632;
+        }
+        .monthly-fee-unit {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        /* ゴールド系ボタン・バッジ → 黒 or 赤 */
+        .btn-gold-flat,
+        .lp-frame-badge--gold,
+        .step-badge.gold {
+            background: #111111 !important;
+            color: #ffffff !important;
+            border-color: #111111 !important;
+        }
+        .btn-red-flat,
+        .lp-frame-badge--brand,
+        .step-badge.red {
+            background: #C21632 !important;
+            color: #ffffff !important;
+        }
+        .cta-emphasis {
+            box-shadow: none !important;
+        }
+
+        /* 枠・カードをフラットに */
+        .lp-framed,
+        .digital-step-card,
+        .condition-card,
+        .option-card-3d {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+        .lp-framed {
+            border: 2px solid #111111 !important;
+        }
+        .lp-frame-badge {
+            border-radius: 0 !important;
+        }
+
+        .campaign-price-chip {
+            border-radius: 4px !important;
+            background: #ffffff !important;
+            color: #C21632 !important;
+            border: 2px solid #C21632 !important;
+        }
+
+        .fixed-banner .banner-btn.trial {
+            background: #111111 !important;
+            color: #ffffff !important;
+        }
+        .fixed-banner .banner-btn.app {
+            background: #C21632 !important;
+            color: #ffffff !important;
+        }
+
+        .lp-opening {
+            background: #C21632 !important;
+        }
+        .lp-o-intro-box,
+        .lp-opening-badge {
+            color: #ffffff !important;
+        }
+
+        .simple-draft-banner {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: #111111;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        .simple-draft-banner a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin-left: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="simple-draft-banner">デザイン仮版（白・黒・濃い赤）／本番未反映 <a href="../../index.html">本番LPへ戻る</a></div>
+
+
+<div class="lang-switcher" id="lang-switcher">
+    <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox">
+        <span class="lang-switcher__icon" aria-hidden="true">🌐</span>
+        <span class="lang-switcher__label">Language</span>
+        <span class="lang-switcher__sep" aria-hidden="true">|</span>
+        <span class="lang-switcher__current" id="lang-current">日本語</span>
+        <span class="lang-switcher__caret" aria-hidden="true">▼</span>
+    </button>
+    <div class="lang-switcher__menu" id="lang-menu" role="listbox" aria-label="Language">
+        <button type="button" class="lang-switcher__item is-active" data-lang="ja" role="option">日本語</button>
+        <button type="button" class="lang-switcher__item" data-lang="en" role="option">English</button>
+        <button type="button" class="lang-switcher__item" data-lang="zh-CN" role="option">简体中文</button>
+        <button type="button" class="lang-switcher__item" data-lang="zh-TW" role="option">繁體中文</button>
+        <button type="button" class="lang-switcher__item" data-lang="ko" role="option">한국어</button>
+    </div>
+</div>
+
+<!-- トップ固定バナー（先着・残り人数） -->
+<div class="gold-metallic-banner" id="top-capacity-banner">
+    <div class="banner-inner">
+        <span class="banner-capacity-pill" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
+        <span class="banner-vdivider" aria-hidden="true"></span>
+        <div class="banner-remaining-block" aria-live="polite">
+            <span class="remaining-label" data-i18n-html="banner.remainingLabel">残<br>り</span>
+            <span class="highlight-num dynamic-remaining-count">--</span>
+            <span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
+        </div>
+        <span class="banner-period-dates" data-i18n="banner.period">8/16(日)まで</span>
+    </div>
+</div>
+
+<div class="ambient-bg" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<!-- ==========================================
+     メインコンテンツ
+     ========================================== -->
+<div class="lp-wrapper">
+
+    <!-- プラン詳細セクション -->
+    <section class="plan-selection-section reveal-up py-4">
+        <div class="campaign-header-enhanced">
+            <div class="campaign-header-inner">
+                <h2 class="campaign-title" data-i18n-html="hero.title"><span class="campaign-title-summer">夏得キャンペーン！</span></h2>
+                <div class="campaign-app-badge">
+                    <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="plan-container-wrapper">
+            <div class="price-showcase">
+                <div class="price-list">
+                    <!-- キャンペーン特典: 8月〜1月会費（半年間） -->
+                    <div class="price-item price-item--half-year">
+                        <div class="label-group">
+                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
+                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">6ヶ月間ずーっとお得</p>
+                        </div>
+                        <div class="half-year-main">
+                            <div class="half-year-price-hero">
+                                <span class="half-year-price font-impact">3,740</span>
+                                <span class="half-year-unit" data-i18n="pricing.perMonthUnit">円(税込)/月</span>
+                            </div>
+                            <p class="half-year-months" data-i18n="pricing.monthsList">8月、9月、10月、11月、12月、1月</p>
+                            <p class="half-year-period-note" data-i18n="pricing.monthsNote">2026年8月から2027年1月までの半年間</p>
+                        </div>
+                    </div>
+
+                    <!-- キャンペーン特典: オプション -->
+                    <div class="price-item">
+                        <div class="label-group">
+                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
+                            <div class="label"><span id="campaign-option-label">8月オプション</span><span class="label-sub" id="campaign-option-label-sub">無料オプション8つ自動契約</span></div>
+                        </div>
+                        <div class="divider-dot"></div>
+                        <div class="price-display-center">
+                            <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit" data-i18n="pricing.yen">円</span></span>
+                        </div>
+                    </div>
+
+                    <!-- ご入会時金額 -->
+                    <div class="mid-list-total-block">
+                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
+                        <div class="total-price-row">
+                            <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
+                            <span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span>
+                        </div>
+                        <p class="total-prorate-note" data-i18n="pricing.prorateNote">※8月会費は入会日からの日割りです</p>
+                    </div>
+                </div>
+
+                 <!-- 2027年2月以降（シンプル表示） -->
+                <div class="monthly-fee">
+                    <p class="monthly-fee-simple">
+                        <span data-i18n="pricing.afterFeb2027">2027年2月以降通常月額</span>
+                        <strong class="monthly-fee-amount">9,350</strong><span class="monthly-fee-unit" data-i18n="pricing.yenTaxIncl">円(税込)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 条件リスト -->
+            <div class="digital-step-card condition-card lp-framed lp-framed--hover reveal-up">
+                <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="conditions.badge">キャンペーン注意事項</div>
+                <div class="condition-list-content">
+                    <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.itemInitial">入会時、初期費用5,500円(税込)が別途発生いたします</span>
+                    </div>
+                    <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item1">【2027年2月末日】までの在籍が必須条件となります</span>
+                    </div>
+                    <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item2">期間内に退会された場合、【解約金として33,660円(税込)】が発生いたします。</span>
+                    </div>
+                    <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item3">無料オプションは入会時、全て自動契約となります</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-to-join-container reveal-up">
+                <!-- ステップ1: 追加特典 -->
+                <div class="digital-step-card lp-framed lp-framed--hover">
+                    <div class="step-badge gold lp-frame-badge lp-frame-badge--gold" data-i18n="steps.step1Badge">STEP 1 追加特典</div>
+                    <div class="step-main-content">
+                        <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
+                        <div class="step-info">
+                            <span class="step-card-lead" data-i18n="steps.step1Lead">お得な追加特典はこちら</span>
+                            <div class="step-title" style="font-size: 0.95rem;" data-i18n="steps.step1Title">紹介・学割・他クラブ移籍等</div>
+                            <p class="step-desc" style="font-size: 0.75rem; color: #666;" data-i18n-html="steps.step1Desc">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は12月から適用となります</span></p>
+                        </div>
+                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat cta-emphasis" data-i18n="steps.step1Btn">申請する</a>
+                    </div>
+                </div>
+                
+                <!-- ステップ2: アプリ入会 -->
+                <div class="digital-step-card lp-framed lp-framed--hover">
+                    <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="steps.step2Badge">STEP 2 アプリ入会</div>
+                    <div class="step-main-content">
+                        <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
+                        <div class="step-info">
+                            <div class="step-title" data-i18n="steps.step2Title">APPでカンタン入会</div>
+                            <p class="step-desc" style="font-size: 0.75rem; color: #666;" data-i18n="steps.step2Desc">JOYFIT APPをDLして入会【最短5分】</p>
+                        </div>
+                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis" data-i18n="steps.step2Btn">アプリDL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- オプション＋注意事項（一体化・白背景） -->
+    <section class="options-unified-section reveal-up" id="options-group-section">
+        <div class="options-unified-inner lp-framed">
+            <section class="options-carousel-section">
+                <div class="text-box">
+                    <h2 class="section-title" data-i18n-html="options.freeTitle">
+                        <span class="highlight font-impact">8</span>つの無料オプション
+                    </h2>
+                    <p>
+                        <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">8月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
+                        <span class="text-box-note" id="campaign-option-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末</span>までに解約をお願いいたします。</span>
+                    </p>
+                </div>
+                <div class="scene">
+                    <div id="card-carousel-free" class="card-carousel"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" id="carousel-prev-free" aria-label="前の無料オプション" data-i18n-aria-label="options.prevFree"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
+                    <button type="button" id="carousel-next-free" aria-label="次の無料オプション" data-i18n-aria-label="options.nextFree"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
+                </div>
+            </section>
+
+            <section class="options-carousel-section">
+                <div class="text-box">
+                    <h2 class="section-title" data-i18n-html="options.paidTitle">
+                        <span class="highlight font-impact">3</span>つの有料オプション
+                    </h2>
+                    <p style="margin-top: 10px;" data-i18n="options.paidNote">
+                        ※こちらはご希望の方のみ契約いただけます
+                    </p>
+                </div>
+                <div class="scene">
+                    <div id="card-carousel-paid" class="card-carousel"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" id="carousel-prev-paid" aria-label="前の有料オプション" data-i18n-aria-label="options.prevPaid"><i class="ph-bold ph-caret-left" aria-hidden="true"></i></button>
+                    <button type="button" id="carousel-next-paid" aria-label="次の有料オプション" data-i18n-aria-label="options.nextPaid"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
+                </div>
+            </section>
+
+            <div class="options-notice-block" id="notice-section">
+                <div class="notice-title-v22">
+                    <span data-i18n="options.noticeTitle">注意事項</span>
+                </div>
+                <div class="notice-body" data-i18n-html="options.noticeBody">
+                    オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
+                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;" id="campaign-notice-deadline">8月末迄</strong>に解約をお願いいたします<br /><br />
+                    入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
+                    解約後も月末迄サービスをご利用頂けます
+                </div>
+                <span class="notice-warning-v22" data-i18n="options.noticeWarning">※解約忘れによる返金は出来ません</span>
+                <a href="https://www.youtube.com/shorts/qpvkmWi-vTM" class="cta-button-video" target="_blank" rel="noopener noreferrer">
+                    <i class="ph-fill ph-youtube-logo" style="font-size: 1.5rem;"></i>
+                    <span data-i18n="options.cancelVideo">解約方法はコチラをタップ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセスマップセクション -->
+    <div class="access-section-wrap reveal-up">
+    <section class="access-section lp-framed">
+        <header>
+            <img src="../../joylogo.jpg" alt="JOYFIT24経堂" data-i18n-alt="access.logoAlt" style="width: 100%; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/600x200/C21632/ffffff?text=JOYFIT24+KYODO';">
+        </header>
+        <div class="map-embed-container">
+            <iframe src="https://www.google.com/maps?q=JOYFIT24経堂,東京都世田谷区経堂5-23-13&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="padding: 25px; background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+            <p style="font-size: 0.85rem; color: #666; font-weight: 700; text-align: left; margin-bottom: 10px;" data-i18n="access.exteriorLabel">店舗外観</p>
+            <img src="entrance.jpg" alt="店舗外観" data-i18n-alt="access.exteriorAlt" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/C21632?text=Store+Exterior';">
+        </div>
+        <div style="padding: 25px; text-align: left; background: #fff;">
+            <strong style="display: block; font-size: 1.35rem; font-weight: 900; margin-bottom: 20px; text-align: center; color: var(--brand);" data-i18n="access.storeName">JOYFIT24経堂</strong>
+            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
+                <i class="ph-fill ph-map-pin" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+                <span data-i18n-html="access.address">〒156-0052<br>東京都世田谷区経堂5-23-13 2F・3F</span>
+            </div>
+            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
+                <i class="ph-fill ph-train" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+                <div><strong data-i18n="access.accessLabel">アクセス</strong><br><span data-i18n="access.accessText">小田急線「経堂駅」より徒歩9分</span></div>
+            </div>
+            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
+                <i class="ph-fill ph-clock" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+                <div><strong data-i18n="access.hoursLabel">受付時間</strong><br><span data-i18n="access.hoursWeekday">平日 10:00～21:00</span><br><span data-i18n="access.hoursWeekend">土日祝 12:00～20:00</span><br><small style="color: #888;" data-i18n="access.hoursNote">※毎週月・木曜日は終日スタッフ不在</small></div>
+            </div>
+            <div class="facilities-grid">
+                <div><img src="a.jpg" alt="ジム" data-i18n-alt="access.facilities.gym.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Gym';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.gym.title">2Fジムエリア</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.gym.desc">広々空間×充実マシン</p></div>
+                <div><img src="b.jpg" alt="スタジオ" data-i18n-alt="access.facilities.studio.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Studio';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.studio.title">3Fスタジオ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.studio.desc">ホットスタジオ</p></div>
+                <div><img src="c.jpg" alt="24H" data-i18n-alt="access.facilities.hours24.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=24H';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.hours24.title">24時間営業</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.hours24.desc">※2Fジムエリア</p></div>
+                <div><img src="d.jpg" alt="土足" data-i18n-alt="access.facilities.shoes.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Shoes';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.shoes.title">土足OK</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.shoes.desc">※サンダル＆裸足は×</p></div>
+                <div><img src="h.jpg" alt="駐車場" data-i18n-alt="access.facilities.parking.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Parking';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.parking.title">無料駐車場6台</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.parking.desc">※駐輪場もあります</p></div>
+                <div><img src="e.jpg" alt="シャワー" data-i18n-alt="access.facilities.shower.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Shower';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.shower.title">シャワールーム</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.shower.desc">男女別計19部屋</p></div>
+                <div><img src="g.jpg" alt="ミスト" data-i18n-alt="access.facilities.mist.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Mist';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.mist.title">女性ミストサウナ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.mist.desc">約40℃設定</p></div>
+                <div><img src="f.jpg" alt="サウナ" data-i18n-alt="access.facilities.sauna.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Sauna';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.sauna.title">男性ドライサウナ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.sauna.desc">約80℃設定</p></div>
+            </div>
+        </div>
+        <div class="access-map-cta">
+            <a href="https://www.google.com/maps/search/?api=1&query=JOYFIT24経堂,東京都世田谷区経堂5-23-13" target="_blank" rel="noopener noreferrer" class="access-map-btn">
+                <i class="ph-bold ph-navigation-arrow" style="font-size: 1.2rem;"></i>
+                <span data-i18n="access.mapBtn">Googleマップでルートを確認</span>
+            </a>
+        </div>
+    </section>
+    </div>
+
+</div>
+
+<!-- 固定バナー -->
+<div class="fixed-banner">
+    <a href="https://24-kyodo-freetrial.vercel.app/" class="banner-btn trial" target="_blank" rel="noopener noreferrer">
+        <i class="ph-bold ph-calendar-plus" style="font-size: 1.2rem;"></i><span data-i18n="banner.trial">無料見学・体験</span>
+    </a>
+    <a href="https://joyfit.jp/kyodo/app_join/" class="banner-btn app" target="_blank" rel="noopener noreferrer">
+        <i class="ph-bold ph-device-mobile" style="font-size: 1.2rem;"></i><span data-i18n="banner.appJoin">APP入会はこちら</span>
+    </a>
+</div>
+
+<div id="banner-toggle-container">
+    <button type="button" id="banner-toggle-btn" aria-label="下部バナーを表示・非表示" data-i18n-aria-label="ui.bannerToggle"><i class="ph-bold ph-x" id="toggle-icon" style="font-size: 20px;" aria-hidden="true"></i></button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // キャンペーン設定（締切・カウントダウン用）
+    window.CAMPAIGN_CONFIG = {
+        endAt: new Date('2026-08-16T23:59:59+09:00'),
+        displayFrom: new Date('2026-08-01T00:00:00+09:00')
+    };
+
+    // ====================================================
+    // 残り人数（先着30名枠・8/1時点で残り16名、毎日1名減って8/16に1名）
+    // ====================================================
+    function getJSTNow() {
+        return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+    }
+
+    function getCalendarRemaining() {
+        const CAMPAIGN_CAPACITY = 30;
+        const START_REMAINING = 16;
+        const MIN_REMAINING = 1;
+        const jst = getJSTNow();
+        const year = jst.getFullYear();
+        const month = jst.getMonth() + 1;
+        const date = jst.getDate();
+
+        // 8月版の表示開始前は、8/1時点の残数を表示
+        if (year < 2026 || (year === 2026 && month < 8)) {
+            return START_REMAINING;
+        }
+        // 8/16より後 → 1名
+        if (year > 2026 || month > 8 || (month === 8 && date > 16)) {
+            return MIN_REMAINING;
+        }
+
+        // 8/1=16名 … 8/16=1名（毎日1名ずつ減少）
+        const start = new Date(2026, 7, 1);
+        const cur = new Date(year, month - 1, date);
+        const dayIndex = Math.round((cur - start) / (1000 * 60 * 60 * 24));
+        const remaining = START_REMAINING - dayIndex;
+        return Math.max(MIN_REMAINING, Math.min(CAMPAIGN_CAPACITY, remaining));
+    }
+
+    function updateRemainingCount() {
+        const remaining = getCalendarRemaining();
+        document.querySelectorAll('.dynamic-remaining-count').forEach(el => {
+            el.textContent = remaining;
+        });
+    }
+
+    // ====================================================
+    // スクロール連動Reveal
+    // ====================================================
+    const revealElements = document.querySelectorAll('.reveal-up');
+    const revealOptions = { root: null, rootMargin: '0px 0px -100px 0px', threshold: 0.1 };
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ====================================================
+    // 入会時金額の動的表示（入会月は日割・キャンペーン月額3,740円）
+    // ====================================================
+    function calcProrateFee(year, month, joinDay, monthly) {
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const remainingDays = daysInMonth - joinDay + 1;
+        return Math.round((monthly / daysInMonth) * remainingDays);
+    }
+
+    function updateProratedFee() {
+        const today = new Date();
+        const jst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+        const year = jst.getFullYear();
+        const month = jst.getMonth() + 1;
+        const date = jst.getDate();
+
+        const dateLabelEl = document.getElementById('dynamic-date-label');
+        const totalPriceEl = document.getElementById('dynamic-total-price');
+
+        if (dateLabelEl && totalPriceEl) {
+            window.__lastJoinMonth = month;
+            window.__lastJoinDate = date;
+            if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
+                dateLabelEl.innerHTML = JoyfitI18n.t('pricing.joinAmountAt', '(<span class="join-date">{m}/{d}</span>)ご入会時金額')
+                    .replace('{m}', month).replace('{d}', date);
+            } else {
+                dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時金額`;
+            }
+
+            const initial = 5500;
+            const campaignMonthly = 3740;
+            const regularMonthly = 9350;
+            let monthFee = 0;
+
+            if (year === 2026 && month === 8) {
+                // 8月会費はキャンペーン月額3,740円を入会日から日割り
+                monthFee = calcProrateFee(year, month, date, campaignMonthly);
+            } else if ((year === 2026 && month >= 9 && month <= 12) || (year === 2027 && month === 1)) {
+                monthFee = campaignMonthly;
+            } else {
+                monthFee = regularMonthly;
+            }
+
+            const total = initial + monthFee;
+            totalPriceEl.textContent = total.toLocaleString();
+        }
+    }
+    window.updateProratedFee = updateProratedFee;
+    // ロジックを実行
+    updateProratedFee();
+
+    // 残り人数（オープニング終了後はカレンダー基準で表示）
+    updateRemainingCount();
+
+    // オプションカルーセルは campaign-i18n.js で初期化
+
+    // ====================================================
+    // スクロールで上下固定バナーを自動非表示（下は×で固定オフも可）
+    // ====================================================
+    let bottomBannerLockedHidden = false;
+    const SCROLL_HIDE_Y = 56;
+    const SCROLL_SHOW_Y = 24;
+
+    function setBottomBannerHidden(hidden) {
+        document.body.classList.toggle('banner-hidden', hidden);
+    }
+
+    function updateScrollBanners() {
+        const y = window.scrollY;
+        if (y > SCROLL_HIDE_Y) {
+            if (!bottomBannerLockedHidden) {
+                setBottomBannerHidden(true);
+            }
+        } else if (y <= SCROLL_SHOW_Y) {
+            if (!bottomBannerLockedHidden) {
+                setBottomBannerHidden(false);
+            }
+        }
+    }
+
+    window.addEventListener('scroll', updateScrollBanners, { passive: true });
+
+    const toggleBtn = document.getElementById('banner-toggle-btn');
+    const toggleIcon = document.getElementById('toggle-icon');
+    function setBannerToggleAria(isHidden) {
+        if (!toggleBtn) return;
+        const label = window.JoyfitI18n
+            ? JoyfitI18n.t(isHidden ? 'ui.bannerShow' : 'ui.bannerHide', isHidden ? '下部バナーを表示' : '下部バナーを閉じる')
+            : (isHidden ? '下部バナーを表示' : '下部バナーを閉じる');
+        toggleBtn.setAttribute('aria-label', label);
+    }
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            bottomBannerLockedHidden = !bottomBannerLockedHidden;
+            const isHidden = bottomBannerLockedHidden;
+            setBottomBannerHidden(isHidden);
+            if (isHidden) {
+                toggleIcon.classList.replace('ph-x', 'ph-caret-up');
+            } else {
+                toggleIcon.classList.replace('ph-caret-up', 'ph-x');
+            }
+            toggleBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+            setBannerToggleAria(isHidden);
+        });
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        setBannerToggleAria(false);
+    }
+    window.addEventListener('joyfit:langchange', function() {
+        setBannerToggleAria(bottomBannerLockedHidden);
+    });
+});
+</script>
+
+<script src="../../locales.bundle.js"></script>
+<script src="../../i18n.js"></script>
+<script src="../../campaign-i18n.js"></script>
+<script>JoyfitI18n.init('campaign').then(function () { if (window.CampaignI18n) CampaignI18n.apply(); });</script>
+
+</body>
+</html>
