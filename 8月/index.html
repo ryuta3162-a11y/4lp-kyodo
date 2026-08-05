@@ -63,7 +63,7 @@
             --text-note: 0.78rem;    /* ※・注意事項 */
             --num-hero: clamp(4.2rem, 23.5vw, 6rem); /* 3,740：端末幅を活かす */
             --num-zero: clamp(3.6rem, 20vw, 5rem);   /* 0円 */
-            --num-sub: 2rem;         /* ご入会時金額 */
+            --num-sub: 1.35rem;      /* ご入会時金額（控えめ） */
             --num-mini: 1.15rem;     /* 通常月額など */
             
             --container-max-width: 600px;
@@ -711,51 +711,51 @@
             box-shadow: none;
         }
         .mid-list-total-block .label {
-            font-size: var(--text-body);
-            font-weight: 800;
-            margin-bottom: 0.35rem;
-            color: #111111;
+            font-size: var(--text-note);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--gray-700);
             letter-spacing: 0.02em;
             text-shadow: none;
         }
         .mid-list-total-block .label i {
-            font-size: 1rem;
+            font-size: 0.9rem;
             vertical-align: -0.12em;
             margin-right: 2px;
-            color: var(--gray-700);
+            color: var(--gray-500);
         }
         .mid-list-total-block .total-price-row {
             display: flex;
             align-items: baseline;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.15rem 0.35rem;
+            gap: 0.15rem 0.3rem;
         }
         .mid-list-total-block .price-large,
         .mid-list-total-block .text-value-accent,
         .mid-list-total-block .featured-price {
             font-size: var(--num-sub) !important;
-            font-weight: 900;
-            color: #C21632 !important;
+            font-weight: 800;
+            color: #333333 !important;
             line-height: 1;
             text-shadow: none;
         }
         .mid-list-total-block .unit-large {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: var(--text-body);
+            font-size: var(--text-note);
             font-weight: 700;
-            color: var(--gray-700);
+            color: var(--gray-500);
             text-shadow: none;
         }
         .mid-list-total-block .join-date {
-            color: #111111 !important;
-            font-weight: 800;
+            color: var(--gray-700) !important;
+            font-weight: 700;
         }
         .mid-list-total-block .total-prorate-note {
-            margin: 0.5rem 0 0;
-            font-size: var(--text-note);
-            font-weight: 600;
-            color: var(--gray-500);
+            margin: 0.55rem 0 0;
+            font-size: 0.86rem;
+            font-weight: 800;
+            color: #C21632;
             opacity: 1;
             letter-spacing: 0.02em;
             line-height: 1.5;
@@ -768,22 +768,22 @@
         }
         .monthly-fee-simple {
             margin: 0;
-            font-size: var(--text-body);
+            font-size: var(--text-note);
             font-weight: 700;
-            color: #111111;
+            color: var(--gray-700);
             letter-spacing: 0.02em;
             line-height: 1.5;
         }
         .monthly-fee-amount {
             margin-left: 0.35em;
             font-size: var(--num-mini);
-            font-weight: 900;
-            color: #C21632;
+            font-weight: 800;
+            color: #333333;
         }
         .monthly-fee-unit {
-            font-size: var(--text-body);
+            font-size: var(--text-note);
             font-weight: 700;
-            color: var(--gray-700);
+            color: var(--gray-500);
         }
         
         .condition-list-content { padding: 8px 6px 4px; }
@@ -2983,10 +2983,10 @@
                     <div class="mid-list-total-block">
                         <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時のお支払い金額</span></div>
                         <div class="total-price-row">
-                            <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
+                            <span id="dynamic-total-price" class="price-large font-impact">--</span>
                             <span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span>
                         </div>
-                        <p class="total-prorate-note" data-i18n="pricing.prorateNote">※8月会費は入会日からの日割りです</p>
+                        <p class="total-prorate-note" data-i18n="pricing.prorateNote">8月会費は日割り料金で無駄なし！</p>
                     </div>
                 </div>
 
@@ -3004,13 +3004,13 @@
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="conditions.badge">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.itemInitial">初期費用<strong class="cond-em">5,500円(税込)</strong>が入会時発生いたします</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.itemInitial">初期費用5,500円(税込)が入会時発生いたします</span>
                     </div>
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item1"><strong class="cond-em">2027年2月末日</strong>までの在籍が必須条件となります</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item2">途中退会された場合、解約金<strong class="cond-em">33,660円(税込)</strong>が発生いたします</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item2">途中退会された場合、解約金33,660円(税込)が発生いたします</span>
                     </div>
                     <div class="condition-item">
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item3">8つのオプションは入会時<strong class="cond-em">自動契約</strong>されます。不要な場合は<strong class="cond-em">8月末日まで</strong>に必ず解約をお願いいたします</span>
@@ -3058,7 +3058,7 @@
                     </h2>
                     <p>
                         <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">8月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
-                        <span class="text-box-note" id="campaign-option-note">※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。</span>
+                        <span class="text-box-note" id="campaign-option-note">※不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。</span>
                     </p>
                 </div>
                 <div class="scene">

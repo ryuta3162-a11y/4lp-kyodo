@@ -38,10 +38,10 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "yen (tax incl.)",
         "joinAmountLabel": "Amount due at signup",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-        "prorateNote": "※August membership fee is prorated from the signup date",
+        "prorateNote": "August fee is prorated — no waste!",
         "optionFees": "option fees",
         "optionHighlight": "August is ¥0",
-        "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
+        "optionNote": "※Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
         "optionCancelDeadline": "end of August",
         "noticeDeadline": "end of August",
         "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
@@ -54,9 +54,9 @@ window.JOYFIT_LOCALES = {
       },
       "conditions": {
         "badge": "Campaign terms",
-        "itemInitial": "Initial fee of <strong class=\"cond-em\">¥5,500 (tax incl.)</strong> is charged at signup",
+        "itemInitial": "Initial fee of ¥5,500 (tax incl.) is charged at signup",
         "item1": "Membership through <strong class=\"cond-em\">end of Feb 2027</strong> is required",
-        "item2": "If you leave early, a cancellation fee of <strong class=\"cond-em\">¥33,660 (tax incl.)</strong> applies",
+        "item2": "If you leave early, a cancellation fee of ¥33,660 (tax incl.) applies",
         "item3": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted ones by <strong class=\"cond-em\">end of August</strong>"
       },
       "steps": {
@@ -247,10 +247,10 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "원(세금 포함)",
         "joinAmountLabel": "입회 시 결제 금액",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-        "prorateNote": "※8월 회비는 입회일부터 일할 계산됩니다",
+        "prorateNote": "8월 회비는 일할 계산으로 낭비 없이!",
         "optionFees": "옵션 요금",
         "optionHighlight": "8월 0원",
-        "optionNote": "※옵션 8개는 입회 시 자동 계약됩니다.<br>불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말일</span>까지 반드시 해약해 주세요.",
+        "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말일</span>까지 반드시 해약해 주세요.",
         "optionCancelDeadline": "8월 말일",
         "noticeDeadline": "8월 말일까지",
         "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
@@ -263,9 +263,9 @@ window.JOYFIT_LOCALES = {
       },
       "conditions": {
         "badge": "캠페인 유의사항",
-        "itemInitial": "초기 비용 <strong class=\"cond-em\">5,500엔(세금 포함)</strong>이 입회 시 발생합니다",
+        "itemInitial": "초기 비용 5,500엔(세금 포함)이 입회 시 발생합니다",
         "item1": "<strong class=\"cond-em\">2027년 2월 말일</strong>까지의 재적이 필수 조건입니다",
-        "item2": "중도 탈퇴 시 해약금 <strong class=\"cond-em\">33,660엔(세금 포함)</strong>이 발생합니다",
+        "item2": "중도 탈퇴 시 해약금 33,660엔(세금 포함)이 발생합니다",
         "item3": "옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">8월 말일까지</strong> 반드시 해약해 주세요"
       },
       "steps": {
@@ -456,10 +456,10 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含税)",
         "joinAmountLabel": "入会时应付金额",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
-        "prorateNote": "※8月会费从入会日起按日折算",
+        "prorateNote": "8月会费按日折算，不浪费！",
         "optionFees": "选项费用",
         "optionHighlight": "8月0元",
-        "optionNote": "※8项选项入会时自动签约。<br>不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
+        "optionNote": "※不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
         "optionCancelDeadline": "8月末日",
         "noticeDeadline": "8月末日前",
         "julyFeeLabel": "7月会费<br><span class=\"label-sub\">7月免费</span>",
@@ -472,9 +472,9 @@ window.JOYFIT_LOCALES = {
       },
       "conditions": {
         "badge": "活动注意事项",
-        "itemInitial": "初期费用<strong class=\"cond-em\">5,500日元(含税)</strong>于入会时发生",
+        "itemInitial": "初期费用5,500日元(含税)于入会时发生",
         "item1": "必须在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-        "item2": "中途退会需支付解约金<strong class=\"cond-em\">33,660日元(含税)</strong>",
+        "item2": "中途退会需支付解约金33,660日元(含税)",
         "item3": "8项选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要请务必于<strong class=\"cond-em\">8月末日前</strong>解约"
       },
       "steps": {
@@ -665,10 +665,10 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含稅)",
         "joinAmountLabel": "入會時應付金額",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時應付金額",
-        "prorateNote": "※8月會費自入會日起按日計算",
+        "prorateNote": "8月會費按日計算，不浪費！",
         "optionFees": "選項費用",
         "optionHighlight": "8月0元",
-        "optionNote": "※8項選項入會時自動簽約。<br>不需要請務必於<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解約。",
+        "optionNote": "※不需要請務必於<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解約。",
         "optionCancelDeadline": "8月末日",
         "noticeDeadline": "8月末日前",
         "julyFeeLabel": "7月會費<br><span class=\"label-sub\">7月免費</span>",
@@ -681,9 +681,9 @@ window.JOYFIT_LOCALES = {
       },
       "conditions": {
         "badge": "活動注意事項",
-        "itemInitial": "初期費用<strong class=\"cond-em\">5,500日圓(含稅)</strong>於入會時發生",
+        "itemInitial": "初期費用5,500日圓(含稅)於入會時發生",
         "item1": "必須在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-        "item2": "中途退會需支付解約金<strong class=\"cond-em\">33,660日圓(含稅)</strong>",
+        "item2": "中途退會需支付解約金33,660日圓(含稅)",
         "item3": "8項選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要請務必於<strong class=\"cond-em\">8月末日前</strong>解約"
       },
       "steps": {

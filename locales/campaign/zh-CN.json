@@ -36,10 +36,10 @@
     "yenTaxIncl": "元(含税)",
     "joinAmountLabel": "入会时应付金额",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
-    "prorateNote": "※8月会费从入会日起按日折算",
+    "prorateNote": "8月会费按日折算，不浪费！",
     "optionFees": "选项费用",
     "optionHighlight": "8月0元",
-    "optionNote": "※8项选项入会时自动签约。<br>不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
+    "optionNote": "※不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
     "optionCancelDeadline": "8月末日",
     "noticeDeadline": "8月末日前",
     "julyFeeLabel": "7月会费<br><span class=\"label-sub\">7月免费</span>",
@@ -52,9 +52,9 @@
   },
   "conditions": {
     "badge": "活动注意事项",
-    "itemInitial": "初期费用<strong class=\"cond-em\">5,500日元(含税)</strong>于入会时发生",
+    "itemInitial": "初期费用5,500日元(含税)于入会时发生",
     "item1": "必须在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-    "item2": "中途退会需支付解约金<strong class=\"cond-em\">33,660日元(含税)</strong>",
+    "item2": "中途退会需支付解约金33,660日元(含税)",
     "item3": "8项选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要请务必于<strong class=\"cond-em\">8月末日前</strong>解约"
   },
   "steps": {

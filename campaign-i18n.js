@@ -214,7 +214,7 @@
     setHtml(
       'campaign-option-note',
       'pricing.optionNote',
-      '※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。'
+      '※不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。'
     );
     setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '8月末日');
     setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末日まで');

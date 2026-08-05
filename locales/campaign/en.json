@@ -36,10 +36,10 @@
     "yenTaxIncl": "yen (tax incl.)",
     "joinAmountLabel": "Amount due at signup",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-    "prorateNote": "※August membership fee is prorated from the signup date",
+    "prorateNote": "August fee is prorated — no waste!",
     "optionFees": "option fees",
     "optionHighlight": "August is ¥0",
-    "optionNote": "※All 8 options are auto-enrolled at signup.<br>Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
+    "optionNote": "※Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
     "optionCancelDeadline": "end of August",
     "noticeDeadline": "end of August",
     "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
@@ -52,9 +52,9 @@
   },
   "conditions": {
     "badge": "Campaign terms",
-    "itemInitial": "Initial fee of <strong class=\"cond-em\">¥5,500 (tax incl.)</strong> is charged at signup",
+    "itemInitial": "Initial fee of ¥5,500 (tax incl.) is charged at signup",
     "item1": "Membership through <strong class=\"cond-em\">end of Feb 2027</strong> is required",
-    "item2": "If you leave early, a cancellation fee of <strong class=\"cond-em\">¥33,660 (tax incl.)</strong> applies",
+    "item2": "If you leave early, a cancellation fee of ¥33,660 (tax incl.) applies",
     "item3": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted ones by <strong class=\"cond-em\">end of August</strong>"
   },
   "steps": {
