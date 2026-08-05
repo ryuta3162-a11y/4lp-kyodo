@@ -237,7 +237,7 @@
             justify-content: center;
             margin-top: 0;
             padding: 0.55rem 1.05rem;
-            border-radius: 999px;
+            border-radius: 0;
             background: rgba(255, 255, 255, 0.12);
             color: #fff;
             font-size: 0.82rem;
@@ -262,7 +262,7 @@
 
         .plan-container-wrapper {
             overflow: hidden;
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            border-radius: 0;
             background-color: #fff;
             box-shadow: var(--shadow-soft);
             padding-top: 15px;
@@ -276,7 +276,7 @@
             max-width: 100%;
             margin: 0 auto;
             text-align: left;
-            border: 1px solid #eee;
+            border: 1px solid #111111;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .price-list { padding: 0 0.85rem; }
@@ -294,7 +294,7 @@
             letter-spacing: 0.03em;
             text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
         }
-        .campaign-price-chip { display: inline-block; margin-top: 8px; background: #fff; color: var(--brand); border: 2px solid var(--brand); border-radius: 999px; padding: 3px 12px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.01em; }
+        .campaign-price-chip { display: inline-block; margin-top: 8px; background: #fff; color: var(--brand); border: 2px solid var(--brand); border-radius: 0; padding: 3px 12px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.01em; }
 
         /* 左右同幅で中央揃え（料金行） */
         .price-item {
@@ -325,7 +325,7 @@
             min-width: 0;
             height: 1.7rem;
             padding: 0 0.55rem;
-            border-radius: 6px;
+            border-radius: 0;
             background-color: #555;
             color: #fff;
             font-size: 0.72rem;
@@ -514,7 +514,7 @@
             font-size: 0.85rem;
             font-weight: 800;
             color: var(--brand);
-            background: #fff0f0;
+            background: #ffffff;
             padding: 3px 8px;
             border-radius: 4px;
             margin-top: 4px;
@@ -755,15 +755,15 @@
             left: 50%;
             transform: translateX(-50%);
             display: inline-block;
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             font-weight: 900;
             letter-spacing: 0.1em;
             padding: 7px 18px;
-            border-radius: 999px;
-            border: 2px solid var(--lp-frame);
+            border-radius: 0;
+            border: none;
             margin: 0;
             white-space: nowrap;
-            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: none;
             z-index: 2;
         }
         .lp-frame-badge--brand,
@@ -800,8 +800,8 @@
         .step-main-content { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
         .step-info { flex: 1; }
         .step-title { font-size: 0.95rem; font-weight: 900; margin-bottom: 4px; }
-        .step-action-btn { display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; padding: 10px 15px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .btn-gold-flat { background: var(--gold-gradient); color: #3e2723; border: 1px solid #d4af37; }
+        .step-action-btn { display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; padding: 12px 18px; border-radius: 0; text-decoration: none; box-shadow: none; }
+        .btn-gold-flat { background: #111111; color: #ffffff; border: 1px solid #111111; }
         .btn-red-flat { background: var(--brand-red); color: #fff; border: 1px solid var(--lp-frame); }
 
         /* =======================================================
@@ -813,7 +813,7 @@
             margin: 40px auto 48px;
         }
         .options-unified-inner {
-            border-radius: 16px;
+            border-radius: 0;
             overflow: hidden;
         }
         .options-carousel-section {
@@ -896,7 +896,7 @@
         .card-icon { max-width: 190px; max-height: 190px; margin: auto; width: 100%; object-fit: contain; }
         .card-title { font-size: 1.1rem; font-weight: 900; color: #333; }
         .card-price { font-size: 1.4rem; font-weight: 700; color: var(--brand); }
-        .card-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.8rem; font-weight: 900; font-size: 0.75rem; border-radius: 6px; }
+        .card-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.8rem; font-weight: 900; font-size: 0.75rem; border-radius: 0; }
         .card-badge.free { background: var(--brand); color: #fff; }
         .card-badge.paid { background: var(--brand); color: #fff; }
         
@@ -935,8 +935,8 @@
         .notice-container-v22 { background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 60px auto 0; width: 95%; text-align: center; } /* legacy – 統合後は .options-notice-block を使用 */
         .notice-title-v22 { font-size: 1.75rem; font-weight: 900; color: var(--brand); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
         .notice-title-v22::before, .notice-title-v22::after { content: ''; flex: 1; height: 2px; background: var(--brand); opacity: 0.3; margin: 0 15px; }
-        .notice-warning-v22 { display: block; font-size: 0.8rem; font-weight: 900; color: #fff; background: var(--brand-red); padding: 15px; border-radius: 8px; margin-top: 20px; }
-        .cta-button-video { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(45deg, #ffea00, #ffd600); color: #333; font-weight: 900; padding: 12px 25px; border-radius: 50px; text-decoration: none; margin-top: 25px; transition: 0.3s; font-size: 0.9rem; }
+        .notice-warning-v22 { display: block; font-size: 0.85rem; font-weight: 900; color: #fff; background: var(--brand-red); padding: 15px; border-radius: 0; margin-top: 20px; }
+        .cta-button-video { display: inline-flex; align-items: center; gap: 8px; background: #111111; color: #ffffff; font-weight: 900; padding: 14px 28px; border-radius: 0; text-decoration: none; margin-top: 25px; transition: filter 0.2s; font-size: 0.95rem; }
 
         .bonus-section-red { display: block; text-decoration: none; background: #fff; border: 4px solid var(--brand); border-radius: var(--radius-lg); padding: 35px 20px; margin: 40px auto 0; width: 95%; text-align: center; transition: 0.3s; }
         .bonus-section-red:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
@@ -984,14 +984,14 @@
             box-shadow: none;
         }
         .map-embed-container iframe { width: 100%; height: 350px; border: 0; }
-        .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #eee; text-align: center; }
+        .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #111111; text-align: center; }
         /* 施設アイコン: 軽くトーンを寄せて一覧の一体感を出す（元画像はそのまま） */
         .facilities-grid img {
             width: 45px;
             margin: 0 auto 10px;
-            border-radius: 6px;
+            border-radius: 0;
             object-fit: cover;
-            filter: saturate(0.94) contrast(1.04) brightness(1.02);
+            filter: none;
         }
         @media (max-width: 640px) { .facilities-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -1002,15 +1002,15 @@
             width: 100%;
             z-index: 9999;
             display: flex;
-            gap: 12px;
-            padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+            gap: 10px;
+            padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
             max-width: 100%;
             margin: 0 auto;
-            background: linear-gradient(180deg, rgba(255, 253, 248, 0.96) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 250, 240, 0.94) 100%);
-            backdrop-filter: blur(16px) saturate(1.15);
-            -webkit-backdrop-filter: blur(16px) saturate(1.15);
-            border-top: 1px solid rgba(212, 175, 55, 0.55);
-            box-shadow: 0 -10px 36px rgba(26, 26, 46, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+            background: #ffffff;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border-top: 2px solid #111111;
+            box-shadow: none;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .fixed-banner .banner-btn {
@@ -1023,30 +1023,29 @@
             font-weight: 900;
             font-size: 0.88rem;
             letter-spacing: 0.03em;
-            border-radius: 9999px;
+            border-radius: 0;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.2s ease;
+            border: none;
+            box-shadow: none;
+            transition: filter 0.2s ease;
         }
         .fixed-banner .banner-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-            filter: brightness(1.04);
+            transform: none;
+            box-shadow: none;
+            filter: brightness(1.06);
         }
         .fixed-banner .banner-btn i { font-size: 1.15rem; flex-shrink: 0; }
-        /* 見学：ゴールド系で「特別感」／APP：ブランド赤の深みグラデ */
         .fixed-banner .trial {
-            background: linear-gradient(155deg, #fdf6d5 0%, #e8c547 38%, #c9a227 72%, #8a6b1a 100%);
-            color: #1a1100;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
-            border-color: rgba(255, 255, 255, 0.65);
+            background: #111111;
+            color: #ffffff;
+            text-shadow: none;
+            border-color: #111111;
         }
         .fixed-banner .app {
-            background: var(--brand-red);
+            background: #C21632;
             color: #fff;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 255, 255, 0.22);
+            text-shadow: none;
+            border-color: #C21632;
         }
         body.banner-hidden .fixed-banner { transform: translateY(100%); }
         body.top-banner-hidden .gold-metallic-banner { transform: translateY(-100%); }
@@ -1061,7 +1060,7 @@
         #banner-toggle-btn { width: 45px; height: 45px; background: #1a1a1a; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #fff; }
 
         /* =======================================================
-           ■ トップ固定バナー（既定カラー：赤・ゴールド・白）
+           ■ トップ固定バナー（黒帯・赤数字）
            ======================================================= */
         .gold-metallic-banner {
             position: fixed;
@@ -1069,11 +1068,11 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            background: var(--brand-red);
+            background: #111111;
             color: #fff;
             padding: 10px 14px;
-            box-shadow: 0 3px 16px rgba(194, 22, 50, 0.35);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: none;
+            border-bottom: none;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .hero-first-view {
@@ -2316,7 +2315,7 @@
             margin: 0 0.12em;
             font-size: 1.05em;
             font-weight: 900;
-            color: #F8E71C;
+            color: #C21632;
         }
         .gold-metallic-banner .banner-inner {
             display: flex;
@@ -2336,13 +2335,13 @@
             opacity: 0.95;
         }
         .banner-capacity-pill {
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.06em;
             padding: 5px 10px;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 0;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.35);
             white-space: nowrap;
         }
         .banner-vdivider {
@@ -2355,11 +2354,12 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            background: #fff;
-            color: var(--color-text);
+            background: #ffffff;
+            color: #111111;
             padding: 5px 12px 5px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
             min-width: 88px;
         }
         .banner-remaining-block .remaining-label {
@@ -2729,7 +2729,38 @@
             color: #ffffff !important;
         }
 
-        .lp-opening { background: #C21632 !important; }
+        .gold-metallic-banner {
+            background: #111111 !important;
+            box-shadow: none !important;
+            border-bottom: none !important;
+        }
+        .banner-capacity-pill .banner-capacity-num {
+            color: #C21632 !important;
+        }
+        .cta-button-video {
+            background: #111111 !important;
+            color: #ffffff !important;
+            border-radius: 0 !important;
+        }
+        .step-action-btn,
+        .btn-gold-flat,
+        .btn-red-flat,
+        .access-map-btn,
+        .notice-warning-v22,
+        .banner-capacity-pill,
+        .banner-remaining-block,
+        .campaign-app-badge,
+        .perk-badge,
+        .card-badge {
+            border-radius: 0 !important;
+        }
+
+        .lp-opening {
+            background: #C21632 !important;
+        }
+        .lp-opening::before {
+            display: none !important;
+        }
         .lp-o-intro-box,
         .lp-opening-badge { color: #ffffff !important; }
 
@@ -2947,9 +2978,9 @@
         <div class="map-embed-container">
             <iframe src="https://www.google.com/maps?q=JOYFIT24経堂,東京都世田谷区経堂5-23-13&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div style="padding: 25px; background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+        <div style="padding: 25px; background: #fff; border-top: 1px solid #111111; border-bottom: 1px solid #111111;">
             <p style="font-size: 0.85rem; color: #666; font-weight: 700; text-align: left; margin-bottom: 10px;" data-i18n="access.exteriorLabel">店舗外観</p>
-            <img src="entrance.jpg" alt="店舗外観" data-i18n-alt="access.exteriorAlt" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/C21632?text=Store+Exterior';">
+            <img src="entrance.jpg" alt="店舗外観" data-i18n-alt="access.exteriorAlt" style="width: 100%; border-radius: 0; box-shadow: none;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/C21632?text=Store+Exterior';">
         </div>
         <div style="padding: 25px; text-align: left; background: #fff;">
             <strong style="display: block; font-size: 1.35rem; font-weight: 900; margin-bottom: 20px; text-align: center; color: var(--brand);" data-i18n="access.storeName">JOYFIT24経堂</strong>
