@@ -22,13 +22,13 @@
   "hero": {
     "title": "<span class=\"campaign-title-summer\">여름 특가 캠페인!</span>",
     "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
-    "halfYearCatch": "6개월 내내 특가"
+    "halfYearCatch": "반년 내내 회비 할인"
   },
   "pricing": {
     "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
     "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
     "perMonthUnit": "원(세금 포함)/월",
-    "optionLabel": "8월 옵션",
+    "optionLabel": "8월 옵션 8개가 0원",
     "optionLabelSub": "무료 옵션 8개 자동 가입",
     "perkBadge": "캠페인 특전",
     "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
@@ -44,14 +44,16 @@
     "noticeDeadline": "8월 말까지",
     "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
     "afterFeb2027": "2027년 2월 이후 통상 월액",
-    "monthsNote": "2026년 8월부터 2027년 1월까지의 반년"
+    "monthsNote": "2026년 8월부터 2027년 1월까지의 반년",
+    "halfYearPeriod": "8월〜1월",
+    "perMonthUnitTax": "(세금 포함)/월"
   },
   "conditions": {
     "badge": "캠페인 유의사항",
     "itemInitial": "입회 시 초기 비용 5,500원(세금 포함)이 별도로 발생합니다",
     "item1": "【2027년 2월 말일】까지의 재적이 필수 조건입니다",
     "item2": "기간 내 탈퇴 시 【해약금 33,660엔(세금 포함)】이 발생합니다.",
-    "item3": "무료 옵션은 입회 시 모두 자동 가입됩니다"
+    "item3": "무료 옵션 8개는 입회 시 모두 자동 가입됩니다"
   },
   "steps": {
     "step1Badge": "STEP 1 추가 혜택",
@@ -77,7 +79,7 @@
     "prevPaid": "이전 유료 옵션",
     "nextPaid": "다음 유료 옵션",
     "noticeTitle": "유의사항",
-    "noticeBody": "옵션은 입회 시 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">자동 계약</strong>됩니다<br />불필요한 경우 <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">8월 말까지</strong> 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능<br />해약 후에도 월말까지 이용 가능합니다",
+    "noticeBody": "옵션은 입회 시 <strong style=\"background: #111111; color: #fff; padding: 2px 6px;\">자동 계약</strong>됩니다<br />불필요한 경우 <strong style=\"background: #111111; color: #fff; padding: 2px 6px;\" id=\"campaign-notice-deadline\">8월 말까지</strong> 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능<br />해약 후에도 월말까지 이용 가능합니다",
     "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
     "cancelVideo": "해지 방법은 여기를 탭",
     "monthlyPrefix": "월",

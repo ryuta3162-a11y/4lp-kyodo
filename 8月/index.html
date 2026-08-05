@@ -218,14 +218,7 @@
             line-height: 1.25;
         }
         .campaign-header-enhanced h2::after {
-            content: '';
-            display: block;
-            width: 2.6rem;
-            height: 2px;
-            margin: 0.7rem auto 0;
-            background: linear-gradient(90deg, transparent, #F8E71C, transparent);
-            border-radius: 1px;
-            box-shadow: none;
+            display: none !important;
         }
         .campaign-title-summer {
             display: inline;
@@ -384,63 +377,52 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
-            gap: 1.05rem;
+            gap: 0;
             grid-template-columns: none;
             min-height: 0;
-            margin: 0.4rem 0 1rem;
-            padding: 1.8rem 0.85rem 2rem;
+            margin: 0.25rem 0 0.75rem;
+            padding: 1.6rem 0.5rem 1.75rem;
             border: none;
             border-radius: 0;
             border-bottom: none;
-            background: transparent;
+            background: #ffffff;
             box-shadow: none;
             color: #111111;
         }
         .price-item--half-year::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            border-radius: 0;
-            border: 2px solid #111111;
-            background: #ffffff;
-            box-shadow: none;
+            display: none;
         }
         .price-item--half-year > * {
             position: relative;
             z-index: 1;
-        }
-        .price-item--half-year .label-group {
-            align-items: center;
-            width: 100%;
-            max-width: none;
-        }
-        .price-item--half-year .perk-badge,
-        .price-item--half-year .perk-badge.perk-badge-accent {
-            margin-top: 0;
-            background-color: #C21632 !important;
-            color: #ffffff !important;
-            border: none;
-            border-radius: 4px;
-            box-shadow: none;
-        }
-        .price-item--half-year .half-year-catch {
-            margin: 0;
-            font-size: clamp(1.08rem, 4.3vw, 1.32rem);
-            font-weight: 900;
-            letter-spacing: 0.04em;
-            color: #111111;
-            line-height: 1.3;
-            text-shadow: none;
         }
         .half-year-main {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 0.65rem;
+            gap: 0.35rem;
             width: 100%;
-            padding: 0.15rem 0 0;
+            padding: 0;
+        }
+        .price-item--half-year .half-year-catch {
+            margin: 0;
+            order: 1;
+            font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #111111;
+            line-height: 1.25;
+            text-shadow: none;
+        }
+        .half-year-period {
+            margin: 0 0 0.35rem;
+            order: 2;
+            font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #111111;
+            line-height: 1.3;
         }
         .half-year-price-hero {
             display: flex;
@@ -448,50 +430,55 @@
             flex-wrap: nowrap;
             align-items: baseline;
             justify-content: center;
-            gap: 0.12em;
+            gap: 0.02em;
             white-space: nowrap;
-            padding: 0.15rem 0 0.05rem;
+            padding: 0.2rem 0 0;
+            order: 3;
         }
         .price-item--half-year .half-year-price {
             display: inline;
-            font-size: clamp(3.2rem, 16vw, 4.4rem);
+            font-size: clamp(4.2rem, 22vw, 5.8rem);
             font-weight: 900;
-            letter-spacing: -0.03em;
-            line-height: 1;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
             color: #C21632;
             text-shadow: none;
             -webkit-text-stroke: 0;
         }
-        .price-item--half-year .half-year-unit {
+        .price-item--half-year .half-year-yen {
             display: inline;
-            margin: 0;
-            font-size: clamp(1.1rem, 4.5vw, 1.45rem);
-            font-weight: 800;
+            font-size: clamp(1.6rem, 7vw, 2.2rem);
+            font-weight: 900;
             color: #C21632;
-            letter-spacing: 0.02em;
+            letter-spacing: 0;
+            line-height: 1;
+            margin-left: 0.05em;
+        }
+        .price-item--half-year .half-year-unit {
+            display: block;
+            order: 4;
+            margin: 0.15rem 0 0;
+            font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+            font-weight: 800;
+            color: #111111;
+            letter-spacing: 0.04em;
             white-space: nowrap;
         }
-        .half-year-months {
-            margin: 0.15rem 0 0;
-            width: 100%;
+        .price-item--option-simple {
+            display: block;
+            grid-template-columns: none;
+            min-height: 0;
+            padding: 0.85rem 0.5rem 1rem;
+            border-bottom: none;
+            text-align: center;
+        }
+        .option-simple-line {
+            margin: 0;
             font-size: clamp(1rem, 4vw, 1.2rem);
             font-weight: 900;
-            line-height: 1.5;
-            letter-spacing: 0.03em;
             color: #111111;
-            word-break: keep-all;
-        }
-        .half-year-period-note {
-            margin: 0;
-            width: 100%;
-            max-width: none;
-            padding: 0 0.15rem;
-            font-size: clamp(0.7rem, 2.7vw, 0.82rem);
-            font-weight: 700;
-            line-height: 1.45;
-            color: #111111;
-            opacity: 0.75;
-            white-space: normal;
+            letter-spacing: 0.04em;
+            line-height: 1.4;
         }
         .price-item .divider-dot {
             width: 1px;
@@ -556,13 +543,10 @@
             .price-item .label-group { order: 1; width: 100%; max-width: none; }
             .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; justify-self: center; }
             .price-item--half-year {
-                padding: 1.45rem 0.7rem 1.6rem;
+                padding: 1.35rem 0.4rem 1.5rem;
             }
             .price-item--half-year .half-year-price {
-                font-size: clamp(2.2rem, 11vw, 2.9rem);
-            }
-            .half-year-period-note {
-                font-size: clamp(0.62rem, 2.8vw, 0.74rem);
+                font-size: clamp(3.8rem, 20vw, 5.2rem);
             }
         }
         .price-item .label .note .period-inline {
@@ -648,7 +632,7 @@
             padding: 1.1rem 1rem;
             text-align: center;
             background: #ffffff;
-            border: 2px solid #111111;
+            border: none;
             border-radius: 0;
             margin: 1.1rem 0;
             box-shadow: none;
@@ -752,9 +736,9 @@
         /* 黒枠カード（STEP・注意事項・オプション・アクセスで共通） */
         .lp-framed {
             background: #fff;
-            border: 2px solid var(--lp-frame);
-            border-radius: 14px;
-            box-shadow: var(--lp-frame-shadow);
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
             position: relative;
         }
         .lp-framed--hover {
@@ -844,54 +828,47 @@
             margin: 0 auto 1.35rem auto;
             max-width: 92%;
             text-align: center;
-            background: var(--brand-red);
-            border: 2px solid var(--lp-frame);
-            border-radius: 12px;
-            padding: 20px 16px;
-            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
-            color: #fff;
+            background: #ffffff;
+            border: none;
+            border-radius: 0;
+            padding: 16px 12px;
+            box-shadow: none;
+            color: #111111;
         }
         .options-carousel-section .section-title {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem;
-            color: #fff;
+            padding-bottom: 0;
+            color: #111111;
         }
         .options-carousel-section .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 3px;
-            background: var(--gold-gradient);
-            border-radius: 2px;
+            display: none !important;
         }
         .options-carousel-section .section-title .highlight {
-            color: var(--gold-light);
-            font-size: 2.5rem;
+            color: #C21632;
+            font-size: 2.35rem;
             margin-right: 4px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+            text-shadow: none;
         }
         .options-carousel-section .text-box p {
             font-size: 0.85rem;
             line-height: 1.65;
             font-weight: 700;
-            color: #fff;
+            color: #111111;
             margin: 0;
         }
         .options-carousel-section .text-box .highlight-text {
-            color: #fff;
+            color: #C21632;
             font-size: 1.15rem;
             font-weight: 900;
         }
         .options-carousel-section .text-box .text-box-note {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.88);
+            color: #111111;
+            opacity: 0.75;
             display: inline-block;
             margin-top: 8px;
             font-weight: 700;
@@ -913,10 +890,10 @@
             margin-bottom: 20px;
         }
 
-        .scene { width: 100%; height: 450px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
-        .card-carousel { width: 280px; height: 340px; position: relative; cursor: grab; }
-        .option-card-3d { position: absolute; width: 280px; height: 340px; border-radius: 20px; background-color: #fff; border: 4px solid var(--brand-red); display: flex; flex-direction: column; padding: 1.5rem 1rem; left: 50%; top: 0; transform: translateX(-50%); transition: 0.5s; }
-        .card-icon { max-width: 140px; max-height: 140px; margin: auto; }
+        .scene { width: 100%; height: 520px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+        .card-carousel { width: 320px; height: 400px; position: relative; cursor: grab; }
+        .option-card-3d { position: absolute; width: 320px; height: 400px; border-radius: 0; background-color: #fff; border: 2px solid #111111; display: flex; flex-direction: column; padding: 1.35rem 1rem; left: 50%; top: 0; transform: translateX(-50%); transition: 0.5s; }
+        .card-icon { max-width: 190px; max-height: 190px; margin: auto; width: 100%; object-fit: contain; }
         .card-title { font-size: 1.1rem; font-weight: 900; color: #333; }
         .card-price { font-size: 1.4rem; font-weight: 700; color: var(--brand); }
         .card-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 0.8rem; font-weight: 900; font-size: 0.75rem; border-radius: 6px; }
@@ -2690,8 +2667,7 @@
         .campaign-header-enhanced::before,
         .campaign-header-enhanced::after { display: none !important; }
         .campaign-header-enhanced h2::after {
-            background: #ffffff !important;
-            box-shadow: none !important;
+            display: none !important;
         }
         .campaign-title-summer { text-shadow: none !important; }
         .campaign-app-badge {
@@ -2733,7 +2709,7 @@
             border-radius: 0 !important;
             box-shadow: none !important;
         }
-        .lp-framed { border: 2px solid #111111 !important; }
+        .lp-framed { border: none !important; box-shadow: none !important; }
         .lp-frame-badge { border-radius: 0 !important; }
 
         .campaign-price-chip {
@@ -2817,30 +2793,19 @@
                 <div class="price-list">
                     <!-- キャンペーン特典: 8月〜1月会費（半年間） -->
                     <div class="price-item price-item--half-year">
-                        <div class="label-group">
-                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
-                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">6ヶ月間ずーっとお得</p>
-                        </div>
                         <div class="half-year-main">
+                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">半年間ずーっと値引き</p>
+                            <p class="half-year-period" data-i18n="pricing.halfYearPeriod">8月〜1月</p>
                             <div class="half-year-price-hero">
-                                <span class="half-year-price font-impact">3,740</span>
-                                <span class="half-year-unit" data-i18n="pricing.perMonthUnit">円(税込)/月</span>
+                                <span class="half-year-price font-impact">3,740</span><span class="half-year-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
-                            <p class="half-year-months" data-i18n="pricing.monthsList">8月、9月、10月、11月、12月、1月</p>
-                            <p class="half-year-period-note" data-i18n="pricing.monthsNote">2026年8月から2027年1月までの半年間</p>
+                            <p class="half-year-unit" data-i18n="pricing.perMonthUnitTax">(税込)/月</p>
                         </div>
                     </div>
 
                     <!-- キャンペーン特典: オプション -->
-                    <div class="price-item">
-                        <div class="label-group">
-                            <span class="perk-badge perk-badge-accent" data-i18n="pricing.perkBadge">キャンペーン特典</span>
-                            <div class="label"><span id="campaign-option-label">8月オプション</span><span class="label-sub" id="campaign-option-label-sub">無料オプション8つ自動契約</span></div>
-                        </div>
-                        <div class="divider-dot"></div>
-                        <div class="price-display-center">
-                            <span class="price-value zero-yen font-impact featured-price text-value-accent">0<span class="unit" data-i18n="pricing.yen">円</span></span>
-                        </div>
+                    <div class="price-item price-item--option-simple">
+                        <p class="option-simple-line" id="campaign-option-label" data-i18n="pricing.optionLabel">8月オプション8つが0円</p>
                     </div>
 
                     <!-- ご入会時金額 -->
@@ -2877,7 +2842,7 @@
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item2">期間内に退会された場合、【解約金として33,660円(税込)】が発生いたします。</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item3">無料オプションは入会時、全て自動契約となります</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item3">8つの無料オプションは入会時全て自動契約となります</span>
                     </div>
                 </div>
             </div>
@@ -2958,8 +2923,8 @@
                     <span data-i18n="options.noticeTitle">注意事項</span>
                 </div>
                 <div class="notice-body" data-i18n-html="options.noticeBody">
-                    オプションは入会時に<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;">自動契約</strong>となります<br />
-                    不要な場合<strong style="background: var(--gold-light); padding: 2px 6px; border-radius: 4px;" id="campaign-notice-deadline">8月末迄</strong>に解約をお願いいたします<br /><br />
+                    オプションは入会時に<strong style="background: #111111; color: #fff; padding: 2px 6px;">自動契約</strong>となります<br />
+                    不要な場合<strong style="background: #111111; color: #fff; padding: 2px 6px;" id="campaign-notice-deadline">8月末迄</strong>に解約をお願いいたします<br /><br />
                     入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
                     解約後も月末迄サービスをご利用頂けます
                 </div>

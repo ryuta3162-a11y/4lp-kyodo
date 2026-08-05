@@ -22,13 +22,13 @@
   "hero": {
     "title": "<span class=\"campaign-title-summer\">Summer Deal Campaign!</span>",
     "appBadge": "Join via app in 5 min — use today!",
-    "halfYearCatch": "Save all 6 months long"
+    "halfYearCatch": "Half-year fee discount"
   },
   "pricing": {
     "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
     "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
     "perMonthUnit": "yen (tax incl.)/mo",
-    "optionLabel": "August options",
+    "optionLabel": "August: 8 options for ¥0",
     "optionLabelSub": "8 free options auto-enrolled",
     "perkBadge": "Campaign perk",
     "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
@@ -44,14 +44,16 @@
     "noticeDeadline": "end of August",
     "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
     "afterFeb2027": "Regular monthly fee from Feb 2027",
-    "monthsNote": "Half year from Aug 2026 to Jan 2027"
+    "monthsNote": "Half year from Aug 2026 to Jan 2027",
+    "halfYearPeriod": "Aug–Jan",
+    "perMonthUnitTax": "(tax incl.)/mo"
   },
   "conditions": {
     "badge": "Campaign terms",
     "itemInitial": "An initial fee of ¥5,500 (tax incl.) is charged separately at signup",
     "item1": "Membership through [end of February 2027] is required",
     "item2": "If you cancel during the period, an [early cancellation fee of ¥33,660 (tax incl.)] will apply.",
-    "item3": "All free options are auto-enrolled at signup"
+    "item3": "All 8 free options are auto-enrolled at signup"
   },
   "steps": {
     "step1Badge": "STEP 1 Bonus perks",
@@ -77,7 +79,7 @@
     "prevPaid": "Previous paid option",
     "nextPaid": "Next paid option",
     "noticeTitle": "Important",
-    "noticeBody": "Options are <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong style=\"background: var(--gold-light); padding: 2px 6px; border-radius: 4px;\" id=\"campaign-notice-deadline\">end of August</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
+    "noticeBody": "Options are <strong style=\"background: #111111; color: #fff; padding: 2px 6px;\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong style=\"background: #111111; color: #fff; padding: 2px 6px;\" id=\"campaign-notice-deadline\">end of August</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
     "noticeWarning": "※No refunds if you forget to cancel",
     "cancelVideo": "Tap here for how to cancel",
     "monthlyPrefix": "Monthly",

@@ -209,8 +209,7 @@
   }
 
   function applyCampaignDynamic() {
-    setText('campaign-option-label', 'pricing.optionLabel', '8月オプション');
-    setText('campaign-option-label-sub', 'pricing.optionLabelSub', '無料オプション8つ自動契約');
+    setText('campaign-option-label', 'pricing.optionLabel', '8月オプション8つが0円');
     setText('campaign-option-highlight', 'pricing.optionHighlight', '8月分が0円');
     setHtml(
       'campaign-option-note',
