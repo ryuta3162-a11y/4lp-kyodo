@@ -58,14 +58,14 @@
     "item3": "무료 옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">8월 말까지</strong> 반드시 해약해 주세요."
   },
   "steps": {
-    "step1Badge": "STEP 1 추가 혜택",
+    "step1Badge": "추가 혜택",
     "step1Lead": "추가 혜택은 여기",
     "step1Title": "소개・학생・타 클럽 이전 등",
-    "step1Desc": "해당되는 분은 사전 신청<br><span class=\"lp-note-pill\">※학생 할인은 12월부터 적용</span>",
+    "step1Desc": "※학생 할인은 통상 월액 발생 시 적용",
     "step1Btn": "신청하기",
-    "step2Badge": "STEP 2 앱 입회",
+    "step2Badge": "앱 입회",
     "step2Title": "앱으로 간편 입회",
-    "step2Desc": "JOYFIT 앱 다운로드 후 입회【최단 5분】",
+    "step2Desc": "최단 5분・당일 바로 이용",
     "step2Btn": "앱 다운로드"
   },
   "options": {

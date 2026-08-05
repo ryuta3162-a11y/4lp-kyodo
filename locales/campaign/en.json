@@ -58,14 +58,14 @@
     "item3": "All 8 free options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted options by <strong class=\"cond-em\">end of August</strong>."
   },
   "steps": {
-    "step1Badge": "STEP 1 Bonus perks",
+    "step1Badge": "Bonus perks",
     "step1Lead": "Extra perks here",
     "step1Title": "Referral, student, club transfer, etc.",
-    "step1Desc": "Apply in advance if eligible<br><span class=\"lp-note-pill\">※Student discount applies from December</span>",
+    "step1Desc": "※Student discount applies when regular monthly fee starts",
     "step1Btn": "Apply",
-    "step2Badge": "STEP 2 App signup",
+    "step2Badge": "App signup",
     "step2Title": "Easy signup via app",
-    "step2Desc": "Download JOYFIT app & join [as fast as 5 min]",
+    "step2Desc": "As fast as 5 min — use today",
     "step2Btn": "Get the app"
   },
   "options": {

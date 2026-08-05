@@ -58,14 +58,14 @@
     "item3": "8項免費選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要請務必於<strong class=\"cond-em\">8月末前</strong>解約。"
   },
   "steps": {
-    "step1Badge": "STEP 1 追加優惠",
+    "step1Badge": "追加特典",
     "step1Lead": "更多優惠請點此",
-    "step1Title": "介紹・學生・他館轉會等",
-    "step1Desc": "符合條件者請事先申請<br><span class=\"lp-note-pill\">※學生優惠自12月起適用</span>",
+    "step1Title": "介紹・學生・他店移籍等",
+    "step1Desc": "※學生優惠於通常月費開始時適用",
     "step1Btn": "申請",
-    "step2Badge": "STEP 2 APP入會",
+    "step2Badge": "APP入會",
     "step2Title": "APP輕鬆入會",
-    "step2Desc": "下載JOYFIT APP入會【最快5分鐘】",
+    "step2Desc": "最短5分・當日可用",
     "step2Btn": "下載APP"
   },
   "options": {

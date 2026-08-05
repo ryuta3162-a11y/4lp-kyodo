@@ -60,14 +60,14 @@ window.JOYFIT_LOCALES = {
         "item3": "All 8 free options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted options by <strong class=\"cond-em\">end of August</strong>."
       },
       "steps": {
-        "step1Badge": "STEP 1 Bonus perks",
+        "step1Badge": "Bonus perks",
         "step1Lead": "Extra perks here",
         "step1Title": "Referral, student, club transfer, etc.",
-        "step1Desc": "Apply in advance if eligible<br><span class=\"lp-note-pill\">※Student discount applies from December</span>",
+        "step1Desc": "※Student discount applies when regular monthly fee starts",
         "step1Btn": "Apply",
-        "step2Badge": "STEP 2 App signup",
+        "step2Badge": "App signup",
         "step2Title": "Easy signup via app",
-        "step2Desc": "Download JOYFIT app & join [as fast as 5 min]",
+        "step2Desc": "As fast as 5 min — use today",
         "step2Btn": "Get the app"
       },
       "options": {
@@ -269,14 +269,14 @@ window.JOYFIT_LOCALES = {
         "item3": "무료 옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">8월 말까지</strong> 반드시 해약해 주세요."
       },
       "steps": {
-        "step1Badge": "STEP 1 추가 혜택",
+        "step1Badge": "추가 혜택",
         "step1Lead": "추가 혜택은 여기",
         "step1Title": "소개・학생・타 클럽 이전 등",
-        "step1Desc": "해당되는 분은 사전 신청<br><span class=\"lp-note-pill\">※학생 할인은 12월부터 적용</span>",
+        "step1Desc": "※학생 할인은 통상 월액 발생 시 적용",
         "step1Btn": "신청하기",
-        "step2Badge": "STEP 2 앱 입회",
+        "step2Badge": "앱 입회",
         "step2Title": "앱으로 간편 입회",
-        "step2Desc": "JOYFIT 앱 다운로드 후 입회【최단 5분】",
+        "step2Desc": "최단 5분・당일 바로 이용",
         "step2Btn": "앱 다운로드"
       },
       "options": {
@@ -478,14 +478,14 @@ window.JOYFIT_LOCALES = {
         "item3": "8项免费选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要请务必于<strong class=\"cond-em\">8月末前</strong>解约。"
       },
       "steps": {
-        "step1Badge": "STEP 1 追加优惠",
+        "step1Badge": "追加特典",
         "step1Lead": "更多优惠请点击",
-        "step1Title": "介绍・学生・他馆转会等",
-        "step1Desc": "符合条件者请事先申请<br><span class=\"lp-note-pill\">※学生优惠自12月起适用</span>",
+        "step1Title": "介绍・学生・他店移籍等",
+        "step1Desc": "※学生优惠于通常月费开始时适用",
         "step1Btn": "申请",
-        "step2Badge": "STEP 2 APP入会",
+        "step2Badge": "APP入会",
         "step2Title": "APP轻松入会",
-        "step2Desc": "下载JOYFIT APP入会【最快5分钟】",
+        "step2Desc": "最短5分・当日可用",
         "step2Btn": "下载APP"
       },
       "options": {
@@ -687,14 +687,14 @@ window.JOYFIT_LOCALES = {
         "item3": "8項免費選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要請務必於<strong class=\"cond-em\">8月末前</strong>解約。"
       },
       "steps": {
-        "step1Badge": "STEP 1 追加優惠",
+        "step1Badge": "追加特典",
         "step1Lead": "更多優惠請點此",
-        "step1Title": "介紹・學生・他館轉會等",
-        "step1Desc": "符合條件者請事先申請<br><span class=\"lp-note-pill\">※學生優惠自12月起適用</span>",
+        "step1Title": "介紹・學生・他店移籍等",
+        "step1Desc": "※學生優惠於通常月費開始時適用",
         "step1Btn": "申請",
-        "step2Badge": "STEP 2 APP入會",
+        "step2Badge": "APP入會",
         "step2Title": "APP輕鬆入會",
-        "step2Desc": "下載JOYFIT APP入會【最快5分鐘】",
+        "step2Desc": "最短5分・當日可用",
         "step2Btn": "下載APP"
       },
       "options": {

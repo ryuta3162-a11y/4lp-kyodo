@@ -61,7 +61,8 @@
             --text-body: 1rem;       /* 説明・ラベル共通 */
             --text-body-sm: 0.95rem;
             --text-note: 0.78rem;    /* ※・注意事項 */
-            --num-hero: clamp(3.8rem, 18vw, 5.2rem); /* 3,740 */
+            --num-hero: clamp(4.2rem, 23.5vw, 6rem); /* 3,740：端末幅を活かす */
+            --num-zero: clamp(3.6rem, 20vw, 5rem);   /* 0円 */
             --num-sub: 2rem;         /* ご入会時金額 */
             --num-mini: 1.15rem;     /* 通常月額など */
             
@@ -291,7 +292,7 @@
             box-shadow: none;
             background: #ffffff;
         }
-        .price-list { padding: 0 0.85rem; }
+        .price-list { padding: 0 0.35rem; }
         .campaign-header-enhanced .deadline-text {
             display: inline-block;
             background-color: var(--brand);
@@ -392,8 +393,8 @@
             gap: 0;
             grid-template-columns: none;
             min-height: 0;
-            margin: 0.25rem 0 0.75rem;
-            padding: 1.6rem 0.5rem 1.75rem;
+            margin: 0.25rem 0 0.65rem;
+            padding: 1.45rem 0.15rem 1.55rem;
             border: none;
             border-radius: 0;
             border-bottom: none;
@@ -460,12 +461,12 @@
         }
         .price-item--half-year .half-year-yen {
             display: inline;
-            font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+            font-size: clamp(1.2rem, 4.8vw, 1.65rem);
             font-weight: 900;
             color: #C21632;
             letter-spacing: 0;
             line-height: 1;
-            margin-left: 0.05em;
+            margin-left: 0.02em;
         }
         .price-item--half-year .half-year-unit {
             display: block;
@@ -482,8 +483,8 @@
             display: block;
             grid-template-columns: none;
             min-height: 0;
-            padding: 1.45rem 0.5rem 1.55rem;
-            margin: 0.15rem 0 0.5rem;
+            padding: 1.35rem 0.15rem 1.45rem;
+            margin: 0.1rem 0 0.4rem;
             border-bottom: none;
             text-align: center;
             background: #ffffff;
@@ -535,14 +536,14 @@
             line-height: 1;
         }
         .option-hero-zero {
-            font-size: clamp(3.2rem, 14vw, 4.2rem);
+            font-size: var(--num-zero);
             font-weight: 900;
             letter-spacing: -0.04em;
             line-height: 0.95;
             color: #C21632;
         }
         .option-hero-yen {
-            font-size: clamp(1.25rem, 5vw, 1.7rem);
+            font-size: clamp(1.15rem, 4.5vw, 1.55rem);
             font-weight: 900;
             color: #C21632;
             line-height: 1;
@@ -3018,28 +3019,27 @@
             </div>
 
             <div class="how-to-join-container reveal-up">
-                <!-- ステップ1: 追加特典 -->
+                <!-- 追加特典 -->
                 <div class="digital-step-card lp-framed lp-framed--hover">
-                    <div class="step-badge gold lp-frame-badge lp-frame-badge--gold" data-i18n="steps.step1Badge">STEP 1 追加特典</div>
+                    <div class="step-badge gold lp-frame-badge lp-frame-badge--gold" data-i18n="steps.step1Badge">追加特典</div>
                     <div class="step-main-content">
                         <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
                         <div class="step-info">
-                            <span class="step-card-lead" data-i18n="steps.step1Lead">お得な追加特典はこちら</span>
                             <div class="step-title" style="font-size: 1rem;" data-i18n="steps.step1Title">紹介・学割・他クラブ移籍等</div>
-                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n-html="steps.step1Desc">該当する方はこちらから事前申請<br><span class="lp-note-pill">※学割は12月から適用となります</span></p>
+                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n="steps.step1Desc">※学割は通常月額発生時に適用</p>
                         </div>
                         <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat cta-emphasis" data-i18n="steps.step1Btn">申請する</a>
                     </div>
                 </div>
                 
-                <!-- ステップ2: アプリ入会 -->
+                <!-- アプリ入会 -->
                 <div class="digital-step-card lp-framed lp-framed--hover">
-                    <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="steps.step2Badge">STEP 2 アプリ入会</div>
+                    <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="steps.step2Badge">アプリ入会</div>
                     <div class="step-main-content">
                         <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
                         <div class="step-info">
                             <div class="step-title" data-i18n="steps.step2Title">APPでカンタン入会</div>
-                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n="steps.step2Desc">JOYFIT APPをDLして入会【最短5分】</p>
+                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n="steps.step2Desc">最短5分・当日すぐ使える</p>
                         </div>
                         <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis" data-i18n="steps.step2Btn">アプリDL</a>
                     </div>
