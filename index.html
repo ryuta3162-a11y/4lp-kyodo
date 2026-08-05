@@ -505,20 +505,34 @@
             line-height: 1.4;
         }
         .option-hero-sub {
-            margin: 0 0 0.35rem;
+            margin: 0 0 0.45rem;
             font-size: var(--text-body);
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
             color: var(--gray-700);
-            line-height: 1.4;
+            line-height: 1.45;
+            max-width: 18em;
         }
         .option-hero-price {
             display: flex;
             flex-direction: row;
             align-items: baseline;
             justify-content: center;
-            gap: 0.02em;
+            gap: 0.28rem;
             white-space: nowrap;
+        }
+        .option-hero-month {
+            font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+            font-weight: 900;
+            color: #111111;
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+        .option-hero-arrow {
+            font-size: clamp(1.2rem, 5vw, 1.55rem);
+            font-weight: 900;
+            color: var(--gray-500);
+            line-height: 1;
         }
         .option-hero-zero {
             font-size: clamp(3.2rem, 14vw, 4.2rem);
@@ -532,7 +546,11 @@
             font-weight: 900;
             color: #C21632;
             line-height: 1;
-            margin-left: 0.05em;
+            margin-left: 0.02em;
+        }
+        .cond-em {
+            color: #C21632;
+            font-weight: 900;
         }
         .price-item .divider-dot {
             width: 1px;
@@ -2950,9 +2968,11 @@
                     <!-- キャンペーン特典: オプション（半年間値引きと同型） -->
                     <div class="price-item price-item--option-hero">
                         <div class="option-hero-main">
-                            <p class="option-hero-catch" data-i18n="pricing.optionCatch">8月オプション</p>
-                            <p class="option-hero-sub" id="campaign-option-label" data-i18n="pricing.optionLabel">無料オプション8つ</p>
+                            <p class="option-hero-catch" data-i18n="pricing.optionCatch">有料オプション（計8つ）</p>
+                            <p class="option-hero-sub" id="campaign-option-label" data-i18n="pricing.optionLabel">合計・月1万円以上のサービスがすべて</p>
                             <div class="option-hero-price">
+                                <span class="option-hero-month" data-i18n="pricing.optionMonth">8月</span>
+                                <span class="option-hero-arrow" aria-hidden="true">→</span>
                                 <span class="option-hero-zero font-impact">0</span><span class="option-hero-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
                         </div>
@@ -2983,16 +3003,16 @@
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="conditions.badge">キャンペーン注意事項</div>
                 <div class="condition-list-content">
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.itemInitial">入会時、初期費用5,500円(税込)が別途発生いたします</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.itemInitial">入会時、初期費用<strong class="cond-em">5,500円(税込)</strong>が別途発生いたします</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item1">【2027年2月末日】までの在籍が必須条件となります</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item1"><strong class="cond-em">【2027年2月末日】</strong>までの在籍が必須条件となります</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item2">期間内に退会された場合、【解約金として33,660円(税込)】が発生いたします。</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item2">期間内に退会された場合、<strong class="cond-em">【解約金として33,660円(税込)】</strong>が発生いたします。</span>
                     </div>
                     <div class="condition-item">
-                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n="conditions.item3">8つの無料オプションは入会時全て自動契約となります</span>
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item3">8つの無料オプションは入会時<strong class="cond-em">自動契約</strong>されます。不要な場合は<strong class="cond-em">8月末まで</strong>に必ずご解約をお願いいたします。</span>
                     </div>
                 </div>
             </div>
@@ -3073,8 +3093,8 @@
                     <span data-i18n="options.noticeTitle">注意事項</span>
                 </div>
                 <div class="notice-body" data-i18n-html="options.noticeBody">
-                    オプションは入会時に<strong style="background: #111111; color: #fff; padding: 2px 6px;">自動契約</strong>となります<br />
-                    不要な場合<strong style="background: #111111; color: #fff; padding: 2px 6px;" id="campaign-notice-deadline">8月末迄</strong>に解約をお願いいたします<br /><br />
+                    オプションは入会時に<strong class="cond-em">自動契約</strong>となります<br />
+                    不要な場合は<strong class="cond-em" id="campaign-notice-deadline">8月末まで</strong>に必ずご解約をお願いいたします<br /><br />
                     入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
                     解約後も月末迄サービスをご利用頂けます
                 </div>

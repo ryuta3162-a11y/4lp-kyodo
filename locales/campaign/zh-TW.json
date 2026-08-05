@@ -28,7 +28,7 @@
     "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
     "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
     "perMonthUnit": "元(含稅)/月",
-    "optionLabel": "8項免費選項",
+    "optionLabel": "合計每月1萬日圓以上服務全部",
     "optionLabelSub": "8項免費選項自動簽約",
     "perkBadge": "活動特典",
     "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
@@ -41,20 +41,21 @@
     "optionHighlight": "8月0元",
     "optionNote": "※入會時8項選項將全部自動簽約。<br>不需要的請在<span id=\"campaign-option-cancel-deadline\">8月底前</span>解約。",
     "optionCancelDeadline": "8月底",
-    "noticeDeadline": "8月底前",
+    "noticeDeadline": "8月末前",
     "julyFeeLabel": "7月會費<br><span class=\"label-sub\">7月免費</span>",
     "afterFeb2027": "2027年2月以後的通常月費",
     "monthsNote": "2026年8月至2027年1月的半年",
     "halfYearPeriod": "8月〜1月",
     "perMonthUnitTax": "(含稅)/月",
-    "optionCatch": "8月選項"
+    "optionCatch": "付費選項（共8項）",
+    "optionMonth": "8月"
   },
   "conditions": {
     "badge": "活動注意事項",
-    "itemInitial": "入會時需另行支付初始費用5,500元(含稅)",
-    "item1": "必須在籍至【2027年2月末日】",
-    "item2": "期間內退會需支付【解約金33,660日圓(含稅)】。",
-    "item3": "8項免費選項在入會時全部自動簽約"
+    "itemInitial": "入會時另收初期費用<strong class=\"cond-em\">5,500日圓(含稅)</strong>",
+    "item1": "必須在籍至<strong class=\"cond-em\">【2027年2月末日】</strong>",
+    "item2": "期間內退會需支付<strong class=\"cond-em\">【解約金33,660日圓(含稅)】</strong>。",
+    "item3": "8項免費選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要請務必於<strong class=\"cond-em\">8月末前</strong>解約。"
   },
   "steps": {
     "step1Badge": "STEP 1 追加優惠",
@@ -80,7 +81,7 @@
     "prevPaid": "上一項付費選項",
     "nextPaid": "下一項付費選項",
     "noticeTitle": "注意事項",
-    "noticeBody": "選項在入會時<strong style=\"background: #111111; color: #fff; padding: 2px 6px;\">自動簽約</strong><br />不需要的請在<strong style=\"background: #111111; color: #fff; padding: 2px 6px;\" id=\"campaign-notice-deadline\">8月底前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後仍可使用至月末",
+    "noticeBody": "選項在入會時<strong class=\"cond-em\">自動簽約</strong><br />不需要請務必於<strong class=\"cond-em\" id=\"campaign-notice-deadline\">8月末前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後仍可使用至月末",
     "noticeWarning": "※忘記解約不予退款",
     "cancelVideo": "點此查看解約方法",
     "monthlyPrefix": "月費",
