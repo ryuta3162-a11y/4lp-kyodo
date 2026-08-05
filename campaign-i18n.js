@@ -84,8 +84,8 @@
     var loc = localizeOption(option);
     var price = formatOptionPrice(loc.amount);
     var badge = isPaid
-      ? t('options.paidBadge', '有料オプション')
-      : t('options.freeBadge', '無料オプション');
+      ? t('options.paidBadge', 'キャンペーン外オプション')
+      : t('options.freeBadge', '自動契約オプション');
     var priceHtml;
     if (price.style === 'en') {
       priceHtml = price.main + '<span style="font-size: 0.75rem; font-weight: normal; color: #555;"> / ' + price.sub + ' ' + price.tax + '</span>';
@@ -214,19 +214,19 @@
     setHtml(
       'campaign-option-note',
       'pricing.optionNote',
-      '※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末</span>までに解約をお願いいたします。'
+      '※8つのオプションは入会時自動契約されます。<br>不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。'
     );
-    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '8月末');
-    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末まで');
+    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '8月末日');
+    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末日まで');
 
     if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
       setText('dynamic-date-label', 'pricing.joinAmountLabel', 'ご入会時のお支払い金額');
     }
 
-    setAriaLabel('carousel-prev-free', 'options.prevFree', '前の無料オプション');
-    setAriaLabel('carousel-next-free', 'options.nextFree', '次の無料オプション');
-    setAriaLabel('carousel-prev-paid', 'options.prevPaid', '前の有料オプション');
-    setAriaLabel('carousel-next-paid', 'options.nextPaid', '次の有料オプション');
+    setAriaLabel('carousel-prev-free', 'options.prevFree', '前の自動契約オプション');
+    setAriaLabel('carousel-next-free', 'options.nextFree', '次の自動契約オプション');
+    setAriaLabel('carousel-prev-paid', 'options.prevPaid', '前のキャンペーン外オプション');
+    setAriaLabel('carousel-next-paid', 'options.nextPaid', '次のキャンペーン外オプション');
 
     if (typeof window.updateProratedFee === 'function') {
       window.updateProratedFee();
