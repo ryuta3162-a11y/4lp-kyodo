@@ -432,9 +432,10 @@
             order: 2;
             font-size: var(--text-body);
             font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.04em;
             color: var(--gray-700);
-            line-height: 1.4;
+            line-height: 1.55;
+            max-width: 22em;
         }
         .half-year-price-hero {
             display: flex;
@@ -476,23 +477,62 @@
             letter-spacing: 0.04em;
             white-space: nowrap;
         }
-        .price-item--option-simple {
+        /* オプション特典：半年間値引きと同型 */
+        .price-item--option-hero {
             display: block;
             grid-template-columns: none;
             min-height: 0;
-            padding: 1rem 0.75rem;
-            margin: 0 0.15rem 0.35rem;
+            padding: 1.45rem 0.5rem 1.55rem;
+            margin: 0.15rem 0 0.5rem;
             border-bottom: none;
             text-align: center;
-            background: var(--gray-50);
+            background: #ffffff;
         }
-        .option-simple-line {
+        .option-hero-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.35rem;
+            width: 100%;
+        }
+        .option-hero-catch {
             margin: 0;
             font-size: var(--text-body);
             font-weight: 800;
+            letter-spacing: 0.06em;
             color: #111111;
+            line-height: 1.4;
+        }
+        .option-hero-sub {
+            margin: 0 0 0.35rem;
+            font-size: var(--text-body);
+            font-weight: 700;
             letter-spacing: 0.04em;
-            line-height: 1.45;
+            color: var(--gray-700);
+            line-height: 1.4;
+        }
+        .option-hero-price {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.02em;
+            white-space: nowrap;
+        }
+        .option-hero-zero {
+            font-size: clamp(3.2rem, 14vw, 4.2rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            color: #C21632;
+        }
+        .option-hero-yen {
+            font-size: clamp(1.25rem, 5vw, 1.7rem);
+            font-weight: 900;
+            color: #C21632;
+            line-height: 1;
+            margin-left: 0.05em;
         }
         .price-item .divider-dot {
             width: 1px;
@@ -2899,7 +2939,7 @@
                     <div class="price-item price-item--half-year">
                         <div class="half-year-main">
                             <p class="half-year-catch" data-i18n="hero.halfYearCatch">半年間ずーっと値引き</p>
-                            <p class="half-year-period" data-i18n="pricing.halfYearPeriod">8月〜1月</p>
+                            <p class="half-year-period" data-i18n="pricing.monthsList">8月・9月・10月・11月・12月・1月</p>
                             <div class="half-year-price-hero">
                                 <span class="half-year-price font-impact">3,740</span><span class="half-year-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
@@ -2907,14 +2947,20 @@
                         </div>
                     </div>
 
-                    <!-- キャンペーン特典: オプション -->
-                    <div class="price-item price-item--option-simple">
-                        <p class="option-simple-line" id="campaign-option-label" data-i18n="pricing.optionLabel">8月オプション8つが0円</p>
+                    <!-- キャンペーン特典: オプション（半年間値引きと同型） -->
+                    <div class="price-item price-item--option-hero">
+                        <div class="option-hero-main">
+                            <p class="option-hero-catch" data-i18n="pricing.optionCatch">8月オプション</p>
+                            <p class="option-hero-sub" id="campaign-option-label" data-i18n="pricing.optionLabel">無料オプション8つ</p>
+                            <div class="option-hero-price">
+                                <span class="option-hero-zero font-impact">0</span><span class="option-hero-yen font-impact" data-i18n="pricing.yen">円</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ご入会時金額 -->
                     <div class="mid-list-total-block">
-                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時金額</span></div>
+                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時のお支払い金額</span></div>
                         <div class="total-price-row">
                             <span id="dynamic-total-price" class="price-large font-impact featured-price text-value-accent">--</span>
                             <span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span>
@@ -3191,10 +3237,10 @@ document.addEventListener('DOMContentLoaded', function() {
             window.__lastJoinMonth = month;
             window.__lastJoinDate = date;
             if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
-                dateLabelEl.innerHTML = JoyfitI18n.t('pricing.joinAmountAt', '(<span class="join-date">{m}/{d}</span>)ご入会時金額')
+                dateLabelEl.innerHTML = JoyfitI18n.t('pricing.joinAmountAt', '(<span class="join-date">{m}/{d}</span>)ご入会時のお支払い金額')
                     .replace('{m}', month).replace('{d}', date);
             } else {
-                dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時金額`;
+                dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時のお支払い金額`;
             }
 
             const initial = 5500;

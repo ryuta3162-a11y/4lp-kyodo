@@ -209,7 +209,7 @@
   }
 
   function applyCampaignDynamic() {
-    setText('campaign-option-label', 'pricing.optionLabel', '8月オプション8つが0円');
+    setText('campaign-option-label', 'pricing.optionLabel', '無料オプション8つ');
     setText('campaign-option-highlight', 'pricing.optionHighlight', '8月分が0円');
     setHtml(
       'campaign-option-note',
@@ -220,7 +220,7 @@
     setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末迄');
 
     if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
-      setText('dynamic-date-label', 'pricing.joinAmountLabel', 'ご入会時金額');
+      setText('dynamic-date-label', 'pricing.joinAmountLabel', 'ご入会時のお支払い金額');
     }
 
     setAriaLabel('carousel-prev-free', 'options.prevFree', '前の無料オプション');

@@ -25,10 +25,10 @@
     "halfYearCatch": "Half-year fee discount"
   },
   "pricing": {
-    "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
+    "monthsList": "Aug · Sep · Oct · Nov · Dec · Jan",
     "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
     "perMonthUnit": "yen (tax incl.)/mo",
-    "optionLabel": "August: 8 options for ¥0",
+    "optionLabel": "8 free options",
     "optionLabelSub": "8 free options auto-enrolled",
     "perkBadge": "Campaign perk",
     "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
@@ -46,7 +46,8 @@
     "afterFeb2027": "Regular monthly fee from Feb 2027",
     "monthsNote": "Half year from Aug 2026 to Jan 2027",
     "halfYearPeriod": "Aug–Jan",
-    "perMonthUnitTax": "(tax incl.)/mo"
+    "perMonthUnitTax": "(tax incl.)/mo",
+    "optionCatch": "August options"
   },
   "conditions": {
     "badge": "Campaign terms",

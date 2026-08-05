@@ -25,10 +25,10 @@
     "halfYearCatch": "반년 내내 회비 할인"
   },
   "pricing": {
-    "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
+    "monthsList": "8월 · 9월 · 10월 · 11월 · 12월 · 1월",
     "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
     "perMonthUnit": "원(세금 포함)/월",
-    "optionLabel": "8월 옵션 8개가 0원",
+    "optionLabel": "무료 옵션 8개",
     "optionLabelSub": "무료 옵션 8개 자동 가입",
     "perkBadge": "캠페인 특전",
     "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
@@ -46,7 +46,8 @@
     "afterFeb2027": "2027년 2월 이후 통상 월액",
     "monthsNote": "2026년 8월부터 2027년 1월까지의 반년",
     "halfYearPeriod": "8월〜1월",
-    "perMonthUnitTax": "(세금 포함)/월"
+    "perMonthUnitTax": "(세금 포함)/월",
+    "optionCatch": "8월 옵션"
   },
   "conditions": {
     "badge": "캠페인 유의사항",

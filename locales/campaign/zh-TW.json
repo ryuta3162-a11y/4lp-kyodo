@@ -25,17 +25,17 @@
     "halfYearCatch": "半年會費持續優惠"
   },
   "pricing": {
-    "monthsList": "8月、9月、10月、11月、12月、1月",
+    "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
     "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
     "perMonthUnit": "元(含稅)/月",
-    "optionLabel": "8月8項選項0元",
+    "optionLabel": "8項免費選項",
     "optionLabelSub": "8項免費選項自動簽約",
     "perkBadge": "活動特典",
     "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
     "yen": "元",
     "yenTaxIncl": "元(含稅)",
-    "joinAmountLabel": "入會時金額",
-    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額",
+    "joinAmountLabel": "入會時應付金額",
+    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時應付金額",
     "prorateNote": "※8月會費自入會日起按日計算",
     "optionFees": "選項費用",
     "optionHighlight": "8月0元",
@@ -46,7 +46,8 @@
     "afterFeb2027": "2027年2月以後的通常月費",
     "monthsNote": "2026年8月至2027年1月的半年",
     "halfYearPeriod": "8月〜1月",
-    "perMonthUnitTax": "(含稅)/月"
+    "perMonthUnitTax": "(含稅)/月",
+    "optionCatch": "8月選項"
   },
   "conditions": {
     "badge": "活動注意事項",

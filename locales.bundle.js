@@ -27,10 +27,10 @@ window.JOYFIT_LOCALES = {
         "halfYearCatch": "Half-year fee discount"
       },
       "pricing": {
-        "monthsList": "Aug, Sep, Oct, Nov, Dec, Jan",
+        "monthsList": "Aug · Sep · Oct · Nov · Dec · Jan",
         "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
         "perMonthUnit": "yen (tax incl.)/mo",
-        "optionLabel": "August: 8 options for ¥0",
+        "optionLabel": "8 free options",
         "optionLabelSub": "8 free options auto-enrolled",
         "perkBadge": "Campaign perk",
         "initialLabel": "Initial fee<br><span class=\"label-sub\">Membership & registration</span>",
@@ -48,7 +48,8 @@ window.JOYFIT_LOCALES = {
         "afterFeb2027": "Regular monthly fee from Feb 2027",
         "monthsNote": "Half year from Aug 2026 to Jan 2027",
         "halfYearPeriod": "Aug–Jan",
-        "perMonthUnitTax": "(tax incl.)/mo"
+        "perMonthUnitTax": "(tax incl.)/mo",
+        "optionCatch": "August options"
       },
       "conditions": {
         "badge": "Campaign terms",
@@ -234,10 +235,10 @@ window.JOYFIT_LOCALES = {
         "halfYearCatch": "반년 내내 회비 할인"
       },
       "pricing": {
-        "monthsList": "8월, 9월, 10월, 11월, 12월, 1월",
+        "monthsList": "8월 · 9월 · 10월 · 11월 · 12월 · 1월",
         "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
         "perMonthUnit": "원(세금 포함)/월",
-        "optionLabel": "8월 옵션 8개가 0원",
+        "optionLabel": "무료 옵션 8개",
         "optionLabelSub": "무료 옵션 8개 자동 가입",
         "perkBadge": "캠페인 특전",
         "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
@@ -255,7 +256,8 @@ window.JOYFIT_LOCALES = {
         "afterFeb2027": "2027년 2월 이후 통상 월액",
         "monthsNote": "2026년 8월부터 2027년 1월까지의 반년",
         "halfYearPeriod": "8월〜1월",
-        "perMonthUnitTax": "(세금 포함)/월"
+        "perMonthUnitTax": "(세금 포함)/월",
+        "optionCatch": "8월 옵션"
       },
       "conditions": {
         "badge": "캠페인 유의사항",
@@ -441,17 +443,17 @@ window.JOYFIT_LOCALES = {
         "halfYearCatch": "半年会费持续优惠"
       },
       "pricing": {
-        "monthsList": "8月、9月、10月、11月、12月、1月",
+        "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
         "usualMonthly": "通常月费<span class=\"price-usual-strike\">9,350</span>元(含税)",
         "perMonthUnit": "元(含税)/月",
-        "optionLabel": "8月8项选项0元",
+        "optionLabel": "8项免费选项",
         "optionLabelSub": "8项免费选项自动签约",
         "perkBadge": "活动特典",
         "initialLabel": "初始费用<br><span class=\"label-sub\">入会金・注册费</span>",
         "yen": "元",
         "yenTaxIncl": "元(含税)",
-        "joinAmountLabel": "入会时金额",
-        "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时金额",
+        "joinAmountLabel": "入会时应付金额",
+        "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
         "prorateNote": "※8月会费从入会日起按日折算",
         "optionFees": "选项费用",
         "optionHighlight": "8月0元",
@@ -462,7 +464,8 @@ window.JOYFIT_LOCALES = {
         "afterFeb2027": "2027年2月以后的通常月费",
         "monthsNote": "2026年8月至2027年1月的半年",
         "halfYearPeriod": "8月〜1月",
-        "perMonthUnitTax": "(含税)/月"
+        "perMonthUnitTax": "(含税)/月",
+        "optionCatch": "8月选项"
       },
       "conditions": {
         "badge": "活动注意事项",
@@ -648,17 +651,17 @@ window.JOYFIT_LOCALES = {
         "halfYearCatch": "半年會費持續優惠"
       },
       "pricing": {
-        "monthsList": "8月、9月、10月、11月、12月、1月",
+        "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
         "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
         "perMonthUnit": "元(含稅)/月",
-        "optionLabel": "8月8項選項0元",
+        "optionLabel": "8項免費選項",
         "optionLabelSub": "8項免費選項自動簽約",
         "perkBadge": "活動特典",
         "initialLabel": "初始費用<br><span class=\"label-sub\">入會金・註冊費</span>",
         "yen": "元",
         "yenTaxIncl": "元(含稅)",
-        "joinAmountLabel": "入會時金額",
-        "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時金額",
+        "joinAmountLabel": "入會時應付金額",
+        "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時應付金額",
         "prorateNote": "※8月會費自入會日起按日計算",
         "optionFees": "選項費用",
         "optionHighlight": "8月0元",
@@ -669,7 +672,8 @@ window.JOYFIT_LOCALES = {
         "afterFeb2027": "2027年2月以後的通常月費",
         "monthsNote": "2026年8月至2027年1月的半年",
         "halfYearPeriod": "8月〜1月",
-        "perMonthUnitTax": "(含稅)/月"
+        "perMonthUnitTax": "(含稅)/月",
+        "optionCatch": "8月選項"
       },
       "conditions": {
         "badge": "活動注意事項",
