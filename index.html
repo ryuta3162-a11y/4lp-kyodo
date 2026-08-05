@@ -958,8 +958,8 @@
         }
         .access-map-cta {
             padding: 25px;
-            border-top: 1px solid #eee;
-            background: #fafafa;
+            border-top: 1px solid #111111;
+            background: #ffffff;
             text-align: center;
         }
         .access-map-btn {
@@ -972,15 +972,16 @@
             font-size: 1rem;
             font-weight: 900;
             text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            border: 2px solid var(--lp-frame);
-            box-shadow: 0 4px 0 var(--lp-frame);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 14px 28px;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            transition: filter 0.2s ease;
         }
         .access-map-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 0 var(--lp-frame);
+            transform: none;
+            filter: brightness(1.05);
+            box-shadow: none;
         }
         .map-embed-container iframe { width: 100%; height: 350px; border: 0; }
         .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #eee; text-align: center; }
