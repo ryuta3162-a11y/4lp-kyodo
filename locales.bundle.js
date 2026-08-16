@@ -2,13 +2,13 @@ window.JOYFIT_LOCALES = {
   "campaign": {
     "en": {
       "meta": {
-        "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 8/16",
-        "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/16 (Sun), first 30 members."
+        "title": "JOYFIT24 Kyodo Summer Deal | Until Mon 8/24",
+        "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/24 (Mon), first 30 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-        "lead": "Limited until Sun 8/16",
+        "lead": "Limited until Mon 8/24",
         "valueLine1": "Aug–Jan ¥3,740/mo",
         "valueLine2": "August options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
@@ -201,7 +201,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
-        "period": "Until Sun 8/16"
+        "period": "Until Mon 8/24"
       },
       "ui": {
         "bannerToggle": "Show or hide bottom banner",
@@ -211,13 +211,13 @@ window.JOYFIT_LOCALES = {
     },
     "ko": {
       "meta": {
-        "title": "JOYFIT24 경당 여름 특가 | 8/16(일)까지",
-        "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/16(일)까지 선착순 30명."
+        "title": "JOYFIT24 경당 여름 특가 | 8/24(월)까지",
+        "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/24(월)까지 선착순 30명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-        "lead": "8/16(일)까지 한정",
+        "lead": "8/24(월)까지 한정",
         "valueLine1": "8~1월 3,740원/월",
         "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
         "cdDay": "일",
@@ -410,7 +410,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
-        "period": "8/16(일)까지"
+        "period": "8/24(월)까지"
       },
       "ui": {
         "bannerToggle": "하단 배너 표시・숨기기",
@@ -420,13 +420,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-CN": {
       "meta": {
-        "title": "JOYFIT24经堂 夏日优惠 | 至8/16（日）",
-        "description": "JOYFIT24经堂夏日优惠。8月〜2027年1月3,740元/月（8月按日折算）。8月选项0元。至8/16(日)，先到先得30名。"
+        "title": "JOYFIT24经堂 夏日优惠 | 至8/24（一）",
+        "description": "JOYFIT24经堂夏日优惠。8月〜2027年1月3,740元/月（8月按日折算）。8月选项0元。至8/24(一)，先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">夏日优惠活动中！</span>",
-        "lead": "限至8/16（日）",
+        "lead": "限至8/24（一）",
         "valueLine1": "8〜1月3,740元/月",
         "valueLine2": "8月选项<span class=\"lp-o-value-num\">0</span>元",
         "cdDay": "天",
@@ -619,7 +619,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
-        "period": "至8/16（日）"
+        "period": "至8/24（一）"
       },
       "ui": {
         "bannerToggle": "显示或隐藏底部横幅",
@@ -629,13 +629,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-TW": {
       "meta": {
-        "title": "JOYFIT24經堂 夏日優惠 | 至8/16（日）",
-        "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/16(日)，先搶先贏30名。"
+        "title": "JOYFIT24經堂 夏日優惠 | 至8/24（一）",
+        "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/24(一)，先搶先贏30名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
-        "lead": "限至8/16（日）",
+        "lead": "限至8/24（一）",
         "valueLine1": "8〜1月3,740元/月",
         "valueLine2": "8月選項<span class=\"lp-o-value-num\">0</span>元",
         "cdDay": "天",
@@ -828,7 +828,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",
-        "period": "至8/16（日）"
+        "period": "至8/24（一）"
       },
       "ui": {
         "bannerToggle": "顯示或隱藏底部橫幅",

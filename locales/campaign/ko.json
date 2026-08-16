@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24 경당 여름 특가 | 8/16(일)까지",
-    "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/16(일)까지 선착순 30명."
+    "title": "JOYFIT24 경당 여름 특가 | 8/24(월)까지",
+    "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/24(월)까지 선착순 30명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-    "lead": "8/16(일)까지 한정",
+    "lead": "8/24(월)까지 한정",
     "valueLine1": "8~1월 3,740원/월",
     "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
     "cdDay": "일",
@@ -199,7 +199,7 @@
     "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
     "remainingLabel": "남<br>은",
     "remainingUnit": "명",
-    "period": "8/16(일)까지"
+    "period": "8/24(월)까지"
   },
   "ui": {
     "bannerToggle": "하단 배너 표시・숨기기",

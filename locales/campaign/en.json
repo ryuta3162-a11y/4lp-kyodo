@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24 Kyodo Summer Deal | Until Sun 8/16",
-    "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/16 (Sun), first 30 members."
+    "title": "JOYFIT24 Kyodo Summer Deal | Until Mon 8/24",
+    "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/24 (Mon), first 30 members."
   },
   "opening": {
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-    "lead": "Limited until Sun 8/16",
+    "lead": "Limited until Mon 8/24",
     "valueLine1": "Aug–Jan ¥3,740/mo",
     "valueLine2": "August options <span class=\"lp-o-value-num\">0</span> yen",
     "cdDay": "Days",
@@ -199,7 +199,7 @@
     "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
     "remainingLabel": "Left",
     "remainingUnit": "spots",
-    "period": "Until Sun 8/16"
+    "period": "Until Mon 8/24"
   },
   "ui": {
     "bannerToggle": "Show or hide bottom banner",

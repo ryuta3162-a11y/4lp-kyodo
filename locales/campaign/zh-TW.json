@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24經堂 夏日優惠 | 至8/16（日）",
-    "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/16(日)，先搶先贏30名。"
+    "title": "JOYFIT24經堂 夏日優惠 | 至8/24（一）",
+    "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/24(一)，先搶先贏30名。"
   },
   "opening": {
     "ariaLabel": "活動介紹",
     "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
-    "lead": "限至8/16（日）",
+    "lead": "限至8/24（一）",
     "valueLine1": "8〜1月3,740元/月",
     "valueLine2": "8月選項<span class=\"lp-o-value-num\">0</span>元",
     "cdDay": "天",
@@ -199,7 +199,7 @@
     "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
     "remainingLabel": "剩<br>餘",
     "remainingUnit": "名",
-    "period": "至8/16（日）"
+    "period": "至8/24（一）"
   },
   "ui": {
     "bannerToggle": "顯示或隱藏底部橫幅",
