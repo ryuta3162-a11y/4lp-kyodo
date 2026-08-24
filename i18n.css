@@ -1,89 +1,67 @@
-/* Language switcher — 白背景・黒文字（サイズは初版準拠） */
+/* Language switcher — 追加特典LPと同型（言語名のみ） */
 .lang-switcher {
-    position: fixed;
-    top: calc(3.6rem + env(safe-area-inset-top));
-    right: max(0.75rem, env(safe-area-inset-right));
+    position: relative;
     z-index: 10050;
 }
 .lang-switcher__btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.62rem 0.95rem;
-    border-radius: 0.35rem;
-    border: 1px solid #111827;
+    gap: 0.35rem;
+    padding: 0.38rem 0.65rem;
+    border-radius: 0;
+    border: 1px solid #111111;
     background: #ffffff;
-    color: #111827;
-    font-size: 0.74rem;
+    color: #111111;
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.04em;
-    box-shadow: 0 1px 2px rgba(17, 24, 39, 0.08);
+    box-shadow: none;
     cursor: pointer;
-    transition: background 0.15s ease, box-shadow 0.15s ease;
+    transition: background 0.15s ease;
+    white-space: nowrap;
 }
 .lang-switcher__btn:hover {
-    background: #f9fafb;
-    box-shadow: 0 2px 5px rgba(17, 24, 39, 0.1);
+    background: #f5f5f5;
 }
 .lang-switcher__btn:active {
-    background: #f3f4f6;
-}
-.lang-switcher__icon {
-    font-size: 0.9rem;
-    line-height: 1;
-}
-.lang-switcher__label {
-    color: #111827;
-    font-weight: 800;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-.lang-switcher__sep {
-    color: #9ca3af;
-    font-weight: 400;
+    background: #eeeeee;
 }
 .lang-switcher__current {
-    color: #111827;
+    color: #111111;
     font-weight: 900;
-    font-size: 0.78rem;
-}
-.lang-switcher__caret {
-    color: #6b7280;
-    font-size: 0.62rem;
-    margin-left: 0.1rem;
+    font-size: 0.72rem;
 }
 .lang-switcher__menu {
     display: none;
     position: absolute;
-    top: calc(100% + 0.5rem);
+    top: calc(100% + 0.35rem);
     right: 0;
-    min-width: 10.5rem;
+    min-width: 9.5rem;
     padding: 0.35rem;
-    border-radius: 0.4rem;
-    border: 1px solid #111827;
+    border-radius: 0;
+    border: 1px solid #111111;
     background: #ffffff;
-    box-shadow: 0 16px 36px rgba(17, 24, 39, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 .lang-switcher.is-open .lang-switcher__menu { display: block; }
 .lang-switcher__item {
     width: 100%;
     text-align: left;
-    padding: 0.58rem 0.72rem;
+    padding: 0.55rem 0.7rem;
     border: none;
-    border-radius: 0.28rem;
+    border-radius: 0;
     background: transparent;
     font-size: 0.82rem;
     font-weight: 700;
-    color: #111827;
+    color: #111111;
     cursor: pointer;
     transition: background 0.12s ease;
 }
 .lang-switcher__item:hover {
-    background: #f3f4f6;
+    background: #f5f5f5;
 }
 .lang-switcher__item.is-active {
-    background: #e5e7eb;
-    color: #111827;
+    background: #eeeeee;
+    color: #111111;
     font-weight: 700;
 }
