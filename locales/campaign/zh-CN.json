@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "JOYFIT24经堂 夏日优惠 | 至8/24（一）",
-    "description": "JOYFIT24经堂夏日优惠。8月〜2027年1月3,740元/月（8月按日折算）。8月选项0元。至8/24(一)，先到先得30名。"
+    "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/13(日)",
+    "description": "JOYFIT24经堂秋季身体重置活动。8月会费0日元・2026年9月～2027年2月每月3,630日元・8・9月选项0日元。截止9/13(日)・先到先得30名。"
   },
   "opening": {
     "ariaLabel": "活动介绍",
-    "label": "还来得及！<br><span class=\"lp-o-label-summer\">夏日优惠活动中！</span>",
-    "lead": "限至8/24（一）",
-    "valueLine1": "8〜1月3,740元/月",
-    "valueLine2": "8月选项<span class=\"lp-o-value-num\">0</span>元",
+    "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
+    "lead": "截止至9/13(日)",
+    "valueLine1": "8月会费0日元・9～2月每月3,630日元",
+    "valueLine2": "8・9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
     "cdDay": "天",
     "cdHour": "时",
     "cdMin": "分",
@@ -20,12 +20,12 @@
     "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
   },
   "hero": {
-    "title": "<span class=\"campaign-title-summer\">夏日优惠活动！</span>",
+    "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
     "appBadge": "APP入会最快5分钟　当天即可使用！",
-    "halfYearCatch": "半年会费持续优惠"
+    "halfYearCatch": "半年間月会费"
   },
   "pricing": {
-    "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
+    "monthsList": "2026年9月〜2027年2月",
     "usualMonthly": "通常月费<span class=\"price-usual-strike\">9,350</span>元(含税)",
     "perMonthUnit": "元(含税)/月",
     "optionLabel": "合计每月1万日元以上服务全部",
@@ -36,26 +36,29 @@
     "yenTaxIncl": "元(含税)",
     "joinAmountLabel": "入会时应付金额",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
-    "prorateNote": "8月会费按日折算，不浪费！",
+    "prorateNote": "9月入会按日折算",
     "optionFees": "选项费用",
-    "optionHighlight": "8月0元",
-    "optionNote": "※不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
-    "optionCancelDeadline": "8月末日",
-    "noticeDeadline": "8月末日前",
+    "optionHighlight": "8・9月为0日元",
+    "optionNote": "※不需要的选项请务必在<span id=\"campaign-option-cancel-deadline\">9月末</span>前解约。",
+    "optionCancelDeadline": "9月末",
+    "noticeDeadline": "9月末前",
     "julyFeeLabel": "7月会费<br><span class=\"label-sub\">7月免费</span>",
-    "afterFeb2027": "2027年2月以后的通常月费",
-    "monthsNote": "2026年8月至2027年1月的半年",
-    "halfYearPeriod": "8月〜1月",
+    "afterFeb2027": "2027年3月起的常规月费",
+    "monthsNote": "2026年9月至2027年2月的半年",
+    "halfYearPeriod": "2026年9月〜2027年2月",
     "perMonthUnitTax": "(含税)/月",
-    "optionCatch": "付费选项（共8项）",
-    "optionMonth": "8月"
+    "optionCatch": "选项",
+    "optionMonth": "8・9月",
+    "augustFeeCatch": "月会费",
+    "augustFeeSub": "8月免费",
+    "augustFeeMonth": "8月"
   },
   "conditions": {
     "badge": "活动注意事项",
     "itemInitial": "初期费用5,500日元(含税)于入会时发生",
-    "item1": "必须在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-    "item2": "中途退会需支付解约金33,660日元(含税)",
-    "item3": "8项选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要请务必于<strong class=\"cond-em\">8月末日前</strong>解约"
+    "item1": "须在籍至<strong class=\"cond-em\">2027年3月末</strong>",
+    "item2": "中途退会时需支付解约金34,320日元（含税）",
+    "item3": "8个选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要时请务必在<strong class=\"cond-em\">9月末前</strong>解约"
   },
   "steps": {
     "step1Badge": "追加特典",
@@ -81,7 +84,7 @@
     "prevPaid": "上一项活动外选项",
     "nextPaid": "下一项活动外选项",
     "noticeTitle": "注意事项",
-    "noticeBody": "8项选项入会时<strong class=\"cond-em\">自动签约</strong><br />不需要请务必于<strong class=\"cond-em\" id=\"campaign-notice-deadline\">8月末日前</strong>解约<br /><br />入会后可通过<strong>[JOYFIT APP]</strong>解约<br />解约后仍可使用至月末",
+    "noticeBody": "8个选项入会时<strong class=\"cond-em\">自动签约</strong><br />不需要时请务必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解约<br /><br />入会后可通过<strong>[JOYFIT APP]</strong>解约<br />解约后当月仍可使用服务",
     "noticeWarning": "※忘记解约不予退款",
     "cancelVideo": "点击此处查看解约方法",
     "monthlyPrefix": "月费",
@@ -199,7 +202,7 @@
     "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
     "remainingLabel": "剩<br>余",
     "remainingUnit": "名",
-    "period": "至8/24（一）"
+    "period": "截止至9/13(日)"
   },
   "ui": {
     "bannerToggle": "显示或隐藏底部横幅",

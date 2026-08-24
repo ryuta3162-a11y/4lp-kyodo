@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "JOYFIT24 경당 여름 특가 | 8/24(월)까지",
-    "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/24(월)까지 선착순 30명."
+    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/13(일)까지",
+    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 8월 회비 0엔・2026년 9월~2027년 2월 월 3,630엔・8・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
-    "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-    "lead": "8/24(월)까지 한정",
-    "valueLine1": "8~1월 3,740원/월",
-    "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
+    "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
+    "lead": "9/13(일)까지 한정",
+    "valueLine1": "8월 회비 0엔・9~2월 월 3,630엔",
+    "valueLine2": "8・9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
     "cdDay": "일",
     "cdHour": "시간",
     "cdMin": "분",
@@ -20,12 +20,12 @@
     "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
   },
   "hero": {
-    "title": "<span class=\"campaign-title-summer\">여름 특가 캠페인!</span>",
+    "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
     "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
-    "halfYearCatch": "반년 내내 회비 할인"
+    "halfYearCatch": "반년간 월회비"
   },
   "pricing": {
-    "monthsList": "8월 · 9월 · 10월 · 11월 · 12월 · 1월",
+    "monthsList": "2026년 9월〜2027년 2월",
     "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
     "perMonthUnit": "원(세금 포함)/월",
     "optionLabel": "합계 월 1만 엔 이상 서비스를 모두",
@@ -36,26 +36,29 @@
     "yenTaxIncl": "원(세금 포함)",
     "joinAmountLabel": "입회 시 결제 금액",
     "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-    "prorateNote": "8월 회비는 일할 계산으로 낭비 없이!",
+    "prorateNote": "9월 입회는 일할 계산",
     "optionFees": "옵션 요금",
-    "optionHighlight": "8월 0원",
-    "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말일</span>까지 반드시 해약해 주세요.",
-    "optionCancelDeadline": "8월 말일",
-    "noticeDeadline": "8월 말일까지",
+    "optionHighlight": "8・9월분 0엔",
+    "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">9월 말일</span>까지 반드시 해약해 주세요.",
+    "optionCancelDeadline": "9월 말일",
+    "noticeDeadline": "9월 말일까지",
     "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
-    "afterFeb2027": "2027년 2월 이후 통상 월액",
-    "monthsNote": "2026년 8월부터 2027년 1월까지의 반년",
-    "halfYearPeriod": "8월〜1월",
+    "afterFeb2027": "2027년 3월 이후 정규 월회비",
+    "monthsNote": "2026년 9월부터 2027년 2월까지 반년",
+    "halfYearPeriod": "2026년 9월〜2027년 2월",
     "perMonthUnitTax": "(세금 포함)/월",
-    "optionCatch": "유료 옵션(총 8개)",
-    "optionMonth": "8월"
+    "optionCatch": "옵션",
+    "optionMonth": "8・9월",
+    "augustFeeCatch": "월회비",
+    "augustFeeSub": "8월분 무료",
+    "augustFeeMonth": "8월"
   },
   "conditions": {
     "badge": "캠페인 유의사항",
     "itemInitial": "초기 비용 5,500엔(세금 포함)이 입회 시 발생합니다",
-    "item1": "<strong class=\"cond-em\">2027년 2월 말일</strong>까지의 재적이 필수 조건입니다",
-    "item2": "중도 탈퇴 시 해약금 33,660엔(세금 포함)이 발생합니다",
-    "item3": "옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">8월 말일까지</strong> 반드시 해약해 주세요"
+    "item1": "<strong class=\"cond-em\">2027년 3월 말일</strong>까지 재적이 필수 조건입니다",
+    "item2": "중도 퇴회 시 해약금 34,320엔(세금 포함)이 발생합니다",
+    "item3": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">9월 말일까지</strong> 반드시 해약해 주세요"
   },
   "steps": {
     "step1Badge": "추가 혜택",
@@ -81,7 +84,7 @@
     "prevPaid": "이전 캠페인 외 옵션",
     "nextPaid": "다음 캠페인 외 옵션",
     "noticeTitle": "유의사항",
-    "noticeBody": "옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">8월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능<br />해약 후에도 월말까지 이용 가능합니다",
+    "noticeBody": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">9월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능합니다<br />해약 후에도 월말까지 서비스를 이용할 수 있습니다",
     "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
     "cancelVideo": "해지 방법은 여기를 탭",
     "monthlyPrefix": "월",
@@ -199,7 +202,7 @@
     "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
     "remainingLabel": "남<br>은",
     "remainingUnit": "명",
-    "period": "8/24(월)까지"
+    "period": "9/13(일)까지"
   },
   "ui": {
     "bannerToggle": "하단 배너 표시・숨기기",

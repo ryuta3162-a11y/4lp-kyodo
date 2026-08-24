@@ -2,15 +2,15 @@ window.JOYFIT_LOCALES = {
   "campaign": {
     "en": {
       "meta": {
-        "title": "JOYFIT24 Kyodo Summer Deal | Until Mon 8/24",
-        "description": "JOYFIT24 Kyodo summer campaign. Aug–Jan 2027 ¥3,740/mo (Aug prorated). August options ¥0. Until 8/24 (Mon), first 30 members."
+        "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Sun 9/13",
+        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. August fee ¥0 · Sep 2026–Feb 2027 ¥3,630/mo · Aug–Sep options ¥0. Until 9/13 (Sun), first 30 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
-        "label": "Still in time!<br><span class=\"lp-o-label-summer\">Summer Deal Campaign!</span>",
-        "lead": "Limited until Mon 8/24",
-        "valueLine1": "Aug–Jan ¥3,740/mo",
-        "valueLine2": "August options <span class=\"lp-o-value-num\">0</span> yen",
+        "label": "Still in time!<br><span class=\"lp-o-label-summer\">Fall Body<br>Reset Campaign</span>",
+        "lead": "Limited until Sun 9/13",
+        "valueLine1": "Aug fee ¥0 · Sep–Feb ¥3,630/mo",
+        "valueLine2": "Aug–Sep options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
         "cdHour": "Hrs",
         "cdMin": "Min",
@@ -22,12 +22,12 @@ window.JOYFIT_LOCALES = {
         "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
       },
       "hero": {
-        "title": "<span class=\"campaign-title-summer\">Summer Deal Campaign!</span>",
+        "title": "<span class=\"campaign-title-summer\">Fall Body<br>Reset Campaign</span>",
         "appBadge": "Join via app in 5 min — use today!",
-        "halfYearCatch": "Half-year fee discount"
+        "halfYearCatch": "Half-year monthly fee"
       },
       "pricing": {
-        "monthsList": "Aug · Sep · Oct · Nov · Dec · Jan",
+        "monthsList": "Sep 2026 – Feb 2027",
         "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
         "perMonthUnit": "yen (tax incl.)/mo",
         "optionLabel": "Services worth ¥10,000+/mo — all included",
@@ -38,26 +38,29 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "yen (tax incl.)",
         "joinAmountLabel": "Amount due at signup",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
-        "prorateNote": "August fee is prorated — no waste!",
+        "prorateNote": "September joins are prorated",
         "optionFees": "option fees",
-        "optionHighlight": "August is ¥0",
-        "optionNote": "※Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of August</span>.",
-        "optionCancelDeadline": "end of August",
-        "noticeDeadline": "end of August",
+        "optionHighlight": "Aug–Sep are ¥0",
+        "optionNote": "※Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of September</span>.",
+        "optionCancelDeadline": "end of September",
+        "noticeDeadline": "end of September",
         "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
-        "afterFeb2027": "Regular monthly fee from Feb 2027",
-        "monthsNote": "Half year from Aug 2026 to Jan 2027",
-        "halfYearPeriod": "Aug–Jan",
+        "afterFeb2027": "Regular monthly fee from Mar 2027",
+        "monthsNote": "Half year from Sep 2026 to Feb 2027",
+        "halfYearPeriod": "Sep 2026 – Feb 2027",
         "perMonthUnitTax": "(tax incl.)/mo",
-        "optionCatch": "Paid options (8 total)",
-        "optionMonth": "August"
+        "optionCatch": "Options",
+        "optionMonth": "Aug–Sep",
+        "augustFeeCatch": "Monthly fee",
+        "augustFeeSub": "August is free",
+        "augustFeeMonth": "August"
       },
       "conditions": {
         "badge": "Campaign terms",
         "itemInitial": "Initial fee of ¥5,500 (tax incl.) is charged at signup",
-        "item1": "Membership through <strong class=\"cond-em\">end of Feb 2027</strong> is required",
-        "item2": "If you leave early, a cancellation fee of ¥33,660 (tax incl.) applies",
-        "item3": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted ones by <strong class=\"cond-em\">end of August</strong>"
+        "item1": "Membership through <strong class=\"cond-em\">end of Mar 2027</strong> is required",
+        "item2": "If you leave early, a cancellation fee of ¥34,320 (tax incl.) applies",
+        "item3": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted ones by <strong class=\"cond-em\">end of September</strong>"
       },
       "steps": {
         "step1Badge": "Bonus perks",
@@ -83,7 +86,7 @@ window.JOYFIT_LOCALES = {
         "prevPaid": "Previous non-campaign option",
         "nextPaid": "Next non-campaign option",
         "noticeTitle": "Important",
-        "noticeBody": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong class=\"cond-em\" id=\"campaign-notice-deadline\">end of August</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
+        "noticeBody": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong class=\"cond-em\" id=\"campaign-notice-deadline\">end of September</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
         "noticeWarning": "※No refunds if you forget to cancel",
         "cancelVideo": "Tap here for how to cancel",
         "monthlyPrefix": "Monthly",
@@ -201,7 +204,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
-        "period": "Until Mon 8/24"
+        "period": "Until Sun 9/13"
       },
       "ui": {
         "bannerToggle": "Show or hide bottom banner",
@@ -211,15 +214,15 @@ window.JOYFIT_LOCALES = {
     },
     "ko": {
       "meta": {
-        "title": "JOYFIT24 경당 여름 특가 | 8/24(월)까지",
-        "description": "JOYFIT24 경당 여름 특가. 8월~2027년 1월 3,740원/월(8월 일할). 8월 옵션 0원. 8/24(월)까지 선착순 30명."
+        "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/13(일)까지",
+        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 8월 회비 0엔・2026년 9월~2027년 2월 월 3,630엔・8・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
-        "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">여름 특가 캠페인!</span>",
-        "lead": "8/24(월)까지 한정",
-        "valueLine1": "8~1월 3,740원/월",
-        "valueLine2": "8월 옵션 <span class=\"lp-o-value-num\">0</span>원",
+        "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
+        "lead": "9/13(일)까지 한정",
+        "valueLine1": "8월 회비 0엔・9~2월 월 3,630엔",
+        "valueLine2": "8・9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
         "cdDay": "일",
         "cdHour": "시간",
         "cdMin": "분",
@@ -231,12 +234,12 @@ window.JOYFIT_LOCALES = {
         "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
       },
       "hero": {
-        "title": "<span class=\"campaign-title-summer\">여름 특가 캠페인!</span>",
+        "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
         "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
-        "halfYearCatch": "반년 내내 회비 할인"
+        "halfYearCatch": "반년간 월회비"
       },
       "pricing": {
-        "monthsList": "8월 · 9월 · 10월 · 11월 · 12월 · 1월",
+        "monthsList": "2026년 9월〜2027년 2월",
         "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
         "perMonthUnit": "원(세금 포함)/월",
         "optionLabel": "합계 월 1만 엔 이상 서비스를 모두",
@@ -247,26 +250,29 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "원(세금 포함)",
         "joinAmountLabel": "입회 시 결제 금액",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
-        "prorateNote": "8월 회비는 일할 계산으로 낭비 없이!",
+        "prorateNote": "9월 입회는 일할 계산",
         "optionFees": "옵션 요금",
-        "optionHighlight": "8월 0원",
-        "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">8월 말일</span>까지 반드시 해약해 주세요.",
-        "optionCancelDeadline": "8월 말일",
-        "noticeDeadline": "8월 말일까지",
+        "optionHighlight": "8・9월분 0엔",
+        "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">9월 말일</span>까지 반드시 해약해 주세요.",
+        "optionCancelDeadline": "9월 말일",
+        "noticeDeadline": "9월 말일까지",
         "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
-        "afterFeb2027": "2027년 2월 이후 통상 월액",
-        "monthsNote": "2026년 8월부터 2027년 1월까지의 반년",
-        "halfYearPeriod": "8월〜1월",
+        "afterFeb2027": "2027년 3월 이후 정규 월회비",
+        "monthsNote": "2026년 9월부터 2027년 2월까지 반년",
+        "halfYearPeriod": "2026년 9월〜2027년 2월",
         "perMonthUnitTax": "(세금 포함)/월",
-        "optionCatch": "유료 옵션(총 8개)",
-        "optionMonth": "8월"
+        "optionCatch": "옵션",
+        "optionMonth": "8・9월",
+        "augustFeeCatch": "월회비",
+        "augustFeeSub": "8월분 무료",
+        "augustFeeMonth": "8월"
       },
       "conditions": {
         "badge": "캠페인 유의사항",
         "itemInitial": "초기 비용 5,500엔(세금 포함)이 입회 시 발생합니다",
-        "item1": "<strong class=\"cond-em\">2027년 2월 말일</strong>까지의 재적이 필수 조건입니다",
-        "item2": "중도 탈퇴 시 해약금 33,660엔(세금 포함)이 발생합니다",
-        "item3": "옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">8월 말일까지</strong> 반드시 해약해 주세요"
+        "item1": "<strong class=\"cond-em\">2027년 3월 말일</strong>까지 재적이 필수 조건입니다",
+        "item2": "중도 퇴회 시 해약금 34,320엔(세금 포함)이 발생합니다",
+        "item3": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">9월 말일까지</strong> 반드시 해약해 주세요"
       },
       "steps": {
         "step1Badge": "추가 혜택",
@@ -292,7 +298,7 @@ window.JOYFIT_LOCALES = {
         "prevPaid": "이전 캠페인 외 옵션",
         "nextPaid": "다음 캠페인 외 옵션",
         "noticeTitle": "유의사항",
-        "noticeBody": "옵션 8개는 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">8월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능<br />해약 후에도 월말까지 이용 가능합니다",
+        "noticeBody": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">9월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능합니다<br />해약 후에도 월말까지 서비스를 이용할 수 있습니다",
         "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
         "cancelVideo": "해지 방법은 여기를 탭",
         "monthlyPrefix": "월",
@@ -410,7 +416,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
-        "period": "8/24(월)까지"
+        "period": "9/13(일)까지"
       },
       "ui": {
         "bannerToggle": "하단 배너 표시・숨기기",
@@ -420,15 +426,15 @@ window.JOYFIT_LOCALES = {
     },
     "zh-CN": {
       "meta": {
-        "title": "JOYFIT24经堂 夏日优惠 | 至8/24（一）",
-        "description": "JOYFIT24经堂夏日优惠。8月〜2027年1月3,740元/月（8月按日折算）。8月选项0元。至8/24(一)，先到先得30名。"
+        "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/13(日)",
+        "description": "JOYFIT24经堂秋季身体重置活动。8月会费0日元・2026年9月～2027年2月每月3,630日元・8・9月选项0日元。截止9/13(日)・先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
-        "label": "还来得及！<br><span class=\"lp-o-label-summer\">夏日优惠活动中！</span>",
-        "lead": "限至8/24（一）",
-        "valueLine1": "8〜1月3,740元/月",
-        "valueLine2": "8月选项<span class=\"lp-o-value-num\">0</span>元",
+        "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
+        "lead": "截止至9/13(日)",
+        "valueLine1": "8月会费0日元・9～2月每月3,630日元",
+        "valueLine2": "8・9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
         "cdDay": "天",
         "cdHour": "时",
         "cdMin": "分",
@@ -440,12 +446,12 @@ window.JOYFIT_LOCALES = {
         "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
       },
       "hero": {
-        "title": "<span class=\"campaign-title-summer\">夏日优惠活动！</span>",
+        "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
         "appBadge": "APP入会最快5分钟　当天即可使用！",
-        "halfYearCatch": "半年会费持续优惠"
+        "halfYearCatch": "半年間月会费"
       },
       "pricing": {
-        "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
+        "monthsList": "2026年9月〜2027年2月",
         "usualMonthly": "通常月费<span class=\"price-usual-strike\">9,350</span>元(含税)",
         "perMonthUnit": "元(含税)/月",
         "optionLabel": "合计每月1万日元以上服务全部",
@@ -456,26 +462,29 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含税)",
         "joinAmountLabel": "入会时应付金额",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
-        "prorateNote": "8月会费按日折算，不浪费！",
+        "prorateNote": "9月入会按日折算",
         "optionFees": "选项费用",
-        "optionHighlight": "8月0元",
-        "optionNote": "※不需要请务必于<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解约。",
-        "optionCancelDeadline": "8月末日",
-        "noticeDeadline": "8月末日前",
+        "optionHighlight": "8・9月为0日元",
+        "optionNote": "※不需要的选项请务必在<span id=\"campaign-option-cancel-deadline\">9月末</span>前解约。",
+        "optionCancelDeadline": "9月末",
+        "noticeDeadline": "9月末前",
         "julyFeeLabel": "7月会费<br><span class=\"label-sub\">7月免费</span>",
-        "afterFeb2027": "2027年2月以后的通常月费",
-        "monthsNote": "2026年8月至2027年1月的半年",
-        "halfYearPeriod": "8月〜1月",
+        "afterFeb2027": "2027年3月起的常规月费",
+        "monthsNote": "2026年9月至2027年2月的半年",
+        "halfYearPeriod": "2026年9月〜2027年2月",
         "perMonthUnitTax": "(含税)/月",
-        "optionCatch": "付费选项（共8项）",
-        "optionMonth": "8月"
+        "optionCatch": "选项",
+        "optionMonth": "8・9月",
+        "augustFeeCatch": "月会费",
+        "augustFeeSub": "8月免费",
+        "augustFeeMonth": "8月"
       },
       "conditions": {
         "badge": "活动注意事项",
         "itemInitial": "初期费用5,500日元(含税)于入会时发生",
-        "item1": "必须在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-        "item2": "中途退会需支付解约金33,660日元(含税)",
-        "item3": "8项选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要请务必于<strong class=\"cond-em\">8月末日前</strong>解约"
+        "item1": "须在籍至<strong class=\"cond-em\">2027年3月末</strong>",
+        "item2": "中途退会时需支付解约金34,320日元（含税）",
+        "item3": "8个选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要时请务必在<strong class=\"cond-em\">9月末前</strong>解约"
       },
       "steps": {
         "step1Badge": "追加特典",
@@ -501,7 +510,7 @@ window.JOYFIT_LOCALES = {
         "prevPaid": "上一项活动外选项",
         "nextPaid": "下一项活动外选项",
         "noticeTitle": "注意事项",
-        "noticeBody": "8项选项入会时<strong class=\"cond-em\">自动签约</strong><br />不需要请务必于<strong class=\"cond-em\" id=\"campaign-notice-deadline\">8月末日前</strong>解约<br /><br />入会后可通过<strong>[JOYFIT APP]</strong>解约<br />解约后仍可使用至月末",
+        "noticeBody": "8个选项入会时<strong class=\"cond-em\">自动签约</strong><br />不需要时请务必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解约<br /><br />入会后可通过<strong>[JOYFIT APP]</strong>解约<br />解约后当月仍可使用服务",
         "noticeWarning": "※忘记解约不予退款",
         "cancelVideo": "点击此处查看解约方法",
         "monthlyPrefix": "月费",
@@ -619,7 +628,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
-        "period": "至8/24（一）"
+        "period": "截止至9/13(日)"
       },
       "ui": {
         "bannerToggle": "显示或隐藏底部横幅",
@@ -629,15 +638,15 @@ window.JOYFIT_LOCALES = {
     },
     "zh-TW": {
       "meta": {
-        "title": "JOYFIT24經堂 夏日優惠 | 至8/24（一）",
-        "description": "JOYFIT24經堂夏日優惠。8月〜2027年1月3,740元/月（8月按日計算）。8月選項0元。至8/24(一)，先搶先贏30名。"
+        "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/13(日)",
+        "description": "JOYFIT24經堂秋季身體重置活動。8月會費0日圓・2026年9月～2027年2月每月3,630日圓・8・9月選項0日圓。截止9/13(日)・限額先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
-        "label": "還來得及！<br><span class=\"lp-o-label-summer\">夏日優惠活動中！</span>",
-        "lead": "限至8/24（一）",
-        "valueLine1": "8〜1月3,740元/月",
-        "valueLine2": "8月選項<span class=\"lp-o-value-num\">0</span>元",
+        "label": "還來得及！<br><span class=\"lp-o-label-summer\">秋季身體<br>重置活動</span>",
+        "lead": "截止至9/13(日)",
+        "valueLine1": "8月會費0日圓・9～2月每月3,630日圓",
+        "valueLine2": "8・9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
         "cdDay": "天",
         "cdHour": "時",
         "cdMin": "分",
@@ -649,12 +658,12 @@ window.JOYFIT_LOCALES = {
         "note": "※再入會<span class=\"dynamic-remaining-count\">--</span>名即結束限定活動"
       },
       "hero": {
-        "title": "<span class=\"campaign-title-summer\">夏日優惠活動！</span>",
+        "title": "<span class=\"campaign-title-summer\">秋季身體<br>重置活動</span>",
         "appBadge": "APP入會最快5分鐘　當天即可使用！",
-        "halfYearCatch": "半年會費持續優惠"
+        "halfYearCatch": "半年間月會費"
       },
       "pricing": {
-        "monthsList": "8月 · 9月 · 10月 · 11月 · 12月 · 1月",
+        "monthsList": "2026年9月〜2027年2月",
         "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
         "perMonthUnit": "元(含稅)/月",
         "optionLabel": "合計每月1萬日圓以上服務全部",
@@ -665,26 +674,29 @@ window.JOYFIT_LOCALES = {
         "yenTaxIncl": "元(含稅)",
         "joinAmountLabel": "入會時應付金額",
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時應付金額",
-        "prorateNote": "8月會費按日計算，不浪費！",
+        "prorateNote": "9月入會按日折算",
         "optionFees": "選項費用",
-        "optionHighlight": "8月0元",
-        "optionNote": "※不需要請務必於<span id=\"campaign-option-cancel-deadline\">8月末日</span>前解約。",
-        "optionCancelDeadline": "8月末日",
-        "noticeDeadline": "8月末日前",
+        "optionHighlight": "8・9月為0日圓",
+        "optionNote": "※不需要的選項請務必在<span id=\"campaign-option-cancel-deadline\">9月末</span>前解約。",
+        "optionCancelDeadline": "9月末",
+        "noticeDeadline": "9月末前",
         "julyFeeLabel": "7月會費<br><span class=\"label-sub\">7月免費</span>",
-        "afterFeb2027": "2027年2月以後的通常月費",
-        "monthsNote": "2026年8月至2027年1月的半年",
-        "halfYearPeriod": "8月〜1月",
+        "afterFeb2027": "2027年3月起的一般月費",
+        "monthsNote": "2026年9月至2027年2月的半年",
+        "halfYearPeriod": "2026年9月〜2027年2月",
         "perMonthUnitTax": "(含稅)/月",
-        "optionCatch": "付費選項（共8項）",
-        "optionMonth": "8月"
+        "optionCatch": "選項",
+        "optionMonth": "8・9月",
+        "augustFeeCatch": "月會費",
+        "augustFeeSub": "8月免費",
+        "augustFeeMonth": "8月"
       },
       "conditions": {
         "badge": "活動注意事項",
         "itemInitial": "初期費用5,500日圓(含稅)於入會時發生",
-        "item1": "必須在籍至<strong class=\"cond-em\">2027年2月末日</strong>",
-        "item2": "中途退會需支付解約金33,660日圓(含稅)",
-        "item3": "8項選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要請務必於<strong class=\"cond-em\">8月末日前</strong>解約"
+        "item1": "須在籍至<strong class=\"cond-em\">2027年3月末</strong>",
+        "item2": "中途退會時需支付解約金34,320日圓（含稅）",
+        "item3": "8個選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要時請務必在<strong class=\"cond-em\">9月末前</strong>解約"
       },
       "steps": {
         "step1Badge": "追加特典",
@@ -710,7 +722,7 @@ window.JOYFIT_LOCALES = {
         "prevPaid": "上一項活動外選項",
         "nextPaid": "下一項活動外選項",
         "noticeTitle": "注意事項",
-        "noticeBody": "8項選項入會時<strong class=\"cond-em\">自動簽約</strong><br />不需要請務必於<strong class=\"cond-em\" id=\"campaign-notice-deadline\">8月末日前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後仍可使用至月末",
+        "noticeBody": "8個選項入會時<strong class=\"cond-em\">自動簽約</strong><br />不需要時請務必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後當月仍可使用服務",
         "noticeWarning": "※忘記解約不予退款",
         "cancelVideo": "點此查看解約方法",
         "monthlyPrefix": "月費",
@@ -828,7 +840,7 @@ window.JOYFIT_LOCALES = {
         "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",
-        "period": "至8/24（一）"
+        "period": "截止至9/13(日)"
       },
       "ui": {
         "bannerToggle": "顯示或隱藏底部橫幅",

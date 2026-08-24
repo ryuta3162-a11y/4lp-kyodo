@@ -209,15 +209,14 @@
   }
 
   function applyCampaignDynamic() {
-    setText('campaign-option-label', 'pricing.optionLabel', '合計・月1万円以上のサービスがすべて');
-    setText('campaign-option-highlight', 'pricing.optionHighlight', '8月分が0円');
+    setText('campaign-option-highlight', 'pricing.optionHighlight', '8・9月分が0円');
     setHtml(
       'campaign-option-note',
       'pricing.optionNote',
-      '※不要な場合は<span id="campaign-option-cancel-deadline">8月末日</span>までに必ず解約をお願いいたします。'
+      '※不要な場合は<span id="campaign-option-cancel-deadline">9月末日</span>までに必ず解約をお願いいたします。'
     );
-    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '8月末日');
-    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '8月末日まで');
+    setText('campaign-option-cancel-deadline', 'pricing.optionCancelDeadline', '9月末日');
+    setText('campaign-notice-deadline', 'pricing.noticeDeadline', '9月末日まで');
 
     if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
       setText('dynamic-date-label', 'pricing.joinAmountLabel', 'ご入会時のお支払い金額');
