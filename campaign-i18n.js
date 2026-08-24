@@ -209,6 +209,7 @@
   }
 
   function applyCampaignDynamic() {
+    setText('campaign-option-label', 'pricing.optionLabel', '合計・月1万円以上のサービスがすべて');
     setText('campaign-option-highlight', 'pricing.optionHighlight', '8・9月分が0円');
     setHtml(
       'campaign-option-note',
