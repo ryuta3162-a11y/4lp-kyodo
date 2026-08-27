@@ -1192,14 +1192,16 @@
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .gold-metallic-banner .banner-bar {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 10px;
             width: 100%;
             max-width: 960px;
             margin: 0 auto;
-            min-height: 40px;
+            min-height: 44px;
+            padding: 0 5.5rem 0 0.25rem;
         }
         .hero-first-view {
             padding-top: 7.25rem;
@@ -2446,35 +2448,46 @@
         .gold-metallic-banner .banner-inner {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 12px;
-            flex: 1 1 auto;
+            justify-content: center;
+            gap: 10px;
+            flex: 0 1 auto;
             min-width: 0;
             margin: 0;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
         .gold-metallic-banner .lang-switcher {
-            position: relative;
-            top: auto;
-            right: auto;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
             flex: 0 0 auto;
-            margin-left: auto;
+            margin-left: 0;
             z-index: 10050;
         }
         .gold-metallic-banner .lang-switcher__btn {
-            padding: 0.32rem 0.55rem;
-            gap: 0.3rem;
-            font-size: 0.68rem;
+            padding: 0.3rem 0.5rem;
+            gap: 0.28rem;
+            font-size: 0.62rem;
             background: transparent;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             box-shadow: none;
             border-radius: 0;
             white-space: nowrap;
         }
-        .gold-metallic-banner .lang-switcher__current {
-            font-size: 0.68rem;
+        .gold-metallic-banner .lang-switcher__label {
+            font-size: 0.62rem;
             font-weight: 800;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .gold-metallic-banner .lang-switcher__sep {
+            opacity: 0.45;
+            font-weight: 700;
+        }
+        .gold-metallic-banner .lang-switcher__current {
+            font-size: 0.62rem;
+            font-weight: 900;
             color: #ffffff;
         }
         .gold-metallic-banner .lang-switcher__menu {
@@ -2486,7 +2499,7 @@
         }
         .banner-period-dates {
             flex: 0 0 auto;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 900;
             letter-spacing: 0.02em;
             line-height: 1.2;
@@ -2496,11 +2509,11 @@
         }
         .banner-offer {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 0.35rem 0.75rem;
+            gap: 0.35rem 0.55rem;
             min-width: 0;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 800;
             letter-spacing: 0.02em;
             line-height: 1.25;
@@ -2512,21 +2525,31 @@
         .banner-remaining-inline {
             display: inline-flex;
             align-items: baseline;
-            gap: 0.12em;
+            gap: 0.15em;
             white-space: nowrap;
             font-weight: 900;
+            background: #ffffff;
+            color: #111111;
+            padding: 0.22rem 0.55rem 0.2rem;
+            line-height: 1;
+        }
+        .banner-remaining-inline [data-i18n="banner.remainingPrefix"] {
+            font-size: 0.72em;
+            font-weight: 900;
+            color: #111111;
         }
         .banner-remaining-inline .highlight-num {
-            font-size: 1.15em;
+            font-size: 1.35rem;
             font-weight: 900;
-            color: #ff6b7a;
+            color: #C21632;
             line-height: 1;
-            min-width: 0.9em;
+            min-width: 0.85em;
             text-align: center;
         }
         .banner-remaining-inline .remaining-unit {
+            font-size: 0.78em;
             font-weight: 900;
-            color: #ff6b7a;
+            color: #C21632;
         }
 
         .hero-price-card {
@@ -2717,8 +2740,11 @@
             .hero-deal-arrow {
                 font-size: 3.2rem;
             }
+            .gold-metallic-banner .banner-bar {
+                padding-right: 7rem;
+            }
             .gold-metallic-banner .banner-inner {
-                gap: 16px;
+                gap: 12px;
             }
             .banner-period-dates {
                 font-size: 0.9rem;
@@ -2727,7 +2753,7 @@
                 font-size: 0.88rem;
             }
             .banner-remaining-inline .highlight-num {
-                font-size: 1.2em;
+                font-size: 1.55rem;
             }
         }
 
@@ -2736,24 +2762,35 @@
                 padding: 7px 8px;
             }
             .gold-metallic-banner .banner-bar {
-                gap: 8px;
+                gap: 6px;
+                min-height: 42px;
+                padding-right: 4.75rem;
             }
             .gold-metallic-banner .banner-inner {
-                gap: 8px;
+                gap: 6px;
+                justify-content: center;
             }
             .banner-period-dates {
-                font-size: 0.68rem;
+                font-size: 0.64rem;
             }
             .banner-offer {
-                font-size: 0.66rem;
-                gap: 0.2rem 0.45rem;
+                font-size: 0.62rem;
+                gap: 0.2rem 0.35rem;
+            }
+            .banner-remaining-inline {
+                padding: 0.18rem 0.42rem 0.16rem;
+            }
+            .banner-remaining-inline .highlight-num {
+                font-size: 1.15rem;
             }
             .gold-metallic-banner .lang-switcher__btn {
-                padding: 0.28rem 0.42rem;
-                font-size: 0.62rem;
+                padding: 0.24rem 0.36rem;
+                font-size: 0.55rem;
+                gap: 0.2rem;
             }
+            .gold-metallic-banner .lang-switcher__label,
             .gold-metallic-banner .lang-switcher__current {
-                font-size: 0.62rem;
+                font-size: 0.55rem;
             }
         }
 
@@ -2925,6 +2962,9 @@
         .banner-remaining-inline .remaining-unit {
             color: #C21632 !important;
         }
+        .banner-remaining-inline {
+            background: #ffffff !important;
+        }
         .cta-button-video {
             background: #111111 !important;
             color: #ffffff !important;
@@ -2970,7 +3010,9 @@
             </div>
         </div>
         <div class="lang-switcher" id="lang-switcher">
-            <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox">
+            <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-label="Language">
+                <span class="lang-switcher__label">Language</span>
+                <span class="lang-switcher__sep" aria-hidden="true">|</span>
                 <span class="lang-switcher__current" id="lang-current">日本語</span>
                 <span aria-hidden="true">▼</span>
             </button>
@@ -3027,7 +3069,7 @@
                             <div class="half-year-price-hero">
                                 <span class="half-year-price font-impact">3,300</span><span class="half-year-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
-                            <p class="half-year-unit" data-i18n="pricing.halfYearTaxNote">3,630円(税込)/月</p>
+                            <p class="half-year-unit" data-i18n="pricing.halfYearTaxNote">3,630円税込</p>
                         </div>
                     </div>
 
