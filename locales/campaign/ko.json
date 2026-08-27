@@ -47,6 +47,7 @@
     "monthsNote": "2026년 9월부터 2027년 2월까지 반년",
     "halfYearPeriod": "2026년 9월〜2027년 2월",
     "perMonthUnitTax": "(세금 포함)/월",
+    "halfYearTaxNote": "3,630엔(세금 포함)/월",
     "optionCatch": "유료 옵션 계약",
     "optionMonth": "8・9월",
     "augustFeeCatch": "월회비",
@@ -200,6 +201,7 @@
     "trial": "무료 견학・체험",
     "appJoin": "앱 입회는 여기",
     "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+    "remainingPrefix": "남은 ",
     "remainingLabel": "남<br>은",
     "remainingUnit": "명",
     "period": "9/13(일)까지"

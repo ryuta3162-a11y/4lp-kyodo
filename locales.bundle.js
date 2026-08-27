@@ -49,6 +49,7 @@ window.JOYFIT_LOCALES = {
         "monthsNote": "Half year from Sep 2026 to Feb 2027",
         "halfYearPeriod": "Sep 2026 – Feb 2027",
         "perMonthUnitTax": "(tax incl.)/mo",
+        "halfYearTaxNote": "¥3,630 (tax incl.)/mo",
         "optionCatch": "Paid option contract",
         "optionMonth": "Aug–Sep",
         "augustFeeCatch": "Monthly fee",
@@ -202,6 +203,7 @@ window.JOYFIT_LOCALES = {
         "trial": "Free tour & trial",
         "appJoin": "Join via app",
         "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
+        "remainingPrefix": "Left ",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
         "period": "Until Sun 9/13"
@@ -414,6 +416,7 @@ window.JOYFIT_LOCALES = {
         "trial": "무료 견학・체험",
         "appJoin": "앱 입회는 여기",
         "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+        "remainingPrefix": "남은 ",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
         "period": "9/13(일)까지"
@@ -626,6 +629,7 @@ window.JOYFIT_LOCALES = {
         "trial": "免费参观・体验",
         "appJoin": "APP入会点此",
         "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
+        "remainingPrefix": "剩余",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
         "period": "截止至9/13(日)"
@@ -838,6 +842,7 @@ window.JOYFIT_LOCALES = {
         "trial": "免費參觀・體驗",
         "appJoin": "APP入會點此",
         "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
+        "remainingPrefix": "剩餘",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",
         "period": "截止至9/13(日)"

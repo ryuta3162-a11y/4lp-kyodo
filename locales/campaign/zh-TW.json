@@ -47,6 +47,7 @@
     "monthsNote": "2026年9月至2027年2月的半年",
     "halfYearPeriod": "2026年9月〜2027年2月",
     "perMonthUnitTax": "(含稅)/月",
+    "halfYearTaxNote": "3,630日圓(含稅)/月",
     "optionCatch": "付費選項合約",
     "optionMonth": "8・9月",
     "augustFeeCatch": "月會費",
@@ -200,6 +201,7 @@
     "trial": "免費參觀・體驗",
     "appJoin": "APP入會點此",
     "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
+    "remainingPrefix": "剩餘",
     "remainingLabel": "剩<br>餘",
     "remainingUnit": "名",
     "period": "截止至9/13(日)"

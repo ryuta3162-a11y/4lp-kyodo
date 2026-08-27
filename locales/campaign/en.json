@@ -47,6 +47,7 @@
     "monthsNote": "Half year from Sep 2026 to Feb 2027",
     "halfYearPeriod": "Sep 2026 – Feb 2027",
     "perMonthUnitTax": "(tax incl.)/mo",
+    "halfYearTaxNote": "¥3,630 (tax incl.)/mo",
     "optionCatch": "Paid option contract",
     "optionMonth": "Aug–Sep",
     "augustFeeCatch": "Monthly fee",
@@ -200,6 +201,7 @@
     "trial": "Free tour & trial",
     "appJoin": "Join via app",
     "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
+    "remainingPrefix": "Left ",
     "remainingLabel": "Left",
     "remainingUnit": "spots",
     "period": "Until Sun 9/13"
