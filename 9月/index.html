@@ -3274,35 +3274,25 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ====================================================
-    // 残り人数（8/27=残り5名・毎日1名減・8/31以降は1名）
+    // 残り人数（8/31=残り10名・日付が変わるたび1名減・1名で固定）
     // ====================================================
     function getJSTNow() {
         return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
     }
 
     function getCalendarRemaining() {
-        const START_REMAINING = 5;
+        const START_REMAINING = 10;
         const MIN_REMAINING = 1;
+        const COUNTDOWN_START = new Date(2026, 7, 31); // 8/31 JST
         const jst = getJSTNow();
-        const year = jst.getFullYear();
-        const month = jst.getMonth() + 1;
-        const date = jst.getDate();
+        const cur = new Date(jst.getFullYear(), jst.getMonth(), jst.getDate());
 
-        // 8/27より前は5名
-        if (year < 2026 || (year === 2026 && (month < 8 || (month === 8 && date < 27)))) {
+        if (cur < COUNTDOWN_START) {
             return START_REMAINING;
         }
-        // 8/31以降は1名（キャンペーン終了後も1のまま）
-        if (year > 2026 || month > 8 || (month === 8 && date >= 31)) {
-            return MIN_REMAINING;
-        }
 
-        // 8/27=5 … 8/30=2、8/31=1
-        const start = new Date(2026, 7, 27);
-        const cur = new Date(year, month - 1, date);
-        const dayIndex = Math.round((cur - start) / (1000 * 60 * 60 * 24));
-        const remaining = START_REMAINING - dayIndex;
-        return Math.max(MIN_REMAINING, remaining);
+        const dayIndex = Math.round((cur - COUNTDOWN_START) / (1000 * 60 * 60 * 24));
+        return Math.max(MIN_REMAINING, START_REMAINING - dayIndex);
     }
 
     function updateRemainingCount() {
