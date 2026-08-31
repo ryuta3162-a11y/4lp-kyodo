@@ -272,6 +272,7 @@
         @media (min-width: 400px) {
             .campaign-header-enhanced h2 { font-size: 1.35rem; }
             .campaign-app-badge { font-size: 0.82rem; padding: 0.45rem 0.95rem; }
+            .campaign-app-badge--lead { font-size: 0.88rem; }
         }
 
         .campaign-app-badge--lead {
@@ -282,6 +283,7 @@
             padding: 0.5rem 0.75rem;
             justify-content: center;
             box-sizing: border-box;
+            font-size: 0.84rem;
         }
         .campaign-app-badge--lead span {
             white-space: normal;
@@ -1208,8 +1210,8 @@
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .gold-metallic-banner {
-            --banner-font: 0.6875rem;
-            --banner-divider-h: 0.65rem;
+            --banner-font: 0.75rem;
+            --banner-divider-h: 0.7rem;
             --banner-sep-gap: 0.55rem;
         }
         .gold-metallic-banner .banner-bar {
@@ -2485,18 +2487,27 @@
         }
         .gold-metallic-banner .lang-switcher {
             position: relative;
+            display: inline-flex;
+            align-items: center;
+            align-self: center;
             flex: 0 0 auto;
+            line-height: 1;
             z-index: 10050;
         }
         .gold-metallic-banner .lang-switcher__btn {
-            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 !important;
             gap: 0.22rem;
-            background: transparent;
+            min-height: 0;
+            height: auto;
+            background: transparent !important;
             color: #333333;
-            border: none;
+            border: none !important;
             box-shadow: none;
             border-radius: 0;
             white-space: nowrap;
+            transform: translateY(-1px);
         }
         .gold-metallic-banner .lang-switcher__btn:hover {
             background: transparent;
@@ -2507,21 +2518,26 @@
             font-weight: 800;
             letter-spacing: inherit;
             color: #666666;
+            line-height: 1;
         }
         .gold-metallic-banner .lang-switcher__sep {
             font: inherit;
             opacity: 0.4;
             font-weight: 700;
+            line-height: 1;
         }
         .gold-metallic-banner .lang-switcher__current {
             font: inherit;
             font-weight: 900;
             color: #111111;
+            line-height: 1;
         }
         .gold-metallic-banner .lang-switcher__caret {
-            font-size: 0.58em;
+            font-size: 0.55em;
             opacity: 0.55;
             line-height: 1;
+            position: relative;
+            top: -0.06em;
         }
         .gold-metallic-banner .lang-switcher__menu {
             top: calc(100% + 0.35rem);
@@ -2780,8 +2796,8 @@
                 font-size: 3.2rem;
             }
             .gold-metallic-banner {
-                --banner-font: 0.8125rem;
-                --banner-divider-h: 0.75rem;
+                --banner-font: 0.84rem;
+                --banner-divider-h: 0.78rem;
                 --banner-sep-gap: 0.7rem;
             }
             .gold-metallic-banner .banner-bar {
@@ -2800,7 +2816,7 @@
 
         @media (max-width: 380px) {
             .gold-metallic-banner {
-                --banner-font: 0.625rem;
+                --banner-font: 0.6875rem;
                 --banner-sep-gap: 0.42rem;
             }
             .gold-metallic-banner .lang-switcher__label,
@@ -3046,7 +3062,7 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-app-badge campaign-app-badge--lead">
-            <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
+            <span data-i18n="hero.appBadge">APP入会最短5分、当日すぐ使える</span>
         </div>
 
         <div class="plan-container-wrapper">
@@ -3136,7 +3152,7 @@
                         <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
                         <div class="step-info">
                             <div class="step-title" data-i18n="steps.step2Title">APPでカンタン入会</div>
-                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n="steps.step2Desc">最短5分・当日すぐ使える</p>
+                            <p class="step-desc" style="font-size: 0.84rem; color: #777;" data-i18n="steps.step2Desc">APP入会最短5分、当日すぐ使える</p>
                         </div>
                         <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis" data-i18n="steps.step2Btn">アプリDL</a>
                     </div>
