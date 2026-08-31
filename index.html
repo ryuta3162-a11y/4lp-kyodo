@@ -274,6 +274,20 @@
             .campaign-app-badge { font-size: 0.82rem; padding: 0.45rem 0.95rem; }
         }
 
+        .campaign-app-badge--lead {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 0.85rem;
+            padding: 0.5rem 0.75rem;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .campaign-app-badge--lead span {
+            white-space: normal;
+            text-align: center;
+            line-height: 1.45;
+        }
         .plan-container-wrapper {
             overflow: hidden;
             border-radius: 0;
@@ -1200,8 +1214,8 @@
             width: 100%;
             max-width: 960px;
             margin: 0 auto;
-            min-height: 44px;
-            padding: 0 5.5rem 0 0.25rem;
+            min-height: 46px;
+            padding: 0 5.75rem 0 0.65rem;
         }
         .hero-first-view {
             padding-top: 7.25rem;
@@ -2449,11 +2463,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 0.55rem;
             flex: 0 1 auto;
             min-width: 0;
-            margin: 0;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
         .gold-metallic-banner .lang-switcher {
             position: absolute;
@@ -2519,8 +2532,21 @@
             line-height: 1.25;
             color: #ffffff;
         }
+        .banner-sep {
+            flex-shrink: 0;
+            width: 1px;
+            height: 1.05em;
+            background: rgba(255, 255, 255, 0.38);
+        }
         .banner-capacity-text {
             white-space: nowrap;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+        }
+        .banner-offer {
+            display: none;
         }
         .banner-remaining-inline {
             display: inline-flex;
@@ -2744,12 +2770,9 @@
                 padding-right: 7rem;
             }
             .gold-metallic-banner .banner-inner {
-                gap: 12px;
+                gap: 0.65rem;
             }
-            .banner-period-dates {
-                font-size: 0.9rem;
-            }
-            .banner-offer {
+            .banner-capacity-text {
                 font-size: 0.88rem;
             }
             .banner-remaining-inline .highlight-num {
@@ -2759,29 +2782,34 @@
 
         @media (max-width: 560px) {
             .gold-metallic-banner {
-                padding: 7px 8px;
+                padding: 8px 10px;
             }
             .gold-metallic-banner .banner-bar {
-                gap: 6px;
-                min-height: 42px;
-                padding-right: 4.75rem;
+                gap: 8px;
+                min-height: 44px;
+                padding: 0 4.85rem 0 0.5rem;
             }
             .gold-metallic-banner .banner-inner {
-                gap: 6px;
+                gap: 0.45rem;
                 justify-content: center;
             }
-            .banner-period-dates {
-                font-size: 0.64rem;
+            .banner-capacity-text {
+                font-size: 0.68rem;
+                letter-spacing: 0.02em;
             }
-            .banner-offer {
-                font-size: 0.62rem;
-                gap: 0.2rem 0.35rem;
+            .banner-sep {
+                height: 0.95em;
             }
             .banner-remaining-inline {
-                padding: 0.18rem 0.42rem 0.16rem;
+                padding: 0.2rem 0.48rem 0.18rem;
             }
             .banner-remaining-inline .highlight-num {
-                font-size: 1.15rem;
+                font-size: 1.22rem;
+            }
+            .campaign-app-badge--lead {
+                margin-bottom: 0.65rem;
+                padding: 0.45rem 0.6rem;
+                font-size: 0.78rem;
             }
             .gold-metallic-banner .lang-switcher__btn {
                 padding: 0.24rem 0.36rem;
@@ -3000,14 +3028,12 @@
 
 <div class="gold-metallic-banner" id="top-capacity-banner">
     <div class="banner-bar">
-        <div class="banner-inner">
-            <span class="banner-period-dates" data-i18n="banner.period">9/13(日)まで</span>
-            <div class="banner-offer" aria-live="polite">
-                <span class="banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
-                <span class="banner-remaining-inline">
-                    <span data-i18n="banner.remainingPrefix">残り</span><span class="highlight-num dynamic-remaining-count">--</span><span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
-                </span>
-            </div>
+        <div class="banner-inner" aria-live="polite">
+            <span class="banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
+            <span class="banner-sep" aria-hidden="true"></span>
+            <span class="banner-remaining-inline">
+                <span data-i18n="banner.remainingPrefix">残り</span><span class="highlight-num dynamic-remaining-count">--</span><span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
+            </span>
         </div>
         <div class="lang-switcher" id="lang-switcher">
             <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-label="Language">
@@ -3037,13 +3063,8 @@
 
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
-        <div class="campaign-header-enhanced">
-            <div class="campaign-header-inner">
-                <h2 class="campaign-title" data-i18n-html="hero.title"><span class="campaign-title-summer">秋の体<br>リセットキャンペーン</span></h2>
-                <div class="campaign-app-badge">
-                    <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
-                </div>
-            </div>
+        <div class="campaign-app-badge campaign-app-badge--lead">
+            <span data-i18n="hero.appBadge">APP入会最短5分　当日すぐ使える!</span>
         </div>
 
         <div class="plan-container-wrapper">
