@@ -3,14 +3,14 @@ window.JOYFIT_LOCALES = {
     "en": {
       "meta": {
         "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Sun 9/13",
-        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. August fee ¥0 · Sep 2026–Feb 2027 ¥3,630/mo · Aug–Sep options ¥0. Until 9/13 (Sun), first 30 members."
+        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. Until 9/13 (Sun), first 30 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Fall Body<br>Reset Campaign</span>",
         "lead": "Limited until Sun 9/13",
-        "valueLine1": "Aug fee ¥0 · Sep–Feb ¥3,630/mo",
-        "valueLine2": "Aug–Sep options <span class=\"lp-o-value-num\">0</span> yen",
+        "valueLine1": "Sep–Feb ¥3,630/mo",
+        "valueLine2": "Sep options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
         "cdHour": "Hrs",
         "cdMin": "Min",
@@ -40,7 +40,7 @@ window.JOYFIT_LOCALES = {
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) Amount due at signup",
         "prorateNote": "",
         "optionFees": "option fees",
-        "optionHighlight": "Aug–Sep are ¥0",
+        "optionHighlight": "Sep is ¥0",
         "optionNote": "※Cancel unwanted options by <span id=\"campaign-option-cancel-deadline\">end of September</span>.",
         "optionCancelDeadline": "end of September",
         "noticeDeadline": "end of September",
@@ -51,7 +51,7 @@ window.JOYFIT_LOCALES = {
         "perMonthUnitTax": "(tax incl.)/mo",
         "halfYearTaxNote": "¥3,630 tax incl.",
         "optionCatch": "Paid option contract",
-        "optionMonth": "Aug–Sep",
+        "optionMonth": "Sep",
         "augustFeeCatch": "Monthly fee",
         "augustFeeSub": "August is free",
         "augustFeeMonth": "August"
@@ -217,14 +217,14 @@ window.JOYFIT_LOCALES = {
     "ko": {
       "meta": {
         "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/13(일)까지",
-        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 8월 회비 0엔・2026년 9월~2027년 2월 월 3,630엔・8・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
+        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
         "lead": "9/13(일)까지 한정",
-        "valueLine1": "8월 회비 0엔・9~2월 월 3,630엔",
-        "valueLine2": "8・9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
+        "valueLine1": "9~2월 월 3,630엔",
+        "valueLine2": "9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
         "cdDay": "일",
         "cdHour": "시간",
         "cdMin": "분",
@@ -254,7 +254,7 @@ window.JOYFIT_LOCALES = {
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
         "prorateNote": "",
         "optionFees": "옵션 요금",
-        "optionHighlight": "8・9월분 0엔",
+        "optionHighlight": "9월분 0엔",
         "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">9월 말일</span>까지 반드시 해약해 주세요.",
         "optionCancelDeadline": "9월 말일",
         "noticeDeadline": "9월 말일까지",
@@ -265,7 +265,7 @@ window.JOYFIT_LOCALES = {
         "perMonthUnitTax": "(세금 포함)/월",
         "halfYearTaxNote": "3,630엔 세금포함",
         "optionCatch": "유료 옵션 계약",
-        "optionMonth": "8・9월",
+        "optionMonth": "9월",
         "augustFeeCatch": "월회비",
         "augustFeeSub": "8월분 무료",
         "augustFeeMonth": "8월"
@@ -431,14 +431,14 @@ window.JOYFIT_LOCALES = {
     "zh-CN": {
       "meta": {
         "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/13(日)",
-        "description": "JOYFIT24经堂秋季身体重置活动。8月会费0日元・2026年9月～2027年2月每月3,630日元・8・9月选项0日元。截止9/13(日)・先到先得30名。"
+        "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/13(日)・先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
         "lead": "截止至9/13(日)",
-        "valueLine1": "8月会费0日元・9～2月每月3,630日元",
-        "valueLine2": "8・9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
+        "valueLine1": "9～2月每月3,630日元",
+        "valueLine2": "9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
         "cdDay": "天",
         "cdHour": "时",
         "cdMin": "分",
@@ -468,7 +468,7 @@ window.JOYFIT_LOCALES = {
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入会时应付金额",
         "prorateNote": "",
         "optionFees": "选项费用",
-        "optionHighlight": "8・9月为0日元",
+        "optionHighlight": "9月为0日元",
         "optionNote": "※不需要的选项请务必在<span id=\"campaign-option-cancel-deadline\">9月末</span>前解约。",
         "optionCancelDeadline": "9月末",
         "noticeDeadline": "9月末前",
@@ -479,7 +479,7 @@ window.JOYFIT_LOCALES = {
         "perMonthUnitTax": "(含税)/月",
         "halfYearTaxNote": "3,630日元含税",
         "optionCatch": "付费选项合约",
-        "optionMonth": "8・9月",
+        "optionMonth": "9月",
         "augustFeeCatch": "月会费",
         "augustFeeSub": "8月免费",
         "augustFeeMonth": "8月"
@@ -645,14 +645,14 @@ window.JOYFIT_LOCALES = {
     "zh-TW": {
       "meta": {
         "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/13(日)",
-        "description": "JOYFIT24經堂秋季身體重置活動。8月會費0日圓・2026年9月～2027年2月每月3,630日圓・8・9月選項0日圓。截止9/13(日)・限額先到先得30名。"
+        "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。截止9/13(日)・限額先到先得30名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">秋季身體<br>重置活動</span>",
         "lead": "截止至9/13(日)",
-        "valueLine1": "8月會費0日圓・9～2月每月3,630日圓",
-        "valueLine2": "8・9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
+        "valueLine1": "9～2月每月3,630日圓",
+        "valueLine2": "9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
         "cdDay": "天",
         "cdHour": "時",
         "cdMin": "分",
@@ -682,7 +682,7 @@ window.JOYFIT_LOCALES = {
         "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>)入會時應付金額",
         "prorateNote": "",
         "optionFees": "選項費用",
-        "optionHighlight": "8・9月為0日圓",
+        "optionHighlight": "9月為0日圓",
         "optionNote": "※不需要的選項請務必在<span id=\"campaign-option-cancel-deadline\">9月末</span>前解約。",
         "optionCancelDeadline": "9月末",
         "noticeDeadline": "9月末前",
@@ -693,7 +693,7 @@ window.JOYFIT_LOCALES = {
         "perMonthUnitTax": "(含稅)/月",
         "halfYearTaxNote": "3,630日圓含稅",
         "optionCatch": "付費選項合約",
-        "optionMonth": "8・9月",
+        "optionMonth": "9月",
         "augustFeeCatch": "月會費",
         "augustFeeSub": "8月免費",
         "augustFeeMonth": "8月"

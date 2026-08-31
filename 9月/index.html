@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。8月会費0円・9月〜2027年2月3,630円(税込)/月・8・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで" />
-    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。8月会費0円・9月〜2027年2月3,630円(税込)/月・8・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 秋の体リセットキャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで" />
-    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。8月会費0円・9月〜2027年2月3,630円(税込)/月・8・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3049,18 +3049,6 @@
         <div class="plan-container-wrapper">
             <div class="price-showcase">
                 <div class="price-list">
-                    <!-- キャンペーン特典: 8月会費無料 -->
-                    <div class="price-item price-item--option-hero">
-                        <div class="option-hero-main">
-                            <p class="option-hero-catch" data-i18n="pricing.augustFeeCatch">月会費</p>
-                            <div class="option-hero-price">
-                                <span class="option-hero-month" data-i18n="pricing.augustFeeMonth">8月</span>
-                                <span class="option-hero-arrow" aria-hidden="true">→</span>
-                                <span class="option-hero-zero font-impact">0</span><span class="option-hero-yen font-impact" data-i18n="pricing.yen">円</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- キャンペーン特典: 9月〜2月会費（半年間） -->
                     <div class="price-item price-item--half-year">
                         <div class="half-year-main">
@@ -3079,7 +3067,7 @@
                             <p class="option-hero-catch" data-i18n="pricing.optionCatch">有料オプション契約</p>
                             <p class="option-hero-sub" id="campaign-option-label" data-i18n="pricing.optionLabel">合計・月1万円以上のサービスがすべて</p>
                             <div class="option-hero-price">
-                                <span class="option-hero-month" data-i18n="pricing.optionMonth">8・9月</span>
+                                <span class="option-hero-month" data-i18n="pricing.optionMonth">9月</span>
                                 <span class="option-hero-arrow" aria-hidden="true">→</span>
                                 <span class="option-hero-zero font-impact">0</span><span class="option-hero-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
@@ -3163,7 +3151,7 @@
                         <span class="highlight font-impact">8</span>つの自動契約オプション
                     </h2>
                     <p>
-                        <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">8・9月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
+                        <span data-i18n="options.freeIntroPrefix">キャンペーン期間中</span><br><span class="highlight-text" id="campaign-option-highlight">9月分が0円</span><span data-i18n="options.freeIntroSuffix">で使い放題！</span><br>
                         <span class="text-box-note" id="campaign-option-note">※不要な場合は<span id="campaign-option-cancel-deadline">9月末日</span>までに必ず解約をお願いいたします。</span>
                     </p>
                 </div>
@@ -3340,7 +3328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(el => revealObserver.observe(el));
 
     // ====================================================
-    // 入会時金額の動的表示（8月会費0円・9月は日割・キャンペーン月額3,630円）
+    // 入会時金額の動的表示（9月は日割・キャンペーン月額3,630円）
     // ====================================================
     function calcProrateFee(year, month, joinDay, monthly) {
         const daysInMonth = new Date(year, month, 0).getDate();
@@ -3373,10 +3361,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const regularMonthly = 9350;
             let monthFee = 0;
 
-            if (year === 2026 && month === 8) {
-                // 8月会費無料
-                monthFee = 0;
-            } else if (year === 2026 && month === 9) {
+            if (year === 2026 && month === 9) {
                 // 9月会費はキャンペーン月額3,630円を入会日から日割り
                 monthFee = calcProrateFee(year, month, date, campaignMonthly);
             } else if ((year === 2026 && month >= 10 && month <= 12) || (year === 2027 && month <= 2)) {
@@ -3456,7 +3441,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script src="locales.bundle.js"></script>
-<script src="i18n.js"></script>
+<script src="../i18n.js"></script>
 <script src="campaign-i18n.js"></script>
 <script>JoyfitI18n.init('campaign').then(function () { if (window.CampaignI18n) CampaignI18n.apply(); });</script>
 
