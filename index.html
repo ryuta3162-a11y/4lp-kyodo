@@ -1207,17 +1207,21 @@
             -webkit-backdrop-filter: blur(8px);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .gold-metallic-banner {
+            --banner-font: 0.6875rem;
+            --banner-divider-h: 0.65rem;
+            --banner-sep-gap: 0.55rem;
+        }
         .gold-metallic-banner .banner-bar {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
             width: 100%;
             max-width: 960px;
             margin: 0 auto;
-            min-height: 38px;
-            padding: 0 5.25rem 0 0.75rem;
+            min-height: 36px;
+            padding: 0 0.65rem;
         }
         .hero-first-view {
             padding-top: 7.25rem;
@@ -2457,53 +2461,67 @@
 
         .banner-capacity-num {
             display: inline;
-            margin: 0 0.08em;
+            margin: 0 0.06em;
+            font: inherit;
             font-weight: 900;
-            color: #ff6b7a;
+            color: #C21632;
         }
         .gold-metallic-banner .banner-inner {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.55rem;
-            flex: 0 1 auto;
+            gap: 0;
+            max-width: 100%;
             min-width: 0;
             flex-wrap: nowrap;
         }
+        .gold-metallic-banner .banner-segment,
+        .gold-metallic-banner .lang-switcher__btn {
+            font-size: var(--banner-font);
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            color: #333333;
+        }
         .gold-metallic-banner .lang-switcher {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
+            position: relative;
             flex: 0 0 auto;
-            margin-left: 0;
             z-index: 10050;
         }
         .gold-metallic-banner .lang-switcher__btn {
-            padding: 0.22rem 0.42rem;
-            gap: 0.24rem;
-            font-size: 0.58rem;
-            background: #ffffff;
+            padding: 0;
+            gap: 0.22rem;
+            background: transparent;
             color: #333333;
-            border: 1px solid #d8d8d8;
+            border: none;
             box-shadow: none;
             border-radius: 0;
             white-space: nowrap;
         }
+        .gold-metallic-banner .lang-switcher__btn:hover {
+            background: transparent;
+            color: #111111;
+        }
         .gold-metallic-banner .lang-switcher__label {
-            font-size: 0.58rem;
+            font: inherit;
             font-weight: 800;
-            letter-spacing: 0.02em;
-            color: #777777;
+            letter-spacing: inherit;
+            color: #666666;
         }
         .gold-metallic-banner .lang-switcher__sep {
-            opacity: 0.45;
+            font: inherit;
+            opacity: 0.4;
             font-weight: 700;
         }
         .gold-metallic-banner .lang-switcher__current {
-            font-size: 0.58rem;
+            font: inherit;
             font-weight: 900;
             color: #111111;
+        }
+        .gold-metallic-banner .lang-switcher__caret {
+            font-size: 0.58em;
+            opacity: 0.55;
+            line-height: 1;
         }
         .gold-metallic-banner .lang-switcher__menu {
             top: calc(100% + 0.35rem);
@@ -2537,48 +2555,40 @@
         .banner-sep {
             flex-shrink: 0;
             width: 1px;
-            height: 0.95em;
-            background: #dddddd;
+            height: var(--banner-divider-h);
+            margin: 0 var(--banner-sep-gap);
+            background: #cccccc;
         }
         .banner-capacity-text {
             white-space: nowrap;
-            font-size: 0.76rem;
-            font-weight: 800;
-            letter-spacing: 0.03em;
-            color: #222222;
         }
         .banner-offer {
             display: none;
         }
         .banner-remaining-inline {
             display: inline-flex;
-            align-items: baseline;
-            gap: 0.15em;
+            align-items: center;
+            gap: 0;
             white-space: nowrap;
-            font-weight: 900;
-            background: #fef2f4;
-            color: #111111;
-            border: 1px solid rgba(194, 22, 50, 0.18);
-            padding: 0.14rem 0.48rem 0.12rem;
-            line-height: 1;
         }
         .banner-remaining-inline [data-i18n="banner.remainingPrefix"] {
-            font-size: 0.72em;
+            font: inherit;
             font-weight: 800;
-            color: #444444;
+            color: inherit;
         }
         .banner-remaining-inline .highlight-num {
-            font-size: 1.35rem;
+            font: inherit;
             font-weight: 900;
             color: #C21632;
             line-height: 1;
-            min-width: 0.85em;
+            min-width: 0;
+            margin: 0 0.04em;
             text-align: center;
         }
         .banner-remaining-inline .remaining-unit {
-            font-size: 0.78em;
-            font-weight: 900;
-            color: #C21632;
+            font: inherit;
+            font-weight: 800;
+            color: inherit;
         }
 
         .hero-price-card {
@@ -2769,56 +2779,33 @@
             .hero-deal-arrow {
                 font-size: 3.2rem;
             }
+            .gold-metallic-banner {
+                --banner-font: 0.8125rem;
+                --banner-divider-h: 0.75rem;
+                --banner-sep-gap: 0.7rem;
+            }
             .gold-metallic-banner .banner-bar {
-                padding-right: 7rem;
-            }
-            .gold-metallic-banner .banner-inner {
-                gap: 0.65rem;
-            }
-            .banner-capacity-text {
-                font-size: 0.88rem;
-            }
-            .banner-remaining-inline .highlight-num {
-                font-size: 1.55rem;
+                min-height: 38px;
+                padding: 0 0.85rem;
             }
         }
 
         @media (max-width: 560px) {
-            .gold-metallic-banner .banner-bar {
-                gap: 6px;
-                min-height: 36px;
-                padding: 0 4.65rem 0 0.55rem;
-            }
-            .gold-metallic-banner .banner-inner {
-                gap: 0.4rem;
-                justify-content: center;
-            }
-            .banner-capacity-text {
-                font-size: 0.66rem;
-                letter-spacing: 0.02em;
-            }
-            .banner-sep {
-                height: 0.9em;
-            }
-            .banner-remaining-inline {
-                padding: 0.12rem 0.4rem 0.1rem;
-            }
-            .banner-remaining-inline .highlight-num {
-                font-size: 1.12rem;
-            }
             .campaign-app-badge--lead {
                 margin-bottom: 0.65rem;
                 padding: 0.45rem 0.6rem;
                 font-size: 0.78rem;
             }
-            .gold-metallic-banner .lang-switcher__btn {
-                padding: 0.2rem 0.32rem;
-                font-size: 0.52rem;
-                gap: 0.18rem;
+        }
+
+        @media (max-width: 380px) {
+            .gold-metallic-banner {
+                --banner-font: 0.625rem;
+                --banner-sep-gap: 0.42rem;
             }
             .gold-metallic-banner .lang-switcher__label,
-            .gold-metallic-banner .lang-switcher__current {
-                font-size: 0.52rem;
+            .gold-metallic-banner .lang-switcher__sep {
+                display: none;
             }
         }
 
@@ -2983,16 +2970,9 @@
             box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
             border-bottom: 2px solid #C21632 !important;
         }
-        .banner-capacity-num {
+        .banner-capacity-num,
+        .banner-remaining-inline .highlight-num {
             color: #C21632 !important;
-        }
-        .banner-remaining-inline .highlight-num,
-        .banner-remaining-inline .remaining-unit {
-            color: #C21632 !important;
-        }
-        .banner-remaining-inline {
-            background: #fef2f4 !important;
-            border: 1px solid rgba(194, 22, 50, 0.18) !important;
         }
         .cta-button-video {
             background: #111111 !important;
@@ -3030,18 +3010,18 @@
 <div class="gold-metallic-banner" id="top-capacity-banner">
     <div class="banner-bar">
         <div class="banner-inner" aria-live="polite">
-            <span class="banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
+            <span class="banner-segment banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
             <span class="banner-sep" aria-hidden="true"></span>
-            <span class="banner-remaining-inline">
+            <span class="banner-segment banner-remaining-inline">
                 <span data-i18n="banner.remainingPrefix">残り</span><span class="highlight-num dynamic-remaining-count">--</span><span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
             </span>
-        </div>
-        <div class="lang-switcher" id="lang-switcher">
+            <span class="banner-sep" aria-hidden="true"></span>
+            <div class="lang-switcher" id="lang-switcher">
             <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-label="Language">
                 <span class="lang-switcher__label">Language</span>
                 <span class="lang-switcher__sep" aria-hidden="true">|</span>
                 <span class="lang-switcher__current" id="lang-current">日本語</span>
-                <span aria-hidden="true">▼</span>
+                <span class="lang-switcher__caret" aria-hidden="true">▼</span>
             </button>
             <div class="lang-switcher__menu" id="lang-menu" role="listbox" aria-label="Language">
                 <button type="button" class="lang-switcher__item is-active" data-lang="ja" role="option">日本語</button>
@@ -3049,6 +3029,7 @@
                 <button type="button" class="lang-switcher__item" data-lang="zh-CN" role="option">简体中文</button>
                 <button type="button" class="lang-switcher__item" data-lang="zh-TW" role="option">繁體中文</button>
                 <button type="button" class="lang-switcher__item" data-lang="ko" role="option">한국어</button>
+            </div>
             </div>
         </div>
     </div>
