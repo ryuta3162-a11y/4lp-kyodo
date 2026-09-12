@@ -1,0 +1,31 @@
+name: Instagram Story Daily
+
+on:
+  schedule:
+    # 毎日 10:00 JST = 01:00 UTC
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish-story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publish Instagram Story
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_IG_USER_ID: ${{ secrets.INSTAGRAM_IG_USER_ID }}
+          INSTAGRAM_STORY_VIDEO_URL: ${{ secrets.INSTAGRAM_STORY_VIDEO_URL }}
+          INSTAGRAM_STORY_VIDEO_PATH: 9月/insta-story/joyfit-story-10s.mp4
+        run: python "9月/insta-story/publish_story.py"

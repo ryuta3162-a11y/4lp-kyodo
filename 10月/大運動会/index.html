@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOYFIT24経堂 大運動会 スポーツの日 | 10/12(月・祝)</title>
+    <meta name="description" content="JOYFIT24経堂 大運動会 スポーツの日。10/12(月・祝) 13:30〜15:00。会員限定・他店舗会員も参加OK。事前予約制。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="JOYFIT24経堂 大運動会 スポーツの日" />
+    <meta property="og:description" content="10/12(月・祝) 13:30〜15:00。笑顔と健康でつながる！事前予約制。" />
+    <meta property="og:url" content="REPLACE_ORIGIN/10月/大運動会/index.html" />
+    <meta property="og:image" content="REPLACE_ORIGIN/10月/大運動会/event-flyer.png" />
+    <meta property="og:image:alt" content="JOYFIT24経堂 大運動会 スポーツの日" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JOYFIT24経堂 大運動会 スポーツの日" />
+    <meta name="twitter:description" content="10/12(月・祝) 13:30〜15:00。笑顔と健康でつながる！" />
+    <meta name="twitter:image" content="REPLACE_ORIGIN/10月/大運動会/event-flyer.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --brand: #C21632;
+            --brand-dark: #8a0e20;
+            --event-yellow: #FFE566;
+            --event-yellow-deep: #F5C518;
+            --event-orange: #FF8C42;
+            --event-blue: #1E6FD9;
+            --event-blue-dark: #1558B0;
+            --ink: #1a1a1a;
+            --text: #2C2C2C;
+            --container: 600px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            background-color: var(--event-yellow);
+            background-image: radial-gradient(circle, rgba(255,255,255,0.55) 12%, transparent 13%);
+            background-size: 28px 28px;
+            padding: 0 0 110px;
+        }
+
+        .font-impact { font-weight: 900; letter-spacing: -0.02em; }
+
+        .top-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: var(--brand);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 10px 14px;
+            text-align: center;
+            letter-spacing: 0.06em;
+            box-shadow: 0 3px 16px rgba(194, 22, 50, 0.3);
+            border-bottom: 2px solid var(--event-yellow-deep);
+        }
+
+        .top-banner em {
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .lp-wrapper {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 72px 15px 0;
+        }
+
+        .hero-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border: 3px solid #fff;
+        }
+
+        .hero-meta {
+            padding: 18px 16px 12px;
+            text-align: center;
+        }
+
+        .hero-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--ink);
+            letter-spacing: 0.04em;
+        }
+
+        .hero-date .pill {
+            background: var(--ink);
+            color: #fff;
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 999px;
+        }
+
+        .hero-time {
+            margin-top: 8px;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--brand);
+        }
+
+        .hero-catch {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #444;
+        }
+
+        .hero-image {
+            width: 100%;
+            display: block;
+        }
+
+        .member-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 18px 0 0;
+        }
+
+        .member-badge {
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-weight: 900;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(30, 111, 217, 0.25);
+        }
+
+        .member-badge.primary {
+            background: linear-gradient(135deg, var(--event-blue) 0%, var(--event-blue-dark) 100%);
+        }
+
+        .member-badge.secondary {
+            background: #fff;
+            color: var(--event-blue-dark);
+            border: 2px solid var(--event-blue);
+            font-size: 0.82rem;
+        }
+
+        .section-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 22px 18px;
+            margin-top: 18px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+        }
+
+        .section-title {
+            margin: 0 0 16px;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--ink);
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+
+        .info-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e8e8e8;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .info-list li:last-child { border-bottom: none; }
+
+        .info-list i {
+            color: var(--brand);
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .info-list strong { color: var(--ink); }
+
+        .notice-box {
+            margin-top: 14px;
+            background: #fff8e8;
+            border: 2px solid var(--event-orange);
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 0.82rem;
+            line-height: 1.65;
+            text-align: left;
+        }
+
+        .notice-box.warning {
+            background: #fff5f5;
+            border-color: var(--brand);
+        }
+
+        .notice-box .label {
+            display: inline-block;
+            font-weight: 900;
+            color: var(--brand);
+            margin-bottom: 6px;
+        }
+
+        .reserve-form label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .reserve-form input,
+        .reserve-form select,
+        .reserve-form textarea {
+            width: 100%;
+            border: 1.5px solid #ddd;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            margin-bottom: 14px;
+        }
+
+        .reserve-form input:focus,
+        .reserve-form select:focus,
+        .reserve-form textarea:focus {
+            outline: none;
+            border-color: var(--brand);
+            box-shadow: 0 0 0 3px rgba(194, 22, 50, 0.12);
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 999px;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #fff;
+            background: var(--brand);
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(194, 22, 50, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn:hover { transform: translateY(-2px); }
+        .submit-btn:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .closed-message {
+            display: none;
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            font-weight: 700;
+            color: #666;
+        }
+
+        .closed-message.show { display: block; }
+
+        .result-message {
+            display: none;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .result-message.ok {
+            display: block;
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .result-message.err {
+            display: block;
+            background: #fef2f2;
+            color: var(--brand);
+        }
+
+        .fixed-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 12px 16px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .fixed-cta a {
+            display: block;
+            max-width: var(--container);
+            margin: 0 auto;
+            text-align: center;
+            background: var(--brand);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            padding: 14px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(194, 22, 50, 0.3);
+        }
+
+        .fixed-cta a.disabled {
+            background: #999;
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .submit-btn:hover { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-banner">
+    <em>10/12(月・祝) 13:30〜15:00</em> · 事前予約制（当日12:00まで）
+</div>
+
+<div class="lp-wrapper">
+
+    <section class="hero-card">
+        <div class="hero-meta">
+            <div class="hero-date">
+                <span>10.12</span>
+                <span>MON</span>
+                <span class="pill">祝</span>
+            </div>
+            <div class="hero-time">13:30 〜 15:00</div>
+            <p class="hero-catch">笑顔と健康でつながる！</p>
+        </div>
+        <img src="event-flyer.png" alt="大運動会 スポーツの日" class="hero-image" width="600" height="800">
+        <div style="padding: 16px;">
+            <div class="member-badges">
+                <div class="member-badge primary">JOYFIT 会員様限定イベント！</div>
+                <div class="member-badge secondary">＼ 他店舗会員様も参加OK！ ／</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">イベント概要</h2>
+        <ul class="info-list">
+            <li>
+                <i class="ph-bold ph-calendar-star"></i>
+                <span><strong>日時</strong><br>2026年10月12日（月・祝）13:30〜15:00</span>
+            </li>
+            <li>
+                <i class="ph-bold ph-map-pin"></i>
+                <span><strong>会場</strong><br>JOYFIT24 経堂</span>
+            </li>
+            <li>
+                <i class="ph-bold ph-users-three"></i>
+                <span><strong>対象</strong><br>JOYFIT会員様（他店舗会員様も参加OK）</span>
+            </li>
+            <li>
+                <i class="ph-bold ph-backpack"></i>
+                <span><strong>持ち物</strong><br>動きやすいウェア、タオル、飲み物</span>
+            </li>
+        </ul>
+
+        <div class="notice-box">
+            <span class="label">参加費について</span><br>
+            ホットスタジオオプション未契約の方は、1店舗利用料 <strong>550円（税込）</strong> がかかります。
+        </div>
+
+        <div class="notice-box warning">
+            <span class="label">⚠ 事前予約制</span><br>
+            イベント当日 <strong>正午12:00</strong> までにお申し込みください。
+        </div>
+    </section>
+
+    <section class="section-card" id="reserve">
+        <h2 class="section-title">参加予約</h2>
+
+        <div id="closed-message" class="closed-message">
+            予約受付は終了しました。<br>店舗までお問い合わせください。
+        </div>
+
+        <form id="reserve-form" class="reserve-form">
+            <label for="name">お名前 <span style="color:var(--brand)">*</span></label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="山田 太郎">
+
+            <label for="tel">電話番号 <span style="color:var(--brand)">*</span></label>
+            <input type="tel" id="tel" name="tel" required autocomplete="tel" placeholder="09012345678">
+
+            <label for="email">メールアドレス <span style="color:var(--brand)">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@email.com">
+
+            <label for="memberType">会員種別 <span style="color:var(--brand)">*</span></label>
+            <select id="memberType" name="memberType" required>
+                <option value="">選択してください</option>
+                <option value="kyodo">JOYFIT24 経堂 会員</option>
+                <option value="other">他店舗 JOYFIT 会員</option>
+            </select>
+
+            <label for="hotStudio">ホットスタジオオプション <span style="color:var(--brand)">*</span></label>
+            <select id="hotStudio" name="hotStudio" required>
+                <option value="">選択してください</option>
+                <option value="yes">契約済み</option>
+                <option value="no">未契約（550円）</option>
+            </select>
+
+            <label for="guests">参加人数（本人含む）</label>
+            <select id="guests" name="guests">
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+            </select>
+
+            <label for="note">備考（任意）</label>
+            <textarea id="note" name="note" rows="3" placeholder="ご質問など"></textarea>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <i class="ph-bold ph-check-circle"></i> 参加を予約する
+            </button>
+        </form>
+
+        <div id="result-message" class="result-message"></div>
+    </section>
+
+    <p style="margin: 24px 0 8px; font-size: 0.72rem; color: #666; text-align: center;">
+        JOYFIT24 経堂<br>
+        お問い合わせ：jf-kyoudou@okamoto-group.co.jp
+    </p>
+</div>
+
+<div class="fixed-cta">
+    <a href="#reserve" id="fixed-cta-link">参加予約はこちら</a>
+</div>
+
+<script>
+(function() {
+    // 予約締切: 2026/10/12 12:00 JST
+    var DEADLINE = new Date('2026-10-12T12:00:00+09:00');
+    // GAS Web App URL（設定後に差し替え）
+    var GAS_WEB_APP_URL = 'REPLACE_GAS_WEB_APP_URL';
+
+    var form = document.getElementById('reserve-form');
+    var closedMsg = document.getElementById('closed-message');
+    var submitBtn = document.getElementById('submit-btn');
+    var resultMsg = document.getElementById('result-message');
+    var fixedCta = document.getElementById('fixed-cta-link');
+
+    function isClosed() {
+        return new Date() >= DEADLINE;
+    }
+
+    function applyClosedState() {
+        if (!isClosed()) return;
+        form.style.display = 'none';
+        closedMsg.classList.add('show');
+        fixedCta.classList.add('disabled');
+        fixedCta.textContent = '予約受付終了';
+    }
+
+    applyClosedState();
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (isClosed()) {
+            applyClosedState();
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中…';
+        resultMsg.className = 'result-message';
+        resultMsg.textContent = '';
+
+        var payload = {
+            action: 'submitEvent',
+            eventId: 'sports-day-2026-10-12',
+            name: document.getElementById('name').value.trim(),
+            tel: document.getElementById('tel').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            memberType: document.getElementById('memberType').value,
+            hotStudio: document.getElementById('hotStudio').value,
+            guests: document.getElementById('guests').value,
+            note: document.getElementById('note').value.trim()
+        };
+
+        if (GAS_WEB_APP_URL.indexOf('REPLACE_') === 0) {
+            resultMsg.className = 'result-message ok';
+            resultMsg.textContent = '入力内容を確認しました。GAS連携設定後に予約が完了します。';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="ph-bold ph-check-circle"></i> 参加を予約する';
+            return;
+        }
+
+        fetch(GAS_WEB_APP_URL, {
+            method: 'POST',
+            mode: 'cors',
+            redirect: 'follow',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        })
+            .then(function(res) { return res.text(); })
+            .then(function(text) {
+                var data;
+                try { data = JSON.parse(text); } catch (err) { throw new Error('invalidResponse'); }
+                if (data.ok) {
+                    form.style.display = 'none';
+                    resultMsg.className = 'result-message ok';
+                    resultMsg.textContent = 'ご予約を承りました。確認メールをお送りします。';
+                } else {
+                    throw new Error(data.error || 'submitFailed');
+                }
+            })
+            .catch(function() {
+                resultMsg.className = 'result-message err';
+                resultMsg.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="ph-bold ph-check-circle"></i> 参加を予約する';
+            });
+    });
+})();
+</script>
+</body>
+</html>

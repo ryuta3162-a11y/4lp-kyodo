@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>JOYFIT24経堂 JOYFITアプリ Q&A（A4印刷用・裏面）</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #C21632;
+      --ink: #111111;
+      --muted: #666666;
+      --line: #d8d8d8;
+      --bg: #f5f5f5;
+      --line-green: #06C755;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #ccc;
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color: var(--ink);
+    }
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 8px auto;
+      background: #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      flex: 0 0 auto;
+      text-align: center;
+      padding: 2.6mm 3mm 2.2mm;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-brand {
+      font-weight: 900;
+      font-size: 7mm;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .hero-brand em {
+      font-style: normal;
+      font-weight: 800;
+      color: var(--red);
+      font-size: 4.8mm;
+      letter-spacing: 0.12em;
+      margin-left: 1.4mm;
+    }
+    .hero-lead {
+      margin-top: 1.2mm;
+      font-size: 3.8mm;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+    }
+
+    .main {
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 1.5mm 2mm 2mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+      background: #fff;
+    }
+
+    .topic {
+      flex: 1 1 0;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .qa-tab {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5mm;
+      padding: 2mm 3mm;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+    }
+    .qa-tab-num {
+      font-size: 4.5mm;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      opacity: 0.55;
+    }
+    .qa-tab-label {
+      font-size: 5.4mm;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+    }
+    .qa-tab-sub {
+      font-size: 3.2mm;
+      font-weight: 700;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      margin-left: 1mm;
+    }
+
+    .topic-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 1.8mm 2mm 1.6mm;
+      gap: 1.4mm;
+    }
+
+    .instr-box {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2mm;
+      flex-wrap: wrap;
+      padding: 1.6mm 2.5mm;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .instr-box p {
+      font-size: 3.8mm;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .instr-fields {
+      display: flex;
+      gap: 1.2mm;
+      list-style: none;
+    }
+    .instr-fields li {
+      padding: 0.6mm 2.2mm;
+      font-size: 3.4mm;
+      font-weight: 800;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .swipe-track {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .swipe-step {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1mm;
+      height: 100%;
+    }
+
+    .step-badge {
+      flex: 0 0 auto;
+      font-size: 2.6mm;
+      font-weight: 900;
+      color: #fff;
+      background: #333;
+      padding: 0.5mm 2.2mm;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+    }
+    .topic.is-option .step-badge {
+      min-width: 5.5mm;
+      padding: 0.5mm 0;
+      text-align: center;
+    }
+
+    .phone-col {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-frame {
+      flex: 0 1 auto;
+      width: 100%;
+      max-width: 30mm;
+      aspect-ratio: 460 / 1024;
+      display: flex;
+      flex-direction: column;
+      background: #222;
+      border-radius: 2mm;
+      padding: 0.65mm 0.55mm;
+      box-shadow: 0 0.6mm 2mm rgba(0,0,0,.1);
+    }
+    .topic.is-option .phone-frame {
+      max-width: 24.5mm;
+    }
+
+    .phone-notch {
+      flex: 0 0 auto;
+      width: 24%;
+      height: 0.35mm;
+      background: #0a0a0a;
+      border-radius: 999px;
+      margin: 0 auto 0.4mm;
+    }
+    .phone-screen {
+      flex: 1 1 auto;
+      min-height: 0;
+      border-radius: 1.2mm;
+      overflow: hidden;
+      background: #fff;
+      width: 100%;
+      line-height: 0;
+    }
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      display: block;
+    }
+
+    .step-title {
+      flex: 0 0 auto;
+      width: 100%;
+      font-size: 3.6mm;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.3;
+      text-align: center;
+      min-height: 9mm;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .topic:not(.is-option) .step-title {
+      font-size: 3.8mm;
+    }
+    .step-title .em {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 0.5mm;
+    }
+
+    .swipe-arrow {
+      flex: 0 0 5mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      align-self: center;
+      transform: translateY(-4.5mm);
+    }
+    .swipe-arrow svg {
+      width: 3.5mm;
+      height: 3.5mm;
+      display: block;
+    }
+
+    .note {
+      flex: 0 0 auto;
+      width: 100%;
+      font-size: 3.6mm;
+      font-weight: 800;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.35;
+      padding-top: 0.4mm;
+    }
+    .note em {
+      font-style: normal;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    /* PT */
+    .pt-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 38mm 1fr 1fr;
+      gap: 2mm;
+      padding: 2mm;
+      align-items: stretch;
+    }
+    .pt-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.2mm;
+      border-right: 1px solid var(--line);
+      padding-right: 2mm;
+      text-align: center;
+    }
+    .pt-side-lead {
+      font-size: 3.8mm;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .pt-prices {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pt-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1mm;
+      padding: 1.5mm 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .pt-price:last-child { border-bottom: none; }
+    .pt-price .d {
+      font-size: 3.6mm;
+      font-weight: 800;
+      color: var(--muted);
+    }
+    .pt-price .a {
+      font-size: 5mm;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .trainer-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2mm;
+      min-height: 0;
+      padding: 1.5mm;
+      background: #fff;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .trainer-photo {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 40mm;
+      overflow: visible;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trainer-photo img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+    .trainer-name {
+      font-size: 4.4mm;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .trainer-name small {
+      display: block;
+      margin-top: 0.5mm;
+      font-size: 2.8mm;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .trainer-focus {
+      font-size: 3.2mm;
+      font-weight: 800;
+      color: var(--muted);
+      line-height: 1.45;
+      flex: 1 1 auto;
+    }
+    .trainer-qr-wrap {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8mm;
+      margin-top: auto;
+    }
+    .trainer-qr {
+      width: 18mm;
+      height: 18mm;
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .trainer-qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .trainer-qr-label {
+      font-size: 2.2mm;
+      font-weight: 900;
+      color: #fff;
+      background: var(--line-green);
+      padding: 0.5mm 1.4mm;
+      line-height: 1.2;
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .sheet { margin: 0; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet" id="sheet">
+    <header class="hero">
+      <div class="hero-brand">JOY FIT 24<em>経堂</em></div>
+      <p class="hero-lead">アプリの基本操作ガイド</p>
+    </header>
+
+    <div class="main">
+      <section class="topic">
+        <div class="qa-tab">
+          <span class="qa-tab-num">01</span>
+          <h2 class="qa-tab-label">JOYFITAPP登録方法</h2>
+        </div>
+        <div class="topic-body">
+          <div class="instr-box">
+            <p>APP入会時と同じ情報を入力</p>
+            <ul class="instr-fields">
+              <li>お名前</li><li>生年月日</li><li>電話番号</li>
+            </ul>
+          </div>
+          <div class="swipe-track">
+            <div class="swipe-step">
+              <span class="step-badge">STEP 1</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/07-member-search.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title">APPログイン設定<br>→ <strong>検索</strong></p>
+            </div>
+            <div class="swipe-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="swipe-step">
+              <span class="step-badge">STEP 2</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/08-app-link-qr.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title"><span class="em">アプリアクティベート</span><br>をタップ</p>
+            </div>
+            <div class="swipe-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="swipe-step">
+              <span class="step-badge">STEP 3</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/01-home-top.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title">トップ画面へ<br>登録完了</p>
+            </div>
+          </div>
+          <p class="note"><em>位置情報・カメラ</em>の使用を許可してください</p>
+        </div>
+      </section>
+
+      <section class="topic is-option">
+        <div class="qa-tab">
+          <span class="qa-tab-num">02</span>
+          <h2 class="qa-tab-label">オプション追加・解約</h2>
+        </div>
+        <div class="topic-body">
+          <div class="swipe-track">
+            <div class="swipe-step">
+              <span class="step-badge">1</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/01-home.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title">ホーム右上<br><strong>サービス</strong></p>
+            </div>
+            <div class="swipe-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="swipe-step">
+              <span class="step-badge">2</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/02-service-list-app-only.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title"><strong>アプリ専用</strong><br>手続き</p>
+            </div>
+            <div class="swipe-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="swipe-step">
+              <span class="step-badge">3</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/05-contract-entry.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title">ご契約変更<br>について</p>
+            </div>
+            <div class="swipe-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="swipe-step">
+              <span class="step-badge">4</span>
+              <div class="phone-col">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen"><img src="img/app-guide/09-option-menu.png" alt="" /></div>
+                </div>
+              </div>
+              <p class="step-title">オプション<br>追加 / 解約</p>
+            </div>
+          </div>
+          <p class="note">追加は<em>即日</em>／解約は<em>当月末</em>（月末まで利用可）</p>
+        </div>
+      </section>
+
+      <section class="topic">
+        <div class="qa-tab">
+          <span class="qa-tab-num">03</span>
+          <h2 class="qa-tab-label">パーソナルトレーニング</h2>
+          <span class="qa-tab-sub">LINE</span>
+        </div>
+        <div class="pt-body">
+          <aside class="pt-side">
+            <p class="pt-side-lead">友だち追加から<br>ご予約ください</p>
+            <div class="pt-prices">
+              <div class="pt-price"><span class="d">30分</span><span class="a">3,300円</span></div>
+              <div class="pt-price"><span class="d">60分</span><span class="a">6,600円</span></div>
+              <div class="pt-price"><span class="d">90分</span><span class="a">9,900円</span></div>
+            </div>
+          </aside>
+          <article class="trainer-card">
+            <div class="trainer-photo"><img src="img/trainers/kusaka.png" alt="日下竜太" /></div>
+            <h3 class="trainer-name">日下 竜太<small>クサカ リュウタ</small></h3>
+            <p class="trainer-focus">BIG3 / フリーウエイト<br>筋量アップ</p>
+            <div class="trainer-qr-wrap">
+              <div class="trainer-qr"><img src="img/trainers/qr-kusaka.png" alt="" /></div>
+              <span class="trainer-qr-label">友だち追加</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <div class="trainer-photo"><img src="img/trainers/ishida.png" alt="石田美絵" /></div>
+            <h3 class="trainer-name">石田 美絵<small>イシダ ミエ</small></h3>
+            <p class="trainer-focus">二の腕 / ヒップアップ<br>姿勢改善</p>
+            <div class="trainer-qr-wrap">
+              <div class="trainer-qr"><img src="img/trainers/qr-ishida.png" alt="" /></div>
+              <span class="trainer-qr-label">友だち追加</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

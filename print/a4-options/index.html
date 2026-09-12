@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>JOYFIT24経堂 キャンペーン無料オプション一覧（A4印刷用）</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Noto+Sans+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #C21632;
+      --navy: #1a3a6b;
+      --card-font: 3.75mm;
+      --desc-font: 3.35mm;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #ccc;
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 8px auto;
+      background: #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-head {
+      flex: 0 0 auto;
+      text-align: center;
+      font-weight: 900;
+      font-size: 6.8mm;
+      letter-spacing: 0.05em;
+      line-height: 1.15;
+      padding: 2.8mm 3mm;
+      color: #fff;
+      background: var(--red);
+    }
+    .section-head.is-navy { background: var(--navy); }
+
+    .main {
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 1.2mm 2mm 1.5mm;
+    }
+
+    .cards {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr) auto 1fr;
+      gap: 1.2mm;
+    }
+    .cards > .section-head {
+      grid-column: 1 / -1;
+    }
+
+    .card {
+      border: 2px solid var(--red);
+      border-radius: 1.5mm;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      min-height: 0;
+      text-align: center;
+    }
+    .card.is-navy { border-color: var(--navy); }
+
+    .card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7mm;
+      padding: 1.1mm 1.2mm 1mm;
+      flex: 0 0 auto;
+      background: linear-gradient(180deg, rgba(194, 22, 50, 0.1) 0%, rgba(194, 22, 50, 0.02) 100%);
+      border-bottom: 1px solid rgba(194, 22, 50, 0.14);
+    }
+    .card.is-navy .card-top {
+      background: linear-gradient(180deg, rgba(26, 58, 107, 0.1) 0%, rgba(26, 58, 107, 0.02) 100%);
+      border-bottom-color: rgba(26, 58, 107, 0.14);
+    }
+    .no {
+      flex-shrink: 0;
+      min-width: 10mm;
+      padding: 0.45mm 2mm;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 3.5mm;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0.4mm 0 rgba(0, 0, 0, 0.12);
+    }
+    .card.is-navy .no { background: var(--navy); }
+
+    .card-name {
+      font-weight: 900;
+      font-size: var(--card-font);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .card-name .tag {
+      font-size: var(--card-font);
+      font-weight: 900;
+      color: #c2185b;
+    }
+    .card-name .tag.m { color: #1565c0; }
+
+    .card-photo {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 0;
+    }
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .card-text {
+      flex: 0 0 auto;
+      padding: 0.4mm 1.2mm 0.6mm;
+      font-size: var(--desc-font);
+      font-weight: 600;
+      color: #555;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .card-foot {
+      flex: 0 0 auto;
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      font-weight: 900;
+      font-size: var(--card-font);
+      padding: 1.2mm 0.8mm;
+      line-height: 1.2;
+    }
+    .card.is-navy .card-foot { background: var(--navy); }
+
+    @media print {
+      html, body { background: #fff; }
+      .sheet { margin: 0; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet" id="sheet">
+    <header class="section-head">JOYFIT24 経堂 キャンペーン無料オプション一覧</header>
+
+    <div class="main">
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><div class="no">01</div><div class="card-name">あんしんサポートVIP</div></div>
+          <div class="card-photo"><img src="img/41.png" alt="" /></div>
+          <p class="card-text">万が一の時にも安心な<br>JOYFIT専用サポートプラン</p>
+          <div class="card-foot">月額 825円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">02</div><div class="card-name">オンラインレッスン</div></div>
+          <div class="card-photo"><img src="img/42.png" alt="" /></div>
+          <p class="card-text">自宅で本格的なレッスンが出来る!<br>ジムに来れない日でも安心</p>
+          <div class="card-foot">月額 1,100円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">03</div><div class="card-name">ホットスタジオ</div></div>
+          <div class="card-photo"><img src="img/36.png" alt="" /></div>
+          <p class="card-text">世田谷エリア最大級<br>のレッスンで滝汗体験!</p>
+          <div class="card-foot">月額 1,100円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">04</div><div class="card-name">レンタルマット</div></div>
+          <div class="card-photo"><img src="img/38.png" alt="" /></div>
+          <p class="card-text">マットを持ってこなくてＯＫ!<br>ホットスタジオ参加には必須!</p>
+          <div class="card-foot">月額 1,100円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">05</div><div class="card-name">セルフエステ <span class="tag">女性限定</span></div></div>
+          <div class="card-photo"><img src="img/45.png" alt="" /></div>
+          <p class="card-text">エステサロンと同じ<br>業務用マシンが使い放題</p>
+          <div class="card-foot">月額 3,300円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">06</div><div class="card-name">レンタルタオル</div></div>
+          <div class="card-photo"><img src="img/40.png" alt="" /></div>
+          <p class="card-text">汗をかいても安心レンタル<br>フェイスタオル・バスタオル</p>
+          <div class="card-foot">月額 1,650円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">07</div><div class="card-name">体組成計</div></div>
+          <div class="card-photo"><img src="img/39.png" alt="" /></div>
+          <p class="card-text">体脂肪、筋肉量を測定し<br>トレーニングを最適化</p>
+          <div class="card-foot">月額 550円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">08</div><div class="card-name">水素水 &amp; プロテイン</div></div>
+          <div class="card-photo"><img src="img/37.png" alt="" /></div>
+          <p class="card-text">水素水＋プロテイン<br>[１日６杯迄]のお得なセット</p>
+          <div class="card-foot">月額 3,240円 (税込)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="no">09</div><div class="card-name">タンニングマシン <span class="tag m">男性限定</span></div></div>
+          <div class="card-photo"><img src="img/44.png" alt="" /></div>
+          <p class="card-text">理想の日焼け肌を手に入れたい方へ!<br>※1日20分まで</p>
+          <div class="card-foot">月額 5,500円 (税込)</div>
+        </article>
+
+        <header class="section-head is-navy">JOYFIT24 経堂 キャンペーン外オプション一覧</header>
+
+        <article class="card is-navy">
+          <div class="card-top"><div class="no">10</div><div class="card-name">契約ロッカー</div></div>
+          <div class="card-photo"><img src="img/43.png" alt="" /></div>
+          <p class="card-text">ウェアやシューズを置いたままに<br>あなた専用のロッカー</p>
+          <div class="card-foot">月額 1,650円 (税込)</div>
+        </article>
+        <article class="card is-navy">
+          <div class="card-top"><div class="no">11</div><div class="card-name">ピラティスリフォーマー</div></div>
+          <div class="card-photo"><img src="img/46.png" alt="" /></div>
+          <p class="card-text">ピラティスマシンを使い<br>体幹等を鍛える本格レッスン</p>
+          <div class="card-foot">月額 3,300円 (税込)</div>
+        </article>
+        <article class="card is-navy">
+          <div class="card-top"><div class="no">12</div><div class="card-name">ヨガマットロッカー</div></div>
+          <div class="card-photo"><img src="img/47.png" alt="" /></div>
+          <p class="card-text">ご自身のヨガマットを保管<br>荷物を減らしたい方へ</p>
+          <div class="card-foot">月額 1,100円 (税込)</div>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

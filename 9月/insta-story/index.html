@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>インスタストーリー 10秒</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #C21632;
+            --ink: #111111;
+            --muted: #666666;
+            --w: 1080px;
+            --h: 1920px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #111;
+            min-height: 100vh;
+            padding: 24px 16px 48px;
+            color: #aaa;
+        }
+        .toolbar {
+            max-width: 520px;
+            margin: 0 auto 20px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            line-height: 1.65;
+        }
+        .toolbar h1 { color: #fff; font-size: 0.95rem; margin-bottom: 8px; }
+        .toolbar button {
+            margin-top: 10px;
+            font-family: inherit;
+            font-weight: 800;
+            padding: 10px 16px;
+            border: none;
+            background: var(--brand);
+            color: #fff;
+            cursor: pointer;
+        }
+        .preview-wrap {
+            display: flex;
+            justify-content: center;
+            transform-origin: top center;
+        }
+        @media (max-width: 1120px) {
+            .preview-wrap { transform: scale(0.45); margin-bottom: -1000px; }
+        }
+        .story {
+            width: var(--w);
+            height: var(--h);
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+        .story::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            top: 0; height: 8px;
+            background: var(--brand);
+        }
+        .bar-bottom {
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 0; height: 8px;
+            background: var(--brand);
+        }
+        .frame {
+            position: absolute;
+            inset: 40px;
+            border: 3px solid var(--ink);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 48px;
+            color: var(--ink);
+            opacity: 0;
+            z-index: 1;
+        }
+        .story.play .s1 { animation: s1 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .story.play .s2 { animation: s2 10s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+        @keyframes s1 {
+            0%, 1% { opacity: 0; transform: scale(0.94) translateY(36px); }
+            8%, 60% { opacity: 1; transform: scale(1) translateY(0); }
+            68%, 100% { opacity: 0; transform: scale(1.02) translateY(-24px); }
+        }
+        @keyframes s2 {
+            0%, 62% { opacity: 0; transform: scale(0.94) translateY(28px); }
+            70%, 100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 48px;
+            font-weight: 900;
+            color: #fff;
+            background: var(--brand);
+            margin-bottom: 40px;
+        }
+        .catch { font-size: 92px; font-weight: 900; margin-bottom: 24px; }
+        .price { font-size: 280px; font-weight: 900; color: var(--brand); line-height: 1; }
+        .yen { font-size: 96px; font-weight: 900; color: var(--brand); }
+        .tax { font-size: 52px; font-weight: 500; color: var(--muted); margin-top: 36px; }
+        .cta { font-size: 80px; font-weight: 900; }
+        .cta-hint { font-size: 52px; font-weight: 500; color: var(--muted); margin-top: 16px; }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <h1>インスタストーリー（2スライド）</h1>
+    <p>①金額 → ②詳細はインスタ</p>
+    <button type="button" id="btn-replay">もう一度再生</button>
+</div>
+
+<div class="preview-wrap">
+    <div class="story play" id="story">
+        <div class="bar-bottom" aria-hidden="true"></div>
+        <div class="frame" aria-hidden="true"></div>
+        <div class="scene s1">
+            <p class="badge">JOYFIT24経堂限定</p>
+            <p class="catch">6カ月ずっと</p>
+            <p><span class="price">3,300</span><span class="yen">円</span></p>
+            <p class="tax">3,630円(税込)/月</p>
+        </div>
+        <div class="scene s2">
+            <p class="cta">詳細はインスタ</p>
+            <p class="cta-hint">プロフィールリンクから</p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('btn-replay').addEventListener('click', function () {
+    const el = document.getElementById('story');
+    el.classList.remove('play');
+    void el.offsetWidth;
+    el.classList.add('play');
+});
+</script>
+</body>
+</html>
