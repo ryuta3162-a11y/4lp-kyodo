@@ -88,7 +88,7 @@ window.JOYFIT_LOCALES = {
         "nextFree": "Next auto-enrolled option",
         "prevPaid": "Previous non-campaign option",
         "nextPaid": "Next non-campaign option",
-        "noticeTitle": "Important",
+        "noticeTitle": "Option notes",
         "noticeBody": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong class=\"cond-em\" id=\"campaign-notice-deadline\">end of September</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
         "noticeWarning": "※No refunds if you forget to cancel",
         "cancelVideo": "Tap here for how to cancel",
@@ -145,7 +145,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span> auto-enrolled options",
-        "foldSub": "Optional details",
+        "foldSub": "See details",
         "foldOpen": "Details",
         "foldClose": "Close"
       },
@@ -308,7 +308,7 @@ window.JOYFIT_LOCALES = {
         "nextFree": "다음 자동 계약 옵션",
         "prevPaid": "이전 캠페인 외 옵션",
         "nextPaid": "다음 캠페인 외 옵션",
-        "noticeTitle": "유의사항",
+        "noticeTitle": "옵션 유의사항",
         "noticeBody": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">9월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능합니다<br />해약 후에도 월말까지 서비스를 이용할 수 있습니다",
         "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
         "cancelVideo": "해지 방법은 여기를 탭",
@@ -365,7 +365,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>개 자동계약 옵션",
-        "foldSub": "내용 보기(선택)",
+        "foldSub": "내용 보기",
         "foldOpen": "상세",
         "foldClose": "닫기"
       },
@@ -528,7 +528,7 @@ window.JOYFIT_LOCALES = {
         "nextFree": "下一项自动签约选项",
         "prevPaid": "上一项活动外选项",
         "nextPaid": "下一项活动外选项",
-        "noticeTitle": "注意事项",
+        "noticeTitle": "选项注意事项",
         "noticeBody": "8个选项入会时<strong class=\"cond-em\">自动签约</strong><br />不需要时请务必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解约<br /><br />入会后可通过<strong>[JOYFIT APP]</strong>解约<br />解约后当月仍可使用服务",
         "noticeWarning": "※忘记解约不予退款",
         "cancelVideo": "点击此处查看解约方法",
@@ -585,7 +585,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>项自动签约选项",
-        "foldSub": "查看内容（可选）",
+        "foldSub": "查看内容",
         "foldOpen": "详情",
         "foldClose": "收起"
       },
@@ -748,7 +748,7 @@ window.JOYFIT_LOCALES = {
         "nextFree": "下一項自動簽約選項",
         "prevPaid": "上一項活動外選項",
         "nextPaid": "下一項活動外選項",
-        "noticeTitle": "注意事項",
+        "noticeTitle": "選項注意事項",
         "noticeBody": "8個選項入會時<strong class=\"cond-em\">自動簽約</strong><br />不需要時請務必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後當月仍可使用服務",
         "noticeWarning": "※忘記解約不予退款",
         "cancelVideo": "點此查看解約方法",
@@ -805,7 +805,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>項自動簽約選項",
-        "foldSub": "查看內容（可選）",
+        "foldSub": "查看內容",
         "foldOpen": "詳情",
         "foldClose": "收合"
       },

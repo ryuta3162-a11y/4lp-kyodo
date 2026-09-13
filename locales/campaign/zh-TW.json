@@ -86,7 +86,7 @@
     "nextFree": "下一項自動簽約選項",
     "prevPaid": "上一項活動外選項",
     "nextPaid": "下一項活動外選項",
-    "noticeTitle": "注意事項",
+    "noticeTitle": "選項注意事項",
     "noticeBody": "8個選項入會時<strong class=\"cond-em\">自動簽約</strong><br />不需要時請務必在<strong class=\"cond-em\" id=\"campaign-notice-deadline\">9月末前</strong>解約<br /><br />入會後可透過<strong>[JOYFIT APP]</strong>解約<br />解約後當月仍可使用服務",
     "noticeWarning": "※忘記解約不予退款",
     "cancelVideo": "點此查看解約方法",
@@ -143,7 +143,7 @@
       }
     },
     "foldTitle": "<span class=\"highlight\">8</span>項自動簽約選項",
-    "foldSub": "查看內容（可選）",
+    "foldSub": "查看內容",
     "foldOpen": "詳情",
     "foldClose": "收合"
   },

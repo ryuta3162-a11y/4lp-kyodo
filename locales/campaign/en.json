@@ -86,7 +86,7 @@
     "nextFree": "Next auto-enrolled option",
     "prevPaid": "Previous non-campaign option",
     "nextPaid": "Next non-campaign option",
-    "noticeTitle": "Important",
+    "noticeTitle": "Option notes",
     "noticeBody": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup<br />Cancel unwanted options by <strong class=\"cond-em\" id=\"campaign-notice-deadline\">end of September</strong><br /><br />Cancel anytime after joining via <strong>[JOYFIT APP]</strong><br />You can use services through month-end after canceling",
     "noticeWarning": "※No refunds if you forget to cancel",
     "cancelVideo": "Tap here for how to cancel",
@@ -143,7 +143,7 @@
       }
     },
     "foldTitle": "<span class=\"highlight\">8</span> auto-enrolled options",
-    "foldSub": "Optional details",
+    "foldSub": "See details",
     "foldOpen": "Details",
     "foldClose": "Close"
   },
