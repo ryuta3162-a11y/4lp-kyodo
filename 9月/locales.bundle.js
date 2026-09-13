@@ -72,7 +72,8 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "App signup",
         "step2Title": "Easy signup via app",
         "step2Desc": "As fast as 5 min — use today",
-        "step2Btn": "Get the app"
+        "step2Btn": "Get the app",
+        "step1SoftLink": "Referral, student & transfer perks"
       },
       "options": {
         "freeTitle": "<span class=\"highlight font-impact\">8</span> auto-enrolled options",
@@ -141,7 +142,11 @@ window.JOYFIT_LOCALES = {
             "name": "Yoga Mat Locker",
             "description": "Store your yoga mat<br>travel light"
           }
-        }
+        },
+        "foldTitle": "<span class=\"highlight\">8</span> auto-enrolled options",
+        "foldSub": "Sep is ¥0 — tap for details",
+        "foldOpen": "Details",
+        "foldClose": "Close"
       },
       "access": {
         "logoAlt": "JOYFIT24 Kyodo",
@@ -286,7 +291,8 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "앱 입회",
         "step2Title": "앱으로 간편 입회",
         "step2Desc": "최단 5분・당일 바로 이용",
-        "step2Btn": "앱 다운로드"
+        "step2Btn": "앱 다운로드",
+        "step1SoftLink": "소개·학생·이전 등 추가 혜택"
       },
       "options": {
         "freeTitle": "<span class=\"highlight font-impact\">8</span>가지 자동 계약 옵션",
@@ -355,7 +361,11 @@ window.JOYFIT_LOCALES = {
             "name": "요가 매트 로커",
             "description": "요가 매트 보관<br>짐 줄이기"
           }
-        }
+        },
+        "foldTitle": "<span class=\"highlight\">8</span>개 자동계약 옵션",
+        "foldSub": "9월분 0엔 · 자세한 내용",
+        "foldOpen": "상세",
+        "foldClose": "닫기"
       },
       "access": {
         "logoAlt": "JOYFIT24 경당",
@@ -500,7 +510,8 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "APP入会",
         "step2Title": "APP轻松入会",
         "step2Desc": "最短5分・当日可用",
-        "step2Btn": "下载APP"
+        "step2Btn": "下载APP",
+        "step1SoftLink": "介绍·学生·移籍等追加优惠"
       },
       "options": {
         "freeTitle": "<span class=\"highlight font-impact\">8</span>项自动签约选项",
@@ -569,7 +580,11 @@ window.JOYFIT_LOCALES = {
             "name": "瑜伽垫储物柜",
             "description": "存放您的瑜伽垫<br>减轻携带负担"
           }
-        }
+        },
+        "foldTitle": "<span class=\"highlight\">8</span>项自动签约选项",
+        "foldSub": "9月0日元 · 查看详情",
+        "foldOpen": "详情",
+        "foldClose": "收起"
       },
       "access": {
         "logoAlt": "JOYFIT24经堂",
@@ -714,7 +729,8 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "APP入會",
         "step2Title": "APP輕鬆入會",
         "step2Desc": "最短5分・當日可用",
-        "step2Btn": "下載APP"
+        "step2Btn": "下載APP",
+        "step1SoftLink": "介紹·學生·移籍等追加優惠"
       },
       "options": {
         "freeTitle": "<span class=\"highlight font-impact\">8</span>項自動簽約選項",
@@ -783,7 +799,11 @@ window.JOYFIT_LOCALES = {
             "name": "瑜伽墊置物櫃",
             "description": "存放您的瑜伽墊<br>減輕攜帶負擔"
           }
-        }
+        },
+        "foldTitle": "<span class=\"highlight\">8</span>項自動簽約選項",
+        "foldSub": "9月0日圓 · 查看詳情",
+        "foldOpen": "詳情",
+        "foldClose": "收合"
       },
       "access": {
         "logoAlt": "JOYFIT24經堂",

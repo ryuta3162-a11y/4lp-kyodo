@@ -70,7 +70,8 @@
     "step2Badge": "APP入会",
     "step2Title": "APP轻松入会",
     "step2Desc": "最短5分・当日可用",
-    "step2Btn": "下载APP"
+    "step2Btn": "下载APP",
+    "step1SoftLink": "介绍·学生·移籍等追加优惠"
   },
   "options": {
     "freeTitle": "<span class=\"highlight font-impact\">8</span>项自动签约选项",
@@ -139,7 +140,11 @@
         "name": "瑜伽垫储物柜",
         "description": "存放您的瑜伽垫<br>减轻携带负担"
       }
-    }
+    },
+    "foldTitle": "<span class=\"highlight\">8</span>项自动签约选项",
+    "foldSub": "9月0日元 · 查看详情",
+    "foldOpen": "详情",
+    "foldClose": "收起"
   },
   "access": {
     "logoAlt": "JOYFIT24经堂",

@@ -70,7 +70,8 @@
     "step2Badge": "App signup",
     "step2Title": "Easy signup via app",
     "step2Desc": "As fast as 5 min — use today",
-    "step2Btn": "Get the app"
+    "step2Btn": "Get the app",
+    "step1SoftLink": "Referral, student & transfer perks"
   },
   "options": {
     "freeTitle": "<span class=\"highlight font-impact\">8</span> auto-enrolled options",
@@ -139,7 +140,11 @@
         "name": "Yoga Mat Locker",
         "description": "Store your yoga mat<br>travel light"
       }
-    }
+    },
+    "foldTitle": "<span class=\"highlight\">8</span> auto-enrolled options",
+    "foldSub": "Sep is ¥0 — tap for details",
+    "foldOpen": "Details",
+    "foldClose": "Close"
   },
   "access": {
     "logoAlt": "JOYFIT24 Kyodo",

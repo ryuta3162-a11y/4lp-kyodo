@@ -63,7 +63,7 @@
             --text-note: 0.78rem;    /* ※・注意事項 */
             --num-hero: clamp(4.6rem, 26vw, 6.4rem); /* 3,630：端末幅を活かす */
             --num-zero: clamp(4.2rem, 24vw, 5.8rem); /* 0円 */
-            --num-sub: 1.35rem;      /* ご入会時金額（控えめ） */
+            --num-sub: clamp(2.15rem, 9vw, 2.75rem); /* ご入会時金額 */
             --num-mini: 1.15rem;     /* 通常月額など */
             
             --container-max-width: 600px;
@@ -718,27 +718,56 @@
         /* 料金表以外で .price-display-center を使う場合の既定 */
         .price-display-center { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .mid-list-total-block {
-            padding: 1.25rem 1rem;
+            position: relative;
+            padding: 1.35rem 1rem 1.2rem;
             text-align: center;
-            background: var(--gray-50);
-            border: none;
+            background: #ffffff;
+            border: 1px solid #111111;
             border-radius: 0;
-            margin: 0.75rem 0.15rem;
+            margin: 0.85rem 0.15rem 0.55rem;
             box-shadow: none;
+            overflow: hidden;
+            animation: joinTotalIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .mid-list-total-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 3px;
+            background: #C21632;
+        }
+        .mid-list-total-block::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%);
+            transform: translateX(-120%);
+            pointer-events: none;
+            animation: joinTotalSheen 2.8s ease-in-out 0.8s 1;
+        }
+        @keyframes joinTotalIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes joinTotalSheen {
+            0% { transform: translateX(-120%); }
+            100% { transform: translateX(120%); }
         }
         .mid-list-total-block .label {
-            font-size: var(--text-note);
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            color: var(--gray-700);
-            letter-spacing: 0.02em;
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-bottom: 0.45rem;
+            color: #444444;
+            letter-spacing: 0.04em;
             text-shadow: none;
         }
         .mid-list-total-block .label i {
             font-size: 0.9rem;
             vertical-align: -0.12em;
             margin-right: 2px;
-            color: var(--gray-500);
+            color: #C21632;
         }
         .mid-list-total-block .total-price-row {
             display: flex;
@@ -751,16 +780,26 @@
         .mid-list-total-block .text-value-accent,
         .mid-list-total-block .featured-price {
             font-size: var(--num-sub) !important;
-            font-weight: 800;
-            color: #333333 !important;
+            font-weight: 900;
+            color: #111111 !important;
             line-height: 1;
             text-shadow: none;
+            letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
+        }
+        .mid-list-total-block .price-large.is-ticking {
+            animation: joinNumPulse 0.35s ease;
+        }
+        @keyframes joinNumPulse {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.04); }
+            100% { transform: scale(1); }
         }
         .mid-list-total-block .unit-large {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: var(--text-note);
-            font-weight: 700;
-            color: var(--gray-500);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #666666;
             text-shadow: none;
         }
         .mid-list-total-block .join-date {
@@ -890,6 +929,27 @@
         .how-to-join-container {
             margin-top: 4px;
         }
+        .perk-soft-link {
+            margin: -8px auto 18px;
+            width: 95%;
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #777777;
+        }
+        .perk-soft-link a {
+            color: #555555;
+            text-decoration: underline;
+            text-underline-offset: 0.18em;
+            text-decoration-thickness: 1px;
+        }
+        .perk-soft-link a:hover {
+            color: #111111;
+        }
+        .how-to-join-container .app-join-primary {
+            margin-bottom: 12px;
+        }
         .step-card-lead {
             display: block;
             font-size: var(--text-note);
@@ -911,13 +971,81 @@
         .options-unified-section {
             width: 100%;
             max-width: var(--container-max-width);
-            margin: 40px auto 48px;
+            margin: 28px auto 40px;
         }
         .options-unified-inner {
             border-radius: 0;
             overflow: hidden;
-            background: var(--gray-50);
+            background: #ffffff;
             border: 1px solid var(--gray-200);
+        }
+        .options-fold-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            padding: 1rem 1.05rem;
+            border: none;
+            background: #ffffff;
+            cursor: pointer;
+            text-align: left;
+        }
+        .options-fold-toggle:hover {
+            background: #fafafa;
+        }
+        .options-fold-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 0;
+        }
+        .options-fold-summary-main {
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: #111111;
+            letter-spacing: 0.02em;
+            line-height: 1.35;
+        }
+        .options-fold-summary-main .highlight {
+            color: #C21632;
+            font-weight: 900;
+        }
+        .options-fold-summary-sub {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #777777;
+            line-height: 1.4;
+        }
+        .options-fold-action {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #555555;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+        .options-fold-action i {
+            transition: transform 0.25s ease;
+        }
+        .options-unified-inner.is-open .options-fold-action i {
+            transform: rotate(180deg);
+        }
+        .options-fold-panel {
+            display: none;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+        }
+        .options-unified-inner.is-open .options-fold-panel {
+            display: block;
+            animation: optionsFoldIn 0.28s ease;
+        }
+        @keyframes optionsFoldIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .options-carousel-section {
             padding: 24px 0 20px;
@@ -2832,6 +2960,12 @@
             .cta-emphasis:hover, .cta-emphasis:focus-visible { transform: none; }
             .facilities-grid img { filter: none; }
             .lp-o-countdown-sep { animation: none !important; opacity: 1 !important; }
+            .mid-list-total-block,
+            .mid-list-total-block::after,
+            .mid-list-total-block .price-large.is-ticking,
+            .options-unified-inner.is-open .options-fold-panel {
+                animation: none !important;
+            }
             .lp-o-deal-top.is-visible .lp-o-month-chip,
             .lp-o-price-tier--deal .lp-o-row-deal-wrap.is-visible {
                 transition: none !important;
@@ -3132,21 +3266,8 @@
             </div>
 
             <div class="how-to-join-container reveal-up">
-                <!-- 追加特典 -->
-                <div class="digital-step-card lp-framed lp-framed--hover">
-                    <div class="step-badge gold lp-frame-badge lp-frame-badge--gold" data-i18n="steps.step1Badge">追加特典</div>
-                    <div class="step-main-content">
-                        <i class="ph-duotone ph-pencil-line" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
-                        <div class="step-info">
-                            <div class="step-title" style="font-size: 1rem;" data-i18n="steps.step1Title">紹介・学割・他クラブ移籍等</div>
-                            <p class="step-desc" style="font-size: 0.78rem; color: #777;" data-i18n="steps.step1Desc">※学割は通常月額発生時に適用</p>
-                        </div>
-                        <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-gold-flat cta-emphasis" data-i18n="steps.step1Btn">申請する</a>
-                    </div>
-                </div>
-                
-                <!-- アプリ入会 -->
-                <div class="digital-step-card lp-framed lp-framed--hover">
+                <!-- アプリ入会（主CTA） -->
+                <div class="digital-step-card lp-framed lp-framed--hover app-join-primary">
                     <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="steps.step2Badge">アプリ入会</div>
                     <div class="step-main-content">
                         <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
@@ -3157,13 +3278,27 @@
                         <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis" data-i18n="steps.step2Btn">アプリDL</a>
                     </div>
                 </div>
+                <p class="perk-soft-link">
+                    <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- オプション＋注意事項（一体化・白背景） -->
+    <!-- オプション＋注意事項（折りたたみ） -->
     <section class="options-unified-section reveal-up" id="options-group-section">
-        <div class="options-unified-inner lp-framed">
+        <div class="options-unified-inner" id="options-fold">
+            <button type="button" class="options-fold-toggle" id="options-fold-toggle" aria-expanded="false" aria-controls="options-fold-panel">
+                <span class="options-fold-summary">
+                    <span class="options-fold-summary-main" data-i18n-html="options.foldTitle"><span class="highlight">8</span>つの自動契約オプション</span>
+                    <span class="options-fold-summary-sub" data-i18n="options.foldSub">9月分0円で使い放題｜詳細はこちら</span>
+                </span>
+                <span class="options-fold-action">
+                    <span data-i18n="options.foldOpen">詳細</span>
+                    <i class="ph-bold ph-caret-down" aria-hidden="true"></i>
+                </span>
+            </button>
+            <div class="options-fold-panel" id="options-fold-panel">
             <section class="options-carousel-section">
                 <div class="text-box">
                     <h2 class="section-title" data-i18n-html="options.freeTitle">
@@ -3216,6 +3351,7 @@
                     <i class="ph-fill ph-youtube-logo" style="font-size: 1.5rem;"></i>
                     <span data-i18n="options.cancelVideo">解約方法はコチラをタップ</span>
                 </a>
+            </div>
             </div>
         </div>
     </section>
@@ -3345,6 +3481,33 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.round((monthly / daysInMonth) * remainingDays);
     }
 
+    function animateJoinTotal(el, target) {
+        if (!el) return;
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) {
+            el.textContent = target.toLocaleString();
+            return;
+        }
+        const start = performance.now();
+        const duration = 650;
+        const from = 0;
+        function frame(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const value = Math.round(from + (target - from) * eased);
+            el.textContent = value.toLocaleString();
+            if (t < 1) {
+                requestAnimationFrame(frame);
+            } else {
+                el.textContent = target.toLocaleString();
+                el.classList.remove('is-ticking');
+                void el.offsetWidth;
+                el.classList.add('is-ticking');
+            }
+        }
+        requestAnimationFrame(frame);
+    }
+
     function updateProratedFee() {
         const today = new Date();
         const jst = new Date(today.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
@@ -3380,7 +3543,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const total = initial + monthFee;
-            totalPriceEl.textContent = total.toLocaleString();
+            animateJoinTotal(totalPriceEl, total);
         }
     }
     window.updateProratedFee = updateProratedFee;
@@ -3389,6 +3552,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 残り人数（オープニング終了後はカレンダー基準で表示）
     updateRemainingCount();
+
+    // オプション折りたたみ
+    (function initOptionsFold() {
+        const fold = document.getElementById('options-fold');
+        const toggle = document.getElementById('options-fold-toggle');
+        if (!fold || !toggle) return;
+        toggle.addEventListener('click', function () {
+            const open = fold.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            const label = toggle.querySelector('[data-i18n="options.foldOpen"]');
+            if (label) {
+                label.textContent = open
+                    ? (window.JoyfitI18n ? JoyfitI18n.t('options.foldClose', '閉じる') : '閉じる')
+                    : (window.JoyfitI18n ? JoyfitI18n.t('options.foldOpen', '詳細') : '詳細');
+            }
+        });
+    })();
 
     // オプションカルーセルは campaign-i18n.js で初期化
 

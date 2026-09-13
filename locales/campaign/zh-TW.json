@@ -70,7 +70,8 @@
     "step2Badge": "APP入會",
     "step2Title": "APP輕鬆入會",
     "step2Desc": "最短5分・當日可用",
-    "step2Btn": "下載APP"
+    "step2Btn": "下載APP",
+    "step1SoftLink": "介紹·學生·移籍等追加優惠"
   },
   "options": {
     "freeTitle": "<span class=\"highlight font-impact\">8</span>項自動簽約選項",
@@ -139,7 +140,11 @@
         "name": "瑜伽墊置物櫃",
         "description": "存放您的瑜伽墊<br>減輕攜帶負擔"
       }
-    }
+    },
+    "foldTitle": "<span class=\"highlight\">8</span>項自動簽約選項",
+    "foldSub": "9月0日圓 · 查看詳情",
+    "foldOpen": "詳情",
+    "foldClose": "收合"
   },
   "access": {
     "logoAlt": "JOYFIT24經堂",
