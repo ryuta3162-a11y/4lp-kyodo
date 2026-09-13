@@ -1107,28 +1107,34 @@
             line-height: 1.35;
         }
         .app-join-hero__points {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.45rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            gap: 0;
             margin: 0 0 1rem;
-        }
-        .app-join-hero__point {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.28rem;
-            padding: 0.35rem 0.55rem;
             border: 1px solid #111111;
             background: #ffffff;
-            font-size: 0.72rem;
-            font-weight: 800;
+        }
+        .app-join-hero__point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.28rem;
+            padding: 0.7rem 0.55rem;
+            font-size: clamp(0.78rem, 3.2vw, 0.9rem);
+            font-weight: 900;
             letter-spacing: 0.02em;
-            color: #333333;
-            line-height: 1;
+            color: #111111;
+            line-height: 1.3;
+            text-align: center;
+        }
+        .app-join-hero__point + .app-join-hero__point {
+            border-left: 1px solid #111111;
         }
         .app-join-hero__point i {
             color: #C21632;
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             animation: appPointPulse 2.2s ease-in-out infinite;
         }
         .app-join-hero__point:nth-child(2) i {
@@ -3771,10 +3777,9 @@
 
             <!-- 入会CTA（価格の直後） -->
             <div class="app-join-hero reveal-up">
-                <p class="app-join-hero__title" data-i18n="steps.step2Title">最短5分で完了</p>
-                <div class="app-join-hero__points" aria-hidden="true">
-                    <span class="app-join-hero__point"><i class="ph-bold ph-timer"></i>すぐ終わる</span>
-                    <span class="app-join-hero__point"><i class="ph-bold ph-person-simple-walk"></i>当日使える</span>
+                <div class="app-join-hero__points">
+                    <span class="app-join-hero__point"><i class="ph-bold ph-timer" aria-hidden="true"></i><span data-i18n="steps.joinPointFast">最短5分で完了</span></span>
+                    <span class="app-join-hero__point"><i class="ph-bold ph-person-simple-walk" aria-hidden="true"></i><span data-i18n="steps.joinPointReady">入会後すぐ使える</span></span>
                 </div>
                 <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn">
                     <i class="ph-bold ph-download-simple" aria-hidden="true"></i>

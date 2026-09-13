@@ -83,6 +83,8 @@ window.JOYFIT_LOCALES = {
         "step2Title": "Done in 5 minutes",
         "step2Desc": "As fast as 5 min — use today",
         "step2Btn": "Download & join now",
+        "joinPointFast": "Done in 5 minutes",
+        "joinPointReady": "Use right after joining",
         "step1SoftLink": "Referral, student & transfer perks"
       },
       "options": {
@@ -312,6 +314,8 @@ window.JOYFIT_LOCALES = {
         "step2Title": "최단 5분이면 완료",
         "step2Desc": "최단 5분・당일 바로 이용",
         "step2Btn": "다운로드하고 바로 입회",
+        "joinPointFast": "최단 5분이면 완료",
+        "joinPointReady": "입회 후 바로 이용",
         "step1SoftLink": "소개·학생·이전 등 추가 혜택"
       },
       "options": {
@@ -541,6 +545,8 @@ window.JOYFIT_LOCALES = {
         "step2Title": "最快5分钟完成",
         "step2Desc": "最短5分・当日可用",
         "step2Btn": "下载并立即入会",
+        "joinPointFast": "最快5分钟完成",
+        "joinPointReady": "入会后即可使用",
         "step1SoftLink": "介绍·学生·移籍等追加优惠"
       },
       "options": {
@@ -770,6 +776,8 @@ window.JOYFIT_LOCALES = {
         "step2Title": "最快5分鐘完成",
         "step2Desc": "最短5分・當日可用",
         "step2Btn": "下載並立即入會",
+        "joinPointFast": "最快5分鐘完成",
+        "joinPointReady": "入會後即可使用",
         "step1SoftLink": "介紹·學生·移籍等追加優惠"
       },
       "options": {
