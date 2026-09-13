@@ -72,7 +72,7 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "App signup",
         "step2Title": "Easy signup via app",
         "step2Desc": "As fast as 5 min — use today",
-        "step2Btn": "Get the app",
+        "step2Btn": "Download the app to join",
         "step1SoftLink": "Referral, student & transfer perks"
       },
       "options": {
@@ -291,7 +291,7 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "앱 입회",
         "step2Title": "앱으로 간편 입회",
         "step2Desc": "최단 5분・당일 바로 이용",
-        "step2Btn": "앱 다운로드",
+        "step2Btn": "앱 다운로드하고 입회",
         "step1SoftLink": "소개·학생·이전 등 추가 혜택"
       },
       "options": {
@@ -510,7 +510,7 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "APP入会",
         "step2Title": "APP轻松入会",
         "step2Desc": "最短5分・当日可用",
-        "step2Btn": "下载APP",
+        "step2Btn": "下载APP并入会",
         "step1SoftLink": "介绍·学生·移籍等追加优惠"
       },
       "options": {
@@ -729,7 +729,7 @@ window.JOYFIT_LOCALES = {
         "step2Badge": "APP入會",
         "step2Title": "APP輕鬆入會",
         "step2Desc": "最短5分・當日可用",
-        "step2Btn": "下載APP",
+        "step2Btn": "下載APP並入會",
         "step1SoftLink": "介紹·學生·移籍等追加優惠"
       },
       "options": {

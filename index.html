@@ -883,15 +883,16 @@
             position: relative;
         }
         .how-to-join-container .lp-framed,
-        .how-to-join-container .digital-step-card {
+        .how-to-join-container .digital-step-card,
+        .condition-card.lp-framed {
             background: #ffffff;
-            border: 2px solid #111111;
+            border: 1px solid #111111;
             border-radius: 0;
             box-shadow: none;
         }
         .condition-card.lp-framed {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
+            background: #ffffff;
+            border: 1px solid #111111;
         }
         .lp-framed--hover {
             transition: none;
@@ -930,22 +931,24 @@
         }
         .digital-step-card,
         .condition-card {
-            padding: 26px 18px 22px;
+            padding: 1.35rem 1.1rem 1.2rem;
             text-align: left;
-            width: 95%;
-            margin: 0 auto 24px auto;
+            width: 100%;
+            margin: 0 auto 1.1rem auto;
+            box-sizing: border-box;
         }
         .condition-card {
-            margin-top: 28px;
+            margin-top: 0.85rem;
         }
         .how-to-join-container {
-            margin-top: 4px;
+            margin: 0.85rem 0 0.35rem;
+            width: 100%;
         }
         .perk-soft-link {
-            margin: -8px auto 18px;
-            width: 95%;
+            margin: 0.65rem auto 0.85rem;
+            width: 100%;
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
             letter-spacing: 0.02em;
             color: #777777;
@@ -959,8 +962,93 @@
         .perk-soft-link a:hover {
             color: #111111;
         }
-        .how-to-join-container .app-join-primary {
-            margin-bottom: 12px;
+        .app-join-hero {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0.85rem 0 0.35rem;
+            padding: 1.25rem 1.1rem 1.2rem;
+            border: 1px solid #111111;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .app-join-hero::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 3px;
+            background: #C21632;
+        }
+        .app-join-hero__eyebrow {
+            margin: 0 0 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            color: #C21632;
+        }
+        .app-join-hero__title {
+            margin: 0 0 0.35rem;
+            font-size: clamp(1.05rem, 4.2vw, 1.25rem);
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            color: #111111;
+            line-height: 1.4;
+        }
+        .app-join-hero__desc {
+            margin: 0 0 1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #666666;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+        .app-join-hero__btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1.05rem 1rem;
+            background: #C21632;
+            color: #ffffff;
+            font-size: clamp(0.95rem, 3.8vw, 1.08rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            border: 1px solid #C21632;
+            overflow: hidden;
+            transition: filter 0.2s ease, transform 0.2s ease;
+        }
+        .app-join-hero__btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.28) 50%, transparent 65%);
+            transform: translateX(-130%);
+            animation: appJoinSheen 2.6s ease-in-out 0.4s infinite;
+            pointer-events: none;
+        }
+        @keyframes appJoinSheen {
+            0%, 55% { transform: translateX(-130%); }
+            100% { transform: translateX(130%); }
+        }
+        .app-join-hero__btn:hover {
+            filter: brightness(1.06);
+            transform: translateY(-1px);
+        }
+        .app-join-hero__btn i {
+            font-size: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .app-join-hero__btn span {
+            position: relative;
+            z-index: 1;
         }
         .step-card-lead {
             display: block;
@@ -1135,40 +1223,44 @@
             border-radius: 0;
             width: 100%;
             background: #ffffff;
-            padding: 1.15rem 1.1rem 1.25rem;
+            padding: 1.35rem 1.1rem 1.2rem;
             text-align: left;
             position: relative;
         }
         .options-notice-always .options-notice-block::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #C21632;
+            display: none;
         }
         .options-notice-block {
-            padding: 1.15rem 1.1rem 1.25rem;
+            padding: 1.35rem 1.1rem 1.2rem;
             border-top: 1px solid #111111;
             background: #ffffff;
             text-align: left;
         }
         .options-notice-block .notice-title-v22 {
-            margin: 0 0 0.7rem;
+            margin: 0 0 0.85rem;
             font-size: 0.78rem;
             font-weight: 900;
-            letter-spacing: 0.08em;
-            color: #111111;
-            justify-content: flex-start;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            justify-content: center;
+            position: relative;
+            top: 0;
+            display: inline-flex;
+            width: auto;
+            background: #C21632;
+            padding: 7px 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -2.05rem;
+            margin-bottom: 1rem;
         }
         .options-notice-block .notice-title-v22::before,
         .options-notice-block .notice-title-v22::after {
             display: none;
         }
         .options-notice-block .notice-body {
-            font-size: 0.78rem;
-            line-height: 1.75;
+            font-size: 0.82rem;
+            line-height: 1.7;
             font-weight: 700;
             color: #444444;
             margin: 0 0 0.85rem;
@@ -1189,17 +1281,21 @@
             border: 1px solid rgba(194, 22, 50, 0.28) !important;
             text-align: left;
         }
-        .options-notice-block .cta-button-video {
+        #notice-section .cta-button-video {
             display: flex;
             width: 100%;
             box-sizing: border-box;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin: 0;
+            margin: 0.85rem 0 0;
             padding: 0.85rem 1rem;
             font-size: 0.82rem;
             letter-spacing: 0.04em;
+        }
+        #notice-section .notice-warning-inline {
+            color: #C21632;
+            font-weight: 900;
         }
         .options-carousel-section {
             padding: 24px 0 20px;
@@ -3224,6 +3320,7 @@
             .half-year-price-hero,
             .options-fold-toggle::after,
             .options-fold-chip--zero,
+            .app-join-hero__btn::after,
             .options-unified-inner.is-open .options-fold-panel {
                 animation: none !important;
             }
@@ -3349,13 +3446,14 @@
         .option-card-3d {
             border-radius: 0 !important;
         }
-        .access-section.lp-framed {
+        .access-section.lp-framed,
+        .how-to-join-container .lp-framed {
             border: 1px solid #111111 !important;
             box-shadow: none !important;
         }
         .condition-card.lp-framed {
-            border: 1px solid var(--gray-200) !important;
-            background: var(--gray-50) !important;
+            border: 1px solid #111111 !important;
+            background: #ffffff !important;
             box-shadow: none !important;
         }
         .lp-frame-badge { border-radius: 0 !important; }
@@ -3507,6 +3605,20 @@
                 </div>
             </div>
 
+            <!-- APP入会（主CTA・価格の直後） -->
+            <div class="app-join-hero reveal-up">
+                <p class="app-join-hero__eyebrow" data-i18n="steps.step2Badge">アプリ入会</p>
+                <p class="app-join-hero__title" data-i18n="steps.step2Title">APPでカンタン入会</p>
+                <p class="app-join-hero__desc" data-i18n="steps.step2Desc">APP入会最短5分、当日すぐ使える</p>
+                <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn">
+                    <i class="ph-bold ph-download-simple" aria-hidden="true"></i>
+                    <span data-i18n="steps.step2Btn">アプリをダウンロードして入会</span>
+                </a>
+                <p class="perk-soft-link">
+                    <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
+                </p>
+            </div>
+
             <!-- 条件リスト -->
             <div class="digital-step-card condition-card lp-framed lp-framed--hover reveal-up">
                 <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="conditions.badge">キャンペーン注意事項</div>
@@ -3524,24 +3636,6 @@
                         <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i><span data-i18n-html="conditions.item3">8つのオプションは入会時<strong class="cond-em">自動契約</strong>されます。不要な場合は<strong class="cond-em">9月末日まで</strong>に必ず解約をお願いいたします</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="how-to-join-container reveal-up">
-                <!-- アプリ入会（主CTA） -->
-                <div class="digital-step-card lp-framed lp-framed--hover app-join-primary">
-                    <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="steps.step2Badge">アプリ入会</div>
-                    <div class="step-main-content">
-                        <i class="ph-duotone ph-device-mobile" style="font-size: 2.5rem; color: var(--brand);"></i>
-                        <div class="step-info">
-                            <div class="step-title" data-i18n="steps.step2Title">APPでカンタン入会</div>
-                            <p class="step-desc" style="font-size: 0.84rem; color: #777;" data-i18n="steps.step2Desc">APP入会最短5分、当日すぐ使える</p>
-                        </div>
-                        <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="step-action-btn btn-red-flat cta-emphasis" data-i18n="steps.step2Btn">アプリDL</a>
-                    </div>
-                </div>
-                <p class="perk-soft-link">
-                    <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
-                </p>
             </div>
         </div>
     </section>
@@ -3601,26 +3695,30 @@
                 </div>
             </section>
             </div>
+        </div>
 
-            <div class="options-notice-always">
-            <div class="options-notice-block" id="notice-section">
-                <div class="notice-title-v22">
-                    <span data-i18n="options.noticeTitle">注意事項</span>
-                </div>
-                <div class="notice-body" data-i18n-html="options.noticeBody">
+            <div class="digital-step-card condition-card lp-framed lp-framed--hover" id="notice-section">
+                <div class="step-badge red lp-frame-badge lp-frame-badge--brand" data-i18n="options.noticeTitle">注意事項</div>
+                <div class="condition-list-content">
+                    <div class="condition-item">
+                        <i class="ph-bold ph-check" style="color: var(--brand); font-size: 1.2rem;"></i>
+                        <span data-i18n-html="options.noticeBody">
                     8つのオプションは入会時に<strong class="cond-em">自動契約</strong>されます<br />
                     不要な場合は<strong class="cond-em" id="campaign-notice-deadline">9月末日まで</strong>に必ず解約をお願いいたします<br /><br />
                     入会後<strong>[JOYFIT APP]</strong>から解約が可能です<br />
                     解約後も月末迄サービスをご利用頂けます
+                        </span>
+                    </div>
+                    <div class="condition-item">
+                        <i class="ph-bold ph-warning" style="color: var(--brand); font-size: 1.2rem;"></i>
+                        <span class="notice-warning-inline" data-i18n="options.noticeWarning">※解約忘れによる返金は出来ません</span>
+                    </div>
                 </div>
-                <span class="notice-warning-v22" data-i18n="options.noticeWarning">※解約忘れによる返金は出来ません</span>
                 <a href="https://www.youtube.com/shorts/qpvkmWi-vTM" class="cta-button-video" target="_blank" rel="noopener noreferrer">
                     <i class="ph-fill ph-youtube-logo" style="font-size: 1.5rem;"></i>
                     <span data-i18n="options.cancelVideo">解約方法はコチラをタップ</span>
                 </a>
             </div>
-            </div>
-        </div>
     </section>
 
     <!-- アクセスマップセクション -->
