@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
-    "appBadge": "APP入会最快5分钟　当天即可使用！",
+    "appBadge": "最快5分钟・当天可用",
     "halfYearCatch": "半年間月会费"
   },
   "pricing": {
@@ -52,7 +52,8 @@
     "optionMonth": "9月",
     "augustFeeCatch": "月会费",
     "augustFeeSub": "8月免费",
-    "augustFeeMonth": "8月"
+    "augustFeeMonth": "8月",
+    "joinFeeToggle": "入会时支付金额"
   },
   "conditions": {
     "badge": "活动注意事项",
@@ -68,9 +69,9 @@
     "step1Desc": "※学生优惠于通常月费开始时适用",
     "step1Btn": "申请",
     "step2Badge": "APP入会",
-    "step2Title": "APP轻松入会",
+    "step2Title": "最快5分钟完成",
     "step2Desc": "最短5分・当日可用",
-    "step2Btn": "下载APP并入会",
+    "step2Btn": "下载并立即入会",
     "step1SoftLink": "介绍·学生·移籍等追加优惠"
   },
   "options": {

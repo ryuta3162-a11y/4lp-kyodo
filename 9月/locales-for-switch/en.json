@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "<span class=\"campaign-title-summer\">Fall Body<br>Reset Campaign</span>",
-    "appBadge": "Join via app in 5 min — use today!",
+    "appBadge": "Join in 5 min — use today",
     "halfYearCatch": "Half-year monthly fee"
   },
   "pricing": {
@@ -52,7 +52,8 @@
     "optionMonth": "Sep",
     "augustFeeCatch": "Monthly fee",
     "augustFeeSub": "August is free",
-    "augustFeeMonth": "August"
+    "augustFeeMonth": "August",
+    "joinFeeToggle": "Amount due at signup"
   },
   "conditions": {
     "badge": "Campaign terms",
@@ -68,9 +69,9 @@
     "step1Desc": "※Student discount applies when regular monthly fee starts",
     "step1Btn": "Apply",
     "step2Badge": "App signup",
-    "step2Title": "Easy signup via app",
+    "step2Title": "Done in 5 minutes",
     "step2Desc": "As fast as 5 min — use today",
-    "step2Btn": "Download the app to join",
+    "step2Btn": "Download & join now",
     "step1SoftLink": "Referral, student & transfer perks"
   },
   "options": {

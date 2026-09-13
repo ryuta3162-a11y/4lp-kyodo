@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
-    "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
+    "appBadge": "최단 5분・당일 이용",
     "halfYearCatch": "반년간 월회비"
   },
   "pricing": {
@@ -52,7 +52,8 @@
     "optionMonth": "9월",
     "augustFeeCatch": "월회비",
     "augustFeeSub": "8월분 무료",
-    "augustFeeMonth": "8월"
+    "augustFeeMonth": "8월",
+    "joinFeeToggle": "입회 시 결제 금액"
   },
   "conditions": {
     "badge": "캠페인 유의사항",
@@ -68,9 +69,9 @@
     "step1Desc": "※학생 할인은 통상 월액 발생 시 적용",
     "step1Btn": "신청하기",
     "step2Badge": "앱 입회",
-    "step2Title": "앱으로 간편 입회",
+    "step2Title": "최단 5분이면 완료",
     "step2Desc": "최단 5분・당일 바로 이용",
-    "step2Btn": "앱 다운로드하고 입회",
+    "step2Btn": "다운로드하고 바로 입회",
     "step1SoftLink": "소개·학생·이전 등 추가 혜택"
   },
   "options": {

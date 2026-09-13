@@ -828,7 +828,7 @@
             line-height: 1.5;
         }
         .monthly-fee {
-            padding: 1rem 1rem 1.2rem;
+            padding: 0.85rem 1.1rem 1rem;
             text-align: center;
             background: #ffffff;
             border-top: 1px solid var(--gray-200);
@@ -851,6 +851,92 @@
             font-size: var(--text-note);
             font-weight: 700;
             color: var(--gray-500);
+        }
+        .join-fee-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-top: 0.55rem;
+            padding: 0;
+            border: none;
+            background: transparent;
+            color: #666666;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 0.18em;
+        }
+        .join-fee-toggle i {
+            font-size: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+        .join-fee-details.is-open + .join-fee-toggle i,
+        .monthly-fee.is-open .join-fee-toggle i {
+            transform: rotate(180deg);
+        }
+        .monthly-fee.is-open .join-fee-toggle {
+            color: #111111;
+        }
+        .join-fee-details {
+            display: none;
+            margin-top: 0.75rem;
+            padding: 0.85rem 0.85rem 0.75rem;
+            border: 1px solid #111111;
+            background: #fafafa;
+            text-align: left;
+            animation: joinFeeIn 0.25s ease;
+        }
+        .monthly-fee.is-open .join-fee-details {
+            display: block;
+        }
+        @keyframes joinFeeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .join-fee-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.75rem;
+            padding: 0.35rem 0;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #444444;
+            line-height: 1.45;
+        }
+        .join-fee-row + .join-fee-row {
+            border-top: 1px solid #e8e8e8;
+        }
+        .join-fee-row__label {
+            min-width: 0;
+        }
+        .join-fee-row__label small {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #888888;
+        }
+        .join-fee-row__value {
+            flex: 0 0 auto;
+            font-weight: 900;
+            color: #111111;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+        .join-fee-row--total {
+            margin-top: 0.15rem;
+            padding-top: 0.55rem;
+            border-top: 1px solid #111111 !important;
+            font-size: 0.88rem;
+            color: #111111;
+        }
+        .join-fee-row--total .join-fee-row__value {
+            color: #C21632;
+            font-size: 1.05rem;
         }
         
         .condition-list-content { padding: 8px 6px 4px; }
@@ -966,7 +1052,7 @@
             width: 100%;
             box-sizing: border-box;
             margin: 0.85rem 0 0.35rem;
-            padding: 1.25rem 1.1rem 1.2rem;
+            padding: 1.2rem 1.1rem 1.15rem;
             border: 1px solid #111111;
             background: #ffffff;
             position: relative;
@@ -982,28 +1068,45 @@
             height: 3px;
             background: #C21632;
         }
-        .app-join-hero__eyebrow {
-            margin: 0 0 0.35rem;
-            font-size: 0.72rem;
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            color: #C21632;
-        }
         .app-join-hero__title {
-            margin: 0 0 0.35rem;
-            font-size: clamp(1.05rem, 4.2vw, 1.25rem);
+            margin: 0 0 0.75rem;
+            font-size: clamp(1.05rem, 4.2vw, 1.28rem);
             font-weight: 900;
             letter-spacing: 0.04em;
             color: #111111;
-            line-height: 1.4;
+            line-height: 1.35;
         }
-        .app-join-hero__desc {
+        .app-join-hero__points {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.45rem;
             margin: 0 0 1rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #666666;
+        }
+        .app-join-hero__point {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.28rem;
+            padding: 0.35rem 0.55rem;
+            border: 1px solid #111111;
+            background: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 800;
             letter-spacing: 0.02em;
-            line-height: 1.5;
+            color: #333333;
+            line-height: 1;
+        }
+        .app-join-hero__point i {
+            color: #C21632;
+            font-size: 0.9rem;
+            animation: appPointPulse 2.2s ease-in-out infinite;
+        }
+        .app-join-hero__point:nth-child(2) i {
+            animation-delay: 0.35s;
+        }
+        @keyframes appPointPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.12); opacity: 0.85; }
         }
         .app-join-hero__btn {
             position: relative;
@@ -3321,6 +3424,7 @@
             .options-fold-toggle::after,
             .options-fold-chip--zero,
             .app-join-hero__btn::after,
+            .app-join-hero__point i,
             .options-unified-inner.is-open .options-fold-panel {
                 animation: none !important;
             }
@@ -3555,7 +3659,7 @@
     <!-- プラン詳細セクション -->
     <section class="plan-selection-section reveal-up py-4">
         <div class="campaign-app-badge campaign-app-badge--lead">
-            <span data-i18n="hero.appBadge">APP入会最短5分、当日すぐ使える</span>
+            <span data-i18n="hero.appBadge">最短5分・当日すぐ使える</span>
         </div>
 
         <div class="plan-container-wrapper">
@@ -3586,33 +3690,48 @@
                         </div>
                     </div>
 
-                    <!-- ご入会時金額 -->
-                    <div class="mid-list-total-block">
-                        <div class="label"><i class="ph-bold ph-wallet"></i> <span id="dynamic-date-label">ご入会時のお支払い金額</span></div>
-                        <div class="total-price-row">
-                            <span id="dynamic-total-price" class="price-large font-impact">--</span>
-                            <span class="unit-large" data-i18n="pricing.yenTaxIncl">円(税込)</span>
-                        </div>
                     </div>
                 </div>
 
-                 <!-- 2027年3月以降 -->
-                <div class="monthly-fee">
+                <div class="monthly-fee" id="monthly-fee-block">
                     <p class="monthly-fee-simple">
                         <span data-i18n="pricing.afterFeb2027">2027年3月以降通常月額</span>
                         <strong class="monthly-fee-amount">9,350</strong><span class="monthly-fee-unit" data-i18n="pricing.yenTaxIncl">円(税込)</span>
                     </p>
+                    <button type="button" class="join-fee-toggle" id="join-fee-toggle" aria-expanded="false" aria-controls="join-fee-details">
+                        <span data-i18n="pricing.joinFeeToggle">ご入会時のお支払い金額</span>
+                        <i class="ph-bold ph-caret-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="join-fee-details" id="join-fee-details">
+                        <div class="join-fee-row">
+                            <span class="join-fee-row__label">
+                                <span id="join-fee-month-label">9月会費</span>
+                                <small id="join-fee-month-note">キャンペーン月額 3,630円（税込）の日割</small>
+                            </span>
+                            <span class="join-fee-row__value"><span id="join-fee-month">--</span>円</span>
+                        </div>
+                        <div class="join-fee-row">
+                            <span class="join-fee-row__label">初期費用</span>
+                            <span class="join-fee-row__value"><span id="join-fee-initial">5,500</span>円</span>
+                        </div>
+                        <div class="join-fee-row join-fee-row--total">
+                            <span class="join-fee-row__label" id="join-fee-total-label">ご入会時合計</span>
+                            <span class="join-fee-row__value"><span id="dynamic-total-price">--</span>円</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- APP入会（主CTA・価格の直後） -->
+            <!-- 入会CTA（価格の直後） -->
             <div class="app-join-hero reveal-up">
-                <p class="app-join-hero__eyebrow" data-i18n="steps.step2Badge">アプリ入会</p>
-                <p class="app-join-hero__title" data-i18n="steps.step2Title">APPでカンタン入会</p>
-                <p class="app-join-hero__desc" data-i18n="steps.step2Desc">APP入会最短5分、当日すぐ使える</p>
+                <p class="app-join-hero__title" data-i18n="steps.step2Title">最短5分で完了</p>
+                <div class="app-join-hero__points" aria-hidden="true">
+                    <span class="app-join-hero__point"><i class="ph-bold ph-timer"></i>すぐ終わる</span>
+                    <span class="app-join-hero__point"><i class="ph-bold ph-lightning"></i>当日使える</span>
+                </div>
                 <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn">
                     <i class="ph-bold ph-download-simple" aria-hidden="true"></i>
-                    <span data-i18n="steps.step2Btn">アプリをダウンロードして入会</span>
+                    <span data-i18n="steps.step2Btn">ダウンロードして今すぐ入会</span>
                 </a>
                 <p class="perk-soft-link">
                     <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
@@ -3855,41 +3974,62 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = jst.getFullYear();
         const month = jst.getMonth() + 1;
         const date = jst.getDate();
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const remainingDays = daysInMonth - date + 1;
 
-        const dateLabelEl = document.getElementById('dynamic-date-label');
         const totalPriceEl = document.getElementById('dynamic-total-price');
+        const monthFeeEl = document.getElementById('join-fee-month');
+        const monthLabelEl = document.getElementById('join-fee-month-label');
+        const monthNoteEl = document.getElementById('join-fee-month-note');
+        const totalLabelEl = document.getElementById('join-fee-total-label');
+        const initialEl = document.getElementById('join-fee-initial');
 
-        if (dateLabelEl && totalPriceEl) {
-            window.__lastJoinMonth = month;
-            window.__lastJoinDate = date;
-            if (window.JoyfitI18n && JoyfitI18n.getLanguage() !== 'ja') {
-                dateLabelEl.innerHTML = JoyfitI18n.t('pricing.joinAmountAt', '(<span class="join-date">{m}/{d}</span>)ご入会時のお支払い金額')
-                    .replace('{m}', month).replace('{d}', date);
-            } else {
-                dateLabelEl.innerHTML = `(<span class="join-date">${month}/${date}</span>)ご入会時のお支払い金額`;
-            }
+        window.__lastJoinMonth = month;
+        window.__lastJoinDate = date;
 
-            const initial = 5500;
-            const campaignMonthly = 3630;
-            const regularMonthly = 9350;
-            let monthFee = 0;
+        const initial = 5500;
+        const campaignMonthly = 3630;
+        const regularMonthly = 9350;
+        let monthFee = 0;
+        let monthNote = '';
+        let isProrate = false;
 
-            if (year === 2026 && month === 9) {
-                // 9月会費はキャンペーン月額3,630円を入会日から日割り
-                monthFee = calcProrateFee(year, month, date, campaignMonthly);
-            } else if ((year === 2026 && month >= 10 && month <= 12) || (year === 2027 && month <= 2)) {
-                monthFee = campaignMonthly;
-            } else {
-                monthFee = regularMonthly;
-            }
+        if (year === 2026 && month === 9) {
+            monthFee = calcProrateFee(year, month, date, campaignMonthly);
+            isProrate = true;
+            monthNote = `キャンペーン月額 ${campaignMonthly.toLocaleString()}円（税込）÷${daysInMonth}日×残り${remainingDays}日`;
+        } else if ((year === 2026 && month >= 10 && month <= 12) || (year === 2027 && month <= 2)) {
+            monthFee = campaignMonthly;
+            monthNote = `キャンペーン月額 ${campaignMonthly.toLocaleString()}円（税込）`;
+        } else {
+            monthFee = regularMonthly;
+            monthNote = `通常月額 ${regularMonthly.toLocaleString()}円（税込）`;
+        }
 
-            const total = initial + monthFee;
-            animateJoinTotal(totalPriceEl, total);
+        const total = initial + monthFee;
+        if (initialEl) initialEl.textContent = initial.toLocaleString();
+        if (monthFeeEl) monthFeeEl.textContent = monthFee.toLocaleString();
+        if (totalPriceEl) totalPriceEl.textContent = total.toLocaleString();
+        if (monthLabelEl) monthLabelEl.textContent = `${month}月会費`;
+        if (monthNoteEl) monthNoteEl.textContent = monthNote;
+        if (totalLabelEl) {
+            totalLabelEl.textContent = isProrate
+                ? `${month}/${date}ご入会時の合計`
+                : 'ご入会時の合計';
         }
     }
     window.updateProratedFee = updateProratedFee;
-    // ロジックを実行
     updateProratedFee();
+
+    (function initJoinFeeToggle() {
+        const block = document.getElementById('monthly-fee-block');
+        const toggle = document.getElementById('join-fee-toggle');
+        if (!block || !toggle) return;
+        toggle.addEventListener('click', function () {
+            const open = block.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+    })();
 
     // 残り人数（オープニング終了後はカレンダー基準で表示）
     updateRemainingCount();

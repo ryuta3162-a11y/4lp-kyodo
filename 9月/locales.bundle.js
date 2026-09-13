@@ -23,7 +23,7 @@ window.JOYFIT_LOCALES = {
       },
       "hero": {
         "title": "<span class=\"campaign-title-summer\">Fall Body<br>Reset Campaign</span>",
-        "appBadge": "Join via app in 5 min — use today!",
+        "appBadge": "Join in 5 min — use today",
         "halfYearCatch": "Half-year monthly fee"
       },
       "pricing": {
@@ -54,7 +54,8 @@ window.JOYFIT_LOCALES = {
         "optionMonth": "Sep",
         "augustFeeCatch": "Monthly fee",
         "augustFeeSub": "August is free",
-        "augustFeeMonth": "August"
+        "augustFeeMonth": "August",
+        "joinFeeToggle": "Amount due at signup"
       },
       "conditions": {
         "badge": "Campaign terms",
@@ -70,9 +71,9 @@ window.JOYFIT_LOCALES = {
         "step1Desc": "※Student discount applies when regular monthly fee starts",
         "step1Btn": "Apply",
         "step2Badge": "App signup",
-        "step2Title": "Easy signup via app",
+        "step2Title": "Done in 5 minutes",
         "step2Desc": "As fast as 5 min — use today",
-        "step2Btn": "Download the app to join",
+        "step2Btn": "Download & join now",
         "step1SoftLink": "Referral, student & transfer perks"
       },
       "options": {
@@ -242,7 +243,7 @@ window.JOYFIT_LOCALES = {
       },
       "hero": {
         "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
-        "appBadge": "앱 입회 최단 5분　당일 바로 이용!",
+        "appBadge": "최단 5분・당일 이용",
         "halfYearCatch": "반년간 월회비"
       },
       "pricing": {
@@ -273,7 +274,8 @@ window.JOYFIT_LOCALES = {
         "optionMonth": "9월",
         "augustFeeCatch": "월회비",
         "augustFeeSub": "8월분 무료",
-        "augustFeeMonth": "8월"
+        "augustFeeMonth": "8월",
+        "joinFeeToggle": "입회 시 결제 금액"
       },
       "conditions": {
         "badge": "캠페인 유의사항",
@@ -289,9 +291,9 @@ window.JOYFIT_LOCALES = {
         "step1Desc": "※학생 할인은 통상 월액 발생 시 적용",
         "step1Btn": "신청하기",
         "step2Badge": "앱 입회",
-        "step2Title": "앱으로 간편 입회",
+        "step2Title": "최단 5분이면 완료",
         "step2Desc": "최단 5분・당일 바로 이용",
-        "step2Btn": "앱 다운로드하고 입회",
+        "step2Btn": "다운로드하고 바로 입회",
         "step1SoftLink": "소개·학생·이전 등 추가 혜택"
       },
       "options": {
@@ -461,7 +463,7 @@ window.JOYFIT_LOCALES = {
       },
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
-        "appBadge": "APP入会最快5分钟　当天即可使用！",
+        "appBadge": "最快5分钟・当天可用",
         "halfYearCatch": "半年間月会费"
       },
       "pricing": {
@@ -492,7 +494,8 @@ window.JOYFIT_LOCALES = {
         "optionMonth": "9月",
         "augustFeeCatch": "月会费",
         "augustFeeSub": "8月免费",
-        "augustFeeMonth": "8月"
+        "augustFeeMonth": "8月",
+        "joinFeeToggle": "入会时支付金额"
       },
       "conditions": {
         "badge": "活动注意事项",
@@ -508,9 +511,9 @@ window.JOYFIT_LOCALES = {
         "step1Desc": "※学生优惠于通常月费开始时适用",
         "step1Btn": "申请",
         "step2Badge": "APP入会",
-        "step2Title": "APP轻松入会",
+        "step2Title": "最快5分钟完成",
         "step2Desc": "最短5分・当日可用",
-        "step2Btn": "下载APP并入会",
+        "step2Btn": "下载并立即入会",
         "step1SoftLink": "介绍·学生·移籍等追加优惠"
       },
       "options": {
@@ -680,7 +683,7 @@ window.JOYFIT_LOCALES = {
       },
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身體<br>重置活動</span>",
-        "appBadge": "APP入會最快5分鐘　當天即可使用！",
+        "appBadge": "最快5分鐘・當天可用",
         "halfYearCatch": "半年間月會費"
       },
       "pricing": {
@@ -711,7 +714,8 @@ window.JOYFIT_LOCALES = {
         "optionMonth": "9月",
         "augustFeeCatch": "月會費",
         "augustFeeSub": "8月免費",
-        "augustFeeMonth": "8月"
+        "augustFeeMonth": "8月",
+        "joinFeeToggle": "入會時支付金額"
       },
       "conditions": {
         "badge": "活動注意事項",
@@ -727,9 +731,9 @@ window.JOYFIT_LOCALES = {
         "step1Desc": "※學生優惠於通常月費開始時適用",
         "step1Btn": "申請",
         "step2Badge": "APP入會",
-        "step2Title": "APP輕鬆入會",
+        "step2Title": "最快5分鐘完成",
         "step2Desc": "最短5分・當日可用",
-        "step2Btn": "下載APP並入會",
+        "step2Btn": "下載並立即入會",
         "step1SoftLink": "介紹·學生·移籍等追加優惠"
       },
       "options": {
