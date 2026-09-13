@@ -54,14 +54,15 @@
     "augustFeeSub": "August is free",
     "augustFeeMonth": "August",
     "joinFeeToggle": "Fees this month & later",
-    "mustStayLabel": "Must continue until",
+    "mustStayLabel": "Must continue",
     "mustStayCaption": "Must continue through",
-    "mustStayUntil": "End of Mar 2027",
+    "mustStayUntil": "through end of Mar 2027",
     "mustStayNote": "Full 6 months of membership is required",
     "joinNowTitle": "This month (if you join today)",
     "initialFeeLabel": "Initial fee",
-    "futureBillingTitle": "Later monthly fee",
+    "futureBillingTitle": "Later monthly dues",
     "campaignPeriodFee": "Through Feb 2027",
+    "plusOption": "+ options",
     "taxInclParen": " (tax incl.)"
   },
   "conditions": {

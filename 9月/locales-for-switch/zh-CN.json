@@ -54,14 +54,15 @@
     "augustFeeSub": "8月免费",
     "augustFeeMonth": "8月",
     "joinFeeToggle": "本月与之后的费用",
-    "mustStayLabel": "须持续至",
+    "mustStayLabel": "须持续",
     "mustStayCaption": "须持续至该月",
-    "mustStayUntil": "2027年3月末",
+    "mustStayUntil": "至2027年3月末",
     "mustStayNote": "须在籍满6个月",
     "joinNowTitle": "本月费用（今日入会）",
     "initialFeeLabel": "初始费用",
-    "futureBillingTitle": "之后月费",
+    "futureBillingTitle": "之后月会费",
     "campaignPeriodFee": "至2027年2月",
+    "plusOption": "＋选项费",
     "taxInclParen": "（含税）"
   },
   "conditions": {
