@@ -43,7 +43,7 @@
     "optionCancelDeadline": "9月末",
     "noticeDeadline": "9月末前",
     "julyFeeLabel": "7月會費<br><span class=\"label-sub\">7月免費</span>",
-    "afterFeb2027": "2027年3月起的一般月費",
+    "afterFeb2027": "2027年3月起",
     "monthsNote": "2026年9月至2027年2月的半年",
     "halfYearPeriod": "2026年9月〜2027年2月",
     "perMonthUnitTax": "(含稅)/月",
@@ -53,7 +53,16 @@
     "augustFeeCatch": "月會費",
     "augustFeeSub": "8月免費",
     "augustFeeMonth": "8月",
-    "joinFeeToggle": "入會時支付金額"
+    "joinFeeToggle": "關於入會後的支付金額",
+    "mustStayLabel": "必須持續期間",
+    "mustStayCaption": "須持續至該月",
+    "mustStayUntil": "2027年3月末",
+    "mustStayNote": "須在籍滿6個月",
+    "joinNowTitle": "入會時支付",
+    "initialFeeLabel": "初期費用",
+    "futureBillingTitle": "今後的月費扣款",
+    "campaignPeriodFee": "活動期間（至2027年2月）",
+    "taxInclParen": "（含稅）"
   },
   "conditions": {
     "badge": "活動注意事項",

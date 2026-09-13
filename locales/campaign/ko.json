@@ -43,7 +43,7 @@
     "optionCancelDeadline": "9월 말일",
     "noticeDeadline": "9월 말일까지",
     "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
-    "afterFeb2027": "2027년 3월 이후 정규 월회비",
+    "afterFeb2027": "2027년 3월 이후",
     "monthsNote": "2026년 9월부터 2027년 2월까지 반년",
     "halfYearPeriod": "2026년 9월〜2027년 2월",
     "perMonthUnitTax": "(세금 포함)/월",
@@ -53,7 +53,16 @@
     "augustFeeCatch": "월회비",
     "augustFeeSub": "8월분 무료",
     "augustFeeMonth": "8월",
-    "joinFeeToggle": "입회 시 결제 금액"
+    "joinFeeToggle": "입회 시부터의 결제 금액 안내",
+    "mustStayLabel": "계속 필수 기간",
+    "mustStayCaption": "이 달까지 계속 필수",
+    "mustStayUntil": "2027년 3월 말일",
+    "mustStayNote": "만 6개월간 재적이 필수 조건입니다",
+    "joinNowTitle": "입회 시 결제",
+    "initialFeeLabel": "초기 비용",
+    "futureBillingTitle": "이후 월회비 인출",
+    "campaignPeriodFee": "캠페인 기간（〜2027년 2월）",
+    "taxInclParen": "（세금 포함）"
   },
   "conditions": {
     "badge": "캠페인 유의사항",

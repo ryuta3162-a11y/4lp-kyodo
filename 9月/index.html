@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- キャンペーンLP本体: kyodo-lp-deta の index.html をここに貼り付け可（貼り替え後は i18n 用の追記を再適用） -->
 <html lang="ja">
 <head>
@@ -828,62 +828,51 @@
             line-height: 1.5;
         }
         .monthly-fee {
-            padding: 0.85rem 1.1rem 1rem;
+            padding: 0.75rem 1.1rem 0.95rem;
             text-align: center;
             background: #ffffff;
             border-top: 1px solid var(--gray-200);
-        }
-        .monthly-fee-simple {
-            margin: 0;
-            font-size: var(--text-note);
-            font-weight: 700;
-            color: var(--gray-700);
-            letter-spacing: 0.02em;
-            line-height: 1.5;
-        }
-        .monthly-fee-amount {
-            margin-left: 0.35em;
-            font-size: var(--num-mini);
-            font-weight: 800;
-            color: #333333;
-        }
-        .monthly-fee-unit {
-            font-size: var(--text-note);
-            font-weight: 700;
-            color: var(--gray-500);
         }
         .join-fee-toggle {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.25rem;
-            margin-top: 0.55rem;
-            padding: 0;
+            gap: 0.4rem;
+            margin: 0;
+            padding: 0.2rem 0;
             border: none;
             background: transparent;
-            color: #666666;
-            font-size: 0.72rem;
+            color: #6a6a6a;
+            font-size: 0.74rem;
             font-weight: 800;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
             cursor: pointer;
-            text-decoration: underline;
-            text-underline-offset: 0.18em;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .join-fee-toggle:hover,
+        .monthly-fee.is-open .join-fee-toggle {
+            color: #111111;
+        }
+        .join-fee-toggle__label {
+            text-decoration: none;
+            border-bottom: none;
         }
         .join-fee-toggle i {
-            font-size: 0.75rem;
-            transition: transform 0.2s ease;
+            flex: 0 0 auto;
+            font-size: 0.78rem;
+            color: #9a9a9a;
+            transition: transform 0.22s ease, color 0.2s ease;
         }
-        .join-fee-details.is-open + .join-fee-toggle i,
         .monthly-fee.is-open .join-fee-toggle i {
             transform: rotate(180deg);
-        }
-        .monthly-fee.is-open .join-fee-toggle {
             color: #111111;
         }
         .join-fee-details {
             display: none;
-            margin-top: 0.75rem;
-            padding: 0.85rem 0.85rem 0.75rem;
+            margin-top: 0.7rem;
+            padding: 0.9rem 0.9rem 0.8rem;
             border: 1px solid #111111;
             background: #fafafa;
             text-align: left;
@@ -895,6 +884,41 @@
         @keyframes joinFeeIn {
             from { opacity: 0; transform: translateY(-4px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .join-fee-section + .join-fee-section {
+            margin-top: 0.75rem;
+            padding-top: 0.7rem;
+            border-top: 1px solid #e6e6e6;
+        }
+        .join-fee-section__title {
+            margin: 0 0 0.45rem;
+            font-size: 0.66rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            color: #111111;
+        }
+        .join-fee-must {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #111111;
+            line-height: 1.4;
+        }
+        .join-fee-must__until {
+            flex: 0 0 auto;
+            color: #C21632;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+        .join-fee-must__note {
+            margin: 0.35rem 0 0;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #888888;
+            line-height: 1.45;
         }
         .join-fee-row {
             display: flex;
@@ -937,6 +961,12 @@
         .join-fee-row--total .join-fee-row__value {
             color: #C21632;
             font-size: 1.05rem;
+        }
+        .join-fee-row--future .join-fee-row__value {
+            font-size: 0.82rem;
+        }
+        .join-fee-row--future-regular .join-fee-row__value {
+            color: #111111;
         }
         
         .condition-list-content { padding: 8px 6px 4px; }
@@ -3622,7 +3652,7 @@
     </style>
 </head>
 
-<body>
+<body class="banner-hidden">
 
 <div class="gold-metallic-banner" id="top-capacity-banner">
     <div class="banner-bar">
@@ -3693,29 +3723,47 @@
                 </div>
 
                 <div class="monthly-fee" id="monthly-fee-block">
-                    <p class="monthly-fee-simple">
-                        <span data-i18n="pricing.afterFeb2027">2027年3月以降通常月額</span>
-                        <strong class="monthly-fee-amount">9,350</strong><span class="monthly-fee-unit" data-i18n="pricing.yenTaxIncl">円(税込)</span>
-                    </p>
                     <button type="button" class="join-fee-toggle" id="join-fee-toggle" aria-expanded="false" aria-controls="join-fee-details">
-                        <span data-i18n="pricing.joinFeeToggle">ご入会時のお支払い金額</span>
+                        <span class="join-fee-toggle__label" data-i18n="pricing.joinFeeToggle">入会時からのお支払金額について</span>
                         <i class="ph-bold ph-caret-down" aria-hidden="true"></i>
                     </button>
                     <div class="join-fee-details" id="join-fee-details">
-                        <div class="join-fee-row">
-                            <span class="join-fee-row__label">
-                                <span id="join-fee-month-label">9月会費</span>
-                                <small id="join-fee-month-note">キャンペーン月額 3,630円（税込）の日割</small>
-                            </span>
-                            <span class="join-fee-row__value"><span id="join-fee-month">--</span>円</span>
+                        <div class="join-fee-section">
+                            <p class="join-fee-section__title" data-i18n="pricing.mustStayLabel">継続必須期間</p>
+                            <div class="join-fee-must">
+                                <span data-i18n="pricing.mustStayCaption">この月まで継続必須</span>
+                                <strong class="join-fee-must__until" data-i18n="pricing.mustStayUntil">2027年3月末日</strong>
+                            </div>
+                            <p class="join-fee-must__note" data-i18n="pricing.mustStayNote">満6ヶ月間の在籍が必須条件です</p>
                         </div>
-                        <div class="join-fee-row">
-                            <span class="join-fee-row__label">初期費用</span>
-                            <span class="join-fee-row__value"><span id="join-fee-initial">5,500</span>円</span>
+                        <div class="join-fee-section">
+                            <p class="join-fee-section__title" data-i18n="pricing.joinNowTitle">入会時のお支払い</p>
+                            <div class="join-fee-row">
+                                <span class="join-fee-row__label">
+                                    <span id="join-fee-month-label">9月会費</span>
+                                    <small id="join-fee-month-note">キャンペーン月額 3,630円（税込）の日割</small>
+                                </span>
+                                <span class="join-fee-row__value"><span id="join-fee-month">--</span>円</span>
+                            </div>
+                            <div class="join-fee-row">
+                                <span class="join-fee-row__label" data-i18n="pricing.initialFeeLabel">初期費用</span>
+                                <span class="join-fee-row__value"><span id="join-fee-initial">5,500</span>円</span>
+                            </div>
+                            <div class="join-fee-row join-fee-row--total">
+                                <span class="join-fee-row__label" id="join-fee-total-label">ご入会時合計</span>
+                                <span class="join-fee-row__value"><span id="dynamic-total-price">--</span>円</span>
+                            </div>
                         </div>
-                        <div class="join-fee-row join-fee-row--total">
-                            <span class="join-fee-row__label" id="join-fee-total-label">ご入会時合計</span>
-                            <span class="join-fee-row__value"><span id="dynamic-total-price">--</span>円</span>
+                        <div class="join-fee-section">
+                            <p class="join-fee-section__title" data-i18n="pricing.futureBillingTitle">今後の月会費引き落とし</p>
+                            <div class="join-fee-row join-fee-row--future">
+                                <span class="join-fee-row__label" data-i18n="pricing.campaignPeriodFee">キャンペーン期間（〜2027年2月）</span>
+                                <span class="join-fee-row__value">3,630円/月</span>
+                            </div>
+                            <div class="join-fee-row join-fee-row--future join-fee-row--future-regular">
+                                <span class="join-fee-row__label" data-i18n="pricing.afterFeb2027">2027年3月以降</span>
+                                <span class="join-fee-row__value">9,350円/月<span class="join-fee-tax" data-i18n="pricing.taxInclParen">（税込）</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3897,7 +3945,7 @@
 </div>
 
 <div id="banner-toggle-container">
-    <button type="button" id="banner-toggle-btn" aria-label="下部バナーを表示・非表示" data-i18n-aria-label="ui.bannerToggle"><i class="ph-bold ph-x" id="toggle-icon" style="font-size: 20px;" aria-hidden="true"></i></button>
+    <button type="button" id="banner-toggle-btn" aria-label="下部バナーを表示" data-i18n-aria-label="ui.bannerShow" aria-expanded="false"><i class="ph-bold ph-caret-up" id="toggle-icon" style="font-size: 20px;" aria-hidden="true"></i></button>
 </div>
 
 <script>
@@ -4055,7 +4103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // ====================================================
     // スクロールで上下固定バナーを自動非表示（下は×で固定オフも可）
     // ====================================================
-    let bottomBannerLockedHidden = false;
+    // 初回は見学・体験バナーを非表示（入会CTAを優先）。×ボタンで表示可能。
+    let bottomBannerLockedHidden = true;
     const SCROLL_HIDE_Y = 56;
     const SCROLL_SHOW_Y = 24;
 
@@ -4064,15 +4113,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateScrollBanners() {
+        if (bottomBannerLockedHidden) {
+            setBottomBannerHidden(true);
+            return;
+        }
         const y = window.scrollY;
         if (y > SCROLL_HIDE_Y) {
-            if (!bottomBannerLockedHidden) {
-                setBottomBannerHidden(true);
-            }
+            setBottomBannerHidden(true);
         } else if (y <= SCROLL_SHOW_Y) {
-            if (!bottomBannerLockedHidden) {
-                setBottomBannerHidden(false);
-            }
+            setBottomBannerHidden(false);
         }
     }
 
@@ -4087,21 +4136,30 @@ document.addEventListener('DOMContentLoaded', function() {
             : (isHidden ? '下部バナーを表示' : '下部バナーを閉じる');
         toggleBtn.setAttribute('aria-label', label);
     }
+    function syncBannerToggleUi(isHidden) {
+        if (!toggleBtn || !toggleIcon) return;
+        if (isHidden) {
+            toggleIcon.classList.remove('ph-x');
+            toggleIcon.classList.add('ph-caret-up');
+        } else {
+            toggleIcon.classList.remove('ph-caret-up');
+            toggleIcon.classList.add('ph-x');
+        }
+        toggleBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+        setBannerToggleAria(isHidden);
+    }
     if (toggleBtn) {
+        setBottomBannerHidden(true);
+        syncBannerToggleUi(true);
         toggleBtn.addEventListener('click', function() {
             bottomBannerLockedHidden = !bottomBannerLockedHidden;
             const isHidden = bottomBannerLockedHidden;
             setBottomBannerHidden(isHidden);
-            if (isHidden) {
-                toggleIcon.classList.replace('ph-x', 'ph-caret-up');
-            } else {
-                toggleIcon.classList.replace('ph-caret-up', 'ph-x');
+            syncBannerToggleUi(isHidden);
+            if (!isHidden) {
+                updateScrollBanners();
             }
-            toggleBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-            setBannerToggleAria(isHidden);
         });
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        setBannerToggleAria(false);
     }
     window.addEventListener('joyfit:langchange', function() {
         setBannerToggleAria(bottomBannerLockedHidden);
@@ -4109,7 +4167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<script src="locales.bundle.js"></script>
+<script src="../locales.bundle.js"></script>
 <script src="../i18n.js"></script>
 <script src="campaign-i18n.js"></script>
 <script>JoyfitI18n.init('campaign').then(function () { if (window.CampaignI18n) CampaignI18n.apply(); });</script>

@@ -43,7 +43,7 @@
     "optionCancelDeadline": "end of September",
     "noticeDeadline": "end of September",
     "julyFeeLabel": "July fee<br><span class=\"label-sub\">July free</span>",
-    "afterFeb2027": "Regular monthly fee from Mar 2027",
+    "afterFeb2027": "From Mar 2027",
     "monthsNote": "Half year from Sep 2026 to Feb 2027",
     "halfYearPeriod": "Sep 2026 – Feb 2027",
     "perMonthUnitTax": "(tax incl.)/mo",
@@ -53,7 +53,16 @@
     "augustFeeCatch": "Monthly fee",
     "augustFeeSub": "August is free",
     "augustFeeMonth": "August",
-    "joinFeeToggle": "Amount due at signup"
+    "joinFeeToggle": "About payments from signup",
+    "mustStayLabel": "Required membership period",
+    "mustStayCaption": "Must continue through",
+    "mustStayUntil": "End of Mar 2027",
+    "mustStayNote": "Full 6 months of membership is required",
+    "joinNowTitle": "Payment at signup",
+    "initialFeeLabel": "Initial fee",
+    "futureBillingTitle": "Upcoming monthly billing",
+    "campaignPeriodFee": "Campaign period (through Feb 2027)",
+    "taxInclParen": " (tax incl.)"
   },
   "conditions": {
     "badge": "Campaign terms",
