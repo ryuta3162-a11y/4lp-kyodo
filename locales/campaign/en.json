@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Thu 9/24",
-    "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. Until 9/24 (Thu), first 10 members."
+    "title": "JOYFIT24 Kyodo Fall Body Reset Campaign",
+    "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. First 10 members."
   },
   "opening": {
     "ariaLabel": "Campaign introduction",
     "label": "Still in time!<br><span class=\"lp-o-label-summer\">Fall Body<br>Reset Campaign</span>",
-    "lead": "Limited until Thu 9/24",
+    "lead": "Limited spots",
     "valueLine1": "Sep–Feb ¥3,630/mo",
     "valueLine2": "Sep options <span class=\"lp-o-value-num\">0</span> yen",
     "cdDay": "Days",
@@ -204,7 +204,7 @@
     "remainingPrefix": "Left ",
     "remainingLabel": "Left",
     "remainingUnit": "spots",
-    "period": "Until Thu 9/24"
+    "period": ""
   },
   "ui": {
     "bannerToggle": "Show or hide bottom banner",

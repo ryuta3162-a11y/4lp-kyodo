@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/24(목)까지",
-    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/24(목)까지・선착순 10명."
+    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인",
+    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 선착순 10명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
-    "lead": "9/24(목)까지 한정",
+    "lead": "한정 모집",
     "valueLine1": "9~2월 월 3,630엔",
     "valueLine2": "9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
     "cdDay": "일",
@@ -204,7 +204,7 @@
     "remainingPrefix": "남은 ",
     "remainingLabel": "남<br>은",
     "remainingUnit": "명",
-    "period": "9/24(목)까지"
+    "period": ""
   },
   "ui": {
     "bannerToggle": "하단 배너 표시・숨기기",

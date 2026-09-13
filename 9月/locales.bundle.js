@@ -2,13 +2,13 @@ window.JOYFIT_LOCALES = {
   "campaign": {
     "en": {
       "meta": {
-        "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Thu 9/24",
-        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. Until 9/24 (Thu), first 10 members."
+        "title": "JOYFIT24 Kyodo Fall Body Reset Campaign",
+        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. First 10 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Fall Body<br>Reset Campaign</span>",
-        "lead": "Limited until Thu 9/24",
+        "lead": "Limited spots",
         "valueLine1": "Sep–Feb ¥3,630/mo",
         "valueLine2": "Sep options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
@@ -206,7 +206,7 @@ window.JOYFIT_LOCALES = {
         "remainingPrefix": "Left ",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
-        "period": "Until Thu 9/24"
+        "period": ""
       },
       "ui": {
         "bannerToggle": "Show or hide bottom banner",
@@ -216,13 +216,13 @@ window.JOYFIT_LOCALES = {
     },
     "ko": {
       "meta": {
-        "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/24(목)까지",
-        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/24(목)까지・선착순 10명."
+        "title": "JOYFIT24 교도 가을 바디 리셋 캠페인",
+        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 선착순 10명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
-        "lead": "9/24(목)까지 한정",
+        "lead": "한정 모집",
         "valueLine1": "9~2월 월 3,630엔",
         "valueLine2": "9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
         "cdDay": "일",
@@ -420,7 +420,7 @@ window.JOYFIT_LOCALES = {
         "remainingPrefix": "남은 ",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
-        "period": "9/24(목)까지"
+        "period": ""
       },
       "ui": {
         "bannerToggle": "하단 배너 표시・숨기기",
@@ -430,13 +430,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-CN": {
       "meta": {
-        "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/24(四)",
-        "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/24(四)・先到先得10名。"
+        "title": "JOYFIT24经堂 秋季身体重置活动",
+        "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。先到先得10名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
-        "lead": "截止至9/24(四)",
+        "lead": "名额有限",
         "valueLine1": "9～2月每月3,630日元",
         "valueLine2": "9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
         "cdDay": "天",
@@ -634,7 +634,7 @@ window.JOYFIT_LOCALES = {
         "remainingPrefix": "剩余",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
-        "period": "截止至9/24(四)"
+        "period": ""
       },
       "ui": {
         "bannerToggle": "显示或隐藏底部横幅",
@@ -644,13 +644,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-TW": {
       "meta": {
-        "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/24(四)",
-        "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。截止9/24(四)・限額先到先得10名。"
+        "title": "JOYFIT24經堂 秋季身體重置活動",
+        "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。限額先到先得10名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">秋季身體<br>重置活動</span>",
-        "lead": "截止至9/24(四)",
+        "lead": "名額有限",
         "valueLine1": "9～2月每月3,630日圓",
         "valueLine2": "9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
         "cdDay": "天",
@@ -848,7 +848,7 @@ window.JOYFIT_LOCALES = {
         "remainingPrefix": "剩餘",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",
-        "period": "截止至9/24(四)"
+        "period": ""
       },
       "ui": {
         "bannerToggle": "顯示或隱藏底部橫幅",

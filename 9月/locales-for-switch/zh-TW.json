@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/24(四)",
-    "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。截止9/24(四)・限額先到先得10名。"
+    "title": "JOYFIT24經堂 秋季身體重置活動",
+    "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。限額先到先得10名。"
   },
   "opening": {
     "ariaLabel": "活動介紹",
     "label": "還來得及！<br><span class=\"lp-o-label-summer\">秋季身體<br>重置活動</span>",
-    "lead": "截止至9/24(四)",
+    "lead": "名額有限",
     "valueLine1": "9～2月每月3,630日圓",
     "valueLine2": "9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
     "cdDay": "天",
@@ -204,7 +204,7 @@
     "remainingPrefix": "剩餘",
     "remainingLabel": "剩<br>餘",
     "remainingUnit": "名",
-    "period": "截止至9/24(四)"
+    "period": ""
   },
   "ui": {
     "bannerToggle": "顯示或隱藏底部橫幅",
