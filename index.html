@@ -3781,9 +3781,9 @@
                     <span class="app-join-hero__point"><i class="ph-bold ph-timer" aria-hidden="true"></i><span data-i18n="steps.joinPointFast">最短5分で完了</span></span>
                     <span class="app-join-hero__point"><i class="ph-bold ph-person-simple-walk" aria-hidden="true"></i><span data-i18n="steps.joinPointReady">入会後すぐ使える</span></span>
                 </div>
-                <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn">
-                    <i class="ph-bold ph-download-simple" aria-hidden="true"></i>
-                    <span data-i18n="steps.step2Btn">ダウンロードして今すぐ入会</span>
+                <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn" id="app-join-cta" data-app-join-link>
+                    <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
+                    <span data-i18n="steps.step2Btn">APPをインストールして今すぐ入会</span>
                 </a>
                 <p class="perk-soft-link">
                     <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
@@ -3944,7 +3944,7 @@
     <a href="https://24-kyodo-freetrial.vercel.app/" class="banner-btn trial" target="_blank" rel="noopener noreferrer">
         <i class="ph-bold ph-calendar-plus" style="font-size: 1.2rem;"></i><span data-i18n="banner.trial">無料見学・体験</span>
     </a>
-    <a href="https://joyfit.jp/kyodo/app_join/" class="banner-btn app" target="_blank" rel="noopener noreferrer">
+    <a href="https://joyfit.jp/kyodo/app_join/" class="banner-btn app" target="_blank" rel="noopener noreferrer" data-app-join-link>
         <i class="ph-bold ph-device-mobile" style="font-size: 1.2rem;"></i><span data-i18n="banner.appJoin">APP入会はこちら</span>
     </a>
 </div>
@@ -3955,6 +3955,28 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+    // JOYFIT App ストア直リンク（端末に合わせて最短でストアへ）
+    window.JOYFIT_APP_LINKS = {
+        ios: 'https://apps.apple.com/jp/app/joyfit-app/id1492426384',
+        android: 'https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid&hl=ja',
+        guide: 'https://joyfit.jp/kyodo/app_join/'
+    };
+
+    function resolveJoyfitAppUrl() {
+        const ua = navigator.userAgent || '';
+        if (/iPhone|iPad|iPod/i.test(ua)) return window.JOYFIT_APP_LINKS.ios;
+        if (/Android/i.test(ua)) return window.JOYFIT_APP_LINKS.android;
+        return window.JOYFIT_APP_LINKS.guide;
+    }
+
+    function applyJoyfitAppLinks() {
+        const url = resolveJoyfitAppUrl();
+        document.querySelectorAll('[data-app-join-link]').forEach(function (el) {
+            el.setAttribute('href', url);
+        });
+    }
+    applyJoyfitAppLinks();
 
     // キャンペーン設定（締切・カウントダウン用）
     window.CAMPAIGN_CONFIG = {
