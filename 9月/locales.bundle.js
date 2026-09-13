@@ -144,7 +144,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span> auto-enrolled options",
-        "foldSub": "Sep is ¥0 — tap for details",
+        "foldSub": "Optional details",
         "foldOpen": "Details",
         "foldClose": "Close"
       },
@@ -363,7 +363,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>개 자동계약 옵션",
-        "foldSub": "9월분 0엔 · 자세한 내용",
+        "foldSub": "내용 보기(선택)",
         "foldOpen": "상세",
         "foldClose": "닫기"
       },
@@ -582,7 +582,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>项自动签约选项",
-        "foldSub": "9月0日元 · 查看详情",
+        "foldSub": "查看内容（可选）",
         "foldOpen": "详情",
         "foldClose": "收起"
       },
@@ -801,7 +801,7 @@ window.JOYFIT_LOCALES = {
           }
         },
         "foldTitle": "<span class=\"highlight\">8</span>項自動簽約選項",
-        "foldSub": "9月0日圓 · 查看詳情",
+        "foldSub": "查看內容（可選）",
         "foldOpen": "詳情",
         "foldClose": "收合"
       },
