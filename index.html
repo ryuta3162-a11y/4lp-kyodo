@@ -872,9 +872,9 @@
         .join-fee-details {
             display: none;
             margin-top: 0.7rem;
-            padding: 0.9rem 0.9rem 0.8rem;
-            border: 1px solid #111111;
-            background: #fafafa;
+            padding: 0;
+            border: none;
+            background: transparent;
             text-align: left;
             animation: joinFeeIn 0.25s ease;
         }
@@ -885,62 +885,58 @@
             from { opacity: 0; transform: translateY(-4px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .join-fee-section + .join-fee-section {
-            margin-top: 0.75rem;
-            padding-top: 0.7rem;
-            border-top: 1px solid #e6e6e6;
-        }
-        .join-fee-section__title {
-            margin: 0 0 0.45rem;
-            font-size: 0.66rem;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            color: #111111;
-        }
-        .join-fee-must {
+        .join-fee-flow {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 800;
-            color: #111111;
-            line-height: 1.4;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
         }
-        .join-fee-must__until {
-            flex: 0 0 auto;
-            color: #C21632;
-            font-variant-numeric: tabular-nums;
-            white-space: nowrap;
+        .join-fee-card {
+            padding: 0.75rem 0.85rem 0.7rem;
+            border: 1px solid #111111;
+            background: #ffffff;
         }
-        .join-fee-must__note {
-            margin: 0.35rem 0 0;
+        .join-fee-card__title {
+            margin: 0 0 0.5rem;
             font-size: 0.68rem;
-            font-weight: 700;
-            color: #888888;
-            line-height: 1.45;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #111111;
+            line-height: 1.3;
+        }
+        .join-fee-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.35rem;
+            color: #C21632;
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+        .join-fee-arrow i {
+            display: block;
         }
         .join-fee-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             gap: 0.75rem;
-            padding: 0.35rem 0;
+            padding: 0.32rem 0;
             font-size: 0.78rem;
             font-weight: 700;
             color: #444444;
-            line-height: 1.45;
+            line-height: 1.4;
         }
         .join-fee-row + .join-fee-row {
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #ececec;
         }
         .join-fee-row__label {
             min-width: 0;
         }
         .join-fee-row__label small {
             display: block;
-            margin-top: 0.15rem;
-            font-size: 0.68rem;
+            margin-top: 0.12rem;
+            font-size: 0.66rem;
             font-weight: 700;
             color: #888888;
         }
@@ -952,8 +948,8 @@
             white-space: nowrap;
         }
         .join-fee-row--total {
-            margin-top: 0.15rem;
-            padding-top: 0.55rem;
+            margin-top: 0.1rem;
+            padding-top: 0.5rem;
             border-top: 1px solid #111111 !important;
             font-size: 0.88rem;
             color: #111111;
@@ -965,8 +961,24 @@
         .join-fee-row--future .join-fee-row__value {
             font-size: 0.82rem;
         }
-        .join-fee-row--future-regular .join-fee-row__value {
-            color: #111111;
+        .join-fee-card--must {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            background: #fafafa;
+        }
+        .join-fee-card--must .join-fee-card__title {
+            margin: 0;
+        }
+        .join-fee-must__until {
+            flex: 0 0 auto;
+            font-size: 0.88rem;
+            font-weight: 900;
+            color: #C21632;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+            line-height: 1.2;
         }
         
         .condition-list-content { padding: 8px 6px 4px; }
@@ -3763,45 +3775,49 @@
 
                 <div class="monthly-fee" id="monthly-fee-block">
                     <button type="button" class="join-fee-toggle" id="join-fee-toggle" aria-expanded="false" aria-controls="join-fee-details">
-                        <span class="join-fee-toggle__label" data-i18n="pricing.joinFeeToggle">入会時からのお支払金額について</span>
+                        <span class="join-fee-toggle__label" data-i18n="pricing.joinFeeToggle">初回と今後の料金</span>
                         <i class="ph-bold ph-caret-down" aria-hidden="true"></i>
                     </button>
                     <div class="join-fee-details" id="join-fee-details">
-                        <div class="join-fee-section">
-                            <p class="join-fee-section__title" data-i18n="pricing.mustStayLabel">継続必須期間</p>
-                            <div class="join-fee-must">
-                                <span data-i18n="pricing.mustStayCaption">この月まで継続必須</span>
-                                <strong class="join-fee-must__until" data-i18n="pricing.mustStayUntil">2027年3月末日</strong>
+                        <div class="join-fee-flow">
+                            <div class="join-fee-card">
+                                <p class="join-fee-card__title" data-i18n="pricing.joinNowTitle">今月の料金（今日入会の場合）</p>
+                                <div class="join-fee-row">
+                                    <span class="join-fee-row__label">
+                                        <span id="join-fee-month-label">9月会費</span>
+                                        <small id="join-fee-month-note">日割</small>
+                                    </span>
+                                    <span class="join-fee-row__value"><span id="join-fee-month">--</span>円</span>
+                                </div>
+                                <div class="join-fee-row">
+                                    <span class="join-fee-row__label" data-i18n="pricing.initialFeeLabel">初期費用</span>
+                                    <span class="join-fee-row__value"><span id="join-fee-initial">5,500</span>円</span>
+                                </div>
+                                <div class="join-fee-row join-fee-row--total">
+                                    <span class="join-fee-row__label" id="join-fee-total-label">今月の合計</span>
+                                    <span class="join-fee-row__value"><span id="dynamic-total-price">--</span>円</span>
+                                </div>
                             </div>
-                            <p class="join-fee-must__note" data-i18n="pricing.mustStayNote">満6ヶ月間の在籍が必須条件です</p>
-                        </div>
-                        <div class="join-fee-section">
-                            <p class="join-fee-section__title" data-i18n="pricing.joinNowTitle">入会時のお支払い</p>
-                            <div class="join-fee-row">
-                                <span class="join-fee-row__label">
-                                    <span id="join-fee-month-label">9月会費</span>
-                                    <small id="join-fee-month-note">キャンペーン月額 3,630円（税込）の日割</small>
-                                </span>
-                                <span class="join-fee-row__value"><span id="join-fee-month">--</span>円</span>
+
+                            <div class="join-fee-arrow" aria-hidden="true"><i class="ph-bold ph-caret-down"></i></div>
+
+                            <div class="join-fee-card">
+                                <p class="join-fee-card__title" data-i18n="pricing.futureBillingTitle">今後の月額</p>
+                                <div class="join-fee-row join-fee-row--future">
+                                    <span class="join-fee-row__label" data-i18n="pricing.campaignPeriodFee">〜2027年2月</span>
+                                    <span class="join-fee-row__value">3,630円</span>
+                                </div>
+                                <div class="join-fee-row join-fee-row--future">
+                                    <span class="join-fee-row__label" data-i18n="pricing.afterFeb2027">2027年3月〜</span>
+                                    <span class="join-fee-row__value">9,350円</span>
+                                </div>
                             </div>
-                            <div class="join-fee-row">
-                                <span class="join-fee-row__label" data-i18n="pricing.initialFeeLabel">初期費用</span>
-                                <span class="join-fee-row__value"><span id="join-fee-initial">5,500</span>円</span>
-                            </div>
-                            <div class="join-fee-row join-fee-row--total">
-                                <span class="join-fee-row__label" id="join-fee-total-label">ご入会時合計</span>
-                                <span class="join-fee-row__value"><span id="dynamic-total-price">--</span>円</span>
-                            </div>
-                        </div>
-                        <div class="join-fee-section">
-                            <p class="join-fee-section__title" data-i18n="pricing.futureBillingTitle">今後の月会費引き落とし</p>
-                            <div class="join-fee-row join-fee-row--future">
-                                <span class="join-fee-row__label" data-i18n="pricing.campaignPeriodFee">キャンペーン期間（〜2027年2月）</span>
-                                <span class="join-fee-row__value">3,630円/月</span>
-                            </div>
-                            <div class="join-fee-row join-fee-row--future join-fee-row--future-regular">
-                                <span class="join-fee-row__label" data-i18n="pricing.afterFeb2027">2027年3月以降</span>
-                                <span class="join-fee-row__value">9,350円/月<span class="join-fee-tax" data-i18n="pricing.taxInclParen">（税込）</span></span>
+
+                            <div class="join-fee-arrow" aria-hidden="true"><i class="ph-bold ph-caret-down"></i></div>
+
+                            <div class="join-fee-card join-fee-card--must">
+                                <p class="join-fee-card__title" data-i18n="pricing.mustStayLabel">継続必須</p>
+                                <strong class="join-fee-must__until" data-i18n="pricing.mustStayUntil">2027年3月末まで</strong>
                             </div>
                         </div>
                     </div>
@@ -4104,13 +4120,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (year === 2026 && month === 9) {
             monthFee = calcProrateFee(year, month, date, campaignMonthly);
             isProrate = true;
-            monthNote = `キャンペーン月額 ${campaignMonthly.toLocaleString()}円（税込）÷${daysInMonth}日×残り${remainingDays}日`;
+            monthNote = `日割（残り${remainingDays}日）`;
         } else if ((year === 2026 && month >= 10 && month <= 12) || (year === 2027 && month <= 2)) {
             monthFee = campaignMonthly;
-            monthNote = `キャンペーン月額 ${campaignMonthly.toLocaleString()}円（税込）`;
+            monthNote = 'キャンペーン月額';
         } else {
             monthFee = regularMonthly;
-            monthNote = `通常月額 ${regularMonthly.toLocaleString()}円（税込）`;
+            monthNote = '通常月額';
         }
 
         const total = initial + monthFee;
@@ -4120,9 +4136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (monthLabelEl) monthLabelEl.textContent = `${month}月会費`;
         if (monthNoteEl) monthNoteEl.textContent = monthNote;
         if (totalLabelEl) {
-            totalLabelEl.textContent = isProrate
-                ? `${month}/${date}ご入会時の合計`
-                : 'ご入会時の合計';
+            totalLabelEl.textContent = '今月の合計';
         }
     }
     window.updateProratedFee = updateProratedFee;
