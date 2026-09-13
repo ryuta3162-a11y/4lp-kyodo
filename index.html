@@ -1135,6 +1135,71 @@
             border-radius: 0;
             width: 100%;
             background: #ffffff;
+            padding: 1.15rem 1.1rem 1.25rem;
+            text-align: left;
+            position: relative;
+        }
+        .options-notice-always .options-notice-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #C21632;
+        }
+        .options-notice-block {
+            padding: 1.15rem 1.1rem 1.25rem;
+            border-top: 1px solid #111111;
+            background: #ffffff;
+            text-align: left;
+        }
+        .options-notice-block .notice-title-v22 {
+            margin: 0 0 0.7rem;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #111111;
+            justify-content: flex-start;
+        }
+        .options-notice-block .notice-title-v22::before,
+        .options-notice-block .notice-title-v22::after {
+            display: none;
+        }
+        .options-notice-block .notice-body {
+            font-size: 0.78rem;
+            line-height: 1.75;
+            font-weight: 700;
+            color: #444444;
+            margin: 0 0 0.85rem;
+            text-align: left;
+        }
+        .options-notice-always .options-notice-block .notice-warning-v22 {
+            display: block !important;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 0 0.85rem !important;
+            padding: 0.7rem 0.8rem !important;
+            font-size: 0.76rem !important;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            line-height: 1.45;
+            color: #C21632 !important;
+            background: #fff5f6 !important;
+            border: 1px solid rgba(194, 22, 50, 0.28) !important;
+            text-align: left;
+        }
+        .options-notice-block .cta-button-video {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0.85rem 1rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
         }
         .options-carousel-section {
             padding: 24px 0 20px;
@@ -1193,23 +1258,6 @@
             display: inline-block;
             margin-top: 8px;
             font-weight: 600;
-        }
-        .options-notice-block {
-            padding: 28px 20px 32px;
-            border-top: 1px solid var(--gray-200);
-            background: #ffffff;
-            text-align: center;
-        }
-        .options-notice-block .notice-title-v22 {
-            margin-bottom: 16px;
-            font-size: var(--text-body);
-        }
-        .options-notice-block .notice-body {
-            font-size: var(--text-note);
-            line-height: 1.8;
-            font-weight: 700;
-            color: var(--gray-700);
-            margin-bottom: 20px;
         }
 
         .scene {
@@ -1294,20 +1342,66 @@
         .access-section-wrap {
             width: 100%;
             max-width: var(--container-max-width);
-            margin: 44px auto 40px;
+            margin: 28px auto 40px;
         }
         .access-section {
             margin: 0;
             border-radius: 0;
             overflow: hidden;
+            border: 1px solid #111111;
+            background: #ffffff;
         }
-        .access-section header img {
+        .access-pad {
+            padding: 1.15rem 1.1rem;
+            background: #ffffff;
+        }
+        .access-pad--photo {
+            border-bottom: 1px solid #111111;
+        }
+        .access-pad--info {
+            text-align: left;
+        }
+        .access-photo-label {
+            margin: 0 0 0.65rem;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: #777777;
+            text-align: left;
+        }
+        .access-photo {
             display: block;
             width: 100%;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .access-store-name {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 900;
+            margin: 0 0 1rem;
+            text-align: center;
+            color: #111111;
+            letter-spacing: 0.04em;
+        }
+        .access-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 0.85rem;
+            font-size: 0.88rem;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        .access-row i {
+            color: #C21632;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
         .access-map-cta {
-            padding: 22px 20px 24px;
-            border-top: 1px solid #111111;
+            padding: 1.15rem 1.1rem;
+            border-bottom: 1px solid #111111;
             background: #ffffff;
             text-align: center;
         }
@@ -1397,8 +1491,15 @@
             font-size: 1rem;
             opacity: 0.55;
         }
-        .map-embed-container iframe { width: 100%; height: 350px; border: 0; }
-        .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; padding: 25px; border-top: 1px solid #111111; text-align: center; }
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem 0.65rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #111111;
+            text-align: center;
+        }
         /* 施設アイコン: 軽くトーンを寄せて一覧の一体感を出す（元画像はそのまま） */
         .facilities-grid img {
             width: 45px;
@@ -3248,8 +3349,8 @@
         .option-card-3d {
             border-radius: 0 !important;
         }
-        .how-to-join-container .lp-framed {
-            border: 2px solid #111111 !important;
+        .access-section.lp-framed {
+            border: 1px solid #111111 !important;
             box-shadow: none !important;
         }
         .condition-card.lp-framed {
@@ -3525,28 +3626,32 @@
     <!-- アクセスマップセクション -->
     <div class="access-section-wrap reveal-up">
     <section class="access-section lp-framed">
-        <header>
-            <img src="joylogo.jpg" alt="JOYFIT24経堂" data-i18n-alt="access.logoAlt" style="width: 100%; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/600x200/C21632/ffffff?text=JOYFIT24+KYODO';">
-        </header>
-        <div class="map-embed-container">
-            <iframe src="https://www.google.com/maps?q=JOYFIT24経堂,東京都世田谷区経堂5-23-13&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="access-map-cta">
+            <a href="https://www.google.com/maps/search/?api=1&query=JOYFIT24経堂,東京都世田谷区経堂5-23-13" target="_blank" rel="noopener noreferrer" class="access-map-btn">
+                <span class="access-map-btn__icon" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
+                <span class="access-map-btn__copy">
+                    <span class="access-map-btn__main" data-i18n="access.mapBtn">Googleマップでルートを確認</span>
+                    <span class="access-map-btn__sub" data-i18n="access.storeName">JOYFIT24経堂</span>
+                </span>
+                <span class="access-map-btn__arrow" aria-hidden="true"><i class="ph-bold ph-arrow-up-right"></i></span>
+            </a>
         </div>
-        <div style="padding: 25px; background: #fff; border-top: 1px solid #111111; border-bottom: 1px solid #111111;">
-            <p style="font-size: 0.85rem; color: #666; font-weight: 700; text-align: left; margin-bottom: 10px;" data-i18n="access.exteriorLabel">店舗外観</p>
-            <img src="entrance.jpg" alt="店舗外観" data-i18n-alt="access.exteriorAlt" style="width: 100%; border-radius: 0; box-shadow: none;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/C21632?text=Store+Exterior';">
+        <div class="access-pad access-pad--photo">
+            <p class="access-photo-label" data-i18n="access.exteriorLabel">店舗外観</p>
+            <img class="access-photo" src="entrance.jpg" alt="店舗外観" data-i18n-alt="access.exteriorAlt" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e0e0/C21632?text=Store+Exterior';">
         </div>
-        <div style="padding: 25px; text-align: left; background: #fff;">
-            <strong style="display: block; font-size: 1.35rem; font-weight: 900; margin-bottom: 20px; text-align: center; color: var(--brand);" data-i18n="access.storeName">JOYFIT24経堂</strong>
-            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
-                <i class="ph-fill ph-map-pin" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+        <div class="access-pad access-pad--info">
+            <strong class="access-store-name" data-i18n="access.storeName">JOYFIT24経堂</strong>
+            <div class="access-row">
+                <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span data-i18n-html="access.address">〒156-0052<br>東京都世田谷区経堂5-23-13 2F・3F</span>
             </div>
-            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
-                <i class="ph-fill ph-train" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+            <div class="access-row">
+                <i class="ph-fill ph-train" aria-hidden="true"></i>
                 <div><strong data-i18n="access.accessLabel">アクセス</strong><br><span data-i18n="access.accessText">小田急線「経堂駅」より徒歩9分</span></div>
             </div>
-            <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: #333; line-height: 1.7; font-weight: 500;">
-                <i class="ph-fill ph-clock" style="color: var(--brand); font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;"></i>
+            <div class="access-row">
+                <i class="ph-fill ph-clock" aria-hidden="true"></i>
                 <div><strong data-i18n="access.hoursLabel">受付時間</strong><br><span data-i18n="access.hoursWeekday">平日 10:00～21:00</span><br><span data-i18n="access.hoursWeekend">土日祝 12:00～20:00</span><br><small style="color: #888;" data-i18n="access.hoursNote">※毎週月・木曜日は終日スタッフ不在</small></div>
             </div>
             <div class="facilities-grid">
@@ -3559,16 +3664,6 @@
                 <div><img src="g.jpg" alt="ミスト" data-i18n-alt="access.facilities.mist.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Mist';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.mist.title">女性ミストサウナ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.mist.desc">約40℃設定</p></div>
                 <div><img src="f.jpg" alt="サウナ" data-i18n-alt="access.facilities.sauna.alt" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e0e0e0/C21632?text=Sauna';"><strong style="font-size: 0.8rem; font-weight: 900;" data-i18n="access.facilities.sauna.title">男性ドライサウナ</strong><p style="font-size: 0.7rem; color: #666; margin-top: 5px;" data-i18n="access.facilities.sauna.desc">約80℃設定</p></div>
             </div>
-        </div>
-        <div class="access-map-cta">
-            <a href="https://www.google.com/maps/search/?api=1&query=JOYFIT24経堂,東京都世田谷区経堂5-23-13" target="_blank" rel="noopener noreferrer" class="access-map-btn">
-                <span class="access-map-btn__icon" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
-                <span class="access-map-btn__copy">
-                    <span class="access-map-btn__main" data-i18n="access.mapBtn">Googleマップでルートを確認</span>
-                    <span class="access-map-btn__sub" data-i18n="access.storeName">JOYFIT24経堂</span>
-                </span>
-                <span class="access-map-btn__arrow" aria-hidden="true"><i class="ph-bold ph-arrow-up-right"></i></span>
-            </a>
         </div>
     </section>
     </div>
