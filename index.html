@@ -3814,15 +3814,10 @@
                     <span class="app-join-hero__point"><i class="ph-bold ph-timer" aria-hidden="true"></i><span data-i18n="steps.joinPointFast">最短5分で完了</span></span>
                     <span class="app-join-hero__point"><i class="ph-bold ph-person-simple-walk" aria-hidden="true"></i><span data-i18n="steps.joinPointReady">入会後すぐ使える</span></span>
                 </div>
-                <p class="app-join-hero__cta-label" data-i18n="steps.step2Btn">APPをインストールして今すぐ入会</p>
-                <div class="app-join-stores">
-                    <a href="https://apps.apple.com/us/app/joyfit-app/id1492426384?l=ja&amp;ls=1" target="_blank" rel="noopener noreferrer" aria-label="App StoreからJOYFIT Appを入手">
-                        <img src="assets/badge-app-store.svg" alt="App Storeからダウンロード" width="120" height="40" loading="lazy">
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid" target="_blank" rel="noopener noreferrer" aria-label="Google PlayでJOYFIT Appを入手">
-                        <img src="assets/badge-google-play.svg" alt="Google Playで手に入れよう" width="135" height="40" loading="lazy">
-                    </a>
-                </div>
+                <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn" id="app-join-cta" data-app-join-link>
+                    <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
+                    <span data-i18n="steps.step2Btn">APPをインストールして今すぐ入会</span>
+                </a>
                 <p class="perk-soft-link">
                     <a href="https://24kyodo-special-plan.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="steps.step1SoftLink">紹介・学割・移籍などの追加特典はこちら</a>
                 </p>
@@ -3994,7 +3989,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // JOYFIT App ストア直リンク（下部バナー用：端末に合わせて最短でストアへ）
+    // JOYFIT App ストア直リンク（端末判定で正しいストアへ。誤タップ防止）
     window.JOYFIT_APP_LINKS = {
         ios: 'https://apps.apple.com/us/app/joyfit-app/id1492426384?l=ja&ls=1',
         android: 'https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid',
