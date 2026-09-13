@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/13(일)까지",
-    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
+    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/24(목)까지",
+    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/24(목)까지・선착순 10명."
   },
   "opening": {
     "ariaLabel": "캠페인 소개",
     "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
-    "lead": "9/13(일)까지 한정",
+    "lead": "9/24(목)까지 한정",
     "valueLine1": "9~2월 월 3,630엔",
     "valueLine2": "9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
     "cdDay": "일",
@@ -15,7 +15,7 @@
     "cdSec": "초",
     "remaining": "남은",
     "remainingUnit": "명",
-    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명 한정",
+    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">10</span>명 한정",
     "remainingNow": "현재 남은",
     "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
   },
@@ -200,11 +200,11 @@
   "banner": {
     "trial": "무료 견학・체험",
     "appJoin": "앱 입회는 여기",
-    "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+    "capacity": "선착 <span class=\"banner-capacity-num\">10</span>명 한정",
     "remainingPrefix": "남은 ",
     "remainingLabel": "남<br>은",
     "remainingUnit": "명",
-    "period": "9/13(일)까지"
+    "period": "9/24(목)까지"
   },
   "ui": {
     "bannerToggle": "하단 배너 표시・숨기기",

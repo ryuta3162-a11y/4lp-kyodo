@@ -2,13 +2,13 @@ window.JOYFIT_LOCALES = {
   "campaign": {
     "en": {
       "meta": {
-        "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Sun 9/13",
-        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. Until 9/13 (Sun), first 30 members."
+        "title": "JOYFIT24 Kyodo Fall Body Reset Campaign | Until Thu 9/24",
+        "description": "JOYFIT24 Kyodo Fall Body Reset Campaign. Sep 2026–Feb 2027 ¥3,630/mo · Sep options ¥0. Until 9/24 (Thu), first 10 members."
       },
       "opening": {
         "ariaLabel": "Campaign introduction",
         "label": "Still in time!<br><span class=\"lp-o-label-summer\">Fall Body<br>Reset Campaign</span>",
-        "lead": "Limited until Sun 9/13",
+        "lead": "Limited until Thu 9/24",
         "valueLine1": "Sep–Feb ¥3,630/mo",
         "valueLine2": "Sep options <span class=\"lp-o-value-num\">0</span> yen",
         "cdDay": "Days",
@@ -17,7 +17,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "Sec",
         "remaining": "Left",
         "remainingUnit": "spots",
-        "capacityTotal": "First <span class=\"lp-o-capacity-num\">30</span> spots · limited",
+        "capacityTotal": "First <span class=\"lp-o-capacity-num\">10</span> spots · limited",
         "remainingNow": "Now only",
         "note": "※Campaign ends when <span class=\"dynamic-remaining-count\">--</span> more members join"
       },
@@ -202,11 +202,11 @@ window.JOYFIT_LOCALES = {
       "banner": {
         "trial": "Free tour & trial",
         "appJoin": "Join via app",
-        "capacity": "First <span class=\"banner-capacity-num\">30</span> spots only",
+        "capacity": "First <span class=\"banner-capacity-num\">10</span> spots only",
         "remainingPrefix": "Left ",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
-        "period": "Until Sun 9/13"
+        "period": "Until Thu 9/24"
       },
       "ui": {
         "bannerToggle": "Show or hide bottom banner",
@@ -216,13 +216,13 @@ window.JOYFIT_LOCALES = {
     },
     "ko": {
       "meta": {
-        "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/13(일)까지",
-        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/13(일)까지・선착순 30명."
+        "title": "JOYFIT24 교도 가을 바디 리셋 캠페인｜9/24(목)까지",
+        "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 2026년 9월~2027년 2월 월 3,630엔・9월 옵션 0엔. 9/24(목)까지・선착순 10명."
       },
       "opening": {
         "ariaLabel": "캠페인 소개",
         "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
-        "lead": "9/13(일)까지 한정",
+        "lead": "9/24(목)까지 한정",
         "valueLine1": "9~2월 월 3,630엔",
         "valueLine2": "9월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
         "cdDay": "일",
@@ -231,7 +231,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "초",
         "remaining": "남은",
         "remainingUnit": "명",
-        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명 한정",
+        "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">10</span>명 한정",
         "remainingNow": "현재 남은",
         "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
       },
@@ -416,11 +416,11 @@ window.JOYFIT_LOCALES = {
       "banner": {
         "trial": "무료 견학・체험",
         "appJoin": "앱 입회는 여기",
-        "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+        "capacity": "선착 <span class=\"banner-capacity-num\">10</span>명 한정",
         "remainingPrefix": "남은 ",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
-        "period": "9/13(일)까지"
+        "period": "9/24(목)까지"
       },
       "ui": {
         "bannerToggle": "하단 배너 표시・숨기기",
@@ -430,13 +430,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-CN": {
       "meta": {
-        "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/13(日)",
-        "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/13(日)・先到先得30名。"
+        "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/24(四)",
+        "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/24(四)・先到先得10名。"
       },
       "opening": {
         "ariaLabel": "活动介绍",
         "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
-        "lead": "截止至9/13(日)",
+        "lead": "截止至9/24(四)",
         "valueLine1": "9～2月每月3,630日元",
         "valueLine2": "9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
         "cdDay": "天",
@@ -445,7 +445,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "秒",
         "remaining": "剩余",
         "remainingUnit": "名",
-        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">30</span>名様限定",
+        "capacityTotal": "先着<span class=\"lp-o-capacity-num\">10</span>名様限定",
         "remainingNow": "现有名额",
         "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
       },
@@ -630,11 +630,11 @@ window.JOYFIT_LOCALES = {
       "banner": {
         "trial": "免费参观・体验",
         "appJoin": "APP入会点此",
-        "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
+        "capacity": "先着<span class=\"banner-capacity-num\">10</span>名限定",
         "remainingPrefix": "剩余",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
-        "period": "截止至9/13(日)"
+        "period": "截止至9/24(四)"
       },
       "ui": {
         "bannerToggle": "显示或隐藏底部横幅",
@@ -644,13 +644,13 @@ window.JOYFIT_LOCALES = {
     },
     "zh-TW": {
       "meta": {
-        "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/13(日)",
-        "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。截止9/13(日)・限額先到先得30名。"
+        "title": "JOYFIT24經堂 秋季身體重置活動｜截止至9/24(四)",
+        "description": "JOYFIT24經堂秋季身體重置活動。2026年9月～2027年2月每月3,630日圓・9月選項0日圓。截止9/24(四)・限額先到先得10名。"
       },
       "opening": {
         "ariaLabel": "活動介紹",
         "label": "還來得及！<br><span class=\"lp-o-label-summer\">秋季身體<br>重置活動</span>",
-        "lead": "截止至9/13(日)",
+        "lead": "截止至9/24(四)",
         "valueLine1": "9～2月每月3,630日圓",
         "valueLine2": "9月選項 <span class=\"lp-o-value-num\">0</span> 日圓",
         "cdDay": "天",
@@ -659,7 +659,7 @@ window.JOYFIT_LOCALES = {
         "cdSec": "秒",
         "remaining": "剩餘",
         "remainingUnit": "名",
-        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">30</span>名限定",
+        "capacityTotal": "先搶<span class=\"lp-o-capacity-num\">10</span>名限定",
         "remainingNow": "現剩名額",
         "note": "※再入會<span class=\"dynamic-remaining-count\">--</span>名即結束限定活動"
       },
@@ -844,11 +844,11 @@ window.JOYFIT_LOCALES = {
       "banner": {
         "trial": "免費參觀・體驗",
         "appJoin": "APP入會點此",
-        "capacity": "先搶<span class=\"banner-capacity-num\">30</span>名限定",
+        "capacity": "先搶<span class=\"banner-capacity-num\">10</span>名限定",
         "remainingPrefix": "剩餘",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",
-        "period": "截止至9/13(日)"
+        "period": "截止至9/24(四)"
       },
       "ui": {
         "bannerToggle": "顯示或隱藏底部橫幅",

@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/13(日)",
-    "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/13(日)・先到先得30名。"
+    "title": "JOYFIT24经堂 秋季身体重置活动｜截止至9/24(四)",
+    "description": "JOYFIT24经堂秋季身体重置活动。2026年9月～2027年2月每月3,630日元・9月选项0日元。截止9/24(四)・先到先得10名。"
   },
   "opening": {
     "ariaLabel": "活动介绍",
     "label": "还来得及！<br><span class=\"lp-o-label-summer\">秋季身体<br>重置活动</span>",
-    "lead": "截止至9/13(日)",
+    "lead": "截止至9/24(四)",
     "valueLine1": "9～2月每月3,630日元",
     "valueLine2": "9月选项 <span class=\"lp-o-value-num\">0</span> 日元",
     "cdDay": "天",
@@ -15,7 +15,7 @@
     "cdSec": "秒",
     "remaining": "剩余",
     "remainingUnit": "名",
-    "capacityTotal": "先着<span class=\"lp-o-capacity-num\">30</span>名様限定",
+    "capacityTotal": "先着<span class=\"lp-o-capacity-num\">10</span>名様限定",
     "remainingNow": "现有名额",
     "note": "※再入会<span class=\"dynamic-remaining-count\">--</span>名即结束限定活动"
   },
@@ -200,11 +200,11 @@
   "banner": {
     "trial": "免费参观・体验",
     "appJoin": "APP入会点此",
-    "capacity": "先着<span class=\"banner-capacity-num\">30</span>名限定",
+    "capacity": "先着<span class=\"banner-capacity-num\">10</span>名限定",
     "remainingPrefix": "剩余",
     "remainingLabel": "剩<br>余",
     "remainingUnit": "名",
-    "period": "截止至9/13(日)"
+    "period": "截止至9/24(四)"
   },
   "ui": {
     "bannerToggle": "显示或隐藏底部横幅",

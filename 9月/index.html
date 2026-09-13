@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで</title>
+    <title>JOYFIT24経堂 秋の体リセットキャンペーン｜9/24(木)まで</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/24(木)まで・先着10名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで" />
-    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta property="og:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/24(木)まで" />
+    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/24(木)まで・先着10名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 秋の体リセットキャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/13(日)まで" />
-    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/13(日)まで・先着30名。" />
+    <meta name="twitter:title" content="JOYFIT24経堂 秋の体リセットキャンペーン｜9/24(木)まで" />
+    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。9/24(木)まで・先着10名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 視認性の高い Noto Sans JP に完全統一 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="i18n.css">
+    <link rel="stylesheet" href="../i18n.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
@@ -2527,7 +2527,7 @@
             line-height: 1;
         }
         .gold-metallic-banner .lang-switcher__current {
-            font: inherit;
+            font-size: inherit !important;
             font-weight: 900;
             color: #111111;
             line-height: 1;
@@ -3026,7 +3026,7 @@
 <div class="gold-metallic-banner" id="top-capacity-banner">
     <div class="banner-bar">
         <div class="banner-inner" aria-live="polite">
-            <span class="banner-segment banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">30</span>名様限定</span>
+            <span class="banner-segment banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">10</span>名様限定</span>
             <span class="banner-sep" aria-hidden="true"></span>
             <span class="banner-segment banner-remaining-inline">
                 <span data-i18n="banner.remainingPrefix">残り</span><span class="highlight-num dynamic-remaining-count">--</span><span class="remaining-unit" data-i18n="banner.remainingUnit">名</span>
@@ -3288,12 +3288,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // キャンペーン設定（締切・カウントダウン用）
     window.CAMPAIGN_CONFIG = {
-        endAt: new Date('2026-09-13T23:59:59+09:00'),
-        displayFrom: new Date('2026-08-25T00:00:00+09:00')
+        endAt: new Date('2026-09-24T23:59:59+09:00'),
+        displayFrom: new Date('2026-09-14T00:00:00+09:00')
     };
 
     // ====================================================
-    // 残り人数（8/31=残り10名・日付が変わるたび1名減・1名で固定）
+    // 残り人数（9/14=残り10名・日付が変わるたび1名減・1名で固定）
     // ====================================================
     function getJSTNow() {
         return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
@@ -3302,7 +3302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function getCalendarRemaining() {
         const START_REMAINING = 10;
         const MIN_REMAINING = 1;
-        const COUNTDOWN_START = new Date(2026, 7, 31); // 8/31 JST
+        const COUNTDOWN_START = new Date(2026, 8, 14); // 9/14 JST
         const jst = getJSTNow();
         const cur = new Date(jst.getFullYear(), jst.getMonth(), jst.getDate());
 
