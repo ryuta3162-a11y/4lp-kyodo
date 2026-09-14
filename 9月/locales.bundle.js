@@ -71,7 +71,7 @@ window.JOYFIT_LOCALES = {
         "badge": "Campaign terms",
         "itemInitial": "Initial fee of ¥5,500 (tax incl.) is charged at signup",
         "item1": "Membership through <strong class=\"cond-em\">end of Mar 2027</strong> is required",
-        "item2": "If you leave early, a cancellation fee of ¥34,320 (tax incl.) applies",
+        "item2": "If you leave early, a cancellation fee of ¥33,000 applies",
         "item3": "All 8 options are <strong class=\"cond-em\">auto-enrolled</strong> at signup. Cancel unwanted ones by <strong class=\"cond-em\">end of September</strong>"
       },
       "steps": {
@@ -303,7 +303,7 @@ window.JOYFIT_LOCALES = {
         "badge": "캠페인 유의사항",
         "itemInitial": "초기 비용 5,500엔(세금 포함)이 입회 시 발생합니다",
         "item1": "<strong class=\"cond-em\">2027년 3월 말일</strong>까지 재적이 필수 조건입니다",
-        "item2": "중도 퇴회 시 해약금 34,320엔(세금 포함)이 발생합니다",
+        "item2": "중도 퇴회 시 해약금 33,000엔이 발생합니다",
         "item3": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">9월 말일까지</strong> 반드시 해약해 주세요"
       },
       "steps": {
@@ -535,7 +535,7 @@ window.JOYFIT_LOCALES = {
         "badge": "活动注意事项",
         "itemInitial": "初期费用5,500日元(含税)于入会时发生",
         "item1": "须在籍至<strong class=\"cond-em\">2027年3月末</strong>",
-        "item2": "中途退会时需支付解约金34,320日元（含税）",
+        "item2": "中途退会时需支付解约金33,000日元",
         "item3": "8个选项入会时<strong class=\"cond-em\">自动签约</strong>。不需要时请务必在<strong class=\"cond-em\">9月末前</strong>解约"
       },
       "steps": {
@@ -767,7 +767,7 @@ window.JOYFIT_LOCALES = {
         "badge": "活動注意事項",
         "itemInitial": "初期費用5,500日圓(含稅)於入會時發生",
         "item1": "須在籍至<strong class=\"cond-em\">2027年3月末</strong>",
-        "item2": "中途退會時需支付解約金34,320日圓（含稅）",
+        "item2": "中途退會時需支付解約金33,000日圓",
         "item3": "8個選項入會時<strong class=\"cond-em\">自動簽約</strong>。不需要時請務必在<strong class=\"cond-em\">9月末前</strong>解約"
       },
       "steps": {
