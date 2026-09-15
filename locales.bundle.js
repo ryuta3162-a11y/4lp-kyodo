@@ -24,7 +24,7 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">Fall Body<br>Reset Campaign</span>",
         "appBadge": "Join in 5 min — use today",
-        "halfYearCatch": "Monthly fee"
+        "halfYearCatch": "6-Month Monthly Fee"
       },
       "pricing": {
         "monthsList": "Sep · Oct · Nov · Dec · Jan 2027 · Feb",
@@ -258,7 +258,7 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
         "appBadge": "최단 5분・당일 이용",
-        "halfYearCatch": "월회비"
+        "halfYearCatch": "6개월간 월회비"
       },
       "pricing": {
         "monthsList": "9월・10월・11월・12월・2027년 1월・2월",
@@ -492,7 +492,7 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
         "appBadge": "最快5分钟・当天可用",
-        "halfYearCatch": "月会费"
+        "halfYearCatch": "6个月月会费"
       },
       "pricing": {
         "monthsList": "9月・10月・11月・12月・2027年1月・2月",
@@ -726,7 +726,7 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身體<br>重置活動</span>",
         "appBadge": "最快5分鐘・當天可用",
-        "halfYearCatch": "月會費"
+        "halfYearCatch": "6個月月會費"
       },
       "pricing": {
         "monthsList": "9月・10月・11月・12月・2027年1月・2月",
