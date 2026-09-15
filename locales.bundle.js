@@ -24,10 +24,10 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">Fall Body<br>Reset Campaign</span>",
         "appBadge": "Join in 5 min — use today",
-        "halfYearCatch": "Half-year monthly fee"
+        "halfYearCatch": "Monthly fee"
       },
       "pricing": {
-        "monthsList": "Sep 2026 – Feb 2027",
+        "monthsList": "Sep · Oct · Nov · Dec · Jan 2027 · Feb",
         "usualMonthly": "Regular <span class=\"price-usual-strike\">9,350</span> yen (tax incl.)/mo",
         "perMonthUnit": "yen (tax incl.)/mo",
         "optionLabel": "Services worth ¥10,000+/mo — all included",
@@ -50,6 +50,7 @@ window.JOYFIT_LOCALES = {
         "halfYearPeriod": "Sep 2026 – Feb 2027",
         "perMonthUnitTax": "(tax incl.)/mo",
         "halfYearTaxNote": "¥3,630 tax incl.",
+        "eachMonth": "Per month",
         "optionCatch": "Paid option contract",
         "optionMonth": "Sep",
         "augustFeeCatch": "Monthly fee",
@@ -221,6 +222,7 @@ window.JOYFIT_LOCALES = {
         "trial": "Free tour & trial",
         "appJoin": "Join via app",
         "capacity": "First <span class=\"banner-capacity-num\">10</span> spots only",
+        "deadline": "Until Thu, Sep 24",
         "remainingPrefix": "Left ",
         "remainingLabel": "Left",
         "remainingUnit": "spots",
@@ -256,10 +258,10 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
         "appBadge": "최단 5분・당일 이용",
-        "halfYearCatch": "반년간 월회비"
+        "halfYearCatch": "월회비"
       },
       "pricing": {
-        "monthsList": "2026년 9월〜2027년 2월",
+        "monthsList": "9월・10월・11월・12월・2027년 1월・2월",
         "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
         "perMonthUnit": "원(세금 포함)/월",
         "optionLabel": "합계 월 1만엔 이상 서비스 전부",
@@ -282,6 +284,7 @@ window.JOYFIT_LOCALES = {
         "halfYearPeriod": "2026년 9월〜2027년 2월",
         "perMonthUnitTax": "(세금 포함)/월",
         "halfYearTaxNote": "3,630엔 세금포함",
+        "eachMonth": "매월",
         "optionCatch": "유료 옵션 계약",
         "optionMonth": "9월",
         "augustFeeCatch": "월회비",
@@ -453,6 +456,7 @@ window.JOYFIT_LOCALES = {
         "trial": "무료 견학・체험",
         "appJoin": "앱 입회는 여기",
         "capacity": "선착 <span class=\"banner-capacity-num\">10</span>명 한정",
+        "deadline": "9월 24일(목)까지",
         "remainingPrefix": "남은 ",
         "remainingLabel": "남<br>은",
         "remainingUnit": "명",
@@ -488,10 +492,10 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身体<br>重置活动</span>",
         "appBadge": "最快5分钟・当天可用",
-        "halfYearCatch": "半年間月会费"
+        "halfYearCatch": "月会费"
       },
       "pricing": {
-        "monthsList": "2026年9月〜2027年2月",
+        "monthsList": "9月・10月・11月・12月・2027年1月・2月",
         "usualMonthly": "通常月费<span class=\"price-usual-strike\">9,350</span>元(含税)",
         "perMonthUnit": "元(含税)/月",
         "optionLabel": "合计月费1万日元以上的服务全部",
@@ -514,6 +518,7 @@ window.JOYFIT_LOCALES = {
         "halfYearPeriod": "2026年9月〜2027年2月",
         "perMonthUnitTax": "(含税)/月",
         "halfYearTaxNote": "3,630日元含税",
+        "eachMonth": "每月",
         "optionCatch": "付费选项合约",
         "optionMonth": "9月",
         "augustFeeCatch": "月会费",
@@ -685,6 +690,7 @@ window.JOYFIT_LOCALES = {
         "trial": "免费参观・体验",
         "appJoin": "APP入会点此",
         "capacity": "先着<span class=\"banner-capacity-num\">10</span>名限定",
+        "deadline": "至9月24日（周四）",
         "remainingPrefix": "剩余",
         "remainingLabel": "剩<br>余",
         "remainingUnit": "名",
@@ -720,10 +726,10 @@ window.JOYFIT_LOCALES = {
       "hero": {
         "title": "<span class=\"campaign-title-summer\">秋季身體<br>重置活動</span>",
         "appBadge": "最快5分鐘・當天可用",
-        "halfYearCatch": "半年間月會費"
+        "halfYearCatch": "月會費"
       },
       "pricing": {
-        "monthsList": "2026年9月〜2027年2月",
+        "monthsList": "9月・10月・11月・12月・2027年1月・2月",
         "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
         "perMonthUnit": "元(含稅)/月",
         "optionLabel": "合計月費1萬日圓以上的服務全部",
@@ -746,6 +752,7 @@ window.JOYFIT_LOCALES = {
         "halfYearPeriod": "2026年9月〜2027年2月",
         "perMonthUnitTax": "(含稅)/月",
         "halfYearTaxNote": "3,630日圓含稅",
+        "eachMonth": "每月",
         "optionCatch": "付費選項合約",
         "optionMonth": "9月",
         "augustFeeCatch": "月會費",
@@ -917,6 +924,7 @@ window.JOYFIT_LOCALES = {
         "trial": "免費參觀・體驗",
         "appJoin": "APP入會點此",
         "capacity": "先搶<span class=\"banner-capacity-num\">10</span>名限定",
+        "deadline": "至9月24日（週四）",
         "remainingPrefix": "剩餘",
         "remainingLabel": "剩<br>餘",
         "remainingUnit": "名",

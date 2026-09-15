@@ -22,10 +22,10 @@
   "hero": {
     "title": "<span class=\"campaign-title-summer\">秋季身體<br>重置活動</span>",
     "appBadge": "最快5分鐘・當天可用",
-    "halfYearCatch": "半年間月會費"
+    "halfYearCatch": "月會費"
   },
   "pricing": {
-    "monthsList": "2026年9月〜2027年2月",
+    "monthsList": "9月・10月・11月・12月・2027年1月・2月",
     "usualMonthly": "通常月費<span class=\"price-usual-strike\">9,350</span>元(含稅)",
     "perMonthUnit": "元(含稅)/月",
     "optionLabel": "合計月費1萬日圓以上的服務全部",
@@ -48,6 +48,7 @@
     "halfYearPeriod": "2026年9月〜2027年2月",
     "perMonthUnitTax": "(含稅)/月",
     "halfYearTaxNote": "3,630日圓含稅",
+    "eachMonth": "每月",
     "optionCatch": "付費選項合約",
     "optionMonth": "9月",
     "augustFeeCatch": "月會費",
@@ -219,6 +220,7 @@
     "trial": "免費參觀・體驗",
     "appJoin": "APP入會點此",
     "capacity": "先搶<span class=\"banner-capacity-num\">10</span>名限定",
+    "deadline": "至9月24日（週四）",
     "remainingPrefix": "剩餘",
     "remainingLabel": "剩<br>餘",
     "remainingUnit": "名",

@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOYFIT24経堂 秋の体リセットキャンペーン</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->
-    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。先着10名。" />
+    <meta name="description" content="JOYFIT24経堂 秋の体リセットキャンペーン。9・10・11・12・2027年1・2月 各月3,630円(税込)・9月オプション0円。9月24日（木）まで・先着10名。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:title" content="JOYFIT24経堂 秋の体リセットキャンペーン" />
-    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。先着10名。" />
+    <meta property="og:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9・10・11・12・2027年1・2月 各月3,630円(税込)・9月オプション0円。9月24日（木）まで・先着10名。" />
     <meta property="og:url" content="REPLACE_ORIGIN/index.html" />
     <meta property="og:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <meta property="og:image:alt" content="JOYFIT24経堂 秋の体リセットキャンペーン" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JOYFIT24経堂 秋の体リセットキャンペーン" />
-    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9月〜2027年2月3,630円(税込)/月・9月オプション0円。先着10名。" />
+    <meta name="twitter:description" content="JOYFIT24経堂の秋の体リセットキャンペーン。9・10・11・12・2027年1・2月 各月3,630円(税込)・9月オプション0円。9月24日（木）まで・先着10名。" />
     <meta name="twitter:image" content="REPLACE_ORIGIN/ogp.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -473,14 +473,25 @@
             text-shadow: none;
         }
         .half-year-period {
-            margin: 0 0 0.55rem;
+            margin: 0 0 0.65rem;
             order: 2;
-            font-size: var(--text-body);
-            font-weight: 700;
+            font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            color: #333333;
+            line-height: 1.45;
+            max-width: 100%;
+            padding: 0.35rem 0.5rem;
+            border-top: 1px solid #111111;
+            border-bottom: 1px solid #111111;
+        }
+        .half-year-price-prefix {
+            margin-right: 0.2em;
+            font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+            font-weight: 900;
             letter-spacing: 0.04em;
-            color: var(--gray-700);
-            line-height: 1.55;
-            max-width: 22em;
+            color: #111111;
+            vertical-align: baseline;
         }
         .half-year-price-hero {
             display: flex;
@@ -3762,6 +3773,8 @@
 <div class="gold-metallic-banner" id="top-capacity-banner">
     <div class="banner-bar">
         <div class="banner-inner" aria-live="polite">
+            <span class="banner-segment banner-deadline" data-i18n="banner.deadline">9月24日（木）まで</span>
+            <span class="banner-sep" aria-hidden="true"></span>
             <span class="banner-segment banner-capacity-text" data-i18n-html="banner.capacity">先着<span class="banner-capacity-num">10</span>名様限定</span>
             <span class="banner-sep" aria-hidden="true"></span>
             <span class="banner-segment banner-remaining-inline">
@@ -3800,12 +3813,13 @@
         <div class="plan-container-wrapper">
             <div class="price-showcase">
                 <div class="price-list">
-                    <!-- キャンペーン特典: 9月〜2月会費（半年間） -->
+                    <!-- キャンペーン特典: 対象月を列挙してから価格 -->
                     <div class="price-item price-item--half-year">
                         <div class="half-year-main">
-                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">半年間ずっと月会費</p>
-                            <p class="half-year-period" data-i18n="pricing.monthsList">2026年9月〜2027年2月</p>
+                            <p class="half-year-catch" data-i18n="hero.halfYearCatch">月会費</p>
+                            <p class="half-year-period" data-i18n="pricing.monthsList">9月・10月・11月・12月・2027年1月・2月</p>
                             <div class="half-year-price-hero">
+                                <span class="half-year-price-prefix" data-i18n="pricing.eachMonth">各月</span>
                                 <span class="half-year-price font-impact">3,300</span><span class="half-year-yen font-impact" data-i18n="pricing.yen">円</span>
                             </div>
                             <p class="half-year-unit" data-i18n="pricing.halfYearTaxNote">3,630円税込</p>
