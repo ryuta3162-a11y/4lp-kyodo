@@ -411,7 +411,7 @@
             grid-template-columns: none;
             min-height: 0;
             margin: 0.35rem 0 0.85rem;
-            padding: 1.15rem var(--hy-pad-x) 1.75rem;
+            padding: 1.25rem var(--hy-pad-x) 1.95rem;
             border: 2px solid #111111;
             border-radius: 0;
             border-bottom: 1px solid #111111;
@@ -428,7 +428,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(108deg, transparent 32%, rgba(255, 255, 255, 0.55) 46%, rgba(227, 193, 115, 0.42) 52%, rgba(255, 255, 255, 0.28) 58%, transparent 72%);
+            background: linear-gradient(108deg, transparent 32%, rgba(255, 255, 255, 0.62) 46%, rgba(200, 200, 200, 0.28) 54%, rgba(255, 255, 255, 0.35) 60%, transparent 74%);
             transform: translateX(-140%);
             pointer-events: none;
             animation: halfYearSheen 1.55s ease-in-out 0.35s infinite;
@@ -460,20 +460,18 @@
         .price-item--half-year .half-year-catch {
             order: 1;
             align-self: stretch;
-            margin: 0 0 1.05rem;
-            padding: 0.7rem 0.4rem;
+            margin: 0 0 1.2rem;
+            padding: 0.85rem 0.4rem;
             background: none;
             border: none;
             box-shadow:
                 0 1px 0 #111111,
-                0 3px 0 #C9A45C,
-                0 -1px 0 #111111,
-                0 -3px 0 #C9A45C;
-            font-size: clamp(0.92rem, 3.5vw, 1.08rem);
+                0 -1px 0 #111111;
+            font-size: clamp(1.12rem, 4.4vw, 1.38rem);
             font-weight: 900;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.14em;
             color: #111111;
-            line-height: 1.35;
+            line-height: 1.4;
             text-shadow: none;
         }
         .price-item--half-year .half-year-catch::before,
@@ -481,7 +479,7 @@
             content: none;
         }
         .half-year-period {
-            margin: 0 0 1.05rem;
+            margin: 0 0 1.25rem;
             order: 2;
             font-size: clamp(0.78rem, 3vw, 0.95rem);
             font-weight: 800;
@@ -494,9 +492,9 @@
         }
         .half-year-price-prefix {
             flex: 0 0 auto;
-            margin-right: 0.45em;
-            padding: 0.3rem 0.5rem;
-            font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+            margin-right: 0.32em;
+            padding: 0.28rem 0.42rem;
+            font-size: clamp(0.78rem, 2.8vw, 0.95rem);
             font-weight: 900;
             letter-spacing: 0.08em;
             line-height: 1;
@@ -509,14 +507,15 @@
             position: relative;
             display: inline-flex;
             align-items: baseline;
-            overflow: hidden;
+            overflow: visible;
+            padding: 0.06em 0.02em 0.2em;
             white-space: nowrap;
         }
         .half-year-price-num::after {
             content: '';
             position: absolute;
             inset: -12% -20%;
-            background: linear-gradient(105deg, transparent 28%, rgba(255, 255, 255, 0.7) 48%, rgba(255, 236, 180, 0.45) 54%, transparent 72%);
+            background: linear-gradient(105deg, transparent 28%, rgba(255, 255, 255, 0.72) 48%, rgba(180, 180, 180, 0.28) 56%, transparent 74%);
             transform: translateX(-130%);
             pointer-events: none;
             mix-blend-mode: overlay;
@@ -536,7 +535,7 @@
             justify-content: center;
             gap: 0;
             white-space: nowrap;
-            padding: 0;
+            padding: 0.2rem 0 0.35rem;
             order: 3;
             animation: halfYearPricePop 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
         }
@@ -546,10 +545,10 @@
         }
         .price-item--half-year .half-year-price {
             display: inline;
-            font-size: var(--num-hero);
+            font-size: clamp(4.6rem, 23.5vw, 6.5rem);
             font-weight: 900;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
+            letter-spacing: -0.02em;
+            line-height: 1.16;
             color: #C21632;
             text-shadow: none;
             -webkit-text-stroke: 0;
@@ -566,7 +565,7 @@
         .price-item--half-year .half-year-unit {
             display: block;
             order: 4;
-            margin: 1.05rem 0 0;
+            margin: 1.35rem 0 0;
             padding: 0;
             font-size: clamp(0.85rem, 3.3vw, 1rem);
             font-weight: 800;
@@ -715,10 +714,7 @@
             .price-item .price-display-center { order: 2; min-height: 0; max-width: 100%; justify-self: center; }
             .price-item--half-year {
                 --hy-pad-x: 0.4rem;
-                padding: 1.05rem var(--hy-pad-x) 1.65rem;
-            }
-            .price-item--half-year .half-year-price {
-                font-size: var(--num-hero);
+                padding: 1.15rem var(--hy-pad-x) 1.85rem;
             }
         }
         .price-item .label .note .period-inline {
