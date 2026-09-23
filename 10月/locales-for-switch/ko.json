@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "JOYFIT24 교도 가을 바디 리셋 캠페인",
+    "description": "JOYFIT24 교도 가을 바디 리셋 캠페인. 9월 회비 0엔 · 2026년 10월~2027년 3월 월 3,289엔 · 9·10월 옵션 0엔. 선착순 30명. 10/16(금)까지."
+  },
+  "opening": {
+    "ariaLabel": "캠페인 소개",
+    "label": "아직 늦지 않았어요!<br><span class=\"lp-o-label-summer\">가을 바디<br>리셋 캠페인</span>",
+    "lead": "한정 모집",
+    "valueLine1": "10~3월 월 3,289엔",
+    "valueLine2": "9·10월 옵션 <span class=\"lp-o-value-num\">0</span>엔",
+    "cdDay": "일",
+    "cdHour": "시간",
+    "cdMin": "분",
+    "cdSec": "초",
+    "remaining": "남은",
+    "remainingUnit": "명",
+    "capacityTotal": "선착 <span class=\"lp-o-capacity-num\">30</span>명 한정",
+    "remainingNow": "현재 남은",
+    "note": "※<span class=\"dynamic-remaining-count\">--</span>명 더 입회 시 한정 캠페인 종료"
+  },
+  "hero": {
+    "title": "<span class=\"campaign-title-summer\">가을 바디<br>리셋 캠페인</span>",
+    "appBadge": "최단 5분・당일 이용",
+    "halfYearCatch": "6개월간 월회비"
+  },
+  "pricing": {
+    "monthsList": "10월・11월・12월・2027년 1월・2월・3월",
+    "usualMonthly": "통상 월 <span class=\"price-usual-strike\">9,350</span>원(세금 포함)",
+    "perMonthUnit": "원(세금 포함)/월",
+    "optionLabel": "합계 월 1만엔 이상 서비스 전부",
+    "optionLabelSub": "자동 계약 옵션 8개",
+    "perkBadge": "캠페인 특전",
+    "initialLabel": "초기 비용<br><span class=\"label-sub\">입회금・등록료</span>",
+    "yen": "원",
+    "yenTaxIncl": "원(세금 포함)",
+    "joinAmountLabel": "입회 시 결제 금액",
+    "joinAmountAt": "(<span class=\"join-date\">{m}/{d}</span>) 입회 시 결제 금액",
+    "prorateNote": "",
+    "optionFees": "옵션 요금",
+    "optionHighlight": "9·10월분 0엔",
+    "optionNote": "※불필요한 경우 <span id=\"campaign-option-cancel-deadline\">10월 말일</span>까지 반드시 해약해 주세요.",
+    "optionCancelDeadline": "10월 말일",
+    "noticeDeadline": "10월 말일까지",
+    "julyFeeLabel": "7월 회비<br><span class=\"label-sub\">7월 무료</span>",
+    "afterFeb2027": "2027년 4월~",
+    "monthsNote": "2026년 10월부터 2027년 3월까지 반년",
+    "halfYearPeriod": "2026년 10월〜2027년 3월",
+    "perMonthUnitTax": "(세금 포함)/월",
+    "halfYearTaxNote": "3,289엔 세금포함",
+    "eachMonth": "매월",
+    "optionCatch": "유료 옵션 계약",
+    "optionMonth": "9·10월",
+    "augustFeeCatch": "월회비",
+    "augustFeeSub": "9월분 무료",
+    "augustFeeMonth": "9월",
+    "joinFeeToggle": "이번 달·이후 요금",
+    "mustStayLabel": "계속 필수",
+    "mustStayCaption": "이 달까지 계속 필수",
+    "mustStayUntil": "2027년 4월 말까지",
+    "mustStayNote": "만 6개월간 재적이 필수 조건입니다",
+    "joinNowTitle": "이번 달 요금（오늘 입회 시）",
+    "initialFeeLabel": "초기 비용",
+    "futureBillingTitle": "이후 월회비",
+    "campaignPeriodFee": "〜2027년 3월",
+    "plusOption": "＋옵션",
+    "taxInclParen": "（세금 포함）"
+  },
+  "conditions": {
+    "badge": "캠페인 유의사항",
+    "itemInitial": "초기 비용 5,500엔(세금 포함)이 입회 시 발생합니다",
+    "item1": "<strong class=\"cond-em\">2027년 4월 말일</strong>까지 재적이 필수 조건입니다",
+    "item2": "중도 퇴회 시 해약금 33,000엔(세금 포함)이 발생합니다",
+    "item3": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다. 불필요한 경우 <strong class=\"cond-em\">10월 말일까지</strong> 반드시 해약해 주세요"
+  },
+  "steps": {
+    "step1Badge": "추가 혜택",
+    "step1Lead": "추가 혜택은 여기",
+    "step1Title": "소개・학생・타 클럽 이전 등",
+    "step1Desc": "※학생 할인은 통상 월액 발생 시 적용",
+    "step1Btn": "신청하기",
+    "step2Badge": "앱 입회",
+    "step2Title": "최단 5분이면 완료",
+    "step2Desc": "최단 5분・당일 바로 이용",
+    "step2Btn": "APP 설치하고 바로 입회",
+    "joinPointFast": "최단 5분이면 완료",
+    "joinPointReady": "입회 후 바로 이용",
+    "step1SoftLink": "소개·학생·이전 등 추가 혜택"
+  },
+  "options": {
+    "freeTitle": "<span class=\"highlight font-impact\">8</span>가지 자동 계약 옵션",
+    "freeIntroPrefix": "캠페인 기간 중",
+    "freeIntroSuffix": " 마음껏 이용!",
+    "paidTitle": "<span class=\"highlight font-impact\">3</span>가지 캠페인 외 옵션",
+    "paidNote": "※원하시는 분만 계약 가능합니다",
+    "freeBadge": "자동 계약 옵션",
+    "paidBadge": "캠페인 외 옵션",
+    "prevFree": "이전 자동 계약 옵션",
+    "nextFree": "다음 자동 계약 옵션",
+    "prevPaid": "이전 캠페인 외 옵션",
+    "nextPaid": "다음 캠페인 외 옵션",
+    "noticeTitle": "옵션 유의사항",
+    "noticeBody": "8개 옵션은 입회 시 <strong class=\"cond-em\">자동 계약</strong>됩니다<br />불필요한 경우 <strong class=\"cond-em\" id=\"campaign-notice-deadline\">10월 말일까지</strong> 반드시 해약해 주세요<br /><br />입회 후 <strong>[JOYFIT APP]</strong>에서 해약 가능합니다<br />해약 후에도 월말까지 서비스를 이용할 수 있습니다",
+    "noticeWarning": "※해지를 잊으면 환불되지 않습니다",
+    "cancelVideo": "해지 방법은 여기를 탭",
+    "monthlyPrefix": "월",
+    "taxSuffix": "(세금 포함)",
+    "items": {
+      "hydrogen": {
+        "name": "수소수 & 프로틴",
+        "description": "수소수+프로틴<br>[하루 6잔까지] 알찬 세트"
+      },
+      "hotStudio": {
+        "name": "핫 스튜디오",
+        "description": "세타가야 최대급<br>레슨으로 땀 흘리기!"
+      },
+      "supportVip": {
+        "name": "안심 서포트 VIP",
+        "description": "만약의 때에도 안심<br>JOYFIT 전용 서포트 플랜"
+      },
+      "onlineLesson": {
+        "name": "온라인 레슨",
+        "description": "집에서도 본격 레슨!<br>헬스장에 못 올 때도 안심"
+      },
+      "tanning": {
+        "name": "태닝 머신",
+        "description": "이상적인 태닝을!<br>※1일 20분까지"
+      },
+      "selfEsthe": {
+        "name": "셀프 에스테",
+        "description": "에스테 살롱과 동일<br>업무용 기기 무제한"
+      },
+      "rentalMat": {
+        "name": "매트 대여",
+        "description": "매트 지참 불필요!<br>핫 스튜디오 참가 필수"
+      },
+      "rentalTowel": {
+        "name": "타월 대여",
+        "description": "땀 흘려도 안심 대여<br>페이스・바스 타월"
+      },
+      "bodyScale": {
+        "name": "체성분계",
+        "description": "체지방・근육량 측정<br>트레이닝 최적화"
+      },
+      "locker": {
+        "name": "계약 로커",
+        "description": "운동복・신발 보관<br>전용 로커"
+      },
+      "pilates": {
+        "name": "필라테스 리포머",
+        "description": "필라테스 기구로<br>코어 등 본격 레슨"
+      },
+      "yogaLocker": {
+        "name": "요가 매트 로커",
+        "description": "요가 매트 보관<br>짐 줄이기"
+      }
+    },
+    "foldTitle": "<span class=\"highlight\">8</span>개 자동계약 옵션",
+    "foldSub": "내용 보기",
+    "foldOpen": "상세",
+    "foldClose": "닫기"
+  },
+  "access": {
+    "logoAlt": "JOYFIT24 경당",
+    "exteriorLabel": "매장 외관",
+    "exteriorAlt": "매장 외관",
+    "storeName": "JOYFIT24 경당",
+    "address": "〒156-0052<br>도쿄도 세타가야구 경당 5-23-13 2F・3F",
+    "accessLabel": "오시는 길",
+    "accessText": "오다큐선 「경당역」에서 도보 9분",
+    "hoursLabel": "접수 시간",
+    "hoursWeekday": "평일 10:00～21:00",
+    "hoursWeekend": "주말・공휴일 12:00～20:00",
+    "hoursNote": "※매주 월・목요일은 종일 스태프 부재",
+    "mapBtn": "Google 지도에서 경로 확인",
+    "facilities": {
+      "gym": {
+        "alt": "짐",
+        "title": "2F 짐 에리어",
+        "desc": "넓은 공간×풍부한 머신"
+      },
+      "studio": {
+        "alt": "스튜디오",
+        "title": "3F 스튜디오",
+        "desc": "핫 스튜디오"
+      },
+      "hours24": {
+        "alt": "24시간",
+        "title": "24시간 영업",
+        "desc": "※2F 짐 에리어"
+      },
+      "shoes": {
+        "alt": "신발",
+        "title": "신발 착용 OK",
+        "desc": "※샌들・맨발 불가"
+      },
+      "parking": {
+        "alt": "주차",
+        "title": "무료 주차 6대",
+        "desc": "※자전거 주차장 있음"
+      },
+      "shower": {
+        "alt": "샤워",
+        "title": "샤워룸",
+        "desc": "남녀 구분 총 19실"
+      },
+      "mist": {
+        "alt": "미스트",
+        "title": "여성 미스트 사우나",
+        "desc": "약 40℃"
+      },
+      "sauna": {
+        "alt": "사우나",
+        "title": "남성 드라이 사우나",
+        "desc": "약 80℃"
+      }
+    }
+  },
+  "banner": {
+    "trial": "무료 견학・체험",
+    "appJoin": "앱 입회는 여기",
+    "capacity": "선착 <span class=\"banner-capacity-num\">30</span>명 한정",
+    "deadline": "10/16(금)까지",
+    "remainingPrefix": "남은 ",
+    "remainingLabel": "남<br>은",
+    "remainingUnit": "명",
+    "period": ""
+  },
+  "ui": {
+    "bannerToggle": "하단 배너 표시・숨기기",
+    "bannerShow": "하단 배너 표시",
+    "bannerHide": "하단 배너 숨기기"
+  }
+}
