@@ -20,7 +20,7 @@ def main() -> int:
         print("already switched")
         return 0
 
-    html = (OCT / "index.html").read_text(encoding="utf-8")
+    html = (OCT / "campaign.html").read_text(encoding="utf-8")
     html = html.replace('href="../i18n.css"', 'href="i18n.css"')
     html = html.replace('src="../i18n.js"', 'src="i18n.js"')
     (ROOT / "index.html").write_text(html, encoding="utf-8")
