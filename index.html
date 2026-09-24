@@ -3,6 +3,13 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
+    <script>
+    (function () {
+      if (Date.now() >= Date.parse('2026-09-25T00:00:00+09:00')) {
+        location.replace('/10月/');
+      }
+    })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOYFIT24経堂 秋の体リセットキャンペーン</title>
     <!-- OGP（LINE等は絶対URL必須）: 公開先が決まったら REPLACE_ORIGIN を https://ドメイン まで（末尾スラッシュなし）で一括置換。ogp.jpg は 1200×630px 前後推奨 -->

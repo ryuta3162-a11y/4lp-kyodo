@@ -1,0 +1,42 @@
+name: Switch to October LP
+
+on:
+  schedule:
+    # 2026-09-25 00:00 JST = 2026-09-24 15:00 UTC
+    - cron: "0 15 24 9 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: switch-october-lp
+  cancel-in-progress: false
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Overlay October LP onto production
+        run: python "10月/switch_to_october.py"
+
+      - name: Commit and push
+        run: |
+          git add index.html campaign-i18n.js locales locales.bundle.js
+          if git diff --cached --quiet; then
+            echo "No production files to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Switch production LP to the October campaign."
+          git push
