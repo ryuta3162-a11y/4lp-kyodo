@@ -23,6 +23,18 @@ def main() -> int:
     html = (OCT / "campaign.html").read_text(encoding="utf-8")
     html = html.replace('href="../i18n.css"', 'href="i18n.css"')
     html = html.replace('src="../i18n.js"', 'src="i18n.js"')
+    # 日付ゲートは本番では使わない
+    html = html.replace(
+        """    <script>
+    (function () {
+      if (Date.now() < Date.parse('2026-09-25T00:00:00+09:00')) {
+        location.replace('./');
+      }
+    })();
+    </script>
+""",
+        "",
+    )
     (ROOT / "index.html").write_text(html, encoding="utf-8")
 
     shutil.copy2(OCT / "campaign-i18n.js", ROOT / "campaign-i18n.js")
