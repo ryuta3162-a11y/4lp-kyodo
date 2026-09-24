@@ -3959,7 +3959,7 @@
                     <span class="app-join-hero__point"><i class="ph-bold ph-timer" aria-hidden="true"></i><span data-i18n="steps.joinPointFast">最短5分で完了</span></span>
                     <span class="app-join-hero__point"><i class="ph-bold ph-person-simple-walk" aria-hidden="true"></i><span data-i18n="steps.joinPointReady">入会後すぐ使える</span></span>
                 </div>
-                <a href="https://joyfit.jp/kyodo/app_join/" target="_blank" rel="noopener noreferrer" class="app-join-hero__btn" id="app-join-cta" data-app-join-link>
+                <a href="https://apps.apple.com/jp/app/joyfit-app/id1492426384" class="app-join-hero__btn" id="app-join-cta" data-app-join-link>
                     <i class="ph-bold ph-device-mobile" aria-hidden="true"></i>
                     <span data-i18n="steps.step2Btn">APPをインストールして今すぐ入会</span>
                 </a>
@@ -4122,7 +4122,7 @@
     <a href="https://24-kyodo-freetrial.vercel.app/" class="banner-btn trial" target="_blank" rel="noopener noreferrer">
         <i class="ph-bold ph-calendar-plus" style="font-size: 1.2rem;"></i><span data-i18n="banner.trial">無料見学・体験</span>
     </a>
-    <a href="https://joyfit.jp/kyodo/app_join/" class="banner-btn app" target="_blank" rel="noopener noreferrer" data-app-join-link>
+    <a href="https://apps.apple.com/jp/app/joyfit-app/id1492426384" class="banner-btn app" data-app-join-link>
         <i class="ph-bold ph-device-mobile" style="font-size: 1.2rem;"></i><span data-i18n="banner.appJoin">APP入会はこちら</span>
     </a>
 </div>
@@ -4134,24 +4134,47 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // JOYFIT App ストア直リンク（端末判定で正しいストアへ。誤タップ防止）
+    // JOYFIT App：スマホはストアアプリ直（Webの案内URLは使わない）
     window.JOYFIT_APP_LINKS = {
-        ios: 'https://apps.apple.com/us/app/joyfit-app/id1492426384?l=ja&ls=1',
-        android: 'https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid',
-        guide: 'https://joyfit.jp/kyodo/app_join/'
+        ios: 'itms-apps://itunes.apple.com/jp/app/id1492426384',
+        iosHttps: 'https://apps.apple.com/jp/app/joyfit-app/id1492426384',
+        android: 'market://details?id=jp.joyfit.joyfitappandroid',
+        androidHttps: 'https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid&hl=ja'
     };
 
-    function resolveJoyfitAppUrl() {
-        const ua = navigator.userAgent || '';
-        if (/iPhone|iPad|iPod/i.test(ua)) return window.JOYFIT_APP_LINKS.ios;
-        if (/Android/i.test(ua)) return window.JOYFIT_APP_LINKS.android;
-        return window.JOYFIT_APP_LINKS.guide;
+    function isJoyfitIOS() {
+        var ua = navigator.userAgent || '';
+        if (/iPhone|iPad|iPod/i.test(ua)) return true;
+        return navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
     }
-
+    function isJoyfitAndroid() {
+        return /Android/i.test(navigator.userAgent || '');
+    }
+    function resolveJoyfitStoreScheme() {
+        if (isJoyfitIOS()) return window.JOYFIT_APP_LINKS.ios;
+        if (isJoyfitAndroid()) return window.JOYFIT_APP_LINKS.android;
+        return '';
+    }
+    function resolveJoyfitAppHref() {
+        if (isJoyfitAndroid()) return window.JOYFIT_APP_LINKS.androidHttps;
+        return window.JOYFIT_APP_LINKS.iosHttps;
+    }
+    function openJoyfitStore(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        var scheme = resolveJoyfitStoreScheme();
+        window.location.href = scheme || resolveJoyfitAppHref();
+    }
     function applyJoyfitAppLinks() {
-        const url = resolveJoyfitAppUrl();
         document.querySelectorAll('[data-app-join-link]').forEach(function (el) {
-            el.setAttribute('href', url);
+            el.setAttribute('href', resolveJoyfitAppHref());
+            el.removeAttribute('target');
+            el.removeAttribute('rel');
+            if (el.dataset.storeBound === '1') return;
+            el.dataset.storeBound = '1';
+            el.addEventListener('click', openJoyfitStore);
         });
     }
     applyJoyfitAppLinks();
