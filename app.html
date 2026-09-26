@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>JOYFIT APP</title>
+    <script>
+    (function () {
+      var ios = 'itms-apps://itunes.apple.com/jp/app/id1492426384';
+      var iosHttps = 'https://apps.apple.com/jp/app/joyfit-app/id1492426384';
+      var android = 'market://details?id=jp.joyfit.joyfitappandroid';
+      var androidHttps = 'https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid&hl=ja';
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/i.test(ua);
+      if (isIOS) {
+        location.replace(ios);
+        return;
+      }
+      if (isAndroid) {
+        location.replace(android);
+        return;
+      }
+      location.replace(iosHttps);
+    })();
+    </script>
+</head>
+<body>
+    <p>ストアを開いています…</p>
+    <p>開かない場合は <a href="https://apps.apple.com/jp/app/joyfit-app/id1492426384">App Store</a> または <a href="https://play.google.com/store/apps/details?id=jp.joyfit.joyfitappandroid&hl=ja">Google Play</a></p>
+</body>
+</html>
